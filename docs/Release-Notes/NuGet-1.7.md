@@ -1,0 +1,62 @@
+---
+title: "Заметки о выпуске NuGet 1.7 | Документы Microsoft"
+author: karann-msft
+ms.author: karann-msft
+manager: ghogen
+ms.date: 11/11/2016
+ms.topic: article
+ms.prod: nuget
+ms.technology: 
+ms.assetid: df7becc6-993d-4d06-8495-a0c26748bdfa
+description: "Заметки о выпуске для NuGet 1.7, включая известные проблемы, исправленные ошибки, добавленные функции и DCR."
+keywords: "NuGet 1.7 заметки о выпуске, исправления, известными проблемами, добавлены функции, DCR"
+ms.reviewer:
+- karann-msft
+- unniravindranathan
+ms.openlocfilehash: 420b40576cb3862f0e4406966f9ccca9fd1f39a1
+ms.sourcegitcommit: d0ba99bfe019b779b75731bafdca8a37e35ef0d9
+ms.translationtype: MT
+ms.contentlocale: ru-RU
+ms.lasthandoff: 12/14/2017
+---
+# <a name="nuget-17-release-notes"></a>Заметки о выпуске 1.7 NuGet
+
+[Заметки о выпуске NuGet 1.6](../release-notes/nuget-1.6.md) | [NuGet 1.8 заметки о выпуске](../release-notes/nuget-1.8.md)
+
+NuGet 1.7 был выпущен 4 апреля 2012 г.
+
+## <a name="known-installation-issue"></a>Известные проблемы
+Если вы используете VS 2010 с пакетом обновления 1, вы можете столкнуться ошибка установки при попытке обновить NuGet, если у вас установлена более ранняя версия.
+
+Достаточно просто удалить NuGet, а затем установить его из библиотеки расширения VS.  В разделе [http://support.microsoft.com/kb/2581019](http://support.microsoft.com/kb/2581019) для получения дополнительной информации.
+
+Примечание: Если Visual Studio не позволяют удалить расширение (кнопка удаления отключена), скорее всего, необходимо перезапустить Visual Studio, используя «Запуск от имени администратора».
+
+## <a name="features"></a>Функции
+
+### <a name="support-opening-readmetxt-file-after-installation"></a>Поддерживается открытие файла readme.txt после установки
+Новые возможности в 1.7, если пакет содержит `readme.txt` файл в корне пакета NuGet автоматически открыть этот файл, после завершения установки пакета.
+
+### <a name="show-prerelease-packages-in-the-manage-nuget-packages-dialog"></a>Показать предварительные версии пакетов в диалоговом окне NuGet управление пакетами
+Диалоговое окно Управление пакетами NuGet теперь содержит раскрывающийся список, который предоставляет параметр для отображения предварительные выпуски пакетов.
+
+![Отображение предварительные версии пакетов](./media/prerelease-dropdown.png)
+
+### <a name="show-package-restore-button-when-package-files-are-missing"></a>Показать кнопку восстановить пакет, если отсутствуют файлы пакета
+После открытия консоли диспетчера пакетов или NuGet диспетчера пакетов диалогового окна, проверит, если текущее решение включен режим восстановление пакетов NuGet, и если отсутствуют файлы пакета, `packages` папки. Если эти два условия выполняются, NuGet сообщит, а отображается удобный «восстановить». При нажатии этой кнопки, запускающие восстановления отсутствующих пакетов NuGet.
+
+![Кнопка восстановления пакета в диалоговом окне](./media/packagerestore-dialog.png)
+
+![Кнопка восстановления пакета в консоли](./media/packagerestore-console.png)
+
+### <a name="add-solution-level-packagesconfig-file"></a>Добавьте файл packages.config уровня решения
+В предыдущих версиях NuGet, каждый проект имеет `packages.config` файл, который отслеживает какие пакеты NuGet устанавливаются в этом проекте. Однако отсутствовал аналогичный файл на уровне решения для отслеживания решения на уровне пакетов. В результате не было возможности восстановления решения на уровне пакетов.
+Эта функция реализована в NuGet 1.7. Решения уровня `packages.config` файл помещается в `.nuget` папку решения корневой и будет хранить пакеты только на уровне решения.
+
+### <a name="remove-new-package-command"></a>Удалить команду New-Package
+Из-за низкой загрузке команду New-пакет был удален. Разработчикам рекомендуется использовать для создания пакетов nuget.exe или удобным обозреватель пакетов NuGet.
+
+## <a name="bug-fixes"></a>Исправления ошибок
+NuGet 1.7 исправил множество ошибок вокруг восстановление пакетов рабочего процесса и сценарии сети или системы управления версиями.
+
+Полный список рабочих элементов исправления в NuGet 1.7, представление [NuGet отслеживания проблем в этом выпуске](http://nuget.codeplex.com/workitem/list/advanced?keyword=&status=Closed&type=All&priority=All&release=NuGet%201.7&assignedTo=All&component=All&sortField=Votes&sortDirection=Descending&page=0).
