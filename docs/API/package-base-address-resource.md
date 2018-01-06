@@ -17,11 +17,11 @@ keywords: "Контейнер, базовый адрес для пакета NuG
 ms.reviewer:
 - karann
 - unniravindranathan
-ms.openlocfilehash: 756001ff7376a8dd8d66bd2136408e90e6a85d19
-ms.sourcegitcommit: d0ba99bfe019b779b75731bafdca8a37e35ef0d9
+ms.openlocfilehash: a581f9854410bc1a84d65310b38928a1d889ece2
+ms.sourcegitcommit: a40c1c1cc05a46410f317a72f695ad1d80f39fa2
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/14/2017
+ms.lasthandoff: 01/05/2018
 ---
 # <a name="package-content"></a>Содержимое пакета
 
@@ -58,11 +58,11 @@ GET {@id}/{LOWER_ID}/index.json
 
 ### <a name="request-parameters"></a>Параметры запроса
 
-Имя     | Увеличение     | Тип    | Обязательно | Примечания
+name     | Увеличение     | Тип    | Обязательно | Примечания
 -------- | ------ | ------- | -------- | -----
 LOWER_ID | URL-адрес    | string  | да      | Идентификатор пакета, нижний регистр
 
-`LOWER_ID` Значение является Идентификатором нужный пакет букв с помощью правил, реализуемый. NET [ `System.String.ToLowerInvariant()` ](https://msdn.microsoft.com/en-us/library/system.string.tolowerinvariant.aspx) метод.
+`LOWER_ID` Значение является Идентификатором нужный пакет букв с помощью правил, реализуемый. NET [ `System.String.ToLowerInvariant()` ](/dotnet/api/system.string.tolowerinvariant?view=netstandard-2.0#System_String_ToLowerInvariant) метод.
 
 ### <a name="response"></a>Ответ
 
@@ -70,7 +70,7 @@ LOWER_ID | URL-адрес    | string  | да      | Идентификатор 
 
 Если исходный пакет имеет одну или несколько версий, возвращается код состояния 200. Текст ответа — это объект JSON с использованием следующего свойства:
 
-Имя     | Тип             | Обязательно | Примечания
+name     | Тип             | Обязательно | Примечания
 -------- | ---------------- | -------- | -----
 версии | Массив строк | да      | Идентификаторы, доступные пакета
 
@@ -98,12 +98,12 @@ GET {@id}/{LOWER_ID}/{LOWER_VERSION}/{LOWER_ID}.{LOWER_VERSION}.nupkg
 
 ### <a name="request-parameters"></a>Параметры запроса
 
-Имя          | Увеличение     | Тип   | Обязательно | Примечания
+name          | Увеличение     | Тип   | Обязательно | Примечания
 ------------- | ------ | ------ | -------- | -----
 LOWER_ID      | URL-адрес    | string | да      | Идентификатор пакета, нижний регистр
 LOWER_VERSION | URL-адрес    | string | да      | Версия пакета, нормализованную и букв
 
-Оба `LOWER_ID` и `LOWER_VERSION` являются букв с помощью правил, реализуемый. NET [ `System.String.ToLowerInvariant()` ](https://msdn.microsoft.com/en-us/library/system.string.tolowerinvariant.aspx) метод.
+Оба `LOWER_ID` и `LOWER_VERSION` являются букв с помощью правил, реализуемый. NET [ `System.String.ToLowerInvariant()` ](/dotnet/api/system.string.tolowerinvariant?view=netstandard-2.0#System_String_ToLowerInvariant) метод.
 
 `LOWER_VERSION` Версии пакета на нужное нормализуется с использованием NuGet версии [правила нормализации](../reference/package-versioning.md#normalized-version-numbers). Это означает, что в этом случае необходимо исключить эти метаданные сборки, который разрешен спецификацией SemVer 2.0.0.
 
@@ -133,12 +133,12 @@ GET {@id}/{LOWER_ID}/{LOWER_VERSION}/{LOWER_ID}.nuspec
 
 ### <a name="request-parameters"></a>Параметры запроса
 
-Имя          | Увеличение     | Тип    | Обязательно | Примечания
+name          | Увеличение     | Тип    | Обязательно | Примечания
 ------------- | ------ | ------- | -------- | -----
 LOWER_ID      | URL-адрес    | string  | да      | Идентификатор пакета, нижний регистр
 LOWER_VERSION | URL-адрес    | целочисленный | да      | Версия пакета, нормализованную и букв
 
-Оба `LOWER_ID` и `LOWER_VERSION` являются букв с помощью правил, реализуемый. NET [ `System.String.ToLowerInvariant()` ](https://msdn.microsoft.com/en-us/library/system.string.tolowerinvariant.aspx) метод.
+Оба `LOWER_ID` и `LOWER_VERSION` являются букв с помощью правил, реализуемый. NET [ `System.String.ToLowerInvariant()` ](/dotnet/api/system.string.tolowerinvariant?view=netstandard-2.0#System_String_ToLowerInvariant) метод.
 
 `LOWER_VERSION` Версии пакета на нужное нормализуется с использованием NuGet версии [правила нормализации](../reference/package-versioning.md#normalized-version-numbers). Это означает, что в этом случае необходимо исключить эти метаданные сборки, который разрешен спецификацией SemVer 2.0.0.
 

@@ -17,17 +17,17 @@ keywords: "NuGet V3 API, NuGet V2 API, NuGet JSON, регистрации API Nu
 ms.reviewer:
 - karann
 - unniravindranathan
-ms.openlocfilehash: a9515d90ad66d8840f575bba542f0cf887c41718
-ms.sourcegitcommit: d0ba99bfe019b779b75731bafdca8a37e35ef0d9
+ms.openlocfilehash: 05ed17f12f413d29d97a253d7d55f154d4910834
+ms.sourcegitcommit: a40c1c1cc05a46410f317a72f695ad1d80f39fa2
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/14/2017
+ms.lasthandoff: 01/05/2018
 ---
 # <a name="nuget-api"></a>NuGet интерфейса API
 
 NuGet API — это набор конечных точек HTTP, которые могут использоваться для загрузки пакетов, получить метаданные, публикации новых пакетов и выполнения большинства других операций, доступных в официальный клиенты NuGet.
 
-Этот API используется клиентом NuGet в Visual Studio, nuget.exe и .NET CLI для выполнения операций NuGet, такие как [ `dotnet restore` ](https://docs.microsoft.com/dotnet/articles/core/preview3/tools/dotnet-restore), поиск в пользовательском Интерфейсе Visual Studio и [ `nuget.exe push` ](../tools/cli-ref-push.md).
+Этот API используется клиентом NuGet в Visual Studio, nuget.exe и .NET CLI для выполнения операций NuGet, такие как [ `dotnet restore` ](/dotnet/articles/core/preview3/tools/dotnet-restore), поиск в пользовательском Интерфейсе Visual Studio и [ `nuget.exe push` ](../tools/cli-ref-push.md).
 
 Обратите внимание, в некоторых случаях nuget.org Дополнительные требования, которые не являются обязательными для других источников пакетов. Эти различия описаны в [nuget.org протоколов](nuget-protocols.md).
 
@@ -58,7 +58,7 @@ API-интерфейса были внесены изменения проток
 
 **Служба индекс** описывает различные ресурсы. Ниже приведены поддерживаемые ресурсы текущего набора.
 
-Имя ресурса                                                          | Обязательно | Описание
+Имя ресурса                                                          | Обязательно | Описание:
 ---------------------------------------------------------------------- | -------- | -----------
 [`PackagePublish`](package-publish-resource.md)                        | да      | Push и удаления (или исключить) пакетов.
 [`SearchQueryService`](search-query-service-resource.md)               | да      | Фильтровать и искать пакеты по ключевым словам.
@@ -79,7 +79,7 @@ API-интерфейса были внесены изменения проток
 
 ## <a name="http-methods"></a>Методы HTTP
 
-Команда   | Применение
+Команда   | Использовать
 ------ | -----------
 GET    | Выполняет операцию только для чтения, обычно извлечение данных.
 HEAD,   | Получает заголовки ответа для соответствующего `GET` запроса.
@@ -88,7 +88,7 @@ DELETE | Удаляет или unlists ресурса.
 
 ## <a name="http-status-codes"></a>Коды состояния HTTP
 
-Код | Описание
+Код | Описание:
 ---- | -----
 200  | Успех, и текст ответа.
 201  | Об успешном выполнении и ресурс был создан.
@@ -110,7 +110,7 @@ DELETE | Удаляет или unlists ресурса.
 
 ## <a name="http-request-headers"></a>Заголовки HTTP-запросов
 
-Имя                     | Описание
+name                     | Описание:
 ------------------------ | -----------
 X-NuGet-ApiKey           | Требуется для принудительной отправки и удаления, в разделе [ `PackagePublish` ресурсов](package-publish-resource.md)
 X-NuGet--версии клиента   | **Рекомендуется использовать** и заменяется`X-NuGet-Protocol-Version`

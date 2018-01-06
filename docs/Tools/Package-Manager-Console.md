@@ -13,11 +13,11 @@ keywords: "Консоль диспетчера пакетов NuGet, powershell 
 ms.reviewer:
 - karann-msft
 - unniravindranathan
-ms.openlocfilehash: d9df514c6f92a3ea0841503d86c44271e70f95f2
-ms.sourcegitcommit: d0ba99bfe019b779b75731bafdca8a37e35ef0d9
+ms.openlocfilehash: cc11963a9b9bfe9aa456d8cd4c8397e1084f660b
+ms.sourcegitcommit: a40c1c1cc05a46410f317a72f695ad1d80f39fa2
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/14/2017
+ms.lasthandoff: 01/05/2018
 ---
 # <a name="package-manager-console"></a>Консоль диспетчера пакетов
 
@@ -43,7 +43,7 @@ ms.lasthandoff: 12/14/2017
     Install-Package Elmah -ProjectName MyProject
     ```
 
-Содержание раздела
+В этом разделе.
 
 - [Открытие консоли](#opening-the-console-and-console-controls)
 - [Установка пакета](#installing-a-package)
@@ -62,7 +62,7 @@ ms.lasthandoff: 12/14/2017
 
 ## <a name="opening-the-console-and-console-controls"></a>Открытие консоли и консоли управления
 
-1. Откройте консоль в Visual Studio с помощью **Сервис > Диспетчер пакетов NuGet > консоль диспетчера пакетов** команды. Консоль — это окно Visual Studio, в котором упорядочены и располагается, однако вам нравится (см. [Настройка макетов окон в Visual Studio](https://docs.microsoft.com/visualstudio/ide/customizing-window-layouts-in-visual-studio)).
+1. Откройте консоль в Visual Studio с помощью **Сервис > Диспетчер пакетов NuGet > консоль диспетчера пакетов** команды. Консоль — это окно Visual Studio, в котором упорядочены и располагается, однако вам нравится (см. [Настройка макетов окон в Visual Studio](/visualstudio/ide/customizing-window-layouts-in-visual-studio)).
 
 1. По умолчанию команды консоли работают от исходного пакета и проекта как набор в элементе управления в верхней части окна:
 
@@ -171,7 +171,7 @@ Find-Package jquery -AllVersions -ExactMatch
 
 Кроме того, если диспетчер пакетов NuGet в Visual Studio 2015 и более ранних версий, что отсутствует, проверьте **Сервис > расширения и обновления...**  и выполните поиск расширение диспетчера пакетов NuGet. Если вы не удается использовать установщик расширения в Visual Studio, можно загрузить модуль непосредственно из [https://dist.nuget.org/index.html](https://dist.nuget.org/index.html).
 
-Консоль диспетчера пакетов недоступна в настоящее время Visual Studio для Mac. Эквивалентные команды, однако доступны через [NuGet CLI](nuget-exe-CLI-reference.md). Visual Studio для Mac имеет пользовательский Интерфейс для управления пакетами NuGet. В разделе [пакет NuGet, включая в проекте](https://docs.microsoft.com/visualstudio/mac/nuget-walkthrough).
+Консоль диспетчера пакетов недоступна в настоящее время Visual Studio для Mac. Эквивалентные команды, однако доступны через [NuGet CLI](nuget-exe-CLI-reference.md). Visual Studio для Mac имеет пользовательский Интерфейс для управления пакетами NuGet. В разделе [пакет NuGet, включая в проекте](/visualstudio/mac/nuget-walkthrough).
 
 Консоль диспетчера пакетов не включено с кодом Visual Studio.
 

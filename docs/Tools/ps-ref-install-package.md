@@ -13,15 +13,15 @@ keywords: "Пакет NuGet консоли диспетчера, команд Nu
 ms.reviewer:
 - karann-msft
 - unniravindranathan
-ms.openlocfilehash: d51cce6223cd2d89c555ca9d6e936eaadf3757bb
-ms.sourcegitcommit: d0ba99bfe019b779b75731bafdca8a37e35ef0d9
+ms.openlocfilehash: 4d7645297d2cd48f39a8e2ec168040710f6fc7a3
+ms.sourcegitcommit: a40c1c1cc05a46410f317a72f695ad1d80f39fa2
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/14/2017
+ms.lasthandoff: 01/05/2018
 ---
 # <a name="install-package-package-manager-console-in-visual-studio"></a>Install-Package (консоль диспетчера пакетов в Visual Studio)
 
-*В этом разделе описываются команды в [консоль диспетчера пакетов NuGet](Package-Manager-Console.md) в Visual Studio в Windows. Общая команда PowerShell Install-Package. в разделе [PowerShell PackageManagement ссылка](https://docs.microsoft.com/powershell/module/packagemanagement/?view=powershell-6).*
+*В этом разделе описываются команды в [консоль диспетчера пакетов NuGet](Package-Manager-Console.md) в Visual Studio в Windows. Общая команда PowerShell Install-Package. в разделе [PowerShell PackageManagement ссылка](/powershell/module/packagemanagement/?view=powershell-6).*
 
 Устанавливает пакет и его зависимости в проект.
 
@@ -43,7 +43,7 @@ NuGet 2.7 или более ранних версий выдает ошибку,
   
 ## <a name="parameters"></a>Параметры
 
-| Параметр | Описание |
+| Параметр | Описание: |
 | --- | --- |
 | Идентификатор | (Обязательно) Идентификатор пакета для установки. (*3.0 +*) может быть идентификатор или URL-адрес `packages.config` файл или `.nupkg` файла. — Идентификатор коммутатора сам является необязательным. |
 | IgnoreDependencies | Установите только этот пакет, а не его зависимости. |

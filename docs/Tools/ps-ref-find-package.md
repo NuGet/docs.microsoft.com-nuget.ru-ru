@@ -13,15 +13,15 @@ keywords: "Пакет NuGet консоли диспетчера, команд Nu
 ms.reviewer:
 - karann-msft
 - unniravindranathan
-ms.openlocfilehash: b6af6098da9c00e47b81ac9ec37bd5210a99a9fe
-ms.sourcegitcommit: d0ba99bfe019b779b75731bafdca8a37e35ef0d9
+ms.openlocfilehash: fb55cc71e0d4b8eee28b232e64d2cc42364fc153
+ms.sourcegitcommit: a40c1c1cc05a46410f317a72f695ad1d80f39fa2
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/14/2017
+ms.lasthandoff: 01/05/2018
 ---
 # <a name="find-package-package-manager-console-in-visual-studio"></a>Find-Package (консоль диспетчера пакетов в Visual Studio)
 
-*Версия 3.0 +; в этом разделе описываются команды в [консоль диспетчера пакетов NuGet](Package-Manager-Console.md) в Visual Studio в Windows. Общая команда PowerShell Find-Package. в разделе [PowerShell PackageManagement ссылка](https://docs.microsoft.com/powershell/module/packagemanagement/?view=powershell-6).*
+*Версия 3.0 +; в этом разделе описываются команды в [консоль диспетчера пакетов NuGet](Package-Manager-Console.md) в Visual Studio в Windows. Общая команда PowerShell Find-Package. в разделе [PowerShell PackageManagement ссылка](/powershell/module/packagemanagement/?view=powershell-6).*
 
 Получает набор удаленных пакетов с указанным Идентификатором или ключевые слова из источника пакета.
 
@@ -34,7 +34,7 @@ Find-Package [-Id] <keywords> -Source <string> [-AllVersions] [-First [<int>]]
 
 ## <a name="parameters"></a>Параметры
 
-| Параметр | Описание |
+| Параметр | Описание: |
 | --- | --- |
 | Идентификатор &lt;ключевые слова&gt; | (Обязательно) Ключевые слова для поиска источника пакета. С помощью - ExactMatch возвращать только те пакеты, ключевые слова совпадает с Идентификатором пакета. Если ключевые слова не заданы, `Find-Package` возвращает список пакетов 20 основных по загрузок или номер заданные - сначала. Обратите внимание, что - идентификатор является необязательным и холостой. |
 | Исходный код | Путь URL-адрес или папку источника пакета для поиска. Пути к локальной папке может быть абсолютным или относительным для текущей папки. Если не указано, `Find-Package` выполняет поиск в текущем выбранном источнике пакетов. |

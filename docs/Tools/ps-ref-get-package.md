@@ -13,15 +13,15 @@ keywords: "Пакет NuGet консоли диспетчера, команд Nu
 ms.reviewer:
 - karann-msft
 - unniravindranathan
-ms.openlocfilehash: 3f93ab82e9fb769ee20070aa39ba8e3e05953839
-ms.sourcegitcommit: d0ba99bfe019b779b75731bafdca8a37e35ef0d9
+ms.openlocfilehash: 632936fe4dd9736f7c3740a2f763173dc725424a
+ms.sourcegitcommit: a40c1c1cc05a46410f317a72f695ad1d80f39fa2
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/14/2017
+ms.lasthandoff: 01/05/2018
 ---
 # <a name="get-package-package-manager-console-in-visual-studio"></a>Get-Package (консоль диспетчера пакетов в Visual Studio)
 
-*В этом разделе описываются команды в [консоль диспетчера пакетов NuGet](Package-Manager-Console.md) в Visual Studio в Windows. Общая команда PowerShell Get-Package. в разделе [PowerShell PackageManagement ссылка](https://docs.microsoft.com/powershell/module/packagemanagement/?view=powershell-6).*
+*В этом разделе описываются команды в [консоль диспетчера пакетов NuGet](Package-Manager-Console.md) в Visual Studio в Windows. Общая команда PowerShell Get-Package. в разделе [PowerShell PackageManagement ссылка](/powershell/module/packagemanagement/?view=powershell-6).*
 
 Возвращает список пакетов, установленных в локальном хранилище, список пакетов из источника пакета при использовании с параметром - ListAvailable или список доступных обновлений, при использовании с параметром - Update.
 
@@ -37,7 +37,7 @@ Get-Package -Source <string> [-ListAvailable] [-Updates] [-ProjectName <string>]
 
 ## <a name="parameters"></a>Параметры
 
-| Параметр | Описание |
+| Параметр | Описание: |
 | --- | --- |
 | Исходный код | Путь URL-адрес или папку для пакета. Пути к локальной папке может быть абсолютным или относительным для текущей папки. Если не указано, `Get-Package` выполняет поиск в текущем выбранном источнике пакетов. При использовании с флагом-ListAvailable, по умолчанию nuget.org. |
 | ListAvailable | Список пакетов, доступных в источнике пакетов, по умолчанию принимается nuget.org. Показывает значение по умолчанию 50 пакетов, пока не будут указаны - PageSize или - первый. |

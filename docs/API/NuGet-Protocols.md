@@ -12,11 +12,11 @@ description: "Протоколы развивающейся nuget.org взаим
 ms.reviewer:
 - kraigb
 - karann-msft
-ms.openlocfilehash: 097b7a86d056b692c52d6de76bc2fb99d1b58c6f
-ms.sourcegitcommit: d0ba99bfe019b779b75731bafdca8a37e35ef0d9
+ms.openlocfilehash: 0bc71795d120256b9eb14ca64141f0b69f01e620
+ms.sourcegitcommit: a40c1c1cc05a46410f317a72f695ad1d80f39fa2
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/14/2017
+ms.lasthandoff: 01/05/2018
 ---
 # <a name="nugetorg-protocols"></a>Протоколы NuGet.org
 
@@ -43,7 +43,7 @@ ms.lasthandoff: 12/14/2017
 X-NuGet-Protocol-Version: 4.1.0
 ```
 
-Обратите внимание, что предварительно `X-NuGet-Client-Version` заголовок используется для той же цели, но теперь устарело и больше не может использоваться.
+Обратите внимание, что `X-NuGet-Client-Version` заголовок имеет похожую семантику, но зарезервировано только для использования клиентом официальный NuGet. Сторонние клиенты должны использовать `X-NuGet-Protocol-Version` заголовка и значения.
 
 **Принудительной** сам протокол описан в документации по [ `PackagePublish` ресурсов](package-publish-resource.md).
 
@@ -59,9 +59,9 @@ POST api/v2/package/create-verification-key/{ID}/{VERSION}
 
 #### <a name="request-parameters"></a>Параметры запроса
 
-Имя           | Увеличение     | Тип   | Обязательно | Примечания
+name           | Увеличение     | Тип   | Обязательно | Примечания
 -------------- | ------ | ------ | -------- | -----
-Идентификатор             | URL-адрес    | string | да      | Identidier пакета, для которого запрашивается ключ области проверьте
+ID             | URL-адрес    | string | да      | Identidier пакета, для которого запрашивается ключ области проверьте
 VERSION        | URL-адрес    | string | Нет       | Версия пакета
 X-NuGet-ApiKey | Header | string | да      | Например `X-NuGet-ApiKey: {USER_API_KEY}`.
 
@@ -84,9 +84,9 @@ GET api/v2/verifykey/{ID}/{VERSION}
 
 #### <a name="request-parameters"></a>Параметры запроса
 
-Имя           | Увеличение     | Тип   | Обязательно | Примечания
+name           | Увеличение     | Тип   | Обязательно | Примечания
 -------------  | ------ | ------ | -------- | -----
-Идентификатор             | URL-адрес    | string | да      | Идентификатор пакета, для которого запрашивается ключ области проверьте
+ID             | URL-адрес    | string | да      | Идентификатор пакета, для которого запрашивается ключ области проверьте
 VERSION        | URL-адрес    | string | Нет       | Версия пакета
 X-NuGet-ApiKey | Header | string | да      | Например `X-NuGet-ApiKey: {VERIFY_SCOPE_KEY}`.
 

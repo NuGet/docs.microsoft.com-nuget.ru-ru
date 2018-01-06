@@ -13,11 +13,11 @@ keywords: "Пакет NuGet консоли диспетчера, команд Nu
 ms.reviewer:
 - karann-msft
 - unniravindranathan
-ms.openlocfilehash: 7bf8cdb938195f4747932b38ef0d5bb6c34b9137
-ms.sourcegitcommit: d0ba99bfe019b779b75731bafdca8a37e35ef0d9
+ms.openlocfilehash: 6a3232af925f75713168421e68f2773060c5ebaa
+ms.sourcegitcommit: a40c1c1cc05a46410f317a72f695ad1d80f39fa2
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/14/2017
+ms.lasthandoff: 01/05/2018
 ---
 # <a name="add-bindingredirect-package-manager-console-in-visual-studio"></a>Добавить BindingRedirect (консоль диспетчера пакетов в Visual Studio)
 
@@ -25,7 +25,7 @@ ms.lasthandoff: 12/14/2017
 
 Проверяет все сборки по пути вывода для проекта и добавляет перенаправления привязки в файле конфигурации приложения или веб-узла, при необходимости. Эта команда выполняется автоматически при установке пакета.
 
-Привязку перенаправления и почему они используются Подробнее [Перенаправление версий сборок](https://docs.microsoft.com/dotnet/framework/configure-apps/redirect-assembly-versions) в документации по .NET.
+Привязку перенаправления и почему они используются Подробнее [Перенаправление версий сборок](/dotnet/framework/configure-apps/redirect-assembly-versions) в документации по .NET.
 
 ## <a name="syntax"></a>Синтаксис
 
@@ -35,7 +35,7 @@ Add-BindingRedirect [-ProjectName] <string> [<CommonParameters>]
 
 ## <a name="parameters"></a>Параметры
 
-| Параметр | Описание |
+| Параметр | Описание: |
 | --- | --- |
 | ИмяПроекта | (Обязательно) Проект, к которому необходимо добавить переадресации привязок. Параметр - имя_проекта сам является необязательным. |
 

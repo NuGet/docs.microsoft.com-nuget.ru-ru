@@ -14,17 +14,17 @@ ms.reviewer:
 - anangaur
 - karann-msft
 - unniravindranathan
-ms.openlocfilehash: 3423e30eae07ff0c70a010576b8e701be027b847
-ms.sourcegitcommit: d0ba99bfe019b779b75731bafdca8a37e35ef0d9
+ms.openlocfilehash: 53fccbb86f2920d870b5383070d043e25045a626
+ms.sourcegitcommit: a40c1c1cc05a46410f317a72f695ad1d80f39fa2
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/14/2017
+ms.lasthandoff: 01/05/2018
 ---
 # <a name="errors-and-warnings"></a>Ошибки и предупреждения
 
 В NuGet 4.3.0 ошибки и предупреждения нумеруются, как описано в этом разделе и предоставляют подробные сведения для решения проблемы, связанные. 
 
-Ошибки и предупреждения, перечисленные здесь доступны только с [на основе PackageReference](../Consume-Packages/Package-References-in-Project-Files.md) проекты и NuGet 4.3.0. NuGet также учитывает свойства MSBuild для предупреждений или повысить их к ошибкам. Дополнительные сведения см. в разделе [как: отключить предупреждения компилятора](https://docs.microsoft.com/visualstudio/ide/how-to-suppress-compiler-warnings) в документации по Visual Studio.
+Ошибки и предупреждения, перечисленные здесь доступны только с [на основе PackageReference](../Consume-Packages/Package-References-in-Project-Files.md) проекты и NuGet 4.3.0. NuGet также учитывает свойства MSBuild для предупреждений или повысить их к ошибкам. Дополнительные сведения см. в разделе [как: отключить предупреждения компилятора](/visualstudio/ide/how-to-suppress-compiler-warnings) в документации по Visual Studio.
 
 **Ошибки**
 
