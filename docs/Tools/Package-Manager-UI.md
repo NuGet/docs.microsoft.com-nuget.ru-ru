@@ -17,11 +17,11 @@ keywords: "NuGet пользовательского интерфейса, дис
 ms.reviewer:
 - karann-msft
 - unniravindranathan
-ms.openlocfilehash: 0f08e5a36499c4481c4e0cd70738d67d65cd980a
-ms.sourcegitcommit: a40c1c1cc05a46410f317a72f695ad1d80f39fa2
+ms.openlocfilehash: fb2166b727dd01de0f7096535fdbc71c5ab0e2a3
+ms.sourcegitcommit: cde52deee5691d3e8bcb96f46f9645c7ba579af8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/05/2018
+ms.lasthandoff: 01/10/2018
 ---
 # <a name="nuget-package-manager-ui"></a>Пользовательский Интерфейс диспетчера пакетов NuGet
 
@@ -39,7 +39,7 @@ ms.lasthandoff: 01/05/2018
 > [!Note]
 > Если вы пропустили диспетчер пакетов NuGet в Visual Studio 2015, проверьте **Сервис > расширения и обновления...**  и выполните поиск *диспетчера пакетов NuGet* расширения. Если вы не удается использовать установщик расширения в Visual Studio, загрузите расширение непосредственно из [https://dist.nuget.org/index.html](https://dist.nuget.org/index.html).
 >
-> В Visual Studio 2017 г NuGet и диспетчер пакетов NuGet автоматически устанавливается вместе с любой. Рабочие нагрузки, связанные с NET. Установить individuall, выбрав **отдельные компоненты > средства кода > Диспетчер пакетов NuGet** в установщике Visual Studio 2017 г.
+> В Visual Studio 2017 г NuGet и диспетчер пакетов NuGet автоматически устанавливается вместе с любой. Рабочие нагрузки, связанные с NET. Устанавливать по отдельности, выбрав **отдельные компоненты > кода Сервис > Диспетчер пакетов NuGet** в установщике Visual Studio 2017 г.
 
 ## <a name="finding-and-installing-a-package"></a>Поиск и установка пакета
 
