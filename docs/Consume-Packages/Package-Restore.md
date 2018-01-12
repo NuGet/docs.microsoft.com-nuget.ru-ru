@@ -13,17 +13,17 @@ keywords: "восстановление пакетов NuGet, установка
 ms.reviewer:
 - karann-msft
 - unniravindranathan
-ms.openlocfilehash: c2567f45b6bb36cdd94c4ce6f1418cb1c7ceac5e
-ms.sourcegitcommit: d0ba99bfe019b779b75731bafdca8a37e35ef0d9
+ms.openlocfilehash: 4e819a2bb34bbe70f0f11d5adeed82b976a8cb65
+ms.sourcegitcommit: a40c1c1cc05a46410f317a72f695ad1d80f39fa2
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/14/2017
+ms.lasthandoff: 01/05/2018
 ---
 # <a name="package-restore"></a>Восстановление пакетов
 
 Чтобы очистить среду разработки и уменьшить размер репозитория, **функция восстановления пакетов** NuGet устанавливает все указанные в ссылках пакеты перед сборкой проекта. Эта широко применяемая функция гарантирует доступность всех зависимостей в проекте без необходимости сохранения этих пакетов в системе управления исходным кодом (сведения о том, как настроить репозиторий, чтобы исключить двоичные файлы пакетов, см. в разделе [Пакеты и система управления версиями](../consume-packages/packages-and-source-control.md)).
 
-Содержание раздела
+В этом разделе.
 - [Краткое руководство по восстановлению пакетов](#quick-guide-to-package-restore)
 - [Обзор восстановления пакетов](#package-restore-overview)
 - [Включение и отключение восстановления пакетов](#enabling-and-disabling-package-restore)
@@ -51,7 +51,7 @@ ms.lasthandoff: 12/14/2017
 
 Во-первых, в зависимости от типа проекта и версии NuGet ссылки на пакеты хранятся в одном из указанных ниже форматов управления пакетами. (Обратите внимание, что NuGet 4 и MSBuild 15.1 устанавливаются вместе с Visual Studio 2017.)
 
-| Метод | Версия NuGet | Описание | 
+| Метод | Версия NuGet | Описание: | 
 | --- | --- | --- |
 | `packages.config` | 2.x+ | Указывает полный глубокий набор зависимостей. Пакеты, добавляемые в `packages.config`, также должны добавляться в файл проекта, как и целевые объекты и свойства. Это базовый метод для всех версий NuGet, однако он имеет пониженную производительность по сравнению с другими вариантами. (См. раздел [Схема packages.config](../schema/packages-config.md).) | 
 | `project.json` | 3.x+ | Используется по умолчанию только с проектами UWP, но проекты можно преобразовать из `packages.config`. `project.json` указывает только высокоуровневые зависимости. Ссылки, целевые объекты и свойства добавляются в проект динамически во время сборки, что обеспечивает более высокую производительность по сравнению с `packages.config`. (См. раздел [Схема project.json](../schema/project-json.md).)|
@@ -64,7 +64,7 @@ ms.lasthandoff: 12/14/2017
 | Команда | Применимые сценарии |
 | --- | --- | 
 | `nuget restore` | Все версии NuGet и все типы ссылок. См. раздел [Восстановление из командной строки](#command-line-restore) ниже. | 
-| `dotnet restore` | То же, что и `nuget restore`, для проектов .NET Core. См. раздел [dotnet restore](https://docs.microsoft.com/dotnet/articles/core/tools/dotnet-restore). |
+| `dotnet restore` | То же, что и `nuget restore`, для проектов .NET Core. См. раздел [dotnet restore](/dotnet/articles/core/tools/dotnet-restore). |
 | `msbuild /t:restore` | Только Nuget 4.x+ и MSBuild 15.1+ со [ссылками на пакеты в файлах проекта](../Consume-Packages/Package-References-in-Project-Files.md). `nuget restore` и `dotnet restore` используют эту команду для подходящих проектов. См. раздел [Объекты pack и restore NuGet в качестве целевых объектов MSBuild — целевой объект restore](../schema/msbuild-targets.md#restore-target).|
 
 В разное время среда Visual Studio также восстанавливает пакеты:
