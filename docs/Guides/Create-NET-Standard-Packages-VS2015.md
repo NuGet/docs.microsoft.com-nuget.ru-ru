@@ -13,17 +13,17 @@ keywords: "создание пакета, пакеты .NET Standard, табли
 ms.reviewer:
 - karann-msft
 - unniravindranathan
-ms.openlocfilehash: a912c27e1873d60426f2147995f69e2dcc433ca9
-ms.sourcegitcommit: d0ba99bfe019b779b75731bafdca8a37e35ef0d9
+ms.openlocfilehash: e02888bf552997afe25e967f13e021e78e40d48d
+ms.sourcegitcommit: a40c1c1cc05a46410f317a72f695ad1d80f39fa2
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/14/2017
+ms.lasthandoff: 01/05/2018
 ---
 # <a name="create-net-standard-packages-with-visual-studio-2015"></a>Создание пакетов .NET Standard с помощью Visual Studio 2015
 
 *Применяется к NuGet 3.x. Сведения о работе с NuGet 4.x и более поздних версий см. в разделе [Создание пакетов для платформы .NET Standard с помощью Visual Studio 2017](../guides/create-net-standard-packages-vs2017.md).*
 
-[Библиотека .NET Standard](https://docs.microsoft.com/dotnet/articles/standard/library) представляет собой формальную спецификацию интерфейсов API .NET, которые должны быть доступны во всех средах выполнения .NET, что позволяет повысить степень унификации экосистемы .NET. Библиотека .NET Standard определяет унифицированный набор API-интерфейсов библиотеки базовых классов (BCL) для реализации всеми платформами .NET независимо от рабочей нагрузки. Таким образом, разработчики могут создавать переносимые библиотеки классов, которые могут использоваться во всех средах выполнения .NET, что позволяет свести к минимуму число директив условной компиляции, предназначенных для конкретных платформ, в общем коде либо полностью исключить их.
+[Библиотека .NET Standard](/dotnet/articles/standard/library) представляет собой формальную спецификацию интерфейсов API .NET, которые должны быть доступны во всех средах выполнения .NET, что позволяет повысить степень унификации экосистемы .NET. Библиотека .NET Standard определяет унифицированный набор API-интерфейсов библиотеки базовых классов (BCL) для реализации всеми платформами .NET независимо от рабочей нагрузки. Таким образом, разработчики могут создавать переносимые библиотеки классов, которые могут использоваться во всех средах выполнения .NET, что позволяет свести к минимуму число директив условной компиляции, предназначенных для конкретных платформ, в общем коде либо полностью исключить их.
 
 В этом руководстве приводятся пошаговые инструкции по созданию пакета nuget для библиотеки .NET Standard 1.4. Этот пакет будет работать на платформах .NET Framework 4.6.1, .NET Core, Mono/Xamarin и универсальной платформе Windows 10. Дополнительные сведения см. в разделе [Таблица сопоставления .NET Standard](#net-standard-mapping-table) далее в этой статье.
 
@@ -310,8 +310,8 @@ nuget pack AppLogger.nuspec
 
 |Имя платформы |Alias|
 |--------------|-----|
-|.NET Standard | netstandard| 1,0| 1.1| 1.2| 1.3| 1.4| 1.5| 1.6|
-|.NET Core | netcoreapp| &#x2192;| &#x2192;| &#x2192;| &#x2192;| &#x2192;| &#x2192;| 1,0|
+|.NET Standard | netstandard| 1.0| 1.1| 1.2| 1.3| 1.4| 1.5| 1.6|
+|.NET Core | netcoreapp| &#x2192;| &#x2192;| &#x2192;| &#x2192;| &#x2192;| &#x2192;| 1.0|
 |.NET Framework| net| 4.5| 4.5.1| 4.6| 4.6.1| 4.6.2| 4.6.3|
 |Платформы Mono и Xamarin| &#x2192;| &#x2192;| &#x2192;| &#x2192;| &#x2192;| &#x2192;|
 |Универсальная платформа Windows | uap| &#x2192;| &#x2192;| &#x2192;| &#x2192;|10.0|
@@ -329,5 +329,5 @@ nuget pack AppLogger.nuspec
 - [Поддержка нескольких версий платформы .NET Framework](../create-packages/supporting-multiple-target-frameworks.md)
 - [Включение в пакет свойств и целей MSBuild](../create-packages/creating-a-package.md#including-msbuild-props-and-targets-in-a-package)
 - [Создание локализованных пакетов](../create-packages/creating-localized-packages.md)
-- [Документация по библиотеке .NET Standard](https://docs.microsoft.com/dotnet/articles/standard/library)
-- [Перенос кода в .NET Core из .NET Framework](https://docs.microsoft.com/dotnet/articles/core/porting/index)
+- [Документация по библиотеке .NET Standard](/dotnet/articles/standard/library)
+- [Перенос кода в .NET Core из .NET Framework](/dotnet/articles/core/porting/index)

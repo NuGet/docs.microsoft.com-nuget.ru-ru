@@ -13,11 +13,11 @@ keywords: "элементы управления UWP NuGet, конструкто
 ms.reviewer:
 - karann-msft
 - unniravindranathan
-ms.openlocfilehash: f51dbabd406199752e4f9d612b498f59ffb54021
-ms.sourcegitcommit: d0ba99bfe019b779b75731bafdca8a37e35ef0d9
+ms.openlocfilehash: 8756ce472c11a05370914841245295361b3f179b
+ms.sourcegitcommit: a40c1c1cc05a46410f317a72f695ad1d80f39fa2
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/14/2017
+ms.lasthandoff: 01/05/2018
 ---
 # <a name="creating-uwp-controls-as-nuget-packages"></a>Создание элементов управления универсальной платформы Windows в виде пакетов NuGet
 
@@ -55,7 +55,7 @@ ms.lasthandoff: 12/14/2017
 </FileList>
 ```
 
-где:
+Здесь:
 
 - *your_package_file* — имя файла элемента управления, например `ManagedPackage.winmd` (ManagedPackage — это произвольное имя, которое взято для примера и не имеет особого значения).
 - *vs_category* — метка группы, в которой должен отображаться элемент управления на панели элементов в конструкторе Visual Studio. Элемент `VSCategory` необходим для отображения элемента управления на панели элементов.
@@ -105,7 +105,7 @@ ms.lasthandoff: 12/14/2017
 \ref\uap10.0\*
 ```
 
-Для проведения проверки TPMinV создайте [файл целей MSBuild](https://docs.microsoft.com/visualstudio/msbuild/msbuild-targets) и включите его в пакет в папке build (замените "your_assembly_name" на имя собственной сборки):
+Для проведения проверки TPMinV создайте [файл целей MSBuild](/visualstudio/msbuild/msbuild-targets) и включите его в пакет в папке build (замените "your_assembly_name" на имя собственной сборки):
 
 ```
 \build
@@ -133,7 +133,7 @@ ms.lasthandoff: 12/14/2017
 
 ## <a name="add-design-time-support"></a>Добавление поддержки на этапе разработки
 
-Чтобы указать, где должны отображаться свойства элемента управления в инспекторе свойств, добавьте пользовательские графические элементы и другие элементы, а затем поместите файл `design.dll` в папку `lib\<platform>\Design` для соответствующей целевой платформы. Кроме того, чтобы работала команда **[Изменить шаблон > Изменить копию](https://docs.microsoft.com/windows/uwp/controls-and-patterns/xaml-styles#modify-the-default-system-styles)**, необходимо включить файл `Generic.xaml` и все объединяемые словари ресурсов в файл `<AssemblyName>\Themes`. (Этот файл не влияет на поведение элемента управления во время выполнения.)
+Чтобы указать, где должны отображаться свойства элемента управления в инспекторе свойств, добавьте пользовательские графические элементы и другие элементы, а затем поместите файл `design.dll` в папку `lib\<platform>\Design` для соответствующей целевой платформы. Кроме того, чтобы работала команда **[Изменить шаблон > Изменить копию](/windows/uwp/controls-and-patterns/xaml-styles#modify-the-default-system-styles)**, необходимо включить файл `Generic.xaml` и все объединяемые словари ресурсов в файл `<AssemblyName>\Themes`. (Этот файл не влияет на поведение элемента управления во время выполнения.)
 
 
 ```
@@ -172,7 +172,7 @@ ms.lasthandoff: 12/14/2017
 \tools
 ```
 
-Вы также можете создать [файл целей MSBuild](https://docs.microsoft.com/visualstudio/msbuild/msbuild-targets), чтобы ресурс копировался в выходную папку проекта:
+Вы также можете создать [файл целей MSBuild](/visualstudio/msbuild/msbuild-targets), чтобы ресурс копировался в выходную папку проекта:
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>

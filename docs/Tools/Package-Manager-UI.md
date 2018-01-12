@@ -12,13 +12,14 @@ f1_keywords:
 - vs.toolsoptionspages.nuget_package_manager
 - vs.toolsoptionspages.nuget_package_manager.general
 - vs.toolsoptionspages.nuget_package_manager.package_sources
+- vs.nuget.packagemanager.ui
 description: "Инструкции по использованию пользовательского интерфейса диспетчера пакетов NuGet в Visual Studio для работы с пакетами NuGet."
 keywords: "NuGet пользовательского интерфейса, диспетчер пакетов NuGet пользовательского интерфейса, NuGet в Visual Studio, управление пакетами NuGet, NuGet пользовательский интерфейс, диспетчер пакетов в Visual Studio"
 ms.reviewer:
 - karann-msft
 - unniravindranathan
-ms.openlocfilehash: fb2166b727dd01de0f7096535fdbc71c5ab0e2a3
-ms.sourcegitcommit: cde52deee5691d3e8bcb96f46f9645c7ba579af8
+ms.openlocfilehash: 39ce53184755887c419c8872148a6c13dc2c65ec
+ms.sourcegitcommit: bdcd2046b1b187d8b59716b9571142c02181c8fb
 ms.translationtype: MT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 01/10/2018
