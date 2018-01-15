@@ -13,11 +13,11 @@ keywords: "восстановление пакетов NuGet, NuGet и Team Foun
 ms.reviewer:
 - karann-msft
 - unniravindranathan
-ms.openlocfilehash: 4be1bb83549958897a15d690439cac073c9683d1
-ms.sourcegitcommit: d0ba99bfe019b779b75731bafdca8a37e35ef0d9
+ms.openlocfilehash: 82decfa1a39cb99c405840a8f13b0bc993111c09
+ms.sourcegitcommit: a40c1c1cc05a46410f317a72f695ad1d80f39fa2
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/14/2017
+ms.lasthandoff: 01/05/2018
 ---
 # <a name="setting-up-package-restore-with-team-foundation-build"></a>Настройка восстановления пакетов с помощью сборки Team Foundation
 
@@ -29,9 +29,9 @@ ms.lasthandoff: 12/14/2017
 >
 > Если вы используете службы Visual Studio Team Services или локальный сервер Team Foundation Server 2013 с шаблонами процесса сборки, автоматическое восстановление пакетов производится в рамках процесса сборки.
 
-В этом разделе приводится подробное пошаговое руководство по восстановлению пакетов в рамках [сборки Team Foundation](http://msdn.microsoft.com/library/ms181710(v=VS.90).aspx) как для [GIT](http://en.wikipedia.org/wiki/Git_(software)), так и для [системы управления версиями Team Foundation](http://msdn.microsoft.com/library/ms181237(v=vs.120).aspx).
+В этом разделе приводится подробное пошаговое руководство по восстановлению пакетов в рамках [сборки Team Services](/vsts/build-release/index) как для Git, так и для управления версиями Team Services.
 
-Хотя это пошаговое руководство относится к сценарию использования [Team Foundation Service](http://tfs.visualstudio.com/), основные принципы также применимы к другим системам управления версиями и сборки.
+Хотя это руководство относится к сценарию использования Visual Studio Team Services, основные принципы также применимы к другим системам управления версиями и сборки.
 
 ## <a name="the-general-approach"></a>Общий подход
 
@@ -119,7 +119,7 @@ nuget restore path\to\solution.sln
 
 При этом исключаются все папки `packages`, но включаются все содержащиеся в них файлы `.targets`. Кстати, шаблон файлов `.gitignore`, специально предназначенный для потребностей разработчиков Visual Studio, можно найти [здесь](https://github.com/github/gitignore/blob/master/VisualStudio.gitignore).
 
-Система управления версиями Team Foundation поддерживает очень похожий механизм посредством файлов [TFIGNORE](http://msdn.microsoft.com/library/ms245454.aspx). Синтаксис практически такой же:
+Система управления версиями Team Foundation поддерживает очень похожий механизм посредством файлов [TFIGNORE](/vsts/tfvc/add-files-server#customize-which-files-are-ignored-by-version-control). Синтаксис практически такой же:
 
     *.user
     *.suo
@@ -135,7 +135,7 @@ nuget restore path\to\solution.sln
 
 - Цели `Build` и `Rebuild` зависят от `RestorePackages`. Таким образом, вы сможете выполнять `Build` и `Rebuild`, будучи уверенными в том, что пакеты восстановлены.
 - `Clean`, `Build` и `Rebuild` вызывают соответствующую цель MSBuild для всех файлов решения.
-- Цель `RestorePackages` вызывает программу `nuget.exe` для каждого файла решения. Для этого применяется [функция пакетной обработки MSBuild](http://msdn.microsoft.com/library/ms171473.aspx).
+- Цель `RestorePackages` вызывает программу `nuget.exe` для каждого файла решения. Для этого применяется [функция пакетной обработки MSBuild](/visualstudio/msbuild/msbuild-batching).
 
 Результат выглядит следующим образом:
 

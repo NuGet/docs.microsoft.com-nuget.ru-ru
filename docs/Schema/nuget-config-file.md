@@ -13,11 +13,11 @@ keywords: "файл NuGet.Config, справочник по настройке N
 ms.reviewer:
 - karann-msft
 - unniravindranathan
-ms.openlocfilehash: fa471e1ad419c6a4cab99e271375d9be94c29a50
-ms.sourcegitcommit: d0ba99bfe019b779b75731bafdca8a37e35ef0d9
+ms.openlocfilehash: 830c622f622b894a228b18dfdb3a790bccfde8a3
+ms.sourcegitcommit: bdcd2046b1b187d8b59716b9571142c02181c8fb
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/14/2017
+ms.lasthandoff: 01/10/2018
 ---
 # <a name="nugetconfig-reference"></a>Справочник по NuGet.Config
 
@@ -25,18 +25,17 @@ ms.lasthandoff: 12/14/2017
 
 `NuGet.Config` — это XML-файл, содержащий узел `<configuration>` верхнего уровня, который, в свою очередь, содержит элементы разделов, описываемые в этой статье. Каждый раздел содержит ноль или более элементов `<add>` с атрибутами `key` и `value`. См. [пример файла конфигурации](#example-config-file). В именах регистр символов не учитывается, а в качестве значений могут использоваться [переменные среды](#using-environment-variables).
 
-Содержание раздела
+В этом разделе.
 
 - [Раздел config](#config-section)
 - [Раздел bindingRedirects](#bindingredirects-section)
 - [Раздел packageRestore](#packagerestore-section)
 - [Раздел solution](#solution-section)
-- [Разделы источников пакета](#package-source-sections):
-    - [packageSources](#packagesources)
-    - [packageSourceCredentials](#packagesourcecredentials)
-    - [apikeys](#apikeys)
-    - [disabledPackageSources](#disabledpackagesources)
-    - [activePackageSource](#activepackagesource)
+- [Разделы источников пакетов](#package-source-sections): -[packageSources](#packagesources)
+  - [packageSourceCredentials](#packagesourcecredentials)
+  - [apikeys](#apikeys)
+  - [disabledPackageSources](#disabledpackagesources)
+  - [activePackageSource](#activepackagesource)
 - [Использование переменных среды](#using-environment-variables)
 - [Пример файла конфигурации](#example-config-file)
 
@@ -59,7 +58,6 @@ ms.lasthandoff: 12/14/2017
 | defaultPushSource | Определяет URL-адрес источника пакета или путь к нему, который следует использовать по умолчанию, если другие источники пакета для операции не обнаружены. |
 | http_proxy http_proxy.user http_proxy.password no_proxy | Параметры прокси-сервера, которые следует использовать при подключении к источникам пакета; значение `http_proxy` должно иметь формат `http://<username>:<password>@<domain>`. Пароли зашифровываются, и их нельзя добавить вручную. Значение параметра `no_proxy` представляет собой разделенный запятыми список доменов, для которых производится обход прокси-сервера. В качестве этих значений можно также использовать переменные среды http_proxy и no_proxy. Дополнительные сведения см. в записи блога [Параметры прокси-сервера в NuGet](http://skolima.blogspot.com/2012/07/nuget-proxy-settings.html) (skolima.blogspot.com). |
 
-
 **Пример**:
 
 ```xml
@@ -70,7 +68,6 @@ ms.lasthandoff: 12/14/2017
     <add key="http_proxy" value="http://company-squid:3128@contoso.com" />
 </config>
 ```
-
 
 ## <a name="bindingredirects-section"></a>Раздел bindingRedirects
 
@@ -116,7 +113,6 @@ ms.lasthandoff: 12/14/2017
 | --- | --- |
 | disableSourceControlIntegration | Логическое значение, указывающее, следует ли игнорировать папку пакетов при работе с системой управления версиями. Значением по умолчанию является false. |
 
-
 **Пример**:
 
 ```xml
@@ -125,13 +121,13 @@ ms.lasthandoff: 12/14/2017
 </solution>
 ```
 
-
 ## <a name="package-source-sections"></a>Разделы источников пакета
 
 Параметры `packageSources`, `packageSourceCredentials`, `apikeys`, `activePackageSource` и `disabledPackageSources` в совокупности определяют то, как NuGet работает с репозиториями пакетов во время операций установки, восстановления и обновления.
 
 Как правило, для управления этими параметрами используется [команда `nuget sources`](../tools/cli-ref-sources.md), за исключением параметра `apikeys`, который настраивается с помощью [команды `nuget setapikey`](../tools/cli-ref-setapikey.md).
 
+Обратите внимание, что URL-адрес источника для nuget.org — `https://api.nuget.org/v3/index.json`.
 
 ### <a name="packagesources"></a>packageSources
 
@@ -150,7 +146,6 @@ ms.lasthandoff: 12/14/2017
     <add key="Test Source" value="c:\packages" />
 </packageSources>
 ```
-
 
 ### <a name="packagesourcecredentials"></a>packageSourceCredentials
 
@@ -190,7 +185,7 @@ ms.lasthandoff: 12/14/2017
     <Test_x0020_Source>
         <add key="Username" value="user" />
         <add key="ClearTextPassword" value="hal+9ooo_da!sY" />
-    </Test_x0020_Source>    
+    </Test_x0020_Source>
 </packageSourceCredentials>
 ```
 
@@ -210,7 +205,6 @@ ms.lasthandoff: 12/14/2017
 </apikeys>
 ```
 
-
 ### <a name="disabledpackagesources"></a>disabledPackageSources
 
 Определяет источники, отключенные в настоящее время. Значение может быть пустым.
@@ -218,8 +212,6 @@ ms.lasthandoff: 12/14/2017
 | Ключ | Значение |
 | --- | --- |
 | (имя источника) | Логическое значение, указывающее, отключен ли источник. |
-
-
 
 **Пример:**
 
@@ -263,7 +255,6 @@ ms.lasthandoff: 12/14/2017
 Аналогичным образом, если переменная `HOME` в Mac или Linux имеет значение `/home/myStuff`, параметр `$HOME/NuGetRepository` в файле конфигурации разрешается в `/home/myStuff/NuGetRepository`.
 
 Если переменная среды не найдена, NuGet использует буквальное значение из файла конфигурации.
-
 
 ## <a name="example-config-file"></a>Пример файла конфигурации
 

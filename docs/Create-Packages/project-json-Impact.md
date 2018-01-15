@@ -13,11 +13,11 @@ keywords: "NuGet и project.json, влияние project.json, аспекты с
 ms.reviewer:
 - karann-msft
 - unniravindranathan
-ms.openlocfilehash: 93a4e9f9cb57c8acbe516a957e01b801bac0e116
-ms.sourcegitcommit: d0ba99bfe019b779b75731bafdca8a37e35ef0d9
+ms.openlocfilehash: 69a6bbbe1c96b06dbba7ac787b836b8b62c438ec
+ms.sourcegitcommit: a40c1c1cc05a46410f317a72f695ad1d80f39fa2
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/14/2017
+ms.lasthandoff: 01/05/2018
 ---
 # <a name="impact-of-projectjson-when-creating-packages"></a>Влияние project.json при создании пакетов
 
@@ -64,7 +64,7 @@ ms.lasthandoff: 12/14/2017
 
 Таким образом, если описанные выше функции не являются обязательными, мы рекомендуем использовать существующий формат пакета, так как описанный здесь формат поддерживается только NuGet 3.x+.
 
-Можно было бы создать пакеты, работающие как для сценариев `packages.config`, так и для сценариев `project.json`, с помощью создания оболочки совместимости, однако часто бывает проще структурировать пакет традиционным образом, не прибегая к указанным выше нерекомендуемым функциям.
+Создание пакетов, одновременно подходящих для сценариев `packages.config` и `project.json`, возможно при помощи оболочек совместимости, но часто проще структурировать пакеты традиционным образом, не прибегая к указанным выше нерекомендуемым функциям.
 
 
 ## <a name="3x-package-format"></a>Формат пакета 3.x  ##
