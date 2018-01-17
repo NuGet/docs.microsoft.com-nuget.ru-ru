@@ -31,7 +31,7 @@ ms.lasthandoff: 01/05/2018
 > Так как каталог не используется официальный NuGet клиента, не все источники пакетов реализации каталога.
 
 > [!Note]
-> В настоящее время nuget.org каталог недоступен в Китае. Дополнительные сведения см. в разделе [&#4949; NuGet/NuGetGallery](https://github.com/NuGet/NuGetGallery/issues/4949).
+> В настоящее время nuget.org каталог недоступен в Китае. Дополнительные сведения см. в разделе [NuGet/NuGetGallery#4949](https://github.com/NuGet/NuGetGallery/issues/4949).
 
 ## <a name="versioning"></a>Управление версиями
 
