@@ -13,11 +13,11 @@ keywords: "ссылка на пакет NuGet, команда пакета"
 ms.reviewer:
 - karann-msft
 - unniravindranathan
-ms.openlocfilehash: 22643ee4c7d5f858da728ba9d9d2886d600d20f0
-ms.sourcegitcommit: a40c1c1cc05a46410f317a72f695ad1d80f39fa2
+ms.openlocfilehash: 0dbecb8f01acf781ab8d2e77e8df7fa405f74cf1
+ms.sourcegitcommit: d576d84fb4b6a178eb2ac11f55deb08ac771ba1c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/05/2018
+ms.lasthandoff: 01/16/2018
 ---
 # <a name="pack-command-nuget-cli"></a>команда пакет (NuGet CLI)
 
@@ -42,7 +42,7 @@ nuget pack <nuspecPath | projectPath> [options]
 | --- | --- |
 | BasePath | Задает базовый путь к файлам, определенным в `.nuspec` файла. |
 | Построить | Указывает, что проект должен быть создан до начала сборки пакета. |
-| Исключить | Указывает один или несколько шаблонов подстановочный знак, исключаемый при создании пакета. |
+| Исключить | Указывает один или несколько шаблонов подстановочный знак, исключаемый при создании пакета. Чтобы указать несколько шаблонов, повторите флаг - исключения. См. пример ниже. |
 | ExcludeEmptyDirectories | Предотвращает включение пустых каталогов при построении пакета. |
 | ForceEnglishOutput | *(3.5 +)*  Принудительно nuget.exe выполняется с использованием инвариантных, на основе английского языка и региональных параметров. |
 | Справка | Отображает справку по команде. |
@@ -100,4 +100,6 @@ nuget pack foo.csproj -Build -Symbols -Properties owners=janedoe,xiaop;version="
 nuget pack foo.nuspec -Version 2.1.0
 
 nuget pack foo.nuspec -Version 1.0.0 -MinClientVersion 2.5
+
+nuget pack Package.nuspec -exclude "*.exe" -exclude "*.bat"
 ```
