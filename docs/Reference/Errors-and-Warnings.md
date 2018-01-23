@@ -14,11 +14,11 @@ ms.reviewer:
 - anangaur
 - karann-msft
 - unniravindranathan
-ms.openlocfilehash: 53fccbb86f2920d870b5383070d043e25045a626
-ms.sourcegitcommit: a40c1c1cc05a46410f317a72f695ad1d80f39fa2
+ms.openlocfilehash: 29eb72cbb6c095cd3aeb524fd8b28416ec5dc798
+ms.sourcegitcommit: 6ccb963e065680ab2e7df1d8dd5492897fd56b04
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/05/2018
+ms.lasthandoff: 01/23/2018
 ---
 # <a name="errors-and-warnings"></a>Ошибки и предупреждения
 
@@ -31,7 +31,7 @@ ms.lasthandoff: 01/05/2018
 | Группа | Номера ошибок |
 | --- | --- |
 | [Недопустимый ошибок ввода](#invalid-input-errors) | [NU1001](#nu1001), [NU1002](#nu1002), [NU1003](#nu1003) |
-| [Отсутствуют ошибки пакетов и проектов](#missing-package-and-project-errors) | [NU1100](#nu1100), [NU1101](#nu1101), [NU1102](#nu1102), [NU1103](#nu1103), [NU1104](#nu1104), [NU1105](#nu1105), [ NU1106](#nu1106), [NU1107](#nu1107) (ранее NU1607), [NU1108](#nu1107) (ранее NU1606) |
+| [Отсутствуют ошибки пакетов и проектов](#missing-package-and-project-errors) | [NU1100](#nu1100), [NU1101](#nu1101), [NU1102](#nu1102), [NU1103](#nu1103), [NU1104](#nu1104), [NU1105](#nu1105), [ NU1106](#nu1106), [NU1107](#nu1107) (ранее NU1607), [NU1108](#nu1108) (ранее NU1606) |
 | [Ошибки совместимости](#compatibility-errors) | [NU1201](#nu1201), [NU1202](#nu1202), [NU1203](#nu1203), [NU1401](#nu1401) |
 
 **Предупреждения**
@@ -75,7 +75,7 @@ ms.lasthandoff: 01/05/2018
 
 ## <a name="missing-package-and-project-errors"></a>Отсутствуют ошибки пакетов и проектов
 
-[NU1100](#nu1100) | [NU1101](#nu1101) | [NU1102](#nu1102) | [NU1103](#nu1103) | [NU1104 ](#nu1104)  |  [NU1105](#nu1105) | [NU1106](#nu1106)
+[NU1100](#nu1100) | [NU1101](#nu1101) | [NU1102](#nu1102) | [NU1103](#nu1103) | [NU1104](#nu1104) | [NU1105](#nu1105) | [NU1106](#nu1106)
 
 ### <a name="nu1100"></a>NU1100
 
@@ -133,7 +133,7 @@ ms.lasthandoff: 01/05/2018
 | **Основные причины** | Пакеты содержат зависимость от точные версии пакета, вместо неограниченного диапазонов. |
 | **Пример сообщения** | *Не удалось удовлетворить конфликтующие запросы для {id}: {конфликт путь} Framework: {целевого графа}* |
 
-< a name = "NU1107 ></a>
+<a name="nu1107"></a> 
 
 ### <a name="nu1107-previously-nu1607"></a>NU1107 (ранее NU1607)
 
@@ -143,7 +143,7 @@ ms.lasthandoff: 01/05/2018
 | **Основные причины** | Пакеты с ограничениями зависимостей точные версии не позволяют увеличить версии, при необходимости другие пакеты. |
 | **Пример сообщения** | *Для NuGet.Versioning обнаружен конфликт версий. Непосредственно из проекта, чтобы устранить эту проблему, ссылающиеся на пакет.<br/>  NuGet.Packaging 3.5.0 -> (= 3.5.0) NuGet.Versioning<br/> NuGet.Configuration 4.0.0 -> NuGet.Versioning (= 4.0.0)* |
 
-< a name = "NU1108 ></a>
+<a name="nu1108"></a>
 
 ### <a name="nu1108-previously-nu1606"></a>NU1108 (ранее NU1606)
 
@@ -263,8 +263,6 @@ ms.lasthandoff: 01/05/2018
 
 ## <a name="resolver-conflict-warnings"></a>Арбитр конфликтов предупреждения
 
-[NU1608](#nu1608)
-
 ### <a name="nu1608"></a>NU1608
 
 | | |
@@ -275,8 +273,6 @@ ms.lasthandoff: 01/05/2018
 
 ## <a name="package-fallback-warnings"></a>Резервный предупреждения пакетов
 
-[NU1701](#nu1701)
-
 ### <a name="nu1701"></a>NU1701
 
 | | |
@@ -286,8 +282,6 @@ ms.lasthandoff: 01/05/2018
 | **Пример сообщения** | *Пакет «NuGet.Versioning» был восстановлен, вместо этого использовать «portable net45 + win8» целевая платформа проекта «netstandard1.5». Этот пакет не может быть полностью совместим с проектом.* |
 
 ## <a name="feed-warnings"></a>Предупреждения веб-канала
-
-[NU1801](#nu1801)
 
 ### <a name="nu1801"></a>NU1801
 
