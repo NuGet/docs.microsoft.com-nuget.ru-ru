@@ -9,7 +9,6 @@
 ## [Создание пакетов универсальной платформы Windows](Guides/Create-UWP-Packages.md)
 ## [Создание элементов управления универсальной платформы Windows в виде пакетов NuGet](Guides/Create-UWP-Controls.md)
 ## [Создание кроссплатформенных пакетов](Guides/Create-Cross-Platform-Packages.md)
-## [Запрос всех пакетов с помощью API](Guides/api/query-for-all-published-packages.md)
 # Создание пакетов
 ## [Общие сведения и рабочий процесс](Create-Packages/Overview-and-Workflow.md)
 ## [Создание пакета](Create-Packages/Creating-a-Package.md)
@@ -86,6 +85,7 @@
 ### [Поставщики учетных данных nuget.exe](Reference/extensibility/nuget-exe-Credential-Providers.md)
 # API
 ## [Обзор набора средств Visual Studio для Unity](API/overview.md)
+## [Практическое руководство. Запрос всех пакетов с помощью API](Guides/api/query-for-all-published-packages.md)
 ## [Индекс службы](API/service-index.md)
 ## [Принудительная отправка и удаление](API/package-publish-resource.md)
 ## [Поиск](API/search-query-service-resource.md)
