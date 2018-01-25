@@ -1,9 +1,9 @@
-# [Что такое NuGet?](What-is-NuGet.md)
+# [Что такое NuGet?](what-is-nuget.md)
+# [Установка клиентских средств NuGet](install-nuget-client-tools.md)
 # Краткое руководство
 ## [Создание и публикация пакета](Quickstart/Create-and-Publish-a-Package.md)
 ## [Использование пакета](Quickstart/Use-a-Package.md)
 # Направляющие
-## [Установка клиентских средств NuGet](Guides/Install-NuGet.md)
 ## [Создание пакетов NET Standard (Visual Studio 2017)](Guides/Create-NET-Standard-Packages-VS2017.md)
 ## [Создание пакетов NET Standard (Visual Studio 2015)](Guides/Create-NET-Standard-Packages-VS2015.md)
 ## [Создание пакетов универсальной платформы Windows](Guides/Create-UWP-Packages.md)
@@ -19,8 +19,6 @@
 ## [Собственные пакеты](Create-Packages/Native-Packages.md)
 ## [Пакеты символов](Create-Packages/Symbol-Packages.md)
 ## [Публикация пакета](Create-Packages/Publish-a-package.md)
-## [project.json и универсальная платформа Windows](Create-Packages/project-json-and-UWP.md)
-## [Влияние project.json](Create-Packages/project-json-Impact.md)
 # Использование пакетов
 ## [Общие сведения и рабочий процесс](Consume-Packages/Overview-and-Workflow.md)
 ## [Поиск и выбор пакетов](Consume-Packages/Finding-and-Choosing-Packages.md)
@@ -71,7 +69,6 @@
 # Ссылка
 ## [.nuspec](Schema/nuspec.md)
 ## [packages.config](Schema/packages-config.md)
-## [project.json](Schema/project-json.md)
 ## [Управление версиями пакета](reference/package-versioning.md)
 ## [Файл Nuget.Config](Schema/nuget-config-file.md)
 ## [Целевые объекты MSBuild](Schema/msbuild-targets.md)
@@ -83,6 +80,10 @@
 ## Расширение среды
 ### [Поставщики учетных данных NuGet для Visual Studio](Reference/extensibility/Nuget-Credential-Providers-for-Visual-Studio.md)
 ### [Поставщики учетных данных nuget.exe](Reference/extensibility/nuget-exe-Credential-Providers.md)
+## Архивированное содержимое
+### [формат ссылки Project.json](archive/project-json.md)
+### [project.json и универсальная платформа Windows](archive/project-json-and-UWP.md)
+### [Влияние project.json](archive/project-json-impact.md)
 # API
 ## [Обзор набора средств Visual Studio для Unity](API/overview.md)
 ## [Практическое руководство. Запрос всех пакетов с помощью API](Guides/api/query-for-all-published-packages.md)
