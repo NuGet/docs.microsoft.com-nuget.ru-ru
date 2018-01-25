@@ -7,17 +7,16 @@ ms.date: 11/11/2016
 ms.topic: article
 ms.prod: nuget
 ms.technology: 
-ms.assetid: c193f1e3-d114-427f-9425-9930cc8e4db3
 description: "Заметки о выпуске для NuGet 2.5, включая известные проблемы, исправленные ошибки, добавленные функции и DCR."
 keywords: "NuGet 2.5 заметки о выпуске, исправления, известными проблемами, добавлены функции, DCR"
 ms.reviewer:
 - karann-msft
 - unniravindranathan
-ms.openlocfilehash: 8d3bebbbe550645fcffad078538134427103cf98
-ms.sourcegitcommit: d0ba99bfe019b779b75731bafdca8a37e35ef0d9
+ms.openlocfilehash: c2c6cf85b9ebccf200be9ef4a2bf96802cffcaea
+ms.sourcegitcommit: 262d026beeffd4f3b6fc47d780a2f701451663a8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/14/2017
+ms.lasthandoff: 01/25/2018
 ---
 # <a name="nuget-25-release-notes"></a>Заметки о выпуске 2.5 NuGet
 
@@ -43,7 +42,7 @@ NuGet 2.5 была выпущена 25 апреля 2013 г. Этот выпус
     - [#1511](https://nuget.codeplex.com/workitem/1511) — изменить XML код обработки для сохранения форматирования.
 1. [Ральф Адам](http://www.codeplex.com/site/users/view/adamralph) ([@adamralph](https://twitter.com/adamralph))
     - Добавить распознанные слова в пользовательский словарь, чтобы разрешить build.cmd для успешного выполнения.
-1. [Roggeri Бруно](https://www.codeplex.com/site/users/view/broggeri)
+1. [Bruno Roggeri](https://www.codeplex.com/site/users/view/broggeri)
     - Исправьте модульные тесты, при работе в локализованных VS.
 1. [Evans Гарета](https://www.codeplex.com/site/users/view/garethevans)
     - Интерфейс, извлеченные из PackageService
@@ -59,9 +58,9 @@ NuGet 2.5 была выпущена 25 апреля 2013 г. Этот выпус
 1. [Реальное Tony](https://www.codeplex.com/site/users/view/CodeChief) ([@CodeChief](https://twitter.com/codechief))
     - [#3200](https://nuget.codeplex.com/workitem/3200) - MSTest разорвано последние версии NuGet 2.4 и 2,5 построений
 
-# <a name="notable-features-in-the-release"></a>Возможности в выпуске
+## <a name="notable-features-in-the-release"></a>Возможности в выпуске
 
-## <a name="allow-users-to-overwrite-content-files-that-already-exist"></a>Разрешить пользователям переопределять файлы содержимого, которые уже существуют.
+### <a name="allow-users-to-overwrite-content-files-that-already-exist"></a>Разрешить пользователям переопределять файлы содержимого, которые уже существуют.
 
 Одной из наиболее часто запрашиваемых функций все время была возможность перезаписывать файлы содержимого, которые уже существуют на диске, включенный в пакет NuGet. Начиная с версии NuGet 2.5, определяются эти конфликты и вам будет предложено перезаписывать файлы, в то время как ранее эти файлы всегда были пропущены.
 
@@ -71,13 +70,13 @@ NuGet 2.5 была выпущена 25 апреля 2013 г. Этот выпус
 
 Задайте действие по умолчанию из пакета уже существует в целевом проекте. Значение «Перезаписать» всегда перезаписывать файлы. Задайте значение «Пропустить», чтобы пропустить файлы. Если не указан, он запрашивает всех конфликтующих файлов.
 
-## <a name="automatic-import-of-msbuild-targets-and-props-files"></a>Автоматический импорт MSBuild целевые объекты и props-файлы
+### <a name="automatic-import-of-msbuild-targets-and-props-files"></a>Автоматический импорт MSBuild целевые объекты и props-файлы
 
 Был создан новый обычную папку верхнего уровня пакета NuGet.  Как узел `\lib`, `\content`, и `\tools`, теперь можно включить `\build` папки в пакет.  В этой папке можно разместить два файла с фиксированными именами `{packageid}.targets` или `{packageid}.props`. Эти два файла может быть либо напрямую в `build` или в отдельных папках так же, как и другие папки. Правило для выбора папки резервную стратегию наилучшего соответствия платформы имеет точно такое же, как те.
 
 При установке пакета NuGet с файлами \build добавит MSBuild `<Import>` в файле проекта, указывающий на элемент `.targets` и `.props` файлов. `.props` Файл добавляется в начале, в то время как `.targets` файл будет добавлен в нижней.
 
-## <a name="specify-different-references-per-platform-using-references-element"></a>Укажите другой ссылок на платформы с помощью `<References/>` элемент
+### <a name="specify-different-references-per-platform-using-references-element"></a>Укажите другой ссылок на платформы с помощью `<References/>` элемент
 
 Прежде чем 2.5 в `.nuspec` файла, пользователь может указать только файлы ссылок, нужно добавить для всех framework. Теперь эта новая функция 2.5 пользователя появляется возможность разрабатывать `<reference/>` элемент для каждого из поддерживаемых платформ, например:
 
@@ -105,7 +104,7 @@ NuGet 2.5 была выпущена 25 апреля 2013 г. Этот выпус
 
 Примечание: в настоящее время используется пакет nuget.exe для использования этой функции; Обозреватель пакетов NuGet пока не поддерживает его.
 
-## <a name="update-all-button-to-allow-updating-all-packages-at-once"></a>Обновить все кнопку, чтобы разрешить обновление всех пакетов за один раз
+### <a name="update-all-button-to-allow-updating-all-packages-at-once"></a>Обновить все кнопку, чтобы разрешить обновление всех пакетов за один раз
 
 Многим из вас известно о командлете PowerShell «Обновление» для обновления всех своих пакетов; Теперь имеется простой способ сделать это через пользовательский интерфейс.
 
@@ -118,7 +117,7 @@ NuGet 2.5 была выпущена 25 апреля 2013 г. Этот выпус
 
 ![Кнопка «Обновить все» в диалоговом окне](./media/NuGet-2.5/update-all.png)
 
-## <a name="improved-project-reference-support-for-nugetexe-pack"></a>Улучшенные проект ссылку на поддержку nuget.exe пакет
+### <a name="improved-project-reference-support-for-nugetexe-pack"></a>Улучшенные проект ссылку на поддержку nuget.exe пакет
 
 Теперь процессы команду nuget.exe пакетов ссылаться проекты со следующими правилами:
 
@@ -132,7 +131,7 @@ NuGet 2.5 была выпущена 25 апреля 2013 г. Этот выпус
 
 Дополнительные сведения о здесь: [http://nuget.codeplex.com/workitem/936](http://nuget.codeplex.com/workitem/936)
 
-## <a name="add-a-minimum-nuget-version-property-to-packages"></a>Добавление свойства «Минимальная версия NuGet» в пакеты
+### <a name="add-a-minimum-nuget-version-property-to-packages"></a>Добавление свойства «Минимальная версия NuGet» в пакеты
 
 Новый атрибут метаданных с названием «minClientVersion» теперь можно указать минимальную версию клиента NuGet требуется для использования пакета.
 
@@ -146,7 +145,7 @@ NuGet 2.5 была выпущена 25 апреля 2013 г. Этот выпус
 
 Это улучшит на работу существующих начинаются пакеты для установки, но произойдет сбой, указывающий, что версия схемы нераспознанный был определен.
 
-## <a name="dependencies-are-no-longer-unnecessarily-updated-during-package-installation"></a>Зависимости излишне больше не обновляются во время установки пакета
+### <a name="dependencies-are-no-longer-unnecessarily-updated-during-package-installation"></a>Зависимости излишне больше не обновляются во время установки пакета
 
 Прежде чем NuGet 2.5 при установке пакета, пакет уже установлен в проекте, зависят от зависимость будет обновлено в рамках новой установки, даже если существующая версия зависимости.
 
@@ -167,13 +166,13 @@ NuGet 2.5 была выпущена 25 апреля 2013 г. Этот выпус
 
 Дополнительные сведения об этом изменении см. в разделе подробных [рабочий элемент](http://nuget.codeplex.com/workitem/1681) и связанный с ним [поток дискуссии](http://nuget.codeplex.com/discussions/436712).
 
-## <a name="nugetexe-outputs-http-requests-with-detailed-verbosity"></a>NuGet.exe выходные данные HTTP-запросов, если подробный уровень детализации
+### <a name="nugetexe-outputs-http-requests-with-detailed-verbosity"></a>NuGet.exe выходные данные HTTP-запросов, если подробный уровень детализации
 
 При устранении неполадок nuget.exe или просто хотите какие запросов HTTP, выполненных во время операций "-детализации подробные" коммутатор теперь выходные данные всех HTTP-запросов.
 
 ![Выходные данные НТТР из nuget.exe](./media/NuGet-2.5/verbosity.png)
 
-## <a name="nugetexe-push-now-supports-unc-and-folder-sources"></a>NuGet.exe принудительной теперь поддерживает источники UNC-пути и папок
+### <a name="nugetexe-push-now-supports-unc-and-folder-sources"></a>NuGet.exe принудительной теперь поддерживает источники UNC-пути и папок
 
 Перед NuGet 2.5 если предпринята попытка на основе UNC-путь или локальную папку источника пакета для запуска «nuget.exe push» извещающей завершится сбоем. С компонентом недавно добавленных иерархической конфигурации стать часто nuget.exe для ориентируется источник папку в формате UNC или на основе HTTP галереи NuGet.
 
@@ -185,17 +184,17 @@ NuGet 2.5 была выпущена 25 апреля 2013 г. Этот выпус
 nuget push -source \\mycompany\repo\ mypackage.1.0.0.nupkg
 ```
 
-## <a name="nugetexe-supports-explicitly-specified-config-files"></a>NuGet.exe поддерживает явно указанные файлы конфигурации
+### <a name="nugetexe-supports-explicitly-specified-config-files"></a>NuGet.exe поддерживает явно указанные файлы конфигурации
 
 NuGet.exe команды, которые обращаются к конфигурации (все, кроме «спецификация» и «pack») теперь поддерживает новый "-ConfigFile" параметр, благодаря чему файла конфигурации, определенных для использования вместо файла конфигурации по умолчанию в папке % AppData%\nuget\Nuget.Config.
 
-Пример.
+Пример
 
 ```
 nuget sources add -name test -source http://test -ConfigFile C:\test\.nuget\Nuget.Config
 ```
 
-## <a name="support-for-native-projects"></a>Поддержка для собственных проектов
+### <a name="support-for-native-projects"></a>Поддержка для собственных проектов
 
 С помощью NuGet 2.5 инструментарий NuGet теперь доступна для собственных проектов в Visual Studio. Ожидается, что наиболее простые пакеты будут использовать функцию импорта MSBuild выше, с помощью средства, созданные [CoApp проекта](http://coapp.org). Дополнительные сведения см. в статье [сведения об этом средстве](http://coapp.org/news/2013-03-27-The-Long-Awaited-post.html) coapp.org веб-сайта.
 

@@ -7,7 +7,6 @@ ms.date: 12/08/2017
 ms.topic: article
 ms.prod: nuget
 ms.technology: 
-ms.assetid: 62f6962b-7b84-4452-ae0d-a9e1ef1fc6f0
 f1_keywords:
 - vs.toolsoptionspages.nuget_package_manager
 - vs.toolsoptionspages.nuget_package_manager.general
@@ -18,11 +17,11 @@ keywords: "NuGet пользовательского интерфейса, дис
 ms.reviewer:
 - karann-msft
 - unniravindranathan
-ms.openlocfilehash: 39ce53184755887c419c8872148a6c13dc2c65ec
-ms.sourcegitcommit: bdcd2046b1b187d8b59716b9571142c02181c8fb
+ms.openlocfilehash: 0ff60c3cecee5fd9b7f698d2abed7553f5d89c1d
+ms.sourcegitcommit: 262d026beeffd4f3b6fc47d780a2f701451663a8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/10/2018
+ms.lasthandoff: 01/25/2018
 ---
 # <a name="nuget-package-manager-ui"></a>Пользовательский Интерфейс диспетчера пакетов NuGet
 
@@ -137,7 +136,7 @@ ms.lasthandoff: 01/10/2018
 
 ## <a name="package-manager-options-control"></a>Параметры диспетчера пакета управления
 
-При выборе пакета, пользовательский Интерфейс диспетчера пакетов отображает небольшая, расширяемый **параметры** управления под селектор версии (показаны оба свернутое и развернутое). Обратите внимание, что для некоторых типов, таких как .NET Core и используемых в проекте `project.json` формат ссылки, только **Показать окно предварительного просмотра** предоставить параметр.
+При выборе пакета, пользовательский Интерфейс диспетчера пакетов отображает небольшая, расширяемый **параметры** управления под селектор версии (показаны оба свернутое и развернутое). Обратите внимание, что для некоторых проектов только для типов, **Показать окно предварительного просмотра** предоставить параметр.
 
 ![Параметры диспетчера пакетов](media/PackageManagerUIOptions.png)
 

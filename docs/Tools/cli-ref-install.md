@@ -3,21 +3,20 @@ title: "Команда установки NuGet CLI | Документы Microso
 author: kraigb
 ms.author: kraigb
 manager: ghogen
-ms.date: 12/07/2017
+ms.date: 01/18/2018
 ms.topic: reference
 ms.prod: nuget
 ms.technology: 
-ms.assetid: 59ac622f-837c-4545-bc93-a56330e02d71
 description: "Ссылка для установки команды nuget.exe"
 keywords: "NuGet установите ссылку, установите пакет команд"
 ms.reviewer:
 - karann-msft
 - unniravindranathan
-ms.openlocfilehash: 88c123a7f2a3d628713cefcc4b110fb0205093b4
-ms.sourcegitcommit: d0ba99bfe019b779b75731bafdca8a37e35ef0d9
+ms.openlocfilehash: b77e0e6ce045d1a1e59b29f770b5aca13fc4e7e3
+ms.sourcegitcommit: 262d026beeffd4f3b6fc47d780a2f701451663a8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/14/2017
+ms.lasthandoff: 01/25/2018
 ---
 # <a name="install-command-nuget-cli"></a>Установите команду (NuGet CLI)
 
@@ -26,19 +25,19 @@ ms.lasthandoff: 12/14/2017
 Загрузка и установка пакета в проект, установка значений по умолчанию для текущей папки, с помощью источников указанного пакета.
 
 > [!Tip]
-> Чтобы загрузить пакет непосредственно вне контекста проекта, посетите страницу пакета в [nuget.org](https://www.nuget.org) и выберите **загрузки** ссылку. 
+> Чтобы загрузить пакет непосредственно вне контекста проекта, посетите страницу пакета в [nuget.org](https://www.nuget.org) и выберите **загрузки** ссылку.
 
-Если не указан ни один из источников, перечисленные в файле глобальной конфигурации `%APPDATA%\NuGet\NuGet.Config`, используются. В разделе [Настройка поведения NuGet](../consume-packages/configuring-nuget-behavior.md) для получения дополнительных сведений.
+Если не указан ни один из источников, перечисленные в файле глобальной конфигурации `%APPDATA%\NuGet\NuGet.Config`, используются. В разделе [Настройка NuGet поведение](../consume-packages/configuring-nuget-behavior.md) для получения дополнительных сведений.
 
-Если не указано ни одного определенного пакета, `install` устанавливает все пакеты, перечисленные в проекте `packages.config` файл, сделав его аналогично [ `restore` ](#restore). ( `install` Команда не работает с `project.json`.)
+Если не указано ни одного определенного пакета, `install` устанавливает все пакеты, перечисленные в проекте `packages.config` файл, сделав его аналогично [ `restore` ](cli-ref-restore.md).
 
 `install` Команда не изменяла файл проекта или `packages.config`; таким образом, это похоже на `restore` в том, что он только добавляет пакеты на диск при этом не изменяется зависимостей проекта.
 
-Добавление зависимости, добавьте к проекту через пользовательский Интерфейс диспетчера пакетов или консоли в Visual Studio или измените `packages.config` , а затем запустите либо `install` или `restore`. Для проектов с помощью `project.json`, можно изменить этот файл и запустить `restore`.
+Добавление зависимости, добавьте к проекту через пользовательский Интерфейс диспетчера пакетов или консоли в Visual Studio или измените `packages.config` , а затем запустите либо `install` или `restore`.
 
 ## <a name="usage"></a>Использование
 
-```
+```cli
 nuget install <packageID | configFilePath> [options]
 ```
 
@@ -46,9 +45,10 @@ nuget install <packageID | configFilePath> [options]
 
 ## <a name="options"></a>Параметры
 
-| Параметр | Описание |
+| Параметр | Описание: |
 | --- | --- |
-| ConfigFile | *(2.5 +)*  NuGet файла конфигурации для применения. Если не указан, *%AppData%\NuGet\NuGet.Config* используется. |
+| ConfigFile | Файл конфигурации NuGet вступили в силу. Если не указан, *%AppData%\NuGet\NuGet.Config* используется. |
+| DependencyVersion | *(4.4 +)*  Указывает конкретную версию, переопределение поведения по умолчанию для разрешения зависимостей. |
 | DisableParallelProcessing | Запрещение установки нескольких пакетов в параллельном режиме. |
 | ExcludeVersion | Устанавливает пакет в папку с именем и имя пакета и не номер версии. |
 | FallbackSource | *(3.2 +)*  Список источников пакетов для использования как в случае ошибки в случае, если пакет не найден в основной или источник по умолчанию. |
@@ -63,14 +63,14 @@ nuget install <packageID | configFilePath> [options]
 | RequireConsent | Восстановление пакетов проверяет, включена ли перед загрузкой и установкой пакетов. Дополнительные сведения см. в разделе [восстановление пакетов](../consume-packages/package-restore.md). |
 | SolutionDirectory | Задает корневую папку решения, для которого необходимо восстановить пакеты. |
 | Исходный код | Указывает список источников пакетов (в виде URL-адреса) для использования. Если не указано, команда использует источники, предоставляемые в файлах конфигурации см. в разделе [NuGet Настройка поведения](../Consume-Packages/Configuring-NuGet-Behavior.md). |
-| Уровень детализации | Указывает объем сведений в выходных данных: *обычного*, *тихий*, *подробные (2.5 +)*. |
+| Уровень детализации | Указывает объем сведений в выходных данных: *обычного*, *тихий*, *подробные*. |
 | Версия | Указывает версию пакета для установки. |
 
 См. также [переменные среды](cli-ref-environment-variables.md)
 
 ## <a name="examples"></a>Примеры
 
-```
+```cli
 nuget install elmah
 
 nuget install packages.config

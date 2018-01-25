@@ -3,21 +3,20 @@ title: "Переменные среды NuGet CLI | Документы Microsoft
 author: kraigb
 ms.author: kraigb
 manager: ghogen
-ms.date: 10/24/2017
+ms.date: 01/18/2018
 ms.topic: reference
 ms.prod: nuget
 ms.technology: 
-ms.assetid: 1f5c31ca-fa0a-4798-a906-110f2c73d00b
 description: "Ссылка для переменных среды nuget.exe"
 keywords: "переменные среды NuGet"
 ms.reviewer:
 - karann-msft
 - unniravindranathan
-ms.openlocfilehash: 0a1dc2a928da657b0d222c2adc02fbd850b66704
-ms.sourcegitcommit: d0ba99bfe019b779b75731bafdca8a37e35ef0d9
+ms.openlocfilehash: 516a66103d6159a3d68b5383090e8e3b519a5588
+ms.sourcegitcommit: 262d026beeffd4f3b6fc47d780a2f701451663a8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/14/2017
+ms.lasthandoff: 01/25/2018
 ---
 # <a name="nuget-cli-environment-variables"></a>Переменные среды NuGet CLI
 
@@ -25,7 +24,7 @@ ms.lasthandoff: 12/14/2017
 
 Как правило, параметры, указанные непосредственно в командной строке или в файлы конфигурации NuGet имеют приоритет, но существуют некоторые исключения, такие как *FORCE_NUGET_EXE_INTERACTIVE*. Если обнаружится, что nuget.exe различия между компьютерами, переменная среды может стать причиной. Например, Azure Web Apps Kudu (используется во время развертывания) имеет *NUGET_XMLDOC_MODE* значение *пропустить* для ускорения восстановления производительности пакетов и сэкономить место на диске.
 
-| Переменная | Описание | Примечания |
+| Переменная | Описание: | Примечания |
 | --- | --- | --- |
 | http_proxy | Прокси-сервер HTTP для операции NuGet HTTP. | Это может быть задано как `http://<username>:<password>@proxy.com`. |
 | no_proxy | Настраивает домены, которые можно обойти с помощью прокси-сервера. | Указан в качестве доменов, разделенных точкой с запятой (,). |

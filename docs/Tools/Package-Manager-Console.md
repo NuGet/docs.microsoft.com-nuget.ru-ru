@@ -3,28 +3,27 @@ title: "Руководство по консоли диспетчера паке
 author: kraigb
 hms.author: kraigb
 manager: ghogen
-ms.date: 10/24/2017
+ms.date: 01/23/2018
 ms.topic: article
 ms.prod: nuget
 ms.technology: 
-ms.assetid: 2b92b119-6861-406c-82af-9d739af230e4
 f1_keywords: vs.nuget.packagemanager.console
 description: "Инструкции по использованию консоли диспетчера пакетов NuGet в Visual Studio для работы с пакетами."
 keywords: "Консоль диспетчера пакетов NuGet, powershell NuGet, управлять пакетами NuGet"
 ms.reviewer:
 - karann-msft
 - unniravindranathan
-ms.openlocfilehash: b8f1df23d1a43412868c14e508ee5221d48dcc7c
-ms.sourcegitcommit: bdcd2046b1b187d8b59716b9571142c02181c8fb
+ms.openlocfilehash: b89c51812cee0f64c6f5c39cd9d86bc4a0be068e
+ms.sourcegitcommit: 262d026beeffd4f3b6fc47d780a2f701451663a8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/10/2018
+ms.lasthandoff: 01/25/2018
 ---
 # <a name="package-manager-console"></a>Консоль диспетчера пакетов
 
 Консоль диспетчера пакетов NuGet встроены в Visual Studio в Windows 2012 и более поздних версий. (Это не входят в состав Visual Studio для Mac или кода Visual Studio.)
 
-Консоль дает возможность использовать [команд NuGet PowerShell](../tools/powershell-reference.md) для поиска, установки, удаления и обновить пакеты NuGet. С помощью консоли требуется в случаях, где пользовательский Интерфейс диспетчера пакетов не обеспечивает способ выполнения операции.
+Консоль дает возможность использовать [команд NuGet PowerShell](../tools/powershell-reference.md) для поиска, установки, удаления и обновить пакеты NuGet. С помощью консоли требуется в случаях, где пользовательский Интерфейс диспетчера пакетов не обеспечивает способ выполнения операции. Для использования `nuget.exe` команд в консоли в разделе [nuget.exe CLI в консоли с помощью](#using-the-nugetexe-cli-in-the-console).
 
 Например поиск и установка пакета выполняется с 3 простых шага:
 
@@ -43,17 +42,6 @@ ms.lasthandoff: 01/10/2018
     # Install the Elmah package to the project named MyProject.
     Install-Package Elmah -ProjectName MyProject
     ```
-
-В этом разделе.
-
-- [Открытие консоли](#opening-the-console-and-console-controls)
-- [Установка пакета](#installing-a-package)
-- [Удаление пакета](#uninstalling-a-package)
-- [Поиск пакета](#finding-a-package)
-- [Обновление пакета](#updating-a-package)
-- [Доступность консоли](#availability-of-the-console)
-- [Расширение консоли диспетчера пакетов](#extending-the-package-manager-console)
-- [Настройка профиля NuGet PowerShell](#setting-up-a-nuget-powershell-profile)
 
 > [!Important]
 > Все операции, которые доступны в консоли можно также с [NuGet CLI](../tools/nuget-exe-cli-reference.md). Однако команды консоли работать в контексте Visual Studio и сохраненное решение или проект и часто выполнять больше, чем их эквивалентные команды CLI. Например установка пакета через консоль добавляет ссылку на проект, тогда как команду CLI не делает. По этой причине разработчики, работающие в Visual Studio обычно используется консоль, чтобы CLI.
@@ -96,8 +84,8 @@ Install-Package Elmah -ProjectName UtilitiesLib
 - Отображает применимые условия лицензионных соглашений в окне консоли с неявные соглашения. Если вы не согласны с условиями, следует удалить пакет немедленно.
 - Добавляет ссылку на проект в любой формат ссылки уже используется. В обозревателе решений и в нем применяется ссылка впоследствии отображаются ссылки. Обратите внимание, что с PackageReference, необходимо сохранить проект, чтобы увидеть изменения в файл проекта напрямую.
 - Кэширует пакета:
-    - PackageReference: пакет кэшируется в `%USERPROFILE%\.nuget\packages` и блокировки файлов, т. е. `project.assets.json` обновляется.
-    - `packages.config`: создает `packages` перейдите в папку корень решения и копирует файлы пакетов в подпапку внутри него. `package.config` Обновить файл.
+  - PackageReference: пакет кэшируется в `%USERPROFILE%\.nuget\packages` и блокировки файлов, т. е. `project.assets.json` обновляется.
+  - `packages.config`: создает `packages` перейдите в папку корень решения и копирует файлы пакетов в подпапку внутри него. `package.config` Обновить файл.
 - Обновления `app.config` и/или `web.config` Если пакет использует [источника и конфигурации файла преобразования](../create-packages/source-and-config-file-transformations.md).
 - Устанавливает все зависимости, если он уже имеется в проекте. Это обновление версий пакета в процессе, как описано в [разрешении зависимостей](../consume-packages/dependency-resolution.md).
 - Отображает файл readme пакета, если он доступен в окне Visual Studio.
@@ -182,13 +170,11 @@ Find-Package jquery -AllVersions -ExactMatch
 
 ![Установка и использование MvcScaffold](media/PackageManagerConsoleInstall.png)
 
-## <a name="setting-up-a-nuget-powershell-profile"></a>Настройка профиля PowerShell NuGet
+## <a name="setting-up-a-nuget-powershell-profile"></a>Настройка профиля NuGet PowerShell
 
 Профиль PowerShell позволяет сделать доступными часто используемые команды при любом использовании PowerShell. NuGet поддерживает NuGet отдельный профиль, обычно находятся в следующем расположении:
 
-```
-%UserProfile%\Documents\WindowsPowerShell\NuGet_profile.ps1
-```
+    %UserProfile%\Documents\WindowsPowerShell\NuGet_profile.ps1
 
 Чтобы найти профиль, введите `$profile` в консоли:
 
@@ -198,3 +184,12 @@ C:\Users\<user>\Documents\WindowsPowerShell\NuGet_profile.ps1
 ```
 
 Дополнительные сведения см. в [профили Windows PowerShell](https://technet.microsoft.com/library/bb613488.aspx).
+
+## <a name="using-the-nugetexe-cli-in-the-console"></a>С помощью nuget.exe CLI в консоли
+
+Чтобы сделать [ `nuget.exe` CLI](nuget-exe-CLI-Reference.md) доступны в консоли диспетчера пакетов установки [NuGet.CommandLine](http://www.nuget.org/packages/NuGet.CommandLine/) пакета с помощью консоли:
+
+```ps
+# Other versions are available, see http://www.nuget.org/packages/NuGet.CommandLine/
+Install-Package NuGet.CommandLine -Version 4.4.1
+```

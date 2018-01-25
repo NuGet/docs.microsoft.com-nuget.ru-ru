@@ -11,17 +11,16 @@ ms.date: 10/26/2017
 ms.topic: reference
 ms.prod: nuget
 ms.technology: 
-ms.assetid: 148d743a-09e5-4539-8454-675be11902db
 description: "Шаблон URL-адреса отчета о нарушении позволяет клиентам отображать ссылку на отчет о нарушении в их пользовательского интерфейса."
 keywords: "Сообщить о нарушении NuGet интерфейса API, NuGet API файл политикам, NuGet.org шаблон URL-адреса отчета"
 ms.reviewer:
 - karann
 - unniravindranathan
-ms.openlocfilehash: 7b3413297f5a7fcf0e2c7757036b1f240ed0058a
-ms.sourcegitcommit: d0ba99bfe019b779b75731bafdca8a37e35ef0d9
+ms.openlocfilehash: c12be294c71547fbce421c72aa091e0eee15aacd
+ms.sourcegitcommit: 262d026beeffd4f3b6fc47d780a2f701451663a8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/14/2017
+ms.lasthandoff: 01/25/2018
 ---
 # <a name="report-abuse-url-template"></a>Шаблон URL-адреса отчета о нарушении
 
@@ -54,7 +53,7 @@ URL-адрес для следующего API — это значение `@id`
 
 ### <a name="url-placeholders"></a>Местозаполнители URL-адресов
 
-Имя        | Тип    | Обязательно | Примечания
+name        | Тип    | Обязательно | Примечания
 ----------- | ------- | -------- | -----
 `{id}`      | string  | Нет       | Идентификатор пакета для сообщения о нарушении для
 `{version}` | string  | Нет       | Версия пакета для сообщения о нарушении для
@@ -63,12 +62,8 @@ URL-адрес для следующего API — это значение `@id`
 
 Например nuget.org отчетов о нарушении шаблона выглядит следующим образом:
 
-```
-https://www.nuget.org/packages/{id}/{version}/ReportAbuse
-```
+    https://www.nuget.org/packages/{id}/{version}/ReportAbuse
 
 Если реализация клиента должна отображать ссылку на форму отчета о нарушении для NuGet.Versioning 4.3.0, он бы привести следующий URL-адрес и предоставить его для пользователя:
 
-```
-https://www.nuget.org/packages/NuGet.Versioning/4.3.0/ReportAbuse
-```
+    https://www.nuget.org/packages/NuGet.Versioning/4.3.0/ReportAbuse

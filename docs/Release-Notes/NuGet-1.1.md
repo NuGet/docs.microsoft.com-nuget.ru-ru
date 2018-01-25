@@ -7,17 +7,16 @@ ms.date: 11/11/2016
 ms.topic: article
 ms.prod: nuget
 ms.technology: 
-ms.assetid: 0e7688f7-09d2-4477-9fdf-0e27f572a4de
 description: "Заметки о выпуске для NuGet 1.1, включая известные проблемы, исправленные ошибки, добавленные функции и DCR."
 keywords: "NuGet 1.1 заметки о выпуске, исправления, известными проблемами, добавлены функции, DCR"
 ms.reviewer:
 - karann-msft
 - unniravindranathan
-ms.openlocfilehash: 593848b3e5e063816fbbec8b4d11e6fc789d05cd
-ms.sourcegitcommit: a40c1c1cc05a46410f317a72f695ad1d80f39fa2
+ms.openlocfilehash: 68c3415fe328fe6d9db91757a7fc180da8489a9f
+ms.sourcegitcommit: 262d026beeffd4f3b6fc47d780a2f701451663a8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/05/2018
+ms.lasthandoff: 01/25/2018
 ---
 # <a name="nuget-10-and-11-release-notes"></a>Заметки о выпуске NuGet 1.0 и 1.1
 
@@ -132,7 +131,7 @@ NuGet включает следующие компоненты:
 * [Добавление справки по командлетам](http://nuget.codeplex.com/workitem/23)
 * [После загрузки пакета будет проверять хэш из канала](http://nuget.codeplex.com/workitem/18)
 
-## <a name="ctp-2"></a>CTP-ВЕРСИЯ 2
+## <a name="ctp-2"></a>CTP 2
 
 Ниже приведены наиболее существенные изменения, внесенные в CTP-версии 2.
 
@@ -224,7 +223,7 @@ NuGet включает следующие компоненты:
 * [NuPack / NuGet -&gt; ошибка консоли диспетчера пакетов](http://nuget.codeplex.com/workitem/335)
 * [Добавление пакета диалоговое окно показывает лицензии приемки для уже установлен упакована](http://nuget.codeplex.com/workitem/336)
 
-## <a name="ctp-1"></a>CTP-ВЕРСИЯ 1
+## <a name="ctp-1"></a>CTP 1
 
 Ниже приведен список компонентов и ошибок, исправленных в CTP-версия 1 NuGet.
 

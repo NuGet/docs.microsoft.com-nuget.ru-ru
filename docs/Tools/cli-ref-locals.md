@@ -3,23 +3,22 @@ title: "Локальные переменные команду NuGet CLI | До�
 author: kraigb
 ms.author: kraigb
 manager: ghogen
-ms.date: 10/24/2017
+ms.date: 01/18/2018
 ms.topic: reference
 ms.prod: nuget
 ms.technology: 
-ms.assetid: 7f672c7c-74c9-4296-bc27-4d47882b541c
 description: "Ссылка для команды локальные nuget.exe"
 keywords: "Справочник по NuGet локальные переменные, локальные команды"
 ms.reviewer:
 - karann-msft
 - unniravindranathan
-ms.openlocfilehash: 8cc06eedc20507e2bdd210e40c471ff551b89563
-ms.sourcegitcommit: d0ba99bfe019b779b75731bafdca8a37e35ef0d9
+ms.openlocfilehash: b2f62a9ab5699bfb486eee146ab7046f5240aa50
+ms.sourcegitcommit: 262d026beeffd4f3b6fc47d780a2f701451663a8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/14/2017
+ms.lasthandoff: 01/25/2018
 ---
-## <a name="locals-command-nuget-cli"></a>Команда локальные переменные (NuGet CLI)
+# <a name="locals-command-nuget-cli"></a>Команда локальные переменные (NuGet CLI)
 
 **Применяется к:** пакета потребления &bullet; **поддерживаемые версии:** 3.3 +
 
@@ -27,7 +26,7 @@ ms.lasthandoff: 12/14/2017
 
 ## <a name="usage"></a>Использование
 
-```
+```cli
 nuget locals <cache> [options]
 ```
 
@@ -35,7 +34,7 @@ nuget locals <cache> [options]
 
 ## <a name="options"></a>Параметры
 
-| Параметр | Описание |
+| Параметр | Описание: |
 | --- | --- |
 | Clear | Удаляет указанный кэш. |
 | ConfigFile | Файл конфигурации NuGet вступили в силу. Если не указан, *%AppData%\NuGet\NuGet.Config* используется. |
@@ -49,7 +48,7 @@ nuget locals <cache> [options]
 
 ## <a name="examples"></a>Примеры
 
-```
+```cli
 nuget locals all -list
 nuget locals http-cache -clear
 ```

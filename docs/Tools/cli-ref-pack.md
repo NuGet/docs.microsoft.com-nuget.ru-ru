@@ -3,21 +3,20 @@ title: "Команда пакет NuGet CLI | Документы Microsoft"
 author: kraigb
 ms.author: kraigb
 manager: ghogen
-ms.date: 12/08/2017
+ms.date: 01/18/2018
 ms.topic: reference
 ms.prod: nuget
 ms.technology: 
-ms.assetid: 55e9e4d2-8039-4e9b-bdd9-c8b3eb0e894b
 description: "Справочник по командной пакет nuget.exe"
 keywords: "ссылка на пакет NuGet, команда пакета"
 ms.reviewer:
 - karann-msft
 - unniravindranathan
-ms.openlocfilehash: 0dbecb8f01acf781ab8d2e77e8df7fa405f74cf1
-ms.sourcegitcommit: d576d84fb4b6a178eb2ac11f55deb08ac771ba1c
+ms.openlocfilehash: 732a712f88c6267caae361673a05af0781877cf4
+ms.sourcegitcommit: 262d026beeffd4f3b6fc47d780a2f701451663a8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/16/2018
+ms.lasthandoff: 01/25/2018
 ---
 # <a name="pack-command-nuget-cli"></a>команда пакет (NuGet CLI)
 
@@ -30,7 +29,7 @@ ms.lasthandoff: 01/16/2018
 
 ## <a name="usage"></a>Использование
 
-```
+```cli
 nuget pack <nuspecPath | projectPath> [options]
 ```
 
@@ -57,7 +56,7 @@ nuget pack <nuspecPath | projectPath> [options]
 | Суффикс | *(3.4.4+)*  Добавляет суффикс для созданного внутреннего номер_версии, обычно используется для добавления сборки или другими идентификаторами предварительного выпуска. Например, с помощью `-suffix nightly` создаст пакет like номера версии `1.2.3-nightly`. Суффиксы должно начинаться с буквы, чтобы избежать предупреждения, ошибки и потенциальных несовместимость с различными версиями NuGet и диспетчер пакетов NuGet. |
 | Символы | Указывает, что пакет содержит источники и символы. При использовании с `.nuspec` файла, эта команда создает файл регулярного пакета NuGet и соответствующего пакета символов. |
 | Средство | Указывает, что следует поместить выходные файлы проекта в `tool` папки. |
-| Уровень детализации | Указывает объем сведений в выходных данных: *обычного*, *тихий*, *подробные (2.5 +)*. |
+| Уровень детализации | Указывает объем сведений в выходных данных: *обычного*, *тихий*, *подробные*. |
 | Версия | Переопределяет номером версии из `.nuspec` файла. |
 
 См. также [переменные среды](cli-ref-environment-variables.md)
@@ -83,7 +82,7 @@ nuget pack <nuspecPath | projectPath> [options]
 
 ## <a name="examples"></a>Примеры
 
-```
+```cli
 nuget pack
 
 nuget pack foo.nuspec

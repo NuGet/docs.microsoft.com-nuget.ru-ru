@@ -3,21 +3,20 @@ title: "Ссылка NuGet интерфейса командной строки 
 author: kraigb
 ms.author: kraigb
 manager: ghogen
-ms.date: 10/24/2017
+ms.date: 01/23/2018
 ms.topic: reference
 ms.prod: nuget
 ms.technology: 
-ms.assetid: d777c424-0cf3-4bc0-8abd-7ca16c22192b
 description: "Справочник по командной строке индекса для nuget.exe CLI"
 keywords: "ссылка на индекс NuGet.exe, интерфейс командной строки nuget.exe, nuget.exe CLI, команды nuget"
 ms.reviewer:
 - karann-msft
 - unniravindranathan
-ms.openlocfilehash: 5dba358b1dda46f551721461e0460219f8210f9a
-ms.sourcegitcommit: bdcd2046b1b187d8b59716b9571142c02181c8fb
+ms.openlocfilehash: 8b1ee17702f5a54a77dc2cd663e13729a9b4a39f
+ms.sourcegitcommit: 262d026beeffd4f3b6fc47d780a2f701451663a8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/10/2018
+ms.lasthandoff: 01/25/2018
 ---
 # <a name="nuget-cli-reference"></a>Справочник по NuGet CLI
 
@@ -31,11 +30,16 @@ NuGet интерфейса командной строки (CLI), `nuget.exe`, �
 
 [!INCLUDE[install-cli](../includes/install-cli.md)]
 
+> [!Tip]
+> Чтобы сделать доступными в консоли диспетчера пакетов NuGet CLI в Visual Studio, в разделе [nuget.exe CLI в консоли с помощью](package-manager-console.md#using-the-nugetexe-cli-in-the-console).
+
 ## <a name="availability"></a>Доступность
 
+В разделе [функции доступности](../install-nuget-client-tools.md#feature-availability) для точных сведений.
+
 - Все команды, доступные в Windows.
-- Все команды работают с [nuget.exe на моно](../guides/install-nuget.md#mac-osx-and-linux) случаев, определенных для `pack`, `restore`, и `update`.
-- `pack`, `restore`, `delete`, `locals`, И `push` команды также доступны на Mac и Linux по [dotnet CLI](dotnet-Commands.md).
+- Все команды работают с ОС Mono, за исключением оговоренных для nuget.exe `pack`, `restore`, и `update`.
+- `pack`, `restore`, `delete`, `locals`, И `push` команды также доступны на Mac и Linux через dotnet CLI.
 
 ## <a name="commands-and-applicability"></a>Команды и применимости
 
@@ -51,7 +55,6 @@ NuGet интерфейса командной строки (CLI), `nuget.exe`, �
 | [restore](cli-ref-restore.md) | Потребление | 2.7+ | Восстанавливает все пакеты ссылается формат ссылки пакета используется. При выполнении на моно восстановление пакетов с помощью PackageReference формат не поддерживается. |
 | [setapikey](cli-ref-setapikey.md) | Публикация потребление | Все | Сохраняет ключ API для источника данного пакета, если источник этого пакета требуется ключ доступа. |
 | [spec](cli-ref-spec.md) | Создание | Все | Создает `.nuspec` файл с использованием маркеров, при создании файла из проекта Visual Studio. |
-
 
 | Дополнительные команды | Применимых ролей | Версия NuGet | Описание: |
 | --- | --- | --- | --- |

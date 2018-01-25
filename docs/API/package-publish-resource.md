@@ -11,17 +11,16 @@ ms.date: 10/26/2017
 ms.topic: reference
 ms.prod: nuget
 ms.technology: 
-ms.assetid: 1eaa403a-5c13-4c05-9352-2f791b98aa7e
 description: "Служба публикации позволяет клиентам публикации новых пакетов и исключить или удалите существующие пакеты."
 keywords: "Пакет NuGet API push, NuGet API удалить пакет, NuGet API исключить пакета пакет NuGet интерфейса API передачи, NuGet API создания пакета"
 ms.reviewer:
 - karann
 - unniravindranathan
-ms.openlocfilehash: 5fbcd82b09ebd56ae21103640e7c39b482059525
-ms.sourcegitcommit: bdcd2046b1b187d8b59716b9571142c02181c8fb
+ms.openlocfilehash: f8051ca57fccae77917567d8c9f2f8a120a8d884
+ms.sourcegitcommit: 262d026beeffd4f3b6fc47d780a2f701451663a8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/10/2018
+ms.lasthandoff: 01/25/2018
 ---
 # <a name="push-and-delete"></a>Принудительные и удалить
 
@@ -52,9 +51,7 @@ PackagePublish/2.0.0 | Первоначальный выпуск
 
 NuGet.org поддерживает принудительную отправку новых пакетов с помощью следующих API. Если пакет с предоставленным Идентификатором и версией уже существует, nuget.org отклонит принудительной отправки. Другие источники пакетов могут поддерживать замены существующего пакета.
 
-```
-PUT https://www.nuget.org/api/v2/package
-```
+    PUT https://www.nuget.org/api/v2/package
 
 ### <a name="request-parameters"></a>Параметры запроса
 
@@ -86,9 +83,7 @@ X-NuGet-ApiKey | Header | string | да      | Например `X-NuGet-ApiKey:
 
 NuGet.org интерпретирует запроса на удаление пакета как объект «исключить». Это означает, что пакет по-прежнему доступен для существующих потребителей пакета, но пакета больше не отображается в результатах поиска или веб-интерфейса. Дополнительные сведения об этом практическом см. в разделе [удалить пакеты](../policies/deleting-packages.md) политики. Реализации других серверов могут интерпретировать этот сигнал как окончательного удаления, возможностью удаления или исключить. Например [NuGet.Server](https://www.nuget.org/packages/NuGet.Server) (реализация сервера только поддержка более старых API V2) поддерживает обработка данного запроса в качестве unlist или окончательного удаления зависимости от параметра конфигурации.
 
-```
-DELETE https://www.nuget.org/api/v2/package/{ID}/{VERSION}
-```
+    DELETE https://www.nuget.org/api/v2/package/{ID}/{VERSION}
 
 ### <a name="request-parameters"></a>Параметры запроса
 
@@ -111,9 +106,7 @@ X-NuGet-ApiKey | Header | string | да      | Например `X-NuGet-ApiKey:
 
 Если пакет уже присутствует в списке, запрос по-прежнему выполняется успешно.
 
-```
-POST https://www.nuget.org/api/v2/package/{ID}/{VERSION}
-```
+    POST https://www.nuget.org/api/v2/package/{ID}/{VERSION}
 
 ### <a name="request-parameters"></a>Параметры запроса
 

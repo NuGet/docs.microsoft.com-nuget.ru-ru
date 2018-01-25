@@ -7,17 +7,16 @@ ms.date: 11/11/2016
 ms.topic: article
 ms.prod: nuget
 ms.technology: 
-ms.assetid: 6f972803-9e17-43f5-b77b-973c3accf695
 description: "Заметки о выпуске для NuGet 2.1, включая известные проблемы, исправленные ошибки, добавленные функции и DCR."
 keywords: "NuGet 2.1 заметки о выпуске, исправления, известными проблемами, добавлены функции, DCR"
 ms.reviewer:
 - karann-msft
 - unniravindranathan
-ms.openlocfilehash: dafe575eedbfed215c0b1c86795bea281de97252
-ms.sourcegitcommit: a40c1c1cc05a46410f317a72f695ad1d80f39fa2
+ms.openlocfilehash: 05cdb898cc674ac7eadb238d41896638d8e3488c
+ms.sourcegitcommit: 262d026beeffd4f3b6fc47d780a2f701451663a8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/05/2018
+ms.lasthandoff: 01/25/2018
 ---
 # <a name="nuget-21-release-notes"></a>Заметки о выпуске 2.1 NuGet
 
@@ -101,16 +100,16 @@ NuGet 2.1 обеспечивает более детальный контрол�
 
 |NuGet 2.0 и более ранних версий|NuGet 2.1|
 |----------------|-----------|
-|winRT45. NETCore45|Windows, Windows8, win, win8|
+|winRT45, .NETCore45|Windows, Windows8, win, win8|
 
 <br/>
 Для проектов Windows Phone идентификаторы выглядеть следующим образом:
 
 |Phone ОС|NuGet 2.0 и более ранних версий|NuGet 2.1
 |----------------|-----------|-----------|
-|Windows Phone 7|silverlight3 wp|WP WindowsPhone7 wp7 WindowsPhone,|
-|Windows Phone 7.5 (Mango)|silverilght4 wp71|wp71 WindowsPhone71|
-|Windows Phone 8|(не поддерживается)|wp8 WindowsPhone8|
+|Windows Phone 7|silverlight3 wp|wp, wp7, WindowsPhone, WindowsPhone7|
+|Windows Phone 7.5 (Mango)|silverilght4-wp71|wp71, WindowsPhone71|
+|Windows Phone 8|(не поддерживается)|wp8, WindowsPhone8|
 <br/>
 Все изменения старые имена framework будет продолжать полностью поддерживаются NuGet 2.1.  Продвижение вперед, новые имена можно использовать как они будут более стабильные будущими версиями соответствующих платформ. Новые имена будут *не* быть поддерживается в версиях, предшествовавших 2.1 NuGet, тем не менее, поэтому соответственно планировать время, чтобы переключиться.
 

@@ -11,17 +11,16 @@ ms.date: 10/26/2017
 ms.topic: reference
 ms.prod: nuget
 ms.technology: 
-ms.assetid: ec68b5d1-a684-4995-b1a6-6210dbb24875
 description: "Базовый адрес пакета — это простой интерфейс для выборки в самом пакете."
 keywords: "Контейнер, базовый адрес для пакета NuGet, nupkg NuGet API версии пакета NuGet API, NuGet API с плоскими NuGet не включенных в список пакетов, nuspec загрузки NuGet API"
 ms.reviewer:
 - karann
 - unniravindranathan
-ms.openlocfilehash: a581f9854410bc1a84d65310b38928a1d889ece2
-ms.sourcegitcommit: a40c1c1cc05a46410f317a72f695ad1d80f39fa2
+ms.openlocfilehash: c2e631dc0bba95ac849430d77142f27ef591f741
+ms.sourcegitcommit: 262d026beeffd4f3b6fc47d780a2f701451663a8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/05/2018
+ms.lasthandoff: 01/25/2018
 ---
 # <a name="package-content"></a>Содержимое пакета
 
@@ -52,9 +51,7 @@ PackageBaseAddress/3.0.0 | Первоначальный выпуск
 > [!Note]
 > Этот список содержит обе версии указанные и неуказанные пакета.
 
-```
-GET {@id}/{LOWER_ID}/index.json
-```
+    GET {@id}/{LOWER_ID}/index.json
 
 ### <a name="request-parameters"></a>Параметры запроса
 
@@ -80,9 +77,7 @@ name     | Тип             | Обязательно | Примечания
 
 ### <a name="sample-request"></a>Пример запроса
 
-```
-GET https://api.nuget.org/v3-flatcontainer/owin/index.json
-```
+    GET https://api.nuget.org/v3-flatcontainer/owin/index.json
 
 ### <a name="sample-response"></a>Пример ответа
 
@@ -92,9 +87,7 @@ GET https://api.nuget.org/v3-flatcontainer/owin/index.json
 
 Если клиент знает ИД пакета и версия и хочет скачать содержимое пакета, достаточно лишь создать следующий URL-адрес:
 
-```
-GET {@id}/{LOWER_ID}/{LOWER_VERSION}/{LOWER_ID}.{LOWER_VERSION}.nupkg
-```
+    GET {@id}/{LOWER_ID}/{LOWER_VERSION}/{LOWER_ID}.{LOWER_VERSION}.nupkg
 
 ### <a name="request-parameters"></a>Параметры запроса
 
@@ -115,9 +108,7 @@ LOWER_VERSION | URL-адрес    | string | да      | Версия пакет
 
 ### <a name="sample-request"></a>Пример запроса
 
-```
-GET https://api.nuget.org/v3-flatcontainer/newtonsoft.json/9.0.1/newtonsoft.json.9.0.1.nupkg
-```
+    GET https://api.nuget.org/v3-flatcontainer/newtonsoft.json/9.0.1/newtonsoft.json.9.0.1.nupkg
 
 ### <a name="sample-response"></a>Пример ответа
 
@@ -127,9 +118,7 @@ GET https://api.nuget.org/v3-flatcontainer/newtonsoft.json/9.0.1/newtonsoft.json
 
 Если клиент знает ИД пакета и версия и хочет загрузить манифест пакета, достаточно лишь создать следующий URL-адрес:
 
-```
-GET {@id}/{LOWER_ID}/{LOWER_VERSION}/{LOWER_ID}.nuspec
-```
+    GET {@id}/{LOWER_ID}/{LOWER_VERSION}/{LOWER_ID}.nuspec
 
 ### <a name="request-parameters"></a>Параметры запроса
 
@@ -150,9 +139,7 @@ LOWER_VERSION | URL-адрес    | целочисленный | да      | В�
 
 ### <a name="sample-request"></a>Пример запроса
 
-```
-GET https://api.nuget.org/v3-flatcontainer/newtonsoft.json/6.0.4/newtonsoft.json.nuspec
-```
+    GET https://api.nuget.org/v3-flatcontainer/newtonsoft.json/6.0.4/newtonsoft.json.nuspec
 
 ### <a name="sample-response"></a>Пример ответа
 

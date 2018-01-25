@@ -7,19 +7,18 @@ ms.date: 11/11/2016
 ms.topic: article
 ms.prod: nuget
 ms.technology: 
-ms.assetid: 0b76064f-0607-438a-bbf8-dd862690f48e
 description: "Заметки о выпуске, включая известные проблемы, исправленные ошибки, добавленные функции и DCR второй бета-версии 3.5 NuGet."
 keywords: "Второй бета-версии 3.5 NuGet заметки о выпуске, исправления, известными проблемами, добавлены функции, DCR"
 ms.reviewer:
 - karann-msft
 - unniravindranathan
-ms.openlocfilehash: 6dd388e52308d2f3cd32d4d6c66c2868f0ae2a41
-ms.sourcegitcommit: d0ba99bfe019b779b75731bafdca8a37e35ef0d9
+ms.openlocfilehash: 4073b669c19f9e96ebd35ba269919b5f42313e7c
+ms.sourcegitcommit: 262d026beeffd4f3b6fc47d780a2f701451663a8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/14/2017
+ms.lasthandoff: 01/25/2018
 ---
-# <a name="35-beta2-release-notes"></a>3.5 заметки о выпуске бета-версия 2
+# <a name="nuget-35-beta2-release-notes"></a>Заметки о выпуске NuGet 3.5 бета-версия 2
 
 [Заметки о выпуске 3.5 Beta NuGet](../release-notes/nuget-3.5-Beta.md) | [заметки о выпуске 3.5 RC NuGet](../release-notes/nuget-3.5-RC.md)
 
@@ -27,9 +26,7 @@ NuGet 3.5 бета-версии 2 RTM был выпущен для Visual Studio
 
 [Полный журнал изменений](https://github.com/NuGet/NuGet.Client/compare/release-3.5.0-beta...release-3.5.0-beta2)
 
-[Список вопросов](https://github.com/Nuget/Home/issues?q=is%3Aissue+milestone%3A%223.5+Beta2%22+is%3Aclosed)
-
-# <a name="notable-changes"></a>Существенные изменения
+[Список проблем](https://github.com/Nuget/Home/issues?q=is%3Aissue+milestone%3A%223.5+Beta2%22+is%3Aclosed)
 
 ## <a name="bug-fixes"></a>Исправления ошибок
 

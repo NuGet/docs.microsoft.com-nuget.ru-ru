@@ -3,21 +3,20 @@ title: "Справочник по PowerShell NuGet | Документы Microsof
 author: kraigb
 ms.author: kraigb
 manager: ghogen
-ms.date: 10/2/2017
+ms.date: 10/02/2017
 ms.topic: reference
 ms.prod: nuget
 ms.technology: 
-ms.assetid: cd08b869-44c6-480e-90f7-494a6d08e6d0
 description: "Полный справочник команд PowerShell доступны в консоли диспетчера пакетов NuGet в Visual Studio."
 keywords: "Консоли пакета NuGet диспетчера, команд NuGet Powershell, справочник по NuGet Powershell"
 ms.reviewer:
 - karann-msft
 - unniravindranathan
-ms.openlocfilehash: 64450a8bcca7f6028d4ce389d51ac35e9209cfae
-ms.sourcegitcommit: a40c1c1cc05a46410f317a72f695ad1d80f39fa2
+ms.openlocfilehash: 0cbd9b13b34bd93fea6c6684c03bca9cff5d9e5e
+ms.sourcegitcommit: 262d026beeffd4f3b6fc47d780a2f701451663a8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/05/2018
+ms.lasthandoff: 01/25/2018
 ---
 # <a name="powershell-reference"></a>Справочник по PowerShell
 
@@ -41,7 +40,7 @@ ms.lasthandoff: 01/05/2018
 | [Add-BindingRedirect](ps-ref-add-bindingredirect.md) | Проверяет все сборки по пути вывода для проекта и добавляет перенаправления привязки `app.config` или `web.config` при необходимости. | Все |
 | [Get-Project](ps-ref-get-project.md) | Отображает сведения о значения по умолчанию или указанный проект. | 3.0+ |
 | [Open-PackagePage](ps-ref-open-packagepage.md) | Запускает браузер по умолчанию проекта, лицензии или URL-адрес отчетов о нарушении для указанного пакета. | Рекомендуется использовать в 3.0 + |
-| [TabExpansion регистра](ps-ref-register-tabexpansion.md) | Регистрирует расширение по клавише tab для параметров команды, что позволяет создавать пользовательские расширения для значения часто используемых параметров. | Все |
+| [Register-TabExpansion](ps-ref-register-tabexpansion.md) | Регистрирует расширение по клавише tab для параметров команды, что позволяет создавать пользовательские расширения для значения часто используемых параметров. | Все |
 | [Sync-Package](ps-ref-sync-package.md) | Get, установленная версия пакета из указанного проекта и синхронизируется с остальными проектами в решении. | 3.0+ |
 | [Uninstall-Package](ps-ref-uninstall-package.md) | Удаляет пакет из проекта, при необходимости удаления его зависимости. | Все |
 

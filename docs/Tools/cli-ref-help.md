@@ -3,21 +3,20 @@ title: "Команда help NuGet CLI | Документы Microsoft"
 author: kraigb
 ms.author: kraigb
 manager: ghogen
-ms.date: 10/24/2017
+ms.date: 01/18/2018
 ms.topic: reference
 ms.prod: nuget
 ms.technology: 
-ms.assetid: 780d7f52-d6c6-45cd-8a62-218ff8c0b270
 description: "Справочник по командам справки nuget.exe"
 keywords: "Справка NuGet, команда «Справка»"
 ms.reviewer:
 - karann-msft
 - unniravindranathan
-ms.openlocfilehash: 55dc263fedd7ed5a3e48b76dbc9a3ccc220655cf
-ms.sourcegitcommit: d0ba99bfe019b779b75731bafdca8a37e35ef0d9
+ms.openlocfilehash: 97f72e1be0df6e97f8b06696b2b3861800e4ea08
+ms.sourcegitcommit: 262d026beeffd4f3b6fc47d780a2f701451663a8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/14/2017
+ms.lasthandoff: 01/25/2018
 ---
 # <a name="help-or--command-nuget-cli"></a>Справка или? команда (NuGet CLI)
 
@@ -27,7 +26,7 @@ ms.lasthandoff: 12/14/2017
 
 ## <a name="usage"></a>Использование
 
-```
+```cli
 nuget help [command] [options]
 nuget ? [command] [options]
 ```
@@ -39,21 +38,21 @@ nuget ? [command] [options]
 
 ## <a name="options"></a>Параметры
 
-| Параметр | Описание |
+| Параметр | Описание: |
 | --- | --- |
 | Все | Печать подробная справка для всех доступных команд; игнорируется, если задан той или иной команды. |
-| ConfigFile | *(2.5 +)*  NuGet файла конфигурации для применения. Если не указан, *%AppData%\NuGet\NuGet.Config* используется. |
+| ConfigFile | Файл конфигурации NuGet вступили в силу. Если не указан, *%AppData%\NuGet\NuGet.Config* используется. |
 | ForceEnglishOutput | *(3.5 +)*  Принудительно nuget.exe выполняется с использованием инвариантных, на основе английского языка и региональных параметров. |
 | Справка | Отображает справку для саму команду справки. |
 | Markdown | Печать подробной справки в формате markdown при использовании с `-All`. В противном случае значение не обрабатывается. |
 | Неинтерактивные | Подавление для ввода данных и подтверждений. |
-| Уровень детализации | Указывает объем сведений в выходных данных: *обычного*, *тихий*, *подробные (2.5 +)*. |
+| Уровень детализации | Указывает объем сведений в выходных данных: *обычного*, *тихий*, *подробные*. |
 
 См. также [переменные среды](cli-ref-environment-variables.md)
 
 ## <a name="examples"></a>Примеры
 
-```
+```cli
 nuget help
 nuget help push
 nuget ?

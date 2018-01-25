@@ -11,17 +11,16 @@ ms.date: 10/26/2017
 ms.topic: reference
 ms.prod: nuget
 ms.technology: 
-ms.assetid: ead5cf7a-e51e-4cbb-8798-58226f4c853f
 description: "Автозаполнение службы поиска поддерживает интерактивный обнаружения пакета идентификаторы и версии."
 keywords: "API автозаполнения NuGet, идентификатор пакета NuGet поиска, идентификатор пакета подстроки"
 ms.reviewer:
 - karann
 - unniravindranathan
-ms.openlocfilehash: 313ceb630947b46c34b98e14044ecf121b725087
-ms.sourcegitcommit: d0ba99bfe019b779b75731bafdca8a37e35ef0d9
+ms.openlocfilehash: 7c984ca61799293d7832851b80cf3fefc4734288
+ms.sourcegitcommit: 262d026beeffd4f3b6fc47d780a2f701451663a8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/14/2017
+ms.lasthandoff: 01/25/2018
 ---
 # <a name="autocomplete"></a>Автозавершение
 
@@ -51,13 +50,11 @@ SearchAutocompleteService/3.0.0-rc   | Псевдоним`SearchAutocompleteServ
 
 Пакет, содержащий только версии, отсутствующие в списке не будет отображаться в результатах.
 
-```
-GET {@id}?q={QUERY}&skip={SKIP}&take={TAKE}&prerelease={PRERELEASE}&semVerLevel={SEMVERLEVEL}
-```
+    GET {@id}?q={QUERY}&skip={SKIP}&take={TAKE}&prerelease={PRERELEASE}&semVerLevel={SEMVERLEVEL}
 
 ### <a name="request-parameters"></a>Параметры запроса
 
-Имя        | Увеличение     | Тип    | Обязательно | Примечания
+name        | Увеличение     | Тип    | Обязательно | Примечания
 ----------- | ------ | ------- | -------- | -----
 q           | URL-адрес    | string  | Нет       | Строка для сравнения с идентификаторами пакетов
 skip        | URL-адрес    | целочисленный | Нет       | Количество пропускаемых для разбиения на страницы результатов
@@ -83,16 +80,14 @@ semVerLevel | URL-адрес    | string  | Нет       | Строка верс
 
 Корневой объект JSON имеет следующие свойства:
 
-Имя      | Тип             | Обязательно | Примечания
+name      | Тип             | Обязательно | Примечания
 --------- | ---------------- | -------- | -----
 totalHits | целочисленный          | да      | Общее количество совпадений, без учета `skip` и`take`
 Данные      | Массив строк | да      | Запрос соответствует ИД пакета
 
 ### <a name="sample-request"></a>Пример запроса
 
-```
 GET https://api-v2v3search-0.nuget.org/autocomplete?q=storage&prerelease=true
-```
 
 ### <a name="sample-response"></a>Пример ответа
 
@@ -104,13 +99,11 @@ GET https://api-v2v3search-0.nuget.org/autocomplete?q=storage&prerelease=true
 
 Версия пакета, отсутствующие в списке не будет отображаться в результатах.
 
-```
-GET {@id}?id={ID}&prerelease={PRERELEASE}&semVerLevel={SEMVERLEVEL}
-```
+    GET {@id}?id={ID}&prerelease={PRERELEASE}&semVerLevel={SEMVERLEVEL}
 
 ### <a name="request-parameters"></a>Параметры запроса
 
-Имя        | Увеличение     | Тип    | Обязательно | Примечания
+name        | Увеличение     | Тип    | Обязательно | Примечания
 ----------- | ------ | ------- | -------- | -----
 id          | URL-адрес    | string  | да      | Идентификатор пакета для версии для выборки
 Предварительный выпуск  | URL-адрес    | boolean | Нет       | `true`или `false` определения, следует ли включать [пакеты предварительного выпуска](../create-packages/prerelease-packages.md)
@@ -126,7 +119,7 @@ semVerLevel | URL-адрес    | string  | Нет       | Строка верс
 
 Корневой объект JSON имеет следующее свойство:
 
-Имя      | Тип             | Обязательно | Примечания
+name      | Тип             | Обязательно | Примечания
 --------- | ---------------- | -------- | -----
 Данные      | Массив строк | да      | Запрос на соответствует версии пакета
 
@@ -134,9 +127,7 @@ semVerLevel | URL-адрес    | string  | Нет       | Строка верс
 
 ### <a name="sample-request"></a>Пример запроса
 
-```
-GET https://api-v2v3search-0.nuget.org/autocomplete?id=nuget.protocol&prerelease=true
-```
+    GET https://api-v2v3search-0.nuget.org/autocomplete?id=nuget.protocol&prerelease=true
 
 ### <a name="sample-response"></a>Пример ответа
 

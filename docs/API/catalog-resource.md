@@ -11,17 +11,16 @@ ms.date: 10/30/2017
 ms.topic: reference
 ms.prod: nuget
 ms.technology: 
-ms.assetid: cfd338b5-6253-48c0-88ba-17c6b98fc935
 description: "Каталог — это индекс всех пакетов создаются и удаляются в nuget.org."
 keywords: "NuGet V3 API каталога, nuget.org журнала транзакций, репликации NuGet.org, можно клонировать NuGet.org, дополняющие запись NuGet.org"
 ms.reviewer:
 - karann
 - unniravindranathan
-ms.openlocfilehash: 4c98b7cbd92575f6905e98a5bca5602a4d8ac0dd
-ms.sourcegitcommit: a40c1c1cc05a46410f317a72f695ad1d80f39fa2
+ms.openlocfilehash: d1a24be68a60085a40361c374ffb34dc221f09c4
+ms.sourcegitcommit: 262d026beeffd4f3b6fc47d780a2f701451663a8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/05/2018
+ms.lasthandoff: 01/25/2018
 ---
 # <a name="catalog"></a>Catalog
 
@@ -73,9 +72,7 @@ URL-адрес точки входа для следующих API-интерф�
 
 Следующий запрос извлекает указатель каталога.
 
-```
-GET {@id}
-```
+    GET {@id}
 
 Индекс каталога является документ JSON, который содержит объект со следующими свойствами:
 
@@ -107,9 +104,7 @@ count           | целочисленный | да      | Число элеме
 
 ### <a name="sample-request"></a>Пример запроса
 
-```
-GET https://api.nuget.org/v3/catalog0/index.json
-```
+    GET https://api.nuget.org/v3/catalog0/index.json
 
 ### <a name="sample-response"></a>Пример ответа
 
@@ -161,9 +156,7 @@ NuGet:Version   | string  | да      | Версия пакета, связан�
 
 ### <a name="sample-request"></a>Пример запроса
 
-```
-GET https://api.nuget.org/v3/catalog0/page2926.json
-```
+    GET https://api.nuget.org/v3/catalog0/page2926.json
 
 ### <a name="sample-response"></a>Пример ответа
 
@@ -179,7 +172,7 @@ name                    | Тип                       | Обязательно 
 ----------------------- | -------------------------- | -------- | -----
 @type                   | Строка или массив строк | да      | Типы элемента каталога
 каталог: commitId        | string                     | да      | Идентификатор фиксации, связанный с этим элементом каталога
-каталог: commitTimeStamp | string                     | да      | Метка времени фиксации данного элемента каталога
+catalog:commitTimeStamp | string                     | да      | Метка времени фиксации данного элемента каталога
 id                      | string                     | да      | Идентификатор пакета элемента каталога
 Опубликован               | string                     | да      | Дата публикации элемента каталога пакета
 version                 | string                     | да      | Версия пакета элемента каталога
@@ -242,9 +235,7 @@ verbatimVersion         | string                     | Нет       | Строк
 
 #### <a name="sample-request"></a>Пример запроса
 
-```
 GET https://api.nuget.org/v3/catalog0/data/2015.02.01.11.18.40/windowsazure.storage.1.0.0.json
-```
 
 #### <a name="sample-response"></a>Пример ответа
 
@@ -265,9 +256,7 @@ GET https://api.nuget.org/v3/catalog0/data/2015.02.01.11.18.40/windowsazure.stor
 
 #### <a name="sample-request"></a>Пример запроса
 
-```
 GET https://api.nuget.org/v3/catalog0/data/2017.11.02.00.40.00/netstandard1.4_lib.1.0.0-test.json
-```
 
 #### <a name="sample-response"></a>Пример ответа
 

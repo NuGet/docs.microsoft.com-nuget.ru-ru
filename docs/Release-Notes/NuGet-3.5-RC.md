@@ -7,25 +7,24 @@ ms.date: 11/11/2016
 ms.topic: article
 ms.prod: nuget
 ms.technology: 
-ms.assetid: 75a9b496-5762-48b6-922f-fdddf1369c45
 description: "Заметки о выпуске для RC NuGet 3.5, включая известные проблемы, исправленные ошибки, добавленные функции и DCR."
 keywords: "Версия-Кандидат 3.5 NuGet заметки о выпуске, исправления ошибок, известные проблемы, добавлены функции, DCR"
 ms.reviewer:
 - karann-msft
 - unniravindranathan
-ms.openlocfilehash: 09d566de6f53bc0f0ddd8049143dc647f3075671
-ms.sourcegitcommit: d0ba99bfe019b779b75731bafdca8a37e35ef0d9
+ms.openlocfilehash: fdb84da5f1648ce4508afe6ddcf04bddd41284d3
+ms.sourcegitcommit: 262d026beeffd4f3b6fc47d780a2f701451663a8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/14/2017
+ms.lasthandoff: 01/25/2018
 ---
-#<a name="35-rc-release-notes"></a>3.5 заметки о выпуске версии-Кандидата
+# <a name="nuget-35-rc-release-notes"></a>Заметки о выпуске версии-Кандидата NuGet 3.5
 
 [Заметки о выпуске бета 2 3.5 NuGet](../release-notes/nuget-3.5-Beta2.md) | [NuGet 3.5-RTM заметки о выпуске](../release-notes/nuget-3.5-RTM.md)
 
 3.5 выпуск предназначен для повышения качества и производительности клиентах NuGet. Кроме того, мы доставленные несколько функций, таких как поддержка [резервной папки](https://github.com/NuGet/Home/issues/2899), [PackageType](https://github.com/NuGet/Home/issues/2476) поддержки в `.nuspec` и многое другое.
 
-[Список вопросов](https://github.com/NuGet/Home/issues?q=is%3Aissue+is%3Aclosed+milestone%3A%223.5 RC")
+[Список проблем](https://github.com/NuGet/Home/issues?q=is%3Aissue+is%3Aclosed+milestone%3A%223.5 RC")
 
 ## <a name="bug-fixes"></a>Исправления ошибок
 
@@ -95,7 +94,7 @@ ms.lasthandoff: 12/14/2017
 
 * Устранить проблемы с производительностью ReSharper в обновлении NuGet - [#3044](https://github.com/NuGet/Home/issues/3044): В образец проекта, чтобы установить пакеты сокращает время из 140s для 68s.
 
-## <a name="dcrs"></a>DCR
+## <a name="dcrs"></a>Запросы на изменение структуры
 
 * NuGet необходимо сообщить пользователям, обновление или установка в tfm dotnet, в основе PCL может привести к ошибкам - [#3138](https://github.com/NuGet/Home/issues/3138)
 

@@ -3,21 +3,20 @@ title: "Команды NuGet CLI config | Документы Microsoft"
 author: kraigb
 ms.author: kraigb
 manager: ghogen
-ms.date: 10/24/2017
+ms.date: 01/18/2018
 ms.topic: reference
 ms.prod: nuget
 ms.technology: 
-ms.assetid: a50295ff-8be9-47d9-a260-822e899334cb
 description: "Ссылка для выполнения команды конфигурации nuget.exe"
 keywords: "Справочник по конфигурации NuGet, команда конфигурации"
 ms.reviewer:
 - karann-msft
 - unniravindranathan
-ms.openlocfilehash: f49751d9747687177e3b6c1890ee9d2919be8d0e
-ms.sourcegitcommit: bdcd2046b1b187d8b59716b9571142c02181c8fb
+ms.openlocfilehash: 31abc5c1ade0aff9a2f23ec89ec7082acedb3653
+ms.sourcegitcommit: 262d026beeffd4f3b6fc47d780a2f701451663a8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/10/2018
+ms.lasthandoff: 01/25/2018
 ---
 # <a name="config-command-nuget-cli"></a>Команда config (NuGet CLI)
 
@@ -27,7 +26,7 @@ ms.lasthandoff: 01/10/2018
 
 ## <a name="usage"></a>Использование
 
-```
+```cli
 nuget config -Set <name>=[<value>] [<name>=<value> ...] [options]
 nuget config -AsPath <name> [options]
 ```
@@ -43,17 +42,17 @@ nuget config -AsPath <name> [options]
 | Параметр | Описание: |
 | --- | --- |
 | AsPath | Возвращает значение конфигурации как путь, игнорируются, когда `-Set` используется. |
-| ConfigFile | *(2.5 +)*  NuGet файл конфигурации для изменения. Если не указан, *%AppData%\NuGet\NuGet.Config* используется. |
+| ConfigFile | Файл конфигурации NuGet для изменения. Если не указан, *%AppData%\NuGet\NuGet.Config* используется. |
 | ForceEnglishOutput | *(3.5 +)*  Принудительно nuget.exe выполняется с использованием инвариантных, на основе английского языка и региональных параметров. |
 | Справка | Отображает справку по команде. |
 | Неинтерактивные | Подавление для ввода данных и подтверждений. |
-| Уровень детализации | Указывает объем сведений в выходных данных: *обычного*, *тихий*, *подробные (2.5 +)*. |
+| Уровень детализации | Указывает объем сведений в выходных данных: *обычного*, *тихий*, *подробные*. |
 
 См. также [переменные среды](cli-ref-environment-variables.md)
 
 ### <a name="examples"></a>Примеры
 
-```
+```cli
 nuget config -Set repositoryPath=c:\packages -configfile c:\my.config
 
 nuget config -Set repositoryPath=

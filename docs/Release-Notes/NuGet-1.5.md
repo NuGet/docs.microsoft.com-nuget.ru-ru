@@ -7,19 +7,18 @@ ms.date: 11/11/2016
 ms.topic: article
 ms.prod: nuget
 ms.technology: 
-ms.assetid: 3ec1ff28-18fc-4d53-bd43-208619a7270a
 description: "Заметки о выпуске для NuGet 1.5, включая известные проблемы, исправленные ошибки, добавленные функции и DCR."
 keywords: "NuGet 1.5 заметки о выпуске, исправления, известными проблемами, добавлены функции, DCR"
 ms.reviewer:
 - karann-msft
 - unniravindranathan
-ms.openlocfilehash: 29792f4c7399155bcf5fb3361d7f10ddd1b18ca1
-ms.sourcegitcommit: d0ba99bfe019b779b75731bafdca8a37e35ef0d9
+ms.openlocfilehash: 261cfbbd262bad28f142b0c3dff8a541641d9fda
+ms.sourcegitcommit: 262d026beeffd4f3b6fc47d780a2f701451663a8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/14/2017
+ms.lasthandoff: 01/25/2018
 ---
- # <a name="nuget-15-release-notes"></a>Заметки о выпуске 1,5 NuGet
+# <a name="nuget-15-release-notes"></a>Заметки о выпуске 1,5 NuGet
 
 [Заметки о выпуске NuGet 1.4](../release-notes/nuget-1.4.md) | [NuGet 1.6 заметки о выпуске](../release-notes/nuget-1.6.md)
 
@@ -35,6 +34,7 @@ NuGet 1.5 был выпущен 30 августа 2011 г.
 Дополнительные сведения об этой возможности прочитать этот [записи блога от разработчика компонента](http://blogs.msdn.com/b/marcinon/archive/2011/07/08/project-templates-and-preinstalled-nuget-packages.aspx).
 
 ### <a name="explicit-assembly-references"></a>Ссылки на сборки, явные
+
 Добавлен новый `<references />` элемент используется, чтобы явно указать какие сборки в пакет, должна быть ссылка.
 
 Например, добавьте следующий код:
