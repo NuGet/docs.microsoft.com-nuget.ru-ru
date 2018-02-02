@@ -3,21 +3,20 @@ title: "Пакеты NuGet и управление исходным кодом |
 author: kraigb
 ms.author: kraigb
 manager: ghogen
-ms.date: 7/17/2017
+ms.date: 07/17/2017
 ms.topic: article
 ms.prod: nuget
 ms.technology: 
-ms.assetid: 2c874e6f-99eb-46dd-997f-f67d98d0237e
 description: "Вопросы, касающиеся обработки пакетов NuGet в системах управления версиями и исходным кодом, а также пропуска пакетов с TFVC и GIT."
 keywords: "управление исходным кодом NuGet, система управления версиями NuGet, NuGet и GIT, NuGet и TFS, NuGet и TFVC, пропуск пакетов, репозитории для управления исходным кодом, репозитории для управления версиями"
 ms.reviewer:
 - karann-msft
 - unniravindranathan
-ms.openlocfilehash: c73dea74f2363f49fb476a5812c29de63fec89a3
-ms.sourcegitcommit: d0ba99bfe019b779b75731bafdca8a37e35ef0d9
+ms.openlocfilehash: 6261625d5d7eaa748f9ad15510b7b2af3c814e44
+ms.sourcegitcommit: 4651b16a3a08f6711669fc4577f5d63b600f8f58
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/14/2017
+ms.lasthandoff: 02/01/2018
 ---
 # <a name="omitting-nuget-packages-in-source-control-systems"></a>Пропуск пакетов NuGet в системах управления исходным кодом
 
@@ -38,7 +37,7 @@ ms.lasthandoff: 12/14/2017
 
 Далее приведены важные части файла `.gitignore`:
 
-```
+```gitignore
 # Ignore NuGet Packages
 *.nupkg
 
@@ -70,7 +69,7 @@ project.assets.json
 
 1. В этой папке создайте файл с именем `NuGet.Config` и откройте его для редактирования.
 
-1. Добавьте хотя бы следующий текст, где параметр [disableSourceControlIntegration](../Schema/nuget-config-file.md#solution-section) предписывает Visual Studio пропустить все содержимое папки `packages`:
+1. Добавьте хотя бы следующий текст, где параметр [disableSourceControlIntegration](../reference/nuget-config-file.md#solution-section) предписывает Visual Studio пропустить все содержимое папки `packages`:
 
    ```xml
    <?xml version="1.0" encoding="utf-8"?>
@@ -85,9 +84,9 @@ project.assets.json
 
 1. В TFS 2012 и более поздней версии или Visual Studio Team Services создайте файл `.tfignore`, как описано в статье [Добавление файлов на сервер](https://www.visualstudio.com/en-us/docs/tfvc/add-files-server#tfignore). Включите в этот файл приведенное ниже содержимое, чтобы явно игнорировать изменения в папке `\packages` на уровне репозитория и нескольких других промежуточных файлах. (Вы можете создать файл в проводнике Windows, используя имя `.tfignore.` с конечной точкой, но сначала вам может потребоваться отключить параметр "Hide known file extensions" (Скрыть известные расширения файлов).)
 
-   ```
+   ```cli
    # Ignore NuGet Packages
-   *.nupkg   
+   *.nupkg
 
    # Ignore the NuGet packages folder in the root of the repository. If needed, prefix 'packages'
    # with additional folder names if it's not in the same folder as .tfignore.   

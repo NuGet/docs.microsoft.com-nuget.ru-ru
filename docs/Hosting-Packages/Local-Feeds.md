@@ -7,17 +7,16 @@ ms.date: 12/06/2017
 ms.topic: article
 ms.prod: nuget
 ms.technology: 
-ms.assetid: 1354a527-d988-43d1-8dcf-6ce46ec5d3d4
 description: "Сведения о создании локального веб-канала для пакетов NuGet с помощью папок в локальной сети"
 keywords: "веб-канал NuGet, коллекция NuGet, локальный веб-канал пакетов"
 ms.reviewer:
 - karann-msft
 - unniravindranathan
-ms.openlocfilehash: 32217622077ff983abaf00b2e6e5baf3064fff56
-ms.sourcegitcommit: d0ba99bfe019b779b75731bafdca8a37e35ef0d9
+ms.openlocfilehash: 0b8633db78b19fecddeb057a9f287ef971aef27a
+ms.sourcegitcommit: 262d026beeffd4f3b6fc47d780a2f701451663a8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/14/2017
+ms.lasthandoff: 01/25/2018
 ---
 # <a name="local-feeds"></a>Локальные веб-каналы
 
@@ -40,7 +39,7 @@ ms.lasthandoff: 12/14/2017
 
 NuGet автоматически создает эту структуру, когда вы используете команду [`nuget add`](../tools/cli-ref-add.md) для копирования пакета в веб-канал:
 
-```
+```cli
 nuget add new_package.1.0.0.nupkg -source \\myserver\packages
 ```
 
@@ -48,7 +47,7 @@ nuget add new_package.1.0.0.nupkg -source \\myserver\packages
 
 В таких случаях используйте команду [`nuget init`](../tools/cli-ref-init.md), чтобы скопировать все пакеты из папки в веб-канал, как если бы вы запустили `nuget add` для каждого из них по отдельности. Например, следующая команда копирует все пакеты из `c:\packages` в иерархическое дерево в `\\myserver\packages`:
 
-```
+```cli
 nuget init c:\packages \\myserver\packages
 ```
 

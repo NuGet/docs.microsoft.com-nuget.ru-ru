@@ -7,18 +7,17 @@ ms.date: 08/25/2017
 ms.topic: article
 ms.prod: nuget
 ms.technology: 
-ms.assetid: 97577ddd-c294-432d-81a7-b4aebe88bd1c
 description: "Общие сведения о локальном или удаленном размещении своих веб-каналов пакетов NuGet или коллекций."
 keywords: "веб-канал NuGet, коллекция NuGet, настраиваемый веб-канал пакетов, NuGet.Server"
 ms.reviewer:
 - karann-msft
 - unniravindranathan
 - anangaur
-ms.openlocfilehash: c3c6b17cdeb4fe959adbc56bdc6ace73202a98fc
-ms.sourcegitcommit: d0ba99bfe019b779b75731bafdca8a37e35ef0d9
+ms.openlocfilehash: 738190e20603046d075faa3f50402601890583c1
+ms.sourcegitcommit: 4651b16a3a08f6711669fc4577f5d63b600f8f58
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/14/2017
+ms.lasthandoff: 02/01/2018
 ---
 # <a name="hosting-your-own-nuget-feeds"></a>Размещение своих веб-каналов NuGet
 
@@ -27,7 +26,7 @@ ms.lasthandoff: 12/14/2017
 Для этого NuGet позволяет настроить частные источники пакетов одним из следующих способов:
 
 - Локальный веб-канал: пакеты просто помещаются в подходящую сетевую общую папку. Оптимальнее всего для этого использовать `nuget init` и `nuget add`, чтобы создать иерархическую структуру папок (NuGet 3.3+). Дополнительные сведения см. в разделе [Локальные веб-каналы](../hosting-packages/local-feeds.md).
-- NuGet.Server: пакеты предоставляются через локальный HTTP-сервер. Дополнительные сведения см. в разделе [NuGet.Server](../hosting-packages/NuGet-Server.md).
+- NuGet.Server: пакеты предоставляются через локальный HTTP-сервер. Дополнительные сведения см. в разделе [NuGet.Server](../hosting-packages/nuget-server.md).
 - Коллекция NuGet: пакеты размещаются на интернет-сервере с помощью [проекта коллекции NuGet](https://github.com/NuGet/NuGetGallery#build-and-run-the-gallery-in-arbitrary-number-easy-steps) (github.com). Коллекция NuGet позволяет управлять пользователями и предоставляет такие функции, как расширенный пользовательский веб-интерфейс, позволяющий искать и просматривать пакеты с помощью браузера, аналогично nuget.org.
 
 Существует несколько других продуктов для размещения NuGet, которые поддерживают удаленные закрытые веб-каналы, включая следующие:

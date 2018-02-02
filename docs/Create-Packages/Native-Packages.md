@@ -3,21 +3,20 @@ title: "Создание собственных пакетов NuGet | Доку�
 author: kraigb
 ms.author: kraigb
 manager: ghogen
-ms.date: 1/9/2017
+ms.date: 01/09/2017
 ms.topic: article
 ms.prod: nuget
 ms.technology: 
-ms.assetid: 7a70d748-efe2-4f8f-a3fd-67ddb0f6214e
 description: "Сведения о создании собственных пакетов NuGet, которые содержат код C++ вместо управляемого кода, для использования в проектах C++."
 keywords: "собственные пакеты NuGet, пакеты NuGet C++, пакеты с машинным кодом, ориентация на проекты C++"
 ms.reviewer:
 - karann-msft
 - unniravindranathan
-ms.openlocfilehash: fa5baaa6ecbad0f5f6dd85d657679ffbbbc8a47a
-ms.sourcegitcommit: d0ba99bfe019b779b75731bafdca8a37e35ef0d9
+ms.openlocfilehash: 71f4eca411d520630ca7d77165b8f03cd32af290
+ms.sourcegitcommit: 262d026beeffd4f3b6fc47d780a2f701451663a8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/14/2017
+ms.lasthandoff: 01/25/2018
 ---
 # <a name="creating-native-packages"></a>Создание собственных пакетов
 
