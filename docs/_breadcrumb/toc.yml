@@ -8,10 +8,10 @@
       items:
         - name: Краткое руководство
           tocHref: /nuget/quickstart/
-          topicHref: /nuget/quickstart/create-and-publish-a-package
+          topicHref: /nuget/quickstart/install-and-use-a-package-using-the-dotnet-cli
         - name: Направляющие
           tocHref: /nuget/guides/
-          topicHref: /nuget/guides/install-nuget
+          topicHref: /nuget/guides/create-net-standard-packages-vs2017
         - name: Создание пакетов
           tocHref: /nuget/create-packages/
           topicHref: /nuget/create-packages/overview-and-workflow
@@ -26,7 +26,7 @@
           topicHref: /nuget/tools/nuget-exe-cli-reference
         - name: Ссылка
           tocHref: /nuget/reference/
-          topicHref: /nuget/schema/nuspec
+          topicHref: /nuget/reference/nuspec
         - name: API
           tocHref: /nuget/api/
           topicHref: /nuget/api/overview
@@ -36,6 +36,6 @@
         - name: Политики
           tocHref: /nuget/policies/
           topicHref: /nuget/policies/nuget-faq
-        - name: Заметки о выпуске
+        - name: заметки о выпуске;
           tocHref: /nuget/release-notes/
           topicHref: /nuget/release-notes/index
