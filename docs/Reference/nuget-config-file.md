@@ -12,11 +12,11 @@ keywords: "файл NuGet.Config, справочник по настройке N
 ms.reviewer:
 - karann-msft
 - unniravindranathan
-ms.openlocfilehash: 9a183b67ae18f4fa5c042f1806f8abcc9b799b77
-ms.sourcegitcommit: 4651b16a3a08f6711669fc4577f5d63b600f8f58
+ms.openlocfilehash: df602cb561a19f0eac085695de80db1fbaa1a313
+ms.sourcegitcommit: 33436d122873249dbb20616556cd8c6783f38909
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/01/2018
+ms.lasthandoff: 02/12/2018
 ---
 # <a name="nugetconfig-reference"></a>Справочник по NuGet.Config
 
@@ -48,7 +48,7 @@ ms.lasthandoff: 02/01/2018
 
 Содержит различные параметры конфигурации, которые можно задавать с помощью [команды `nuget config`](../tools/cli-ref-config.md).
 
-Примечание. Параметры `dependencyVersion` и `repositoryPath` применяются только к проектам, в которых используется файл `packages.config`. `globalPackagesFolder`применяется только к проектам, используя формат PackageReference.
+Примечание. Параметры `dependencyVersion` и `repositoryPath` применяются только к проектам, в которых используется файл `packages.config`. `globalPackagesFolder` применяется только к проектам, используя формат PackageReference.
 
 | Ключ | Значение |
 | --- | --- |
@@ -131,7 +131,7 @@ ms.lasthandoff: 02/01/2018
 
 ### <a name="packagesources"></a>packageSources
 
-Выводит список всех известных источников пакетов.
+Выводит список всех известных источников пакетов. Во время операций восстановления и с любой проект в формате PackageReference, порядок учитывается. NuGet нарушать порядок источников для установки и обновления с проектами с помощью `packages.config`.
 
 | Ключ | Значение |
 | --- | --- |
