@@ -11,17 +11,17 @@ description: "Объекты pack и restore NuGet могут выступать
 keywords: "NuGet и MSBuild, целевой объект pack NuGet, целевой объект restore NuGet"
 ms.reviewer:
 - karann-msft
-ms.openlocfilehash: 6c488f49e12b014e7bd197d57041745387a4d7b4
-ms.sourcegitcommit: 4651b16a3a08f6711669fc4577f5d63b600f8f58
+ms.openlocfilehash: 4d448af3d31e0907cba223c0ccec55604e94f055
+ms.sourcegitcommit: 7969f6cd94eccfee5b62031bb404422139ccc383
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/01/2018
+ms.lasthandoff: 02/20/2018
 ---
 # <a name="nuget-pack-and-restore-as-msbuild-targets"></a>Объекты pack и restore NuGet в качестве целевых объектов MSBuild
 
 *NuGet 4.0+*
 
-В формате PackageReference NuGet 4.0 + могут храниться все манифеста метаданные непосредственно в файле проекта, а не использовать отдельный `.nuspec` файла.
+Благодаря формату PackageReference в NuGet 4.0 и более поздних версиях все метаданные манифеста могут храниться прямо в файле проекта, не требуя использования отдельного файла `.nuspec`.
 
 При использовании MSBuild 15.1+ NuGet также является привилегированным компонентом MSBuild с целевыми объектами `pack` и `restore`, как описано ниже. Эти целевые объекты позволяют работать с NuGet, как с любой другой задачей или другим целевым объектом MSBuild. (Для NuGet 3.x и более ранних версий можно использовать команды [pack](../tools/cli-ref-pack.md) и [restore](../tools/cli-ref-restore.md) в NuGet CLI.)
 
@@ -42,7 +42,7 @@ ms.lasthandoff: 02/01/2018
 
 ## <a name="pack-target"></a>Целевой объект pack
 
-При использовании целевого пакета, то есть `msbuild /t:pack`, MSBuild строит ее входными данными из файла проекта. В следующей таблице описаны свойства MSBuild, которые могут быть добавлены в файл проекта в первый `<PropertyGroup>` узла. Эти изменения легко внести в Visual Studio 2017 и более поздней версии, щелкнув проект правой кнопкой мыши и выбрав пункт **Изменить {project_name}**. Для удобства таблица упорядочена по эквивалентным свойствам в [файле `.nuspec`](../reference/nuspec.md).
+При использовании целевого объекта pack, то есть `msbuild /t:pack`, MSBuild получает входные данные из файла проекта. В следующей таблице описываются свойства MSBuild, которые можно добавить в файл проекта в первом узле `<PropertyGroup>`. Эти изменения легко внести в Visual Studio 2017 и более поздней версии, щелкнув проект правой кнопкой мыши и выбрав пункт **Изменить {project_name}**. Для удобства таблица упорядочена по эквивалентным свойствам в [файле `.nuspec`](../reference/nuspec.md).
 
 Обратите внимание, что свойства `Owners` и `Summary` из `.nuspec` не поддерживаются в MSBuild.
 
@@ -50,8 +50,8 @@ ms.lasthandoff: 02/01/2018
 |--------|--------|--------|--------|
 | Идентификатор | PackageId | AssemblyName | $(AssemblyName) из MSBuild |
 | Версия | PackageVersion | Версия | Это значение совместимо с SemVer, например "1.0.0", "1.0.0-beta" или "1.0.0-beta-00345" |
-| VersionPrefix | PackageVersionPrefix | пустой | Параметр PackageVersion перезаписывает PackageVersionPrefix |
-| VersionSuffix | PackageVersionSuffix | пустой | $(VersionSuffix) из MSBuild. Параметр PackageVersion перезаписывает PackageVersionSuffix |
+| VersionPrefix | PackageVersionPrefix | пустой | Задав PackageVersion, вы перезапишите PackageVersionPrefix |
+| VersionSuffix | PackageVersionSuffix | пустой | $(VersionSuffix) из MSBuild. Задав PackageVersion, вы перезапишите PackageVersionSuffix |
 | Authors | Authors | Имя текущего пользователя | |
 | Владельцы | Н/Д | Не существует в NuSpec | |
 | Заголовок | Заголовок | Идентификатор пакета| |
@@ -63,8 +63,10 @@ ms.lasthandoff: 02/01/2018
 | IconUrl | PackageIconUrl | пустой | |
 | Теги | PackageTags | пустой | Теги разделяются точкой с запятой. |
 | ReleaseNotes | PackageReleaseNotes | пустой | |
-| RepositoryUrl | RepositoryUrl | пустой | |
-| RepositoryType | RepositoryType | пустой | |
+| URL-адрес или репозитория | RepositoryUrl | пустой | URL-адрес репозитория используется для клонирования или получения исходного кода. Example: *https://github.com/NuGet/NuGet.Client.git* |
+| Тип или репозитория | RepositoryType | пустой | Тип репозитория. Примеры: *git*, *tfs*. |
+| Репозиторий и ветвь | RepositoryBranch | пустой | Сведения о ветви необязательно репозитории. *RepositoryUrl* также необходимо указать для этого свойства для включения. Пример: *master* (NuGet 4.7.0+) |
+| Репозитории/фиксации | RepositoryCommit | пустой | Необязательный репозитория commit или изменений, чтобы указать, что источник пакета было создано. *RepositoryUrl* также необходимо указать для этого свойства для включения. Пример: *0e4d1b598f350b3dc675018d539114d1328189ef* (NuGet 4.7.0+) |
 | PackageType | `<PackageType>DotNetCliTool, 1.0.0.0;Dependency, 2.0.0.0</PackageType>` | | |
 | Сводка | Не поддерживается | | |
 
@@ -90,6 +92,8 @@ ms.lasthandoff: 02/01/2018
 - IsTool
 - RepositoryUrl
 - RepositoryType
+- RepositoryBranch
+- RepositoryCommit
 - NoPackageAnalysis
 - MinClientVersion
 - IncludeBuildOutput
@@ -170,7 +174,7 @@ ms.lasthandoff: 02/01/2018
 Другие относящиеся к pack метаданные, которые можно задать для любого из указанных выше элементов, включают ```<PackageCopyToOutput>``` и ```<PackageFlatten>```, задающие значения ```CopyToOutput``` и ```Flatten``` для записи ```contentFiles``` в выходном файле NUSPEC.
 
 > [!Note]
-> Помимо элементов содержимого `<Pack>` и `<PackagePath>` метаданных также можно задать для файлов с действием построения компиляции, EmbeddedResource, ApplicationDefinition, страницы, ресурс, экран-заставка, DesignData, DesignDataWithDesignTimeCreateableTypes , CodeAnalysisDictionary, AndroidAsset, AndroidResource, BundleResource или None.
+> Кроме элементов содержимого, метаданные `<Pack>` и `<PackagePath>` также можно задать для файлов с действием сборки Compile, EmbeddedResource, ApplicationDefinition, Page, Resource, SplashScreen, DesignData, DesignDataWithDesignTimeCreateableTypes, CodeAnalysisDictionary, AndroidAsset, AndroidResource, BundleResource или None.
 >
 > Чтобы объект pack добавил имя файла в путь к пакету при использовании стандартных масок, путь к пакету должен заканчиваться символом разделителя папок, в противном случае этот путь считается полным путем, включающим имя файла.
 
