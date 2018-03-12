@@ -1,0 +1,64 @@
+---
+title: "Команда входа NuGet CLI | Документы Microsoft"
+author: dtivel
+ms.author: dtivel
+manager: doronm
+ms.date: 03/06/2018
+ms.topic: reference
+ms.prod: nuget
+ms.technology: 
+description: "Ссылку для входа команду nuget.exe"
+keywords: "Справочник по входа NuGet, команда входа"
+ms.reviewer:
+- karann
+- rmpablos
+ms.openlocfilehash: 109b0f6aca0ebaae2ea56fbb45226bc1b14f2ea1
+ms.sourcegitcommit: df7158169e84900d135416cd5e52f937df0beb52
+ms.translationtype: MT
+ms.contentlocale: ru-RU
+ms.lasthandoff: 03/08/2018
+---
+# <a name="sign-command-nuget-cli"></a><span data-ttu-id="6e81a-104">Команда входа (NuGet CLI)</span><span class="sxs-lookup"><span data-stu-id="6e81a-104">sign command (NuGet CLI)</span></span>
+
+<span data-ttu-id="6e81a-105">**Применяется к:** Создание пакета &bullet; **поддерживаемые версии:** 4.6 +</span><span class="sxs-lookup"><span data-stu-id="6e81a-105">**Applies to:** package creation &bullet; **Supported versions:** 4.6+</span></span>
+
+<span data-ttu-id="6e81a-106">Подписывает все пакеты, соответствующие первого аргумента, с помощью сертификата.</span><span class="sxs-lookup"><span data-stu-id="6e81a-106">Signs all the packages matching the first argument with a certificate.</span></span> <span data-ttu-id="6e81a-107">Можно получить сертификат с закрытым ключом, из файла или сертификат, установленный в хранилище сертификатов, указав имя субъекта или отпечатка.</span><span class="sxs-lookup"><span data-stu-id="6e81a-107">The certificate with the private key can be obtained from a file or from a certificate installed in a certificate store by providing a subject name or a thumbprint.</span></span>
+
+<span data-ttu-id="6e81a-108">Подписание пакета пока не поддерживается в среде Mono или на платформах, отличных от Windows.</span><span class="sxs-lookup"><span data-stu-id="6e81a-108">Package signing is not yet supported under Mono or on non-Windows platforms.</span></span>
+
+## <a name="usage"></a><span data-ttu-id="6e81a-109">Использование</span><span class="sxs-lookup"><span data-stu-id="6e81a-109">Usage</span></span>
+
+```cli
+nuget sign <package(s)> [options]
+```
+
+<span data-ttu-id="6e81a-110">где `<package(s)>` одной или нескольких `.nupkg` файлов.</span><span class="sxs-lookup"><span data-stu-id="6e81a-110">where `<package(s)>` is one or more `.nupkg` files.</span></span>
+
+## <a name="options"></a><span data-ttu-id="6e81a-111">Параметры</span><span class="sxs-lookup"><span data-stu-id="6e81a-111">Options</span></span>
+
+| <span data-ttu-id="6e81a-112">Параметр</span><span class="sxs-lookup"><span data-stu-id="6e81a-112">Option</span></span> | <span data-ttu-id="6e81a-113">Описание:</span><span class="sxs-lookup"><span data-stu-id="6e81a-113">Description</span></span> |
+| --- | --- |
+| <span data-ttu-id="6e81a-114">CertificateFingerprint</span><span class="sxs-lookup"><span data-stu-id="6e81a-114">CertificateFingerprint</span></span> | <span data-ttu-id="6e81a-115">Указывает отпечаток сертификата, используемого для поиска в локальном хранилище сертификатов для сертификата SHA-1.</span><span class="sxs-lookup"><span data-stu-id="6e81a-115">Specifies the SHA-1 fingerprint of the certificate used to search a local certificate store for the certificate.</span></span> |
+| <span data-ttu-id="6e81a-116">CertificatePassword</span><span class="sxs-lookup"><span data-stu-id="6e81a-116">CertificatePassword</span></span> | <span data-ttu-id="6e81a-117">Указывает пароль для сертификата, при необходимости.</span><span class="sxs-lookup"><span data-stu-id="6e81a-117">Specifies the certificate password, if needed.</span></span> <span data-ttu-id="6e81a-118">Если сертификат защищен паролем, но пароль не указан, команда предложит ввести пароль во время выполнения, если передается неинтерактивных параметр.</span><span class="sxs-lookup"><span data-stu-id="6e81a-118">If a certificate is password protected but no password is provided, the command will prompt for a password at run time, unless the -NonInteractive option is passed.</span></span> |
+| <span data-ttu-id="6e81a-119">CertificatePath</span><span class="sxs-lookup"><span data-stu-id="6e81a-119">CertificatePath</span></span> | <span data-ttu-id="6e81a-120">Указывает путь к файлу, чтобы сертификат, используемый для подписи пакета.</span><span class="sxs-lookup"><span data-stu-id="6e81a-120">Specifies the file path to the certificate to be used in signing the package.</span></span> |
+| <span data-ttu-id="6e81a-121">CertificateStoreLocation</span><span class="sxs-lookup"><span data-stu-id="6e81a-121">CertificateStoreLocation</span></span> | <span data-ttu-id="6e81a-122">Задает имя хранилища сертификатов X.509, используемый для поиска сертификата.</span><span class="sxs-lookup"><span data-stu-id="6e81a-122">Specifies the name of the X.509 certificate store use to search for the certificate.</span></span> <span data-ttu-id="6e81a-123">По умолчанию используется «CurrentUser», хранилища сертификатов X.509, используемый текущим пользователем.</span><span class="sxs-lookup"><span data-stu-id="6e81a-123">Defaults to "CurrentUser", the X.509 certificate store used by the current user.</span></span> <span data-ttu-id="6e81a-124">Этот параметр следует использовать при указании сертификата - CertificateSubjectName или - CertificateFingerprint параметры.</span><span class="sxs-lookup"><span data-stu-id="6e81a-124">This option should be used when specifying the certificate via -CertificateSubjectName or -CertificateFingerprint options.</span></span> |
+| <span data-ttu-id="6e81a-125">CertificateStoreName</span><span class="sxs-lookup"><span data-stu-id="6e81a-125">CertificateStoreName</span></span> | <span data-ttu-id="6e81a-126">Задает имя хранилища сертификатов X.509 для поиска сертификата.</span><span class="sxs-lookup"><span data-stu-id="6e81a-126">Specifies the name of the X.509 certificate store to use to search for the certificate.</span></span> <span data-ttu-id="6e81a-127">Значение по умолчанию «My», хранилище сертификатов X.509 для личных сертификатов.</span><span class="sxs-lookup"><span data-stu-id="6e81a-127">Defaults to "My", the X.509 certificate store for personal certificates.</span></span> <span data-ttu-id="6e81a-128">Этот параметр следует использовать при указании сертификата - CertificateSubjectName или - CertificateFingerprint параметры.</span><span class="sxs-lookup"><span data-stu-id="6e81a-128">This option should be used when specifying the certificate via -CertificateSubjectName or -CertificateFingerprint options.</span></span> |
+| <span data-ttu-id="6e81a-129">CertificateSubjectName</span><span class="sxs-lookup"><span data-stu-id="6e81a-129">CertificateSubjectName</span></span> | <span data-ttu-id="6e81a-130">Задает имя субъекта сертификата, используемого для поиска в локальном хранилище сертификатов для сертификата.</span><span class="sxs-lookup"><span data-stu-id="6e81a-130">Specifies the subject name of the certificate used to search a local certificate store for the certificate.</span></span>  <span data-ttu-id="6e81a-131">Поиск является сравнение строк без учета регистра, используя указанное значение, которое будет найти все сертификаты с именем субъекта, содержащему эту строку, независимо от того, другие значения субъекта.</span><span class="sxs-lookup"><span data-stu-id="6e81a-131">The search is a case-insensitive string comparison using the supplied value, which will find all certificates with the subject name containing that string, regardless of other subject values.</span></span>  <span data-ttu-id="6e81a-132">С параметрами - CertificateStoreName и - CertificateStoreLocation можно указать в хранилище сертификатов.</span><span class="sxs-lookup"><span data-stu-id="6e81a-132">The certificate store can be specified by -CertificateStoreName and -CertificateStoreLocation options.</span></span> |
+| <span data-ttu-id="6e81a-133">ConfigFile</span><span class="sxs-lookup"><span data-stu-id="6e81a-133">ConfigFile</span></span> | <span data-ttu-id="6e81a-134">Файл конфигурации NuGet вступили в силу.</span><span class="sxs-lookup"><span data-stu-id="6e81a-134">The NuGet configuration file to apply.</span></span> <span data-ttu-id="6e81a-135">Если не указан, *%AppData%\NuGet\NuGet.Config* используется.</span><span class="sxs-lookup"><span data-stu-id="6e81a-135">If not specified, *%AppData%\NuGet\NuGet.Config* is used.</span></span> |
+| <span data-ttu-id="6e81a-136">ForceEnglishOutput</span><span class="sxs-lookup"><span data-stu-id="6e81a-136">ForceEnglishOutput</span></span> | <span data-ttu-id="6e81a-137">Принудительно nuget.exe выполняется с использованием инвариантных, на основе английского языка и региональных параметров.</span><span class="sxs-lookup"><span data-stu-id="6e81a-137">Forces nuget.exe to run using an invariant, English-based culture.</span></span> |
+| <span data-ttu-id="6e81a-138">HashAlgorithm</span><span class="sxs-lookup"><span data-stu-id="6e81a-138">HashAlgorithm</span></span> | <span data-ttu-id="6e81a-139">Хэш-алгоритм, используемый для подписывания пакета.</span><span class="sxs-lookup"><span data-stu-id="6e81a-139">Hash algorithm to be used to sign the package.</span></span> <span data-ttu-id="6e81a-140">По умолчанию — SHA256.</span><span class="sxs-lookup"><span data-stu-id="6e81a-140">Defaults to SHA256.</span></span> |
+| <span data-ttu-id="6e81a-141">Справка</span><span class="sxs-lookup"><span data-stu-id="6e81a-141">Help</span></span> | <span data-ttu-id="6e81a-142">Отображает справку по команде.</span><span class="sxs-lookup"><span data-stu-id="6e81a-142">Displays help information for the command.</span></span> |
+| <span data-ttu-id="6e81a-143">Неинтерактивные</span><span class="sxs-lookup"><span data-stu-id="6e81a-143">NonInteractive</span></span> | <span data-ttu-id="6e81a-144">Подавление для ввода данных и подтверждений.</span><span class="sxs-lookup"><span data-stu-id="6e81a-144">Suppresses prompts for user input or confirmations.</span></span> |
+| <span data-ttu-id="6e81a-145">Выходной каталог</span><span class="sxs-lookup"><span data-stu-id="6e81a-145">OutputDirectory</span></span> | <span data-ttu-id="6e81a-146">Указывает каталог, где следует сохранить подписанных пакетов.</span><span class="sxs-lookup"><span data-stu-id="6e81a-146">Specifies the directory where the signed package should be saved.</span></span> <span data-ttu-id="6e81a-147">По умолчанию исходный пакет, перезаписывается подписанных пакетов.</span><span class="sxs-lookup"><span data-stu-id="6e81a-147">By default the original package is overwritten by the signed package.</span></span> |
+| <span data-ttu-id="6e81a-148">Перезаписать</span><span class="sxs-lookup"><span data-stu-id="6e81a-148">Overwrite</span></span> | <span data-ttu-id="6e81a-149">Переключатель, чтобы указать, должны ли перезаписываться подписи текущего.</span><span class="sxs-lookup"><span data-stu-id="6e81a-149">Switch to indicate if the current signature should be overwritten.</span></span> <span data-ttu-id="6e81a-150">По умолчанию команда завершится ошибкой, если пакет уже имеет подпись.</span><span class="sxs-lookup"><span data-stu-id="6e81a-150">By default the command will fail if the package already has a signature.</span></span> |
+| <span data-ttu-id="6e81a-151">Timestamper</span><span class="sxs-lookup"><span data-stu-id="6e81a-151">Timestamper</span></span> | <span data-ttu-id="6e81a-152">URL-адрес сервера метки времени RFC 3161.</span><span class="sxs-lookup"><span data-stu-id="6e81a-152">URL to an RFC 3161 timestamping server.</span></span> |
+| <span data-ttu-id="6e81a-153">TimestampHashAlgorithm</span><span class="sxs-lookup"><span data-stu-id="6e81a-153">TimestampHashAlgorithm</span></span> | <span data-ttu-id="6e81a-154">Хэш-алгоритм, используемый сервером отметок времени RFC 3161.</span><span class="sxs-lookup"><span data-stu-id="6e81a-154">Hash algorithm to be used by the RFC 3161 timestamp server.</span></span> <span data-ttu-id="6e81a-155">По умолчанию — SHA256.</span><span class="sxs-lookup"><span data-stu-id="6e81a-155">Defaults to SHA256.</span></span> |
+| <span data-ttu-id="6e81a-156">Уровень детализации</span><span class="sxs-lookup"><span data-stu-id="6e81a-156">Verbosity</span></span> | <span data-ttu-id="6e81a-157">Указывает объем сведений в выходных данных: *обычного*, *тихий*, *подробные*.</span><span class="sxs-lookup"><span data-stu-id="6e81a-157">Specifies the amount of detail displayed in the output: *normal*, *quiet*, *detailed*.</span></span> |
+
+## <a name="examples"></a><span data-ttu-id="6e81a-158">Примеры</span><span class="sxs-lookup"><span data-stu-id="6e81a-158">Examples</span></span>
+
+```cli
+nuget sign MyPackage.nupkg -Timestamper http://timestamp.test
+
+nuget sign .\..\MyPackage.nupkg -Timestamper http://timestamp.test -OutputDirectory .\..\Signed
+```
