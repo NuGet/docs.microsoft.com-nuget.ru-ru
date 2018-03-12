@@ -11,11 +11,11 @@ description: "Объекты pack и restore NuGet могут выступать
 keywords: "NuGet и MSBuild, целевой объект pack NuGet, целевой объект restore NuGet"
 ms.reviewer:
 - karann-msft
-ms.openlocfilehash: 4d448af3d31e0907cba223c0ccec55604e94f055
-ms.sourcegitcommit: 7969f6cd94eccfee5b62031bb404422139ccc383
+ms.openlocfilehash: 798b3550718294072d86b6e4827ec5017178d2cc
+ms.sourcegitcommit: 8f26d10bdf256f72962010348083ff261dae81b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/20/2018
+ms.lasthandoff: 03/08/2018
 ---
 # <a name="nuget-pack-and-restore-as-msbuild-targets"></a>Объекты pack и restore NuGet в качестве целевых объектов MSBuild
 
@@ -46,7 +46,7 @@ ms.lasthandoff: 02/20/2018
 
 Обратите внимание, что свойства `Owners` и `Summary` из `.nuspec` не поддерживаются в MSBuild.
 
-| Значение атрибута или NuSpec | Свойство MSBuild | По умолчанию | Примечания |
+| Значение атрибута или NuSpec | Свойство MSBuild | Значение по умолчанию | Примечания |
 |--------|--------|--------|--------|
 | Идентификатор | PackageId | AssemblyName | $(AssemblyName) из MSBuild |
 | Версия | PackageVersion | Версия | Это значение совместимо с SemVer, например "1.0.0", "1.0.0-beta" или "1.0.0-beta-00345" |
@@ -55,7 +55,7 @@ ms.lasthandoff: 02/20/2018
 | Authors | Authors | Имя текущего пользователя | |
 | Владельцы | Н/Д | Не существует в NuSpec | |
 | Заголовок | Заголовок | Идентификатор пакета| |
-| Описание: | Описание: | "Описание пакета" | |
+| Описание: | PackageDescription | "Описание пакета" | |
 | Copyright | Copyright | пустой | |
 | RequireLicenseAcceptance | PackageRequireLicenseAcceptance | False | |
 | LicenseUrl | PackageLicenseUrl | пустой | |
@@ -222,6 +222,9 @@ msbuild /t:pack <path to .csproj file> /p:NuspecFile=<path to nuspec file> /p:Nu
 1. Запуск восстановления.
 1. Скачивание пакетов.
 1. Запись файла ресурсов, целевых объектов и свойств.
+
+> [!Note]
+> `restore` Целевой объект MSBuild работает только для проектов с помощью `PackageReference` элементы и не восстанавливает пакеты, связанные с помощью `packages.config` файла.
 
 ### <a name="restore-properties"></a>Свойства восстановления
 
