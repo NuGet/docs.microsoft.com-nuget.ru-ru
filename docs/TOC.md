@@ -26,6 +26,7 @@
 ## [Предварительные версии пакетов](create-packages/prerelease-packages.md)
 ## [Собственные пакеты](create-packages/native-packages.md)
 ## [Пакеты символов](create-packages/symbol-packages.md)
+## [Подписывание пакетов](create-packages/sign-a-package.md)
 ## [Публикация пакета](create-packages/publish-a-package.md)
 ## Направляющие
 ### [Создание пакетов универсальной платформы Windows](guides/create-uwp-packages.md)
@@ -51,9 +52,11 @@
 ### [push](tools/cli-ref-push.md)
 ### [restore](tools/cli-ref-restore.md)
 ### [setapikey](tools/cli-ref-setapikey.md)
+### [sign](tools/cli-ref-sign.md)
 ### [sources](tools/cli-ref-sources.md)
 ### [spec](tools/cli-ref-spec.md)
 ### [update](tools/cli-ref-update.md)
+### [verify](tools/cli-ref-verify.md)
 ### [Переменные среды](tools/cli-ref-environment-variables.md)
 ## [Пользовательский интерфейс диспетчера пакетов](tools/package-manager-ui.md)
 ## [Консоль диспетчера пакетов](tools/package-manager-console.md)
@@ -79,6 +82,7 @@
 ## [Ошибки и предупреждения](reference/errors-and-warnings.md)
 ## [Резервирование префикса идентификатора](reference/id-prefix-reservation.md)
 ## [Пакет SDK для клиента NuGet](reference/nuget-client-sdk.md)
+## [Ссылка на подписанные пакеты](reference/signed-packages-reference.md)
 ## Расширение среды
 ### [Поставщики учетных данных NuGet для Visual Studio](reference/extensibility/nuget-credential-providers-for-visual-studio.md)
 ### [Поставщики учетных данных nuget.exe](reference/extensibility/nuget-exe-credential-providers.md)
@@ -108,9 +112,9 @@
 ## [Экосистема](policies/ecosystem.md)
 ## [Разрешение спорных вопросов](policies/dispute-resolution.md)
 ## [Удаление пакетов](policies/deleting-packages.md)
-# [Репозитории GitHub](https://github.com/NuGet)
 # заметки о выпуске;
 ## [Известные проблемы](release-notes/known-issues.md)
+## [NuGet 4.6 RTM](release-notes/NuGet-4.6-RTM.md)
 ## [NuGet 4.5 RTM](release-notes/NuGet-4.5-RTM.md)
 ## [NuGet 4.4 RTM](release-notes/NuGet-4.4-RTM.md)
 ## [NuGet 4.3 RTM](release-notes/NuGet-4.3-RTM.md)
