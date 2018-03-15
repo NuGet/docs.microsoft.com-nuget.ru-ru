@@ -12,11 +12,11 @@ keywords: "NuGet ссылки, удалите пакет команд"
 ms.reviewer:
 - karann-msft
 - unniravindranathan
-ms.openlocfilehash: 3412d38edbdb011d050b9b61c7c144568edd4cca
-ms.sourcegitcommit: b0af28d1c809c7e951b0817d306643fcc162a030
+ms.openlocfilehash: b5d53b83cdccaa8e284b844786b0ec27e7afb63a
+ms.sourcegitcommit: 74c21b406302288c158e8ae26057132b12960be8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/14/2018
+ms.lasthandoff: 03/15/2018
 ---
 # <a name="delete-command-nuget-cli"></a>Удаление команды (NuGet CLI)
 
@@ -36,8 +36,8 @@ nuget delete <packageID> <packageVersion> [options]
 
 | Параметр | Описание: |
 | --- | --- |
-| apiKey | Ключ API для целевой репозиторий. Если не существует, указанная в *%AppData%\NuGet\NuGet.Config* используется. |
-| ConfigFile | Файл конфигурации NuGet вступили в силу. Если не указан, *%AppData%\NuGet\NuGet.Config* используется. |
+| apiKey | Ключ API для целевой репозиторий. Если он отсутствует, используется заданный в файле конфигурации. |
+| ConfigFile | Файл конфигурации NuGet вступили в силу. Если не указан, `%AppData%\NuGet\NuGet.Config` (Windows) или `~/.nuget/NuGet/NuGet.Config` используется (Mac и Linux).|
 | ForceEnglishOutput | *(3.5 +)*  Принудительно nuget.exe выполняется с использованием инвариантных, на основе английского языка и региональных параметров. |
 | Справка | Отображает справку по команде. |
 | Неинтерактивные | Подавление для ввода данных и подтверждений. |

@@ -12,17 +12,17 @@ keywords: "Справочник по список NuGet, команда спис
 ms.reviewer:
 - karann-msft
 - unniravindranathan
-ms.openlocfilehash: 5a1f68aaffd26a0f903aa3a7a4a450a0121191c3
-ms.sourcegitcommit: 4651b16a3a08f6711669fc4577f5d63b600f8f58
+ms.openlocfilehash: 7e0945b9e64a15a839f62bde0a0ef8f3d83335d4
+ms.sourcegitcommit: 74c21b406302288c158e8ae26057132b12960be8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/02/2018
+ms.lasthandoff: 03/15/2018
 ---
 # <a name="list-command-nuget-cli"></a>Команда List (NuGet CLI)
 
 **Применяется к:** потребления пакета, публикация &bullet; **поддерживаемые версии:** все
 
-Отображает список пакетов из данного источника. Если не указан ни один из источников, все источники, определенные в файле Глобальная конфигурация `%AppData%\NuGet\NuGet.Config`, используются. Если `NuGet.Config` указывает нет источников, затем `list` использует стандартный канал (nuget.org).
+Отображает список пакетов из данного источника. Если не указан ни один из источников, все источники, определенные в файле Глобальная конфигурация `%AppData%\NuGet\NuGet.Config` (Windows) или `~/.nuget/NuGet/NuGet.Config`, используются. Если `NuGet.Config` указывает нет источников, затем `list` использует стандартный канал (nuget.org).
 
 ## <a name="usage"></a>Использование
 
@@ -30,14 +30,14 @@ ms.lasthandoff: 02/02/2018
 nuget list [search terms] [options]
 ```
 
-где отображается список будет отфильтрован условия поиска необязательно. Условия поиска применяются к имена пакетов, теги и описание пакета.
+где отображается список будет отфильтрован условия поиска необязательно. Условия поиска, применяются к имена пакетов, теги и описание пакета, так же как при использовании их в nuget.org.
 
 ## <a name="options"></a>Параметры
 
 | Параметр | Описание: |
 | --- | --- |
 | AllVersions | Вывести все версии пакета. По умолчанию отображается только последняя версия пакета. |
-| ConfigFile | Файл конфигурации NuGet вступили в силу. Если не указан, *%AppData%\NuGet\NuGet.Config* используется. |
+| ConfigFile | Файл конфигурации NuGet вступили в силу. Если не указан, `%AppData%\NuGet\NuGet.Config` (Windows) или `~/.nuget/NuGet/NuGet.Config` используется (Mac и Linux).|
 | ForceEnglishOutput | *(3.5 +)*  Принудительно nuget.exe выполняется с использованием инвариантных, на основе английского языка и региональных параметров. |
 | Справка | Отображает справку по команде. |
 | IncludeDelisted | *(3.2 +)*  Отображение отсутствующие в списке пакетов. |
@@ -53,5 +53,7 @@ nuget list [search terms] [options]
 ```cli
 nuget list
 
-nuget list -Verbosity detailed -AllVersions
+nuget list chinese korean -Verbosity detailed
+
+nuget list couchbase -AllVersions
 ```

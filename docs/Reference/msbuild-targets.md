@@ -3,7 +3,7 @@ title: "Объекты pack и restore NuGet в качестве целевых 
 author: kraigb
 ms.author: kraigb
 manager: ghogen
-ms.date: 04/03/2017
+ms.date: 03/13/2018
 ms.topic: article
 ms.prod: nuget
 ms.technology: 
@@ -11,11 +11,11 @@ description: "Объекты pack и restore NuGet могут выступать
 keywords: "NuGet и MSBuild, целевой объект pack NuGet, целевой объект restore NuGet"
 ms.reviewer:
 - karann-msft
-ms.openlocfilehash: 798b3550718294072d86b6e4827ec5017178d2cc
-ms.sourcegitcommit: 8f26d10bdf256f72962010348083ff261dae81b9
+ms.openlocfilehash: bb0ade1b0f5f81d7c8822d3c2b2f9dd45745fb8d
+ms.sourcegitcommit: 74c21b406302288c158e8ae26057132b12960be8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/08/2018
+ms.lasthandoff: 03/15/2018
 ---
 # <a name="nuget-pack-and-restore-as-msbuild-targets"></a>Объекты pack и restore NuGet в качестве целевых объектов MSBuild
 
@@ -42,7 +42,9 @@ ms.lasthandoff: 03/08/2018
 
 ## <a name="pack-target"></a>Целевой объект pack
 
-При использовании целевого объекта pack, то есть `msbuild /t:pack`, MSBuild получает входные данные из файла проекта. В следующей таблице описываются свойства MSBuild, которые можно добавить в файл проекта в первом узле `<PropertyGroup>`. Эти изменения легко внести в Visual Studio 2017 и более поздней версии, щелкнув проект правой кнопкой мыши и выбрав пункт **Изменить {project_name}**. Для удобства таблица упорядочена по эквивалентным свойствам в [файле `.nuspec`](../reference/nuspec.md).
+Для проектов .NET Standard в формате PackageReference, с помощью `msbuild /t:pack` рисует входные данные из файла проекта для создания пакета NuGet.
+
+В следующей таблице описываются свойства MSBuild, которые можно добавить в файл проекта в первом узле `<PropertyGroup>`. Эти изменения легко внести в Visual Studio 2017 и более поздней версии, щелкнув проект правой кнопкой мыши и выбрав пункт **Изменить {project_name}**. Для удобства таблица упорядочена по эквивалентным свойствам в [файле `.nuspec`](../reference/nuspec.md).
 
 Обратите внимание, что свойства `Owners` и `Summary` из `.nuspec` не поддерживаются в MSBuild.
 
@@ -63,7 +65,7 @@ ms.lasthandoff: 03/08/2018
 | IconUrl | PackageIconUrl | пустой | |
 | Теги | PackageTags | пустой | Теги разделяются точкой с запятой. |
 | ReleaseNotes | PackageReleaseNotes | пустой | |
-| URL-адрес или репозитория | RepositoryUrl | пустой | URL-адрес репозитория используется для клонирования или получения исходного кода. Example: *https://github.com/NuGet/NuGet.Client.git* |
+| URL-адрес или репозитория | RepositoryUrl | пустой | URL-адрес репозитория используется для клонирования или получения исходного кода. Пример: *https://github.com/NuGet/NuGet.Client.git* |
 | Тип или репозитория | RepositoryType | пустой | Тип репозитория. Примеры: *git*, *tfs*. |
 | Репозиторий и ветвь | RepositoryBranch | пустой | Сведения о ветви необязательно репозитории. *RepositoryUrl* также необходимо указать для этого свойства для включения. Пример: *master* (NuGet 4.7.0+) |
 | Репозитории/фиксации | RepositoryCommit | пустой | Необязательный репозитория commit или изменений, чтобы указать, что источник пакета было создано. *RepositoryUrl* также необходимо указать для этого свойства для включения. Пример: *0e4d1b598f350b3dc675018d539114d1328189ef* (NuGet 4.7.0+) |
@@ -194,7 +196,7 @@ ms.lasthandoff: 03/08/2018
 
 ### <a name="packing-using-a-nuspec"></a>Упаковка с помощью NUSPEC
 
-Вы можете использовать файл `.nuspec` для упаковки проекта при условии, что у вас есть файл проекта для импорта `NuGet.Build.Tasks.Pack.targets`, чтобы можно было выполнить задачу пакета. Следующие три свойства MSBuild связаны с упаковкой с помощью `.nuspec`:
+Можно использовать `.nuspec` пакет проекта, при условии, что у вас есть файл проекта SDK для импорта файла `NuGet.Build.Tasks.Pack.targets` , чтобы задача пакета могут быть выполнены. По-прежнему необходимо восстановить проект, прежде чем можно упаковать nuspec-файла. Требуемая версия .NET framework в файл проекта не имеет значения и не используется, когда при помощи nuspec. Следующие три свойства MSBuild связаны с упаковкой с помощью `.nuspec`:
 
 1. `NuspecFile`: относительный или абсолютный путь к файлу `.nuspec`, используемому для упаковки.
 1. `NuspecProperties`: список разделенных точками с запятой пар "ключ-значение". Из-за особенностей работы анализа в командной строке MSBuild несколько свойств нужно указать следующим образом: `/p:NuspecProperties=\"key1=value1;key2=value2\"`.  
@@ -212,6 +214,23 @@ dotnet pack <path to .csproj file> /p:NuspecFile=<path to nuspec file> /p:Nuspec
 msbuild /t:pack <path to .csproj file> /p:NuspecFile=<path to nuspec file> /p:NuspecProperties=<> /p:NuspecBasePath=<Base path> 
 ```
 
+Обратите внимание на то, что упаковки nuspec с помощью dotnet.exe или msbuild также приводит к сборке проекта по умолчанию. Этого можно избежать путем передачи ```--no-build``` свойства dotnet.exe, что равносильно параметр ```<NoBuild>true</NoBuild> ``` в файле проекта, а также параметр ```<IncludeBuildOutput>false</IncludeBuildOutput> ``` в файле проекта
+
+Является примером csproj-файле для упаковки nuspec-файла:
+
+```
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <NoBuild>true</NoBuild>
+    <IncludeBuildOutput>false</IncludeBuildOutput>
+    <NuspecFile>PATH_TO_NUSPEC_FILE</NuspecFile>
+    <NuspecProperties>add nuspec properties here</NuspecProperties>
+    <NuspecBasePath>optional to provide</NuspecBasePath>
+  </PropertyGroup>
+</Project>
+```
+
 ## <a name="restore-target"></a>Целевой объект restore
 
 `MSBuild /t:restore` (который `nuget restore` и `dotnet restore` используют с проектами .NET Core) восстанавливает пакеты, на которые ссылается файл проекта:
@@ -223,8 +242,7 @@ msbuild /t:pack <path to .csproj file> /p:NuspecFile=<path to nuspec file> /p:Nu
 1. Скачивание пакетов.
 1. Запись файла ресурсов, целевых объектов и свойств.
 
-> [!Note]
-> `restore` Целевой объект MSBuild работает только для проектов с помощью `PackageReference` элементы и не восстанавливает пакеты, связанные с помощью `packages.config` файла.
+`restore` Целевой works **только** для проектов, в формате PackageReference. Это осуществляется **не** подходит для проектов с помощью `packages.config` форматирования; используйте [восстановление nuget](../tools/cli-ref-restore.md) вместо.
 
 ### <a name="restore-properties"></a>Свойства восстановления
 

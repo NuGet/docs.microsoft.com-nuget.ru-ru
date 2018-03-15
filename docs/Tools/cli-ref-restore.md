@@ -12,11 +12,11 @@ keywords: "NuGet восстановления ссылок, пакеты ком�
 ms.reviewer:
 - karann-msft
 - unniravindranathan
-ms.openlocfilehash: 0ad5156a065e20dfced99da6b2e2860dbd748ad5
-ms.sourcegitcommit: b0af28d1c809c7e951b0817d306643fcc162a030
+ms.openlocfilehash: 2416ad652244e0ea60651147ad74a1513cdb75ff
+ms.sourcegitcommit: 74c21b406302288c158e8ae26057132b12960be8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/14/2018
+ms.lasthandoff: 03/15/2018
 ---
 # <a name="restore-command-nuget-cli"></a>Команда RESTORE (NuGet CLI)
 
@@ -38,7 +38,7 @@ nuget restore <projectPath> [options]
 
 | Параметр | Описание: |
 | --- | --- |
-| ConfigFile | Файл конфигурации NuGet вступили в силу. Если не указан, *%AppData%\NuGet\NuGet.Config* используется. |
+| ConfigFile | Файл конфигурации NuGet вступили в силу. Если не указан, `%AppData%\NuGet\NuGet.Config` (Windows) или `~/.nuget/NuGet/NuGet.Config` используется (Mac и Linux).|
 | DirectDownload | *(4.0 +)*  Загружает пакеты непосредственно, без заполнения кэши с двоичные файлы и метаданные. |
 | DisableParallelProcessing | Отключает восстановление нескольких пакетов в параллельном режиме. |
 | FallbackSource | *(3.2 +)*  Список источников пакетов для использования как в случае ошибки в случае, если пакет не найден в основной или источник по умолчанию. |

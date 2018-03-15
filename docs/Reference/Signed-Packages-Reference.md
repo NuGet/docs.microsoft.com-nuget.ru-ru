@@ -13,11 +13,11 @@ ms.reviewer:
 - ananguar
 - karann-msft
 - unniravindranathan
-ms.openlocfilehash: 4763b0dde0153f9e8ea840d5e788b5a3d96b9bd8
-ms.sourcegitcommit: 8f26d10bdf256f72962010348083ff261dae81b9
+ms.openlocfilehash: 9bf9885aaf42bedb681a5d916202fa8b26749a0c
+ms.sourcegitcommit: 74c21b406302288c158e8ae26057132b12960be8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/08/2018
+ms.lasthandoff: 03/15/2018
 ---
 # <a name="signed-packages"></a>Подписанные пакеты
 
@@ -27,7 +27,7 @@ ms.lasthandoff: 03/08/2018
 
 Подписанные пакеты обеспечивают надежную проверку начала до конца. Сигнатура автор гарантирует, что пакет не был изменен с момента автор подписи пакета, независимо от того, из которой репозитория или что транспорта метод доставки пакета.
 
-Потребителей, которым требуется закрытой среде может потребоваться пакеты, подписанного сертификатом определенного автора.
+Потребителей, которым требуется закрытой среде может потребоваться пакеты, подписанные сертификатом, определенных автором.
 
 Кроме того автор подписи пакетов предоставляют механизм дополнительную проверку подлинности в конвейер публикации nuget.org из-за сертификата для подписи должны быть зарегистрированы заранее.
 
@@ -51,7 +51,7 @@ ms.lasthandoff: 03/08/2018
 - [Comodo](https://www.comodo.com/e-commerce/code-signing/code-signing-certificate.php)
 - [Certum](https://www.certum.eu/certum/cert,offer_en_open_source_cs.xml) 
 
-Полный список центров сертификации, доверенным для Windows можно получить из [http://aka.ms/trustcertpartners](http://aka.ms/trustcertpartners).
+Полный список центров сертификации, доверенным для Windows можно получить из [ http://aka.ms/trustcertpartners ](http://aka.ms/trustcertpartners).
 
 ## <a name="create-a-test-certificate"></a>Создание тестового сертификата
 

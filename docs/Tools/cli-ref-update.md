@@ -12,11 +12,11 @@ keywords: "NuGet обновить ссылку, команда пакета об
 ms.reviewer:
 - karann-msft
 - unniravindranathan
-ms.openlocfilehash: 6a788244d23354b980e8fa86fa170740c18f17b2
-ms.sourcegitcommit: b0af28d1c809c7e951b0817d306643fcc162a030
+ms.openlocfilehash: 6acf3a74e5c26bc4e2cef9b0db4a72442d311449
+ms.sourcegitcommit: 74c21b406302288c158e8ae26057132b12960be8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/14/2018
+ms.lasthandoff: 03/15/2018
 ---
 # <a name="update-command-nuget-cli"></a>Команда обновления (NuGet CLI)
 
@@ -42,7 +42,7 @@ nuget update <configPath> [options]
 
 | Параметр | Описание: |
 | --- | --- |
-| ConfigFile | Файл конфигурации NuGet вступили в силу. Если не указан, *%AppData%\NuGet\NuGet.Config* используется. |
+| ConfigFile | Файл конфигурации NuGet вступили в силу. Если не указан, `%AppData%\NuGet\NuGet.Config` (Windows) или `~/.nuget/NuGet/NuGet.Config` используется (Mac и Linux).|
 | FileConflictAction | Указывает действие, выполняемое при появлении запроса, чтобы игнорировать существующие файлы, связанные с проектом или перезаписать. Значения: *перезаписать, игнорировать none*. |
 | ForceEnglishOutput | *(3.5 +)*  Принудительно nuget.exe выполняется с использованием инвариантных, на основе английского языка и региональных параметров. |
 | Справка | Отображает справку по команде. |

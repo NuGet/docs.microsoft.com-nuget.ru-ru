@@ -12,11 +12,11 @@ keywords: "Справочник по входа NuGet, команда входа
 ms.reviewer:
 - karann
 - rmpablos
-ms.openlocfilehash: 109b0f6aca0ebaae2ea56fbb45226bc1b14f2ea1
-ms.sourcegitcommit: df7158169e84900d135416cd5e52f937df0beb52
+ms.openlocfilehash: f600a0830472703f40ef62f1b1538c53671703a9
+ms.sourcegitcommit: 74c21b406302288c158e8ae26057132b12960be8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/08/2018
+ms.lasthandoff: 03/15/2018
 ---
 # <a name="sign-command-nuget-cli"></a>Команда входа (NuGet CLI)
 
@@ -44,7 +44,7 @@ nuget sign <package(s)> [options]
 | CertificateStoreLocation | Задает имя хранилища сертификатов X.509, используемый для поиска сертификата. По умолчанию используется «CurrentUser», хранилища сертификатов X.509, используемый текущим пользователем. Этот параметр следует использовать при указании сертификата - CertificateSubjectName или - CertificateFingerprint параметры. |
 | CertificateStoreName | Задает имя хранилища сертификатов X.509 для поиска сертификата. Значение по умолчанию «My», хранилище сертификатов X.509 для личных сертификатов. Этот параметр следует использовать при указании сертификата - CertificateSubjectName или - CertificateFingerprint параметры. |
 | CertificateSubjectName | Задает имя субъекта сертификата, используемого для поиска в локальном хранилище сертификатов для сертификата.  Поиск является сравнение строк без учета регистра, используя указанное значение, которое будет найти все сертификаты с именем субъекта, содержащему эту строку, независимо от того, другие значения субъекта.  С параметрами - CertificateStoreName и - CertificateStoreLocation можно указать в хранилище сертификатов. |
-| ConfigFile | Файл конфигурации NuGet вступили в силу. Если не указан, *%AppData%\NuGet\NuGet.Config* используется. |
+| ConfigFile | Файл конфигурации NuGet вступили в силу. Если не указан, `%AppData%\NuGet\NuGet.Config` (Windows) или `~/.nuget/NuGet/NuGet.Config` используется (Mac и Linux).|
 | ForceEnglishOutput | Принудительно nuget.exe выполняется с использованием инвариантных, на основе английского языка и региональных параметров. |
 | HashAlgorithm | Хэш-алгоритм, используемый для подписывания пакета. По умолчанию — SHA256. |
 | Справка | Отображает справку по команде. |

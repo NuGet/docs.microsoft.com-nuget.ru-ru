@@ -12,15 +12,15 @@ ms.topic: reference
 ms.prod: nuget
 ms.technology: 
 description: "Шаблон URL-адреса отчета о нарушении позволяет клиентам отображать ссылку на отчет о нарушении в их пользовательского интерфейса."
-keywords: "Сообщить о нарушении NuGet интерфейса API, NuGet API файл политикам, NuGet.org шаблон URL-адреса отчета"
+keywords: "Сообщить о нарушении NuGet интерфейса API, NuGet API файл политикам, nuget.org шаблон URL-адреса отчета"
 ms.reviewer:
 - karann
 - unniravindranathan
-ms.openlocfilehash: c12be294c71547fbce421c72aa091e0eee15aacd
-ms.sourcegitcommit: 4651b16a3a08f6711669fc4577f5d63b600f8f58
+ms.openlocfilehash: efbe5704e6e6028f9382fea3fe5ec453f573a2e9
+ms.sourcegitcommit: 74c21b406302288c158e8ae26057132b12960be8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/02/2018
+ms.lasthandoff: 03/15/2018
 ---
 # <a name="report-abuse-url-template"></a>Шаблон URL-адреса отчета о нарушении
 
@@ -35,7 +35,7 @@ ms.lasthandoff: 02/02/2018
 Значение @type                       | Примечания
 --------------------------------- | -----
 ReportAbuseUriTemplate/3.0.0-beta | Первоначальный выпуск
-ReportAbuseUriTemplate/3.0.0-rc   | Псевдоним`ReportAbuseUriTemplate/3.0.0-beta`
+ReportAbuseUriTemplate/3.0.0-rc   | Псевдоним `ReportAbuseUriTemplate/3.0.0-beta`
 
 ## <a name="url-template"></a>Шаблон URL-адреса
 
@@ -58,7 +58,7 @@ name        | Тип    | Обязательно | Примечания
 `{id}`      | string  | Нет       | Идентификатор пакета для сообщения о нарушении для
 `{version}` | string  | Нет       | Версия пакета для сообщения о нарушении для
 
-`{id}` И `{version}` значения интерпретируются реализация сервера должен быть регистра без учета регистра и не подвержены ли Нормализованная версия.
+`{id}` И `{version}` значения, интерпретируются реализация сервера должны быть без учета регистра и не подвержены ли Нормализованная версия.
 
 Например nuget.org отчетов о нарушении шаблона выглядит следующим образом:
 
