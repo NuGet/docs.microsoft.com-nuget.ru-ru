@@ -3,7 +3,8 @@
 Ошибки также возникают при попытке опубликовать пакет с использованием идентификатора, который уже имеется на узле. Например, имя AppLogger уже существует. В этом случае команда `push` выдает следующую ошибку:
 
 ```output
-Response status code does not indicate success: 403 (The specified API key is invalid, has expired, or does not have permission to access the specified package.).
+Response status code does not indicate success: 403 (The specified API key is invalid,
+has expired, or does not have permission to access the specified package.).
 ```
 
 Если вы используете только что созданный допустимый ключ API, это сообщение означает, что возник конфликт имен, что не совсем понятно из части касательно разрешения в ошибке. Измените идентификатор пакета, перестройте проект, повторно создайте файл `.nupkg`, а затем повторите команду `push`.

@@ -12,11 +12,11 @@ keywords: "установка NuGet, использование пакета NuG
 ms.reviewer:
 - karann-msft
 - unniravindranathan
-ms.openlocfilehash: 11b417644a46008f91fdcd5e0ba0a1fcf0bdc0e0
-ms.sourcegitcommit: eabd401616a98dda2ae6293612acb3b81b584967
+ms.openlocfilehash: accc6d7bb5abff43ffaa083fa55c13cd5b10ce10
+ms.sourcegitcommit: 8f26d10bdf256f72962010348083ff261dae81b9
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/09/2018
+ms.lasthandoff: 03/08/2018
 ---
 # <a name="install-and-use-a-package-using-the-dotnet-cli"></a>Установка и использование пакета с помощью CLI dotnet
 
@@ -27,7 +27,7 @@ ms.lasthandoff: 02/09/2018
 > [!Tip]
 > **Начните с сайта nuget.org**: разработчики .NET обычно находят компоненты, которые можно использовать в собственных приложениях, просматривая сайт nuget.org. Вы можете выполнить поиск непосредственно на сайте nuget.org или найти и установить пакеты в Visual Studio, как описано в этой статье.
 
-## <a name="pre-requisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Предварительные требования
 
 - [Пакет SDK для .NET Core](https://www.microsoft.com/net/download/), который предоставляет программу командной строки `dotnet`.
 
