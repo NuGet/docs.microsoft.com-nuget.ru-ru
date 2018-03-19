@@ -3,8 +3,9 @@
 # Краткие руководства
 ## [Установка и использование пакета (dotnet CLI)](quickstart/install-and-use-a-package-using-the-dotnet-cli.md)
 ## [Установка и использование пакета (Visual Studio)](quickstart/install-and-use-a-package-in-visual-studio.md)
-## [Создание и публикация пакета (dotnet CLI)](quickstart/create-and-publish-a-package-using-the-dotnet-cli.md)
-## [Создание и публикация пакета (Visual Studio)](quickstart/create-and-publish-a-package-using-visual-studio.md)
+## [Создание и публикация пакета .NET Standard (CLI dotnet)](quickstart/create-and-publish-a-package-using-the-dotnet-cli.md)
+## [Создание и публикация пакета .NET Standard (Visual Studio)](quickstart/create-and-publish-a-package-using-visual-studio.md)
+## [Создание и публикация пакета .NET Framework (Visual Studio)](quickstart/create-and-publish-a-package-using-visual-studio-net-framework.md)
 # Использование пакетов
 ## [Общие сведения и рабочий процесс](consume-packages/overview-and-workflow.md)
 ## [Поиск и выбор пакетов](consume-packages/finding-and-choosing-packages.md)
