@@ -1,5 +1,5 @@
 ---
-title: "Вводное руководство по созданию и публикации пакета NuGet с помощью интерфейса командной строки dotnet | Документация Майкрософт"
+title: "Создание и публикация пакета NuGet с помощью интерфейса командной строки dotnet | Документация Майкрософт"
 author: kraigb
 ms.author: kraigb
 manager: ghogen
@@ -12,17 +12,17 @@ keywords: "создание пакетов NuGet, публикация паке�
 ms.reviewer:
 - karann-msft
 - unniravindranathan
-ms.openlocfilehash: c9f46cafafcdc238e43979d6f05521e19bf3d7f6
-ms.sourcegitcommit: eabd401616a98dda2ae6293612acb3b81b584967
+ms.openlocfilehash: 086de5378fe4ae928e6bd00cd3a87afd7c366a01
+ms.sourcegitcommit: 8f26d10bdf256f72962010348083ff261dae81b9
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/09/2018
+ms.lasthandoff: 03/08/2018
 ---
 # <a name="create-and-publish-a-package"></a>Создание и публикация пакета
 
 Создание пакета NuGet из библиотеки классов .NET и его публикация на сайте nuget.org выполняются очень просто с помощью интерфейса командной строки (CLI) `dotnet`.
 
-## <a name="pre-requisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Предварительные требования
 
 1. Установите [пакет SDK для .NET Core](https://www.microsoft.com/net/download/), содержащий CLI `dotnet`.
 
@@ -95,7 +95,6 @@ Copyright (C) Microsoft Corporation. All rights reserved.
 
 [!INCLUDE[publish-errors](includes/publish-errors.md)]
 
-
 ### <a name="manage-the-published-package"></a>Управление опубликованным пакетом
 
 [!INCLUDE[publish-manage](includes/publish-manage.md)]
@@ -107,3 +106,4 @@ Copyright (C) Microsoft Corporation. All rights reserved.
 - [Поддержка нескольких целевых платформ](../create-packages/supporting-multiple-target-frameworks.md)
 - [Управление версиями пакета](../reference/package-versioning.md)
 - [Создание локализованных пакетов](../create-packages/creating-localized-packages.md)
+- [Подписывание пакетов](../create-packages/Sign-a-package.md)

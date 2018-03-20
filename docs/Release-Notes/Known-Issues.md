@@ -12,11 +12,11 @@ keywords: "известные проблемы NuGet, проблемы в NuGet"
 ms.reviewer:
 - karann-msft
 - unniravindranathan
-ms.openlocfilehash: 2b9190c058215d9e63894de45c0c55c8ddae0e0f
-ms.sourcegitcommit: b0af28d1c809c7e951b0817d306643fcc162a030
+ms.openlocfilehash: ac00e3f11c54290a31319e7f2946fd965a0a9288
+ms.sourcegitcommit: 74c21b406302288c158e8ae26057132b12960be8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/14/2018
+ms.lasthandoff: 03/15/2018
 ---
 # <a name="known-issues-with-nuget"></a>Известные проблемы в NuGet
 
@@ -45,7 +45,7 @@ $PAT = "Личный маркер доступа" $Feed = "URL-адрес" .\nug
 
 ![Окно настройки NuGet без источников](./media/knownIssue-34-NoSources.PNG)
 
-Файл `NuGet.Config` в папке `%AppData%\NuGet\` был случайно очищен. Чтобы устранить эту проблему, закройте среду Visual Studio 2015, удалите файл `NuGet.Config` в папке `%AppData%\NuGet\` и снова запустите Visual Studio.  Будет создан новый файл `NuGet.Config`, и вы сможете продолжить работу.
+Файл `NuGet.Config` в папке `%AppData%\NuGet\` (Windows) или `~/.nuget/` (Mac/Linux) был случайно очищен. Чтобы устранить эту проблему, закройте Visual Studio (в Windows, если возможно), удалите файл `NuGet.Config` и повторите попытку. NuGet создает `NuGet.Config`, и вы можете продолжить работу.
 
 ## <a name="error-installing-packages-with-nuget-27"></a>Ошибка при установке пакетов с помощью NuGet 2.7
 
@@ -96,7 +96,7 @@ install-package log4net
 В журналах можно найти упоминание исключения `SignatureMismatchException`.
 
 Чтобы эта ошибка не происходила, можно установить [исправление для Visual Studio 2010 с пакетом обновления 1 (SP1)](http://bit.ly/vsixcertfix).
-Кроме того, можно просто удалить диспетчер NuGet (когда среда Visual Studio запущена с правами администратора), а затем установить его снова из коллекции расширений Visual Studio.  Дополнительные сведения см. на странице по адресу [http://support.microsoft.com/kb/2581019](http://support.microsoft.com/kb/2581019).
+Кроме того, можно просто удалить диспетчер NuGet (когда среда Visual Studio запущена с правами администратора), а затем установить его снова из коллекции расширений Visual Studio.  Дополнительные сведения см. в разделе [http://support.microsoft.com/kb/2581019](http://support.microsoft.com/kb/2581019).
 
 ## <a name="package-manager-console-throws-an-exception-when-the-reflector-visual-studio-add-in-is-also-installed"></a>Консоль диспетчера пакетов выдает исключение, если также установлена надстройка Reflector для Visual Studio
 
@@ -165,7 +165,7 @@ install-package log4net
 
 ## <a name="the-package-manager-console-crashes-when-i-open-it-in-windows-xp-whats-wrong"></a>При открытии консоли диспетчера пакетов в Windows XP происходит аварийное завершение. В чем проблема?
 
-Для NuGet требуется среда выполнения PowerShell 2.0. В Windows XP она по умолчанию отсутствует. Вы можете скачать среду выполнения PowerShell 2.0 на странице по адресу [http://support.microsoft.com/kb/968929](http://support.microsoft.com/kb/968929). После ее установки перезапустите Visual Studio, и можно будет открыть консоль диспетчера пакетов.
+Для NuGet требуется среда выполнения PowerShell 2.0. В Windows XP она по умолчанию отсутствует. Вы можете скачать среду выполнения PowerShell 2.0 по адресу [http://support.microsoft.com/kb/968929](http://support.microsoft.com/kb/968929). После ее установки перезапустите Visual Studio, и можно будет открыть консоль диспетчера пакетов.
 
 ## <a name="visual-studio-2010-sp1-beta-crashes-on-exit-if-the-package-manager-console-is-open"></a>При выходе из бета-версии Visual Studio 2010 с пакетом обновления 1 (SP1) происходит аварийное завершение, если открыта консоль диспетчера пакетов.
 
@@ -231,4 +231,4 @@ install-package log4net
 
 ## <a name="reporting-issues"></a>Сообщение о проблемах
 
-Чтобы сообщить о возникающих проблемах NuGet, перейдите по адресу [https://github.com/nuget/home/issues](https://github.com/nuget/home/issues).
+Чтобы сообщить о проблемах с NuGet, посетите [https://github.com/nuget/home/issues](https://github.com/nuget/home/issues).

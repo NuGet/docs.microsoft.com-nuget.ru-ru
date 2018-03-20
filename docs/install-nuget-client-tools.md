@@ -12,11 +12,11 @@ keywords: "интерфейс командной строки dotnet.exe, кли
 ms.reviewer:
 - karann-msft
 - unniravindranathan
-ms.openlocfilehash: ec8de83c9e05981016215e487888ab68a616d977
-ms.sourcegitcommit: dbcb872ec10430e1d761f34b851650e31c87a96d
+ms.openlocfilehash: 462557e939e769f26fe05d6f9e2994eaf43c6e11
+ms.sourcegitcommit: 8f26d10bdf256f72962010348083ff261dae81b9
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/03/2018
+ms.lasthandoff: 03/08/2018
 ---
 # <a name="installing-nuget-client-tools"></a>Установка клиентских средств NuGet
 
@@ -28,7 +28,7 @@ ms.lasthandoff: 02/03/2018
 |:------------- |:-------------|:-----|
 | [dotnet.exe](#dotnetexe-cli) | Входит в состав пакета SDK для .NET Core и обеспечивает основные функции NuGet на всех платформах. | [Пакет SDK для .NET Core](https://www.microsoft.com/net/download/) |
 | [nuget.exe](#nugetexe-cli) | Обеспечивает все функциональные возможности NuGet в Windows и большинство функций, выполняемых в рамках проекта [Mono](http://www.mono-project.com/docs/getting-started/install/) на Mac и Linux. | [nuget.exe](https://dist.nuget.org/win-x86-commandline/latest/nuget.exe) |
-| [Visual Studio](#visual-studio) | Предоставляет возможности NuGet через пользовательский интерфейс и консоль диспетчера пакетов. | [Visual Studio 2017](https://www.visualstudio.com/downloads/) |
+| [Visual Studio](#visual-studio) | Предоставляет возможности NuGet через пользовательский интерфейс и консоль диспетчера пакетов. Прилагается к рабочим нагрузкам, связанным с .NET. | [Visual Studio 2017](https://www.visualstudio.com/downloads/) |
 
 [MSBuild CLI](reference/msbuild-targets.md) также предоставляет возможности восстановления и создания пакетов, которые применяются на серверах сборки. MSBuild не является универсальным средством для работы с NuGet.
 
@@ -67,10 +67,10 @@ ms.lasthandoff: 02/03/2018
 - В Visual Studio для Mac: некоторые возможности NuGet встроены напрямую. Пошаговое руководство см. в разделе [Включение пакета NuGet в проект](/visualstudio/mac/nuget-walkthrough). Для других возможностей используются средства CLI `dotnet.exe` или `nuget.exe`.
 
 - В Visual Studio для Windows: **диспетчер пакетов NuGet** включен в выпуски Visual Studio 2012 и более поздние версии. Диспетчер пакетов предоставляет [пользовательский интерфейс](tools/package-manager-ui.md) и [консоль](tools/package-manager-console.md), через которые можно выполнять большинство операций NuGet.
+  - Установщик Visual Studio 2017 содержит диспетчер пакетов NuGet с любой рабочей нагрузкой, использующей .NET. Чтобы проверить, установлен ли диспетчер пакетов, или установить его отдельно, запустите установщик Visual Studio 2017 и установите флажок **Отдельные компоненты > Средства для работы с кодом > Диспетчер пакетов NuGet**.
   - Пользовательский интерфейс и консоль диспетчера пакетов уникальны в Visual Studio для Windows. В настоящее время они недоступны в Visual Studio для Mac.
   - В Visual Studio нет CLI `nuget.exe` по умолчанию. Его нужно установить отдельно, как описано выше.
   - Команды консоли диспетчера пакетов работают только в Visual Studio для Windows, но не в других средах PowerShell.
-  - Установщик Visual Studio 2017 содержит диспетчер пакетов NuGet с любой рабочей нагрузкой, использующей .NET. Чтобы проверить, установлен ли диспетчер пакетов, или установить его отдельно, запустите установщик Visual Studio 2017 и установите флажок **Отдельные компоненты > Средства для работы с кодом > Диспетчер пакетов NuGet**.
   - Для Visual Studio 2010 и более ранних версий установите расширение "Диспетчер пакетов NuGet для Visual Studio".
   - Расширения NuGet для Visual Studio 2013 и 2015 можно скачать по адресу [https://dist.nuget.org/index.html](https://dist.nuget.org/index.html).
   - Если вы хотите заранее оценить предстоящие возможности NuGet, установите предварительную версию [Visual Studio 2017 Preview](https://www.visualstudio.com/vs/preview/), которая работает параллельно со стабильными выпусками Visual Studio. Чтобы сообщить о проблемах или обменяться идеями о предварительных версиях, откройте обращение в [репозитории NuGet GitHub](https://github.com/Nuget/Home/issues).

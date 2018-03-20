@@ -12,11 +12,11 @@ keywords: "установка NuGet, использование пакета NuG
 ms.reviewer:
 - karann-msft
 - unniravindranathan
-ms.openlocfilehash: c0030877803ac7403f26e27ac3c5a0303d69c489
-ms.sourcegitcommit: eabd401616a98dda2ae6293612acb3b81b584967
+ms.openlocfilehash: ff905fec6d6af4fa40fd4331cb970121b6eb0879
+ms.sourcegitcommit: 74c21b406302288c158e8ae26057132b12960be8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/09/2018
+ms.lasthandoff: 03/15/2018
 ---
 # <a name="install-and-use-a-package-in-visual-studio"></a>Установка и использование пакета в Visual Studio
 
@@ -27,7 +27,7 @@ ms.lasthandoff: 02/09/2018
 > [!Tip]
 > **Начните с сайта nuget.org**: разработчики .NET обычно находят компоненты, которые можно использовать в собственных приложениях, просматривая сайт nuget.org. Вы можете выполнить поиск непосредственно на сайте nuget.org или найти и установить пакеты в Visual Studio, как описано в этой статье.
 
-## <a name="pre-requisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Предварительные требования
 
 - Visual Studio 2017 с рабочей нагрузкой универсальной платформы Windows или
 - Visual Studio 2015 с обновлением 3 и инструментами для разработки универсальных приложений для Windows.
@@ -40,7 +40,7 @@ ms.lasthandoff: 02/09/2018
 
 ## <a name="add-the-newtonsoftjson-nuget-package"></a>Добавление пакета NuGet Newtonsoft.Json
 
-Для установки пакета можно использовать пользовательский интерфейс или консоль диспетчера пакетов.
+Для установки пакета можно использовать пользовательский интерфейс или консоль диспетчера пакетов. При установке пакета NuGet регистрирует зависимость в файле проекта или файле `packages.config`. Дополнительные сведения см. в разделе [Обзор использования пакетов и рабочий процесс](../consume-packages/Overview-and-Workflow.md).
 
 ### <a name="package-manager-ui"></a>Пользовательский интерфейс диспетчера пакетов
 

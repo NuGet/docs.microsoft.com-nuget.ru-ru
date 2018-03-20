@@ -12,18 +12,18 @@ keywords: "локализация пакета NuGet, вспомогательн
 ms.reviewer:
 - karann-msft
 - unniravindranathan
-ms.openlocfilehash: 1ce8cff07bf629fcdeeaace901a185f2446b077a
-ms.sourcegitcommit: b0af28d1c809c7e951b0817d306643fcc162a030
+ms.openlocfilehash: 5946ba6b43d3c418a1624aeb27d12b385d66b2fb
+ms.sourcegitcommit: 8f26d10bdf256f72962010348083ff261dae81b9
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/14/2018
+ms.lasthandoff: 03/08/2018
 ---
 # <a name="creating-localized-nuget-packages"></a>Создание локализованных пакетов NuGet
 
 Существует два способа создать локализованные версии библиотеки:
 
 1. Включить все локализованные сборки ресурсов в один пакет.
-1. Создать отдельные локализованные вспомогательные пакеты (NuGet 1.8 и более поздних версий), следуя строгому набору соглашений.
+1. Создать отдельные локализованные вспомогательные пакеты, следуя строгому набору соглашений.
 
 Оба метода имеют преимущества и недостатки, описанные в следующих разделах.
 
