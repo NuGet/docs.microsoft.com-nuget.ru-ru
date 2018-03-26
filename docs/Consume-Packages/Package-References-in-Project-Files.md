@@ -1,22 +1,22 @@
 ---
-title: "Формат NuGet PackageReference (ссылки на пакет в файлах проектов) | Документация Майкрософт"
+title: Формат NuGet PackageReference (ссылки на пакет в файлах проектов) | Документация Майкрософт
 author: kraigb
 ms.author: kraigb
 manager: ghogen
-ms.date: 07/17/2017
+ms.date: 03/16/2018
 ms.topic: article
 ms.prod: nuget
-ms.technology: 
-description: "Подробные сведения о формате NuGet PackageReference в файлах проектов, который поддерживается в NuGet 4.0 и более поздних версиях, в VS2017 и в .NET Core 2.0"
-keywords: "зависимости пакета NuGet, ссылки на пакеты, файлы проекта, PackageReference, packages.config, VS2017, Visual Studio 2017, NuGet 4, .NET Core 2.0"
+ms.technology: ''
+description: Подробные сведения о формате NuGet PackageReference в файлах проектов, который поддерживается в NuGet 4.0 и более поздних версиях, в VS2017 и в .NET Core 2.0
+keywords: зависимости пакета NuGet, ссылки на пакеты, файлы проекта, PackageReference, packages.config, VS2017, Visual Studio 2017, NuGet 4, .NET Core 2.0
 ms.reviewer:
 - karann-msft
 - unniravindranathan
-ms.openlocfilehash: 679871a280c158c863e0daf790af1b7cef509943
-ms.sourcegitcommit: 7969f6cd94eccfee5b62031bb404422139ccc383
+ms.openlocfilehash: e1880c9b294e19ef1b71c7b17b02df8ff1cf1b73
+ms.sourcegitcommit: 718e6cb88e45fa07c85d653f216bf92eaaf81625
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/20/2018
+ms.lasthandoff: 03/20/2018
 ---
 # <a name="package-references-packagereference-in-project-files"></a>Ссылки на пакеты (PackageReference) в файлах проектов
 
@@ -24,7 +24,7 @@ ms.lasthandoff: 02/20/2018
 
 PackageReference также позволяет использовать условия MSBuild для выбора ссылок на пакеты в соответствии с целевой платформой, конфигурацией, платформой устройств и другими признаками. Он также обеспечивает детальный контроль над зависимостями и потоком содержимого. (Дополнительные сведения см. в разделе [Объекты pack и restore NuGet в качестве целевых объектов MSBuild](../reference/msbuild-targets.md).)
 
-По умолчанию PackageReference используется для проектов .NET Core, проектов .NET Standard и проектов универсальной платформы Windows, предназначенных для сборки 15063 системы Windows 10 (Creators Update). Проекты полной версии .NET Framework поддерживают PackageReference, но сейчас по умолчанию используют `packages.config`. Чтобы использовать PackageReference, перенесите зависимости из `packages.config` в файл проекта, а затем удалите packages.config.
+По умолчанию PackageReference используется для проектов .NET Core, проектов .NET Standard и проектов универсальной платформы Windows, предназначенных для сборки 15063 системы Windows 10 (Creators Update), за исключением проектов C++ UWP. Проекты полной версии .NET Framework поддерживают PackageReference, но сейчас по умолчанию используют `packages.config`. Чтобы использовать PackageReference, перенесите зависимости из `packages.config` в файл проекта, а затем удалите packages.config.
 
 ## <a name="adding-a-packagereference"></a>Добавление PackageReference
 
@@ -94,7 +94,7 @@ PackageReference также позволяет использовать усло
 | Значение | Описание: |
 | --- | ---
 | compile | Содержимое папки `lib` |
-| исполняющая среда | Содержимое папки `runtime` |
+| исполняющая среда | Содержимое папки `runtimes` |
 | contentFiles | Содержимое папки `contentfiles` |
 | выполнить сборку | Свойства и цели в папке `build` |
 | analyzers | Анализаторы .NET |
