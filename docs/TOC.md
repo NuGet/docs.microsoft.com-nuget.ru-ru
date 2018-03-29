@@ -14,7 +14,7 @@
 ### [Устранение неполадок](consume-packages/package-restore-troubleshooting.md)
 ## [Повторная установка и обновление пакетов](consume-packages/reinstalling-and-updating-packages.md)
 ## [Пакеты и система управления версиями](consume-packages/packages-and-source-control.md)
-## [Управление кэшем NuGet](consume-packages/managing-the-nuget-cache.md)
+## [Управление глобальными пакетами и папками кэша](consume-packages/managing-the-global-packages-and-cache-folders.md)
 ## [Настройка поведения NuGet](consume-packages/configuring-nuget-behavior.md)
 ## [Разрешение зависимостей](consume-packages/dependency-resolution.md)
 # Создание пакетов
@@ -31,8 +31,8 @@
 ## Направляющие
 ### [Создание пакетов универсальной платформы Windows](guides/create-uwp-packages.md)
 ### [Создание элементов управления универсальной платформы Windows в виде пакетов NuGet](guides/create-uwp-controls.md)
-### [Создание пакетов NET Standard (Visual Studio 2015)](guides/create-net-standard-packages-vs2015.md)
-### [Создание пакетов для Xamarin](guides/create-packages-for-xamarin.md)
+### [Создание пакетов .NET Standard или .NET Framework с помощью Visual Studio 2015](guides/create-net-standard-packages-vs2015.md)
+### [Создание пакетов для Xamarin с помощью Visual Studio 2015](guides/create-packages-for-xamarin.md)
 # Размещение пакетов
 ## [Обзор набора средств Visual Studio для Unity](hosting-packages/overview.md)
 ## [Локальные веб-каналы](hosting-packages/local-feeds.md)
@@ -88,7 +88,7 @@
 ### [Поставщики учетных данных NuGet для Visual Studio](reference/extensibility/nuget-credential-providers-for-visual-studio.md)
 ### [Поставщики учетных данных nuget.exe](reference/extensibility/nuget-exe-credential-providers.md)
 ## Архивированное содержимое
-### [формат ссылки Project.json](archive/project-json.md)
+### [Формат управления project.json](archive/project-json.md)
 ### [project.json и универсальная платформа Windows](archive/project-json-and-uwp.md)
 ### [Влияние project.json](archive/project-json-impact.md)
 # API
