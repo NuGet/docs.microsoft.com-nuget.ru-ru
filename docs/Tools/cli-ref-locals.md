@@ -1,46 +1,49 @@
 ---
-title: "Локальные переменные команду NuGet CLI | Документы Microsoft"
+title: Локальные переменные команду NuGet CLI | Документы Microsoft
 author: kraigb
 ms.author: kraigb
 manager: ghogen
-ms.date: 01/18/2018
+ms.date: 03/19/2018
 ms.topic: reference
 ms.prod: nuget
-ms.technology: 
-description: "Ссылка для команды локальные nuget.exe"
-keywords: "Справочник по NuGet локальные переменные, локальные команды"
+ms.technology: ''
+description: Ссылка для команды локальные nuget.exe
+keywords: Справочник по NuGet локальные переменные, локальные команды
 ms.reviewer:
 - karann-msft
 - unniravindranathan
-ms.openlocfilehash: b2f62a9ab5699bfb486eee146ab7046f5240aa50
-ms.sourcegitcommit: 4651b16a3a08f6711669fc4577f5d63b600f8f58
+ms.workload:
+- dotnet
+- aspnet
+ms.openlocfilehash: 0122c79e55b12838bd123cf91bfcbc5dbbd2a65c
+ms.sourcegitcommit: beb229893559824e8abd6ab16707fd5fe1c6ac26
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/02/2018
+ms.lasthandoff: 03/28/2018
 ---
 # <a name="locals-command-nuget-cli"></a>Команда локальные переменные (NuGet CLI)
 
 **Применяется к:** пакета потребления &bullet; **поддерживаемые версии:** 3.3 +
 
-Очищает или перечисляет локальные ресурсы NuGet кэша HTTP-запроса, пакеты кэша и папке пакеты глобального уровня компьютера. `locals` Команда также может использоваться для отображения списка из этих расположений. Дополнительные сведения см. в разделе [Управление кэшем NuGet](../consume-packages/managing-the-nuget-cache.md).
+Очищает или перечисляет локальные ресурсы NuGet, такие как *кэша http*, *глобального пакеты* папки и временные папки. `locals` Команда также может использоваться для отображения списка из этих расположений. Дополнительные сведения см. в разделе [управление глобального пакетами и папками кэша](../consume-packages/managing-the-global-packages-and-cache-folders.md).
 
 ## <a name="usage"></a>Использование
 
 ```cli
-nuget locals <cache> [options]
+nuget locals <folder> [options]
 ```
 
-где `<cache>` является одним из `all`, `http-cache`, `packages-cache`, `global-packages`, и `temp` *(3.4 +)*.
+где `<folder>` является одним из `all`, `http-cache`, `packages-cache` *(3.5 и более ранних)*, `global-packages`, и `temp` *(3.4 +)*.
 
 ## <a name="options"></a>Параметры
 
-| Параметр | Описание: |
+| Параметр | Описание |
 | --- | --- |
-| Clear | Удаляет указанный кэш. |
-| ConfigFile | Файл конфигурации NuGet вступили в силу. Если не указан, *%AppData%\NuGet\NuGet.Config* используется. |
+| Clear | Удаляет указанную папку. |
+| ConfigFile | Файл конфигурации NuGet вступили в силу. Если не указан, `%AppData%\NuGet\NuGet.Config` (Windows) или `~/.nuget/NuGet/NuGet.Config` используется (Mac и Linux).|
 | ForceEnglishOutput | *(3.5 +)*  Принудительно nuget.exe выполняется с использованием инвариантных, на основе английского языка и региональных параметров. |
 | Справка | Отображает справку по команде. |
-| Список | Выводит расположение указанного кэша или расположение всех кэшей, при использовании с *все*. |
+| Список | Выводит расположение указанная папка или расположение всех папок, при использовании с *все*. |
 | Неинтерактивные | Подавление для ввода данных и подтверждений. |
 | Уровень детализации | Указывает объем сведений в выходных данных: *обычного*, *тихий*, *подробные*. |
 
@@ -52,3 +55,5 @@ nuget locals <cache> [options]
 nuget locals all -list
 nuget locals http-cache -clear
 ```
+
+Дополнительные примеры см. в разделе [управление глобального пакетами и папками кэша](../consume-packages/managing-the-global-packages-and-cache-folders.md).

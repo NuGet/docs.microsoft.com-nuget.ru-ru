@@ -1,22 +1,25 @@
 ---
-title: "Справочник по PowerShell удалить пакет NuGet | Документы Microsoft"
+title: Справочник по PowerShell удалить пакет NuGet | Документы Microsoft
 author: kraigb
 ms.author: kraigb
 manager: ghogen
 ms.date: 06/01/2017
 ms.topic: reference
 ms.prod: nuget
-ms.technology: 
-description: "Ссылка для команды PowerShell удалением пакета в консоли диспетчера пакетов NuGet в Visual Studio."
-keywords: "Пакет NuGet консоли диспетчера, команд NuGet Powershell, справочник по NuGet Powershell, удалением пакета"
+ms.technology: ''
+description: Ссылка для команды PowerShell удалением пакета в консоли диспетчера пакетов NuGet в Visual Studio.
+keywords: Пакет NuGet консоли диспетчера, команд NuGet Powershell, справочник по NuGet Powershell, удалением пакета
 ms.reviewer:
 - karann-msft
 - unniravindranathan
-ms.openlocfilehash: db7cf9b2282bf40988eee2308c256381c4fd5124
-ms.sourcegitcommit: 7969f6cd94eccfee5b62031bb404422139ccc383
+ms.workload:
+- dotnet
+- aspnet
+ms.openlocfilehash: b53a36a6456522aa0d9d0d7cdf412de464ba9e08
+ms.sourcegitcommit: beb229893559824e8abd6ab16707fd5fe1c6ac26
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/20/2018
+ms.lasthandoff: 03/28/2018
 ---
 # <a name="uninstall-package-package-manager-console-in-visual-studio"></a>Uninstall-Package (консоль диспетчера пакетов в Visual Studio)
 
@@ -35,12 +38,12 @@ Uninstall-Package [-Id] <string> [-RemoveDependencies] [-ProjectName <string>] [
 
 ## <a name="parameters"></a>Параметры
 
-| Параметр | Описание: |
+| Параметр | Описание |
 | --- | --- |
 | Идентификатор | (Обязательно) Идентификатор пакета для удаления. — Идентификатор коммутатора сам является необязательным. |
 | Версия | Версия пакета для удаления, установка значений по умолчанию для текущей установленной версии. |
 | RemoveDependencies | Удалите пакет и его неиспользуемые зависимости. То есть если какой-либо зависимостью связан другой пакет зависит от него, он пропускается. |
-| ИмяПроекта | Проект, из которого необходимо удалить пакет, установка значений по умолчанию для проекта по умолчанию. |
+| Название проекта | Проект, из которого необходимо удалить пакет, установка значений по умолчанию для проекта по умолчанию. |
 | Force | Принудительное пакета будет удалена, даже если он зависят другие пакеты. |
 | WhatIf | Показывает, что произойдет при запуске команды без фактического выполнения удаления. |
 

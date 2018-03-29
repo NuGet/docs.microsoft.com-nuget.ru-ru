@@ -1,22 +1,25 @@
 ---
-title: "Команды NuGet CLI config | Документы Microsoft"
+title: Команды NuGet CLI config | Документы Microsoft
 author: kraigb
 ms.author: kraigb
 manager: ghogen
 ms.date: 01/18/2018
 ms.topic: reference
 ms.prod: nuget
-ms.technology: 
-description: "Ссылка для выполнения команды конфигурации nuget.exe"
-keywords: "Справочник по конфигурации NuGet, команда конфигурации"
+ms.technology: ''
+description: Ссылка для выполнения команды конфигурации nuget.exe
+keywords: Справочник по конфигурации NuGet, команда конфигурации
 ms.reviewer:
 - karann-msft
 - unniravindranathan
-ms.openlocfilehash: 7cf7c06000904a617752567ed7612c0c48042db9
-ms.sourcegitcommit: 74c21b406302288c158e8ae26057132b12960be8
+ms.workload:
+- dotnet
+- aspnet
+ms.openlocfilehash: e3d08f210bd56fcb8eb701fc9b241a3ab45998ec
+ms.sourcegitcommit: beb229893559824e8abd6ab16707fd5fe1c6ac26
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/15/2018
+ms.lasthandoff: 03/28/2018
 ---
 # <a name="config-command-nuget-cli"></a>Команда config (NuGet CLI)
 
@@ -39,7 +42,7 @@ nuget config -AsPath <name> [options]
 
 ## <a name="options"></a>Параметры
 
-| Параметр | Описание: |
+| Параметр | Описание |
 | --- | --- |
 | AsPath | Возвращает значение конфигурации как путь, игнорируются, когда `-Set` используется. |
 | ConfigFile | Файл конфигурации NuGet для изменения. Если не указан, `%AppData%\NuGet\NuGet.Config` (Windows) или `~/.nuget/NuGet/NuGet.Config` используется (Mac и Linux).|

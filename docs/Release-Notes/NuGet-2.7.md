@@ -1,22 +1,25 @@
 ---
-title: "Заметки о выпуске NuGet 2.7 | Документы Microsoft"
+title: Заметки о выпуске NuGet 2.7 | Документы Microsoft
 author: karann-msft
 ms.author: karann-msft
 manager: ghogen
 ms.date: 11/11/2016
 ms.topic: article
 ms.prod: nuget
-ms.technology: 
-description: "Заметки о выпуске для NuGet 2.7, включая известные проблемы, исправленные ошибки, добавленные функции и DCR."
-keywords: "NuGet 2.7 заметки о выпуске, исправления, известными проблемами, добавлены функции, DCR"
+ms.technology: ''
+description: Заметки о выпуске для NuGet 2.7, включая известные проблемы, исправленные ошибки, добавленные функции и DCR.
+keywords: NuGet 2.7 заметки о выпуске, исправления, известными проблемами, добавлены функции, DCR
 ms.reviewer:
 - karann-msft
 - unniravindranathan
-ms.openlocfilehash: 43638626661ae034bb0a1cc28958a2e2929f047f
-ms.sourcegitcommit: b0af28d1c809c7e951b0817d306643fcc162a030
+ms.workload:
+- dotnet
+- aspnet
+ms.openlocfilehash: 71ced70af127c8219001069739a6cec59d7d1684
+ms.sourcegitcommit: beb229893559824e8abd6ab16707fd5fe1c6ac26
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/14/2018
+ms.lasthandoff: 03/28/2018
 ---
 # <a name="nuget-27-release-notes"></a>Заметки о выпуске 2.7 NuGet
 
@@ -158,7 +161,7 @@ NuGet 2.7 появилась новая функция для nuget.exe: `nuget.
 
 ### <a name="renaming-the-default-package-source"></a>Переименование источник пакета по умолчанию
 
-NuGet всегда зарегистрировал источник пакета по умолчанию называется «Источник официального пакета NuGet», указывающий на nuget.org. Это имя было verbose и она также не указывать куда он фактически указывает. Для решения этих двух проблем переименовали этот источник пакета, чтобы просто «nuget.org» в пользовательском Интерфейсе. URL-адрес источника пакета также было изменено для включения «www». префикс. После использования NuGet 2.7, вашей существующей «источник официального пакета NuGet» автоматически обновится до «nuget.org», как его имя и «https://www.nuget.org/api/v2/» как его URL-адрес.
+NuGet всегда зарегистрировал источник пакета по умолчанию называется «Источник официального пакета NuGet», указывающий на nuget.org. Это имя было verbose и она также не указывать куда он фактически указывает. Для решения этих двух проблем переименовали этот источник пакета, чтобы просто «nuget.org» в пользовательском Интерфейсе. URL-адрес источника пакета также было изменено для включения «www». c префиксом "group.". После использования NuGet 2.7, вашей существующей «источник официального пакета NuGet» автоматически обновится до «nuget.org», как его имя и «https://www.nuget.org/api/v2/» как его URL-адрес.
 
 ### <a name="performance-improvements"></a>Улучшения производительности
 

@@ -1,22 +1,25 @@
 ---
-title: "Справочник по PowerShell NuGet Find-Package | Документы Microsoft"
+title: Справочник по PowerShell NuGet Find-Package | Документы Microsoft
 author: kraigb
 ms.author: kraigb
 manager: ghogen
 ms.date: 6/1/2017
 ms.topic: reference
 ms.prod: nuget
-ms.technology: 
-description: "Ссылка для команды Find-Package PowerShell в консоли диспетчера пакетов NuGet в Visual Studio."
-keywords: "Пакет NuGet консоли диспетчера, команд NuGet Powershell, справочник по NuGet Powershell, Find-Package"
+ms.technology: ''
+description: Ссылка для команды Find-Package PowerShell в консоли диспетчера пакетов NuGet в Visual Studio.
+keywords: Пакет NuGet консоли диспетчера, команд NuGet Powershell, справочник по NuGet Powershell, Find-Package
 ms.reviewer:
 - karann-msft
 - unniravindranathan
-ms.openlocfilehash: 4303421c5f11177f3e5fc051a450934df47ab117
-ms.sourcegitcommit: 7969f6cd94eccfee5b62031bb404422139ccc383
+ms.workload:
+- dotnet
+- aspnet
+ms.openlocfilehash: 32b15ff415e77c3e063ded637a614fc8a04d5a0c
+ms.sourcegitcommit: beb229893559824e8abd6ab16707fd5fe1c6ac26
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/20/2018
+ms.lasthandoff: 03/28/2018
 ---
 # <a name="find-package-package-manager-console-in-visual-studio"></a>Find-Package (консоль диспетчера пакетов в Visual Studio)
 
@@ -33,13 +36,13 @@ Find-Package [-Id] <keywords> -Source <string> [-AllVersions] [-First [<int>]]
 
 ## <a name="parameters"></a>Параметры
 
-| Параметр | Описание: |
+| Параметр | Описание |
 | --- | --- |
 | Идентификатор &lt;ключевые слова&gt; | (Обязательно) Ключевые слова для поиска источника пакета. С помощью - ExactMatch возвращать только те пакеты, ключевые слова совпадает с Идентификатором пакета. Если ключевые слова не заданы, `Find-Package` возвращает список пакетов 20 основных по загрузок или номер заданные - сначала. Обратите внимание, что - идентификатор является необязательным и холостой. |
 | Исходный код | Путь URL-адрес или папку источника пакета для поиска. Пути к локальной папке может быть абсолютным или относительным для текущей папки. Если не указано, `Find-Package` выполняет поиск в текущем выбранном источнике пакетов. |
 | AllVersions | Отображает все доступные версии каждого пакета, а не только последняя версия. |
 | First | Число пакетов, возвращаемых из начала списка; значение по умолчанию — 20. |
-| Skip | Пропускает первый &lt;int&gt; пакеты из списка.  |
+| Пропустить | Пропускает первый &lt;int&gt; пакеты из списка.  |
 | IncludePrerelease | Предварительные выпуски пакетов включает в результаты. |
 | ExactMatch | Указанный для использования &lt;ключевые слова&gt; как идентификатор пакета с учетом регистра. |
 | StartWith | Возвращает пакеты, пакет идентификатор начинается с &lt;ключевые слова&gt;. |

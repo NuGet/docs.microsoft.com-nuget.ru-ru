@@ -1,22 +1,25 @@
 ---
-title: "Заметки о выпуске NuGet 1.2 | Документы Microsoft"
+title: Заметки о выпуске NuGet 1.2 | Документы Microsoft
 author: karann-msft
 ms.author: karann-msft
 manager: ghogen
 ms.date: 11/11/2016
 ms.topic: article
 ms.prod: nuget
-ms.technology: 
-description: "Заметки о выпуске для NuGet 1.2, включая известные проблемы, исправленные ошибки, добавленные функции и DCR."
-keywords: "NuGet 1.2 заметки о выпуске, исправления, известными проблемами, добавлены функции, DCR"
+ms.technology: ''
+description: Заметки о выпуске для NuGet 1.2, включая известные проблемы, исправленные ошибки, добавленные функции и DCR.
+keywords: NuGet 1.2 заметки о выпуске, исправления, известными проблемами, добавлены функции, DCR
 ms.reviewer:
 - karann-msft
 - unniravindranathan
-ms.openlocfilehash: 9c8fff67eb61ab673eb62113e0cc46c0868be237
-ms.sourcegitcommit: 7969f6cd94eccfee5b62031bb404422139ccc383
+ms.workload:
+- dotnet
+- aspnet
+ms.openlocfilehash: 0d95f41c5bc5d490764c9f128ee621e1037cef66
+ms.sourcegitcommit: beb229893559824e8abd6ab16707fd5fe1c6ac26
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/20/2018
+ms.lasthandoff: 03/28/2018
 ---
 # <a name="nuget-12-release-notes"></a>Заметки о выпуске 1.2 NuGet
 
@@ -24,7 +27,7 @@ ms.lasthandoff: 02/20/2018
 
 30 марта 2011 г. была выпущена NuGet 1.2.
 
-## <a name="new-features"></a>Новые функции
+## <a name="new-features"></a>Новые возможности
 
 ### <a name="framework-profile-support"></a>Поддержка профиля Framework
 
@@ -46,7 +49,7 @@ ms.lasthandoff: 02/20/2018
 Эти сборки не включаются в пакет, как они будут считаться на каждом компьютере в составе .NET Framework. В следующей таблице перечислены атрибуты `frameworkAssembly` элемента.
 
 
-|Атрибут |Описание:|
+|Атрибут |Описание|
 |----------------|-----------|
 |**имя_сборки**|*Требуется*. Имя сборки, такие как `System.Net`.|
 |**targetFramework**|*Необязательный*. Позволяет указать имя, платформа и профиль (или псевдоним), применяется эта сборка framework, например «net40» или «sl4». Использует тот же формат, описанный в [поддержки нескольких целевых платформ](../create-packages/supporting-multiple-target-frameworks.md).|

@@ -1,22 +1,25 @@
 ---
-title: "Заметки о выпуске NuGet 1.5 | Документы Microsoft"
+title: Заметки о выпуске NuGet 1.5 | Документы Microsoft
 author: karann-msft
 ms.author: karann-msft
 manager: ghogen
 ms.date: 11/11/2016
 ms.topic: article
 ms.prod: nuget
-ms.technology: 
-description: "Заметки о выпуске для NuGet 1.5, включая известные проблемы, исправленные ошибки, добавленные функции и DCR."
-keywords: "NuGet 1.5 заметки о выпуске, исправления, известными проблемами, добавлены функции, DCR"
+ms.technology: ''
+description: Заметки о выпуске для NuGet 1.5, включая известные проблемы, исправленные ошибки, добавленные функции и DCR.
+keywords: NuGet 1.5 заметки о выпуске, исправления, известными проблемами, добавлены функции, DCR
 ms.reviewer:
 - karann-msft
 - unniravindranathan
-ms.openlocfilehash: 9f93000cd5e86cb8f3798e32daf6a4ded0d4e9c3
-ms.sourcegitcommit: b0af28d1c809c7e951b0817d306643fcc162a030
+ms.workload:
+- dotnet
+- aspnet
+ms.openlocfilehash: abb044bab5fdc8748b529a2f0072a7271a3674dd
+ms.sourcegitcommit: beb229893559824e8abd6ab16707fd5fe1c6ac26
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/14/2018
+ms.lasthandoff: 03/28/2018
 ---
 # <a name="nuget-15-release-notes"></a>Заметки о выпуске 1,5 NuGet
 
@@ -24,7 +27,7 @@ ms.lasthandoff: 02/14/2018
 
 NuGet 1.5 был выпущен 30 августа 2011 г.
 
-## <a name="features"></a>Функции
+## <a name="features"></a>Возможности
 
 ### <a name="project-templates-with-preinstalled-nuget-packages"></a>Шаблоны проектов с помощью NuGet предустановленных пакетов
 При создании нового шаблона проекта ASP.NET MVC 3, библиотеки скриптов jQuery, включенный в проект фактически размещенные Установка пакетов NuGet.

@@ -1,22 +1,25 @@
 ---
-title: "Справочник по файлу NuGet.Config | Документы Майкрософт"
+title: Справочник по файлу NuGet.Config | Документы Майкрософт
 author: kraigb
 ms.author: kraigb
 manager: ghogen
 ms.date: 10/25/2017
 ms.topic: reference
 ms.prod: nuget
-ms.technology: 
-description: "Справочник по файлу NuGet.Config, включая разделы config, bindingRedirects, packageRestore, solution и packageSource."
-keywords: "файл NuGet.Config, справочник по настройке NuGet, параметры конфигурации NuGet"
+ms.technology: ''
+description: Справочник по файлу NuGet.Config, включая разделы config, bindingRedirects, packageRestore, solution и packageSource.
+keywords: файл NuGet.Config, справочник по настройке NuGet, параметры конфигурации NuGet
 ms.reviewer:
 - karann-msft
 - unniravindranathan
-ms.openlocfilehash: 6a5be1ebcca0accafcdaf32f0b1b7ca66ec53425
-ms.sourcegitcommit: 74c21b406302288c158e8ae26057132b12960be8
+ms.workload:
+- dotnet
+- aspnet
+ms.openlocfilehash: e2a9d4f10ac6af4e5bc7386d4f78e18c2a5752c4
+ms.sourcegitcommit: beb229893559824e8abd6ab16707fd5fe1c6ac26
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/15/2018
+ms.lasthandoff: 03/28/2018
 ---
 # <a name="nugetconfig-reference"></a>Справочник по NuGet.Config
 
@@ -24,7 +27,7 @@ ms.lasthandoff: 03/15/2018
 
 `NuGet.Config` — это XML-файл, содержащий узел `<configuration>` верхнего уровня, который, в свою очередь, содержит элементы разделов, описываемые в этой статье. Каждый раздел содержит ноль или более элементов `<add>` с атрибутами `key` и `value`. См. [пример файла конфигурации](#example-config-file). В именах регистр символов не учитывается, а в качестве значений могут использоваться [переменные среды](#using-environment-variables).
 
-В этом разделе.
+Содержание раздела
 
 - [Раздел config](#config-section)
 - [Раздел bindingRedirects](#bindingredirects-section)
@@ -48,13 +51,13 @@ ms.lasthandoff: 03/15/2018
 
 Содержит различные параметры конфигурации, которые можно задавать с помощью [команды `nuget config`](../tools/cli-ref-config.md).
 
-Примечание. Параметры `dependencyVersion` и `repositoryPath` применяются только к проектам, в которых используется файл `packages.config`. `globalPackagesFolder` применяется только к проектам, используя формат PackageReference.
+`dependencyVersion` и `repositoryPath` применяются только к проектам с помощью `packages.config`. `globalPackagesFolder` применяется только к проектам, используя формат PackageReference.
 
 | Ключ | Значение |
 | --- | --- |
 | dependencyVersion (только `packages.config`) | Значение `DependencyVersion` по умолчанию для установки, восстановления и обновления пакета, если параметр `-DependencyVersion` не указан напрямую. Это значение также используется в пользовательском интерфейсе диспетчера пакетов NuGet. Возможные значения: `Lowest`, `HighestPatch`, `HighestMinor`, `Highest`. |
-| globalPackagesFolder (проекты, в которых не используется `packages.config`) | Расположение глобальной папки пакетов по умолчанию. Значение по умолчанию — `%USERPROFILE%\.nuget\packages` (Windows) или `~/.nuget/packages` (Mac и Linux). В файлах `Nuget.Config` для конкретных проектов можно использовать относительный путь. |
-| repositoryPath (только `packages.config`) | Расположение, в котором следует установить пакеты NuGet вместо папки `$(Solutiondir)/packages` по умолчанию. В файлах `Nuget.Config` для конкретных проектов можно использовать относительный путь. |
+| параметр globalPackagesFolder (только с помощью PackageReference проекты) | Расположение глобальной папки пакетов по умолчанию. Значение по умолчанию — `%userprofile%\.nuget\packages` (Windows) или `~/.nuget/packages` (Mac и Linux). В файлах `Nuget.Config` для конкретных проектов можно использовать относительный путь. Этот параметр может переопределяться переменную среды NUGET_PACKAGES имеет более высокий приоритет. |
+| repositoryPath (только `packages.config`) | Расположение, в котором следует установить пакеты NuGet вместо папки `$(Solutiondir)/packages` по умолчанию. В файлах `Nuget.Config` для конкретных проектов можно использовать относительный путь. Этот параметр может переопределяться переменную среды NUGET_PACKAGES имеет более высокий приоритет. |
 | defaultPushSource | Определяет URL-адрес источника пакета или путь к нему, который следует использовать по умолчанию, если другие источники пакета для операции не обнаружены. |
 | http_proxy http_proxy.user http_proxy.password no_proxy | Параметры прокси-сервера, которые следует использовать при подключении к источникам пакета; значение `http_proxy` должно иметь формат `http://<username>:<password>@<domain>`. Пароли зашифровываются, и их нельзя добавить вручную. Значение параметра `no_proxy` представляет собой разделенный запятыми список доменов, для которых производится обход прокси-сервера. В качестве этих значений можно также использовать переменные среды http_proxy и no_proxy. Дополнительные сведения см. в записи блога [Параметры прокси-сервера в NuGet](http://skolima.blogspot.com/2012/07/nuget-proxy-settings.html) (skolima.blogspot.com). |
 
@@ -64,7 +67,7 @@ ms.lasthandoff: 03/15/2018
 <config>
     <add key="dependencyVersion" value="Highest" />
     <add key="globalPackagesFolder" value="c:\packages" />
-    <add key="repositoryPath" value="c:\repo" />
+    <add key="repositoryPath" value="c:\installed_packages" />
     <add key="http_proxy" value="http://company-squid:3128@contoso.com" />
 </config>
 ```
@@ -151,7 +154,7 @@ ms.lasthandoff: 03/15/2018
 
 | Ключ | Значение |
 | --- | --- |
-| Имя пользователя | Имя пользователя источника в виде обычного текста. |
+| username | Имя пользователя источника в виде обычного текста. |
 | пароль | Зашифрованный пароль источника. |
 | cleartextpassword | Незашифрованный пароль источника. |
 

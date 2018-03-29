@@ -1,22 +1,25 @@
 ---
-title: "Справочник по PowerShell синхронизации пакет NuGet | Документы Microsoft"
+title: Справочник по PowerShell синхронизации пакет NuGet | Документы Microsoft
 author: kraigb
 ms.author: kraigb
 manager: ghogen
 ms.date: 12/07/2017
 ms.topic: reference
 ms.prod: nuget
-ms.technology: 
-description: "Ссылка для команды PowerShell пакета синхронизации в консоли диспетчера пакетов NuGet в Visual Studio."
-keywords: "Пакет NuGet консоли диспетчера, команд NuGet Powershell, справочник по NuGet Powershell, пакета синхронизации"
+ms.technology: ''
+description: Ссылка для команды PowerShell пакета синхронизации в консоли диспетчера пакетов NuGet в Visual Studio.
+keywords: Пакет NuGet консоли диспетчера, команд NuGet Powershell, справочник по NuGet Powershell, пакета синхронизации
 ms.reviewer:
 - karann-msft
 - unniravindranathan
-ms.openlocfilehash: 8e4b627cff01a353440c47883b98cd93f9edd6cb
-ms.sourcegitcommit: b0af28d1c809c7e951b0817d306643fcc162a030
+ms.workload:
+- dotnet
+- aspnet
+ms.openlocfilehash: 0297015c3f1b8a8aced2545b4c4c3e6ccb1c7146
+ms.sourcegitcommit: beb229893559824e8abd6ab16707fd5fe1c6ac26
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/14/2018
+ms.lasthandoff: 03/28/2018
 ---
 # <a name="sync-package-package-manager-console-in-visual-studio"></a>Sync-Package (консоль диспетчера пакетов в Visual Studio)
 
@@ -34,11 +37,11 @@ Sync-Package [-Id] <string> [-IgnoreDependencies] [-ProjectName <string>] [[-Ver
 
 ## <a name="parameters"></a>Параметры
 
-| Параметр | Описание: |
+| Параметр | Описание |
 | --- | --- |
 | Идентификатор | (Обязательно) Идентификатор пакета для синхронизации. — Идентификатор коммутатора сам является необязательным. |
 | IgnoreDependencies | Установите только этот пакет, а не его зависимости. |
-| ИмяПроекта | Проект для синхронизации пакета, установка значений по умолчанию для проекта по умолчанию. |
+| Название проекта | Проект для синхронизации пакета, установка значений по умолчанию для проекта по умолчанию. |
 | Версия | Версия пакета для синхронизации, установка значений по умолчанию для текущей установленной версии. |
 | Исходный код | Путь URL-адрес или папку источника пакета для поиска. Пути к локальной папке может быть абсолютным или относительным для текущей папки. Если не указано, `Sync-Package` выполняет поиск в текущем выбранном источнике пакетов. |
 | IncludePrerelease | Включает предварительные версии пакетов в синхронизации. |

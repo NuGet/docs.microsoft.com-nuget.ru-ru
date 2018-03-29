@@ -1,5 +1,5 @@
 ---
-title: "Отчет о нарушении URL-адрес шаблона NuGet интерфейса API | Документы Microsoft"
+title: Отчет о нарушении URL-адрес шаблона NuGet интерфейса API | Документы Microsoft
 author:
 - joelverhagen
 - kraigb
@@ -10,17 +10,20 @@ manager: skofman
 ms.date: 10/26/2017
 ms.topic: reference
 ms.prod: nuget
-ms.technology: 
-description: "Шаблон URL-адреса отчета о нарушении позволяет клиентам отображать ссылку на отчет о нарушении в их пользовательского интерфейса."
-keywords: "Сообщить о нарушении NuGet интерфейса API, NuGet API файл политикам, nuget.org шаблон URL-адреса отчета"
+ms.technology: ''
+description: Шаблон URL-адреса отчета о нарушении позволяет клиентам отображать ссылку на отчет о нарушении в их пользовательского интерфейса.
+keywords: Сообщить о нарушении NuGet интерфейса API, NuGet API файл политикам, nuget.org шаблон URL-адреса отчета
 ms.reviewer:
 - karann
 - unniravindranathan
-ms.openlocfilehash: efbe5704e6e6028f9382fea3fe5ec453f573a2e9
-ms.sourcegitcommit: 74c21b406302288c158e8ae26057132b12960be8
+ms.workload:
+- dotnet
+- aspnet
+ms.openlocfilehash: ded861e3eaf73e45b8d4bd80b96d54bfeb38e9d6
+ms.sourcegitcommit: beb229893559824e8abd6ab16707fd5fe1c6ac26
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/15/2018
+ms.lasthandoff: 03/28/2018
 ---
 # <a name="report-abuse-url-template"></a>Шаблон URL-адреса отчета о нарушении
 
@@ -53,10 +56,10 @@ URL-адрес для следующего API — это значение `@id`
 
 ### <a name="url-placeholders"></a>Местозаполнители URL-адресов
 
-name        | Тип    | Обязательно | Примечания
+Имя        | Тип    | Обязательно | Примечания
 ----------- | ------- | -------- | -----
-`{id}`      | string  | Нет       | Идентификатор пакета для сообщения о нарушении для
-`{version}` | string  | Нет       | Версия пакета для сообщения о нарушении для
+`{id}`      | строка  | нет       | Идентификатор пакета для сообщения о нарушении для
+`{version}` | строка  | нет       | Версия пакета для сообщения о нарушении для
 
 `{id}` И `{version}` значения, интерпретируются реализация сервера должны быть без учета регистра и не подвержены ли Нормализованная версия.
 

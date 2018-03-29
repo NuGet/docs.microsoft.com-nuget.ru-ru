@@ -1,22 +1,25 @@
 ---
-title: "Справочник по PowerShell Get пакет NuGet | Документы Microsoft"
+title: Справочник по PowerShell Get пакет NuGet | Документы Microsoft
 author: kraigb
 ms.author: kraigb
 manager: ghogen
 ms.date: 12/07/2017
 ms.topic: reference
 ms.prod: nuget
-ms.technology: 
-description: "Ссылка для команды Get-Package PowerShell в консоли диспетчера пакетов NuGet в Visual Studio."
-keywords: "Пакет NuGet консоли диспетчера, команд NuGet Powershell, справочник по NuGet Powershell, Get-Package"
+ms.technology: ''
+description: Ссылка для команды Get-Package PowerShell в консоли диспетчера пакетов NuGet в Visual Studio.
+keywords: Пакет NuGet консоли диспетчера, команд NuGet Powershell, справочник по NuGet Powershell, Get-Package
 ms.reviewer:
 - karann-msft
 - unniravindranathan
-ms.openlocfilehash: 01a874ce9ae59dcaeb696a45f23cc5e9f2cfa251
-ms.sourcegitcommit: 7969f6cd94eccfee5b62031bb404422139ccc383
+ms.workload:
+- dotnet
+- aspnet
+ms.openlocfilehash: ca80d95df309d8afce2ce6cff26c19980affde7a
+ms.sourcegitcommit: beb229893559824e8abd6ab16707fd5fe1c6ac26
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/20/2018
+ms.lasthandoff: 03/28/2018
 ---
 # <a name="get-package-package-manager-console-in-visual-studio"></a>Get-Package (консоль диспетчера пакетов в Visual Studio)
 
@@ -36,15 +39,15 @@ Get-Package -Source <string> [-ListAvailable] [-Updates] [-ProjectName <string>]
 
 ## <a name="parameters"></a>Параметры
 
-| Параметр | Описание: |
+| Параметр | Описание |
 | --- | --- |
 | Исходный код | Путь URL-адрес или папку для пакета. Пути к локальной папке может быть абсолютным или относительным для текущей папки. Если не указано, `Get-Package` выполняет поиск в текущем выбранном источнике пакетов. При использовании с флагом-ListAvailable, по умолчанию nuget.org. |
 | ListAvailable | Список пакетов, доступных в источнике пакетов, по умолчанию принимается nuget.org. Показывает значение по умолчанию 50 пакетов, пока не будут указаны - PageSize или - первый. |
 | Обновления | Список пакетов, которые имеют в источнике пакета доступно обновление. |
-| ИмяПроекта | Проект, из которого берутся установленные пакеты. Если не указано, возвращает установленных проекты для всего решения. |
+| Название проекта | Проект, из которого берутся установленные пакеты. Если не указано, возвращает установленных проекты для всего решения. |
 | Фильтр | Строку фильтра, используемого для ограничения списка пакетов, применив его идентификатор пакета, описанию и тегам. |
 | First | Число пакетов, возвращаемых из начала списка. Если не указано, по умолчанию — 50. |
-| Skip | Пропускает первый &lt;int&gt; пакеты из списка.  |
+| Пропустить | Пропускает первый &lt;int&gt; пакеты из списка.  |
 | AllVersions | Отображает все доступные версии каждого пакета, а не только последняя версия. |
 | IncludePrerelease | Предварительные выпуски пакетов включает в результаты. |
 | PageSize | *(3.0 +)*  При использовании с флагом-ListAvailable (обязательно), количество пакетов, чтобы вывести список перед выдачей запроса на продолжение. |

@@ -1,33 +1,36 @@
 ---
-title: "Справочник по пользовательскому Интерфейсу диспетчера пакетов NuGet | Документы Microsoft"
+title: Справочник по пользовательскому Интерфейсу диспетчера пакетов NuGet | Документы Microsoft
 author: kraigb
 ms.author: kraigb
 manager: ghogen
 ms.date: 12/08/2017
 ms.topic: article
 ms.prod: nuget
-ms.technology: 
+ms.technology: ''
 f1_keywords:
 - vs.toolsoptionspages.nuget_package_manager
 - vs.toolsoptionspages.nuget_package_manager.general
 - vs.toolsoptionspages.nuget_package_manager.package_sources
 - vs.nuget.packagemanager.ui
-description: "Инструкции по использованию пользовательского интерфейса диспетчера пакетов NuGet в Visual Studio для работы с пакетами NuGet."
-keywords: "NuGet пользовательского интерфейса, диспетчер пакетов NuGet пользовательского интерфейса, NuGet в Visual Studio, управление пакетами NuGet, NuGet пользовательский интерфейс, диспетчер пакетов в Visual Studio"
+description: Инструкции по использованию пользовательского интерфейса диспетчера пакетов NuGet в Visual Studio для работы с пакетами NuGet.
+keywords: NuGet пользовательского интерфейса, диспетчер пакетов NuGet пользовательского интерфейса, NuGet в Visual Studio, управление пакетами NuGet, NuGet пользовательский интерфейс, диспетчер пакетов в Visual Studio
 ms.reviewer:
 - karann-msft
 - unniravindranathan
-ms.openlocfilehash: 35bb856ccff43c77af7eac67da4614d83dcdc533
-ms.sourcegitcommit: 8f26d10bdf256f72962010348083ff261dae81b9
+ms.workload:
+- dotnet
+- aspnet
+ms.openlocfilehash: ad36c2ab0c6e62c7fe624b35d92e852303ecfdfb
+ms.sourcegitcommit: beb229893559824e8abd6ab16707fd5fe1c6ac26
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/08/2018
+ms.lasthandoff: 03/28/2018
 ---
 # <a name="nuget-package-manager-ui"></a>Пользовательский Интерфейс диспетчера пакетов NuGet
 
 Пользовательский Интерфейс диспетчера пакетов NuGet в Visual Studio в Windows позволяет легко устанавливать, удалять и обновить пакеты NuGet в проекты и решения. Для работы в Visual Studio для Mac, в разделе [пакет NuGet, включая в проекте](/visualstudio/mac/nuget-walkthrough). Пользовательский Интерфейс диспетчера пакетов не включено с кодом Visual Studio.
 
-В этом разделе.
+Содержание раздела
 
 - [Поиск и установка пакета (вкладка «Обзор»)](#finding-and-installing-a-package)
 - [При удалении пакета (вкладка «установлено»)](#uninstalling-a-package)
@@ -37,7 +40,7 @@ ms.lasthandoff: 03/08/2018
 - [Параметры диспетчера пакета управления](#package-manager-options-control)
 
 > [!Note]
-> Если вы пропустили диспетчер пакетов NuGet в Visual Studio 2015, проверьте **Сервис > расширения и обновления...**  и выполните поиск *диспетчера пакетов NuGet* расширения. Если вы не удается использовать установщик расширения в Visual Studio, загрузите расширение непосредственно из [https://dist.nuget.org/index.html](https://dist.nuget.org/index.html).
+> Если вы пропустили диспетчер пакетов NuGet в Visual Studio 2015, проверьте **Сервис > расширения и обновления...**  и выполните поиск *диспетчера пакетов NuGet* расширения. Если вы не удается использовать установщик расширения в Visual Studio, загрузите расширение непосредственно из [ https://dist.nuget.org/index.html ](https://dist.nuget.org/index.html).
 >
 > В Visual Studio 2017 г NuGet и диспетчер пакетов NuGet автоматически устанавливается вместе с любой. Рабочие нагрузки, связанные с NET. Устанавливать по отдельности, выбрав **отдельные компоненты > кода Сервис > Диспетчер пакетов NuGet** в установщике Visual Studio 2017 г.
 
@@ -125,7 +128,7 @@ ms.lasthandoff: 03/08/2018
 
     ![Параметры-источники пакетов](media/options.png)
 
-1. Добавление источника, выберите  **+** , изменить имя, введите URL-адрес или путь в **источника** управления и выберите **обновление**. Источник теперь отображается в селекторе раскрывающегося списка.
+1. Добавление источника, выберите **+**, изменить имя, введите URL-адрес или путь в **источника** управления и выберите **обновление**. Источник теперь отображается в селекторе раскрывающегося списка.
 1. Чтобы изменить источник пакета, выберите его, внесите изменения в **имя** и **источника** поля, а затем выберите **обновление**.
 1. Чтобы отключить источник пакета, снимите флажок слева от имени в списке.
 1. Чтобы удалить источник пакета, выберите его, а затем выберите **X** кнопки.

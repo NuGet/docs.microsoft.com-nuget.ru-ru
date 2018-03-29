@@ -1,22 +1,25 @@
 ---
-title: "Справочник по PowerShell пакет обновления NuGet | Документы Microsoft"
+title: Справочник по PowerShell пакет обновления NuGet | Документы Microsoft
 author: kraigb
 ms.author: kraigb
 manager: ghogen
 ms.date: 12/07/2017
 ms.topic: reference
 ms.prod: nuget
-ms.technology: 
-description: "Ссылка для команды PowerShell пакета обновления в консоли диспетчера пакетов NuGet в Visual Studio."
-keywords: "Пакет NuGet консоли диспетчера, команд NuGet Powershell, справочник по NuGet Powershell, пакет обновления"
+ms.technology: ''
+description: Ссылка для команды PowerShell пакета обновления в консоли диспетчера пакетов NuGet в Visual Studio.
+keywords: Пакет NuGet консоли диспетчера, команд NuGet Powershell, справочник по NuGet Powershell, пакет обновления
 ms.reviewer:
 - karann-msft
 - unniravindranathan
-ms.openlocfilehash: 293d9a7fdcce633eb5a97e5f76398deb5c13bdb4
-ms.sourcegitcommit: 8f26d10bdf256f72962010348083ff261dae81b9
+ms.workload:
+- dotnet
+- aspnet
+ms.openlocfilehash: 05772159d62f73e7d25f71ad36809f5ae8ef6aae
+ms.sourcegitcommit: beb229893559824e8abd6ab16707fd5fe1c6ac26
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/08/2018
+ms.lasthandoff: 03/28/2018
 ---
 # <a name="update-package-package-manager-console-in-visual-studio"></a>Обновление (консоль диспетчера пакетов в Visual Studio)
 
@@ -40,14 +43,14 @@ Update-Package Microsoft.AspNet.MVC -Version 5.0.0.
 
 ## <a name="parameters"></a>Параметры
 
-|  Параметр | Описание: |
+|  Параметр | Описание |
 | --- | --- |
 | Идентификатор | Идентификатор пакета для обновления. Если не указано, все пакеты обновления. — Идентификатор коммутатора сам является необязательным. |
 | IgnoreDependencies | Пропускает обновление зависимости пакета. |
-| ИмяПроекта | Имя проекта, содержащего пакеты для обновления, установка значений по умолчанию для всех проектов. |
+| Название проекта | Имя проекта, содержащего пакеты для обновления, установка значений по умолчанию для всех проектов. |
 | Версия | Версия, используемая для обновления, установка значений по умолчанию до последней версии. В NuGet 3.0 + значение версии должно быть одним из *Lowest, самое высокое, HighestMinor*, или *HighestPatch* (эквивалентно - безопасный). |
 | Safe | Ограничивает только версии с той же номерами основной и дополнительной версии, в настоящее время установленного пакета обновления. |
-| Исходный код | Путь URL-адрес или папку источника пакета для поиска. Пути к локальной папке может быть абсолютным или относительным для текущей папки. Если не указано, `Uninstall-Package` выполняет поиск в текущем выбранном источнике пакетов. |
+| Исходный код | Путь URL-адрес или папку источника пакета для поиска. Пути к локальной папке может быть абсолютным или относительным для текущей папки. Если не указано, `Update-Package` выполняет поиск в текущем выбранном источнике пакетов. |
 | IncludePrerelease | Включает предварительные версии пакетов обновления. |
 | Переустановка | Resintalls пакетов с помощью текущей установленной версии. Дополнительные сведения см. в разделе [Ограничение версий для обновления](../consume-packages/reinstalling-and-updating-packages.md). |
 | FileConflictAction | Действие, выполняемое при появлении запроса, чтобы игнорировать существующие файлы, связанные с проектом или перезаписать. Возможными значениями являются *перезаписи, пропустить, None, OverwriteAll*, и *IgnoreAll* (3.0 +). |

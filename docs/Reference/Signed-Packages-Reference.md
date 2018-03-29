@@ -1,23 +1,26 @@
 ---
-title: "Подпись ссылки на пакеты | Документы Microsoft"
+title: Подпись ссылки на пакеты | Документы Microsoft
 author: rido-min
 ms.author: rido-min
 manager: unniravindranathan
 ms.date: 03/06/2018
 ms.topic: reference
 ms.prod: nuget
-ms.technology: 
-description: "Подписанные пакеты описание компонента."
-keywords: "Знак пакета NuGet, подписи, сертификат"
+ms.technology: ''
+description: Подписанные пакеты описание компонента.
+keywords: Знак пакета NuGet, подписи, сертификат
 ms.reviewer:
 - ananguar
 - karann-msft
 - unniravindranathan
-ms.openlocfilehash: 9bf9885aaf42bedb681a5d916202fa8b26749a0c
-ms.sourcegitcommit: 74c21b406302288c158e8ae26057132b12960be8
+ms.workload:
+- dotnet
+- aspnet
+ms.openlocfilehash: a2a338596f7d98ded11da6fb02bafba3521249ab
+ms.sourcegitcommit: beb229893559824e8abd6ab16707fd5fe1c6ac26
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/15/2018
+ms.lasthandoff: 03/28/2018
 ---
 # <a name="signed-packages"></a>Подписанные пакеты
 
@@ -34,7 +37,7 @@ ms.lasthandoff: 03/15/2018
 Дополнительные сведения о создании подписанного пакета см. в разделе [подписи пакетов](../create-packages/Sign-a-package.md) и [входа команды nuget](../tools/cli-ref-sign.md).
 
 > [!Important]
-> в настоящее время NuGet.org не принимает подписанных пакетов. Можно подписывать пакеты для публикации в пользовательских каналов.
+> в настоящее время NuGet.org не принимает подписанных пакетов. Вы можете подписывать пакеты для публикации в пользовательских веб-каналах.
 
 ## <a name="certificate-requirements"></a>Требования к сертификатам
 

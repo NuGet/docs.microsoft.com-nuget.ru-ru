@@ -1,22 +1,25 @@
 ---
-title: "NuGet 1.0 и 1.1 заметки о выпуске | Документы Microsoft"
+title: NuGet 1.0 и 1.1 заметки о выпуске | Документы Microsoft
 author: karann-msft
 ms.author: karann-msft
 manager: ghogen
 ms.date: 11/11/2016
 ms.topic: article
 ms.prod: nuget
-ms.technology: 
-description: "Заметки о выпуске для NuGet 1.1, включая известные проблемы, исправленные ошибки, добавленные функции и DCR."
-keywords: "NuGet 1.1 заметки о выпуске, исправления, известными проблемами, добавлены функции, DCR"
+ms.technology: ''
+description: Заметки о выпуске для NuGet 1.1, включая известные проблемы, исправленные ошибки, добавленные функции и DCR.
+keywords: NuGet 1.1 заметки о выпуске, исправления, известными проблемами, добавлены функции, DCR
 ms.reviewer:
 - karann-msft
 - unniravindranathan
-ms.openlocfilehash: 6a596e61f144e7269f703f2dba3dddb4fd338e6a
-ms.sourcegitcommit: 7969f6cd94eccfee5b62031bb404422139ccc383
+ms.workload:
+- dotnet
+- aspnet
+ms.openlocfilehash: dd320df2d725e58182cd908ce621571ea018b350
+ms.sourcegitcommit: beb229893559824e8abd6ab16707fd5fe1c6ac26
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/20/2018
+ms.lasthandoff: 03/28/2018
 ---
 # <a name="nuget-10-and-11-release-notes"></a>Заметки о выпуске NuGet 1.0 и 1.1
 
@@ -49,7 +52,7 @@ NuGet включает следующие компоненты:
 
 * Сначала удалите старые сборки. Необходимо запустить от имени администратора для этого VS.
 * Удалите все существующие веб-каналы, у вас есть.
-* Добавить новый канал, указывающий [http://go.microsoft.com/fwlink/?LinkId=206669](http://go.microsoft.com/fwlink/?LinkId=206669).
+* Добавить новый канал, указывающий [ http://go.microsoft.com/fwlink/?LinkId=206669 ](http://go.microsoft.com/fwlink/?LinkId=206669).
 
 ## <a name="nuget-11"></a>NuGet 1.1
 
@@ -135,7 +138,7 @@ NuGet включает следующие компоненты:
 
 Ниже приведены наиболее существенные изменения, внесенные в CTP-версии 2.
 
-* Переключения пакета веб-канала из ATOM в конечную точку службы OData: при обновлении до версии CTP2 NuGet, не забудьте добавить следующий URL-адрес в качестве источника пакета: https://feed.nuget.org/ctp2/odata/v1/.
+* Переключения пакета веб-канала из ATOM в конечную точку службы OData: при обновлении до версии CTP2 NuGet, не забудьте добавить следующий URL-адрес в качестве источника пакета: `https://feed.nuget.org/ctp2/odata/v1/`.
 * Переименовать команду Add-Package для *Install-Package*.
 * Обновить `.nuspec` формат. `.nuspec` Формат теперь включает *iconUrl* поле для указания значок png 32 x 32, который будет отображаться в диалоговом окне Добавить пакет. Поэтому следует обязательно задать, чтобы отличить пакета. `.nuspec` Формат также включает новый *projectUrl* поле, которое можно использовать, чтобы она указывала на веб-страницу, в котором содержатся дополнительные сведения о пакете.
 

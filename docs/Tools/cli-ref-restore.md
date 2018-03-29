@@ -1,22 +1,25 @@
 ---
-title: "Команда восстановления NuGet CLI | Документы Microsoft"
+title: Команда восстановления NuGet CLI | Документы Microsoft
 author: kraigb
 ms.author: kraigb
 manager: ghogen
 ms.date: 01/18/2018
 ms.topic: reference
 ms.prod: nuget
-ms.technology: 
-description: "Справочник по команде восстановления nuget.exe"
-keywords: "NuGet восстановления ссылок, пакеты команды restore"
+ms.technology: ''
+description: Справочник по команде восстановления nuget.exe
+keywords: NuGet восстановления ссылок, пакеты команды restore
 ms.reviewer:
 - karann-msft
 - unniravindranathan
-ms.openlocfilehash: 2416ad652244e0ea60651147ad74a1513cdb75ff
-ms.sourcegitcommit: 74c21b406302288c158e8ae26057132b12960be8
+ms.workload:
+- dotnet
+- aspnet
+ms.openlocfilehash: 64f12fdedc8fbfcee15c1dcddc445148f458c030
+ms.sourcegitcommit: beb229893559824e8abd6ab16707fd5fe1c6ac26
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/15/2018
+ms.lasthandoff: 03/28/2018
 ---
 # <a name="restore-command-nuget-cli"></a>Команда RESTORE (NuGet CLI)
 
@@ -36,7 +39,7 @@ nuget restore <projectPath> [options]
 
 ## <a name="options"></a>Параметры
 
-| Параметр | Описание: |
+| Параметр | Описание |
 | --- | --- |
 | ConfigFile | Файл конфигурации NuGet вступили в силу. Если не указан, `%AppData%\NuGet\NuGet.Config` (Windows) или `~/.nuget/NuGet/NuGet.Config` используется (Mac и Linux).|
 | DirectDownload | *(4.0 +)*  Загружает пакеты непосредственно, без заполнения кэши с двоичные файлы и метаданные. |
@@ -46,15 +49,15 @@ nuget restore <projectPath> [options]
 | Справка | Отображает справку по команде. |
 | MSBuildPath | *(4.0 +)*  Указывает путь к MSBuild для команды, переназначает `-MSBuildVersion`. |
 | MSBuildVersion | *(3.2 +)*  Указывает версию MSBuild для использования с помощью этой команды. Поддерживаемые значения: 4, 12, 14, 15. По умолчанию выбирается MSBuild в пути в противном случае по умолчанию наибольшую установленную версию MSBuild. |
-| NoCache | Запрещает NuGet с помощью пакетов из кэшей локального компьютера. |
+| NoCache | Предотвращает использование кэшированных пакетов NuGet. В разделе [управление глобального пакетами и папками кэша](../consume-packages/managing-the-global-packages-and-cache-folders.md). |
 | Неинтерактивные | Подавление для ввода данных и подтверждений. |
-| Выходной каталог | Указывает папку, в которой устанавливаются пакеты. Если папка не указана, используется текущая папка. |
+| Выходной каталог | Указывает папку, в которой устанавливаются пакеты. Если папка не указана, используется текущая папка. Требуется, если восстановление с `packages.config` файл, если не `PackagesDirectory` или `SolutionDirectory` используется.|
 | PackageSaveMode | Указывает типы файлов для сохранения после установки пакета: один из `nuspec`, `nupkg`, или `nuspec;nupkg`. |
-| Пакетыструктура | Эквивалентно `OutputDirectory`. |
+| Пакетыструктура | Эквивалентно `OutputDirectory`. Требуется, если восстановление с `packages.config` файл, если не `OutputDirectory` или `SolutionDirectory` используется. |
 | Project2ProjectTimeOut | Время ожидания в секундах для разрешения ссылок проекта на проект. |
 | Рекурсивные | *(4.0 +)*  Восстанавливает все ссылки на проекты для проектов UWP и .NET Core. Не применяется для проектов с помощью `packages.config`. |
 | RequireConsent | Восстановление пакетов проверяет, включена ли перед загрузкой и установкой пакетов. Дополнительные сведения см. в разделе [восстановление пакетов](../consume-packages/package-restore.md). |
-| SolutionDirectory | Указывает папку решения. Не является допустимым при восстановлении пакетами для решения. |
+| SolutionDirectory | Указывает папку решения. Не является допустимым при восстановлении пакетами для решения. Требуется, если восстановление с `packages.config` файл, если не `PackagesDirectory` или `OutputDirectory` используется. |
 | Исходный код | Указывает список источников пакетов (в виде URL-адреса) для восстановления. Если не указано, команда использует источники, предоставляемые в файлах конфигурации см. в разделе [NuGet Настройка поведения](../consume-packages/configuring-nuget-behavior.md). |
 | Уровень детализации |> указывает объем сведений в выходных данных: *обычного*, *тихий*, *подробные*. |
 

@@ -1,23 +1,25 @@
 ---
-title: "Справочник по PowerShell NuGet Install-Package | Документы Microsoft"
+title: Справочник по PowerShell NuGet Install-Package | Документы Microsoft
 author: kraigb
 ms.author: kraigb
 manager: ghogen
 ms.date: 06/01/2017
 ms.topic: reference
 ms.prod: nuget
-ms.technology: 
-ms.assetid: 879db0ef-6b72-4a4a-bb68-f9e3a00f64b8
-description: "Справочник по команду PowerShell Install-Package в консоли диспетчера пакетов NuGet в Visual Studio."
-keywords: "Пакет NuGet консоли диспетчера, команд NuGet Powershell, справочник по NuGet Powershell, Install-Package"
+ms.technology: ''
+description: Справочник по команду PowerShell Install-Package в консоли диспетчера пакетов NuGet в Visual Studio.
+keywords: Пакет NuGet консоли диспетчера, команд NuGet Powershell, справочник по NuGet Powershell, Install-Package
 ms.reviewer:
 - karann-msft
 - unniravindranathan
-ms.openlocfilehash: f01c990d12392795e90e95e4efe66c6051011c51
-ms.sourcegitcommit: 8f26d10bdf256f72962010348083ff261dae81b9
+ms.workload:
+- dotnet
+- aspnet
+ms.openlocfilehash: 99c965c2f8c12c7a59ee48e270172b719c1482ea
+ms.sourcegitcommit: beb229893559824e8abd6ab16707fd5fe1c6ac26
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/08/2018
+ms.lasthandoff: 03/28/2018
 ---
 # <a name="install-package-package-manager-console-in-visual-studio"></a>Install-Package (консоль диспетчера пакетов в Visual Studio)
 
@@ -41,11 +43,11 @@ Install-Package Microsoft.AspNet.MVC -Version 5.0.0.
 
 ## <a name="parameters"></a>Параметры
 
-| Параметр | Описание: |
+| Параметр | Описание |
 | --- | --- |
 | Идентификатор | (Обязательно) Идентификатор пакета для установки. (*3.0 +*) может быть идентификатор или URL-адрес `packages.config` файл или `.nupkg` файла. — Идентификатор коммутатора сам является необязательным. |
 | IgnoreDependencies | Установите только этот пакет, а не его зависимости. |
-| ИмяПроекта | Проект, в который необходимо установить пакет, установка значений по умолчанию для проекта по умолчанию. |
+| Название проекта | Проект, в который необходимо установить пакет, установка значений по умолчанию для проекта по умолчанию. |
 | Исходный код | Путь URL-адрес или папку источника пакета для поиска. Пути к локальной папке может быть абсолютным или относительным для текущей папки. Если не указано, `Install-Package` выполняет поиск в текущем выбранном источнике пакетов. |
 | Версия | Версия пакета, чтобы установить, по умолчанию используется последняя версия. |
 | IncludePrerelease | Считает, что предварительные версии пакетов для установки. Если не указано, рассматриваются только стабильные пакеты. |

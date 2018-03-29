@@ -1,22 +1,25 @@
 ---
-title: "Заметки о выпуске NuGet 3.0 | Документы Microsoft"
+title: Заметки о выпуске NuGet 3.0 | Документы Microsoft
 author: karann-msft
 ms.author: karann-msft
 manager: ghogen
 ms.date: 11/11/2016
 ms.topic: article
 ms.prod: nuget
-ms.technology: 
-description: "Заметки о выпуске для NuGet 3.0.0, включая известные проблемы, исправленные ошибки, добавленные функции и DCR."
-keywords: "NuGet 3.0.0 заметки о выпуске, исправления, известными проблемами, добавлены функции, DCR"
+ms.technology: ''
+description: Заметки о выпуске для NuGet 3.0.0, включая известные проблемы, исправленные ошибки, добавленные функции и DCR.
+keywords: NuGet 3.0.0 заметки о выпуске, исправления, известными проблемами, добавлены функции, DCR
 ms.reviewer:
 - karann-msft
 - unniravindranathan
-ms.openlocfilehash: 65251b28093d2ac275053b8bfef6620e16e3fb4a
-ms.sourcegitcommit: b0af28d1c809c7e951b0817d306643fcc162a030
+ms.workload:
+- dotnet
+- aspnet
+ms.openlocfilehash: fc669e4a8440c295f08eef461186eef5f505df42
+ms.sourcegitcommit: beb229893559824e8abd6ab16707fd5fe1c6ac26
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/14/2018
+ms.lasthandoff: 03/28/2018
 ---
 # <a name="nuget-30-release-notes"></a>Заметки о выпуске 3.0 NuGet
 

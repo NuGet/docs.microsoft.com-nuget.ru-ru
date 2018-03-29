@@ -1,22 +1,25 @@
 ---
-title: "Заметки о выпуске NuGet 3.3 | Документы Microsoft"
+title: Заметки о выпуске NuGet 3.3 | Документы Microsoft
 author: karann-msft
 ms.author: karann-msft
 manager: ghogen
 ms.date: 11/11/2016
 ms.topic: article
 ms.prod: nuget
-ms.technology: 
-description: "Заметки о выпуске для NuGet 3.3, включая известные проблемы, исправленные ошибки, добавленные функции и DCR."
-keywords: "NuGet 3.3 заметки о выпуске, исправления, известными проблемами, добавлены функции, DCR"
+ms.technology: ''
+description: Заметки о выпуске для NuGet 3.3, включая известные проблемы, исправленные ошибки, добавленные функции и DCR.
+keywords: NuGet 3.3 заметки о выпуске, исправления, известными проблемами, добавлены функции, DCR
 ms.reviewer:
 - karann-msft
 - unniravindranathan
-ms.openlocfilehash: 4d077fb53abd8033aad6da01ad090297109aa68c
-ms.sourcegitcommit: b0af28d1c809c7e951b0817d306643fcc162a030
+ms.workload:
+- dotnet
+- aspnet
+ms.openlocfilehash: ab5e1ca550297c608017cb56dff32f4bd4bbb885
+ms.sourcegitcommit: beb229893559824e8abd6ab16707fd5fe1c6ac26
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/14/2018
+ms.lasthandoff: 03/28/2018
 ---
 # <a name="nuget-33-release-notes"></a>Заметки о выпуске 3.3 NuGet
 
@@ -24,7 +27,7 @@ ms.lasthandoff: 02/14/2018
 
 NuGet 3.3 был выпущен 30 ноября 2015 г. с значительное количество обновлении пользовательского интерфейса и функции командной строки, а также набором полезных исправлений на клиентах NuGet.
 
-## <a name="new-features"></a>Новые функции
+## <a name="new-features"></a>Новые возможности
 
 * Были введены поставщиков учетных данных, позволяющих NuGet командной строки клиентам возможность эффективно взаимодействовать с проверкой подлинности веб-канала. [Инструкции по установке Visual Studio Team Services учетных данных поставщика ](../api/nuget-exe-credential-providers.md) и настройте NuGet-клиентов можно найти на NuGet Docs.
 

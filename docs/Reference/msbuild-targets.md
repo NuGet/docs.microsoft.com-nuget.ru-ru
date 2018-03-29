@@ -1,21 +1,25 @@
 ---
-title: "Объекты pack и restore NuGet в качестве целевых объектов MSBuild | Документы Майкрософт"
+title: Объекты pack и restore NuGet в качестве целевых объектов MSBuild | Документы Майкрософт
 author: kraigb
 ms.author: kraigb
 manager: ghogen
-ms.date: 03/13/2018
+ms.date: 03/23/2018
 ms.topic: article
 ms.prod: nuget
-ms.technology: 
-description: "Объекты pack и restore NuGet могут выступать непосредственно в качестве целевых объектов MSBuild в NuGet 4.0+."
-keywords: "NuGet и MSBuild, целевой объект pack NuGet, целевой объект restore NuGet"
+ms.technology: ''
+description: Объекты pack и restore NuGet могут выступать непосредственно в качестве целевых объектов MSBuild в NuGet 4.0+.
+keywords: NuGet и MSBuild, целевой объект pack NuGet, целевой объект restore NuGet
 ms.reviewer:
 - karann-msft
-ms.openlocfilehash: bb0ade1b0f5f81d7c8822d3c2b2f9dd45745fb8d
-ms.sourcegitcommit: 74c21b406302288c158e8ae26057132b12960be8
+- unniravindranathan
+ms.workload:
+- dotnet
+- aspnet
+ms.openlocfilehash: a9c2c2229d717dff8472dce0ba568e4a21900b19
+ms.sourcegitcommit: beb229893559824e8abd6ab16707fd5fe1c6ac26
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/15/2018
+ms.lasthandoff: 03/28/2018
 ---
 # <a name="nuget-pack-and-restore-as-msbuild-targets"></a>Объекты pack и restore NuGet в качестве целевых объектов MSBuild
 
@@ -48,7 +52,7 @@ ms.lasthandoff: 03/15/2018
 
 Обратите внимание, что свойства `Owners` и `Summary` из `.nuspec` не поддерживаются в MSBuild.
 
-| Значение атрибута или NuSpec | Свойство MSBuild | Значение по умолчанию | Примечания |
+| Значение атрибута или NuSpec | Свойство MSBuild | По умолчанию | Примечания |
 |--------|--------|--------|--------|
 | Идентификатор | PackageId | AssemblyName | $(AssemblyName) из MSBuild |
 | Версия | PackageVersion | Версия | Это значение совместимо с SemVer, например "1.0.0", "1.0.0-beta" или "1.0.0-beta-00345" |
@@ -56,10 +60,10 @@ ms.lasthandoff: 03/15/2018
 | VersionSuffix | PackageVersionSuffix | пустой | $(VersionSuffix) из MSBuild. Задав PackageVersion, вы перезапишите PackageVersionSuffix |
 | Authors | Authors | Имя текущего пользователя | |
 | Владельцы | Н/Д | Не существует в NuSpec | |
-| Заголовок | Заголовок | Идентификатор пакета| |
-| Описание: | PackageDescription | "Описание пакета" | |
+| Заголовок: | Заголовок: | Идентификатор пакета| |
+| Описание | PackageDescription | "Описание пакета" | |
 | Copyright | Copyright | пустой | |
-| RequireLicenseAcceptance | PackageRequireLicenseAcceptance | False | |
+| RequireLicenseAcceptance | PackageRequireLicenseAcceptance | false | |
 | LicenseUrl | PackageLicenseUrl | пустой | |
 | ProjectUrl | PackageProjectUrl | пустой | |
 | IconUrl | PackageIconUrl | пустой | |
@@ -78,7 +82,7 @@ ms.lasthandoff: 03/15/2018
 - PackageVersion
 - PackageId
 - Authors
-- Описание:
+- Описание
 - Copyright
 - PackageRequireLicenseAcceptance
 - DevelopmentDependency
@@ -110,7 +114,7 @@ ms.lasthandoff: 03/15/2018
 
 ### <a name="packageiconurl"></a>PackageIconUrl
 
-В процессе внесения изменения для [вопроса 2582 по NuGet](https://github.com/NuGet/Home/issues/2582) `PackageIconUrl` в конечном итоге будет изменен на `PackageIconUri` и может быть относительным путем к файлу значка, который будет включен в корень итогового пакета.
+В процессе изменения для [NuGet проблема 352](https://github.com/NuGet/Home/issues/352), `PackageIconUrl` в конечном итоге будет изменено на `PackageIconUri` и может быть относительный путь к файлу значка, который будет включен в корне полученный пакет.
 
 ### <a name="output-assemblies"></a>Выходные сборки
 
@@ -231,6 +235,61 @@ msbuild /t:pack <path to .csproj file> /p:NuspecFile=<path to nuspec file> /p:Nu
 </Project>
 ```
 
+### <a name="advanced-extension-points-to-create-customized-package"></a>Дополнительные точки расширения для создания настраиваемого пакета
+
+`pack` Целевой предоставляет две точки расширения, которые выполняются в конкретную сборку внутреннего, target framework. Включая target framework конкретного содержимого и сборки в пакет поддержки точек расширения:
+
+- `TargetsForTfmSpecificBuildOutput` целевой: использование для файлов внутри `lib` или папки, заданные с помощью `BuildOutputTargetFolder`.
+- `TargetsForTfmSpecificContentInPackage` целевой: использование для файлов за пределами `BuildOutputTargetFolder`.
+
+#### <a name="targetsfortfmspecificbuildoutput"></a>TargetsForTfmSpecificBuildOutput
+
+Запишите пользовательский целевой объект и укажите его в качестве значения `$(TargetsForTfmSpecificBuildOutput)` свойство. Для всех файлов, которые необходимо перевести в `BuildOutputTargetFolder` (по умолчанию lib), целевой объект должен записывать эти файлы в ItemGroup `BuildOutputInPackage` и задайте следующие значения метаданных:
+
+- `FinalOutputPath`: Абсолютный путь файла. Если не указано, удостоверение используется для оценки исходный путь.
+- `TargetPath`: (Необязательно) задайте когда этот файл необходимо перейти в подпапку в `lib\<TargetFramework>` , например вспомогательные сборки, который выходит в своих папках соответствующего языка и региональных параметров. По умолчанию используется имя файла.
+
+Пример
+
+```
+<PropertyGroup>
+  <TargetsForTfmSpecificBuildOutput>$(TargetsForTfmSpecificBuildOutput);GetMyPackageFiles</TargetsForTfmSpecificBuildOutput>
+</PropertyGroup>
+
+<Target Name="GetMyPackageFiles">
+  <ItemGroup>
+    <BuildOutputInPackage Include="$(OutputPath)cs\$(AssemblyName).resources.dll">
+        <TargetPath>cs</TargetPath>
+    </BuildOutputInPackage>
+  </ItemGroup>
+</Target>
+```
+
+#### <a name="targetsfortfmspecificcontentinpackage"></a>TargetsForTfmSpecificContentInPackage
+
+Запишите пользовательский целевой объект и укажите его в качестве значения `$(TargetsForTfmSpecificContentInPackage)` свойство. Для всех файлов для включения в пакет целевой объект должен записывать эти файлы в ItemGroup `TfmSpecificPackageFile` и задайте следующие необязательные метаданные:
+
+- `PackagePath`: Путь, где должен находиться файл выходных данных в пакете. NuGet выдает предупреждение, если более одного файла добавляется один и тот же путь пакета.
+- `BuildAction`: Действие построения файла является обязательным, только если задан допустимый путь в `contentFiles` папки. По умолчанию на «Нет».
+
+Пример:
+```
+<PropertyGroup>
+    <TargetsForTfmSpecificContentInPackage>$(TargetsForTfmSpecificContentInPackage);CustomContentTarget</TargetsForTfmSpecificContentInPackage>
+</PropertyGroup>
+
+<Target Name=""CustomContentTarget"">
+    <ItemGroup>
+      <TfmSpecificPackageFile Include=""abc.txt"">
+        <PackagePath>mycontent/$(TargetFramework)</PackagePath>
+      </TfmSpecificPackageFile>
+      <TfmSpecificPackageFile Include=""Extensions/ext.txt"" Condition=""'$(TargetFramework)' == 'net46'"">
+        <PackagePath>net46content</PackagePath>
+      </TfmSpecificPackageFile>  
+    </ItemGroup>
+  </Target>  
+```
+
 ## <a name="restore-target"></a>Целевой объект restore
 
 `MSBuild /t:restore` (который `nuget restore` и `dotnet restore` используют с проектами .NET Core) восстанавливает пакеты, на которые ссылается файл проекта:
@@ -248,13 +307,13 @@ msbuild /t:pack <path to .csproj file> /p:NuspecFile=<path to nuspec file> /p:Nu
 
 Дополнительные параметры восстановления могут поступать из свойств MSBuild в файле проекта. Значения также можно задать из командной строки с помощью параметра `/p:` (см. примеры ниже).
 
-| Свойство. | Описание: |
+| Свойство | Описание |
 |--------|--------|
 | RestoreSources | Разделенный точками с запятой список источников пакетов. |
 | RestorePackagesPath | Путь к папке пакетов пользователя. |
 | RestoreDisableParallel | Ограничение скачиваний до одного за раз. |
 | RestoreConfigFile | Путь к применяемому файлу `Nuget.Config`. |
-| RestoreNoCache | Если значение равно true, веб-кэш по возможности не используется. |
+| RestoreNoCache | Если значение равно true, позволяет избежать использования кэшированных пакетов. В разделе [управление глобального пакетами и папками кэша](../consume-packages/managing-the-global-packages-and-cache-folders.md). |
 | RestoreIgnoreFailedSources | Если значение равно true, нерабочие или отсутствующие источники пакетов игнорируются. |
 | RestoreTaskAssemblyFile | Путь к `NuGet.Build.Tasks.dll`. |
 | RestoreGraphProjectInput | Разделенный точками с запятой список проектов для восстановления, который должен содержать абсолютные пути. |
@@ -280,9 +339,9 @@ msbuild /t:restore /p:RestoreConfigFile=<path>
 
 Операция восстановления создает в папке сборки `obj` следующие файлы:
 
-| Файл | Описание: |
+| Файл | Описание |
 |--------|--------|
-| `project.assets.json` | Раньше назывался `project.lock.json`. |
+| `project.assets.json` | Содержит граф зависимостей все ссылки на пакет. |
 | `{projectName}.projectFileExtension.nuget.g.props` | Ссылки на свойства MSBuild, содержащиеся в пакетах. |
 | `{projectName}.projectFileExtension.nuget.g.targets` | Ссылки на целевые объекты MSBuild, содержащиеся в пакетах. |
 

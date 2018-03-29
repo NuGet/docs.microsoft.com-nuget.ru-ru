@@ -1,22 +1,25 @@
 ---
-title: "NuGet CLI проверьте команду | Документы Microsoft"
+title: NuGet CLI проверьте команду | Документы Microsoft
 author: dtivel
 ms.author: dtivel
 manager: doronm
 ms.date: 03/06/2018
 ms.topic: reference
 ms.prod: nuget
-ms.technology: 
-description: "Справочник по nuget.exe проверьте команды"
-keywords: "NuGet проверить ссылку, проверьте команды"
+ms.technology: ''
+description: Справочник по nuget.exe проверьте команды
+keywords: NuGet проверить ссылку, проверьте команды
 ms.reviewer:
 - karann
 - rmpablos
-ms.openlocfilehash: 096c79670267d9b602dd6ad30640e832441c31c5
-ms.sourcegitcommit: 74c21b406302288c158e8ae26057132b12960be8
+ms.workload:
+- dotnet
+- aspnet
+ms.openlocfilehash: 4423e491e0ab5dc1e13982440db42bc9b0e85c38
+ms.sourcegitcommit: beb229893559824e8abd6ab16707fd5fe1c6ac26
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/15/2018
+ms.lasthandoff: 03/28/2018
 ---
 # <a name="verify-command-nuget-cli"></a>Проверьте команду (NuGet CLI)
 
@@ -34,7 +37,7 @@ nuget verify <package(s)> [options]
 
 ## <a name="options"></a>Параметры
 
-| Параметр | Описание: |
+| Параметр | Описание |
 | --- | --- |
 | Все | Указывает, что все проверки на возможные должна быть выполнена на пакетов. |
 | CertificateFingerprint | Указывает один или несколько отпечатки сертификата SHA-256, какие знаком должен быть подписан с помощью сертификатов (s). Отпечаток сертификата SHA-256 является хэш сертификата SHA-256. Несколько входов должно быть разделенных точкой с запятой. |

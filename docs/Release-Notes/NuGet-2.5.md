@@ -1,22 +1,25 @@
 ---
-title: "Заметки о выпуске NuGet 2.5 | Документы Microsoft"
+title: Заметки о выпуске NuGet 2.5 | Документы Microsoft
 author: karann-msft
 ms.author: karann-msft
 manager: ghogen
 ms.date: 11/11/2016
 ms.topic: article
 ms.prod: nuget
-ms.technology: 
-description: "Заметки о выпуске для NuGet 2.5, включая известные проблемы, исправленные ошибки, добавленные функции и DCR."
-keywords: "NuGet 2.5 заметки о выпуске, исправления, известными проблемами, добавлены функции, DCR"
+ms.technology: ''
+description: Заметки о выпуске для NuGet 2.5, включая известные проблемы, исправленные ошибки, добавленные функции и DCR.
+keywords: NuGet 2.5 заметки о выпуске, исправления, известными проблемами, добавлены функции, DCR
 ms.reviewer:
 - karann-msft
 - unniravindranathan
-ms.openlocfilehash: 4fb696a1f4d76bdd3461df6af461f279f9f0a8b0
-ms.sourcegitcommit: b0af28d1c809c7e951b0817d306643fcc162a030
+ms.workload:
+- dotnet
+- aspnet
+ms.openlocfilehash: 4495e1ea9cc4ec13ef330e56d12de1320cf10b24
+ms.sourcegitcommit: beb229893559824e8abd6ab16707fd5fe1c6ac26
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/14/2018
+ms.lasthandoff: 03/28/2018
 ---
 # <a name="nuget-25-release-notes"></a>Заметки о выпуске 2.5 NuGet
 

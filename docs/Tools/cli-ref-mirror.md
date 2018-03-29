@@ -1,22 +1,25 @@
 ---
-title: "Команду NuGet CLI зеркальной | Документы Microsoft"
+title: Команду NuGet CLI зеркальной | Документы Microsoft
 author: kraigb
 ms.author: kraigb
 manager: ghogen
 ms.date: 01/18/2018
 ms.topic: reference
 ms.prod: nuget
-ms.technology: 
-description: "Справочник по команда зеркало nuget.exe"
-keywords: "Справочник по зеркальной NuGet, зеркальный команды"
+ms.technology: ''
+description: Справочник по команда зеркало nuget.exe
+keywords: Справочник по зеркальной NuGet, зеркальный команды
 ms.reviewer:
 - karann-msft
 - unniravindranathan
-ms.openlocfilehash: 0c1969cc04b2e2cead5e9dadf9739fdabdf65f6c
-ms.sourcegitcommit: 74c21b406302288c158e8ae26057132b12960be8
+ms.workload:
+- dotnet
+- aspnet
+ms.openlocfilehash: 512bd72d568cda81eb7c6a1555c36ead66b5c438
+ms.sourcegitcommit: beb229893559824e8abd6ab16707fd5fe1c6ac26
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/15/2018
+ms.lasthandoff: 03/28/2018
 ---
 # <a name="mirror-command-nuget-cli"></a>Команда зеркальной (NuGet CLI)
 
@@ -41,11 +44,11 @@ nuget mirror <packageID | configFilePath> <listUrlTarget> <publishUrlTarget> [op
 
 ## <a name="options"></a>Параметры
 
-| Параметр | Описание: |
+| Параметр | Описание |
 | --- | --- |
 | apiKey | Ключ API для целевой репозиторий. Если не существует, заданный в файле конфигурации используется (`%AppData%\NuGet\NuGet.Config` (Windows) или `~/.nuget/NuGet/NuGet.Config` (Mac и Linux)). |
 | Справка | Отображает справку по команде. |
-| NoCache | Запрещает NuGet с помощью пакетов из кэшей локального компьютера. |
+| NoCache | Предотвращает использование кэшированных пакетов NuGet. В разделе [управление глобального пакетами и папками кэша](../consume-packages/managing-the-global-packages-and-cache-folders.md). |
 | NOOP | Регистрирует, что выполняются, но не выполняет действий; предполагается успеха для принудительной операций. |
 | Предварительный выпуск | Включает предварительные версии пакетов в процессе зеркального отображения. |
 | Исходный код | Список источников пакетов, подлежащих зеркальному отображению. Если не заданы ни один из источников, тех, которые определены в файле конфигурации (см. выше ApiKey), используются, по умолчанию nuget.org, если не указан ни один. |

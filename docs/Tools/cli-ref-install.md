@@ -1,22 +1,25 @@
 ---
-title: "Команда установки NuGet CLI | Документы Microsoft"
+title: Команда установки NuGet CLI | Документы Microsoft
 author: kraigb
 ms.author: kraigb
 manager: ghogen
 ms.date: 01/18/2018
 ms.topic: reference
 ms.prod: nuget
-ms.technology: 
-description: "Ссылка для установки команды nuget.exe"
-keywords: "NuGet установите ссылку, установите пакет команд"
+ms.technology: ''
+description: Ссылка для установки команды nuget.exe
+keywords: NuGet установите ссылку, установите пакет команд
 ms.reviewer:
 - karann-msft
 - unniravindranathan
-ms.openlocfilehash: 8d5f53c833fb42c9fe37d0629eab33e8f0bc70d7
-ms.sourcegitcommit: 74c21b406302288c158e8ae26057132b12960be8
+ms.workload:
+- dotnet
+- aspnet
+ms.openlocfilehash: 121d7b50767f1d466d6d0d8494f324b02d8ff6f1
+ms.sourcegitcommit: beb229893559824e8abd6ab16707fd5fe1c6ac26
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/15/2018
+ms.lasthandoff: 03/28/2018
 ---
 # <a name="install-command-nuget-cli"></a>Установите команду (NuGet CLI)
 
@@ -27,7 +30,7 @@ ms.lasthandoff: 03/15/2018
 > [!Tip]
 > Чтобы загрузить пакет непосредственно вне контекста проекта, посетите страницу пакета в [nuget.org](https://www.nuget.org) и выберите **загрузки** ссылку.
 
-Если не указан ни один из источников, перечисленные в файле Глобальная конфигурация `%APPDATA%\NuGet\NuGet.Config` (Windows) или `~/.nuget/NuGet/NuGet.Config` (Mac, Linux), используются. В разделе [Настройка NuGet поведение](../consume-packages/configuring-nuget-behavior.md) для получения дополнительных сведений.
+Если не указан ни один из источников, перечисленные в файле Глобальная конфигурация `%appdata%\NuGet\NuGet.Config` (Windows) или `~/.nuget/NuGet/NuGet.Config` (Mac, Linux), используются. В разделе [Настройка NuGet поведение](../consume-packages/configuring-nuget-behavior.md) для получения дополнительных сведений.
 
 Если не указано ни одного определенного пакета, `install` устанавливает все пакеты, перечисленные в проекте `packages.config` файл, сделав его аналогично [ `restore` ](cli-ref-restore.md).
 
@@ -45,7 +48,7 @@ nuget install <packageID | configFilePath> [options]
 
 ## <a name="options"></a>Параметры
 
-| Параметр | Описание: |
+| Параметр | Описание |
 | --- | --- |
 | ConfigFile | Файл конфигурации NuGet вступили в силу. Если не указан, `%AppData%\NuGet\NuGet.Config` (Windows) или `~/.nuget/NuGet/NuGet.Config` используется (Mac и Linux).|
 | DependencyVersion | *(4.4 +)*  Указывает конкретную версию, переопределение поведения по умолчанию для разрешения зависимостей. |
@@ -55,7 +58,7 @@ nuget install <packageID | configFilePath> [options]
 | ForceEnglishOutput | *(3.5 +)*  Принудительно nuget.exe выполняется с использованием инвариантных, на основе английского языка и региональных параметров. |
 | Платформа | *(4.4 +)*  Требуемая версия .NET framework используется для выбора зависимостей. Значение по умолчанию «Any» Если не указан. |
 | Справка | Отображает справку по команде. |
-| NoCache | Запрещает NuGet с помощью пакетов из кэшей локального компьютера. |
+| NoCache | Предотвращает использование кэшированных пакетов NuGet. В разделе [управление глобального пакетами и папками кэша](../consume-packages/managing-the-global-packages-and-cache-folders.md). |
 | Неинтерактивные | Подавление для ввода данных и подтверждений. |
 | Выходной каталог | Указывает папку, в которой устанавливаются пакеты. Если папка не указана, используется текущая папка. |
 | PackageSaveMode | Указывает типы файлов для сохранения после установки пакета: один из `nuspec`, `nupkg`, или `nuspec;nupkg`. |

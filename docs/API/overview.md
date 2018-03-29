@@ -1,5 +1,5 @@
 ---
-title: "Обзор, NuGet API | Документы Microsoft"
+title: Обзор, NuGet API | Документы Microsoft
 author:
 - joelverhagen
 - kraigb
@@ -10,17 +10,20 @@ manager: skofman
 ms.date: 10/26/2017
 ms.topic: reference
 ms.prod: nuget
-ms.technology: 
-description: "NuGet API — это набор конечных точек HTTP, которые можно использовать для загрузки пакетов, получить метаданные, публикации новых пакетов и т. д."
-keywords: "NuGet V3 API, NuGet V2 API, NuGet JSON, регистрации API NuGet NuGet API плоский контейнера, nupkg NuGet интерфейса API, NuGet интерфейса API метаданных, API поиска NuGet, принудительной NuGet интерфейса API, NuGe публикации API, NuGet удалить API, NuGet исключить API, протокол NuGet"
+ms.technology: ''
+description: NuGet API — это набор конечных точек HTTP, которые можно использовать для загрузки пакетов, получить метаданные, публикации новых пакетов и т. д.
+keywords: NuGet V3 API, NuGet V2 API, NuGet JSON, регистрации API NuGet NuGet API плоский контейнера, nupkg NuGet интерфейса API, NuGet интерфейса API метаданных, API поиска NuGet, принудительной NuGet интерфейса API, NuGe публикации API, NuGet удалить API, NuGet исключить API, протокол NuGet
 ms.reviewer:
 - karann
 - unniravindranathan
-ms.openlocfilehash: c28b0912be6dbccab06078100cb71821c3658e08
-ms.sourcegitcommit: 4651b16a3a08f6711669fc4577f5d63b600f8f58
+ms.workload:
+- dotnet
+- aspnet
+ms.openlocfilehash: 7053a971c80a94cf035e8f149c332b36e66a9ea9
+ms.sourcegitcommit: beb229893559824e8abd6ab16707fd5fe1c6ac26
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/02/2018
+ms.lasthandoff: 03/28/2018
 ---
 # <a name="nuget-api"></a>NuGet интерфейса API
 
@@ -32,8 +35,7 @@ NuGet API — это набор конечных точек HTTP, которые
 
 ## <a name="service-index"></a>Служба индекс.
 
-Точка входа для API является документ JSON также нужное расположение. В этом документе называется **служба индекс**.
-Место хранения индекса службы для nuget.org `https://api.nuget.org/v3/index.json`.
+Точка входа для API является документ JSON также нужное расположение. В этом документе называется **служба индекс**. Место хранения индекса службы для nuget.org `https://api.nuget.org/v3/index.json`.
 
 Этот документ JSON содержит список *ресурсов* которой предоставляют различные возможности и выполнения различных вариантов использования.
 
@@ -57,15 +59,15 @@ API-интерфейса были внесены изменения проток
 
 **Служба индекс** описывает различные ресурсы. Ниже приведены поддерживаемые ресурсы текущего набора.
 
-Имя ресурса                                                          | Обязательно | Описание:
+Имя ресурса                                                          | Обязательно | Описание
 ---------------------------------------------------------------------- | -------- | -----------
 [`PackagePublish`](package-publish-resource.md)                        | да      | Push и удаления (или исключить) пакетов.
 [`SearchQueryService`](search-query-service-resource.md)               | да      | Фильтровать и искать пакеты по ключевым словам.
 [`RegistrationsBaseUrl`](registration-base-url-resource.md)            | да      | Получите метаданные пакета.
 [`PackageBaseAddress`](package-base-address-resource.md)               | да      | Получение содержимого пакета (.nupkg).
-[`SearchAutocompleteService`](search-autocomplete-service-resource.md) | Нет       | Обнаружение идентификаторы пакетов и версий с подстроки.
-[`ReportAbuseUriTemplate`](report-abuse-resource.md)                   | Нет       | Создайте URL-адрес для доступа к веб-страницы «сообщить о нарушении».
-[`Catalog`](catalog-resource.md)                                       | Нет       | Полную запись всех событий пакета.
+[`SearchAutocompleteService`](search-autocomplete-service-resource.md) | нет       | Обнаружение идентификаторы пакетов и версий с подстроки.
+[`ReportAbuseUriTemplate`](report-abuse-resource.md)                   | нет       | Создайте URL-адрес для доступа к веб-страницы «сообщить о нарушении».
+[`Catalog`](catalog-resource.md)                                       | нет       | Полную запись всех событий пакета.
 
 Как правило все недвоичные данные, возвращенные ресурс API сериализуются с помощью JSON. Схема ответа, возвращаемые каждого ресурса в индексе службы определяется по отдельности для этого ресурса. Дополнительные сведения о каждом ресурсе см. в разделах, перечисленных выше.
 
@@ -87,7 +89,7 @@ DELETE | Удаляет или unlists ресурса.
 
 ## <a name="http-status-codes"></a>Коды состояния HTTP
 
-Код | Описание:
+Код | Описание
 ---- | -----
 200  | Успех, и текст ответа.
 201  | Об успешном выполнении и ресурс был создан.
@@ -109,12 +111,13 @@ DELETE | Удаляет или unlists ресурса.
 
 ## <a name="http-request-headers"></a>Заголовки HTTP-запросов
 
-name                     | Описание:
+Имя                     | Описание
 ------------------------ | -----------
 X-NuGet-ApiKey           | Требуется для принудительной отправки и удаления, в разделе [ `PackagePublish` ресурсов](package-publish-resource.md)
-X-NuGet-Client-Version   | **Рекомендуется использовать** и заменяется`X-NuGet-Protocol-Version`
+X-NuGet-Client-Version   | **Рекомендуется использовать** и заменяется `X-NuGet-Protocol-Version`
 X-NuGet-Protocol-Version | Требуется в некоторых случаях только в nuget.org. в разделе [nuget.org протоколы](NuGet-Protocols.md)
+X-NuGet-Session-Id       | *Необязательный*. NuGet клиентов v4.7 + идентификации HTTP-запросов, которые являются частью одного сеанса клиента NuGet. Для `PackageReference` операции восстановления является идентификатором одного сеанса для других сценариев, например автозавершение, и `packages.config` может существовать несколько разных идентификатор сеанса из-за как разложить код восстановления.
 
-## <a name="authentication"></a>Проверка подлинности
+## <a name="authentication"></a>Аутентификация
 
 Проверка подлинности остается зависит от реализации источника пакета для определения. Для nuget.org только `PackagePublish` ресурс требует проверки подлинности через специальный заголовок ключа API. В разделе [ `PackagePublish` ресурсов](package-publish-resource.md) подробные сведения.

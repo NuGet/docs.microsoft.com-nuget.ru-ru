@@ -1,22 +1,25 @@
 ---
-title: "Команду NuGet CLI принудительной | Документы Microsoft"
+title: Команду NuGet CLI принудительной | Документы Microsoft
 author: kraigb
 ms.author: kraigb
 manager: ghogen
 ms.date: 01/18/2018
 ms.topic: reference
 ms.prod: nuget
-ms.technology: 
-description: "Ссылка для команды push nuget.exe"
-keywords: "Справочник по принудительной NuGet, команда push"
+ms.technology: ''
+description: Ссылка для команды push nuget.exe
+keywords: Справочник по принудительной NuGet, команда push
 ms.reviewer:
 - karann-msft
 - unniravindranathan
-ms.openlocfilehash: 095e81406df3db5fbfc6c5202362894b2c6d7cf8
-ms.sourcegitcommit: 74c21b406302288c158e8ae26057132b12960be8
+ms.workload:
+- dotnet
+- aspnet
+ms.openlocfilehash: 832f7aeb2b485acbb83e5213916fc3423df961ab
+ms.sourcegitcommit: beb229893559824e8abd6ab16707fd5fe1c6ac26
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/15/2018
+ms.lasthandoff: 03/28/2018
 ---
 # <a name="push-command-nuget-cli"></a>Команда Push (NuGet CLI)
 
@@ -39,7 +42,7 @@ nuget push <packagePath> [options]
 
 ## <a name="options"></a>Параметры
 
-| Параметр | Описание: |
+| Параметр | Описание |
 | --- | --- |
 | apiKey | Ключ API для целевой репозиторий. Если он отсутствует, используется заданный в файле конфигурации. |
 | ConfigFile | Файл конфигурации NuGet вступили в силу. Если не указан, `%AppData%\NuGet\NuGet.Config` (Windows) или `~/.nuget/NuGet/NuGet.Config` используется (Mac и Linux).|
