@@ -1,23 +1,26 @@
 ---
-title: "Заметки о выпуске NuGet 4.6 RTM | Документы Майкрософт"
+title: Заметки о выпуске NuGet 4.6 RTM | Документы Майкрософт
 author: anangaur
 ms.author: anangaur
 manager: unnir
 ms.date: 3/7/2018
 ms.topic: article
 ms.prod: nuget
-ms.technology: 
-description: "Заметки о выпуске для NuGet 4.6.0, включая известные проблемы, исправления ошибок, добавленные функции и запросы на изменение структуры."
-keywords: "заметки о выпуске NuGet 4.6.0, исправления ошибок, известные проблемы, добавленные функции, запросы на изменение структуры"
+ms.technology: ''
+description: Заметки о выпуске для NuGet 4.6.0, включая известные проблемы, исправления ошибок, добавленные функции и запросы на изменение структуры.
+keywords: заметки о выпуске NuGet 4.6.0, исправления ошибок, известные проблемы, добавленные функции, запросы на изменение структуры
 ms.reviewer:
 - karann-msft
 - unniravindranathan
 - anangaur
-ms.openlocfilehash: 32bfe8a7d5d60a0ad24444749beff64edcaab305
-ms.sourcegitcommit: fa31ae10b5a5add7184bf7420554aade8adce6ed
+ms.workload:
+- dotnet
+- aspnet
+ms.openlocfilehash: 004ad16018443292840b00fa88aa78350e371414
+ms.sourcegitcommit: beb229893559824e8abd6ab16707fd5fe1c6ac26
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 03/28/2018
 ---
 # <a name="nuget-46-rtm-release-notes"></a>Заметки о выпуске версии NuGet 4.6 RTM
 

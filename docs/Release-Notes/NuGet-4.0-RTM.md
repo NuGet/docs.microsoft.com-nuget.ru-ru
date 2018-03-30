@@ -1,22 +1,25 @@
 ---
-title: "Заметки о выпуске версии-кандидата NuGet 4.0 | Документы Майкрософт"
+title: Заметки о выпуске версии-кандидата NuGet 4.0 | Документы Майкрософт
 author: anangaur
 ms.author: anangaur
 manager: unniravindranathan
 ms.date: 03/03/2017
 ms.topic: article
 ms.prod: nuget
-ms.technology: 
-description: "Заметки о выпуске для NuGet 4.0 RTM, включая известные проблемы, исправления ошибок, добавленные функции и запросы на изменение структуры."
-keywords: "заметки о выпуске NuGet 4.0 RTM, исправления ошибок, известные проблемы, добавленные функции и запросы на изменение структуры"
+ms.technology: ''
+description: Заметки о выпуске для NuGet 4.0 RTM, включая известные проблемы, исправления ошибок, добавленные функции и запросы на изменение структуры.
+keywords: заметки о выпуске NuGet 4.0 RTM, исправления ошибок, известные проблемы, добавленные функции и запросы на изменение структуры
 ms.reviewer:
 - karann-msft
 - unniravindranathan
-ms.openlocfilehash: d1ab89f0decb64a64d04dc293e5273b577e8398b
-ms.sourcegitcommit: 7969f6cd94eccfee5b62031bb404422139ccc383
+ms.workload:
+- dotnet
+- aspnet
+ms.openlocfilehash: 75ce757c209afd74f8d4f45d58d4e13a23b3b743
+ms.sourcegitcommit: beb229893559824e8abd6ab16707fd5fe1c6ac26
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/20/2018
+ms.lasthandoff: 03/28/2018
 ---
 # <a name="nuget-40-rtm-release-notes"></a>Заметки о выпуске версии NuGet 4.0 RTM
 

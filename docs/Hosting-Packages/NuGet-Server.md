@@ -1,22 +1,25 @@
 ---
-title: "Использование NuGet.Server для размещения веб-каналов NuGet | Документы Майкрософт"
+title: Использование NuGet.Server для размещения веб-каналов NuGet | Документы Майкрософт
 author: kraigb
 ms.author: kraigb
 manager: ghogen
 ms.date: 03/13/2018
 ms.topic: article
 ms.prod: nuget
-ms.technology: 
-description: "Описывается создание и размещение веб-канала пакетов NuGet на любом сервере со службами IIS с помощью NuGet.Server для предоставления доступа к пакетам по протоколам HTTP и OData."
-keywords: "веб-канал NuGet, коллекция NuGet, удаленный веб-канал пакетов, NuGet.Server"
+ms.technology: ''
+description: Описывается создание и размещение веб-канала пакетов NuGet на любом сервере со службами IIS с помощью NuGet.Server для предоставления доступа к пакетам по протоколам HTTP и OData.
+keywords: веб-канал NuGet, коллекция NuGet, удаленный веб-канал пакетов, NuGet.Server
 ms.reviewer:
 - karann-msft
 - unniravindranathan
-ms.openlocfilehash: d85c1ca88ca44c8f8bfa5cb9c453279f65f26f50
-ms.sourcegitcommit: 9adf5349eab91bd1d044e11f34836d53cfb115b3
+ms.workload:
+- dotnet
+- aspnet
+ms.openlocfilehash: a8996fed537e5745a1dbeb1c3d12b2a0670e744d
+ms.sourcegitcommit: beb229893559824e8abd6ab16707fd5fe1c6ac26
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/16/2018
+ms.lasthandoff: 03/28/2018
 ---
 # <a name="nugetserver"></a>NuGet.Server
 

@@ -1,22 +1,25 @@
 ---
-title: "Создание пакетов NuGet Packages для универсальной платформы Windows | Документы Майкрософт"
+title: Создание пакетов NuGet Packages для универсальной платформы Windows | Документы Майкрософт
 author: kraigb
 ms.author: kraigb
 manager: ghogen
 ms.date: 03/21/2017
-ms.topic: get-started-article
+ms.topic: tutorial
 ms.prod: nuget
-ms.technology: 
-description: "Полное пошаговое руководство по созданию пакетов NuGet с помощью компонента среды выполнения Windows для универсальной платформы Windows."
-keywords: "создание пакета, пакеты для UWP, компоненты среды выполнения Windows"
+ms.technology: ''
+description: Полное пошаговое руководство по созданию пакетов NuGet с помощью компонента среды выполнения Windows для универсальной платформы Windows.
+keywords: создание пакета, пакеты для UWP, компоненты среды выполнения Windows
 ms.reviewer:
 - karann-msft
 - unniravindranathan
-ms.openlocfilehash: af650b6cd67855a67d0f49cdbd9f510bf90a60f6
-ms.sourcegitcommit: 8f26d10bdf256f72962010348083ff261dae81b9
+ms.workload:
+- dotnet
+- aspnet
+ms.openlocfilehash: 6923cdc87b0a550abb51316e384c79137eeaf63a
+ms.sourcegitcommit: beb229893559824e8abd6ab16707fd5fe1c6ac26
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/08/2018
+ms.lasthandoff: 03/28/2018
 ---
 # <a name="create-uwp-packages"></a>Создание пакетов универсальной платформы Windows
 

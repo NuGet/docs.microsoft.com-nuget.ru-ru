@@ -1,22 +1,25 @@
 ---
-title: "Создание локализованного пакета NuGet | Документы Майкрософт"
+title: Создание локализованного пакета NuGet | Документы Майкрософт
 author: kraigb
 ms.author: kraigb
 manager: ghogen
 ms.date: 01/18/2018
 ms.topic: article
 ms.prod: nuget
-ms.technology: 
-description: "Сведения о двух способах создать локализованные пакеты NuGet, включив все сборки в один пакет или опубликовав отдельные сборки."
-keywords: "локализация пакета NuGet, вспомогательные сборки NuGet, создание локализованных пакетов, соглашения о локализации NuGet"
+ms.technology: ''
+description: Сведения о двух способах создать локализованные пакеты NuGet, включив все сборки в один пакет или опубликовав отдельные сборки.
+keywords: локализация пакета NuGet, вспомогательные сборки NuGet, создание локализованных пакетов, соглашения о локализации NuGet
 ms.reviewer:
 - karann-msft
 - unniravindranathan
-ms.openlocfilehash: 5946ba6b43d3c418a1624aeb27d12b385d66b2fb
-ms.sourcegitcommit: 8f26d10bdf256f72962010348083ff261dae81b9
+ms.workload:
+- dotnet
+- aspnet
+ms.openlocfilehash: 39ff6d300ec1a1f7941cad5953599f25f55117f4
+ms.sourcegitcommit: beb229893559824e8abd6ab16707fd5fe1c6ac26
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/08/2018
+ms.lasthandoff: 03/28/2018
 ---
 # <a name="creating-localized-nuget-packages"></a>Создание локализованных пакетов NuGet
 

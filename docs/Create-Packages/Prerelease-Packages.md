@@ -1,22 +1,25 @@
 ---
-title: "Предварительные версии в пакетах NuGet | Документы Майкрософт"
+title: Предварительные версии в пакетах NuGet | Документы Майкрософт
 author: kraigb
 ms.author: kraigb
 manager: ghogen
 ms.date: 08/14/2017
 ms.topic: article
 ms.prod: nuget
-ms.technology: 
-description: "Инструкции по созданию пакетов предварительных версий"
-keywords: "управление версиями, управление версиями пакетов NuGet, предварительные версии NuGet, пакеты NuGet предварительных версий, предварительный просмотр версий пакетов, версии-кандидаты пакетов, бета-версии пакетов, семантическое версионирование NuGet"
+ms.technology: ''
+description: Инструкции по созданию пакетов предварительных версий
+keywords: управление версиями, управление версиями пакетов NuGet, предварительные версии NuGet, пакеты NuGet предварительных версий, предварительный просмотр версий пакетов, версии-кандидаты пакетов, бета-версии пакетов, семантическое версионирование NuGet
 ms.reviewer:
 - karann-msft
 - unniravindranathan
-ms.openlocfilehash: 03f744a96841a8c49d9f1dde89620b85de968d6f
-ms.sourcegitcommit: 8f26d10bdf256f72962010348083ff261dae81b9
+ms.workload:
+- dotnet
+- aspnet
+ms.openlocfilehash: 57f59e3906e2d49b6b6e078f530885a601553b06
+ms.sourcegitcommit: beb229893559824e8abd6ab16707fd5fe1c6ac26
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/08/2018
+ms.lasthandoff: 03/28/2018
 ---
 # <a name="building-pre-release-packages"></a>Сборка пакетов предварительных версий
 

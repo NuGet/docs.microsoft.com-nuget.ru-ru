@@ -1,23 +1,26 @@
 ---
-title: "Заметки о выпуске NuGet 4.4 RTM | Документы Майкрософт"
+title: Заметки о выпуске NuGet 4.4 RTM | Документы Майкрософт
 author: karann-msft
 ms.author: karann-msft
 manager: unniravindranathan
 ms.date: 08/14/2017
 ms.topic: article
 ms.prod: nuget
-ms.technology: 
-description: "Заметки о выпуске для NuGet 4.3 RTM, включая известные проблемы, исправления ошибок, добавленные функции и запросы на изменение структуры."
-keywords: "заметки о выпуске NuGet 4.3 RTM, исправления ошибок, известные проблемы, добавленные функции и запросы на изменение структуры"
+ms.technology: ''
+description: Заметки о выпуске для NuGet 4.3 RTM, включая известные проблемы, исправления ошибок, добавленные функции и запросы на изменение структуры.
+keywords: заметки о выпуске NuGet 4.3 RTM, исправления ошибок, известные проблемы, добавленные функции и запросы на изменение структуры
 ms.reviewer:
 - karann-msft
 - unniravindranathan
 - anangaur
-ms.openlocfilehash: 25f41649807b29d39900aa86e2c26f05463e91eb
-ms.sourcegitcommit: b0af28d1c809c7e951b0817d306643fcc162a030
+ms.workload:
+- dotnet
+- aspnet
+ms.openlocfilehash: 6c122dc3d9b576a2ea5f094746a830e5fab5637e
+ms.sourcegitcommit: beb229893559824e8abd6ab16707fd5fe1c6ac26
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/14/2018
+ms.lasthandoff: 03/28/2018
 ---
 # <a name="nuget-44-rtm-release-notes"></a>Заметки о выпуске версии NuGet 4.4 RTM
 

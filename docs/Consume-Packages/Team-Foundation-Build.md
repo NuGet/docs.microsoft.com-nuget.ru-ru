@@ -1,22 +1,25 @@
 ---
-title: "Пошаговое руководство по восстановлению пакетов NuGet с помощью сборки Team Foundation | Документы Майкрософт"
+title: Пошаговое руководство по восстановлению пакетов NuGet с помощью сборки Team Foundation | Документы Майкрософт
 author: kraigb
 ms.author: kraigb
 manager: ghogen
 ms.date: 01/09/2017
 ms.topic: article
 ms.prod: nuget
-ms.technology: 
-description: "Пошаговое руководство по восстановлению пакетов NuGet с помощью сборки Team Foundation (Team Foundation Server и Visual Studio Team Services)."
-keywords: "восстановление пакетов NuGet, NuGet и Team Foundation Server, NuGet и VSTS, системы сборки NuGet, сборка Team Foundation, пользовательские проекты MSBuild, облачная сборка, непрерывная интеграция"
+ms.technology: ''
+description: Пошаговое руководство по восстановлению пакетов NuGet с помощью сборки Team Foundation (Team Foundation Server и Visual Studio Team Services).
+keywords: восстановление пакетов NuGet, NuGet и Team Foundation Server, NuGet и VSTS, системы сборки NuGet, сборка Team Foundation, пользовательские проекты MSBuild, облачная сборка, непрерывная интеграция
 ms.reviewer:
 - karann-msft
 - unniravindranathan
-ms.openlocfilehash: 9e3ef6e3bcc55705315fcb6ccf3e917963c62250
-ms.sourcegitcommit: 8f26d10bdf256f72962010348083ff261dae81b9
+ms.workload:
+- dotnet
+- aspnet
+ms.openlocfilehash: f46a7402214bf965918a5195605027913a8c60c2
+ms.sourcegitcommit: beb229893559824e8abd6ab16707fd5fe1c6ac26
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/08/2018
+ms.lasthandoff: 03/28/2018
 ---
 # <a name="setting-up-package-restore-with-team-foundation-build"></a>Настройка восстановления пакетов с помощью сборки Team Foundation
 
@@ -110,6 +113,9 @@ nuget restore path\to\solution.sln
     bin
     obj
     packages
+    *.nupkg
+    project.lock.json
+    project.assets.json
 
 Возможности файла `.gitignore` [весьма широки](https://www.kernel.org/pub/software/scm/git/docs/gitignore.html). Например, если вы не хотите возвращать все содержимое папки `packages`, но хотите вернуть файлы `.targets`, можно вместо этого использовать следующее правило:
 
@@ -125,6 +131,9 @@ nuget restore path\to\solution.sln
     bin
     obj
     packages
+    *.nupkg
+    project.lock.json
+    project.assets.json
 
 ## <a name="buildproj"></a>build.proj
 
