@@ -102,6 +102,7 @@
 ## [Содержимое пакета](api/package-base-address-resource.md)
 ## [URL-адрес для отправки сообщений о нарушениях](api/report-abuse-resource.md)
 ## [Каталог](api/catalog-resource.md)
+## [Ограничения скорости](api/rate-limits.md)
 ## [Протоколы nuget.org](api/nuget-protocols.md)
 # Расширяемость Visual Studio
 ## [API NuGet в Visual Studio](visual-studio-extensibility/nuget-api-in-visual-studio.md)
