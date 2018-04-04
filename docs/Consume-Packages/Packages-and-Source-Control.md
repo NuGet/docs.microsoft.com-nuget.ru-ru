@@ -1,26 +1,29 @@
 ---
-title: "Пакеты NuGet и управление исходным кодом | Документы Майкрософт"
+title: Пакеты NuGet и управление исходным кодом | Документы Майкрософт
 author: kraigb
 ms.author: kraigb
 manager: ghogen
-ms.date: 07/17/2017
+ms.date: 03/16/2018
 ms.topic: article
 ms.prod: nuget
-ms.technology: 
-description: "Вопросы, касающиеся обработки пакетов NuGet в системах управления версиями и исходным кодом, а также пропуска пакетов с TFVC и GIT."
-keywords: "управление исходным кодом NuGet, система управления версиями NuGet, NuGet и GIT, NuGet и TFS, NuGet и TFVC, пропуск пакетов, репозитории для управления исходным кодом, репозитории для управления версиями"
+ms.technology: ''
+description: Вопросы, касающиеся обработки пакетов NuGet в системах управления версиями и исходным кодом, а также пропуска пакетов с TFVC и GIT.
+keywords: управление исходным кодом NuGet, система управления версиями NuGet, NuGet и GIT, NuGet и TFS, NuGet и TFVC, пропуск пакетов, репозитории для управления исходным кодом, репозитории для управления версиями
 ms.reviewer:
 - karann-msft
 - unniravindranathan
-ms.openlocfilehash: 6261625d5d7eaa748f9ad15510b7b2af3c814e44
-ms.sourcegitcommit: b0af28d1c809c7e951b0817d306643fcc162a030
+ms.workload:
+- dotnet
+- aspnet
+ms.openlocfilehash: 43fc1653616091b0f974903147645c0c99c8f57b
+ms.sourcegitcommit: beb229893559824e8abd6ab16707fd5fe1c6ac26
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/14/2018
+ms.lasthandoff: 03/28/2018
 ---
 # <a name="omitting-nuget-packages-in-source-control-systems"></a>Пропуск пакетов NuGet в системах управления исходным кодом
 
-Разработчики обычно пропускают пакеты NuGet из своих репозиториев управления исходным кодом и вместо этого полагаются на [восстановление пакетов](../consume-packages/package-restore.md) для переустановки зависимостей проекта перед сборкой.
+Разработчики обычно пропускают пакеты NuGet из своих репозиториев управления исходным кодом и вместо этого полагаются на [восстановление пакетов](package-restore.md) для переустановки зависимостей проекта перед сборкой.
 
 К причинам использования восстановления пакетов относятся следующие:
 
@@ -29,11 +32,11 @@ ms.lasthandoff: 02/14/2018
 1. Становится все труднее очистить решение от неиспользуемых папок пакетов, так как при этом нужно не удалить используемые папки пакетов.
 1. Опуская пакеты, вы обеспечиваете четкие границы владения между вашим кодом и чужими пакетами, от которых вы зависите. Многие пакеты NuGet уже находятся в их собственных репозиториях управления исходным кодом.
 
-Хотя восстановление пакетов является поведением NuGet по умолчанию, для пропуска пакетов&mdash;а именно папки `packages` в проекте&mdash;в системе управления исходным кодом требуется выполнить некоторые операции вручную, как описано в следующих разделах.
+Несмотря на то, что NuGet восстанавливает пакеты по умолчанию, чтобы пропустить некоторые из них, а именно папки `packages` в проекте, в системе управления исходным кодом требуется выполнить некоторые операции вручную, как описано в этой статье.
 
 ## <a name="omitting-packages-with-git"></a>Пропуск пакетов в Git
 
-Используйте [файл GITIGNORE](https://git-scm.com/docs/gitignore), чтобы предотвратить включение папки `packages` в систему управления исходным кодом. Для справки см. [пример `.gitignore` для проектов Visual Studio](https://github.com/github/gitignore/blob/master/VisualStudio.gitignore).
+Используйте файл [.gitignore ](https://git-scm.com/docs/gitignore), чтобы игнорировать пакеты NuGet (`.nupkg`) `packages` папки и `project.assets.json`, среди прочего. Для справки см. [ образец `.gitignore` для проектов Visual Studio ](https://github.com/github/gitignore/blob/master/VisualStudio.gitignore):
 
 Далее приведены важные части файла `.gitignore`:
 
@@ -41,20 +44,24 @@ ms.lasthandoff: 02/14/2018
 # Ignore NuGet Packages
 *.nupkg
 
-# Ignore the packages folder
-**/packages/*
+# The packages folder can be ignored because of Package Restore
+**/[Pp]ackages/*
 
-# Include packages/build/, which is used as an MSBuild target
-!**/packages/build/
+# except build/, which is used as an MSBuild target.
+!**/[Pp]ackages/build/
 
-# Uncomment if necessary; generally it's regenerated when needed
-#!**/packages/repositories.config
+# Uncomment if necessary however generally it will be regenerated when needed
+#!**/[Pp]ackages/repositories.config
+
+# NuGet v3's project.json files produces more ignorable files
+*.nuget.props
+*.nuget.targets
 
 # Ignore other intermediate files that NuGet might create. project.lock.json is used in conjunction
-# with project.json; project.assets.json is used in conjunction with the PackageReference format.
+# with project.json (NuGet v3); project.assets.json is used in conjunction with the PackageReference
+# format (NuGet v4 and .NET Core).
 project.lock.json
 project.assets.json
-*.nuget.props
 ```
 
 ## <a name="omitting-packages-with-team-foundation-version-control"></a>Пропуск пакетов в системе управления версиями Team Foundation
@@ -92,7 +99,7 @@ project.assets.json
    # with additional folder names if it's not in the same folder as .tfignore.   
    packages
 
-   # Include package target files which may be required for MSBuild, again prefixing the folder name as needed.
+   # Exclude package target files which may be required for MSBuild, again prefixing the folder name as needed.
    !packages/*.targets
 
    # Omit temporary files
