@@ -1,34 +1,37 @@
 ---
-title: "Установка клиентских средств NuGet | Документы Майкрософт"
+title: Установка клиентских средств NuGet | Документы Майкрософт
 author: kraigb
 ms.author: kraigb
 manager: ghogen
 ms.date: 01/24/2018
-ms.topic: get-started-article
+ms.topic: quickstart
 ms.prod: nuget
-ms.technology: 
-description: "Рекомендации по установке клиентских средств, интерфейса командной строки (CLI) dotnet и nuget, а также диспетчера пакетов для Visual Studio."
-keywords: "интерфейс командной строки dotnet.exe, клиентские средства NuGet, диспетчер пакетов NuGet, консоль диспетчера пакетов NuGet, NuGet для Visual Studio, бета-канал NuGet"
+ms.technology: ''
+description: Рекомендации по установке клиентских средств, интерфейса командной строки (CLI) dotnet и nuget, а также диспетчера пакетов для Visual Studio.
+keywords: интерфейс командной строки dotnet.exe, клиентские средства NuGet, диспетчер пакетов NuGet, консоль диспетчера пакетов NuGet, NuGet для Visual Studio, бета-канал NuGet
 ms.reviewer:
 - karann-msft
 - unniravindranathan
-ms.openlocfilehash: 462557e939e769f26fe05d6f9e2994eaf43c6e11
-ms.sourcegitcommit: 8f26d10bdf256f72962010348083ff261dae81b9
+ms.workload:
+- dotnet
+- aspnet
+ms.openlocfilehash: dd9ca3b39c4bc9b00d8fca6fe1479d64016bad86
+ms.sourcegitcommit: beb229893559824e8abd6ab16707fd5fe1c6ac26
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/08/2018
+ms.lasthandoff: 03/28/2018
 ---
 # <a name="installing-nuget-client-tools"></a>Установка клиентских средств NuGet
 
 > **Хотите установить пакет? Ознакомьтесь со [способами установки пакетов NuGet](consume-packages/ways-to-install-a-package.md).**
 
-Для работы с NuGet в качестве потребителя или создателя пакета можно использовать [средства кроссплатформенного интерфейса командной строки (CLI)](#cli-tools) и [функции NuGet в Visual Studio](#visual-studio). В этой статье кратко описываются возможности различных средств, их установка и приведена сравнительная таблица [доступности функций](#feature-availability).
+Чтобы работать с NuGet в качестве потребителя или создателя пакета, вы можете использовать [средства интерфейса командной строки (CLI)](#cli-tools) и [функции NuGet в Visual Studio](#visual-studio). В этой статье кратко описываются возможности различных средств, их установка и приведена сравнительная таблица [доступности функций](#feature-availability).
 
 | Средство&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | Описание: | Скачать&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; |
 |:------------- |:-------------|:-----|
 | [dotnet.exe](#dotnetexe-cli) | Входит в состав пакета SDK для .NET Core и обеспечивает основные функции NuGet на всех платформах. | [Пакет SDK для .NET Core](https://www.microsoft.com/net/download/) |
-| [nuget.exe](#nugetexe-cli) | Обеспечивает все функциональные возможности NuGet в Windows и большинство функций, выполняемых в рамках проекта [Mono](http://www.mono-project.com/docs/getting-started/install/) на Mac и Linux. | [nuget.exe](https://dist.nuget.org/win-x86-commandline/latest/nuget.exe) |
-| [Visual Studio](#visual-studio) | Предоставляет возможности NuGet через пользовательский интерфейс и консоль диспетчера пакетов. Прилагается к рабочим нагрузкам, связанным с .NET. | [Visual Studio 2017](https://www.visualstudio.com/downloads/) |
+| [nuget.exe](#nugetexe-cli) | Обеспечивает все функциональные возможности NuGet в Windows и большинство функций, выполняемых в рамках проекта Mono на компьютере Mac и Linux. | [nuget.exe](https://dist.nuget.org/win-x86-commandline/latest/nuget.exe) |
+| [Visual Studio](#visual-studio) | В Windows предоставляет возможности NuGet через пользовательский интерфейс и консоль диспетчера пакетов. Прилагается к рабочим нагрузкам, связанным с .NET. На компьютере Mac предоставляет определенные возможности через пользовательский интерфейс. В Visual Studio Code функции NuGet предоставляются через расширения. | [Visual Studio 2017](https://www.visualstudio.com/downloads/) |
 
 [MSBuild CLI](reference/msbuild-targets.md) также предоставляет возможности восстановления и создания пакетов, которые применяются на серверах сборки. MSBuild не является универсальным средством для работы с NuGet.
 
@@ -38,7 +41,7 @@ ms.lasthandoff: 03/08/2018
 
 ### <a name="dotnetexe-cli"></a>Интерфейс командной строки dotnet.exe
 
-Интерфейс командной строки .NET Core 2.0, `dotnet.exe`, работает на всех платформах (Windows, Mac и Linux) и предоставляет такие возможности NuGet, как установка, восстановление и публикация пакетов. dotnet обеспечивает прямую интеграцию с файлами проекта .NET Core (например, `.csproj`), что полезно в большинстве сценариев. `dotnet` также создается непосредственно для каждой платформы и не требует установки Mono.
+Интерфейс командной строки .NET Core 2.0, `dotnet.exe`, работает на всех платформах (Windows, Mac и Linux) и предоставляет такие возможности NuGet, как установка, восстановление и публикация пакетов. `dotnet` обеспечивает прямую интеграцию с файлами проекта .NET Core (например, `.csproj`), что полезно в большинстве сценариев. `dotnet` также создается непосредственно для каждой платформы и не требует установки Mono.
 
 Установка:
 
@@ -49,7 +52,7 @@ ms.lasthandoff: 03/08/2018
 
 ### <a name="nugetexe-cli"></a>Интерфейс командной строки nuget.exe
 
-Интерфейс командной строки NuGet, `nuget.exe`, — это программа командной строки для Windows, которая предоставляет все возможности NuGet. С некоторыми ограничениями ее также можно запустить на Mac OSX и Linux с помощью Mono. В отличие от `dotnet`, CLI `nuget.exe` не влияет на файлы проекта.
+Интерфейс командной строки NuGet, `nuget.exe`, — это программа командной строки для Windows, которая предоставляет все возможности NuGet. С некоторыми ограничениями ее также можно запустить на Mac OSX и Linux с помощью [Mono](http://www.mono-project.com/docs/getting-started/install/). В отличие от `dotnet` интерфейс командной строки `nuget.exe` не влияет на файлы проекта и не обновляет файл `packages.config` при установке пакетов.
 
 Установка:
 
@@ -59,16 +62,17 @@ ms.lasthandoff: 03/08/2018
 > Вы можете обновить существующий nuget.exe до последней версии с помощью команды `nuget update -self`.
 
 > [!Note]
-> Последняя рекомендуемая версия интерфейса командной строки NuGet всегда доступна по адресу `https://dist.nuget.org/win-x86-commandline/latest/nuget.exe`. Для обеспечения совместимости со старыми системами непрерывной интеграции сейчас можно скачать средство CLI 2.8.6 по URL-адресу `https://nuget.org/nuget.exe`. [Этот адрес больше не поддерживается](https://github.com/NuGet/NuGetGallery/issues/5381).
+> Последняя рекомендуемая версия интерфейса командной строки NuGet всегда доступна по адресу `https://dist.nuget.org/win-x86-commandline/latest/nuget.exe`. Чтобы обеспечить совместимость со старыми системами непрерывной интеграции, сейчас можно скачать [средство CLI 2.8.6](https://github.com/NuGet/NuGetGallery/issues/5381) по URL-адресу `https://nuget.org/nuget.exe`.
 
 ## <a name="visual-studio"></a>Visual Studio
 
 - В Visual Studio Code: для получения возможностей NuGet можно использовать расширения marketplace или средства CLI `dotnet.exe` или `nuget.exe`.
+
 - В Visual Studio для Mac: некоторые возможности NuGet встроены напрямую. Пошаговое руководство см. в разделе [Включение пакета NuGet в проект](/visualstudio/mac/nuget-walkthrough). Для других возможностей используются средства CLI `dotnet.exe` или `nuget.exe`.
 
 - В Visual Studio для Windows: **диспетчер пакетов NuGet** включен в выпуски Visual Studio 2012 и более поздние версии. Диспетчер пакетов предоставляет [пользовательский интерфейс](tools/package-manager-ui.md) и [консоль](tools/package-manager-console.md), через которые можно выполнять большинство операций NuGet.
   - Установщик Visual Studio 2017 содержит диспетчер пакетов NuGet с любой рабочей нагрузкой, использующей .NET. Чтобы проверить, установлен ли диспетчер пакетов, или установить его отдельно, запустите установщик Visual Studio 2017 и установите флажок **Отдельные компоненты > Средства для работы с кодом > Диспетчер пакетов NuGet**.
-  - Пользовательский интерфейс и консоль диспетчера пакетов уникальны в Visual Studio для Windows. В настоящее время они недоступны в Visual Studio для Mac.
+  - Пользовательский интерфейс и консоль диспетчера пакетов уникальны в Visual Studio для Windows. Сейчас они недоступны в Visual Studio для Mac.
   - В Visual Studio нет CLI `nuget.exe` по умолчанию. Его нужно установить отдельно, как описано выше.
   - Команды консоли диспетчера пакетов работают только в Visual Studio для Windows, но не в других средах PowerShell.
   - Для Visual Studio 2010 и более ранних версий установите расширение "Диспетчер пакетов NuGet для Visual Studio".
@@ -89,7 +93,7 @@ ms.lasthandoff: 03/08/2018
 | Создание пакетов (4) | &#10004; | &#10004; | &#10004;(5) | &#10004; | |
 | Публикация пакетов | &#10004;(1) | &#10004; | &#10004; | &#10004; |  |
 | Репликация пакетов |  | &#10004; | &#10004; | | |
-| Управление кэшем NuGet | &#10004; | &#10004; | &#10004; | | |
+| Управление папками *global-package* и кэша | &#10004; | &#10004; | &#10004; | | |
 | Управление конфигурацией NuGet | | &#10004; | &#10004; | | |
 
 (1) Только пакеты на сайте nuget.org.

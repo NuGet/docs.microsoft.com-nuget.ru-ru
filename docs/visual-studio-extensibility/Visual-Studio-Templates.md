@@ -1,22 +1,25 @@
 ---
-title: "Пакеты NuGet в шаблонах Visual Studio | Документы Майкрософт"
+title: Пакеты NuGet в шаблонах Visual Studio | Документы Майкрософт
 author: kraigb
 ms.author: kraigb
 manager: ghogen
 ms.date: 01/03/2018
 ms.topic: article
 ms.prod: nuget
-ms.technology: 
-description: "Инструкции по включению пакетов NuGet в состав шаблонов проектов и элементов Visual Studio."
-keywords: "NuGet в Visual Studio, шаблоны проектов Visual Studio, шаблоны элементов Visual Studio, пакеты в шаблонах проектов, пакеты в шаблонах элементов"
+ms.technology: ''
+description: Инструкции по включению пакетов NuGet в состав шаблонов проектов и элементов Visual Studio.
+keywords: NuGet в Visual Studio, шаблоны проектов Visual Studio, шаблоны элементов Visual Studio, пакеты в шаблонах проектов, пакеты в шаблонах элементов
 ms.reviewer:
 - karann-msft
 - unniravindranathan
-ms.openlocfilehash: 65b914e1fa59c28615f195b470880a12bf80efbb
-ms.sourcegitcommit: 4651b16a3a08f6711669fc4577f5d63b600f8f58
+ms.workload:
+- dotnet
+- aspnet
+ms.openlocfilehash: 8c1751ba9caf5e71ace7a81575e4e5448b1e4185
+ms.sourcegitcommit: beb229893559824e8abd6ab16707fd5fe1c6ac26
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/02/2018
+ms.lasthandoff: 03/28/2018
 ---
 # <a name="packages-in-visual-studio-templates"></a>Пакеты в шаблонах Visual Studio
 
@@ -62,7 +65,7 @@ ms.lasthandoff: 02/02/2018
     </WizardData>
     ```
 
-    *(NuGet 2.2.1+)*  Мастер поддерживает несколько элементов `<package>` для поддержки нескольких источников пакетов. Требуются оба атрибута `id` и `version`, то есть эта конкретная версия пакета будет установлена, даже если доступна более новая версия. Это не позволяет обновлениям пакета нарушить работу шаблона и предоставляет возможность обновить пакет разработчику, использующему шаблон.
+    Мастер поддерживает несколько элементов `<package>`, что обеспечивает поддержку нескольких источников пакетов. Требуются оба атрибута `id` и `version`, то есть эта конкретная версия пакета будет установлена, даже если доступна более новая версия. Это не позволяет обновлениям пакета нарушить работу шаблона и предоставляет возможность обновить пакет разработчику, использующему шаблон.
 
 1. Укажите репозиторий, где NuGet может найти пакеты, как описано в следующих разделах.
 

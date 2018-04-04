@@ -1,28 +1,31 @@
 ---
-title: "Создание пакетов NuGet для Xamarin (для iOS, Android и Windows) | Документы Майкрософт"
+title: Создание пакетов NuGet для Xamarin (iOS, Android и Windows) с помощью Visual Studio 2015 | Документация Майкрософт
 author: kraigb
 ms.author: kraigb
 manager: ghogen
 ms.date: 01/09/2017
-ms.topic: get-started-article
+ms.topic: tutorial
 ms.prod: nuget
-ms.technology: 
-description: "Комплексное пошаговое руководство по созданию пакетов NuGet для Xamarin, использующих собственные API в iOS, Android и Windows."
-keywords: "создание пакета, пакеты для Xamarin, кроссплатформенные пакеты"
+ms.technology: ''
+description: Комплексное пошаговое руководство по созданию пакетов NuGet для Xamarin, использующих собственные API в iOS, Android и Windows.
+keywords: создание пакета, пакеты для Xamarin, кроссплатформенные пакеты
 ms.reviewer:
 - karann-msft
 - unniravindranathan
-ms.openlocfilehash: 3e1460de060980365a5eaa2ef91c052cc359bb70
-ms.sourcegitcommit: 74c21b406302288c158e8ae26057132b12960be8
+ms.workload:
+- dotnet
+- aspnet
+ms.openlocfilehash: e101ca2d124a19d2cf758776717b3680aa5bbdd8
+ms.sourcegitcommit: beb229893559824e8abd6ab16707fd5fe1c6ac26
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/15/2018
+ms.lasthandoff: 03/28/2018
 ---
-# <a name="create-packages-for-xamarin"></a>Создание пакетов для Xamarin
+# <a name="create-packages-for-xamarin-with-visual-studio-2015"></a>Создание пакетов для Xamarin с помощью Visual Studio 2015
 
-Кроссплатформенный пакет содержит код, использующий собственные API в iOS, Android и Windows в зависимости от операционной системы во время выполнения. Хотя это несложно сделать, предпочтительнее позволить разработчикам использовать пакет из библиотек .NET Standard или PCL через общую контактную зону API.
+Пакет Xamarin содержит код, использующий собственные API в iOS, Android и Windows в зависимости от операционной системы во время выполнения. Хотя это несложно сделать, предпочтительнее позволить разработчикам использовать пакет из библиотек .NET Standard или PCL через общую контактную зону API.
 
-В этом пошаговом руководстве вы создадите кроссплатформенный пакет NuGet, который можно использовать в проектах для мобильных устройств в Windows, iOS и Android.
+В этом пошаговом руководстве с помощью Visual Studio 2015 вы создадите кроссплатформенный пакет NuGet, который можно использовать в проектах для мобильных устройств в Windows, iOS и Android.
 
 1. [Необходимые компоненты](#prerequisites)
 1. [Создание структуры проекта и кода абстракции](#create-the-project-structure-and-abstraction-code)

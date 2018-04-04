@@ -1,22 +1,25 @@
 ---
-title: "Известные проблемы NuGet | Документы Майкрософт"
+title: Известные проблемы NuGet | Документы Майкрософт
 author: karann-msft
 ms.author: karann-msft
 manager: ghogen
 ms.date: 11/11/2016
 ms.topic: article
 ms.prod: nuget
-ms.technology: 
-description: "Известные проблемы в NuGet, в том числе проблемы с проверкой подлинности, установкой пакетов и средствами."
-keywords: "известные проблемы NuGet, проблемы в NuGet"
+ms.technology: ''
+description: Известные проблемы в NuGet, в том числе проблемы с проверкой подлинности, установкой пакетов и средствами.
+keywords: известные проблемы NuGet, проблемы в NuGet
 ms.reviewer:
 - karann-msft
 - unniravindranathan
-ms.openlocfilehash: ac00e3f11c54290a31319e7f2946fd965a0a9288
-ms.sourcegitcommit: 74c21b406302288c158e8ae26057132b12960be8
+ms.workload:
+- dotnet
+- aspnet
+ms.openlocfilehash: c36da5dc73dddbd540a36d171583cbf542e0678f
+ms.sourcegitcommit: beb229893559824e8abd6ab16707fd5fe1c6ac26
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/15/2018
+ms.lasthandoff: 03/28/2018
 ---
 # <a name="known-issues-with-nuget"></a>Известные проблемы в NuGet
 
@@ -227,7 +230,7 @@ install-package log4net
 
 ## <a name="changing-the-capitalization-of-nuget-package-ids-breaks-package-restore"></a>Изменение регистра символов в идентификаторах пакетов NuGet приводит к неполадкам при восстановлении пакетов
 
-Служба поддержки NuGet может изменить регистр символов в идентификаторах пакетов NuGet, но при восстановлении пакетов это может вызвать сложности у пользователей, в локальном кэше пакетов которых уже есть пакеты с идентификаторами, имеющими другой регистр символов. Подробное описание можно найти в [этом комментарии на сайте GitHub](https://github.com/Particular/NServiceBus/issues/1271#issuecomment-20865932). Мы рекомендуем запрашивать смену регистра, только если у вас есть возможность сообщить существующим пользователям пакета о неполадках, которые могут возникнуть при восстановлении пакетов во время сборки.
+Служба поддержки NuGet может изменить регистр символов в идентификаторах пакетов NuGet, но при восстановлении пакетов это может вызвать сложности у пользователей, в папке *global-packages* которых уже есть пакеты с идентификаторами, имеющими другой регистр символов. Подробное описание можно найти в [этом комментарии на сайте GitHub](https://github.com/Particular/NServiceBus/issues/1271#issuecomment-20865932). Мы рекомендуем запрашивать смену регистра, только если у вас есть возможность сообщить существующим пользователям пакета о неполадках, которые могут возникнуть при восстановлении пакетов во время сборки.
 
 ## <a name="reporting-issues"></a>Сообщение о проблемах
 

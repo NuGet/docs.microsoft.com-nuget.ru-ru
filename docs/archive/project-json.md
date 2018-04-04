@@ -1,28 +1,31 @@
 ---
-title: "Справочник по файлу project.json для NuGet | Документы Майкрософт"
+title: Справочник по файлу project.json для NuGet | Документы Майкрософт
 author: kraigb
 ms.author: kraigb
 manager: ghogen
 ms.date: 07/27/2017
 ms.topic: reference
 ms.prod: nuget
-ms.technology: 
-description: "В проектах некоторых типов в файле project.json содержится список пакетов NuGet, используемых в проекте."
-keywords: "NuGet project.json, ссылки на пакеты NuGet, зависимости NuGet, project.lock.json"
+ms.technology: ''
+description: В проектах некоторых типов в файле project.json содержится список пакетов NuGet, используемых в проекте.
+keywords: NuGet project.json, ссылки на пакеты NuGet, зависимости NuGet, project.lock.json
 ms.reviewer:
 - karann-msft
 - unniravindranathan
-ms.openlocfilehash: 2e2c521b18dd67e49942cc20eafef0be7f91573a
-ms.sourcegitcommit: 262d026beeffd4f3b6fc47d780a2f701451663a8
+ms.workload:
+- dotnet
+- aspnet
+ms.openlocfilehash: 21542a219faa3d1fa0c32a838645d4471c5aa935
+ms.sourcegitcommit: beb229893559824e8abd6ab16707fd5fe1c6ac26
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/25/2018
+ms.lasthandoff: 03/28/2018
 ---
 # <a name="projectjson-reference"></a>Справочник по файлу project.json
 
 *NuGet 3.x или более поздней версии*
 
-В файле `project.json` содержится список пакетов, используемых в проекте, в формате ссылок на пакеты. Этот формат пришел на смену `packages.config`, а в NuGet 4.0 и более поздних версиях ему, в свою очередь, пришел на смену формат [PackageReference](../consume-packages/package-references-in-project-files.md).
+В файле `project.json` содержится список пакетов, используемых в проекте, в формате управления пакетами. Этот формат пришел на смену `packages.config`, а в NuGet 4.0 и более поздних версиях ему, в свою очередь, пришел на смену формат [PackageReference](../consume-packages/package-references-in-project-files.md).
 
 Файл [`project.lock.json`](#projectlockjson) (описанный ниже) также применяется в проектах, в которых используется файл `project.json`.
 
@@ -122,7 +125,7 @@ ms.lasthandoff: 01/25/2018
     }
  ```
 
-В разделе `frameworks` допускается только одна запись. (Исключением являются файлы `project.json` для проектов ASP.NET, сборка которых выполняется с помощью нерекомендуемой цепочки инструментов DNX, допускающей несколько целевых платформ.)
+В разделе `frameworks` допускается только одна запись. (Исключение составляют файлы `project.json` проектов ASP.NET, сборка которых выполняется с помощью нерекомендуемой цепочки инструментов DNX, допускающей несколько целевых платформ.)
 
 ## <a name="runtimes"></a>Runtimes
 

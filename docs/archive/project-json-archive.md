@@ -1,26 +1,29 @@
 ---
-title: "Устарелый формат project.json NuGet | Документация Майкрософт"
+title: Устарелый формат project.json NuGet | Документация Майкрософт
 author: kraigb
 ms.author: kraigb
 manager: ghogen
 ms.date: 01/17/2018
 ms.topic: article
 ms.prod: nuget
-ms.technology: 
-description: "Различные части содержимого с project.json удалены из других разделов документации по NuGet."
-keywords: "Файл NuGet project.json"
+ms.technology: ''
+description: Различные части содержимого с project.json удалены из других разделов документации по NuGet.
+keywords: Файл NuGet project.json
 ms.reviewer:
 - karann-msft
 - unniravindranathan
-ms.openlocfilehash: 42a40c6c637839c13effc9e476ac5702a92cfd2a
-ms.sourcegitcommit: 4651b16a3a08f6711669fc4577f5d63b600f8f58
+ms.workload:
+- dotnet
+- aspnet
+ms.openlocfilehash: 16361fe16d8ecc7064af4b6d636435a31a5663dc
+ms.sourcegitcommit: beb229893559824e8abd6ab16707fd5fe1c6ac26
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/01/2018
+ms.lasthandoff: 03/28/2018
 ---
 # <a name="projectjson-archive"></a>Устарелый формат project.json
 
-Формат ссылки `project.json` впервые появился в NuGet версии 3.x и использовался с определенными типами проектов. Он был объявлен устаревшим с появлением формата PackageReference, в котором зависимости перечислены непосредственно в файле проекта.
+Формат управления `project.json` впервые появился в NuGet версии 3.x и использовался с определенными типами проектов. Он был объявлен устаревшим с появлением формата PackageReference, в котором зависимости перечислены непосредственно в файле проекта.
 
 См. также:
 
@@ -28,11 +31,11 @@ ms.lasthandoff: 02/01/2018
 - [Impact of project.json when creating packages](project-json-impact.md) (Влияние project.json при создании пакетов)
 - [project.json и универсальная платформа Windows](project-json-and-uwp.md)
 
-## <a name="projectjson-reference-format"></a>Формат ссылки project.json
+## <a name="projectjson-management-format"></a>Формат управления project.json
 
 *Полное описание см. в статье о [восстановлении пакетов](../what-is-nuget.md).*
 
-В списке форматов ссылок:
+В списке форматов управления:
 
 - [`project.json`](project-json.md): *(объявлен устаревшим)* JSON-файл, содержащий список зависимостей проекта, при этом общая схема пакета приведена в связанном файле `project.lock.json`. Этот формат объявлен устаревшим в связи с появлением PackageReference.
 
@@ -138,7 +141,7 @@ ms.lasthandoff: 02/01/2018
 
 *Полное описание см. в [справочнике по NuGet.Config](../reference/nuget-config-file.md).*
 
-`globalPackagesFolder` применяется только к `project.json`.
+`globalPackagesFolder` применяется только к `project.json`. (Применяется к формату PackageReference.)
 
 ### <a name="nuspec-file-reference"></a>Справка по NUSPEC-файлу
 
@@ -150,7 +153,7 @@ ms.lasthandoff: 02/01/2018
 
 *Полное описание см. в [справочнике по пользовательскому интерфейсу диспетчера пакетов](../tools/package-manager-ui.md).*
 
-В проектах, использующих формат ссылки `project.json`, отображается только параметр **Показать окно предварительного просмотра**.
+В проектах, использующих формат управления `project.json`, отображается только параметр **Показать окно предварительного просмотра**.
 
 ### <a name="visual-studio-templates"></a>Шаблоны Visual Studio
 

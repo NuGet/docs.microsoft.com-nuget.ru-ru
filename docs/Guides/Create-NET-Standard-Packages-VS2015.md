@@ -1,35 +1,38 @@
 ---
-title: "Создание пакетов NuGet для платформы .NET Standard с помощью Visual Studio 2015 | Документы Майкрософт"
+title: Создание пакетов NuGet для платформы .NET Standard и .NET Framework с помощью Visual Studio 2015 | Документация Майкрософт
 author: kraigb
 ms.author: kraigb
 manager: ghogen
 ms.date: 02/02/2018
-ms.topic: get-started-article
+ms.topic: tutorial
 ms.prod: nuget
-ms.technology: 
-description: "Полное пошаговое руководство по созданию пакетов NuGet для платформы .NET Standard с использованием NuGet 3.x и Visual Studio 2015."
-keywords: "создание пакета, пакеты .NET Standard, таблица сопоставления .NET Standard"
+ms.technology: ''
+description: Полное пошаговое руководство по созданию пакетов NuGet для платформы .NET Standard и .NET Framework с помощью NuGet 3.x и Visual Studio 2015.
+keywords: создание пакета, пакеты .NET Standard, пакеты .NET Framework
 ms.reviewer:
 - karann-msft
 - unniravindranathan
-ms.openlocfilehash: abf6a56cbc84bdd066e31e77c7883825a8456144
-ms.sourcegitcommit: 74c21b406302288c158e8ae26057132b12960be8
+ms.workload:
+- dotnet
+- aspnet
+ms.openlocfilehash: dbe0a0788b5fc9ba37f7db601bd51c3e4f78f5b8
+ms.sourcegitcommit: beb229893559824e8abd6ab16707fd5fe1c6ac26
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/15/2018
+ms.lasthandoff: 03/28/2018
 ---
-# <a name="create-net-standard-packages-with-visual-studio-2015"></a>Создание пакетов .NET Standard с помощью Visual Studio 2015
+# <a name="create-net-standard-and-net-framework-packages-with-visual-studio-2015"></a>Создание пакетов .NET Standard или .NET Framework с помощью Visual Studio 2015
 
-*Применяется к NuGet 3.x. Сведения о работе с NuGet 4.x и более поздних версий см. в разделе [Создание и публикация пакета с помощью Visual Studio 2017](../quickstart/create-and-publish-a-package-using-visual-studio.md).*
+**Примечание.** Рекомендуем разрабатывать библиотеки .NET Standard с помощью Visual Studio 2017. Вы можете использовать и Visual Studio 2015, но средства .NET Core доступны только в предварительной пробной версии. Сведения о работе с NuGet 4.x или более поздних версий и Visual Studio 2017 см. в статье [Создание и публикация пакета с помощью Visual Studio (.NET Standard)](../quickstart/create-and-publish-a-package-using-visual-studio.md).
 
 [Библиотека .NET Standard](/dotnet/articles/standard/library) представляет собой формальную спецификацию интерфейсов API .NET, которые должны быть доступны во всех средах выполнения .NET, что позволяет повысить степень унификации экосистемы .NET. Библиотека .NET Standard определяет унифицированный набор API-интерфейсов библиотеки базовых классов (BCL) для реализации всеми платформами .NET независимо от рабочей нагрузки. Это позволяет разработчикам создавать код, который можно использовать во всех средах выполнения .NET, а также позволяет свести к минимуму число директив условной компиляции, предназначенных для конкретных платформ, в общем коде либо полностью исключить их.
 
-Это руководство содержит пошаговые инструкции по созданию пакета NuGet для библиотеки .NET Standard 1.4. Эта библиотека работает на платформах .NET Framework 4.6.1, .NET Core, Mono/Xamarin и универсальной платформе Windows 10. Дополнительные сведения см. в разделе [Таблица сопоставления .NET Standard](#net-standard-mapping-table) далее в этой статье.
+В этом руководстве приведены пошаговые инструкции по созданию пакета NuGet для библиотеки .NET Standard 1.4 или .NET Framework 4.6. Библиотека .NET Standard 1.4 работает на платформах .NET Framework 4.6.1, .NET Core, Mono/Xamarin и универсальной платформе Windows 10. Дополнительные сведения см. в разделе [Поддержка реализации .NET](/dotnet/standard/net-standard#net-implementation-support) (документация .NET). При необходимости вы можете выбрать другую версию библиотеки .NET Standard.
 
 ## <a name="prerequisites"></a>Предварительные требования
 
 1. Visual Studio 2015 с обновлением 3
-1. [Пакет SDK для .NET Core](https://www.microsoft.com/net/download/)
+1. [Пакет SDK для .NET Core](https://www.microsoft.com/net/download/) (только .NET Standard)
 1. Интерфейс командной строки NuGet. Скачайте последнюю версию nuget.exe на странице [nuget.org/downloads](https://nuget.org/downloads), сохранив ее в любом месте на ваш выбор. Затем добавьте это расположение в переменную среды PATH, если это еще не сделано.
 
     > [!Note]
@@ -37,13 +40,13 @@ ms.lasthandoff: 03/15/2018
 
 ## <a name="create-the-class-library-project"></a>Создание проекта для библиотеки классов
 
-1. В Visual Studio выберите **Файл > Создать > Проект**, разверните узел **Visual C# > Windows**, выберите **Библиотека классов (переносимая)**, измените имя на "AppLogger" и нажмите кнопку "ОК".
+1. В Visual Studio выберите **Файл > Создать > Проект**, разверните узел **Visual C# > Windows**, выберите **Библиотека классов (переносимая)**, измените имя на AppLogger и нажмите кнопку **ОК**.
 
     ![Создание нового проекта для библиотеки классов](media/NetStandard-NewProject.png)
 
-1. В диалоговом окне **Добавление переносимой библиотеки классов** выберите параметры `.NET Framework 4.6` и `ASP.NET Core 1.0`.
+1. В диалоговом окне **Добавление переносимой библиотеки классов** выберите параметры `.NET Framework 4.6` и `ASP.NET Core 1.0`. (Для платформы .NET Framework выберите любой подходящий параметр.)
 
-1. Щелкните правой кнопкой мыши `AppLogger (Portable)` в обозревателе решений, выберите **Свойства**, перейдите на вкладку **Библиотека** и щелкните **Нацелить на стандартную платформу .NET** в разделе **Нацеливание**. Появится запрос на подтверждение, после которого вы можете выбрать `.NET Standard 1.4` в раскрывающемся списке:
+1. Если библиотека создается для .NET Standard, щелкните правой кнопкой мыши `AppLogger (Portable)` в обозревателе решений, выберите **Свойства**, перейдите на вкладку **Библиотека** и щелкните **Нацелить на стандартную платформу .NET** в разделе **Нацеливание**. Затем появится подтверждение, после чего вы можете выбрать из раскрывающегося списка версию `.NET Standard 1.4` (или любую другую доступную):
 
     ![Настройка нацеливания на платформу .NET Standard 1.4](media/NetStandard-ChangeTarget.png)
 
@@ -96,11 +99,23 @@ ms.lasthandoff: 03/15/2018
 
 1. Добавьте файл базовой сборки `.nuspec`, а именно DLL-файл библиотеки и XML-файл IntelliSense:
 
+    Для платформы .NET Standard появятся примерно такие записи:
+
     ```xml
     <!-- Insert below <metadata> element -->
     <files>
         <file src="bin\Release\AppLogger.dll" target="lib\netstandard1.4\AppLogger.dll" />
         <file src="bin\Release\AppLogger.xml" target="lib\netstandard1.4\AppLogger.xml" />
+    </files>
+    ```
+
+    Для платформы .NET Framework появятся примерно такие записи:
+
+    ```xml
+    <!-- Insert below <metadata> element -->
+    <files>
+        <file src="bin\Release\AppLogger.dll" target="lib\net46\AppLogger.dll" />
+        <file src="bin\Release\AppLogger.xml" target="lib\net46\AppLogger.xml" />
     </files>
     ```
 
@@ -146,7 +161,7 @@ ms.lasthandoff: 03/15/2018
 nuget pack AppLogger.nuspec
 ```
 
-Будет создан файл `AppLogger.YOUR_NAME.1.0.0.nupkg`. Если открыть файл в таком средстве, как [обозреватель пакетов NuGet](https://github.com/NuGetPackageExplorer/NuGetPackageExplorer), и развернуть все узлы, отобразится следующее содержимое:
+Будет создан `AppLogger.YOUR_NAME.1.0.0.nupkg`. Если открыть файл в таком средстве, как [обозреватель пакетов NuGet](https://github.com/NuGetPackageExplorer/NuGetPackageExplorer), и развернуть все узлы, отобразится следующее содержимое ( .NET Standard):
 
 ![Пакет AppLogger в обозревателе пакетов NuGet](media/NetStandard-PackageExplorer.png)
 
@@ -156,19 +171,6 @@ nuget pack AppLogger.nuspec
 Чтобы предоставить доступ к пакету другим разработчикам, следуйте инструкциям в разделе [Публикация пакета](../create-packages/publish-a-package.md).
 
 Обратите внимание, что команда `pack` требует наличия Mono 4.4.2 в Mac OS X и не работает в системах Linux. На компьютерах Mac также необходимо преобразовать пути в формате Windows, указанные в файле `.nuspec`, в формат Unix.
-
-## <a name="net-standard-mapping-table"></a>Таблица сопоставления .NET Standard
-
-| Имя платформы | Alias |
-| --- | --- |
-| .NET Standard | netstandard | 1.0 | 1.1 | 1.2 | 1.3 | 1.4 | 1.5 | 1.6 |
-| .NET Core | netcoreapp | &#x2192; | &#x2192; | &#x2192; | &#x2192; | &#x2192; | &#x2192; | 1.0 |
-| .NET Framework | net | 4.5 | 4.5.1 | 4.6 | 4.6.1 | 4.6.2 | 4.6.3 |
-| Платформы Mono и Xamarin | &#x2192; | &#x2192; | &#x2192; | &#x2192; | &#x2192; | &#x2192; |
-| Универсальная платформа Windows  | uap | &#x2192; | &#x2192; | &#x2192; | &#x2192; |10.0 |
-| Windows | win| &#x2192; | 8.0 | 8.1 |
-| Windows Phone | wpa| &#x2192;| &#x2192; | 8.1 |
-| Windows Phone Silverlight | wp | 8.0 |
 
 ## <a name="related-topics"></a>См. также
 

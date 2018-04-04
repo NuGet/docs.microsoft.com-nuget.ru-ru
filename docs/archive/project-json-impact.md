@@ -1,22 +1,25 @@
 ---
-title: "Влияние project.json на авторов пакетов NuGet | Документы Майкрософт"
+title: Влияние project.json на авторов пакетов NuGet | Документы Майкрософт
 author: kraigb
 ms.author: kraigb
 manager: ghogen
 ms.date: 01/18/2018
 ms.topic: article
 ms.prod: nuget
-ms.technology: 
-description: "Сведения о том, как реализация project.json в NuGet 3.x влияет на авторов пакетов, например неподдерживаемые функции, содержимое и формат пакетов."
-keywords: "NuGet и project.json, влияние project.json, аспекты создания пакетов, функции project.json"
+ms.technology: ''
+description: Сведения о том, как реализация project.json в NuGet 3.x влияет на авторов пакетов, например неподдерживаемые функции, содержимое и формат пакетов.
+keywords: NuGet и project.json, влияние project.json, аспекты создания пакетов, функции project.json
 ms.reviewer:
 - karann-msft
 - unniravindranathan
-ms.openlocfilehash: b732d48b169825764d614c338658f8c6ef45e765
-ms.sourcegitcommit: eabd401616a98dda2ae6293612acb3b81b584967
+ms.workload:
+- dotnet
+- aspnet
+ms.openlocfilehash: 6e8af98504a2866106e84943989aeb91f2e9c1fb
+ms.sourcegitcommit: beb229893559824e8abd6ab16707fd5fe1c6ac26
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/09/2018
+ms.lasthandoff: 03/28/2018
 ---
 # <a name="impact-of-projectjson-when-creating-packages"></a>Влияние project.json при создании пакетов
 
