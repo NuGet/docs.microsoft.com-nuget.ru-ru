@@ -15,11 +15,11 @@ ms.reviewer:
 ms.workload:
 - dotnet
 - aspnet
-ms.openlocfilehash: a575868894d5ca9992b1c9984cf4920bd2858209
-ms.sourcegitcommit: beb229893559824e8abd6ab16707fd5fe1c6ac26
+ms.openlocfilehash: 88f10cf15e16013ac99f315e572f932fd3948f73
+ms.sourcegitcommit: ecb598c790d4154366bc92757ec7db1a51c34faf
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2018
+ms.lasthandoff: 04/03/2018
 ---
 # <a name="configuring-nuget-behavior"></a>Настройка поведения NuGet
 
@@ -30,8 +30,8 @@ ms.lasthandoff: 03/28/2018
 | Область | Расположение файла NuGet.Config | Описание: |
 | --- | --- | --- |
 | Проект | Текущая папка (т. е. папка проекта) или любая другая папка вплоть до уровня корня диска.| Параметры, расположенные в папке проекта, применяются только к этому проекту. Параметры, расположенные в родительских папках, которые содержат несколько вложенных папок проектов, применяются ко всем проектам в этих вложенных папках. |
-| Пользовательская | Windows: `%appdata%\NuGet\NuGet.Config`<br/>Mac/Linux: `~/.nuget/NuGet/NuGet.Config` | Параметры применяются ко всем операциям, но переопределяются любыми параметрами, задаваемыми на уровне проекта. |
-| Компьютер | Windows: `%ProgramFiles(x86)%\NuGet\Config`<br/>Mac/Linux: `$XDG_DATA_HOME` (обычно `~/.local/share`) | Параметры применяются ко всем операциям на компьютере, но переопределяются любыми параметрами, задаваемыми на уровне пользователя или проекта. |
+| Пользовательская | Windows: `%appdata%\NuGet\NuGet.Config`<br/>Mac/Linux: `~/.config/NuGet/NuGet.Config` или `~/.nuget/NuGet/NuGet.Config` (зависит от дистрибутива ОС) | Параметры применяются ко всем операциям, но переопределяются любыми параметрами, задаваемыми на уровне проекта. |
+| Компьютер | Windows: `%ProgramFiles(x86)%\NuGet\Config`<br/>Mac/Linux: `$XDG_DATA_HOME`. Если значение `$XDG_DATA_HOME` — null или пусто, будет использоваться `~/.local/share` или `/usr/local/share` (зависит от дистрибутива ОС)  | Параметры применяются ко всем операциям на компьютере, но переопределяются любыми параметрами, задаваемыми на уровне пользователя или проекта. |
 
 Примечания для более ранних версий NuGet:
 - В NuGet 3.3 и более ранних версий параметры уровня решения располагались в папке `.nuget`. В NuGet версии 3.4 и более поздних этот файл не используется.
@@ -140,7 +140,7 @@ nuget config -set repositoryPath= -configfile /home/my.Config
 
 В показанных ниже расположениях присутствует четыре файла `NuGet.Config` со следующим содержимым. (В этот пример не включен файл уровня компьютера, поведение которого аналогично файлу уровня пользователя.)
 
-Файл А. Файл на уровне пользователей (`%appdata%\NuGet\NuGet.Config` в Windows, `~/.nuget/NuGet/NuGet.Config` в Mac и Linux):
+Файл А. Файл на уровне пользователей (`%appdata%\NuGet\NuGet.Config` в Windows, `~/.config/NuGet/NuGet.Config` в Mac и Linux):
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
@@ -218,8 +218,8 @@ nuget config -set repositoryPath= -configfile /home/my.Config
 
 | Платформа ОС  | Расположение файла NuGetDefaults.Config |
 | --- | --- |
-| Windows      | **Visual Studio 2017 или NuGet 4.x+:** %ProgramFiles(x86)%\NuGet\Config <br />**Visual Studio 2015 или более ранней версии либо NuGet 3.x или более ранней версии:** %PROGRAMDATA%\NuGet |
-| Mac/Linux    | $XDG_DATA_HOME (обычно ~/.local/share)|
+| Windows      | **Visual Studio 2017 или NuGet 4.x+:** `%ProgramFiles(x86)%\NuGet\Config` <br />**Visual Studio 2015 или более ранней версии либо NuGet 3.x или более ранней версии:** `%PROGRAMDATA%\NuGet` |
+| Mac/Linux    | `$XDG_DATA_HOME` (обычно `~/.local/share` или `/usr/local/share`, в зависимости от дистрибутива ОС)|
 
 ### <a name="nugetdefaultsconfig-settings"></a>Параметры в файле NuGetDefaults.Config
 

@@ -15,11 +15,11 @@ ms.reviewer:
 ms.workload:
 - dotnet
 - aspnet
-ms.openlocfilehash: 99caf371ca1bd85e6af4e879741e3e2caab6e860
-ms.sourcegitcommit: beb229893559824e8abd6ab16707fd5fe1c6ac26
+ms.openlocfilehash: 7844ace0565b2e70f8f68e6e61548f0f28171689
+ms.sourcegitcommit: 5b223c5814799caa6309e95792a2d338df692778
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="package-references-packagereference-in-project-files"></a>Ссылки на пакеты (PackageReference) в файлах проектов
 
@@ -96,8 +96,8 @@ PackageReference также позволяет использовать усло
 
 | Значение | Описание: |
 | --- | ---
-| compile | Содержимое папки `lib` |
-| исполняющая среда | Содержимое папки `runtimes` |
+| compile | Содержимое папки `lib`; управляет возможностью компиляции проекта с использованием сборок в этой папке |
+| исполняющая среда | Содержимое папки `lib` и `runtimes`; управляет возможностью копирования этих сборок в выходной каталог сборки |
 | contentFiles | Содержимое папки `contentfiles` |
 | выполнить сборку | Свойства и цели в папке `build` |
 | analyzers | Анализаторы .NET |
