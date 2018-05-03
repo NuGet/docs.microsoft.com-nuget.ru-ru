@@ -1,22 +1,16 @@
 ---
-title: "Заметки о выпуске NuGet 2.8 | Документы Microsoft"
+title: Заметки о выпуске 2,8 NuGet
+description: Заметки о выпуске для NuGet 2.8, включая известные проблемы, исправленные ошибки, добавленные функции и DCR.
 author: karann-msft
-ms.author: karann-msft
-manager: ghogen
+ms.author: karann
+manager: unnir
 ms.date: 11/11/2016
-ms.topic: article
-ms.prod: nuget
-ms.technology: 
-description: "Заметки о выпуске для NuGet 2.8, включая известные проблемы, исправленные ошибки, добавленные функции и DCR."
-keywords: "NuGet 2.8 заметки о выпуске, исправления, известными проблемами, добавлены функции, DCR"
-ms.reviewer:
-- karann-msft
-- unniravindranathan
-ms.openlocfilehash: 39b885adc9e23eb815f65639875c4a4c27d61a4c
-ms.sourcegitcommit: 4651b16a3a08f6711669fc4577f5d63b600f8f58
+ms.topic: conceptual
+ms.openlocfilehash: 9f472f1370bfedaf04ebe889c0da01155b8aec22
+ms.sourcegitcommit: a6ca160b1e7e5c58b135af4eba0e9463127a59e8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/02/2018
+ms.lasthandoff: 04/28/2018
 ---
 # <a name="nuget-28-release-notes"></a>Заметки о выпуске 2,8 NuGet
 
@@ -28,21 +22,21 @@ NuGet 2.8 был выпущен 29 января 2014 г.
 
 1. [Llewellyn Pritchard](https://www.codeplex.com/site/users/view/leppie) ([@leppie](https://twitter.com/leppie))
     - [#3466](https://nuget.codeplex.com/workitem/3466) — когда упаковки пакеты, проверка идентификатор зависимостей пакетов.
-1. [Maarten Balliauw](https://www.codeplex.com/site/users/view/maartenba) ([@maartenballiauw](https://twitter.com/maartenballiauw))
+2. [Maarten Balliauw](https://www.codeplex.com/site/users/view/maartenba) ([@maartenballiauw](https://twitter.com/maartenballiauw))
     - [#2379](https://nuget.codeplex.com/workitem/2379) -удалить суффикс $metadata при persistening учетные данные веб-канала.
-1. [Filip De Vos](https://www.codeplex.com/site/users/view/FilipDeVos) ([@foxtricks](https://twitter.com/foxtricks))
+3. [Filip De Vos](https://www.codeplex.com/site/users/view/FilipDeVos) ([@foxtricks](https://twitter.com/foxtricks))
     - [#3538](http://nuget.codeplex.com/workitem/3538) - поддержки, указав файл проекта для команды update nuget.exe.
-1. [Гонзалес Хуана](https://www.codeplex.com/site/users/view/jjgonzalez)
+4. [Гонзалес Хуана](https://www.codeplex.com/site/users/view/jjgonzalez)
     - [#3536](http://nuget.codeplex.com/workitem/3536) -замены токенов не передан с - IncludeReferencedProjects.
-1. [Дэвид Poole](https://www.codeplex.com/site/users/view/Sarkie) ([@Sarkie_Dave](https://twitter.com/Sarkie_Dave))
+5. [Дэвид Poole](https://www.codeplex.com/site/users/view/Sarkie) ([@Sarkie_Dave](https://twitter.com/Sarkie_Dave))
     - [#3677](http://nuget.codeplex.com/workitem/3677) -Устранение nuget.push генерации OutOfMemoryException при принудительной установке большой пакет.
-1. [Wouter Ouwens](https://www.codeplex.com/site/users/view/Despotes)
+6. [Wouter Ouwens](https://www.codeplex.com/site/users/view/Despotes)
     - [#3666](http://nuget.codeplex.com/workitem/3666) -исправление неправильный целевой путь, если проект ссылается на другой проект CLI/C++.
-1. [Ральф Адам](http://www.codeplex.com/site/users/view/adamralph) ([@adamralph](https://twitter.com/adamralph))
+7. [Ральф Адам](http://www.codeplex.com/site/users/view/adamralph) ([@adamralph](https://twitter.com/adamralph))
     - [#3639](https://nuget.codeplex.com/workitem/3639) -пакетов в качестве зависимости разработки по умолчанию
-1. [Дэвид Fowler](https://www.codeplex.com/site/users/view/dfowler) ([@davidfowl](https://twitter.com/davidfowl))
+8. [Дэвид Fowler](https://www.codeplex.com/site/users/view/dfowler) ([@davidfowl](https://twitter.com/davidfowl))
     - [#3717](https://nuget.codeplex.com/workitem/3717) -удалить неявные обновления до последней версии исправления
-1. [Грегори Vandenbrouck](https://www.codeplex.com/site/users/view/vdbg)
+9. [Грегори Vandenbrouck](https://www.codeplex.com/site/users/view/vdbg)
     - Некоторые ошибки, исправления и улучшения NuGet.Server, команда зеркало nuget.exe и др.
     - Эта работа выполнялась через несколько месяцев с помощью Грегори совместную работу над правой синхронизации для интеграции в основной 2.8.
 

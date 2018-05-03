@@ -1,22 +1,16 @@
 ---
-title: "Заметки о выпуске бета-версии NuGet 3.5 | Документы Microsoft"
+title: Заметки о выпуске бета-версии 3.5 NuGet
+description: Заметки о выпуске для NuGet 3.5, включая известные проблемы, исправленные ошибки, добавленные функции и DCR.
 author: karann-msft
-ms.author: karann-msft
-manager: ghogen
+ms.author: karann
+manager: unnir
 ms.date: 11/11/2016
-ms.topic: article
-ms.prod: nuget
-ms.technology: 
-description: "Заметки о выпуске для NuGet 3.5, включая известные проблемы, исправленные ошибки, добавленные функции и DCR."
-keywords: "NuGet 3.5 заметки о выпуске, исправления, известными проблемами, добавлены функции, DCR"
-ms.reviewer:
-- karann-msft
-- unniravindranathan
-ms.openlocfilehash: ee78ceb2ff032c05c0f8ef9a6623b94cc56ee0a9
-ms.sourcegitcommit: 4651b16a3a08f6711669fc4577f5d63b600f8f58
+ms.topic: conceptual
+ms.openlocfilehash: cdb540229cae0e6e952ac2a0c00c8801ccbbb28d
+ms.sourcegitcommit: 3eab9c4dd41ea7ccd2c28bb5ab16f6fbbec13708
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/02/2018
+ms.lasthandoff: 04/26/2018
 ---
 # <a name="nuget-35-release-notes"></a>Заметки о выпуске 3.5 NuGet
 
@@ -80,7 +74,7 @@ ms.lasthandoff: 02/02/2018
 
 * Нет данных был задан при вызов nuget.exe *.csproj обновления во время выполнения проекта не поддерживает `packages.config`  -  [#1496](https://github.com/NuGet/Home/issues/1496)
 
-* `packages.config`Восстановление не пытается повторно на коды состояния 5xx из источников V2 - [#1217](https://github.com/NuGet/Home/issues/1217)
+* `packages.config` Восстановление не пытается повторно на коды состояния 5xx из источников V2 - [#1217](https://github.com/NuGet/Home/issues/1217)
 
 * Двумя точками в файл src в `.nuspec` не работает — [#2947](https://github.com/NuGet/Home/issues/2947)
 
@@ -144,11 +138,11 @@ ms.lasthandoff: 02/02/2018
 
 * Ошибка установки NuGet в все источники пакетов, но отсутствующие на 1 источник пакета — [#2322](https://github.com/NuGet/Home/issues/2322)
 
-* [PerfWatson] UIDelay: nuget.packagemanagement.visualstudio.dll!NuGet.PackageManagement.VisualStudio.VSMSBuildNuGetProjectSystem+*lt;&gt;c__DisplayClass_0+&lt;&lt;AddReference&gt;b__&gt;d.MoveNext - [#2285](https://github.com/NuGet/Home/issues/2285)
+* [PerfWatson] UIDelay: nuget.packagemanagement.visualstudio.dll! NuGet.PackageManagement.VisualStudio.VSMSBuildNuGetProjectSystem+*lt; &gt;c__DisplayClass_0 +&lt;&lt;AddReference&gt;b__&gt;d.MoveNext - [#2285](https://github.com/NuGet/Home/issues/2285)
 
 * Установить блоки, если один источник отказывает в авторизации - [#2034](https://github.com/NuGet/Home/issues/2034)
 
-* `.nuspec`диапазон, должны переопределять версия - IncludeReferencedProjects - версии [#1983](https://github.com/NuGet/Home/issues/1983)
+* `.nuspec` диапазон, должны переопределять версия - IncludeReferencedProjects - версии [#1983](https://github.com/NuGet/Home/issues/1983)
 
 * Пакет обновления super медленно — «попытка собрать информацию о зависимостях» - [#1909](https://github.com/NuGet/Home/issues/1909)
 
@@ -196,7 +190,7 @@ ms.lasthandoff: 02/02/2018
 
 * Файл -> Новый проект библиотеки классов (переносимая) проекта завершается с ошибкой VS2015 и Dev15 - "->" [#3094](https://github.com/NuGet/Home/issues/3094)
 
-* Ошибка NuGet - 1.0.0-* не является допустимой строкой версии - [#3070](https://github.com/NuGet/Home/issues/3070)
+* Ошибка nuGet - 1.0.0-* не является допустимой строкой версии - [#3070](https://github.com/NuGet/Home/issues/3070)
 
 * Find-Package не отображается, однако works Install-Package - [#3068](https://github.com/NuGet/Home/issues/3068)
 
@@ -226,7 +220,7 @@ ms.lasthandoff: 02/02/2018
 
 * Подключаемый модуль учетных данных завершился с ошибкой -1 / Ошибка загрузки пакета при использовании поставщиков учетных данных с несколькими источниками - [#2885](https://github.com/NuGet/Home/issues/2885)
 
-* `project.json`Восстановление NuGet вызвала перекомпиляцию, если ничего не изменено - [#2817](https://github.com/NuGet/Home/issues/2817)
+* `project.json` Восстановление NuGet вызвала перекомпиляцию, если ничего не изменено - [#2817](https://github.com/NuGet/Home/issues/2817)
 
 * Никогда не следует пакеты символы используются для установки или обновления - [#2807](https://github.com/NuGet/Home/issues/2807)
 

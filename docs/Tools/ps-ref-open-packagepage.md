@@ -1,25 +1,16 @@
 ---
-title: Справочник по PowerShell NuGet Open-PackagePage | Документы Microsoft
+title: Справочник по PowerShell NuGet Open-PackagePage
+description: Ссылка для команды PowerShell PackagePage откройте консоль диспетчера пакетов NuGet в Visual Studio.
 author: kraigb
 ms.author: kraigb
-manager: ghogen
+manager: douge
 ms.date: 12/07/2017
 ms.topic: reference
-ms.prod: nuget
-ms.technology: ''
-description: Ссылка для команды PowerShell PackagePage откройте консоль диспетчера пакетов NuGet в Visual Studio.
-keywords: Пакет NuGet консоли диспетчера, команд NuGet Powershell, справочник по NuGet Powershell, откройте PackagePage
-ms.reviewer:
-- karann-msft
-- unniravindranathan
-ms.workload:
-- dotnet
-- aspnet
-ms.openlocfilehash: 5e0955e58daacf381666c676c8fcf22c698e9db6
-ms.sourcegitcommit: beb229893559824e8abd6ab16707fd5fe1c6ac26
+ms.openlocfilehash: df4bea390105a7e3fc5d2abd476f2908d92bbcf8
+ms.sourcegitcommit: 3eab9c4dd41ea7ccd2c28bb5ab16f6fbbec13708
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2018
+ms.lasthandoff: 04/26/2018
 ---
 # <a name="open-packagepage-package-manager-console-in-visual-studio"></a>Open-PackagePage (консоль диспетчера пакетов в Visual Studio)
 

@@ -1,25 +1,16 @@
 ---
-title: Миграция с package.config в форматы PackageReference | Документы Microsoft
+title: Переход с package.config на PackageReference форматы
+description: Сведения о миграции проекта из формата управления package.config PackageReference с поддержкой NuGet 4.0 + и VS2017 и .NET Core 2.0
 author: karann-msft
 ms.author: karann
-manager: unniravindranathan
+manager: unnir
 ms.date: 03/27/2018
-ms.topic: article
-ms.prod: nuget
-ms.technology: ''
-description: Сведения о миграции проекта из формата управления package.config PackageReference с поддержкой NuGet 4.0 + и VS2017 и .NET Core 2.0
-keywords: NuGet migrator миграции, пакет ссылки, проект packages.config файлы PackageReference, VS2017, Visual Studio 2017 г., NuGet 4, .NET Core 2.0
-ms.reviewer:
-- karann
-- unnir
-ms.workload:
-- dotnet
-- aspnet
-ms.openlocfilehash: 10bd2fe95a6af11806a7edd7a43eaa497486fd80
-ms.sourcegitcommit: ecb598c790d4154366bc92757ec7db1a51c34faf
+ms.topic: conceptual
+ms.openlocfilehash: 2b15d60d4f71fb2777e36c6a948ad72b4e2bc594
+ms.sourcegitcommit: 3eab9c4dd41ea7ccd2c28bb5ab16f6fbbec13708
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/03/2018
+ms.lasthandoff: 04/26/2018
 ---
 # <a name="migrate-from-packagesconfig-to-packagereference"></a>Миграция с packages.config на PackageReference
 

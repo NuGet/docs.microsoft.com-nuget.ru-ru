@@ -1,25 +1,16 @@
 ---
-title: Объекты pack и restore NuGet в качестве целевых объектов MSBuild | Документы Майкрософт
+title: Объекты pack и restore NuGet в качестве целевых объектов MSBuild
+description: Объекты pack и restore NuGet могут выступать непосредственно в качестве целевых объектов MSBuild в NuGet 4.0+.
 author: kraigb
 ms.author: kraigb
-manager: ghogen
+manager: douge
 ms.date: 03/23/2018
-ms.topic: article
-ms.prod: nuget
-ms.technology: ''
-description: Объекты pack и restore NuGet могут выступать непосредственно в качестве целевых объектов MSBuild в NuGet 4.0+.
-keywords: NuGet и MSBuild, целевой объект pack NuGet, целевой объект restore NuGet
-ms.reviewer:
-- karann-msft
-- unniravindranathan
-ms.workload:
-- dotnet
-- aspnet
-ms.openlocfilehash: a9c2c2229d717dff8472dce0ba568e4a21900b19
-ms.sourcegitcommit: beb229893559824e8abd6ab16707fd5fe1c6ac26
+ms.topic: conceptual
+ms.openlocfilehash: e922da94a02450d4ea476c828209fa0cd4305725
+ms.sourcegitcommit: a6ca160b1e7e5c58b135af4eba0e9463127a59e8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2018
+ms.lasthandoff: 04/28/2018
 ---
 # <a name="nuget-pack-and-restore-as-msbuild-targets"></a>Объекты pack и restore NuGet в качестве целевых объектов MSBuild
 
@@ -52,7 +43,7 @@ ms.lasthandoff: 03/28/2018
 
 Обратите внимание, что свойства `Owners` и `Summary` из `.nuspec` не поддерживаются в MSBuild.
 
-| Значение атрибута или NuSpec | Свойство MSBuild | По умолчанию | Примечания |
+| Значение атрибута или NuSpec | Свойство MSBuild | Значение по умолчанию | Примечания |
 |--------|--------|--------|--------|
 | Идентификатор | PackageId | AssemblyName | $(AssemblyName) из MSBuild |
 | Версия | PackageVersion | Версия | Это значение совместимо с SemVer, например "1.0.0", "1.0.0-beta" или "1.0.0-beta-00345" |
@@ -60,10 +51,10 @@ ms.lasthandoff: 03/28/2018
 | VersionSuffix | PackageVersionSuffix | пустой | $(VersionSuffix) из MSBuild. Задав PackageVersion, вы перезапишите PackageVersionSuffix |
 | Authors | Authors | Имя текущего пользователя | |
 | Владельцы | Н/Д | Не существует в NuSpec | |
-| Заголовок: | Заголовок: | Идентификатор пакета| |
+| Заголовок | Заголовок | Идентификатор пакета| |
 | Описание | PackageDescription | "Описание пакета" | |
 | Copyright | Copyright | пустой | |
-| RequireLicenseAcceptance | PackageRequireLicenseAcceptance | false | |
+| RequireLicenseAcceptance | PackageRequireLicenseAcceptance | False | |
 | LicenseUrl | PackageLicenseUrl | пустой | |
 | ProjectUrl | PackageProjectUrl | пустой | |
 | IconUrl | PackageIconUrl | пустой | |
@@ -307,7 +298,7 @@ msbuild /t:pack <path to .csproj file> /p:NuspecFile=<path to nuspec file> /p:Nu
 
 Дополнительные параметры восстановления могут поступать из свойств MSBuild в файле проекта. Значения также можно задать из командной строки с помощью параметра `/p:` (см. примеры ниже).
 
-| Свойство | Описание |
+| Свойство. | Описание |
 |--------|--------|
 | RestoreSources | Разделенный точками с запятой список источников пакетов. |
 | RestorePackagesPath | Путь к папке пакетов пользователя. |
@@ -332,7 +323,7 @@ msbuild /t:restore /p:RestoreConfigFile=<path>
 ```xml
 <PropertyGroup>
     <RestoreIgnoreFailedSource>true</RestoreIgnoreFailedSource>
-<PropertyGroup>
+</PropertyGroup>
 ```
 
 ### <a name="restore-outputs"></a>Выходные данные восстановления

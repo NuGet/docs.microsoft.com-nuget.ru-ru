@@ -1,25 +1,16 @@
 ---
-title: Команда пакет NuGet CLI | Документы Microsoft
+title: Команда пакет NuGet CLI
+description: Справочник по командной пакет nuget.exe
 author: kraigb
 ms.author: kraigb
-manager: ghogen
+manager: douge
 ms.date: 01/18/2018
 ms.topic: reference
-ms.prod: nuget
-ms.technology: ''
-description: Справочник по командной пакет nuget.exe
-keywords: ссылка на пакет NuGet, команда пакета
-ms.reviewer:
-- karann-msft
-- unniravindranathan
-ms.workload:
-- dotnet
-- aspnet
-ms.openlocfilehash: 14ecf724477f652275eb68a090bb57b8640d4a8a
-ms.sourcegitcommit: beb229893559824e8abd6ab16707fd5fe1c6ac26
+ms.openlocfilehash: a2468b099a822e69298ea78c80cfd1d5d5c09938
+ms.sourcegitcommit: 3eab9c4dd41ea7ccd2c28bb5ab16f6fbbec13708
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2018
+ms.lasthandoff: 04/26/2018
 ---
 # <a name="pack-command-nuget-cli"></a>команда пакет (NuGet CLI)
 
@@ -33,7 +24,7 @@ ms.lasthandoff: 03/28/2018
 ## <a name="usage"></a>Использование
 
 ```cli
-nuget pack <nuspecPath | projectPath> [options]
+nuget pack <nuspecPath | projectPath> [options] [-Properties ...]
 ```
 
 где `<nuspecPath>` и `<projectPath>` укажите `.nuspec` или файла, проекта соответственно.
@@ -43,7 +34,7 @@ nuget pack <nuspecPath | projectPath> [options]
 | Параметр | Описание |
 | --- | --- |
 | BasePath | Задает базовый путь к файлам, определенным в `.nuspec` файла. |
-| Сборка | Указывает, что проект должен быть создан до начала сборки пакета. |
+| Построить | Указывает, что проект должен быть создан до начала сборки пакета. |
 | Исключить | Указывает один или несколько шаблонов подстановочный знак, исключаемый при создании пакета. Чтобы указать несколько шаблонов, повторите флаг - исключения. См. пример ниже. |
 | ExcludeEmptyDirectories | Предотвращает включение пустых каталогов при построении пакета. |
 | ForceEnglishOutput | *(3.5 +)*  Принудительно nuget.exe выполняется с использованием инвариантных, на основе английского языка и региональных параметров. |
@@ -55,7 +46,7 @@ nuget pack <nuspecPath | projectPath> [options]
 | NoDefaultExcludes | По умолчанию при исключении NuGet не позволяет упаковать файлы и файлы и папки, начиная с точки, такие как `.svn` и `.gitignore`. |
 | NoPackageAnalysis | Указывает, что пакету не нужно запускать анализ пакета после его сборки. |
 | Выходной каталог | Указывает папку, в которой будет храниться созданный пакет. Если папка не указана, используется текущая папка. |
-| Свойства | Указывает список свойств, которые переопределяют значения в файле проекта. в разделе [общие свойства проектов MSBuild](/visualstudio/msbuild/common-msbuild-project-properties) имен свойств. Аргумент свойства приведен список маркер = пар «значение», разделенных точкой с запятой, где каждое вхождение `$token$` в `.nuspec` заменить файл по заданному значению. Значения могут быть строк в кавычки. Обратите внимание, что для свойства «Конфигурация» значение по умолчанию — «Debug». Чтобы изменить конфигурацию выпуска, используйте `-Properties Configuration=Release`. |
+| Свойства | Должны появиться последнего в командной строке после других параметров. Указывает список свойств, которые переопределяют значения в файле проекта. в разделе [общие свойства проектов MSBuild](/visualstudio/msbuild/common-msbuild-project-properties) имен свойств. Аргумент свойства приведен список маркер = пар «значение», разделенных точкой с запятой, где каждое вхождение `$token$` в `.nuspec` заменить файл по заданному значению. Значения могут быть строк в кавычки. Обратите внимание, что для свойства «Конфигурация» значение по умолчанию — «Debug». Чтобы изменить конфигурацию выпуска, используйте `-Properties Configuration=Release`. |
 | Суффикс | *(3.4.4+)*  Добавляет суффикс для созданного внутреннего номер_версии, обычно используется для добавления сборки или другими идентификаторами предварительного выпуска. Например, с помощью `-suffix nightly` создаст пакет like номера версии `1.2.3-nightly`. Суффиксы должно начинаться с буквы, чтобы избежать предупреждения, ошибки и потенциальных несовместимость с различными версиями NuGet и диспетчер пакетов NuGet. |
 | Символы | Указывает, что пакет содержит источники и символы. При использовании с `.nuspec` файла, эта команда создает файл регулярного пакета NuGet и соответствующего пакета символов. |
 | Средство | Указывает, что следует поместить выходные файлы проекта в `tool` папки. |
@@ -96,8 +87,8 @@ nuget pack foo.csproj -Properties Configuration=Release
 
 nuget pack foo.csproj -Build -Symbols -Properties owners=janedoe,xiaop;version="1.0.5"
 
-# create a package from project foo.csproj, using MSBuild version 12 to build the project
-nuget pack foo.csproj -Build -Symbols -Properties owners=janedoe,xiaop;version="1.0.5" -MSBuildVersion 12
+# Create a package from project foo.csproj, using MSBuild version 12 to build the project
+nuget pack foo.csproj -Build -Symbols -MSBuildVersion 12 -Properties owners=janedoe,xiaop;version="1.0.5
 
 nuget pack foo.nuspec -Version 2.1.0
 

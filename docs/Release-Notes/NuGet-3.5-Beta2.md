@@ -1,22 +1,16 @@
 ---
-title: "3.5 заметки о выпуске бета-версия 2 | Документы Microsoft"
+title: 3.5 заметки о выпуске бета-версия 2
+description: Заметки о выпуске, включая известные проблемы, исправленные ошибки, добавленные функции и DCR второй бета-версии 3.5 NuGet.
 author: karann-msft
-ms.author: karann-msft
-manager: ghogen
+ms.author: karann
+manager: unnir
 ms.date: 11/11/2016
-ms.topic: article
-ms.prod: nuget
-ms.technology: 
-description: "Заметки о выпуске, включая известные проблемы, исправленные ошибки, добавленные функции и DCR второй бета-версии 3.5 NuGet."
-keywords: "Второй бета-версии 3.5 NuGet заметки о выпуске, исправления, известными проблемами, добавлены функции, DCR"
-ms.reviewer:
-- karann-msft
-- unniravindranathan
-ms.openlocfilehash: 4073b669c19f9e96ebd35ba269919b5f42313e7c
-ms.sourcegitcommit: 4651b16a3a08f6711669fc4577f5d63b600f8f58
+ms.topic: conceptual
+ms.openlocfilehash: 08bbae00a3e63c2a1ff42d5cc04981eb02966850
+ms.sourcegitcommit: 3eab9c4dd41ea7ccd2c28bb5ab16f6fbbec13708
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/02/2018
+ms.lasthandoff: 04/26/2018
 ---
 # <a name="nuget-35-beta2-release-notes"></a>Заметки о выпуске NuGet 3.5 бета-версия 2
 
@@ -74,7 +68,7 @@ NuGet 3.5 бета-версии 2 RTM был выпущен для Visual Studio
 
 * Установить блоки, если один источник отказывает в авторизации - [#2034](https://github.com/NuGet/Home/issues/2034)
 
-* `.nuspec`диапазон, должны переопределять версия - IncludeReferencedProjects - версии [#1983](https://github.com/NuGet/Home/issues/1983)
+* `.nuspec` диапазон, должны переопределять версия - IncludeReferencedProjects - версии [#1983](https://github.com/NuGet/Home/issues/1983)
 
 * NuGet 3.3.0 при попытке установить "дополнительное ограничение... определенные в packages.config предотвращает эту операцию." - [#1816](https://github.com/NuGet/Home/issues/1816)
 

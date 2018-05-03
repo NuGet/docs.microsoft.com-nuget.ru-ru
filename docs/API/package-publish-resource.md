@@ -1,26 +1,17 @@
 ---
-title: "Принудительные и удалить NuGet API | Документы Microsoft"
-author:
-- joelverhagen
-- kraigb
-ms.author:
-- joelverhagen
-- kraigb
+title: Принудительные и удалить NuGet интерфейса API
+description: Служба публикации позволяет клиентам публикации новых пакетов и исключить или удалите существующие пакеты.
+author: joelverhagen
+ms.author: jver
 manager: skofman
 ms.date: 10/26/2017
 ms.topic: reference
-ms.prod: nuget
-ms.technology: 
-description: "Служба публикации позволяет клиентам публикации новых пакетов и исключить или удалите существующие пакеты."
-keywords: "Пакет NuGet API push, NuGet API удалить пакет, NuGet API исключить пакета пакет NuGet интерфейса API передачи, NuGet API создания пакета"
-ms.reviewer:
-- karann
-- unniravindranathan
-ms.openlocfilehash: f8051ca57fccae77917567d8c9f2f8a120a8d884
-ms.sourcegitcommit: 4651b16a3a08f6711669fc4577f5d63b600f8f58
+ms.reviewer: kraigb
+ms.openlocfilehash: 911c8238624f806b1fbb5c7938d02b6bdfbd8614
+ms.sourcegitcommit: 3eab9c4dd41ea7ccd2c28bb5ab16f6fbbec13708
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/02/2018
+ms.lasthandoff: 04/26/2018
 ---
 # <a name="push-and-delete"></a>Принудительные и удалить
 

@@ -1,25 +1,16 @@
 ---
-title: Заметки о выпуске NuGet 1.8 | Документы Microsoft
-author: karann-msft
-ms.author: karann-msft
-manager: ghogen
-ms.date: 11/11/2016
-ms.topic: article
-ms.prod: nuget
-ms.technology: ''
+title: Заметки о выпуске 1,8 NuGet
 description: Заметки о выпуске для NuGet 1.8, включая известные проблемы, исправленные ошибки, добавленные функции и DCR.
-keywords: NuGet 1.8 заметки о выпуске, исправления, известными проблемами, добавлены функции, DCR
-ms.reviewer:
-- karann-msft
-- unniravindranathan
-ms.workload:
-- dotnet
-- aspnet
-ms.openlocfilehash: b94382f79143cac6bd5deccb5e5253ba8c6f60ec
-ms.sourcegitcommit: beb229893559824e8abd6ab16707fd5fe1c6ac26
+author: karann-msft
+ms.author: karann
+manager: unnir
+ms.date: 11/11/2016
+ms.topic: conceptual
+ms.openlocfilehash: 1801d62b786717c088429fbeca6f1f72f5ab6b4f
+ms.sourcegitcommit: 3eab9c4dd41ea7ccd2c28bb5ab16f6fbbec13708
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2018
+ms.lasthandoff: 04/26/2018
 ---
 # <a name="nuget-18-release-notes"></a>Заметки о выпуске 1,8 NuGet
 
@@ -40,7 +31,7 @@ NuGet 1.8 был выпущен 23 мая 2012 г.
 
 Поскольку корпорация Майкрософт выпустила исправление, устраняющее эту проблему.  Обновляя NuGet через коллекцию расширения Visual Studio, появляется это исправление.
 
-## <a name="features"></a>Возможности
+## <a name="features"></a>Функции
 
 ### <a name="satellite-packages-for-localized-resources"></a>Вспомогательные пакеты для локализованных ресурсов
 NuGet 1.8 теперь поддерживает возможность создания отдельных пакетов для локализованных ресурсов, схожие с возможностями вспомогательные сборки платформы .NET Framework.  Вспомогательные пакет создается таким же образом, как пакет NuGet с добавлением нескольких соглашения:

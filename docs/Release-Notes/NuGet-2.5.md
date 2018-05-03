@@ -1,25 +1,16 @@
 ---
-title: Заметки о выпуске NuGet 2.5 | Документы Microsoft
-author: karann-msft
-ms.author: karann-msft
-manager: ghogen
-ms.date: 11/11/2016
-ms.topic: article
-ms.prod: nuget
-ms.technology: ''
+title: Заметки о выпуске 2.5 NuGet
 description: Заметки о выпуске для NuGet 2.5, включая известные проблемы, исправленные ошибки, добавленные функции и DCR.
-keywords: NuGet 2.5 заметки о выпуске, исправления, известными проблемами, добавлены функции, DCR
-ms.reviewer:
-- karann-msft
-- unniravindranathan
-ms.workload:
-- dotnet
-- aspnet
-ms.openlocfilehash: 4495e1ea9cc4ec13ef330e56d12de1320cf10b24
-ms.sourcegitcommit: beb229893559824e8abd6ab16707fd5fe1c6ac26
+author: karann-msft
+ms.author: karann
+manager: unnir
+ms.date: 11/11/2016
+ms.topic: conceptual
+ms.openlocfilehash: accea5033e44927259537b5047a4a821babc6146
+ms.sourcegitcommit: a6ca160b1e7e5c58b135af4eba0e9463127a59e8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2018
+ms.lasthandoff: 04/28/2018
 ---
 # <a name="nuget-25-release-notes"></a>Заметки о выпуске 2.5 NuGet
 
@@ -33,28 +24,28 @@ NuGet 2.5 была выпущена 25 апреля 2013 г. Этот выпус
 
 1. [Дэниела Plaisted](https://www.codeplex.com/site/users/view/dsplaisted) ([@dsplaisted](https://twitter.com/dsplaisted))
     - [#2847](https://nuget.codeplex.com/workitem/2847) -добавить MonoAndroid, MonoTouch и MonoMac в список известных целевых framework идентификаторов.
-1. [Ж. Aragoneses Андреса](https://www.codeplex.com/site/users/view/knocte) ([@knocte](https://twitter.com/knocte))
+2. [Ж. Aragoneses Андреса](https://www.codeplex.com/site/users/view/knocte) ([@knocte](https://twitter.com/knocte))
     - [#2865](https://nuget.codeplex.com/workitem/2865) -исправьте Правописание `NuGet.targets` для учета регистра ОС
-1. [Дэвид Fowler](https://www.codeplex.com/site/users/view/dfowler) ([@davidfowl](https://twitter.com/davidfowl))
+3. [Дэвид Fowler](https://www.codeplex.com/site/users/view/dfowler) ([@davidfowl](https://twitter.com/davidfowl))
     - Сделать построения на моно решения.
-1. [Эндрю Theken](https://www.codeplex.com/site/users/view/atheken) ([@atheken](https://twitter.com/atheken))
+4. [Эндрю Theken](https://www.codeplex.com/site/users/view/atheken) ([@atheken](https://twitter.com/atheken))
     - Устраните сбои на моно модульных тестов.
-1. [Olivier Dagenais](https://www.codeplex.com/site/users/view/OliIsCool) ([@OliIsCool](https://twitter.com/oliiscool))
+5. [Olivier Dagenais](https://www.codeplex.com/site/users/view/OliIsCool) ([@OliIsCool](https://twitter.com/oliiscool))
     - [#2920](https://nuget.codeplex.com/workitem/2920) -команду nuget.exe пакет не распространяется свойства MSBuild
-1. [Miroslav Bajtos](https://www.codeplex.com/site/users/view/MiroslavBajtos) ([@bajtos](https://twitter.com/bajtos))
+6. [Miroslav Bajtos](https://www.codeplex.com/site/users/view/MiroslavBajtos) ([@bajtos](https://twitter.com/bajtos))
     - [#1511](https://nuget.codeplex.com/workitem/1511) — изменить XML код обработки для сохранения форматирования.
-1. [Ральф Адам](http://www.codeplex.com/site/users/view/adamralph) ([@adamralph](https://twitter.com/adamralph))
+7. [Ральф Адам](http://www.codeplex.com/site/users/view/adamralph) ([@adamralph](https://twitter.com/adamralph))
     - Добавить распознанные слова в пользовательский словарь, чтобы разрешить build.cmd для успешного выполнения.
-1. [Bruno Roggeri](https://www.codeplex.com/site/users/view/broggeri)
+8. [Roggeri Бруно](https://www.codeplex.com/site/users/view/broggeri)
     - Исправьте модульные тесты, при работе в локализованных VS.
-1. [Evans Гарета](https://www.codeplex.com/site/users/view/garethevans)
+9. [Evans Гарета](https://www.codeplex.com/site/users/view/garethevans)
     - Интерфейс, извлеченные из PackageService
-1. [Maxime Brugidou](https://www.codeplex.com/site/users/view/brugidou) ([@brugidou](https://twitter.com/brugidou))
-    - [#936](https://nuget.codeplex.com/workitem/936) -обрабатывать зависимости проекта, когда при помощи
-1. [Xavier Decoster](https://www.codeplex.com/site/users/view/XavierDecoster) ([@XavierDecoster](https://twitter.com/xavierdecoster))
-    - [#2991](https://nuget.codeplex.com/workitem/2991), [#3164](https://nuget.codeplex.com/workitem/3164) -поддержки открытым пароля при хранении учетных данных для источника пакета в файлах nuget.cofig
-1. [Джеймс Мэннинга](http://www.codeplex.com/site/users/view/jmanning) ([@manningj](https://twitter.com/manningj))
-    - [#3190](http://nuget.codeplex.com/workitem/3190), [#3191](http://nuget.codeplex.com/workitem/3191) -описание справки исправить Get-Package
+10. [Maxime Brugidou](https://www.codeplex.com/site/users/view/brugidou) ([@brugidou](https://twitter.com/brugidou))
+     - [#936](https://nuget.codeplex.com/workitem/936) -обрабатывать зависимости проекта, когда при помощи
+11. [Xavier Decoster](https://www.codeplex.com/site/users/view/XavierDecoster) ([@XavierDecoster](https://twitter.com/xavierdecoster))
+     - [#2991](https://nuget.codeplex.com/workitem/2991), [#3164](https://nuget.codeplex.com/workitem/3164) -поддержки открытым пароля при хранении учетных данных для источника пакета в файлах nuget.cofig
+12. [Джеймс Мэннинга](http://www.codeplex.com/site/users/view/jmanning) ([@manningj](https://twitter.com/manningj))
+     - [#3190](http://nuget.codeplex.com/workitem/3190), [#3191](http://nuget.codeplex.com/workitem/3191) -описание справки исправить Get-Package
 
 Также Мы ценим следующим специалистам по обнаружению ошибок с помощью NuGet 2.5 бета-версии или версии-Кандидата, были утверждены и исправлена до выпуска окончательной версии:
 

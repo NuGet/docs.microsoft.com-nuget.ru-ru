@@ -1,25 +1,16 @@
 ---
-title: Команду NuGet CLI принудительной | Документы Microsoft
+title: Команда push NuGet CLI
+description: Ссылка для команды push nuget.exe
 author: kraigb
 ms.author: kraigb
-manager: ghogen
+manager: douge
 ms.date: 01/18/2018
 ms.topic: reference
-ms.prod: nuget
-ms.technology: ''
-description: Ссылка для команды push nuget.exe
-keywords: Справочник по принудительной NuGet, команда push
-ms.reviewer:
-- karann-msft
-- unniravindranathan
-ms.workload:
-- dotnet
-- aspnet
-ms.openlocfilehash: 832f7aeb2b485acbb83e5213916fc3423df961ab
-ms.sourcegitcommit: beb229893559824e8abd6ab16707fd5fe1c6ac26
+ms.openlocfilehash: 959b539fc20bc47f38946cb660375a6652582a0d
+ms.sourcegitcommit: 3eab9c4dd41ea7ccd2c28bb5ab16f6fbbec13708
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2018
+ms.lasthandoff: 04/26/2018
 ---
 # <a name="push-command-nuget-cli"></a>Команда Push (NuGet CLI)
 

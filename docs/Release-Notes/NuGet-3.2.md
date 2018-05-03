@@ -1,22 +1,16 @@
 ---
-title: "Заметки о выпуске NuGet 3.2 | Документы Microsoft"
+title: Заметки о выпуске 3,2 NuGet
+description: Заметки о выпуске, включая известные проблемы, исправленные ошибки, добавленные функции и DCR 3.2 NuGet.
 author: karann-msft
-ms.author: karann-msft
-manager: ghogen
+ms.author: karann
+manager: unnir
 ms.date: 11/11/2016
-ms.topic: article
-ms.prod: nuget
-ms.technology: 
-description: "Заметки о выпуске, включая известные проблемы, исправленные ошибки, добавленные функции и DCR 3.2 NuGet."
-keywords: "NuGet 3.2 заметки о выпуске, исправления, известными проблемами, добавлены функции, DCR"
-ms.reviewer:
-- karann-msft
-- unniravindranathan
-ms.openlocfilehash: 1728a5c0d83be84686e7ab1394cfc4f8f809987c
-ms.sourcegitcommit: 4651b16a3a08f6711669fc4577f5d63b600f8f58
+ms.topic: conceptual
+ms.openlocfilehash: 938104c50fee19ee398de49c786bbb4963ba1429
+ms.sourcegitcommit: 3eab9c4dd41ea7ccd2c28bb5ab16f6fbbec13708
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/02/2018
+ms.lasthandoff: 04/26/2018
 ---
 # <a name="nuget-32-release-notes"></a>Заметки о выпуске 3,2 NuGet
 
@@ -45,7 +39,7 @@ NuGet 3.2 был выпущен 16 сентября 2015 г. как коллек
 * Исправлено команды restore NuGet правильно возвращать 1, если ошибка возникает - [1186](https://github.com/NuGet/Home/issues/1186)
 * Теперь Повтор сетевые подключения каждые 200 мс, не более 5 попыток в случае ошибки HTTP 5xx - [1120](https://github.com/NuGet/Home/issues/1120)
 * Улучшенную обработку ответов сервера перенаправления при выполнении команды push - [1051](https://github.com/NuGet/Home/issues/1051)
-* `nuget install -source`Теперь поддерживает URL-адрес или репозитория имя из Nuget.Config в качестве аргумента - [1046](https://github.com/NuGet/Home/issues/1046)
+* `nuget install -source` Теперь поддерживает URL-адрес или репозитория имя из Nuget.Config в качестве аргумента - [1046](https://github.com/NuGet/Home/issues/1046)
 * Отсутствующие пакеты, которые не были найдены в репозитории, во время восстановления теперь помечаются как ошибки вместо предупреждения [1038](https://github.com/NuGet/Home/issues/1038)
 * Исправлена обработка multipartwebrequest \r\n для Unix/Linux сценариев - [776](https://github.com/NuGet/Home/issues/776)
 

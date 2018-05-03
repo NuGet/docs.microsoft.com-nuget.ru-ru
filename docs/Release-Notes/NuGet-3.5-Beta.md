@@ -1,28 +1,22 @@
 ---
-title: "Заметки о выпуске бета-версии NuGet 3.5 | Документы Microsoft"
+title: Заметки о выпуске бета-версии 3.5 NuGet
+description: Заметки о выпуске для бета-версии 3.5 NuGet, включая известные проблемы, исправленные ошибки, добавленные функции и DCR.
 author: karann-msft
-ms.author: karann-msft
-manager: ghogen
+ms.author: karann
+manager: unnir
 ms.date: 11/11/2016
-ms.topic: article
-ms.prod: nuget
-ms.technology: 
-description: "Заметки о выпуске для бета-версии 3.5 NuGet, включая известные проблемы, исправленные ошибки, добавленные функции и DCR."
-keywords: "Бета-версии 3.5 NuGet заметки о выпуске, исправления, известными проблемами, добавлены функции, DCR"
-ms.reviewer:
-- karann-msft
-- unniravindranathan
-ms.openlocfilehash: 52e8ac4f14af991c41455aeaa2b0bf163c4ab70b
-ms.sourcegitcommit: 4651b16a3a08f6711669fc4577f5d63b600f8f58
+ms.topic: conceptual
+ms.openlocfilehash: aee2a66101fd7e95ec6240edaeda60ed48d0915a
+ms.sourcegitcommit: 3eab9c4dd41ea7ccd2c28bb5ab16f6fbbec13708
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/02/2018
+ms.lasthandoff: 04/26/2018
 ---
 # <a name="nuget-35-beta-release-notes"></a>Заметки о выпуске бета-версии 3.5 NuGet
 
 [Заметки о выпуске NuGet 3.4](../release-notes/nuget-3.4.md) | [заметки о выпуске NuGet 3.5-бета-версия 2](../release-notes/nuget-3.5-Beta2.md)
 
-Бета-версия NuGet 3.5 был выпущен 16 мая 2016 г. как часть wave средства предварительного просмотра ASP.NET Core. Этот выпуск добавляет поддержку для .NET Core RC2 и ASP.NET Core RC2. Дополнительные сведения об этом выпуске см. в [http://dot.net](http://dot.net).
+Бета-версия NuGet 3.5 был выпущен 16 мая 2016 г. как часть wave средства предварительного просмотра ASP.NET Core. Этот выпуск добавляет поддержку для .NET Core RC2 и ASP.NET Core RC2. Дополнительные сведения об этом выпуске см. в [ http://dot.net ](http://dot.net).
 
 Можно загрузить VSIX и nuget.exe [здесь](https://dist.nuget.org/index.html).
 

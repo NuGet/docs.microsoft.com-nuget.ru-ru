@@ -1,22 +1,16 @@
 ---
-title: "Спецификация команду NuGet CLI | Документы Microsoft"
+title: Спецификация команду NuGet CLI
+description: Справочник по спецификации команду nuget.exe
 author: kraigb
 ms.author: kraigb
-manager: ghogen
+manager: douge
 ms.date: 01/18/2018
 ms.topic: reference
-ms.prod: nuget
-ms.technology: 
-description: "Справочник по спецификации команду nuget.exe"
-keywords: "ссылка характеристик NuGet, команда характеристик"
-ms.reviewer:
-- karann-msft
-- unniravindranathan
-ms.openlocfilehash: cc7e772e737a0f74929d13e2b126f7796b6d0dc7
-ms.sourcegitcommit: 4651b16a3a08f6711669fc4577f5d63b600f8f58
+ms.openlocfilehash: 68d661030ce7bcff7d7a3a1c96c07e149ad4ffea
+ms.sourcegitcommit: 3eab9c4dd41ea7ccd2c28bb5ab16f6fbbec13708
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/02/2018
+ms.lasthandoff: 04/26/2018
 ---
 # <a name="spec-command-nuget-cli"></a>Команда характеристик (NuGet CLI)
 
@@ -34,7 +28,7 @@ nuget spec [<packageID>] [options]
 
 ## <a name="options"></a>Параметры
 
-| Параметр | Описание: |
+| Параметр | Описание |
 | --- | --- |
 | AssemblyPath | Указывает путь к сборке для использования метаданных. |
 | Force | Перезаписывает все существующие `.nuspec` файла. |

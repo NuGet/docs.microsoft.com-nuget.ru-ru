@@ -1,25 +1,16 @@
 ---
-title: Справочник по PowerShell NuGet Install-Package | Документы Microsoft
+title: Справочник по PowerShell NuGet Install-Package
+description: Справочник по команду PowerShell Install-Package в консоли диспетчера пакетов NuGet в Visual Studio.
 author: kraigb
 ms.author: kraigb
-manager: ghogen
+manager: douge
 ms.date: 06/01/2017
 ms.topic: reference
-ms.prod: nuget
-ms.technology: ''
-description: Справочник по команду PowerShell Install-Package в консоли диспетчера пакетов NuGet в Visual Studio.
-keywords: Пакет NuGet консоли диспетчера, команд NuGet Powershell, справочник по NuGet Powershell, Install-Package
-ms.reviewer:
-- karann-msft
-- unniravindranathan
-ms.workload:
-- dotnet
-- aspnet
-ms.openlocfilehash: 99c965c2f8c12c7a59ee48e270172b719c1482ea
-ms.sourcegitcommit: beb229893559824e8abd6ab16707fd5fe1c6ac26
+ms.openlocfilehash: 5adfbcae0affcaa402f7981c12e108490d546511
+ms.sourcegitcommit: 3eab9c4dd41ea7ccd2c28bb5ab16f6fbbec13708
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2018
+ms.lasthandoff: 04/26/2018
 ---
 # <a name="install-package-package-manager-console-in-visual-studio"></a>Install-Package (консоль диспетчера пакетов в Visual Studio)
 
@@ -47,7 +38,7 @@ Install-Package Microsoft.AspNet.MVC -Version 5.0.0.
 | --- | --- |
 | Идентификатор | (Обязательно) Идентификатор пакета для установки. (*3.0 +*) может быть идентификатор или URL-адрес `packages.config` файл или `.nupkg` файла. — Идентификатор коммутатора сам является необязательным. |
 | IgnoreDependencies | Установите только этот пакет, а не его зависимости. |
-| Название проекта | Проект, в который необходимо установить пакет, установка значений по умолчанию для проекта по умолчанию. |
+| ИмяПроекта | Проект, в который необходимо установить пакет, установка значений по умолчанию для проекта по умолчанию. |
 | Исходный код | Путь URL-адрес или папку источника пакета для поиска. Пути к локальной папке может быть абсолютным или относительным для текущей папки. Если не указано, `Install-Package` выполняет поиск в текущем выбранном источнике пакетов. |
 | Версия | Версия пакета, чтобы установить, по умолчанию используется последняя версия. |
 | IncludePrerelease | Считает, что предварительные версии пакетов для установки. Если не указано, рассматриваются только стабильные пакеты. |

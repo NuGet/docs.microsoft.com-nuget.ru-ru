@@ -1,22 +1,16 @@
 ---
-title: "Заметки о выпуске версии-Кандидата NuGet 3.2 | Документы Microsoft"
+title: Заметки о выпуске версии-Кандидата NuGet 3.2
+description: Заметки о выпуске для RC NuGet 3.2, включая известные проблемы, исправленные ошибки, добавленные функции и DCR.
 author: karann-msft
-ms.author: karann-msft
-manager: ghogen
+ms.author: karann
+manager: unnir
 ms.date: 11/11/2016
-ms.topic: article
-ms.prod: nuget
-ms.technology: 
-description: "Заметки о выпуске для RC NuGet 3.2, включая известные проблемы, исправленные ошибки, добавленные функции и DCR."
-keywords: "Версия-Кандидат 3.2 NuGet заметки о выпуске, исправления ошибок, известные проблемы, добавлены функции, DCR"
-ms.reviewer:
-- karann-msft
-- unniravindranathan
-ms.openlocfilehash: b19f62217ed79689ce067107dd64dfffe2c59291
-ms.sourcegitcommit: 4651b16a3a08f6711669fc4577f5d63b600f8f58
+ms.topic: conceptual
+ms.openlocfilehash: 0310bac6fdb3ef92176f9224ace1620a230664af
+ms.sourcegitcommit: 3eab9c4dd41ea7ccd2c28bb5ab16f6fbbec13708
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/02/2018
+ms.lasthandoff: 04/26/2018
 ---
 # <a name="nuget-32-rc-release-notes"></a>Заметки о выпуске версии-Кандидата NuGet 3.2
 
@@ -27,7 +21,7 @@ ms.lasthandoff: 02/02/2018
 ## <a name="new-features"></a>Новые функции
 
 * Проекты, которые находятся в той же папке, теперь могут иметь разные `project.json` файлы в этой папке, относящиеся к каждому проекту.  Для каждого проекта имя `project.json` файл `{ProjectName}.project.json` и NuGet правильно будет ссылаться и использовать содержимое для каждого проекта, соответствующим образом.  Это поддерживает новую функцию [1102](https://github.com/NuGet/Home/issues/1102)
-* `NuGet.Config`Теперь поддерживает параметр globalPackagesFolder, как относительный путь — [1062](https://github.com/NuGet/Home/issues/1062)
+* `NuGet.Config` Теперь поддерживает параметр globalPackagesFolder, как относительный путь — [1062](https://github.com/NuGet/Home/issues/1062)
 
 ## <a name="command-line-updates"></a>Обновления командной строки
 
@@ -45,7 +39,7 @@ ms.lasthandoff: 02/02/2018
 * Исправлено команды restore NuGet правильно возвращать 1, если ошибка возникает - [1186](https://github.com/NuGet/Home/issues/1186)
 * Теперь Повтор сетевые подключения каждые 200 мс, не более 5 попыток в случае ошибки HTTP 5xx - [1120](https://github.com/NuGet/Home/issues/1120)
 * Улучшенную обработку ответов сервера перенаправления при выполнении команды push - [1051](https://github.com/NuGet/Home/issues/1051)
-* `nuget install -source`Теперь поддерживает URL-адрес или репозитория имя из Nuget.Config в качестве аргумента - [1046](https://github.com/NuGet/Home/issues/1046)
+* `nuget install -source` Теперь поддерживает URL-адрес или репозитория имя из Nuget.Config в качестве аргумента - [1046](https://github.com/NuGet/Home/issues/1046)
 * Отсутствующие пакеты, которые не были найдены в репозитории, во время восстановления теперь помечаются как ошибки вместо предупреждения [1038](https://github.com/NuGet/Home/issues/1038)
 * Исправлена обработка multipartwebrequest \r\n для Unix/Linux сценариев - [776](https://github.com/NuGet/Home/issues/776)
 

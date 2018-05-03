@@ -1,26 +1,17 @@
 ---
-title: Пакет NuGet версии ссылку | Документы Microsoft
+title: Справочник по версии пакета NuGet
+description: Точные сведения о задании номера версий и диапазонов для других пакетов, от которого зависит от пакета NuGet и установка зависимостей.
 author: kraigb
 ms.author: kraigb
-manager: ghogen
+manager: douge
 ms.date: 03/23/2018
 ms.topic: reference
-ms.prod: nuget
-ms.technology: ''
-description: Точные сведения о задании номера версий и диапазонов для других пакетов, от которого зависит от пакета NuGet и установка зависимостей.
-keywords: Управление версиями, зависимости пакетов NuGet, версии зависимостей NuGet, номера версий NuGet, версия пакета NuGet, диапазон версий, версии спецификации, номера нормализованную версию
-ms.reviewer:
-- anandr
-- karann-msft
-- unniravindranathan
-ms.workload:
-- dotnet
-- aspnet
-ms.openlocfilehash: 678ad79d9106a9f592ae4f47bc93cc117496e2c9
-ms.sourcegitcommit: beb229893559824e8abd6ab16707fd5fe1c6ac26
+ms.reviewer: anangaur
+ms.openlocfilehash: d17d964ac73075f05678b9727e90d481a30da62e
+ms.sourcegitcommit: 3eab9c4dd41ea7ccd2c28bb5ab16f6fbbec13708
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2018
+ms.lasthandoff: 04/26/2018
 ---
 # <a name="package-versioning"></a>Управление версиями пакета
 
@@ -28,7 +19,7 @@ ms.lasthandoff: 03/28/2018
 
 При создании пакета, можно назначить определенный номер версии с суффиксом дополнительный текст предварительного выпуска. При использовании пакетов, с другой стороны, можно указать точный номер версии или диапазон допустимых версий.
 
-Содержание раздела
+В этом разделе.
 
 - [Основные сведения о версии](#version-basics) включая суффиксы предварительного выпуска.
 - [Диапазон версий и подстановочные знаки](#version-ranges-and-wildcards)
@@ -96,7 +87,8 @@ Nuget.org пакета определяется как пакет v2.0.0 SemVer 
 - NuGet 4.3.0+
 - Visual Studio 2017 г. версия 15,3 +
 - Visual Studio 2015 с [v3.6.0 NuGet VSIX](https://dist.nuget.org/visualstudio-2015-vsix/latest/NuGet.Tools.vsix)
-- DotNet.exe (2.0.0+ .NET SDK)
+- dotnet
+  - dotnetcore.exe (2.0.0+ .NET SDK)
 
 Сторонние клиенты:
 
@@ -112,7 +104,7 @@ Nuget.org пакета определяется как пакет v2.0.0 SemVer 
 
 | Notation | Примененное правило | Описание |
 |----------|--------------|-------------|
-| 1,0 | x ≥ 1.0 | Минимальная версия включительно |
+| 1.0 | x ≥ 1.0 | Минимальная версия включительно |
 | (1.0,) | x > 1.0 | Минимальная версия монопольного |
 | [1.0] | x == 1.0 | Точного сопоставления версии |
 | (,1.0] | x ≤ 1.0 | Максимальная версия включительно |

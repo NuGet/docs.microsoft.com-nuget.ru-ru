@@ -1,31 +1,25 @@
 ---
-title: NuGet CLI проверьте команду | Документы Microsoft
+title: Команда проверьте NuGet CLI
+description: Справочник по nuget.exe проверьте команды
 author: dtivel
 ms.author: dtivel
 manager: doronm
 ms.date: 03/06/2018
 ms.topic: reference
-ms.prod: nuget
-ms.technology: ''
-description: Справочник по nuget.exe проверьте команды
-keywords: NuGet проверить ссылку, проверьте команды
-ms.reviewer:
-- karann
-- rmpablos
-ms.workload:
-- dotnet
-- aspnet
-ms.openlocfilehash: 4423e491e0ab5dc1e13982440db42bc9b0e85c38
-ms.sourcegitcommit: beb229893559824e8abd6ab16707fd5fe1c6ac26
+ms.reviewer: rmpablos
+ms.openlocfilehash: c2c31b71358bc50a1fb9aab8905c279cd1235b07
+ms.sourcegitcommit: 5fcd6d664749aa720359104ef7a66d38aeecadc2
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2018
+ms.lasthandoff: 04/27/2018
 ---
 # <a name="verify-command-nuget-cli"></a>Проверьте команду (NuGet CLI)
 
 **Применяется к:** пакета потребления &bullet; **поддерживаемые версии:** 4.6 +
 
 Проверка пакета.
+
+Проверка подписанных пакетов еще не поддерживается в .NET Core в Mono, так и на платформах, отличных от Windows.
 
 ## <a name="usage"></a>Использование
 

@@ -1,25 +1,17 @@
 ---
-title: Команда входа NuGet CLI | Документы Microsoft
+title: Команда входа NuGet CLI
+description: Ссылку для входа команду nuget.exe
 author: dtivel
 ms.author: dtivel
 manager: doronm
 ms.date: 03/06/2018
 ms.topic: reference
-ms.prod: nuget
-ms.technology: ''
-description: Ссылку для входа команду nuget.exe
-keywords: Справочник по входа NuGet, команда входа
-ms.reviewer:
-- karann
-- rmpablos
-ms.workload:
-- dotnet
-- aspnet
-ms.openlocfilehash: 9c83e5abae0e70cdc62917861c1febfce4f792c7
-ms.sourcegitcommit: beb229893559824e8abd6ab16707fd5fe1c6ac26
+ms.reviewer: rmpablos
+ms.openlocfilehash: 7e84d794b802cfd69c785f720280fd5c022a46f6
+ms.sourcegitcommit: 3eab9c4dd41ea7ccd2c28bb5ab16f6fbbec13708
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2018
+ms.lasthandoff: 04/26/2018
 ---
 # <a name="sign-command-nuget-cli"></a>Команда входа (NuGet CLI)
 
@@ -27,7 +19,7 @@ ms.lasthandoff: 03/28/2018
 
 Подписывает все пакеты, соответствующие первого аргумента, с помощью сертификата. Можно получить сертификат с закрытым ключом, из файла или сертификат, установленный в хранилище сертификатов, указав имя субъекта или отпечатка.
 
-Подписание пакета пока не поддерживается в среде Mono или на платформах, отличных от Windows.
+Подписание пакета еще не поддерживается в .NET Core в Mono, так и на платформах, отличных от Windows.
 
 ## <a name="usage"></a>Использование
 

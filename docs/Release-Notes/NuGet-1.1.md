@@ -1,25 +1,16 @@
 ---
-title: NuGet 1.0 и 1.1 заметки о выпуске | Документы Microsoft
-author: karann-msft
-ms.author: karann-msft
-manager: ghogen
-ms.date: 11/11/2016
-ms.topic: article
-ms.prod: nuget
-ms.technology: ''
+title: Заметки о выпуске NuGet 1.0 и 1.1
 description: Заметки о выпуске для NuGet 1.1, включая известные проблемы, исправленные ошибки, добавленные функции и DCR.
-keywords: NuGet 1.1 заметки о выпуске, исправления, известными проблемами, добавлены функции, DCR
-ms.reviewer:
-- karann-msft
-- unniravindranathan
-ms.workload:
-- dotnet
-- aspnet
-ms.openlocfilehash: dd320df2d725e58182cd908ce621571ea018b350
-ms.sourcegitcommit: beb229893559824e8abd6ab16707fd5fe1c6ac26
+author: karann-msft
+ms.author: karann
+manager: unnir
+ms.date: 11/11/2016
+ms.topic: conceptual
+ms.openlocfilehash: a11248a96109c879946e7e28a50e7753b644f042
+ms.sourcegitcommit: 3eab9c4dd41ea7ccd2c28bb5ab16f6fbbec13708
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2018
+ms.lasthandoff: 04/26/2018
 ---
 # <a name="nuget-10-and-11-release-notes"></a>Заметки о выпуске NuGet 1.0 и 1.1
 
@@ -134,7 +125,7 @@ NuGet включает следующие компоненты:
 * [Добавление справки по командлетам](http://nuget.codeplex.com/workitem/23)
 * [После загрузки пакета будет проверять хэш из канала](http://nuget.codeplex.com/workitem/18)
 
-## <a name="ctp-2"></a>CTP 2
+## <a name="ctp-2"></a>CTP-ВЕРСИЯ 2
 
 Ниже приведены наиболее существенные изменения, внесенные в CTP-версии 2.
 
@@ -226,7 +217,7 @@ NuGet включает следующие компоненты:
 * [NuPack / NuGet -&gt; ошибка консоли диспетчера пакетов](http://nuget.codeplex.com/workitem/335)
 * [Добавление пакета диалоговое окно показывает лицензии приемки для уже установлен упакована](http://nuget.codeplex.com/workitem/336)
 
-## <a name="ctp-1"></a>CTP 1
+## <a name="ctp-1"></a>CTP-ВЕРСИЯ 1
 
 Ниже приведен список компонентов и ошибок, исправленных в CTP-версия 1 NuGet.
 

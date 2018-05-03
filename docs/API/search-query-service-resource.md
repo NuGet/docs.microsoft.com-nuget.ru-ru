@@ -1,26 +1,17 @@
 ---
-title: "Поиск, NuGet API | Документы Microsoft"
-author:
-- joelverhagen
-- kraigb
-ms.author:
-- joelverhagen
-- kraigb
+title: Поиск NuGet интерфейса API
+description: Служба поиска позволяет клиентам запрашивать пакеты по ключевому слову, а также результаты фильтрации для некоторых полей пакета.
+author: joelverhagen
+ms.author: jver
 manager: skofman
 ms.date: 10/26/2017
 ms.topic: reference
-ms.prod: nuget
-ms.technology: 
-description: "Служба поиска позволяет клиентам запрашивать пакеты по ключевому слову, а также результаты фильтрации для некоторых полей пакета."
-keywords: "API поиска NuGet, NuGet Обнаружение пакетов, API на пакеты NuGet запроса, API-Интерфейс для просмотра пакетов NuGet"
-ms.reviewer:
-- karann
-- unniravindranathan
-ms.openlocfilehash: 612ce0f46b654335a29bb36a64b27525994162ed
-ms.sourcegitcommit: 4651b16a3a08f6711669fc4577f5d63b600f8f58
+ms.reviewer: kraigb
+ms.openlocfilehash: 76600ee916305ee01ddfb675c83c184e980c5a42
+ms.sourcegitcommit: 3eab9c4dd41ea7ccd2c28bb5ab16f6fbbec13708
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/02/2018
+ms.lasthandoff: 04/26/2018
 ---
 # <a name="search"></a>Поиск
 
@@ -33,8 +24,8 @@ ms.lasthandoff: 02/02/2018
 Значение @type                   | Примечания
 ----------------------------- | -----
 SearchQueryService            | Первоначальный выпуск
-SearchQueryService/3.0.0-beta | Псевдоним`SearchQueryService`
-SearchQueryService/3.0.0-rc   | Псевдоним`SearchQueryService`
+SearchQueryService/3.0.0-beta | Псевдоним `SearchQueryService`
+SearchQueryService/3.0.0-rc   | Псевдоним `SearchQueryService`
 
 ## <a name="base-url"></a>Базовый URL-адрес
 
@@ -59,7 +50,7 @@ name        | Увеличение     | Тип    | Обязательно | П
 q           | URL-адрес    | string  | Нет       | Условия поиска для фильтрации пакетов
 skip        | URL-адрес    | целочисленный | Нет       | Количество пропускаемых для разбиения на страницы результатов
 Take        | URL-адрес    | целочисленный | Нет       | Число результатов, возвращаемых для разбиения на страницы
-Предварительный выпуск  | URL-адрес    | boolean | Нет       | `true`или `false` определения, следует ли включать [пакеты предварительного выпуска](../create-packages/prerelease-packages.md)
+Предварительный выпуск  | URL-адрес    | boolean | Нет       | `true` или `false` определения, следует ли включать [пакеты предварительного выпуска](../create-packages/prerelease-packages.md)
 semVerLevel | URL-адрес    | string  | Нет       | Строка версии 1.0.0 SemVer 
 
 Запрос поиска `q` анализируется таким способом, который определен с помощью реализации сервера. NuGet.org фильтрацию базовых в [различные поля](../consume-packages/finding-and-choosing-packages.md#search-syntax). Если не `q` указан, все пакеты должны быть возвращены в пределах границ, обусловленной предложения skip и take. Это позволяет вкладку «Обзор» в среду NuGet Visual Studio.
@@ -82,7 +73,7 @@ semVerLevel | URL-адрес    | string  | Нет       | Строка верс
 
 name      | Тип             | Обязательно | Примечания
 --------- | ---------------- | -------- | -----
-totalHits | целочисленный          | да      | Общее количество совпадений, без учета `skip` и`take`
+totalHits | целочисленный          | да      | Общее количество совпадений, без учета `skip` и `take`
 Данные      | Массив объектов | да      | Запрос на соответствует результаты поиска
 
 ### <a name="search-result"></a>результат поиска

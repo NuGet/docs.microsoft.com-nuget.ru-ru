@@ -1,22 +1,16 @@
 ---
-title: "Заметки о выпуске NuGet 3.4.1 | Документы Microsoft"
+title: Заметки о выпуске NuGet 3.4.1
+description: Заметки о выпуске для NuGet 3.4.1, включая известные проблемы, исправленные ошибки, добавленные функции и DCR.
 author: karann-msft
-ms.author: karann-msft
-manager: ghogen
+ms.author: karann
+manager: unnir
 ms.date: 11/11/2016
-ms.topic: article
-ms.prod: nuget
-ms.technology: 
-description: "Заметки о выпуске для NuGet 3.4.1, включая известные проблемы, исправленные ошибки, добавленные функции и DCR."
-keywords: "NuGet 3.4.1 заметки о выпуске, исправления, известными проблемами, добавлены функции, DCR"
-ms.reviewer:
-- karann-msft
-- unniravindranathan
-ms.openlocfilehash: c2e22b6c22c55fd51bd1d20d52b4b7b07c5a205c
-ms.sourcegitcommit: 4651b16a3a08f6711669fc4577f5d63b600f8f58
+ms.topic: conceptual
+ms.openlocfilehash: d492afc59fe2f9237aaf54dca56e09f9148a0dcf
+ms.sourcegitcommit: 3eab9c4dd41ea7ccd2c28bb5ab16f6fbbec13708
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/02/2018
+ms.lasthandoff: 04/26/2018
 ---
 # <a name="nuget-341-release-notes"></a>Заметки о выпуске NuGet 3.4.1
 
@@ -27,7 +21,7 @@ NuGet 3.4.1 был выпущен 30 марта 2016 г. в то же время
 ## <a name="updates-and-improvements"></a>Обновления и улучшения
 
 * Исправленный проблема, препятствующая просмотра пакеты из пользовательского интерфейса Visual Studio с минимальным установки Visual Studio
-* Исправлена проблема с поиском Visual Studio`lucene.net.dll`
+* Исправлена проблема с поиском Visual Studio `lucene.net.dll`
 * Все источники не должно быть источник репозитория по умолчанию после расширение NuGet установки или обновления.  Можно включить в к этой функции на основе параметров конфигурации.
 
 Мы продолжаем отслеживания проблем на наш список проблем GitHub, которую можно найти в: [http://github.com/nuget/home/issues](http://github.com/nuget/home/issues)

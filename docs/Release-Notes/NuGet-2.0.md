@@ -1,22 +1,16 @@
 ---
-title: "Заметки о выпуске NuGet 2.0 | Документы Microsoft"
+title: Заметки о версии 2.0 NuGet
+description: Заметки о выпуске для NuGet 2.0, включая известные проблемы, исправленные ошибки, добавленные функции и DCR.
 author: karann-msft
-ms.author: karann-msft
-manager: ghogen
+ms.author: karann
+manager: unnir
 ms.date: 11/11/2016
-ms.topic: article
-ms.prod: nuget
-ms.technology: 
-description: "Заметки о выпуске для NuGet 2.0, включая известные проблемы, исправленные ошибки, добавленные функции и DCR."
-keywords: "NuGet 2.0 заметки о выпуске, исправления, известными проблемами, добавлены функции, DCR"
-ms.reviewer:
-- karann-msft
-- unniravindranathan
-ms.openlocfilehash: eaa3c8db1cce72ff93671a1df63698748cdfab70
-ms.sourcegitcommit: 4651b16a3a08f6711669fc4577f5d63b600f8f58
+ms.topic: conceptual
+ms.openlocfilehash: 0e637a953d9d5d10394857a352be96a7f68dc4e8
+ms.sourcegitcommit: 3eab9c4dd41ea7ccd2c28bb5ab16f6fbbec13708
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/02/2018
+ms.lasthandoff: 04/26/2018
 ---
 # <a name="nuget-20-release-notes"></a>Заметки о версии 2.0 NuGet
 
@@ -27,7 +21,7 @@ NuGet 2.0 была выпущена 19 июня 2012 г.
 ## <a name="known-installation-issue"></a>Известные проблемы
 Если вы используете VS 2010 с пакетом обновления 1, вы можете столкнуться ошибка установки при попытке обновить NuGet, если у вас установлена более ранняя версия.
 
-Достаточно просто удалить NuGet, а затем установить его из библиотеки расширения VS.  В разделе [http://support.microsoft.com/kb/2581019](http://support.microsoft.com/kb/2581019) Дополнительные сведения или [перейдите непосредственно на исправление VS](http://bit.ly/vsixcertfix).
+Достаточно просто удалить NuGet, а затем установить его из библиотеки расширения VS.  В разделе [ http://support.microsoft.com/kb/2581019 ](http://support.microsoft.com/kb/2581019) Дополнительные сведения или [перейдите непосредственно на исправление VS](http://bit.ly/vsixcertfix).
 
 Примечание: Если Visual Studio не позволяют удалить расширение (кнопка удаления отключена), скорее всего, необходимо перезапустить Visual Studio, используя «Запуск от имени администратора».
 

@@ -1,26 +1,17 @@
 ---
-title: "Автозаполнение, NuGet API | Документы Microsoft"
-author:
-- joelverhagen
-- kraigb
-ms.author:
-- joelverhagen
-- kraigb
+title: Функция автозаполнения, NuGet интерфейса API
+description: Автозаполнение службы поиска поддерживает интерактивный обнаружения пакета идентификаторы и версии.
+author: joelverhagen
+ms.author: jver
 manager: skofman
 ms.date: 10/26/2017
 ms.topic: reference
-ms.prod: nuget
-ms.technology: 
-description: "Автозаполнение службы поиска поддерживает интерактивный обнаружения пакета идентификаторы и версии."
-keywords: "API автозаполнения NuGet, идентификатор пакета NuGet поиска, идентификатор пакета подстроки"
-ms.reviewer:
-- karann
-- unniravindranathan
-ms.openlocfilehash: 7c984ca61799293d7832851b80cf3fefc4734288
-ms.sourcegitcommit: 4651b16a3a08f6711669fc4577f5d63b600f8f58
+ms.reviewer: kraigb
+ms.openlocfilehash: d5e1936c6c5406a1a376c16b2bad5351320dfb4f
+ms.sourcegitcommit: 3eab9c4dd41ea7ccd2c28bb5ab16f6fbbec13708
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/02/2018
+ms.lasthandoff: 04/26/2018
 ---
 # <a name="autocomplete"></a>Автозавершение
 
@@ -33,8 +24,8 @@ ms.lasthandoff: 02/02/2018
 Значение @type                          | Примечания
 ------------------------------------ | -----
 SearchAutocompleteService            | Первоначальный выпуск
-SearchAutocompleteService/3.0.0-beta | Псевдоним`SearchAutocompleteService`
-SearchAutocompleteService/3.0.0-rc   | Псевдоним`SearchAutocompleteService`
+SearchAutocompleteService/3.0.0-beta | Псевдоним `SearchAutocompleteService`
+SearchAutocompleteService/3.0.0-rc   | Псевдоним `SearchAutocompleteService`
 
 ## <a name="base-url"></a>Базовый URL-адрес
 
@@ -59,7 +50,7 @@ name        | Увеличение     | Тип    | Обязательно | П
 q           | URL-адрес    | string  | Нет       | Строка для сравнения с идентификаторами пакетов
 skip        | URL-адрес    | целочисленный | Нет       | Количество пропускаемых для разбиения на страницы результатов
 Take        | URL-адрес    | целочисленный | Нет       | Число результатов, возвращаемых для разбиения на страницы
-Предварительный выпуск  | URL-адрес    | boolean | Нет       | `true`или `false` определения, следует ли включать [пакеты предварительного выпуска](../create-packages/prerelease-packages.md)
+Предварительный выпуск  | URL-адрес    | boolean | Нет       | `true` или `false` определения, следует ли включать [пакеты предварительного выпуска](../create-packages/prerelease-packages.md)
 semVerLevel | URL-адрес    | string  | Нет       | Строка версии 1.0.0 SemVer 
 
 Запрос автозаполнения `q` анализируется таким способом, который определен с помощью реализации сервера. NuGet.org поддерживает выполнение запросов для префикса маркеров идентификатор пакета, которые — это идентификатор, созданный spliting исходный счет camel регистр и символы.
@@ -82,12 +73,12 @@ semVerLevel | URL-адрес    | string  | Нет       | Строка верс
 
 name      | Тип             | Обязательно | Примечания
 --------- | ---------------- | -------- | -----
-totalHits | целочисленный          | да      | Общее количество совпадений, без учета `skip` и`take`
+totalHits | целочисленный          | да      | Общее количество совпадений, без учета `skip` и `take`
 Данные      | Массив строк | да      | Запрос соответствует ИД пакета
 
 ### <a name="sample-request"></a>Пример запроса
 
-GET https://api-v2v3search-0.nuget.org/autocomplete?q=storage&prerelease=true
+ПОЛУЧИТЬ https://api-v2v3search-0.nuget.org/autocomplete?q=storage&prerelease=true
 
 ### <a name="sample-response"></a>Пример ответа
 
@@ -106,7 +97,7 @@ GET https://api-v2v3search-0.nuget.org/autocomplete?q=storage&prerelease=true
 name        | Увеличение     | Тип    | Обязательно | Примечания
 ----------- | ------ | ------- | -------- | -----
 id          | URL-адрес    | string  | да      | Идентификатор пакета для версии для выборки
-Предварительный выпуск  | URL-адрес    | boolean | Нет       | `true`или `false` определения, следует ли включать [пакеты предварительного выпуска](../create-packages/prerelease-packages.md)
+Предварительный выпуск  | URL-адрес    | boolean | Нет       | `true` или `false` определения, следует ли включать [пакеты предварительного выпуска](../create-packages/prerelease-packages.md)
 semVerLevel | URL-адрес    | string  | Нет       | Строка версии SemVer 2.0.0 
 
 Если `prerelease` не указан, исключаются пакеты предварительного выпуска.

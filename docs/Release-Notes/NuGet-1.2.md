@@ -1,25 +1,16 @@
 ---
-title: Заметки о выпуске NuGet 1.2 | Документы Microsoft
-author: karann-msft
-ms.author: karann-msft
-manager: ghogen
-ms.date: 11/11/2016
-ms.topic: article
-ms.prod: nuget
-ms.technology: ''
+title: Заметки о выпуске 1.2 NuGet
 description: Заметки о выпуске для NuGet 1.2, включая известные проблемы, исправленные ошибки, добавленные функции и DCR.
-keywords: NuGet 1.2 заметки о выпуске, исправления, известными проблемами, добавлены функции, DCR
-ms.reviewer:
-- karann-msft
-- unniravindranathan
-ms.workload:
-- dotnet
-- aspnet
-ms.openlocfilehash: 0d95f41c5bc5d490764c9f128ee621e1037cef66
-ms.sourcegitcommit: beb229893559824e8abd6ab16707fd5fe1c6ac26
+author: karann-msft
+ms.author: karann
+manager: unnir
+ms.date: 11/11/2016
+ms.topic: conceptual
+ms.openlocfilehash: 9267374775887889b063c844063988504a541a38
+ms.sourcegitcommit: 3eab9c4dd41ea7ccd2c28bb5ab16f6fbbec13708
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2018
+ms.lasthandoff: 04/26/2018
 ---
 # <a name="nuget-12-release-notes"></a>Заметки о выпуске 1.2 NuGet
 
@@ -27,7 +18,7 @@ ms.lasthandoff: 03/28/2018
 
 30 марта 2011 г. была выпущена NuGet 1.2.
 
-## <a name="new-features"></a>Новые возможности
+## <a name="new-features"></a>Новые функции
 
 ### <a name="framework-profile-support"></a>Поддержка профиля Framework
 

@@ -1,27 +1,18 @@
 ---
-title: команды NuGet dotNet | Документы Microsoft
+title: команды NuGet DotNet
+description: Краткая ссылка для команд, связанных с NuGet dotnet интерфейс командной строки.
 author: kraigb
 ms.author: kraigb
-manager: ghogen
+manager: douge
 ms.date: 01/23/2018
-ms.topic: article
-ms.prod: nuget
-ms.technology: ''
-description: Краткая ссылка для команд, связанных с NuGet dotnet интерфейс командной строки.
-keywords: команды NuGet DotNet, пакет dotnet, dotnet восстановления, локальные nuget dotnet, dotnet nuget push, dotnet nuget delete
-ms.reviewer:
-- karann-msft
-- unniravindranathan
-ms.workload:
-- dotnet
-- aspnet
-ms.openlocfilehash: 352145701fba509e21e774a429d227e7427a1f0d
-ms.sourcegitcommit: beb229893559824e8abd6ab16707fd5fe1c6ac26
+ms.topic: conceptual
+ms.openlocfilehash: fe49274af339c987d5e090c99edd78f62f59ce47
+ms.sourcegitcommit: 5fcd6d664749aa720359104ef7a66d38aeecadc2
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2018
+ms.lasthandoff: 04/27/2018
 ---
-# <a name="dotnet-commands"></a>команды dotNet
+# <a name="dotnet-commands"></a>Команды dotnet
 
 `dotnet` Интерфейс командной строки, которая выполняется в Windows, Mac OS X и Linux, предоставляет ряд важных nuget.exe команд, приведенные ниже. Если dotnet удовлетворяет вашим требованиям, нет необходимости использовать `nuget.exe`.
 

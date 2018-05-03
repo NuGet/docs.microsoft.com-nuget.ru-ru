@@ -1,29 +1,17 @@
 ---
-title: Обзор, NuGet API | Документы Microsoft
-author:
-- joelverhagen
-- kraigb
-ms.author:
-- joelverhagen
-- kraigb
+title: Общие сведения о NuGet интерфейса API
+description: NuGet API — это набор конечных точек HTTP, которые можно использовать для загрузки пакетов, получить метаданные, публикации новых пакетов и т. д.
+author: joelverhagen
+ms.author: jver
 manager: skofman
 ms.date: 10/26/2017
 ms.topic: reference
-ms.prod: nuget
-ms.technology: ''
-description: NuGet API — это набор конечных точек HTTP, которые можно использовать для загрузки пакетов, получить метаданные, публикации новых пакетов и т. д.
-keywords: NuGet V3 API, NuGet V2 API, NuGet JSON, регистрации API NuGet NuGet API плоский контейнера, nupkg NuGet интерфейса API, NuGet интерфейса API метаданных, API поиска NuGet, принудительной NuGet интерфейса API, NuGe публикации API, NuGet удалить API, NuGet исключить API, протокол NuGet
-ms.reviewer:
-- karann
-- unniravindranathan
-ms.workload:
-- dotnet
-- aspnet
-ms.openlocfilehash: 7053a971c80a94cf035e8f149c332b36e66a9ea9
-ms.sourcegitcommit: beb229893559824e8abd6ab16707fd5fe1c6ac26
+ms.reviewer: kraigb
+ms.openlocfilehash: a638dba005c14bff4b2e668e2d6ca527a67b94a9
+ms.sourcegitcommit: 3eab9c4dd41ea7ccd2c28bb5ab16f6fbbec13708
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2018
+ms.lasthandoff: 04/26/2018
 ---
 # <a name="nuget-api"></a>NuGet интерфейса API
 
@@ -65,9 +53,9 @@ API-интерфейса были внесены изменения проток
 [`SearchQueryService`](search-query-service-resource.md)               | да      | Фильтровать и искать пакеты по ключевым словам.
 [`RegistrationsBaseUrl`](registration-base-url-resource.md)            | да      | Получите метаданные пакета.
 [`PackageBaseAddress`](package-base-address-resource.md)               | да      | Получение содержимого пакета (.nupkg).
-[`SearchAutocompleteService`](search-autocomplete-service-resource.md) | нет       | Обнаружение идентификаторы пакетов и версий с подстроки.
-[`ReportAbuseUriTemplate`](report-abuse-resource.md)                   | нет       | Создайте URL-адрес для доступа к веб-страницы «сообщить о нарушении».
-[`Catalog`](catalog-resource.md)                                       | нет       | Полную запись всех событий пакета.
+[`SearchAutocompleteService`](search-autocomplete-service-resource.md) | Нет       | Обнаружение идентификаторы пакетов и версий с подстроки.
+[`ReportAbuseUriTemplate`](report-abuse-resource.md)                   | Нет       | Создайте URL-адрес для доступа к веб-страницы «сообщить о нарушении».
+[`Catalog`](catalog-resource.md)                                       | Нет       | Полную запись всех событий пакета.
 
 Как правило все недвоичные данные, возвращенные ресурс API сериализуются с помощью JSON. Схема ответа, возвращаемые каждого ресурса в индексе службы определяется по отдельности для этого ресурса. Дополнительные сведения о каждом ресурсе см. в разделах, перечисленных выше.
 
@@ -111,13 +99,13 @@ DELETE | Удаляет или unlists ресурса.
 
 ## <a name="http-request-headers"></a>Заголовки HTTP-запросов
 
-Имя                     | Описание
+name                     | Описание
 ------------------------ | -----------
 X-NuGet-ApiKey           | Требуется для принудительной отправки и удаления, в разделе [ `PackagePublish` ресурсов](package-publish-resource.md)
-X-NuGet-Client-Version   | **Рекомендуется использовать** и заменяется `X-NuGet-Protocol-Version`
-X-NuGet-Protocol-Version | Требуется в некоторых случаях только в nuget.org. в разделе [nuget.org протоколы](NuGet-Protocols.md)
-X-NuGet-Session-Id       | *Необязательный*. NuGet клиентов v4.7 + идентификации HTTP-запросов, которые являются частью одного сеанса клиента NuGet. Для `PackageReference` операции восстановления является идентификатором одного сеанса для других сценариев, например автозавершение, и `packages.config` может существовать несколько разных идентификатор сеанса из-за как разложить код восстановления.
+X-NuGet--версии клиента   | **Рекомендуется использовать** и заменяется `X-NuGet-Protocol-Version`
+X NuGet протокол версии | Требуется в некоторых случаях только в nuget.org. в разделе [nuget.org протоколы](NuGet-Protocols.md)
+X-NuGet ИД сеанса       | *Необязательный*. NuGet клиентов v4.7 + идентификации HTTP-запросов, которые являются частью одного сеанса клиента NuGet. Для `PackageReference` операции восстановления является идентификатором одного сеанса для других сценариев, например автозавершение, и `packages.config` может существовать несколько разных идентификатор сеанса из-за как разложить код восстановления.
 
-## <a name="authentication"></a>Аутентификация
+## <a name="authentication"></a>Проверка подлинности
 
 Проверка подлинности остается зависит от реализации источника пакета для определения. Для nuget.org только `PackagePublish` ресурс требует проверки подлинности через специальный заголовок ключа API. В разделе [ `PackagePublish` ресурсов](package-publish-resource.md) подробные сведения.

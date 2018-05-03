@@ -1,25 +1,16 @@
 ---
-title: Справочник по PowerShell NuGet Register-TabExpansion | Документы Microsoft
+title: Справочник по PowerShell NuGet Register-TabExpansion
+description: Ссылка для команды Register TabExpansion PowerShell в консоли диспетчера пакетов NuGet в Visual Studio.
 author: kraigb
 ms.author: kraigb
-manager: ghogen
+manager: douge
 ms.date: 12/07/2017
 ms.topic: reference
-ms.prod: nuget
-ms.technology: ''
-description: Ссылка для команды Register TabExpansion PowerShell в консоли диспетчера пакетов NuGet в Visual Studio.
-keywords: Пакет NuGet консоли диспетчера, команд NuGet Powershell, справочник по NuGet Powershell, TabExpansion регистра
-ms.reviewer:
-- karann-msft
-- unniravindranathan
-ms.workload:
-- dotnet
-- aspnet
-ms.openlocfilehash: c7b95c46c55b95a8d743f9661ef9c63433b0192d
-ms.sourcegitcommit: beb229893559824e8abd6ab16707fd5fe1c6ac26
+ms.openlocfilehash: 02f6d4ecd246b7ce5425cf56ade10789cf03113c
+ms.sourcegitcommit: 3eab9c4dd41ea7ccd2c28bb5ab16f6fbbec13708
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2018
+ms.lasthandoff: 04/26/2018
 ---
 # <a name="register-tabexpansion-package-manager-console-in-visual-studio"></a>Register-TabExpansion (консоль диспетчера пакетов в Visual Studio)
 
@@ -37,7 +28,7 @@ Register-TabExpansion [-Name] <String> [-Definition] <Object> [<CommonParameters
 
 | Параметр | Описание |
 | --- | --- |
-| Имя | (Обязательно) Команда, для которого необходимо зарегистрировать расширения. -Имя коммутатора сам является необязательным. |
+| name | (Обязательно) Команда, для которого необходимо зарегистрировать расширения. -Имя коммутатора сам является необязательным. |
 | Определение | (Обязательно) Объект, описывающий аргументов в синтаксисе `@{'<parameter>' = {'<value1>', '<value2>', ...}}` где `<parameter>` имя параметра для изменения и каждого `<value>` предоставляет определенное расширение. Принимаются одинарные и двойные кавычки. |
 
 Ни один из этих параметров принимает входные данные или подстановочный знак символов конвейера.

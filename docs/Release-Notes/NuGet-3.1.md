@@ -1,22 +1,16 @@
 ---
-title: "Заметки о выпуске NuGet 3.1 | Документы Microsoft"
+title: Заметки о выпуске 3.1 NuGet
+description: Заметки о выпуске для NuGet 3.1, включая известные проблемы, исправленные ошибки, добавленные функции и DCR.
 author: karann-msft
-ms.author: karann-msft
-manager: ghogen
+ms.author: karann
+manager: unnir
 ms.date: 11/11/2016
-ms.topic: article
-ms.prod: nuget
-ms.technology: 
-description: "Заметки о выпуске для NuGet 3.1, включая известные проблемы, исправленные ошибки, добавленные функции и DCR."
-keywords: "NuGet 3.1 заметки о выпуске, исправления, известными проблемами, добавлены функции, DCR"
-ms.reviewer:
-- karann-msft
-- unniravindranathan
-ms.openlocfilehash: a7aa43b8701b3bbef8f6ebce9a5d636ee1bc6abe
-ms.sourcegitcommit: 4651b16a3a08f6711669fc4577f5d63b600f8f58
+ms.topic: conceptual
+ms.openlocfilehash: d14455da6f8af4db92f7105ea1b0e88eb9e71600
+ms.sourcegitcommit: 3eab9c4dd41ea7ccd2c28bb5ab16f6fbbec13708
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/02/2018
+ms.lasthandoff: 04/26/2018
 ---
 # <a name="nuget-31-release-notes"></a>Заметки о выпуске 3.1 NuGet
 
@@ -32,7 +26,7 @@ NuGet 3.1 был выпущен 27 июля 2015 г. как расширение
 
 ### <a name="new-features"></a>Новые функции
 
-* `project.json`Поддержка для поддержки Windows UWP и ASP.NET 5
+* `project.json` Поддержка для поддержки Windows UWP и ASP.NET 5
 * Транзитивное пакета установки
 
 Описание и определение этих возможностей можно найти в другом месте в документации.
@@ -45,10 +39,10 @@ NuGet 3.1 был выпущен 27 июля 2015 г. как расширение
 
 Следующие функции недоступны для Visual Studio 2015 и проектов, использующих `project.json` спецификации
 
-* `install.ps1`и `uninstall.ps1` -эти сценарии будут пропущены во время установки пакета, восстановление, обновление и удаление
+* `install.ps1` и `uninstall.ps1` -эти сценарии будут пропущены во время установки пакета, восстановление, обновление и удаление
 * Конфигурация преобразования будет игнорироваться.
 * Содержимое будет выполнена, но не копируется в проект.
-    * Повторно реализовать эту функцию, обсуждения и инструкциями хода выполнения, в которой работает команда: [https://github.com/NuGet/Home/issues/627](https://github.com/NuGet/Home/issues/627)
+    * Команда работает над ее повторно реализовать эту функцию, выполните обсуждения и хода выполнения на: [https://github.com/NuGet/Home/issues/627](https://github.com/NuGet/Home/issues/627)
 
 
 ### <a name="known-issues"></a>Известные проблемы
@@ -59,7 +53,7 @@ NuGet 3.1 был выпущен 27 июля 2015 г. как расширение
 
 ## <a name="nuget-command-line"></a>NuGet командной строки
 
-Исполняемый файл командной строки NuGet была обновлена и перемещен в новое расположение распространяемый, что исторические версии nuget.exe продолжения должны быть доступны.  Вы можете скачать 3.1 бета-версии nuget.exe для Windows, посетите: [http://dist.nuget.org/win-x86-commandline/v3.1.0-beta/nuget.exe](http://dist.nuget.org/win-x86-commandline/v3.1.0-beta/nuget.exe)
+Исполняемый файл командной строки NuGet была обновлена и перемещен в новое расположение распространяемый, что исторические версии nuget.exe продолжения должны быть доступны.  3.1 бета-версии nuget.exe можно загрузить для Windows на: [http://dist.nuget.org/win-x86-commandline/v3.1.0-beta/nuget.exe](http://dist.nuget.org/win-x86-commandline/v3.1.0-beta/nuget.exe)
 
 Новое расположение распространяемый находится на узле dist.nuget.org со структурой папок, соответствует этому шаблону.
 
@@ -68,7 +62,7 @@ NuGet 3.1 был выпущен 27 июля 2015 г. как расширение
 ### <a name="new-features"></a>Новые функции
 
 * можно восстановить и установить пакеты в проекты, использующие NuGet.exe `project.json` файл.
-* можно подключиться и использовать протокол v3 NuGet на NuGet.exe: [https://api.nuget.org/v3/index.json](https://api.nuget.org/v3/index.json)
+* NuGet.exe можно подключиться и использовать протокол v3 NuGet на: [https://api.nuget.org/v3/index.json](https://api.nuget.org/v3/index.json)
 
 ## <a name="known-issues"></a>Известные проблемы ##
 

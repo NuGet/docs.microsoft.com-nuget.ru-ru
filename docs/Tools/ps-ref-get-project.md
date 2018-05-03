@@ -1,25 +1,16 @@
 ---
-title: Справочник по PowerShell NuGet Get проект | Документы Microsoft
+title: Справочник по PowerShell NuGet Get проект
+description: Ссылка для команды GetProject PowerShell в консоли диспетчера пакетов NuGet в Visual Studio.
 author: kraigb
 ms.author: kraigb
-manager: ghogen
+manager: douge
 ms.date: 12/07/2017
 ms.topic: reference
-ms.prod: nuget
-ms.technology: ''
-description: Ссылка для команды GetProject PowerShell в консоли диспетчера пакетов NuGet в Visual Studio.
-keywords: Пакет NuGet консоли диспетчера, команд NuGet Powershell, справочник по NuGet Powershell, Get-проект
-ms.reviewer:
-- karann-msft
-- unniravindranathan
-ms.workload:
-- dotnet
-- aspnet
-ms.openlocfilehash: 9fcdcf7c550408cd7dfd73787ee14821c46a1df9
-ms.sourcegitcommit: beb229893559824e8abd6ab16707fd5fe1c6ac26
+ms.openlocfilehash: a7b66cbf36095e31b5929596300018239749cb15
+ms.sourcegitcommit: 3eab9c4dd41ea7ccd2c28bb5ab16f6fbbec13708
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2018
+ms.lasthandoff: 04/26/2018
 ---
 # <a name="get-project-package-manager-console-in-visual-studio"></a>Get проект (консоль диспетчера пакетов в Visual Studio)
 
@@ -37,7 +28,7 @@ Get-Project [[-Name] <string>] [-All] [<CommonParameters>]
 
 | Параметр | Описание |
 | --- | --- |
-| Имя | Указывает проект для отображения, по умолчанию принимается по умолчанию проекта, выбранного в консоли диспетчера пакетов. -Имя коммутатора является необязательным. |
+| name | Указывает проект для отображения, по умолчанию принимается по умолчанию проекта, выбранного в консоли диспетчера пакетов. -Имя коммутатора является необязательным. |
 | Все | Отображает сведения для каждого проекта в решении; порядок проектов не является детерминированным. |
 
 Ни один из этих параметров принимает входные данные или подстановочный знак символов конвейера.

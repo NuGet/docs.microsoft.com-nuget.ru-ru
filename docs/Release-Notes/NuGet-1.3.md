@@ -1,22 +1,16 @@
 ---
-title: "Заметки о выпуске NuGet 1.3 | Документы Microsoft"
+title: Заметки о выпуске 1,3 NuGet
+description: Заметки о выпуске для NuGet 1.3, включая известные проблемы, исправленные ошибки, добавленные функции и DCR.
 author: karann-msft
-ms.author: karann-msft
-manager: ghogen
+ms.author: karann
+manager: unnir
 ms.date: 11/11/2016
-ms.topic: article
-ms.prod: nuget
-ms.technology: 
-description: "Заметки о выпуске для NuGet 1.3, включая известные проблемы, исправленные ошибки, добавленные функции и DCR."
-keywords: "NuGet 1.3 заметки о выпуске, исправления, известными проблемами, добавлены функции, DCR"
-ms.reviewer:
-- karann-msft
-- unniravindranathan
-ms.openlocfilehash: 59169be5b39ba4436e13e0935a0ad6efa724e08e
-ms.sourcegitcommit: 4651b16a3a08f6711669fc4577f5d63b600f8f58
+ms.topic: conceptual
+ms.openlocfilehash: c0284fe0afb11bf6465897132cccd160674ea3e1
+ms.sourcegitcommit: 3eab9c4dd41ea7ccd2c28bb5ab16f6fbbec13708
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/02/2018
+ms.lasthandoff: 04/26/2018
 ---
 # <a name="nuget-13-release-notes"></a>Заметки о выпуске 1,3 NuGet
 
@@ -30,7 +24,7 @@ NuGet 1.3 был выпущен 25 апреля 2011 г.
 
 Команды NuGet, сотрудничающих с ребятами [SymbolSource.org](http://www.symbolsource.org/) предоставляет очень простой способ публикации источников и PDB-файла вместе с вашего пакета. Это позволяет клиентам пакета шаг с заходом в исходный для пакета в отладчике. Дополнительные сведения см. в статье [создания и публикации пакета символов](../create-packages/symbol-packages.md) легко публиковать пакеты NuGet с источниками. Также можно просматривать динамическую демонстрацию этой функции как часть NuGet в глубину обращения во Mix11. Эта функция полностью демонстрируется начиная с 20-минутное знаком видео.
 
-### <a name="open-packagepage-command"></a>`Open-PackagePage`Команда
+### <a name="open-packagepage-command"></a>`Open-PackagePage` Команда
 
 Эта команда позволяет легко перейти на страницу проекта для пакета из консоли диспетчера пакетов. Он также предоставляет параметры, чтобы открыть URL-адрес лицензии и о нарушении страницы отчета для пакета.
 Ниже приведен синтаксис для команды.

@@ -1,22 +1,16 @@
 ---
-title: "Заметки о выпуске 3.4 RC NuGet | Документы Microsoft"
+title: Заметки о выпуске 3.4 RC NuGet
+description: Заметки о выпуске для RC NuGet 3.4, включая известные проблемы, исправленные ошибки, добавленные функции и DCR.
 author: karann-msft
-ms.author: karann-msft
-manager: ghogen
+ms.author: karann
+manager: unnir
 ms.date: 11/11/2016
-ms.topic: article
-ms.prod: nuget
-ms.technology: 
-description: "Заметки о выпуске для RC NuGet 3.4, включая известные проблемы, исправленные ошибки, добавленные функции и DCR."
-keywords: "Версия-Кандидат NuGet 3.4 заметки о выпуске, исправления ошибок, известные проблемы, добавлены функции, DCR"
-ms.reviewer:
-- karann-msft
-- unniravindranathan
-ms.openlocfilehash: 749068683d6e2a3fd9dd29c69d9ff50137acdd46
-ms.sourcegitcommit: 4651b16a3a08f6711669fc4577f5d63b600f8f58
+ms.topic: conceptual
+ms.openlocfilehash: e40d685a5256fdfee818f0cc1f1bc352c698f3c2
+ms.sourcegitcommit: 3eab9c4dd41ea7ccd2c28bb5ab16f6fbbec13708
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/02/2018
+ms.lasthandoff: 04/26/2018
 ---
 # <a name="nuget-34-rc-release-notes"></a>Заметки о выпуске 3.4 RC NuGet
 

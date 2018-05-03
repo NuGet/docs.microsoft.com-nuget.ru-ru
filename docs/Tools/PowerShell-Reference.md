@@ -1,22 +1,16 @@
 ---
-title: "Справочник по PowerShell NuGet | Документы Microsoft"
+title: Справочник по PowerShell NuGet
+description: Полный справочник команд PowerShell доступны в консоли диспетчера пакетов NuGet в Visual Studio.
 author: kraigb
 ms.author: kraigb
-manager: ghogen
+manager: douge
 ms.date: 10/02/2017
 ms.topic: reference
-ms.prod: nuget
-ms.technology: 
-description: "Полный справочник команд PowerShell доступны в консоли диспетчера пакетов NuGet в Visual Studio."
-keywords: "Консоли пакета NuGet диспетчера, команд NuGet Powershell, справочник по NuGet Powershell"
-ms.reviewer:
-- karann-msft
-- unniravindranathan
-ms.openlocfilehash: 0cbd9b13b34bd93fea6c6684c03bca9cff5d9e5e
-ms.sourcegitcommit: 4651b16a3a08f6711669fc4577f5d63b600f8f58
+ms.openlocfilehash: 455787d3c8701f5275ace4ed0dcb605213bfbf29
+ms.sourcegitcommit: 3eab9c4dd41ea7ccd2c28bb5ab16f6fbbec13708
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/02/2018
+ms.lasthandoff: 04/26/2018
 ---
 # <a name="powershell-reference"></a>Справочник по PowerShell
 
@@ -28,19 +22,19 @@ ms.lasthandoff: 02/02/2018
 > [!Important]
 > Команды, перечисленные ниже относятся к консоли диспетчера пакетов в Visual Studio и отличаться от [команды модуля пакета управления](/powershell/module/packagemanagement/?view=powershell-6) , которые доступны в среде PowerShell Общие. В частности каждая среда имеет команд, которые недоступны в другом, а команды с тем же именем в их конкретных аргументах также могут различаться. При использовании консоли управления пакета в Visual Studio, команды и аргументы, описанные в этом разделе присутствует применяются.
 
-| Стандартные команды | Описание: | Версия NuGet |
+| Стандартные команды | Описание | Версия NuGet |
 | --- | --- | --- |
 | [Install-Package](ps-ref-install-package.md) | Устанавливает пакет и его зависимости в проект. | Все |
 | [Update-Package](ps-ref-update-package.md) | Обновляет пакет и его зависимости, а также все пакеты в проекте. | Все |
 | [Find-Package](ps-ref-find-package.md) | Поиск источника пакета, используя идентификатор пакета или ключевые слова. | 3.0+ |
 | [Get-Package](ps-ref-get-package.md) | Возвращает список пакетов, установленных в локальном хранилище или список пакетов из исходного пакета. | Все |
 
-| Дополнительные команды | Описание: | Версия NuGet |
+| Дополнительные команды | Описание | Версия NuGet |
 | --- | --- | --- |
 | [Add-BindingRedirect](ps-ref-add-bindingredirect.md) | Проверяет все сборки по пути вывода для проекта и добавляет перенаправления привязки `app.config` или `web.config` при необходимости. | Все |
 | [Get-Project](ps-ref-get-project.md) | Отображает сведения о значения по умолчанию или указанный проект. | 3.0+ |
 | [Open-PackagePage](ps-ref-open-packagepage.md) | Запускает браузер по умолчанию проекта, лицензии или URL-адрес отчетов о нарушении для указанного пакета. | Рекомендуется использовать в 3.0 + |
-| [Register-TabExpansion](ps-ref-register-tabexpansion.md) | Регистрирует расширение по клавише tab для параметров команды, что позволяет создавать пользовательские расширения для значения часто используемых параметров. | Все |
+| [TabExpansion регистра](ps-ref-register-tabexpansion.md) | Регистрирует расширение по клавише tab для параметров команды, что позволяет создавать пользовательские расширения для значения часто используемых параметров. | Все |
 | [Sync-Package](ps-ref-sync-package.md) | Get, установленная версия пакета из указанного проекта и синхронизируется с остальными проектами в решении. | 3.0+ |
 | [Uninstall-Package](ps-ref-uninstall-package.md) | Удаляет пакет из проекта, при необходимости удаления его зависимости. | Все |
 

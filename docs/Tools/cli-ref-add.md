@@ -1,31 +1,22 @@
 ---
-title: Команда add NuGet CLI | Документы Microsoft
+title: Команда add NuGet CLI
+description: Справочник по nuget.exe Добавление команды
 author: kraigb
 ms.author: kraigb
-manager: ghogen
+manager: douge
 ms.date: 01/18/2018
 ms.topic: reference
-ms.prod: nuget
-ms.technology: ''
-description: Справочник по nuget.exe Добавление команды
-keywords: NuGet добавить ссылку, добавьте команду пакета
-ms.reviewer:
-- karann-msft
-- unniravindranathan
-ms.workload:
-- dotnet
-- aspnet
-ms.openlocfilehash: 48e093cbae2cecb1652e17a9b26920107aa8aef7
-ms.sourcegitcommit: beb229893559824e8abd6ab16707fd5fe1c6ac26
+ms.openlocfilehash: 4a4201a321ffe0f7fb61f4e98012a1a2d7d8fda4
+ms.sourcegitcommit: 3eab9c4dd41ea7ccd2c28bb5ab16f6fbbec13708
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2018
+ms.lasthandoff: 04/26/2018
 ---
 # <a name="add-command-nuget-cli"></a>Добавьте команду (NuGet CLI)
 
 **Применяется к**: пакета публикации &bullet; **поддерживаемые версии**: 3.3 +
 
-Добавляет источник пакетов не HTTP (папка или UNC-путь) в иерархическом виде, в которой будут созданы папки для пакета идентификатор и номер версии указанного пакета. Например:
+Добавляет источник пакетов не HTTP (папка или UNC-путь) в иерархическом виде, в которой будут созданы папки для пакета идентификатор и номер версии указанного пакета. Пример:
 
     \\myserver\packages
       └─<packageID>
@@ -51,7 +42,7 @@ nuget add <packagePath> -Source <sourcePath> [options]
 | Параметр | Описание |
 | --- | --- |
 | ConfigFile | Файл конфигурации NuGet вступили в силу. Если не указан, `%AppData%\NuGet\NuGet.Config` (Windows) или `~/.nuget/NuGet/NuGet.Config` используется (Mac и Linux).|
-| Развернуть | Добавляет все файлы в пакете источника пакета. |
+| Expand | Добавляет все файлы в пакете источника пакета. |
 | ForceEnglishOutput | *(3.5 +)*  Принудительно nuget.exe выполняется с использованием инвариантных, на основе английского языка и региональных параметров. |
 | Справка | Отображает справку по команде. |
 | Неинтерактивные | Подавление для ввода данных и подтверждений. |

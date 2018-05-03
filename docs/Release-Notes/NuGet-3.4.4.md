@@ -1,22 +1,16 @@
 ---
-title: "Заметки о выпуске NuGet 3.4.4 | Документы Microsoft"
+title: Заметки о выпуске NuGet 3.4.4
+description: Заметки о выпуске для NuGet 3.4.4, включая известные проблемы, исправленные ошибки, добавленные функции и DCR.
 author: karann-msft
-ms.author: karann-msft
-manager: ghogen
+ms.author: karann
+manager: unnir
 ms.date: 11/11/2016
-ms.topic: article
-ms.prod: nuget
-ms.technology: 
-description: "Заметки о выпуске для NuGet 3.4.4, включая известные проблемы, исправленные ошибки, добавленные функции и DCR."
-keywords: "NuGet 3.4.4 заметки о выпуске, исправления, известными проблемами, добавлены функции, DCR"
-ms.reviewer:
-- karann-msft
-- unniravindranathan
-ms.openlocfilehash: fabc10ae5c8e0bd43581f85c7763eb23e9483aaf
-ms.sourcegitcommit: 4651b16a3a08f6711669fc4577f5d63b600f8f58
+ms.topic: conceptual
+ms.openlocfilehash: 891d5c7ee884d31f405118739b57a169b9cd93b3
+ms.sourcegitcommit: 3eab9c4dd41ea7ccd2c28bb5ab16f6fbbec13708
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/02/2018
+ms.lasthandoff: 04/26/2018
 ---
 # <a name="nuget-344-release-notes"></a>Заметки о выпуске NuGet 3.4.4
 
@@ -35,7 +29,7 @@ ms.lasthandoff: 02/02/2018
 ### <a name="changes"></a>Изменения
 
 - Улучшения в пакет усовершенствования упаковкой символов, упаковки с `project.json` и дополнительные [ \#606](https://github.com/NuGet/NuGet.Client/pull/606)
-- Отображение исключений при сбое, поиск проектов в команде обновления [\#605] (https://github.com/NuGet/NuGet.Client/pull/605
+- Отображение исключений при сбое, поиск проектов в команде обновления [\#605] ()https://github.com/NuGet/NuGet.Client/pull/605
 - Чтение входных данных типа пакета `.nuspec` и `project.json` при упаковки [ \#603](https://github.com/NuGet/NuGet.Client/pull/603)
 - Сделайте NuGet.Shared не отдельного проекта. [\#602](https://github.com/NuGet/NuGet.Client/pull/602)
 - Использование времени ожидания принудительной как время ожидания ответа HTTP [ \#599](https://github.com/NuGet/NuGet.Client/pull/599)

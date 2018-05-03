@@ -1,25 +1,16 @@
 ---
-title: Справочник по PowerShell NuGet Find-Package | Документы Microsoft
+title: Справочник по PowerShell NuGet Find-Package
+description: Ссылка для команды Find-Package PowerShell в консоли диспетчера пакетов NuGet в Visual Studio.
 author: kraigb
 ms.author: kraigb
-manager: ghogen
+manager: douge
 ms.date: 6/1/2017
 ms.topic: reference
-ms.prod: nuget
-ms.technology: ''
-description: Ссылка для команды Find-Package PowerShell в консоли диспетчера пакетов NuGet в Visual Studio.
-keywords: Пакет NuGet консоли диспетчера, команд NuGet Powershell, справочник по NuGet Powershell, Find-Package
-ms.reviewer:
-- karann-msft
-- unniravindranathan
-ms.workload:
-- dotnet
-- aspnet
-ms.openlocfilehash: 32b15ff415e77c3e063ded637a614fc8a04d5a0c
-ms.sourcegitcommit: beb229893559824e8abd6ab16707fd5fe1c6ac26
+ms.openlocfilehash: 0faf5c5cf9ae99105e3d76a4f5e37f164c4f4ff3
+ms.sourcegitcommit: 3eab9c4dd41ea7ccd2c28bb5ab16f6fbbec13708
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2018
+ms.lasthandoff: 04/26/2018
 ---
 # <a name="find-package-package-manager-console-in-visual-studio"></a>Find-Package (консоль диспетчера пакетов в Visual Studio)
 
@@ -42,7 +33,7 @@ Find-Package [-Id] <keywords> -Source <string> [-AllVersions] [-First [<int>]]
 | Исходный код | Путь URL-адрес или папку источника пакета для поиска. Пути к локальной папке может быть абсолютным или относительным для текущей папки. Если не указано, `Find-Package` выполняет поиск в текущем выбранном источнике пакетов. |
 | AllVersions | Отображает все доступные версии каждого пакета, а не только последняя версия. |
 | First | Число пакетов, возвращаемых из начала списка; значение по умолчанию — 20. |
-| Пропустить | Пропускает первый &lt;int&gt; пакеты из списка.  |
+| Skip | Пропускает первый &lt;int&gt; пакеты из списка.  |
 | IncludePrerelease | Предварительные выпуски пакетов включает в результаты. |
 | ExactMatch | Указанный для использования &lt;ключевые слова&gt; как идентификатор пакета с учетом регистра. |
 | StartWith | Возвращает пакеты, пакет идентификатор начинается с &lt;ключевые слова&gt;. |

@@ -1,25 +1,16 @@
 ---
-title: Справочник по файлу NuGet packages.config | Документы Майкрософт
+title: Ссылка на файл packages.config NuGet
+description: В проектах некоторых типов в файле packages.config содержится список пакетов NuGet, используемых в проекте.
 author: kraigb
 ms.author: kraigb
-manager: ghogen
+manager: douge
 ms.date: 12/07/2017
 ms.topic: reference
-ms.prod: nuget
-ms.technology: ''
-description: В проектах некоторых типов в файле packages.config содержится список пакетов NuGet, используемых в проекте.
-keywords: файл NuGet packages.config, ссылки на пакеты NuGet, зависимости NuGet
-ms.reviewer:
-- karann-msft
-- unniravindranathan
-ms.workload:
-- dotnet
-- aspnet
-ms.openlocfilehash: 38d4724d25476d372a936cb8ebf08e2b53fcf9f4
-ms.sourcegitcommit: beb229893559824e8abd6ab16707fd5fe1c6ac26
+ms.openlocfilehash: 73234f79cb9eb30327c4e206a5bc51c5bc1c6f1d
+ms.sourcegitcommit: 3eab9c4dd41ea7ccd2c28bb5ab16f6fbbec13708
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2018
+ms.lasthandoff: 04/26/2018
 ---
 # <a name="packagesconfig-reference"></a>Справочник по файлу packages.config
 
@@ -31,11 +22,11 @@ ms.lasthandoff: 03/28/2018
 
 | Атрибут | Обязательно | Описание |
 | --- | --- | --- |
-| идентификатор | Да | Идентификатор пакета, например Newtonsoft.json или Microsoft.AspNet.Mvc. | 
+| id | Да | Идентификатор пакета, например Newtonsoft.json или Microsoft.AspNet.Mvc. | 
 | version | Да | Точная версия устанавливаемого пакета, например 3.1.1 или 4.2.5.11-beta. Строка версии должна содержать по крайней мере три числа. Четвертое число и суффикс предварительной версии являются необязательными. Диапазоны не допускаются. | 
 | targetFramework | Нет | [Моникер целевой платформы (TFM)](target-frameworks.md), применяемый при установке пакета. При установке пакета первоначально задается целевая платформа проекта. В результате элементы `<package>` могут иметь разные моникеры целевых платформ. Например, если вы создаете проект для .NET 4.5.2, устанавливаемые на этом этапе пакеты будут использовать моникер целевой платформы net452. Если в дальнейшем целевая платформа проекта будет изменена на .NET 4.6 и будут добавлены дополнительные пакеты, они начнут использовать моникер целевой платформы net46. В случае несоответствия целевой платформы проекта и значений атрибутов `targetFramework` будут выдаваться предупреждения. В этом случае вы можете переустановить нужные пакеты. | 
 | allowedVersions | Нет | Допустимый диапазон версий пакета, применяемый во время обновления пакета (см. раздел [Ограничение версий для обновления](../consume-packages/reinstalling-and-updating-packages.md#constraining-upgrade-versions)). *Не* влияет на то, какой пакет устанавливается во время операции установки или восстановления. Синтаксис см. в разделе [Управление версиями пакета](../reference/package-versioning.md#version-ranges-and-wildcards). В пользовательском интерфейсе диспетчера пакетов также отключаются все версии за пределами допустимого диапазона. | 
-| developmentDependency | Нет | Если проект-потребитель сам создает пакет NuGet, присвоение значения `true` этому атрибуту зависимости предотвращает включение пакета при создании пакета-потребителя. Значение по умолчанию — `false`. | 
+| developmentDependency | Нет | Если проект-потребитель сам создает пакет NuGet, присвоение значения `true` этому атрибуту зависимости предотвращает включение пакета при создании пакета-потребителя. Значение по умолчанию — `false`. | 
 
 ## <a name="examples"></a>Примеры
 

@@ -1,25 +1,16 @@
 ---
-title: Команда help NuGet CLI | Документы Microsoft
+title: Команда help NuGet CLI
+description: Справочник по командам справки nuget.exe
 author: kraigb
 ms.author: kraigb
-manager: ghogen
+manager: douge
 ms.date: 01/18/2018
 ms.topic: reference
-ms.prod: nuget
-ms.technology: ''
-description: Справочник по командам справки nuget.exe
-keywords: Справка NuGet, команда «Справка»
-ms.reviewer:
-- karann-msft
-- unniravindranathan
-ms.workload:
-- dotnet
-- aspnet
-ms.openlocfilehash: 440861e53b4a9ff73a9d3e8a2a3dad7dbddc9584
-ms.sourcegitcommit: beb229893559824e8abd6ab16707fd5fe1c6ac26
+ms.openlocfilehash: dbfc803e24c824d30e128d6e86cfa3c43660668f
+ms.sourcegitcommit: 3eab9c4dd41ea7ccd2c28bb5ab16f6fbbec13708
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2018
+ms.lasthandoff: 04/26/2018
 ---
 # <a name="help-or--command-nuget-cli"></a>Справка или? команда (NuGet CLI)
 
