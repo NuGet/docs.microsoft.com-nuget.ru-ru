@@ -1,25 +1,16 @@
 ---
-title: Локальные переменные команду NuGet CLI | Документы Microsoft
+title: Локальные переменные команду NuGet CLI
+description: Ссылка для команды локальные nuget.exe
 author: kraigb
 ms.author: kraigb
-manager: ghogen
+manager: douge
 ms.date: 03/19/2018
 ms.topic: reference
-ms.prod: nuget
-ms.technology: ''
-description: Ссылка для команды локальные nuget.exe
-keywords: Справочник по NuGet локальные переменные, локальные команды
-ms.reviewer:
-- karann-msft
-- unniravindranathan
-ms.workload:
-- dotnet
-- aspnet
-ms.openlocfilehash: 0122c79e55b12838bd123cf91bfcbc5dbbd2a65c
-ms.sourcegitcommit: beb229893559824e8abd6ab16707fd5fe1c6ac26
+ms.openlocfilehash: ac07dc306bc23c2fedd33c5627e8d34a6098387c
+ms.sourcegitcommit: 3eab9c4dd41ea7ccd2c28bb5ab16f6fbbec13708
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2018
+ms.lasthandoff: 04/26/2018
 ---
 # <a name="locals-command-nuget-cli"></a>Команда локальные переменные (NuGet CLI)
 

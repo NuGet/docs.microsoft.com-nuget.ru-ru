@@ -1,25 +1,16 @@
 ---
-title: Заметки о выпуске NuGet | Документы Майкрософт
+title: Заметки о выпуске
+description: Указатель заметок о выпуске NuGet и известных проблем для всех версий.
 author: kraigb
 ms.author: kraigb
-manager: ghogen
+manager: douge
 ms.date: 08/14/2017
-ms.topic: article
-ms.prod: nuget
-ms.technology: ''
-description: Указатель заметок о выпуске NuGet и известных проблем для всех версий.
-keywords: заметки о выпуске NuGet, известные проблемы NuGet
-ms.reviewer:
-- karann-msft
-- unniravindranathan
-ms.workload:
-- dotnet
-- aspnet
-ms.openlocfilehash: 643c3eb13a13271b4adc199c1544194e5d79ab9d
-ms.sourcegitcommit: beb229893559824e8abd6ab16707fd5fe1c6ac26
+ms.topic: conceptual
+ms.openlocfilehash: 403717158cb9b3d1e0038bf31033bbf7c1fcdb8c
+ms.sourcegitcommit: 3eab9c4dd41ea7ccd2c28bb5ab16f6fbbec13708
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2018
+ms.lasthandoff: 04/26/2018
 ---
 # <a name="release-notes"></a>Заметки о выпуске
 

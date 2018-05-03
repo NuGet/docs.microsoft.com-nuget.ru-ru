@@ -1,26 +1,17 @@
 ---
-title: Подпись ссылки на пакеты | Документы Microsoft
+title: Подпись ссылка пакетов NuGet
+description: Требования для подписания пакета NuGet.
 author: rido-min
 ms.author: rido-min
-manager: unniravindranathan
-ms.date: 03/06/2018
+manager: unnir
+ms.date: 04/24/2018
 ms.topic: reference
-ms.prod: nuget
-ms.technology: ''
-description: Подписанные пакеты описание компонента.
-keywords: Знак пакета NuGet, подписи, сертификат
-ms.reviewer:
-- ananguar
-- karann-msft
-- unniravindranathan
-ms.workload:
-- dotnet
-- aspnet
-ms.openlocfilehash: a2a338596f7d98ded11da6fb02bafba3521249ab
-ms.sourcegitcommit: beb229893559824e8abd6ab16707fd5fe1c6ac26
+ms.reviewer: ananguar
+ms.openlocfilehash: 751a8ff14bdc3a647985da4f908ad1a0fd0def9a
+ms.sourcegitcommit: 5fcd6d664749aa720359104ef7a66d38aeecadc2
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2018
+ms.lasthandoff: 04/27/2018
 ---
 # <a name="signed-packages"></a>Подписанные пакеты
 
@@ -38,6 +29,9 @@ ms.lasthandoff: 03/28/2018
 
 > [!Important]
 > в настоящее время NuGet.org не принимает подписанных пакетов. Вы можете подписывать пакеты для публикации в пользовательских веб-каналах.
+
+> [!Important]
+> Подписание пакета в настоящее время поддерживается только при использовании nuget.exe в Windows. Проверка подписанных пакетов в настоящее время поддерживается только при использовании nuget.exe или Visual Studio в Windows.
 
 ## <a name="certificate-requirements"></a>Требования к сертификатам
 

@@ -1,25 +1,16 @@
 ---
-title: Заметки о выпуске NuGet 2.7 | Документы Microsoft
-author: karann-msft
-ms.author: karann-msft
-manager: ghogen
-ms.date: 11/11/2016
-ms.topic: article
-ms.prod: nuget
-ms.technology: ''
+title: Заметки о выпуске 2.7 NuGet
 description: Заметки о выпуске для NuGet 2.7, включая известные проблемы, исправленные ошибки, добавленные функции и DCR.
-keywords: NuGet 2.7 заметки о выпуске, исправления, известными проблемами, добавлены функции, DCR
-ms.reviewer:
-- karann-msft
-- unniravindranathan
-ms.workload:
-- dotnet
-- aspnet
-ms.openlocfilehash: 71ced70af127c8219001069739a6cec59d7d1684
-ms.sourcegitcommit: beb229893559824e8abd6ab16707fd5fe1c6ac26
+author: karann-msft
+ms.author: karann
+manager: unnir
+ms.date: 11/11/2016
+ms.topic: conceptual
+ms.openlocfilehash: 4b7cea360764e1b069afacabadd9b94d87e21ecc
+ms.sourcegitcommit: a6ca160b1e7e5c58b135af4eba0e9463127a59e8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2018
+ms.lasthandoff: 04/28/2018
 ---
 # <a name="nuget-27-release-notes"></a>Заметки о выпуске 2.7 NuGet
 
@@ -33,36 +24,36 @@ ms.lasthandoff: 03/28/2018
 
 1. [Майк рот](http://www.codeplex.com/site/users/view/mxrss) ([@mxrss](https://twitter.com/mxrss))
     - Отображение URL-адрес лицензии, если список пакетов и детализации подробно описан.
-1. [Ральф Адам](http://www.codeplex.com/site/users/view/adamralph) ([@adamralph](https://twitter.com/adamralph))
+2. [Ральф Адам](http://www.codeplex.com/site/users/view/adamralph) ([@adamralph](https://twitter.com/adamralph))
     - [#1956](http://nuget.codeplex.com/workitem/1956) -добавить атрибут элемента developmentDependency `packages.config` и использовать их в пакет для включения пакета среды выполнения
-1. [Rafael Nicoletti](http://www.codeplex.com/site/users/view/tkrafael) ([@tkrafael](https://twitter.com/tkrafael))
+3. [Rafael Nicoletti](http://www.codeplex.com/site/users/view/tkrafael) ([@tkrafael](https://twitter.com/tkrafael))
     - Избегайте повторяющийся ключ свойства в команде пакет nuget.exe.
-1. [Phegan Бен](http://www.codeplex.com/site/users/view/benphegan) ([@BenPhegan](https://twitter.com/benphegan))
+4. [Phegan Бен](http://www.codeplex.com/site/users/view/benphegan) ([@BenPhegan](https://twitter.com/benphegan))
     - [#2610](http://nuget.codeplex.com/workitem/2610) -увеличить размер кэша на компьютере до 200.
-1. [Slava Trenogin](http://www.codeplex.com/site/users/view/derigel) ([@derigel](https://twitter.com/derigel))
+5. [Slava Trenogin](http://www.codeplex.com/site/users/view/derigel) ([@derigel](https://twitter.com/derigel))
     - [#3217](http://nuget.codeplex.com/workitem/3217) -диалоговое окно устранить NuGet отображение обновлений на вкладке "Ошибка"
     - Исправление Project.TargetFramework может иметь значение null в РуководительПроекта
     - [#3248](http://nuget.codeplex.com/workitem/3248) -на несуществующий packageId не удастся исправить SharedPackageRepository FindPackage/FindPackagesById
-1. [Кевин Boyle](http://www.codeplex.com/site/users/view/KevinBoyleRG) ([@kevfromireland](https://twitter.com/kevfromireland))
+6. [Кевин Boyle](http://www.codeplex.com/site/users/view/KevinBoyleRG) ([@kevfromireland](https://twitter.com/kevfromireland))
     - [#3234](http://nuget.codeplex.com/workitem/3234) -включить поддержку Nomad проекта
-1. [Corin Blaikie](http://www.codeplex.com/site/users/view/corinblaikie) ([@corinblaikie](https://twitter.com/corinblaikie))
+7. [Corin Blaikie](http://www.codeplex.com/site/users/view/corinblaikie) ([@corinblaikie](https://twitter.com/corinblaikie))
     - [#3252](http://nuget.codeplex.com/workitem/3252) -код Сбой команды push исправление с выхода 0, если файл не существует.
-1. [Veselý Мартин](http://www.codeplex.com/site/users/view/veselkamartin)
+8. [Veselý Мартин](http://www.codeplex.com/site/users/view/veselkamartin)
     - [#3226](http://nuget.codeplex.com/workitem/3226) -исправление ошибок с помощью команды Добавить BindingRedirect, когда проект ссылается на проект базы данных.
-1. [Miroslav Bajtos](http://www.codeplex.com/site/users/view/miroslavbajtos) ([@bajtos](https://twitter.com/bajtos))
+9. [Miroslav Bajtos](http://www.codeplex.com/site/users/view/miroslavbajtos) ([@bajtos](https://twitter.com/bajtos))
     - [#2891](http://nuget.codeplex.com/workitem/2891) -исправление ошибки из nuget.pack неправильного подстановочный знак в атрибуте «исключить».
-1. [Джастин Dearing](http://www.codeplex.com/site/users/view/zippy1981) ([@zippy1981](https://twitter.com/zippy1981))
-    - [#3307](http://nuget.codeplex.com/workitem/3307) -исправление ошибок `NuGet.targets` не передает $(Platform) nuget.exe при восстановлении пакетов.
-1. [Брайан Federici](http://www.codeplex.com/site/users/view/benerdin)
-    - [#3294](http://nuget.codeplex.com/workitem/3294) -исправление ошибки в команду nuget.exe пакета, которая позволит добавлять файлы с одинаковыми именами, но в разных регистрах, вызывает исключение «Уже существует элемент».
-1. [Дэниела Cazzulino](http://www.codeplex.com/site/users/view/dcazzulino) ([@kzu](https://twitter.com/kzu))
-    - [#2990](http://nuget.codeplex.com/workitem/2990) -добавить версию свойство NetPortableProfile классу.
-1. [Дэвид Simner](https://www.codeplex.com/site/users/view/DavidSimner)
-    - [#3460](https://nuget.codeplex.com/workitem/3460) -исправлена ошибка NullReferenceException, если requireApiKey = true, но заголовок X-NUGET-APIKEY не существуют
-1. [Майкл Friis](https://www.codeplex.com/site/users/view/friism) ([@friism](https://twitter.com/friism))
-    - [#3278](https://nuget.codeplex.com/workitem/3278) -файл исправления NuGet.Build целевых объектов, чтобы он правильно работает с MonoDevelop
-1. [Кришнамурти Pranav](https://www.codeplex.com/site/users/view/pranavkm) ([@pranav_km](https://twitter.com/pranav_km))
-    - Повысить производительность команды восстановления, увеличение параллелизма
+10. [Джастин Dearing](http://www.codeplex.com/site/users/view/zippy1981) ([@zippy1981](https://twitter.com/zippy1981))
+     - [#3307](http://nuget.codeplex.com/workitem/3307) -исправление ошибок `NuGet.targets` не передает $(Platform) nuget.exe при восстановлении пакетов.
+11. [Брайан Federici](http://www.codeplex.com/site/users/view/benerdin)
+     - [#3294](http://nuget.codeplex.com/workitem/3294) -исправление ошибки в команду nuget.exe пакета, которая позволит добавлять файлы с одинаковыми именами, но в разных регистрах, вызывает исключение «Уже существует элемент».
+12. [Дэниела Cazzulino](http://www.codeplex.com/site/users/view/dcazzulino) ([@kzu](https://twitter.com/kzu))
+     - [#2990](http://nuget.codeplex.com/workitem/2990) -добавить версию свойство NetPortableProfile классу.
+13. [Дэвид Simner](https://www.codeplex.com/site/users/view/DavidSimner)
+     - [#3460](https://nuget.codeplex.com/workitem/3460) -исправлена ошибка NullReferenceException, если requireApiKey = true, но заголовок X-NUGET-APIKEY не существуют
+14. [Майкл Friis](https://www.codeplex.com/site/users/view/friism) ([@friism](https://twitter.com/friism))
+     - [#3278](https://nuget.codeplex.com/workitem/3278) -файл исправления NuGet.Build целевых объектов, чтобы он правильно работает с MonoDevelop
+15. [Кришнамурти Pranav](https://www.codeplex.com/site/users/view/pranavkm) ([@pranav_km](https://twitter.com/pranav_km))
+     - Повысить производительность команды восстановления, увеличение параллелизма
 
 ## <a name="notable-features-in-the-release"></a>Возможности в выпуске
 
@@ -161,7 +152,7 @@ NuGet 2.7 появилась новая функция для nuget.exe: `nuget.
 
 ### <a name="renaming-the-default-package-source"></a>Переименование источник пакета по умолчанию
 
-NuGet всегда зарегистрировал источник пакета по умолчанию называется «Источник официального пакета NuGet», указывающий на nuget.org. Это имя было verbose и она также не указывать куда он фактически указывает. Для решения этих двух проблем переименовали этот источник пакета, чтобы просто «nuget.org» в пользовательском Интерфейсе. URL-адрес источника пакета также было изменено для включения «www». c префиксом "group.". После использования NuGet 2.7, вашей существующей «источник официального пакета NuGet» автоматически обновится до «nuget.org», как его имя и «https://www.nuget.org/api/v2/» как его URL-адрес.
+NuGet всегда зарегистрировал источник пакета по умолчанию называется «Источник официального пакета NuGet», указывающий на nuget.org. Это имя было verbose и она также не указывать куда он фактически указывает. Для решения этих двух проблем переименовали этот источник пакета, чтобы просто «nuget.org» в пользовательском Интерфейсе. URL-адрес источника пакета также было изменено для включения «www». c префиксом "group.". После использования NuGet 2.7, вашей существующей «источник официального пакета NuGet» автоматически обновится до «nuget.org», как его имя и «<https://www.nuget.org/api/v2/>» как его URL-адрес.
 
 ### <a name="performance-improvements"></a>Улучшения производительности
 

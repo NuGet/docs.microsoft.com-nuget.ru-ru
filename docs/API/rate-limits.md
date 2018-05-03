@@ -1,28 +1,20 @@
 ---
-title: Пределы скорости | Документы Microsoft
-author:
-- cmanu
-- anangaur
-ms.author:
-- cmanu
+title: Пределы NuGet API скорости
+description: API-интерфейсы NuGet будет обязательные пределы скорости для предотвращения нарушений.
+author: cmanu
+ms.author: cmanu
 manager: skofman
 ms.date: 03/20/2018
 ms.topic: reference
-ms.prod: nuget
-ms.technology: ''
-description: API-интерфейсы NuGet будет обязательные пределы скорости для предотвращения нарушений.
-keywords: Интенсивность NuGet интерфейса API, ограничение
 ms.reviewer:
 - skofman
 - anangaur
-ms.workload:
-- dotnet
-- aspnet
-ms.openlocfilehash: f7891d5e4c008219d9f4808f223f3e5e7ae06ced
-ms.sourcegitcommit: fa40be739d093a37d5f7072b62ebdb4f595f4110
+- kraigb
+ms.openlocfilehash: 3aaebef8fff670759c6484a5a8f90a2f4dd58c66
+ms.sourcegitcommit: 3eab9c4dd41ea7ccd2c28bb5ab16f6fbbec13708
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/30/2018
+ms.lasthandoff: 04/26/2018
 ---
 # <a name="rate-limits"></a>Ограничения скорости
 
@@ -45,10 +37,10 @@ NuGet.org API применяет ограничение скорости для 
 
 | API | Ограничение типа | Предельное значение | API usecase |
 |:---|:---|:---|:---|
-**GET** `/api/v1/Packages` | IP | 1000 / мин | Запросить метаданные пакета NuGet через v1 OData `Packages` коллекции |
-**GET** `/api/v1/Search()` | IP | 3000 / мин | Поиск пакетов NuGet через конечную точку поиска v1 | 
-**GET** `/api/v2/Packages` | IP | 20000 / мин | Запросить метаданные пакета NuGet через v2 OData `Packages` коллекции | 
-**GET** `/api/v2/Packages/$count` | IP | 100 / мин | Запросить число пакета NuGet через v2 OData `Packages` коллекции | 
+**ПОЛУЧИТЬ** `/api/v1/Packages` | IP | 1000 / мин | Запросить метаданные пакета NuGet через v1 OData `Packages` коллекции |
+**ПОЛУЧИТЬ** `/api/v1/Search()` | IP | 3000 / мин | Поиск пакетов NuGet через конечную точку поиска v1 | 
+**ПОЛУЧИТЬ** `/api/v2/Packages` | IP | 20000 / мин | Запросить метаданные пакета NuGet через v2 OData `Packages` коллекции | 
+**ПОЛУЧИТЬ** `/api/v2/Packages/$count` | IP | 100 / мин | Запросить число пакета NuGet через v2 OData `Packages` коллекции | 
 
 ## <a name="package-push-and-unlist"></a>Пакет Push и исключить
 
