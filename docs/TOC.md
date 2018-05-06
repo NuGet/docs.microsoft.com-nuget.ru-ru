@@ -85,6 +85,7 @@
 ## [Резервирование префикса идентификатора](reference/id-prefix-reservation.md)
 ## [Пакет SDK для клиента NuGet](reference/nuget-client-sdk.md)
 ## [Ссылка на подписанные пакеты](reference/signed-packages-reference.md)
+## [Организации на сайте nuget.org](reference/organizations-on-nuget-org.md)
 ## Расширение среды
 ### [Поставщики учетных данных NuGet для Visual Studio](reference/extensibility/nuget-credential-providers-for-visual-studio.md)
 ### [Поставщики учетных данных nuget.exe](reference/extensibility/nuget-exe-credential-providers.md)
