@@ -42,7 +42,7 @@
 ### [add](tools/cli-ref-add.md)
 ### [config](tools/cli-ref-config.md)
 ### [delete](tools/cli-ref-delete.md)
-### [help или ?](tools/cli-ref-help.md)
+### [help or ?](tools/cli-ref-help.md)
 ### [init](tools/cli-ref-init.md)
 ### [install](tools/cli-ref-install.md)
 ### [list](tools/cli-ref-list.md)
@@ -114,6 +114,7 @@
 ## [Часто задаваемые вопросы о NuGet](policies/nuget-faq.md)
 ## [Управление](policies/governance.md)
 ## [Экосистема](policies/ecosystem.md)
+## [Запросы данных](policies/Data-requests.md)
 ## [Разрешение спорных вопросов](policies/dispute-resolution.md)
 ## [Удаление пакетов](policies/deleting-packages.md)
 # заметки о выпуске;

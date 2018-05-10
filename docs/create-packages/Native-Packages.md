@@ -1,0 +1,26 @@
+---
+title: Создание собственных пакетов NuGet
+description: Сведения о создании собственных пакетов NuGet, которые содержат код C++ вместо управляемого кода, для использования в проектах C++.
+author: kraigb
+ms.author: kraigb
+manager: douge
+ms.date: 01/09/2017
+ms.topic: conceptual
+ms.openlocfilehash: 1fa8bf23a3fbed686b99f1c783b0ce55b373e548
+ms.sourcegitcommit: 3eab9c4dd41ea7ccd2c28bb5ab16f6fbbec13708
+ms.translationtype: HT
+ms.contentlocale: ru-RU
+ms.lasthandoff: 04/26/2018
+---
+# <a name="creating-native-packages"></a><span data-ttu-id="32089-103">Создание собственных пакетов</span><span class="sxs-lookup"><span data-stu-id="32089-103">Creating native packages</span></span>
+
+<span data-ttu-id="32089-104">Собственный пакет содержит машинный код C++, а не управляемый код, что позволяет использовать его в проектах C++.</span><span class="sxs-lookup"><span data-stu-id="32089-104">A native package contains native C++ code instead of managed code, allowing it to be used within C++ projects.</span></span> <span data-ttu-id="32089-105">(См. [Собственные пакеты C++](../consume-packages/finding-and-choosing-packages.md#native-c-packages) в разделе "Использование".)</span><span class="sxs-lookup"><span data-stu-id="32089-105">(See [Native C++ Packages](../consume-packages/finding-and-choosing-packages.md#native-c-packages) in the Consume section.)</span></span>
+
+<span data-ttu-id="32089-106">Для использования в проекте C++ пакет должен быть ориентирован на платформу `native`.</span><span class="sxs-lookup"><span data-stu-id="32089-106">To be consumable in a C++ project, a package must target the `native` framework.</span></span> <span data-ttu-id="32089-107">Сейчас нет номеров версий, связанных с этой платформой, так как NuGet обрабатывает все проекты C++ одинаково.</span><span class="sxs-lookup"><span data-stu-id="32089-107">At present there are not any version numbers associated with this framework as NuGet treats all C++ projects the same.</span></span>
+
+> [!Note]
+> <span data-ttu-id="32089-108">Не забудьте включить *native* в раздел `<tags>` вашего `.nuspec`, чтобы помочь другим разработчикам найти ваш пакет по этому тегу.</span><span class="sxs-lookup"><span data-stu-id="32089-108">Be sure to include *native* in the `<tags>` section of your `.nuspec` to help other developers find your package by searching on that tag.</span></span>
+
+<span data-ttu-id="32089-109">Собственные пакеты NuGet, ориентированные на `native`, предоставляют файлы в папках `\build`, `\content` и `\tools`; `\lib` в этом случае не используется (NuGet не может добавлять ссылки непосредственно на проект C++).</span><span class="sxs-lookup"><span data-stu-id="32089-109">Native NuGet packages targeting `native` then provide files in `\build`, `\content`, and `\tools` folders; `\lib` is not used in this case (NuGet cannot directly add references to a C++ project).</span></span> <span data-ttu-id="32089-110">Пакет может также содержать целевые объекты и файлы свойств в `\build`, которые NuGet автоматически импортирует в проекты, использующие этот пакет.</span><span class="sxs-lookup"><span data-stu-id="32089-110">A package may also include targets and props files in `\build` that NuGet will automatically import into projects that consume the package.</span></span> <span data-ttu-id="32089-111">Эти файлы должны называться так же, как и идентификатор пакета, и иметь расширения `.targets` и (или) `.props`.</span><span class="sxs-lookup"><span data-stu-id="32089-111">Those files must be named the same as the package ID with the `.targets` and/or `.props` extensions.</span></span> <span data-ttu-id="32089-112">Например, пакет [cpprestsdk](https://nuget.org/packages/cpprestsdk/) содержит файл `cpprestsdk.targets` в своей папке `\build`.</span><span class="sxs-lookup"><span data-stu-id="32089-112">For example, the [cpprestsdk](https://nuget.org/packages/cpprestsdk/) package includes a `cpprestsdk.targets` file in its `\build` folder.</span></span>
+
+<span data-ttu-id="32089-113">Папку `\build` можно использовать для всех пакетов NuGet, а не только для собственных пакетов.</span><span class="sxs-lookup"><span data-stu-id="32089-113">The `\build` folder can be used for all NuGet packages and not just native packages.</span></span> <span data-ttu-id="32089-114">Папка `\build` учитывает целевые платформы так же, как и папки `\content`, `\lib` и `\tools`.</span><span class="sxs-lookup"><span data-stu-id="32089-114">The `\build` folder respects target frameworks just like the `\content`, `\lib`, and `\tools` folders.</span></span> <span data-ttu-id="32089-115">Это означает, что вы можете создать папку `\build\net40` и папку `\build\net45`, и NuGet импортирует необходимые файлы свойств и целевых объектов в проект.</span><span class="sxs-lookup"><span data-stu-id="32089-115">This means you can create a `\build\net40` folder and a `\build\net45` folder and NuGet will import the appropriate props and targets files into the project.</span></span> <span data-ttu-id="32089-116">(Использовать скрипты PowerShell для импорта целевых объектов MSBuild не требуется.)</span><span class="sxs-lookup"><span data-stu-id="32089-116">(Use of PowerShell scripts to import MSBuild targets is not needed.)</span></span>
