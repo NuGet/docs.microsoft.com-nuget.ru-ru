@@ -1,31 +1,22 @@
 ---
-title: Установка клиентских средств NuGet | Документы Майкрософт
+title: Установка клиентских средств NuGet
+description: Рекомендации по установке клиентских средств, интерфейса командной строки (CLI) dotnet и nuget, а также диспетчера пакетов для Visual Studio.
 author: kraigb
 ms.author: kraigb
-manager: ghogen
-ms.date: 01/24/2018
+manager: douge
+ms.date: 04/09/2018
 ms.topic: quickstart
-ms.prod: nuget
-ms.technology: ''
-description: Рекомендации по установке клиентских средств, интерфейса командной строки (CLI) dotnet и nuget, а также диспетчера пакетов для Visual Studio.
-keywords: интерфейс командной строки dotnet.exe, клиентские средства NuGet, диспетчер пакетов NuGet, консоль диспетчера пакетов NuGet, NuGet для Visual Studio, бета-канал NuGet
-ms.reviewer:
-- karann-msft
-- unniravindranathan
-ms.workload:
-- dotnet
-- aspnet
-ms.openlocfilehash: e4dfe1102d1e0e2013136b0ae4975e5036e34642
-ms.sourcegitcommit: ecb598c790d4154366bc92757ec7db1a51c34faf
+ms.openlocfilehash: 6681c910768bc705f5e09340e04e4d368fde5efe
+ms.sourcegitcommit: a6ca160b1e7e5c58b135af4eba0e9463127a59e8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/03/2018
+ms.lasthandoff: 04/28/2018
 ---
 # <a name="installing-nuget-client-tools"></a>Установка клиентских средств NuGet
 
 > **Хотите установить пакет? Ознакомьтесь со [способами установки пакетов NuGet](consume-packages/ways-to-install-a-package.md).**
 
-Чтобы работать с NuGet в качестве потребителя или создателя пакета, вы можете использовать [средства интерфейса командной строки (CLI)](#cli-tools) и [функции NuGet в Visual Studio](#visual-studio). В этой статье кратко описываются возможности различных средств, их установка и приведена сравнительная таблица [доступности функций](#feature-availability).
+Чтобы работать с NuGet в качестве потребителя или создателя пакета, вы можете использовать [средства интерфейса командной строки (CLI)](#cli-tools) и [функции NuGet в Visual Studio](#visual-studio). В этой статье кратко описываются возможности различных средств, их установка и приведена сравнительная таблица [доступности функций](#feature-availability). Сведения о начале использования пакетов с помощью NuGet см. в разделах [Установка и использование пакета (.NET CLI)](quickstart/install-and-use-a-package-using-the-dotnet-cli.md) и [Установка и использование пакета (Visual Studio)](quickstart/install-and-use-a-package-in-visual-studio.md). Чтобы приступить к созданию пакетов NuGet, см. разделы [Создание и публикация пакета NET Standard (dotnet CLI)](quickstart/create-and-publish-a-package-using-the-dotnet-cli.md) и [Создание и публикация пакета NET Standard (Visual Studio)](quickstart/create-and-publish-a-package-using-visual-studio.md).
 
 | Средство&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | Описание: | Скачать&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; |
 |:------------- |:-------------|:-----|
@@ -56,7 +47,7 @@ ms.lasthandoff: 04/03/2018
 
 Установка:
 
-[!INCLUDE[install-cli](includes/install-cli.md)]
+[!INCLUDE [install-cli](includes/install-cli.md)]
 
 > [!Tip]
 > Вы можете обновить существующий nuget.exe до последней версии с помощью команды `nuget update -self` в Windows.

@@ -1,25 +1,16 @@
 ---
-title: Упаковка элементов управления универсальной платформы Windows с помощью NuGet | Документы Майкрософт
+title: Упаковка элементов управления универсальной платформы Windows с помощью NuGet
+description: Описывается, как создавать пакеты NuGet, содержащие элементы управления универсальной платформы Windows, включая необходимые метаданные и вспомогательные файлы для конструкторов Visual Studio и Blend.
 author: kraigb
 ms.author: kraigb
-manager: ghogen
+manager: douge
 ms.date: 03/14/2018
 ms.topic: tutorial
-ms.prod: nuget
-ms.technology: ''
-description: Описывается, как создавать пакеты NuGet, содержащие элементы управления универсальной платформы Windows, включая необходимые метаданные и вспомогательные файлы для конструкторов Visual Studio и Blend.
-keywords: элементы управления UWP NuGet, конструктор XAML в Visual Studio, конструктор Blend, пользовательские элементы управления
-ms.reviewer:
-- karann-msft
-- unniravindranathan
-ms.workload:
-- dotnet
-- aspnet
-ms.openlocfilehash: f024fd1823c77d57d30c4f841bf03494194c8339
-ms.sourcegitcommit: beb229893559824e8abd6ab16707fd5fe1c6ac26
+ms.openlocfilehash: 963846e857c8757176e4fbe1cd60c92a7397ba01
+ms.sourcegitcommit: 3eab9c4dd41ea7ccd2c28bb5ab16f6fbbec13708
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2018
+ms.lasthandoff: 04/26/2018
 ---
 # <a name="creating-uwp-controls-as-nuget-packages"></a>Создание элементов управления универсальной платформы Windows в виде пакетов NuGet
 
