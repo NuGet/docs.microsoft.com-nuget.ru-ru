@@ -7,11 +7,11 @@ manager: doronm
 ms.date: 03/06/2018
 ms.topic: reference
 ms.reviewer: rmpablos
-ms.openlocfilehash: c2c31b71358bc50a1fb9aab8905c279cd1235b07
-ms.sourcegitcommit: 5fcd6d664749aa720359104ef7a66d38aeecadc2
+ms.openlocfilehash: c80334104f7d8b2ccbf16ea2c11dc37b39408eeb
+ms.sourcegitcommit: c8485dc61469511485367d2067b97d6f74b49f6e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/27/2018
+ms.lasthandoff: 05/23/2018
 ---
 # <a name="verify-command-nuget-cli"></a>Команда verify (NuGet CLI)
 
@@ -24,22 +24,32 @@ ms.lasthandoff: 04/27/2018
 ## <a name="usage"></a>Использование
 
 ```cli
-nuget verify <package(s)> [options]
+nuget verify <-All|-Signatures> <package(s)> [options]
 ```
 
 где `<package(s)>` одной или нескольких `.nupkg` файлов.
+
+## <a name="nuget-verify--all"></a>-Все проверки NuGet
+
+Указывает, что все проверки на возможные должна быть выполнена на пакетов.
+
+## <a name="nuget-verify--signatures"></a>Проверка NuGet - подписей
+
+Указывает, что должна быть выполнена проверка подписи пакета.
+
+## <a name="options-for-verify--signatures"></a>Параметры «проверить - подписи»
+
+| Параметр | Описание |
+| --- | --- |
+| CertificateFingerprint | Указывает один или несколько отпечатки сертификата SHA-256, какие знаком должен быть подписан с помощью сертификатов (s). Отпечаток сертификата SHA-256 является хэш сертификата SHA-256. Несколько входов должно быть разделенных точкой с запятой. |
 
 ## <a name="options"></a>Параметры
 
 | Параметр | Описание |
 | --- | --- |
-| Все | Указывает, что все проверки на возможные должна быть выполнена на пакетов. |
-| CertificateFingerprint | Указывает один или несколько отпечатки сертификата SHA-256, какие знаком должен быть подписан с помощью сертификатов (s). Отпечаток сертификата SHA-256 является хэш сертификата SHA-256. Несколько входов должно быть разделенных точкой с запятой. |
 | ConfigFile | Файл конфигурации NuGet вступили в силу. Если не указан, `%AppData%\NuGet\NuGet.Config` (Windows) или `~/.nuget/NuGet/NuGet.Config` используется (Mac и Linux).|
 | ForceEnglishOutput | Принудительно nuget.exe выполняется с использованием инвариантных, на основе английского языка и региональных параметров. |
 | Справка | Отображает справку по команде. |
-| Неинтерактивные | Подавление для ввода данных и подтверждений. |
-| Сигнатуры | Указывает, что должна быть выполнена проверка подписи пакета. |
 | Уровень детализации | Указывает объем сведений в выходных данных: *обычного*, *тихий*, *подробные*. |
 
 ## <a name="examples"></a>Примеры
@@ -52,4 +62,7 @@ nuget verify -Signatures c:\packages\MyPackage.nupkg -CertificateFingerprint CE4
 nuget verify -Signatures MyPackage.nupkg -Verbosity quiet
 
 nuget verify -Signatures .\*.nupkg
+
+nuget verify -All .\*.nupkg
+
 ```
