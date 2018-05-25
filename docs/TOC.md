@@ -30,7 +30,7 @@
 ## [Публикация пакета](create-packages/publish-a-package.md)
 ## Направляющие
 ### [Создание пакетов универсальной платформы Windows](guides/create-uwp-packages.md)
-### [Создание элементов управления универсальной платформы Windows в виде пакетов NuGet](guides/create-uwp-controls.md)
+### [Создание элементов управления пользовательским интерфейсо в виде пакетов NuGet](guides/create-UI-controls.md)
 ### [Создание пакетов .NET Standard или .NET Framework с помощью Visual Studio 2015](guides/create-net-standard-packages-vs2015.md)
 ### [Создание пакетов для Xamarin с помощью Visual Studio 2015](guides/create-packages-for-xamarin.md)
 # Размещение пакетов
