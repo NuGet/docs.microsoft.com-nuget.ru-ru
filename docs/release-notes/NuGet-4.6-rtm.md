@@ -6,22 +6,24 @@ ms.author: anangaur
 manager: unnir
 ms.date: 3/7/2018
 ms.topic: conceptual
-ms.openlocfilehash: d8fc374167e5c7f601c41887c4844854d0177ccb
-ms.sourcegitcommit: 3eab9c4dd41ea7ccd2c28bb5ab16f6fbbec13708
+ms.openlocfilehash: 11e604ad9a28ac2b22880a13ef9d8b41d8c09507
+ms.sourcegitcommit: 8127dd73ff8481a1a01acd9b7004dd131a9d84e7
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/26/2018
+ms.lasthandoff: 05/22/2018
 ---
 # <a name="nuget-46-rtm-release-notes"></a>Заметки о выпуске версии NuGet 4.6 RTM
 
 [Visual Studio 2017 15.6 RTW](https://www.visualstudio.com/news/releasenotes/vs2017-relnotes) включает в себя [NuGet 4.6.0](https://dist.nuget.org/win-x86-commandline/v4.6.0/nuget.exe).
 
 ## <a name="summary-whats-new-in-this-release"></a>Сводка. Новые возможности этого выпуска
-* Добавлена поддержка для [подписывания пакетов](https://docs.microsoft.com/en-us/nuget/create-packages/sign-a-package).  
-* Теперь Visual Studio 2017 и nuget.exe проверяют целостность пакетов перед установкой, восстанавливая пакеты для [подписанных пакетов](https://docs.microsoft.com/en-us/nuget/reference/signed-packages-reference).
+
+* Добавлена поддержка для [подписывания пакетов](../create-packages/sign-a-package.md).
+* Теперь Visual Studio 2017 и nuget.exe проверяют целостность пакетов перед установкой, восстанавливая пакеты для [подписанных пакетов](../reference/signed-packages-reference.md).
 * Улучшена производительность последовательных восстановлений.
 
 ## <a name="known-issues"></a>Известные проблемы
+
 ### <a name="issues-with-net-standard-20-with-net-framework--nuget"></a>Проблемы с .NET Standard 2.0, связанные с .NET Framework и NuGet 
 
 Платформа .NET Standard и ее инструментарий были разработаны таким образом, чтобы проекты, предназначенные для .NET Framework 4.6.1, могли использовать пакеты NuGet и проекты, предназначенные для .NET Standard 2.0 или более ранних версий. [В этом документе](https://github.com/dotnet/standard/issues/481) кратко описаны проблемы, связанные с таким сценарием, план их решения, а также обходные пути, которые можно применить в текущем состоянии.
@@ -29,11 +31,13 @@ ms.lasthandoff: 04/26/2018
 ## <a name="top-issues-fixed-in-this-release"></a>Основные ошибки, исправленные в этом выпуске
 
 **Исправления производительности**
+
 * Файлы ресурсов не записываются при отсутствии изменений — [№ 6491](https://github.com/NuGet/Home/issues/6491)
 * Восстановление приводит к лишним оценкам MSBuild, когда TFM дочерних проектов не совпадают с TFM родительского проекта — [№ 6311](https://github.com/NuGet/Home/issues/6311)
 * Улучшена производительности восстановления NoOp за счет оптимизации характеристик для создания графа зависимостей — [№ 6252](https://github.com/NuGet/Home/issues/6252)
 
 **Ошибки**
+
 * Отправка в локальную папку оставляет NUPKG заблокированным — [№ 6325](https://github.com/NuGet/Home/issues/6325)
 * Реализация подключаемого модуля NuGet: несколько проблем — [№ 6149](https://github.com/NuGet/Home/issues/6149)
 * UIHang — удаление вызова службы запросов из инициализации MEF в VSSolutionManager — [№ 6110](https://github.com/NuGet/Home/issues/6110)
@@ -60,6 +64,5 @@ ms.lasthandoff: 04/26/2018
 * Команда Nuget add приводит к зависанию CentOS — [№ 2708](https://github.com/NuGet/Home/issues/2708)
 * Восстановление с использованием packagesavemode -nupkg завершается сбоем для json.net — [№ 2706](https://github.com/NuGet/Home/issues/2706)
 * Фильтр диспетчера пакетов недоступен в окне выходных данных Visual Studio для команды restore — [№ 2704](https://github.com/NuGet/Home/issues/2704)
-
 
 [Список всех ошибок, исправленных в этом выпуске](https://github.com/NuGet/Home/issues?q=is%3Aissue+is%3Aclosed+milestone%3A%224.6")
