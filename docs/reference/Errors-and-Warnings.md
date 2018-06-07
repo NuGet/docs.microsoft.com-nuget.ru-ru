@@ -1,9 +1,9 @@
 ---
 title: Справочник предупреждения и ошибки NuGet
 description: Полный справочник для предупреждения и ошибки, выданные NuGet при выполнении различных операций NuGet.
-author: kraigb
-ms.author: kraigb
-manager: douge
+author: karann-msft
+ms.author: karann
+manager: unnir
 ms.date: 05/18/2018
 ms.topic: reference
 ms.reviewer: anangaur
@@ -44,11 +44,12 @@ f1_keywords:
 - NU3008
 - NU3018
 - NU3028
-ms.openlocfilehash: 748c2746a61886617e2eefe3e6c4a2e2a5b9d4d3
-ms.sourcegitcommit: 8127dd73ff8481a1a01acd9b7004dd131a9d84e7
+ms.openlocfilehash: 368a9554c5caf92b709f9b29e16b8a7cdb264eec
+ms.sourcegitcommit: 2a6d200012cdb4cbf5ab1264f12fecf9ae12d769
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/22/2018
+ms.lasthandoff: 06/06/2018
+ms.locfileid: "34818520"
 ---
 # <a name="errors-and-warnings"></a>Ошибки и предупреждения
 
@@ -173,7 +174,7 @@ ms.lasthandoff: 05/22/2018
 | --- | --- |
 | **Проблема** | Не удается разрешить ограничений на зависимости между пакетами. |
 | **Пример сообщения** | *Для NuGet.Versioning обнаружен конфликт версий. Непосредственно из проекта, чтобы устранить эту проблему, ссылающиеся на пакет.<br/>  NuGet.Packaging 3.5.0 -> (= 3.5.0) NuGet.Versioning<br/> NuGet.Configuration 4.0.0 -> NuGet.Versioning (= 4.0.0)* |
-| **Решение** | Пакеты с ограничениями зависимостей точные версии не позволяют увеличить версии, при необходимости другие пакеты. Добавьте ссылку на проект напрямую (в файле проекта) к той самой версии требуется. |
+| **Решение** | Пакеты с ограничениями зависимостей точные версии не позволяют увеличить версии, при необходимости другие пакеты. К той самой версии необходимо добавьте ссылку на пакет непосредственно (в файле проекта). |
 
 <a name="nu1108"></a>
 

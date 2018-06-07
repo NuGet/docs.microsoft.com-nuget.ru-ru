@@ -1,16 +1,17 @@
 ---
 title: Справочник по PowerShell синхронизации пакет NuGet
 description: Ссылка для команды PowerShell пакета синхронизации в консоли диспетчера пакетов NuGet в Visual Studio.
-author: kraigb
-ms.author: kraigb
-manager: douge
+author: karann-msft
+ms.author: karann
+manager: unnir
 ms.date: 12/07/2017
 ms.topic: reference
-ms.openlocfilehash: 424c4fbe3ff4b61c665bf7353976d4fb09268185
-ms.sourcegitcommit: 3eab9c4dd41ea7ccd2c28bb5ab16f6fbbec13708
+ms.openlocfilehash: 92f0d7490dea57a69b5a5cb3cb7165f665f60d44
+ms.sourcegitcommit: 2a6d200012cdb4cbf5ab1264f12fecf9ae12d769
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/26/2018
+ms.lasthandoff: 06/06/2018
+ms.locfileid: "34818109"
 ---
 # <a name="sync-package-package-manager-console-in-visual-studio"></a>Sync-Package (консоль диспетчера пакетов в Visual Studio)
 
@@ -28,7 +29,7 @@ Sync-Package [-Id] <string> [-IgnoreDependencies] [-ProjectName <string>] [[-Ver
 
 ## <a name="parameters"></a>Параметры
 
-| Параметр | Описание |
+| Параметр | Описание: |
 | --- | --- |
 | Идентификатор | (Обязательно) Идентификатор пакета для синхронизации. — Идентификатор коммутатора сам является необязательным. |
 | IgnoreDependencies | Установите только этот пакет, а не его зависимости. |

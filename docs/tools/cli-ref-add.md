@@ -1,16 +1,17 @@
 ---
 title: Команда add NuGet CLI
 description: Справочник по nuget.exe Добавление команды
-author: kraigb
-ms.author: kraigb
-manager: douge
+author: karann-msft
+ms.author: karann
+manager: unnir
 ms.date: 01/18/2018
 ms.topic: reference
-ms.openlocfilehash: 4a4201a321ffe0f7fb61f4e98012a1a2d7d8fda4
-ms.sourcegitcommit: 3eab9c4dd41ea7ccd2c28bb5ab16f6fbbec13708
+ms.openlocfilehash: f229ca100463c556f9c4cefc49f52724a9c4ba77
+ms.sourcegitcommit: 2a6d200012cdb4cbf5ab1264f12fecf9ae12d769
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/26/2018
+ms.lasthandoff: 06/06/2018
+ms.locfileid: "34817614"
 ---
 # <a name="add-command-nuget-cli"></a>Команда add (NuGet CLI)
 
@@ -39,7 +40,7 @@ nuget add <packagePath> -Source <sourcePath> [options]
 
 ## <a name="options"></a>Параметры
 
-| Параметр | Описание |
+| Параметр | Описание: |
 | --- | --- |
 | ConfigFile | Файл конфигурации NuGet вступили в силу. Если не указан, `%AppData%\NuGet\NuGet.Config` (Windows) или `~/.nuget/NuGet/NuGet.Config` используется (Mac и Linux).|
 | Expand | Добавляет все файлы в пакете источника пакета. |

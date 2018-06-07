@@ -1,16 +1,17 @@
 ---
 title: Команды установки NuGet CLI
 description: Ссылка для установки команды nuget.exe
-author: kraigb
-ms.author: kraigb
-manager: douge
+author: karann-msft
+ms.author: karann
+manager: unnir
 ms.date: 01/18/2018
 ms.topic: reference
-ms.openlocfilehash: 1c6ec1181f2f619eb8a4f2d87f7910f25b98e0f4
-ms.sourcegitcommit: 00c4c809c69c16fcf4d81012eb53ea22f0691d0b
+ms.openlocfilehash: 8aaf4c2563aa802900a102848fc33fc8708a135d
+ms.sourcegitcommit: 2a6d200012cdb4cbf5ab1264f12fecf9ae12d769
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/16/2018
+ms.lasthandoff: 06/06/2018
+ms.locfileid: "34817893"
 ---
 # <a name="install-command-nuget-cli"></a>Команда install (NuGet CLI)
 
@@ -39,7 +40,7 @@ nuget install <packageID | configFilePath> [options]
 
 ## <a name="options"></a>Параметры
 
-| Параметр | Описание |
+| Параметр | Описание: |
 | --- | --- |
 | ConfigFile | Файл конфигурации NuGet вступили в силу. Если не указан, `%AppData%\NuGet\NuGet.Config` (Windows) или `~/.nuget/NuGet/NuGet.Config` используется (Mac и Linux).|
 | DependencyVersion | *(4.4 +)*  Указывает конкретную версию, переопределение поведения по умолчанию для разрешения зависимостей. |
@@ -50,10 +51,10 @@ nuget install <packageID | configFilePath> [options]
 | Платформа | *(4.4 +)*  Требуемая версия .NET framework используется для выбора зависимостей. Значение по умолчанию «Any» Если не указан. |
 | Справка | Отображает справку по команде. |
 | NoCache | Предотвращает использование кэшированных пакетов NuGet. В разделе [управление глобального пакетами и папками кэша](../consume-packages/managing-the-global-packages-and-cache-folders.md). |
-| NonInteractive | Подавление для ввода данных и подтверждений. |
-| OutputDirectory | Указывает папку, в которой устанавливаются пакеты. Если папка не указана, используется текущая папка. |
+| Неинтерактивные | Подавление для ввода данных и подтверждений. |
+| Выходной каталог | Указывает папку, в которой устанавливаются пакеты. Если папка не указана, используется текущая папка. |
 | PackageSaveMode | Указывает типы файлов для сохранения после установки пакета: один из `nuspec`, `nupkg`, или `nuspec;nupkg`. |
-| PreRelease | Позволяет предварительные пакеты для установки. Этот флаг не является обязательным при восстановлении пакеты с `packages.config`. |
+| Предварительный выпуск | Позволяет предварительные пакеты для установки. Этот флаг не является обязательным при восстановлении пакеты с `packages.config`. |
 | RequireConsent | Восстановление пакетов проверяет, включена ли перед загрузкой и установкой пакетов. Дополнительные сведения см. в разделе [восстановление пакетов](../consume-packages/package-restore.md). |
 | SolutionDirectory | Задает корневую папку решения, для которого необходимо восстановить пакеты. |
 | Исходный код | Указывает список источников пакетов (в виде URL-адреса) для использования. Если не указано, команда использует источники, предоставляемые в файлах конфигурации см. в разделе [NuGet Настройка поведения](../consume-packages/configuring-nuget-behavior.md). |

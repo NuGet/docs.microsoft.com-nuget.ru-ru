@@ -1,16 +1,17 @@
 ---
 title: Объекты pack и restore NuGet в качестве целевых объектов MSBuild
 description: Объекты pack и restore NuGet могут выступать непосредственно в качестве целевых объектов MSBuild в NuGet 4.0+.
-author: kraigb
-ms.author: kraigb
-manager: douge
+author: karann-msft
+ms.author: karann
+manager: unnir
 ms.date: 03/23/2018
 ms.topic: conceptual
-ms.openlocfilehash: 00d763bcfdd2f3db50378a1e7774eae7a2e1fcd1
-ms.sourcegitcommit: 00c4c809c69c16fcf4d81012eb53ea22f0691d0b
+ms.openlocfilehash: f835deabe337236dcabe6654f1963984ab0687ca
+ms.sourcegitcommit: 2a6d200012cdb4cbf5ab1264f12fecf9ae12d769
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/16/2018
+ms.lasthandoff: 06/06/2018
+ms.locfileid: "34818312"
 ---
 # <a name="nuget-pack-and-restore-as-msbuild-targets"></a>Объекты pack и restore NuGet в качестве целевых объектов MSBuild
 
@@ -52,7 +53,7 @@ ms.lasthandoff: 05/16/2018
 | Authors | Authors | Имя текущего пользователя | |
 | Владельцы | Н/Д | Не существует в NuSpec | |
 | Заголовок | Заголовок | Идентификатор пакета| |
-| Описание | Описание | "Описание пакета" | |
+| Описание: | Описание: | "Описание пакета" | |
 | Copyright | Copyright | пустой | |
 | RequireLicenseAcceptance | PackageRequireLicenseAcceptance | False | |
 | LicenseUrl | PackageLicenseUrl | пустой | |
@@ -73,7 +74,7 @@ ms.lasthandoff: 05/16/2018
 - PackageVersion
 - PackageId
 - Authors
-- Описание
+- Описание:
 - Copyright
 - PackageRequireLicenseAcceptance
 - DevelopmentDependency
@@ -298,7 +299,7 @@ msbuild /t:pack <path to .csproj file> /p:NuspecFile=<path to nuspec file> /p:Nu
 
 Дополнительные параметры восстановления могут поступать из свойств MSBuild в файле проекта. Значения также можно задать из командной строки с помощью параметра `/p:` (см. примеры ниже).
 
-| Свойство. | Описание |
+| Свойство. | Описание: |
 |--------|--------|
 | RestoreSources | Разделенный точками с запятой список источников пакетов. |
 | RestorePackagesPath | Путь к папке пакетов пользователя. |
@@ -330,7 +331,7 @@ msbuild /t:restore /p:RestoreConfigFile=<path>
 
 Операция восстановления создает в папке сборки `obj` следующие файлы:
 
-| Файл | Описание |
+| Файл | Описание: |
 |--------|--------|
 | `project.assets.json` | Содержит граф зависимостей все ссылки на пакет. |
 | `{projectName}.projectFileExtension.nuget.g.props` | Ссылки на свойства MSBuild, содержащиеся в пакетах. |

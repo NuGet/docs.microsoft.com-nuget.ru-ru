@@ -1,16 +1,17 @@
 ---
 title: Локальные переменные команду NuGet CLI
 description: Ссылка для команды локальные nuget.exe
-author: kraigb
-ms.author: kraigb
-manager: douge
+author: karann-msft
+ms.author: karann
+manager: unnir
 ms.date: 03/19/2018
 ms.topic: reference
-ms.openlocfilehash: ac07dc306bc23c2fedd33c5627e8d34a6098387c
-ms.sourcegitcommit: 3eab9c4dd41ea7ccd2c28bb5ab16f6fbbec13708
+ms.openlocfilehash: 90e8c85e7a3e0e9520933e2ddd6dd84447475f2b
+ms.sourcegitcommit: 2a6d200012cdb4cbf5ab1264f12fecf9ae12d769
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/26/2018
+ms.lasthandoff: 06/06/2018
+ms.locfileid: "34818205"
 ---
 # <a name="locals-command-nuget-cli"></a>Команда locals (NuGet CLI)
 
@@ -28,7 +29,7 @@ nuget locals <folder> [options]
 
 ## <a name="options"></a>Параметры
 
-| Параметр | Описание |
+| Параметр | Описание: |
 | --- | --- |
 | Clear | Удаляет указанную папку. |
 | ConfigFile | Файл конфигурации NuGet вступили в силу. Если не указан, `%AppData%\NuGet\NuGet.Config` (Windows) или `~/.nuget/NuGet/NuGet.Config` используется (Mac и Linux).|

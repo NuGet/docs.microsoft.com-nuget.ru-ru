@@ -1,16 +1,17 @@
 ---
 title: Удаление пакета NuGet Справочник PowerShell
 description: Ссылка для команды PowerShell удалением пакета в консоли диспетчера пакетов NuGet в Visual Studio.
-author: kraigb
-ms.author: kraigb
-manager: douge
+author: karann-msft
+ms.author: karann
+manager: unnir
 ms.date: 06/01/2017
 ms.topic: reference
-ms.openlocfilehash: 5969526a12cb6e06f23f35a2481d0385bb9780ab
-ms.sourcegitcommit: 3eab9c4dd41ea7ccd2c28bb5ab16f6fbbec13708
+ms.openlocfilehash: 860a58c359c9b723564a70f83aee4eee5cebf16d
+ms.sourcegitcommit: 2a6d200012cdb4cbf5ab1264f12fecf9ae12d769
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/26/2018
+ms.lasthandoff: 06/06/2018
+ms.locfileid: "34818871"
 ---
 # <a name="uninstall-package-package-manager-console-in-visual-studio"></a>Uninstall-Package (консоль диспетчера пакетов в Visual Studio)
 
@@ -29,7 +30,7 @@ Uninstall-Package [-Id] <string> [-RemoveDependencies] [-ProjectName <string>] [
 
 ## <a name="parameters"></a>Параметры
 
-| Параметр | Описание |
+| Параметр | Описание: |
 | --- | --- |
 | Идентификатор | (Обязательно) Идентификатор пакета для удаления. — Идентификатор коммутатора сам является необязательным. |
 | Версия | Версия пакета для удаления, установка значений по умолчанию для текущей установленной версии. |

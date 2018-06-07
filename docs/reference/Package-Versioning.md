@@ -1,17 +1,18 @@
 ---
 title: Справочник по версии пакета NuGet
 description: Точные сведения о задании номера версий и диапазонов для других пакетов, от которого зависит от пакета NuGet и установка зависимостей.
-author: kraigb
-ms.author: kraigb
-manager: douge
+author: karann-msft
+ms.author: karann
+manager: unnir
 ms.date: 03/23/2018
 ms.topic: reference
 ms.reviewer: anangaur
-ms.openlocfilehash: d1da26b55c2c273c15c9c16891bf44abffd160a5
-ms.sourcegitcommit: f0b31af805183cf3a98eabb504e16d9b05223cfe
+ms.openlocfilehash: db529a4aa92f0f0bce0b52b21d2a01bf973d01f2
+ms.sourcegitcommit: 2a6d200012cdb4cbf5ab1264f12fecf9ae12d769
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/22/2018
+ms.lasthandoff: 06/06/2018
+ms.locfileid: "34817601"
 ---
 # <a name="package-versioning"></a>Управление версиями пакета
 
@@ -102,7 +103,7 @@ Nuget.org пакета определяется как пакет v2.0.0 SemVer 
 
 Применительно к зависимости пакетов NuGet поддерживает нотации интервал для указания диапазонов версий, следующим образом:
 
-| Notation | Примененное правило | Описание |
+| Notation | Примененное правило | Описание: |
 |----------|--------------|-------------|
 | 1.0 | x ≥ 1.0 | Минимальная версия включительно |
 | (1.0,) | x > 1.0 | Минимальная версия монопольного |

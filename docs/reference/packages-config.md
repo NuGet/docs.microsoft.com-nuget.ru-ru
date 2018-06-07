@@ -1,16 +1,17 @@
 ---
 title: Ссылка на файл packages.config NuGet
 description: В проектах некоторых типов в файле packages.config содержится список пакетов NuGet, используемых в проекте.
-author: kraigb
-ms.author: kraigb
-manager: douge
+author: karann-msft
+ms.author: karann
+manager: unnir
 ms.date: 05/21/2018
 ms.topic: reference
-ms.openlocfilehash: e10bc1625bc4cea7b7befe18caa22d33a876489b
-ms.sourcegitcommit: f0b31af805183cf3a98eabb504e16d9b05223cfe
+ms.openlocfilehash: 2019ce5961a8237fbda855cd7d5b42948808be3a
+ms.sourcegitcommit: 2a6d200012cdb4cbf5ab1264f12fecf9ae12d769
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/22/2018
+ms.lasthandoff: 06/06/2018
+ms.locfileid: "34817841"
 ---
 # <a name="packagesconfig-reference"></a>Справочник по файлу packages.config
 
@@ -24,7 +25,7 @@ ms.lasthandoff: 05/22/2018
 
 Схема проста: после стандартного заголовка XML находится единственный узел `<packages>`, который содержит один или несколько элементов `<package>` (по одному на каждую ссылку). Каждый элемент `<package>` может иметь указанные ниже атрибуты.
 
-| Атрибут | Обязательно | Описание |
+| Атрибут | Обязательно | Описание: |
 | --- | --- | --- |
 | id | Да | Идентификатор пакета, например Newtonsoft.json или Microsoft.AspNet.Mvc. | 
 | version | Да | Точная версия устанавливаемого пакета, например 3.1.1 или 4.2.5.11-beta. Строка версии должна содержать по крайней мере три числа. Четвертое число и суффикс предварительной версии являются необязательными. Диапазоны не допускаются. | 

@@ -1,16 +1,17 @@
 ---
 title: Справочник по PowerShell Get пакет NuGet
 description: Ссылка для команды Get-Package PowerShell в консоли диспетчера пакетов NuGet в Visual Studio.
-author: kraigb
-ms.author: kraigb
-manager: douge
+author: karann-msft
+ms.author: karann
+manager: unnir
 ms.date: 12/07/2017
 ms.topic: reference
-ms.openlocfilehash: c70e60b7391f19026e2dcd502d667fbe1da7e6e2
-ms.sourcegitcommit: 3eab9c4dd41ea7ccd2c28bb5ab16f6fbbec13708
+ms.openlocfilehash: f4b71fc44e44dcbd5d123a0e2fed63adb79964b5
+ms.sourcegitcommit: 2a6d200012cdb4cbf5ab1264f12fecf9ae12d769
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/26/2018
+ms.lasthandoff: 06/06/2018
+ms.locfileid: "34818507"
 ---
 # <a name="get-package-package-manager-console-in-visual-studio"></a>Get-Package (консоль диспетчера пакетов в Visual Studio)
 
@@ -30,7 +31,7 @@ Get-Package -Source <string> [-ListAvailable] [-Updates] [-ProjectName <string>]
 
 ## <a name="parameters"></a>Параметры
 
-| Параметр | Описание |
+| Параметр | Описание: |
 | --- | --- |
 | Исходный код | Путь URL-адрес или папку для пакета. Пути к локальной папке может быть абсолютным или относительным для текущей папки. Если не указано, `Get-Package` выполняет поиск в текущем выбранном источнике пакетов. При использовании с флагом-ListAvailable, по умолчанию nuget.org. |
 | ListAvailable | Список пакетов, доступных в источнике пакетов, по умолчанию принимается nuget.org. Показывает значение по умолчанию 50 пакетов, пока не будут указаны - PageSize или - первый. |
