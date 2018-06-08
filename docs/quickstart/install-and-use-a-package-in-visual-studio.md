@@ -1,16 +1,17 @@
 ---
 title: Вводное руководство по использованию пакетов NuGet в Visual Studio
 description: Пошаговое руководство по установке и использованию пакета NuGet в проекте Visual Studio.
-author: kraigb
-ms.author: kraigb
-manager: douge
+author: karann-msft
+ms.author: karann
+manager: unnir
 ms.date: 01/23/2018
 ms.topic: quickstart
-ms.openlocfilehash: c61f8929d34bc9ff1a84ee186636543da5bcee63
-ms.sourcegitcommit: 3eab9c4dd41ea7ccd2c28bb5ab16f6fbbec13708
+ms.openlocfilehash: a64a87319e9bc6dc992892783d00dc42db1b1dd8
+ms.sourcegitcommit: 2a6d200012cdb4cbf5ab1264f12fecf9ae12d769
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/26/2018
+ms.lasthandoff: 06/06/2018
+ms.locfileid: "34818858"
 ---
 # <a name="quickstart-install-and-use-a-package-in-visual-studio"></a>Краткое руководство. Установка и использование пакета в Visual Studio
 

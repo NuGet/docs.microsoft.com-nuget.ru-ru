@@ -1,17 +1,17 @@
 ---
 title: Создание пакетов NuGet
 description: Подробное руководство по проектированию и созданию пакета NuGet, включая принятие решений по ключевым аспектам, таким как файлы и управление версиями.
-author: kraigb
-ms.author: kraigb
-manager: douge
+author: karann-msft
+ms.author: karann
+manager: unnir
 ms.date: 12/12/2017
 ms.topic: conceptual
-ms.openlocfilehash: 1657479e1a87f7022caa2fd991127b4ca702cdac
-ms.sourcegitcommit: 00c4c809c69c16fcf4d81012eb53ea22f0691d0b
+ms.openlocfilehash: 435db2d0cddcfd6b9db530cb384cf7facb9170dd
+ms.sourcegitcommit: 2a6d200012cdb4cbf5ab1264f12fecf9ae12d769
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/16/2018
-ms.locfileid: "34191318"
+ms.lasthandoff: 06/06/2018
+ms.locfileid: "34818468"
 ---
 # <a name="creating-nuget-packages"></a>Создание пакетов NuGet
 

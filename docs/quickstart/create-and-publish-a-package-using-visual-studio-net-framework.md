@@ -1,17 +1,17 @@
 ---
 title: Создание и публикация пакета .NET Framework с помощью Visual Studio в Windows
 description: Пошаговое руководство по созданию и публикации пакета NuGet .NET Framework с помощью Visual Studio 2017 в Windows.
-author: kraigb
-ms.author: kraigb
-manager: douge
+author: karann-msft
+ms.author: karann
+manager: unnir
 ms.date: 05/13/2018
 ms.topic: quickstart
-ms.openlocfilehash: ba02b53c6ac0b4172b8611958775980ce401bf9b
-ms.sourcegitcommit: f0b31af805183cf3a98eabb504e16d9b05223cfe
+ms.openlocfilehash: ffa2128b577673e980f4115f37f8685858c36250
+ms.sourcegitcommit: 2a6d200012cdb4cbf5ab1264f12fecf9ae12d769
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/22/2018
-ms.locfileid: "34428819"
+ms.lasthandoff: 06/06/2018
+ms.locfileid: "34818273"
 ---
 # <a name="quickstart-create-and-publish-a-package-using-visual-studio-net-framework-windows"></a>Краткое руководство. Создание и публикация пакета с помощью Visual Studio (.NET Framework, Windows)
 

@@ -1,16 +1,17 @@
 ---
 title: Разрешение споров в отношении имен пакетов NuGet
 description: Процесс разрешения споров в связи с фирменной символикой и товарными знаками, а также других конфликтных ситуаций между издателями пакетов NuGet.
-author: kraigb
-ms.author: kraigb
-manager: douge
+author: karann-msft
+ms.author: karann
+manager: unnir
 ms.date: 01/18/2018
 ms.topic: conceptual
-ms.openlocfilehash: 39fe993d73f11ca4b83ae07b1e8b93ae0682d519
-ms.sourcegitcommit: a6ca160b1e7e5c58b135af4eba0e9463127a59e8
+ms.openlocfilehash: f7749dec0726162f122db91397e9581cfad23890
+ms.sourcegitcommit: 2a6d200012cdb4cbf5ab1264f12fecf9ae12d769
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2018
+ms.lasthandoff: 06/06/2018
+ms.locfileid: "34817549"
 ---
 # <a name="resolving-disputes-over-nuget-package-names"></a>Разрешение споров в отношении имен пакетов NuGet
 
