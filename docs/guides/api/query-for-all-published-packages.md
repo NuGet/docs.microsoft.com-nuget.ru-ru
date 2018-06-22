@@ -12,6 +12,7 @@ ms.sourcegitcommit: 3eab9c4dd41ea7ccd2c28bb5ab16f6fbbec13708
 ms.translationtype: HT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 04/26/2018
+ms.locfileid: "31821373"
 ---
 # <a name="query-for-all-packages-published-to-nugetorg"></a><span data-ttu-id="912e0-103">Запрос всех пакетов, опубликованных на сайте nuget.org</span><span class="sxs-lookup"><span data-stu-id="912e0-103">Query for all packages published to nuget.org</span></span>
 
