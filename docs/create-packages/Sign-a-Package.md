@@ -12,6 +12,7 @@ ms.sourcegitcommit: 8127dd73ff8481a1a01acd9b7004dd131a9d84e7
 ms.translationtype: HT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 05/22/2018
+ms.locfileid: "34449608"
 ---
 # <a name="signing-nuget-packages"></a>Подписывание пакетов NuGet
 
