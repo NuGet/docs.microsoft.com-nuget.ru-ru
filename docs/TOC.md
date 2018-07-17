@@ -58,6 +58,7 @@
 ### [update](tools/cli-ref-update.md)
 ### [verify](tools/cli-ref-verify.md)
 ### [Переменные среды](tools/cli-ref-environment-variables.md)
+### [Поддержка длинных путей](tools/cli-ref-long-path.md)
 ## [Пользовательский интерфейс диспетчера пакетов](tools/package-manager-ui.md)
 ## [Консоль диспетчера пакетов](tools/package-manager-console.md)
 ## [Справочник по PowerShell](tools/powershell-reference.md)
