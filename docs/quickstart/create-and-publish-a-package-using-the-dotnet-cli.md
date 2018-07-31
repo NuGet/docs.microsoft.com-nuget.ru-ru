@@ -6,12 +6,12 @@ ms.author: karann
 manager: unnir
 ms.date: 01/24/2018
 ms.topic: quickstart
-ms.openlocfilehash: c50c92f966cd68477cd3f29ab99857911299b7ea
-ms.sourcegitcommit: 2a6d200012cdb4cbf5ab1264f12fecf9ae12d769
+ms.openlocfilehash: 0f71da0be27369712f718a7ab80d952a467aff2a
+ms.sourcegitcommit: a76ecc58f41c2c5b3536ff4a3f3fcbdf5258177c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/06/2018
-ms.locfileid: "34818455"
+ms.lasthandoff: 07/17/2018
+ms.locfileid: "39069678"
 ---
 # <a name="quickstart-create-and-publish-a-package-dotnet-cli"></a>Краткое руководство. Создание и публикация пакета (dotnet CLI)
 
@@ -35,7 +35,7 @@ ms.locfileid: "34818455"
 
 Каждому пакету NuGet нужен манифест, описывающий его содержимое и зависимости. В итоговом пакете манифестом является файл `.nuspec`, созданный из свойств метаданных NuGet, включенных в файл проекта.
 
-1. Откройте файл проекта (`.csproj`) и добавьте в него следующие минимальные свойства внутри имеющегося тега `<PropertyGroup>`, изменив значения соответствующим образом:
+1. Откройте файл проекта (`.csproj`) и добавьте внутри тега `<PropertyGroup>` следующие минимальные свойства. При этом измените значения соответствующим образом.
 
     ```xml
     <PackageId>AppLogger</PackageId>
