@@ -6,12 +6,12 @@ ms.author: karann
 manager: unnir
 ms.date: 03/27/2018
 ms.topic: conceptual
-ms.openlocfilehash: 4f42403abbf07c2c48ce13c70c49f7f3c15c40e4
-ms.sourcegitcommit: a76ecc58f41c2c5b3536ff4a3f3fcbdf5258177c
+ms.openlocfilehash: b05192038bff071ca7a5b8f2e0f735696d09bef6
+ms.sourcegitcommit: 4d139cb54a46616ae48d1768fa108ae3bf450d5b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/17/2018
-ms.locfileid: "39072370"
+ms.lasthandoff: 08/03/2018
+ms.locfileid: "39508274"
 ---
 # <a name="migrate-from-packagesconfig-to-packagereference"></a>Перенос из packages.config в PackageReference
 
@@ -28,7 +28,7 @@ Visual Studio 2017 версии 15.7 и более поздние версии �
 ### <a name="limitations"></a>Ограничения
 
 * NuGet PackageReference не доступны в Visual Studio 2015 и более ранних версий. Перенесенные проекты можно открывать только в Visual Studio 2017.
-* Миграция в настоящее время не доступна для проекта C++ и ASP.NET.
+* Миграция в настоящее время не доступна для проектов C++ и ASP.NET.
 * Некоторые пакеты не может быть полностью совместимы с PackageReference. Дополнительные сведения см. в разделе [проблемы совместимости пакетов](#package-compatibility-issues).
 
 ### <a name="known-issues"></a>Известные проблемы

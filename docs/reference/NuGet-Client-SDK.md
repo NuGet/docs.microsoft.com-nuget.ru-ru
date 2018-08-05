@@ -1,28 +1,39 @@
 ---
-title: Клиент NuGet версии 3 и NuGetGallery API-интерфейсы
-description: NuGet и NuGetGallery API-интерфейсы являются развивающегося и еще не документированы, но примеры можно найти в блоге Дэйв Glick.
+title: Пакет SDK для клиента NuGet
+description: API-Интерфейс является развивающейся и еще не рассматриваются, но примеры доступны в блоге Дэйв Глику.
 author: karann-msft
 ms.author: karann
 manager: unnir
 ms.date: 01/09/2018
 ms.topic: conceptual
-ms.openlocfilehash: b3b912b4af388a578378c15ad9241ed8ec0de75e
-ms.sourcegitcommit: 2a6d200012cdb4cbf5ab1264f12fecf9ae12d769
+ms.openlocfilehash: f814b0c0e7fac719e4221a8d8e945de703348aba
+ms.sourcegitcommit: 4d139cb54a46616ae48d1768fa108ae3bf450d5b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/06/2018
-ms.locfileid: "34817116"
+ms.lasthandoff: 08/03/2018
+ms.locfileid: "39508066"
 ---
 # <a name="nuget-client-sdk"></a>Пакет SDK для клиента NuGet
 
-Клиент NuGet версии 3 и API-интерфейсы NuGetGallery постоянно развивается и мы работаем над наличие стабильного контактной зоны, который документировать можно быстро.
+> [!Note]
+> Не следует путать с [NuGet *Web* API](https://docs.microsoft.com/en-us/nuget/api/overview)
 
-В то же время примеры и документация для некоторых API-интерфейса можно найти в следующих рядов блога по Dave Glick:
+*Пакет SDK для клиента NuGet* относится к группе библиотек .NET вокруг [NuGet.Client](https://www.nuget.org/packages/NuGet.Client), [Nuget.Packaging](https://www.nuget.org/packages/NuGet.Packaging), и [NuGet.Protocol](https://www.nuget.org/packages/NuGet.Protocol). Эти пакеты замените раннюю [NuGet.Core](https://www.nuget.org/packages/NuGet.Core/) библиотеки.
 
-- [Изучение библиотеки NuGet v3, часть 1: Общие сведения и основные понятия](http://daveaglick.com/posts/exploring-the-nuget-v3-libraries-part-1)
-- [Изучение библиотеки NuGet v3, часть 2: поиск пакетов](http://daveaglick.com/posts/exploring-the-nuget-v3-libraries-part-2)
-- [Изучение библиотеки NuGet v3, часть 3: Установка пакетов](http://daveaglick.com/posts/exploring-the-nuget-v3-libraries-part-3)
+Мы работаем над наличие стабильной контактную зону, который мы скоро документировать.
+
+## <a name="source-code"></a>Исходный код
+
+Исходный код публикуется на сайте GitHub в проекте [NuGet/NuGet.Client](https://github.com/NuGet/NuGet.Client).
+
+## <a name="third-party-documentation"></a>Документацией
+
+Примеры и документация для некоторые API-Интерфейсы можно найти в следующей серии публикаций в блоге, Дэйв Глику, опубликованные 2016:
+
+- [Изучение библиотек NuGet v3, часть 1: введение и основные понятия](http://daveaglick.com/posts/exploring-the-nuget-v3-libraries-part-1)
+- [Изучение библиотек NuGet v3, часть 2: поиск пакетов](http://daveaglick.com/posts/exploring-the-nuget-v3-libraries-part-2)
+- [Изучение библиотек NuGet v3, часть 3: Установка пакетов](http://daveaglick.com/posts/exploring-the-nuget-v3-libraries-part-3)
 
 > [!Note]
-> Эти записи блога, написанных вскоре после **3.4.3** версия NuGet, были выпущены пакеты SDK клиента.
-> Более новые версии пакетов могут быть несовместимы с информацией в блогах.
+> Эти сообщения в блогах были написаны вскоре после **3.4.3** версию NuGet, выпущенные пакеты SDK для клиента.
+> Более новые версии пакетов могут быть несовместимы с информацией в записях блога.
