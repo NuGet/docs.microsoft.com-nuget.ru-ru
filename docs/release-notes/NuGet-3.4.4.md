@@ -30,7 +30,7 @@ ms.locfileid: "31820871"
 ### <a name="changes"></a>Изменения
 
 - Улучшения в пакет усовершенствования упаковкой символов, упаковки с `project.json` и дополнительные [ \#606](https://github.com/NuGet/NuGet.Client/pull/606)
-- Отображение исключений при сбое, поиск проектов в команде обновления [\#605] ()https://github.com/NuGet/NuGet.Client/pull/605
+- Отображение исключений при сбое, поиск проектов в команде обновления [\#605](https://github.com/NuGet/NuGet.Client/pull/605)
 - Чтение входных данных типа пакета `.nuspec` и `project.json` при упаковки [ \#603](https://github.com/NuGet/NuGet.Client/pull/603)
 - Сделайте NuGet.Shared не отдельного проекта. [\#602](https://github.com/NuGet/NuGet.Client/pull/602)
 - Использование времени ожидания принудительной как время ожидания ответа HTTP [ \#599](https://github.com/NuGet/NuGet.Client/pull/599)
