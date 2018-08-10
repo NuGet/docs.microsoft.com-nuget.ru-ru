@@ -7,12 +7,12 @@ manager: unnir
 ms.date: 03/06/2018
 ms.topic: conceptual
 ms.reviewer: anangaur
-ms.openlocfilehash: 9900db1970a89de129d9074e5900e0aa048101de
-ms.sourcegitcommit: 8127dd73ff8481a1a01acd9b7004dd131a9d84e7
+ms.openlocfilehash: 8bbbc785a50e49530bbbd4e88bbd71a8a7bfe911
+ms.sourcegitcommit: 4d139cb54a46616ae48d1768fa108ae3bf450d5b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/22/2018
-ms.locfileid: "34449608"
+ms.lasthandoff: 08/03/2018
+ms.locfileid: "39508183"
 ---
 # <a name="signing-nuget-packages"></a>Подписывание пакетов NuGet
 
@@ -44,7 +44,7 @@ nuget sign MyPackage.nupkg -CertificateSubjectName <MyCertSubjectName> -Timestam
 - Сервера меток времени не удовлетворяет требованиям к сертификату.
 
 > [!Note]
-> Подписанные пакеты должны включать метку времени, чтобы подпись оставалась действительной после истечения срока действия сертификата для подписывания. При подписывании без метки времени операция sign вызывает [предупреждение NU3002](../reference/Errors-and-Warnings.md#nu3002).
+> Подписанные пакеты должны включать метку времени, чтобы подпись оставалась действительной после истечения срока действия сертификата для подписывания. При подписывании без метки времени операция sign вызывает [предупреждение NU3002](../reference/errors-and-warnings/NU3002.md).
 
 ## <a name="verify-a-signed-package"></a>Проверка подписанного пакета
 
@@ -56,7 +56,7 @@ nuget verify -signature MyPackage.nupkg
 
 ## <a name="install-a-signed-package"></a>Установка подписанного пакета
 
-Для установки подписанных пакетов не требуются какие-либо специальные действия.Но если содержимое было изменено с момента подписания, установка блокируется и выдается [ошибка NU3008](../reference/Errors-and-Warnings.md#nu3008).
+Для установки подписанных пакетов не требуются какие-либо специальные действия.Но если содержимое было изменено с момента подписания, установка блокируется и выдается [ошибка NU3008](../reference/errors-and-warnings/NU3008.md).
 
 > [!Warning]
 > Пакеты, подписанные с использованием недоверенных сертификатов, считаются неподписанными и устанавливаются без предупреждений или ошибок, как и любой другой неподписанный пакет.
