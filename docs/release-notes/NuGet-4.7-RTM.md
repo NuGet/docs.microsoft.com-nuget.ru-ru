@@ -6,12 +6,12 @@ ms.author: karann
 manager: unnir
 ms.date: 5/14/2018
 ms.topic: conceptual
-ms.openlocfilehash: f23cc2973fa6370d9b7513d415fd8151b822c104
-ms.sourcegitcommit: 8f0bb8bb9cb91d27d660963ed9b0f32642f420fe
+ms.openlocfilehash: 79be74f9c54e27bf2c08e83c7adf81d1f96ce79a
+ms.sourcegitcommit: 4d139cb54a46616ae48d1768fa108ae3bf450d5b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/17/2018
-ms.locfileid: "34225974"
+ms.lasthandoff: 08/03/2018
+ms.locfileid: "39508167"
 ---
 # <a name="nuget-47-rtm-release-notes"></a>Заметки о выпуске версии NuGet 4.7 RTM
 
@@ -19,7 +19,7 @@ ms.locfileid: "34225974"
 
 ## <a name="summary-whats-new-in-this-release"></a>Сводка. Новые возможности этого выпуска
 
-* Мы предлагаем расширенную операцию подписывания пакетов для включения [подписанных пакетов репозитория](https://github.com/NuGet/Home/wiki/Repository-Signatures).
+* Усовершенствовано подписывание пакетов: теперь поддерживаются [пакеты с подписями репозитория](https://github.com/NuGet/Home/wiki/Repository-Signatures)
 
 * В Visual Studio версии 15.7 мы реализовали возможность [переноса существующих проектов, которые используют формат packages.config вместо PackageReference](https://docs.microsoft.com/en-us/nuget/reference/migrate-packages-config-to-package-reference).
 
@@ -27,13 +27,13 @@ ms.locfileid: "34225974"
 
 ### <a name="the-migrate-packagesconfig-to-packagereference-option-is-not-available-in-the-right-click-context-menu"></a>Параметр `Migrate packages.config to PackageReference...` недоступен в контекстном меню, которое открывается по щелчку правой кнопкой мыши
 
-#### <a name="issue"></a>Проблема
+#### <a name="issue"></a>Проблеми
 
 При первом открытии проект NuGet не удается инициализировать до выполнения операции NuGet. В результате параметр миграции не отображается в контекстном меню, которое открывается по щелчку правой кнопкой мыши `packages.config` или `References`.
 
 #### <a name="workaround"></a>Обходной путь
 
-Выполните одно из следующих действий NuGet:
+Выполните одно из следующих действий NuGet:
 * Откройте пользовательский интерфейс диспетчера пакетов. Для этого щелкните правой кнопкой мыши `References` и выберите `Manage NuGet Packages...`.
 * Откройте консоль диспетчера пакетов. В `Tools > NuGet Package Manager` выберите `Package Manager Console`.
 * Запустите восстановление NuGet. Для этого щелкните правой кнопкой мыши узел решения в обозревателе решений и выберите `Restore NuGet Packages`.

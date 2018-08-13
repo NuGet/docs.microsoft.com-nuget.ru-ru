@@ -6,12 +6,12 @@ ms.author: karann
 manager: unnir
 ms.date: 05/13/2018
 ms.topic: quickstart
-ms.openlocfilehash: ffa2128b577673e980f4115f37f8685858c36250
-ms.sourcegitcommit: 6cffa6ef59b922df2d87aa9c24034d00542983cd
+ms.openlocfilehash: c537ee97b79648428df2c1b52894f536f5626a9e
+ms.sourcegitcommit: 4d139cb54a46616ae48d1768fa108ae3bf450d5b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/10/2018
-ms.locfileid: "37963163"
+ms.lasthandoff: 08/03/2018
+ms.locfileid: "39508261"
 ---
 # <a name="quickstart-create-and-publish-a-package-using-visual-studio-net-framework-windows"></a>Краткое руководство. Создание и публикация пакета с помощью Visual Studio (.NET Framework, Windows)
 
@@ -114,7 +114,7 @@ namespace AppLogger
 
 ## <a name="edit-the-manifest"></a>Изменение манифеста
 
-1. NuGet выдает ошибку при попытке создать пакет со значениями по умолчанию в вашем файле `.nuspec`, поэтому перед продолжением нужно изменить следующие поля. Их использование описано в [разделе об отдельных элементах в справочнике по файлу NUSPEC](../reference/nuspec.md#single-elements).
+1. NuGet выдает ошибку при попытке создать пакет со значениями по умолчанию в вашем файле `.nuspec`, поэтому перед продолжением нужно изменить следующие поля. Их использование описано в [разделе о необязательных элементах метаданных в справочнике по файлу NUSPEC](../reference/nuspec.md#optional-metadata-elements).
 
     - licenseUrl
     - projectUrl

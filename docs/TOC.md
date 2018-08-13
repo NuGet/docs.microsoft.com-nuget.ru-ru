@@ -161,6 +161,7 @@
 ## [Метаданные пакета](api/registration-base-url-resource.md)
 ## [Содержимое пакета](api/package-base-address-resource.md)
 ## [URL-адрес для отправки сообщений о нарушениях](api/report-abuse-resource.md)
+## [Подписи репозитория](api/repository-signatures-resource.md)
 ## [Каталог](api/catalog-resource.md)
 ## [Ограничения скорости](api/rate-limits.md)
 ## [Протоколы nuget.org](api/nuget-protocols.md)
