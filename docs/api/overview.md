@@ -7,12 +7,12 @@ manager: skofman
 ms.date: 10/26/2017
 ms.topic: reference
 ms.reviewer: kraigb
-ms.openlocfilehash: fe843a121e2f1aae376f3e30a7b911792057688f
-ms.sourcegitcommit: e9c58dbfc1af2876337dcc37b1b070e8ddec0388
+ms.openlocfilehash: 0cb40a640a0bab63a63b3b690a34f1f8cbf7fcb8
+ms.sourcegitcommit: c643dd2c44e085601551ff7079d696bcc3ad2b49
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/09/2018
-ms.locfileid: "40020535"
+ms.lasthandoff: 08/21/2018
+ms.locfileid: "42793215"
 ---
 # <a name="nuget-api"></a>API NuGet
 
@@ -21,6 +21,8 @@ NuGet API — это набор конечных точек HTTP, которые
 Этот API используется клиентом NuGet в Visual Studio, nuget.exe и интерфейса командной строки .NET для выполнения операций NuGet, таких как [ `dotnet restore` ](/dotnet/articles/core/preview3/tools/dotnet-restore), поиск в пользовательском Интерфейсе Visual Studio и [ `nuget.exe push` ](../tools/cli-ref-push.md).
 
 Обратите внимание, в некоторых случаях nuget.org имеет дополнительные требования, которые не являются обязательными для других источников пакетов. Эти различия описаны по [протоколы nuget.org](nuget-protocols.md).
+
+Простое перечисление и скачивание доступных nuget.exe версии, см. в разделе [tools.json](tools-json.md) конечной точки.
 
 ## <a name="service-index"></a>Индекс службы
 
