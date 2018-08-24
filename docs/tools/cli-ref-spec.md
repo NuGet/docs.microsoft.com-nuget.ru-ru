@@ -1,51 +1,51 @@
 ---
-title: Спецификация команду NuGet CLI
-description: Справочник по спецификации команду nuget.exe
+title: Спецификации команду интерфейса командной строки NuGet
+description: Справочник по командам спецификаций nuget.exe
 author: karann-msft
 ms.author: karann
 manager: unnir
 ms.date: 01/18/2018
 ms.topic: reference
-ms.openlocfilehash: 17d3c5fc083f52fd9ab4a854ad358995bc55293b
-ms.sourcegitcommit: 2a6d200012cdb4cbf5ab1264f12fecf9ae12d769
+ms.openlocfilehash: cd1dc66676898e2be1c64698886a5ba29a07f88f
+ms.sourcegitcommit: 8d5121af528e68789485405e24e2100fda2868d6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/06/2018
-ms.locfileid: "34817090"
+ms.lasthandoff: 08/23/2018
+ms.locfileid: "42794155"
 ---
-# <a name="spec-command-nuget-cli"></a><span data-ttu-id="0416d-103">Команда характеристик (NuGet CLI)</span><span class="sxs-lookup"><span data-stu-id="0416d-103">spec command (NuGet CLI)</span></span>
+# <a name="spec-command-nuget-cli"></a><span data-ttu-id="f980f-103">спецификации команда (NuGet CLI)</span><span class="sxs-lookup"><span data-stu-id="f980f-103">spec command (NuGet CLI)</span></span>
 
-<span data-ttu-id="0416d-104">**Применяется к:** Создание пакета &bullet; **поддерживаемые версии:** все</span><span class="sxs-lookup"><span data-stu-id="0416d-104">**Applies to:** package creation &bullet; **Supported versions:** all</span></span>
+<span data-ttu-id="f980f-104">**Применяется к:** Создание пакета &bullet; **поддерживаемые версии:** все</span><span class="sxs-lookup"><span data-stu-id="f980f-104">**Applies to:** package creation &bullet; **Supported versions:** all</span></span>
 
-<span data-ttu-id="0416d-105">Приводит к возникновению ошибки `.nuspec` файла для нового пакета.</span><span class="sxs-lookup"><span data-stu-id="0416d-105">Generates a `.nuspec` file for a new package.</span></span> <span data-ttu-id="0416d-106">Если выполняются в той же папке, что и файл проекта (`.csproj`, `.vbproj`, `.fsproj`), `spec` создает токенами `.nuspec` файла.</span><span class="sxs-lookup"><span data-stu-id="0416d-106">If run in the same folder as a project file (`.csproj`, `.vbproj`, `.fsproj`), `spec` creates a tokenized `.nuspec` file.</span></span> <span data-ttu-id="0416d-107">Дополнительные сведения см. в разделе [Создание пакета](../create-packages/creating-a-package.md).</span><span class="sxs-lookup"><span data-stu-id="0416d-107">For additional information, see [Creating a Package](../create-packages/creating-a-package.md).</span></span>
+<span data-ttu-id="f980f-105">Создает `.nuspec` файла для нового пакета.</span><span class="sxs-lookup"><span data-stu-id="f980f-105">Generates a `.nuspec` file for a new package.</span></span> <span data-ttu-id="f980f-106">Если в той же папке, что файл проекта (`.csproj`, `.vbproj`, `.fsproj`), `spec` создает токенами `.nuspec` файл.</span><span class="sxs-lookup"><span data-stu-id="f980f-106">If run in the same folder as a project file (`.csproj`, `.vbproj`, `.fsproj`), `spec` creates a tokenized `.nuspec` file.</span></span> <span data-ttu-id="f980f-107">Дополнительные сведения см. в разделе [Создание пакета](../create-packages/creating-a-package.md).</span><span class="sxs-lookup"><span data-stu-id="f980f-107">For additional information, see [Creating a Package](../create-packages/creating-a-package.md).</span></span>
 
-## <a name="usage"></a><span data-ttu-id="0416d-108">Использование</span><span class="sxs-lookup"><span data-stu-id="0416d-108">Usage</span></span>
+## <a name="usage"></a><span data-ttu-id="f980f-108">Использование</span><span class="sxs-lookup"><span data-stu-id="f980f-108">Usage</span></span>
 
 ```cli
 nuget spec [<packageID>] [options]
 ```
 
-<span data-ttu-id="0416d-109">где `<packageID>` — это дополнительный пакет идентификатор, для сохранения в `.nuspec` файла.</span><span class="sxs-lookup"><span data-stu-id="0416d-109">where `<packageID>` is an optional package identifier to save in the `.nuspec` file.</span></span>
+<span data-ttu-id="f980f-109">где `<packageID>` — это дополнительный пакет идентификатор, чтобы сохранить в `.nuspec` файл.</span><span class="sxs-lookup"><span data-stu-id="f980f-109">where `<packageID>` is an optional package identifier to save in the `.nuspec` file.</span></span>
 
-## <a name="options"></a><span data-ttu-id="0416d-110">Параметры</span><span class="sxs-lookup"><span data-stu-id="0416d-110">Options</span></span>
+## <a name="options"></a><span data-ttu-id="f980f-110">Параметры</span><span class="sxs-lookup"><span data-stu-id="f980f-110">Options</span></span>
 
-| <span data-ttu-id="0416d-111">Параметр</span><span class="sxs-lookup"><span data-stu-id="0416d-111">Option</span></span> | <span data-ttu-id="0416d-112">Описание:</span><span class="sxs-lookup"><span data-stu-id="0416d-112">Description</span></span> |
+| <span data-ttu-id="f980f-111">Параметр</span><span class="sxs-lookup"><span data-stu-id="f980f-111">Option</span></span> | <span data-ttu-id="f980f-112">Описание:</span><span class="sxs-lookup"><span data-stu-id="f980f-112">Description</span></span> |
 | --- | --- |
-| <span data-ttu-id="0416d-113">AssemblyPath</span><span class="sxs-lookup"><span data-stu-id="0416d-113">AssemblyPath</span></span> | <span data-ttu-id="0416d-114">Указывает путь к сборке для использования метаданных.</span><span class="sxs-lookup"><span data-stu-id="0416d-114">Specifies the path to the assembly to use for metadata.</span></span> |
-| <span data-ttu-id="0416d-115">Force</span><span class="sxs-lookup"><span data-stu-id="0416d-115">Force</span></span> | <span data-ttu-id="0416d-116">Перезаписывает все существующие `.nuspec` файла.</span><span class="sxs-lookup"><span data-stu-id="0416d-116">Overwrites any existing `.nuspec` file.</span></span> |
-| <span data-ttu-id="0416d-117">ForceEnglishOutput</span><span class="sxs-lookup"><span data-stu-id="0416d-117">ForceEnglishOutput</span></span> | <span data-ttu-id="0416d-118">*(3.5 +)*  Принудительно nuget.exe выполняется с использованием инвариантных, на основе английского языка и региональных параметров.</span><span class="sxs-lookup"><span data-stu-id="0416d-118">*(3.5+)* Forces nuget.exe to run using an invariant, English-based culture.</span></span> |
-| <span data-ttu-id="0416d-119">Справка</span><span class="sxs-lookup"><span data-stu-id="0416d-119">Help</span></span> | <span data-ttu-id="0416d-120">Отображает справку по команде.</span><span class="sxs-lookup"><span data-stu-id="0416d-120">Displays help information for the command.</span></span> |
-| <span data-ttu-id="0416d-121">Неинтерактивные</span><span class="sxs-lookup"><span data-stu-id="0416d-121">NonInteractive</span></span> | <span data-ttu-id="0416d-122">Подавление для ввода данных и подтверждений.</span><span class="sxs-lookup"><span data-stu-id="0416d-122">Suppresses prompts for user input or confirmations.</span></span> |
-| <span data-ttu-id="0416d-123">Уровень детализации</span><span class="sxs-lookup"><span data-stu-id="0416d-123">Verbosity</span></span> | <span data-ttu-id="0416d-124">Указывает объем сведений в выходных данных: *обычного*, *тихий*, *подробные*.</span><span class="sxs-lookup"><span data-stu-id="0416d-124">Specifies the amount of detail displayed in the output: *normal*, *quiet*, *detailed*.</span></span> |
+| <span data-ttu-id="f980f-113">AssemblyPath</span><span class="sxs-lookup"><span data-stu-id="f980f-113">AssemblyPath</span></span> | <span data-ttu-id="f980f-114">Указывает путь к сборке, используемый для метаданных.</span><span class="sxs-lookup"><span data-stu-id="f980f-114">Specifies the path to the assembly to use for metadata.</span></span> |
+| <span data-ttu-id="f980f-115">Force</span><span class="sxs-lookup"><span data-stu-id="f980f-115">Force</span></span> | <span data-ttu-id="f980f-116">Перезаписываются все существующие `.nuspec` файл.</span><span class="sxs-lookup"><span data-stu-id="f980f-116">Overwrites any existing `.nuspec` file.</span></span> |
+| <span data-ttu-id="f980f-117">ForceEnglishOutput</span><span class="sxs-lookup"><span data-stu-id="f980f-117">ForceEnglishOutput</span></span> | <span data-ttu-id="f980f-118">*(3.5 и более поздние)*  Заставляет nuget.exe для выполнения с помощью инвариантный, основанное на английский язык и региональные параметры.</span><span class="sxs-lookup"><span data-stu-id="f980f-118">*(3.5+)* Forces nuget.exe to run using an invariant, English-based culture.</span></span> |
+| <span data-ttu-id="f980f-119">Справка</span><span class="sxs-lookup"><span data-stu-id="f980f-119">Help</span></span> | <span data-ttu-id="f980f-120">Отображает справку для команды.</span><span class="sxs-lookup"><span data-stu-id="f980f-120">Displays help information for the command.</span></span> |
+| <span data-ttu-id="f980f-121">Неинтерактивная</span><span class="sxs-lookup"><span data-stu-id="f980f-121">NonInteractive</span></span> | <span data-ttu-id="f980f-122">Подавление для пользователя данные или подтверждения.</span><span class="sxs-lookup"><span data-stu-id="f980f-122">Suppresses prompts for user input or confirmations.</span></span> |
+| <span data-ttu-id="f980f-123">Уровень детализации</span><span class="sxs-lookup"><span data-stu-id="f980f-123">Verbosity</span></span> | <span data-ttu-id="f980f-124">Указывает объем сведений, в выходных данных: *обычный*, *quiet*, *подробные*.</span><span class="sxs-lookup"><span data-stu-id="f980f-124">Specifies the amount of detail displayed in the output: *normal*, *quiet*, *detailed*.</span></span> |
 
-<span data-ttu-id="0416d-125">См. также [переменные среды](cli-ref-environment-variables.md)</span><span class="sxs-lookup"><span data-stu-id="0416d-125">Also see [Environment variables](cli-ref-environment-variables.md)</span></span>
+<span data-ttu-id="f980f-125">Также см. в разделе [переменные среды](cli-ref-environment-variables.md)</span><span class="sxs-lookup"><span data-stu-id="f980f-125">Also see [Environment variables](cli-ref-environment-variables.md)</span></span>
 
-## <a name="examples"></a><span data-ttu-id="0416d-126">Примеры</span><span class="sxs-lookup"><span data-stu-id="0416d-126">Examples</span></span>
+## <a name="examples"></a><span data-ttu-id="f980f-126">Примеры</span><span class="sxs-lookup"><span data-stu-id="f980f-126">Examples</span></span>
 
 ```cli
 nuget spec
 
 nuget spec MyPackage
 
-nuget spec -a MyAssembly.dll
+nuget spec -AssemblyPath MyAssembly.dll
 ```
