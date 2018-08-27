@@ -6,12 +6,12 @@ ms.author: karann
 manager: unnir
 ms.date: 05/18/2018
 ms.topic: quickstart
-ms.openlocfilehash: e97773d79b22db1f08d868190895a9417b12c924
-ms.sourcegitcommit: 6cffa6ef59b922df2d87aa9c24034d00542983cd
+ms.openlocfilehash: af6e6e015f2e4adccd99171abb37e7291551351c
+ms.sourcegitcommit: 8d5121af528e68789485405e24e2100fda2868d6
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/10/2018
-ms.locfileid: "37963091"
+ms.lasthandoff: 08/23/2018
+ms.locfileid: "42794103"
 ---
 # <a name="quickstart-create-and-publish-a-nuget-package-using-visual-studio-net-standard-windows-only"></a>Краткое руководство. Создание и публикация пакета NuGet с помощью Visual Studio (.NET Standard, только для Windows)
 
@@ -149,6 +149,26 @@ msbuild /t:pack /p:Configuration=Release
 ### <a name="manage-the-published-package"></a>Управление опубликованным пакетом
 
 [!INCLUDE [publish-manage](includes/publish-manage.md)]
+
+## <a name="adding-a-readme-and-other-files"></a>Добавление файла сведений и других файлов
+
+Чтобы напрямую указать файлы, включаемые в пакет, измените файл проекта и используйте свойство `content`:
+
+```xml
+<ItemGroup>
+  <Content Include="readme.txt">
+    <Pack>true</Pack>
+    <PackagePath>\</PackagePath>
+  </Content>
+</ItemGroup>
+```
+
+В корень пакета будет включен файл с именем `readme.txt`. Visual Studio отображает содержимое этого файла в виде обычного текста сразу после установки пакета напрямую. (Файлы сведений не отображаются для пакетов, устанавливаемых как зависимости.) Например, вот как выглядит файл сведений для пакета HtmlAgilityPack:
+
+![Отображение файла сведений для пакета NuGet при установке](../create-packages/media/Create_01-ShowReadme.png)
+
+> [!Note]
+> Обычное добавление файла readme.txt в корень проекта не приведет к включению его в итоговый пакет.
 
 ## <a name="related-topics"></a>См. также
 

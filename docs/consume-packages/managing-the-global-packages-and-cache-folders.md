@@ -6,12 +6,12 @@ ms.author: karann
 manager: unnir
 ms.date: 03/19/2018
 ms.topic: conceptual
-ms.openlocfilehash: 89f70c8d22f5a6409bc3db751646a253f6ad034a
-ms.sourcegitcommit: 2a6d200012cdb4cbf5ab1264f12fecf9ae12d769
+ms.openlocfilehash: 545e658d26b557f27d6534bf677f467e65a315b4
+ms.sourcegitcommit: 8d5121af528e68789485405e24e2100fda2868d6
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/06/2018
-ms.locfileid: "34817488"
+ms.lasthandoff: 08/23/2018
+ms.locfileid: "42793622"
 ---
 # <a name="managing-the-global-packages-cache-and-temp-folders"></a>Управление папкой установки глобальных пакетов, кэшем и временными папками
 
@@ -22,6 +22,7 @@ ms.locfileid: "34817488"
 | global&#8209;packages | В папку *global-packages* NuGet устанавливает любой загруженный пакет. Каждый пакет полностью развертывается во вложенную папку, соответствующую идентификатору пакета и номеру версии. Проекты в формате PackageReference всегда используют пакеты непосредственно из этой папки. При использовании `packages.config` пакеты устанавливаются в папку *global-packages*, а затем копируются папку проекта `packages`.<br/><ul><li>Windows: `%userprofile%\.nuget\packages`</li><li>Mac/Linux: `~/.nuget/packages`</li><li>Переопределяет с помощью переменной среды NUGET_PACKAGES [параметры конфигурации](../reference/nuget-config-file.md#config-section) `globalPackagesFolder` или `repositoryPath` (при использовании PackageReference и `packages.config` соответственно) или свойство MSBuild `RestorePackagesPath` (только MSBuild). Переменная среды имеет приоритет над параметром конфигурации.</li></ul> |
 | http&#8209;cache | Диспетчер пакетов Visual Studio (NuGet 3.x +) и `dotnet` инструмент хранят копии загруженных пакетов в этом кеше (сохраненные как `.dat` файла), организованные в подпапки для каждого источника пакета. Пакеты не развернуты. Срок действия кэша составляет 30 минут.<br/><ul><li>Windows: `%localappdata%\NuGet\v3-cache`</li><li>Mac/Linux: `~/.local/share/NuGet/v3-cache`</li><li>Переопределяет с помощью переменной среды NUGET_HTTP_CACHE_PATH.</li></ul> |
 | temp | Папка, в которой NuGet хранит временные файлы, используемые в различных операциях.<br/><li>Windows: `%temp%\NuGetScratch`</li><li>Mac/Linux: `/tmp/NuGetScratch`</li></ul> |
+| plugins-cache **4.8+** | Папка, в которой NuGet хранит результаты запросов на утверждение операций.<br/><ul><li>Windows: `%localappdata%\NuGet\plugins-cache`</li><li>Mac/Linux: `~/.local/share/NuGet/plugins-cache`</li><li>Переопределите с помощью переменной среды NUGET_PLUGINS_CACHE_PATH.</li></ul> |
 
 > [!Note]
 > NuGet 3.5 и более ранних версий использует папку *packages-cache* вместо *http-cache*, которая находится по следующему пути: `%localappdata%\NuGet\Cache`.
@@ -34,7 +35,25 @@ ms.locfileid: "34817488"
 
 ## <a name="viewing-folder-locations"></a>Просмотр расположения папок
 
-Расположения папок можно просмотреть с помощью команды [dotnet nuget locals](/dotnet/core/tools/dotnet-nuget-locals):
+Расположение можно просмотреть с помощью команды [nuget locals](../tools/cli-ref-locals.md):
+
+```cli
+# Display locals for all folders: global-packages, http cache, temp and plugins cache
+nuget locals all -list
+```
+
+Типичные выходные данные выглядят следующим образом (Windows; user1 —это имя текущего пользователя):
+
+```output
+http-cache: C:\Users\user1\AppData\Local\NuGet\v3-cache
+global-packages: C:\Users\user1\.nuget\packages\
+temp: C:\Users\user1\AppData\Local\Temp\NuGetScratch
+plugins-cache: C:\Users\user1\AppData\Local\NuGet\plugins-cache
+```
+
+(Папка `package-cache` используется в NuGet 2.x. Ее содержимое можно посмотреть с помощью NuGet 3.5 и более ранних версий.)
+
+Расположения папок можно также просмотреть с помощью команды [dotnet nuget locals](/dotnet/core/tools/dotnet-nuget-locals):
 
 ```cli
 dotnet nuget locals all --list
@@ -46,26 +65,10 @@ dotnet nuget locals all --list
 info : http-cache: /home/user1/.local/share/NuGet/v3-cache
 info : global-packages: /home/user1/.nuget/packages/
 info : temp: /tmp/NuGetScratch
+info : plugins-cache: /home/user1/.local/share/NuGet/plugins-cache
 ```
 
-Чтобы отобразить расположение отдельной папки, используйте `http-cache`, `global-packages` или `temp`, а не `all`. 
-
-Расположение можно также просмотреть с помощью команды [nuget locals](../tools/cli-ref-locals.md):
-
-```cli
-# Display locals for all folders: global-packages, cache, and temp
-nuget locals all -list
-```
-
-Типичные выходные данные выглядят следующим образом (Windows; user1 —это имя текущего пользователя):
-
-```output
-http-cache: C:\Users\user1\AppData\Local\NuGet\v3-cache
-global-packages: C:\Users\user1\.nuget\packages\
-temp: C:\Users\user1\AppData\Local\Temp\NuGetScratch
-```
-
-(Папка `package-cache` используется в NuGet 2.x. Ее содержимое можно посмотреть с помощью NuGet 3.5 и более ранних версий.)
+Чтобы отобразить расположение отдельной папки, используйте `http-cache`, `global-packages`, `temp` или `plugins-cache`, а не `all`.
 
 ## <a name="clearing-local-folders"></a>Очистка локальных папок
 
@@ -86,6 +89,10 @@ nuget locals global-packages -clear
 # Clear the temporary cache (use either command)
 dotnet nuget locals temp --clear
 nuget locals temp -clear
+
+# Clear the plugins cache (use either command)
+dotnet nuget locals plugins-cache --clear
+nuget locals plugins-cache -clear
 
 # Clear all caches (use either command)
 dotnet nuget locals all --clear

@@ -6,12 +6,12 @@ ms.author: karann
 manager: unnir
 ms.date: 01/11/2018
 ms.topic: conceptual
-ms.openlocfilehash: e3c52f1e49a53b89d7e5c0728c02a7915db2aeb9
-ms.sourcegitcommit: 2a6d200012cdb4cbf5ab1264f12fecf9ae12d769
+ms.openlocfilehash: 3fe59ef03632053182b034052e93a5f2e6f444bd
+ms.sourcegitcommit: c643dd2c44e085601551ff7079d696bcc3ad2b49
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/06/2018
-ms.locfileid: "34817984"
+ms.lasthandoff: 08/21/2018
+ms.locfileid: "42792955"
 ---
 # <a name="nuget-frequently-asked-questions"></a>Вопросы и ответы по NuGet
 
@@ -210,7 +210,7 @@ NuGet использует для скачивания пакетов прото
 - Ваш географический регион
 - Версия вашей операционной системы
 - Конфигурация компьютера (ЦП, сетевые компоненты, жесткий диск)
-- Сведения об установке компьютера за прокси-сервером или брандмауэром
+- Защищена ли виртуальная машина прокси-сервером или брандмауэром
 - Установленные на компьютере версии платформы .NET
 - Версии кроссплатформенных средств, таких как интерфейс командной строки .NET или DNU, которые вы используете
 
