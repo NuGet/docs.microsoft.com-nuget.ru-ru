@@ -3,16 +3,15 @@ title: Справочник по целевой платформы, для NuGet
 description: Ссылки на целевую платформу NuGet позволяют определить и изолировать зависимые от платформы компоненты пакета.
 author: karann-msft
 ms.author: karann
-manager: unnir
 ms.date: 12/11/2017
 ms.topic: reference
 ms.reviewer: anangaur
-ms.openlocfilehash: c9267945b8055b536cf35911c36a066981ef67b6
-ms.sourcegitcommit: c643dd2c44e085601551ff7079d696bcc3ad2b49
+ms.openlocfilehash: 047ede14c7935844cb4f6d0315772c2a1190e5b8
+ms.sourcegitcommit: 1d1406764c6af5fb7801d462e0c4afc9092fa569
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/21/2018
-ms.locfileid: "42793295"
+ms.lasthandoff: 09/04/2018
+ms.locfileid: "43547263"
 ---
 # <a name="target-frameworks"></a>Требуемые версии .NET Framework
 
@@ -280,7 +279,7 @@ Tizen | tizen | tizen3 |
 
 Кроме того, пакеты NuGet для Xamarin могут использовать дополнительные платформы, определенные для Xamarin. См. раздел [Создание пакетов NuGet для Xamarin](https://developer.xamarin.com/guides/cross-platform/advanced/nuget/).
 
-| name | Описание: | .NET Standard |
+| name | Описание | .NET Standard |
 | --- | --- | ---
 | monoandroid | Поддержка Mono для ОС Android | netstandard1.4 |
 | monotouch | Поддержка Mono для iOS | netstandard1.4 |

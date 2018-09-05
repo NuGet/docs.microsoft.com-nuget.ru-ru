@@ -3,15 +3,14 @@ title: Объекты pack и restore NuGet в качестве целевых �
 description: Объекты pack и restore NuGet могут выступать непосредственно в качестве целевых объектов MSBuild в NuGet 4.0+.
 author: karann-msft
 ms.author: karann
-manager: unnir
 ms.date: 03/23/2018
 ms.topic: conceptual
-ms.openlocfilehash: 0e7e0952519afdcb4b50f31d33cce2a92e3579b4
-ms.sourcegitcommit: a76ecc58f41c2c5b3536ff4a3f3fcbdf5258177c
+ms.openlocfilehash: 07296ce5a9ba85d68eca5f4915d6efea00dc8980
+ms.sourcegitcommit: 1d1406764c6af5fb7801d462e0c4afc9092fa569
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/17/2018
-ms.locfileid: "39069704"
+ms.lasthandoff: 09/04/2018
+ms.locfileid: "43548876"
 ---
 # <a name="nuget-pack-and-restore-as-msbuild-targets"></a>Объекты pack и restore NuGet в качестве целевых объектов MSBuild
 
@@ -53,7 +52,7 @@ ms.locfileid: "39069704"
 | Authors | Authors | Имя текущего пользователя | |
 | Владельцы | Н/Д | Не существует в NuSpec | |
 | Заголовок | Заголовок | Идентификатор пакета| |
-| Описание: | Описание: | "Описание пакета" | |
+| Описание | Описание | "Описание пакета" | |
 | Copyright | Copyright | пустой | |
 | RequireLicenseAcceptance | PackageRequireLicenseAcceptance | False | |
 | LicenseUrl | PackageLicenseUrl | пустой | |
@@ -74,7 +73,7 @@ ms.locfileid: "39069704"
 - PackageVersion
 - PackageId
 - Authors
-- Описание:
+- Описание
 - Copyright
 - PackageRequireLicenseAcceptance
 - DevelopmentDependency
@@ -299,7 +298,7 @@ msbuild /t:pack <path to .csproj file> /p:NuspecFile=<path to nuspec file> /p:Nu
 
 Дополнительные параметры восстановления могут поступать из свойств MSBuild в файле проекта. Значения также можно задать из командной строки с помощью параметра `/p:` (см. примеры ниже).
 
-| Свойство. | Описание: |
+| Свойство. | Описание |
 |--------|--------|
 | RestoreSources | Разделенный точками с запятой список источников пакетов. |
 | RestorePackagesPath | Путь к папке пакетов пользователя. |
@@ -331,7 +330,7 @@ msbuild /t:restore /p:RestoreConfigFile=<path>
 
 Операция восстановления создает в папке сборки `obj` следующие файлы:
 
-| Файл | Описание: |
+| Файл | Описание |
 |--------|--------|
 | `project.assets.json` | Содержит все ссылки на пакеты в графе зависимостей. |
 | `{projectName}.projectFileExtension.nuget.g.props` | Ссылки на свойства MSBuild, содержащиеся в пакетах. |

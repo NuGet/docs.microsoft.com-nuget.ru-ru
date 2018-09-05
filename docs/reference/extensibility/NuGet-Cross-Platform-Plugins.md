@@ -3,15 +3,14 @@ title: NuGet кросс-подключаемые модули платформы
 description: NuGet cross платформы подключаемые модули для NuGet.exe, dotnet.exe, msbuild.exe и Visual Studio
 author: nkolev92
 ms.author: nikolev
-manager: rrelyea
 ms.date: 07/01/2018
 ms.topic: conceptual
-ms.openlocfilehash: cf2c4fb484703b034a8569d053f2417fe58e41ff
-ms.sourcegitcommit: 8d5121af528e68789485405e24e2100fda2868d6
+ms.openlocfilehash: fdefc5b6189051fd83b2de644080284c09dd85f4
+ms.sourcegitcommit: 1d1406764c6af5fb7801d462e0c4afc9092fa569
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/23/2018
-ms.locfileid: "42794184"
+ms.lasthandoff: 09/04/2018
+ms.locfileid: "43548210"
 ---
 # <a name="nuget-cross-platform-plugins"></a>NuGet кросс-подключаемые модули платформы
 

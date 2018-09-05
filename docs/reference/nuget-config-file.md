@@ -1,17 +1,16 @@
 ---
-title: Ссылка на файл NuGet.config
+title: Справочник по файлу NuGet.config
 description: Справочник по файлу NuGet.Config, включая разделы config, bindingRedirects, packageRestore, solution и packageSource.
 author: karann-msft
 ms.author: karann
-manager: unnir
 ms.date: 10/25/2017
 ms.topic: reference
-ms.openlocfilehash: 3d6741b2d724b967e76ba65547e84adcd461a521
-ms.sourcegitcommit: 2a6d200012cdb4cbf5ab1264f12fecf9ae12d769
+ms.openlocfilehash: 504a48224051265164f9ab183e63fa5e7f5867e6
+ms.sourcegitcommit: 1d1406764c6af5fb7801d462e0c4afc9092fa569
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/06/2018
-ms.locfileid: "34818405"
+ms.lasthandoff: 09/04/2018
+ms.locfileid: "43546919"
 ---
 # <a name="nugetconfig-reference"></a>Справочник по NuGet.config
 
@@ -43,13 +42,13 @@ ms.locfileid: "34818405"
 
 Содержит различные параметры конфигурации, которые можно задавать с помощью [команды `nuget config`](../tools/cli-ref-config.md).
 
-`dependencyVersion` и `repositoryPath` применяются только к проектам с помощью `packages.config`. `globalPackagesFolder` применяется только к проектам, используя формат PackageReference.
+`dependencyVersion` и `repositoryPath` применяются только к проектам с помощью `packages.config`. `globalPackagesFolder` применяется только к проектам, в формате PackageReference.
 
 | Ключ | Значение |
 | --- | --- |
 | dependencyVersion (только `packages.config`) | Значение `DependencyVersion` по умолчанию для установки, восстановления и обновления пакета, если параметр `-DependencyVersion` не указан напрямую. Это значение также используется в пользовательском интерфейсе диспетчера пакетов NuGet. Возможные значения: `Lowest`, `HighestPatch`, `HighestMinor`, `Highest`. |
-| параметр globalPackagesFolder (только с помощью PackageReference проекты) | Расположение глобальной папки пакетов по умолчанию. Значение по умолчанию — `%userprofile%\.nuget\packages` (Windows) или `~/.nuget/packages` (Mac и Linux). В файлах `nuget.config` для конкретных проектов можно использовать относительный путь. Этот параметр может переопределяться переменную среды NUGET_PACKAGES имеет более высокий приоритет. |
-| repositoryPath (только `packages.config`) | Расположение, в котором следует установить пакеты NuGet вместо папки `$(Solutiondir)/packages` по умолчанию. В файлах `nuget.config` для конкретных проектов можно использовать относительный путь. Этот параметр может переопределяться переменную среды NUGET_PACKAGES имеет более высокий приоритет. |
+| globalPackagesFolder (проекты только с помощью PackageReference) | Расположение глобальной папки пакетов по умолчанию. Значение по умолчанию — `%userprofile%\.nuget\packages` (Windows) или `~/.nuget/packages` (Mac и Linux). В файлах `nuget.config` для конкретных проектов можно использовать относительный путь. Чтобы переопределить этот параметр, в переменной среды NUGET_PACKAGES, который имеет более высокий приоритет. |
+| repositoryPath (только `packages.config`) | Расположение, в котором следует установить пакеты NuGet вместо папки `$(Solutiondir)/packages` по умолчанию. В файлах `nuget.config` для конкретных проектов можно использовать относительный путь. Чтобы переопределить этот параметр, в переменной среды NUGET_PACKAGES, который имеет более высокий приоритет. |
 | defaultPushSource | Определяет URL-адрес источника пакета или путь к нему, который следует использовать по умолчанию, если другие источники пакета для операции не обнаружены. |
 | http_proxy http_proxy.user http_proxy.password no_proxy | Параметры прокси-сервера, которые следует использовать при подключении к источникам пакета; значение `http_proxy` должно иметь формат `http://<username>:<password>@<domain>`. Пароли зашифровываются, и их нельзя добавить вручную. Значение параметра `no_proxy` представляет собой разделенный запятыми список доменов, для которых производится обход прокси-сервера. В качестве этих значений можно также использовать переменные среды http_proxy и no_proxy. Дополнительные сведения см. в записи блога [Параметры прокси-сервера в NuGet](http://skolima.blogspot.com/2012/07/nuget-proxy-settings.html) (skolima.blogspot.com). |
 
@@ -124,7 +123,7 @@ ms.locfileid: "34818405"
 
 ### <a name="packagesources"></a>packageSources
 
-Выводит список всех известных источников пакетов. Во время операций восстановления и с любой проект в формате PackageReference, порядок учитывается. NuGet нарушать порядок источников для установки и обновления с проектами с помощью `packages.config`.
+Выводит список всех известных источников пакетов. Порядок игнорируется во время операций восстановления, а также для любого проекта, в формате PackageReference. NuGet учитывает порядок источников для установки и операции обновления с проектами, использующими `packages.config`.
 
 | Ключ | Значение |
 | --- | --- |

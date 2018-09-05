@@ -3,16 +3,15 @@ title: Справочник по резервирования префикса �
 description: Описание компонента резервирования префикса идентификатора пакета и руководство по созданию настройке.
 author: diverdan92
 ms.author: diverdan92
-manager: unnir
 ms.date: 10/09/2017
 ms.topic: reference
 ms.reviewer: ananguar
-ms.openlocfilehash: 10d017d67cf2bd49812c5d54f9fca063f32cc052
-ms.sourcegitcommit: 6cffa6ef59b922df2d87aa9c24034d00542983cd
+ms.openlocfilehash: 0711f3ee00b4a387d676ca43c98a9467effed90a
+ms.sourcegitcommit: 1d1406764c6af5fb7801d462e0c4afc9092fa569
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/10/2018
-ms.locfileid: "37948399"
+ms.lasthandoff: 09/04/2018
+ms.locfileid: "43546594"
 ---
 # <a name="package-id-prefix-reservation"></a>Резервирование префикса идентификатора пакета
 

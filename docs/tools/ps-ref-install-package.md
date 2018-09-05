@@ -3,19 +3,18 @@ title: Справочник по PowerShell NuGet Install-Package
 description: Справочник по команду PowerShell Install-Package в консоли диспетчера пакетов NuGet в Visual Studio.
 author: karann-msft
 ms.author: karann
-manager: unnir
 ms.date: 06/01/2017
 ms.topic: reference
-ms.openlocfilehash: 6b2326d7b1ada8a337ae50ffd09f9deea80545af
-ms.sourcegitcommit: 2a6d200012cdb4cbf5ab1264f12fecf9ae12d769
+ms.openlocfilehash: e7ddf9ad97cbb4ec9cfc8b01f366511239f41416
+ms.sourcegitcommit: 1d1406764c6af5fb7801d462e0c4afc9092fa569
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/06/2018
-ms.locfileid: "34817958"
+ms.lasthandoff: 09/04/2018
+ms.locfileid: "43546030"
 ---
 # <a name="install-package-package-manager-console-in-visual-studio"></a>Install-Package (консоль диспетчера пакетов в Visual Studio)
 
-*В этом разделе описываются команды в [консоль диспетчера пакетов NuGet](package-manager-console.md) в Visual Studio в Windows. Общая команда PowerShell Install-Package. в разделе [PowerShell PackageManagement ссылка](/powershell/module/packagemanagement/?view=powershell-6).*
+*В этом разделе описываются команды в [консоли диспетчера пакетов NuGet](package-manager-console.md) в Visual Studio в Windows. Общая команда PowerShell Install-Package, см. в разделе [Справочник по PowerShell PackageManagement](/powershell/module/packagemanagement/?view=powershell-6).*
 
 Устанавливает пакет и его зависимости в проект.
 
@@ -27,7 +26,7 @@ Install-Package [-Id] <string> [-IgnoreDependencies] [-ProjectName <string>] [[-
     [-WhatIf] [<CommonParameters>]
 ```
 
-В NuGet 2.8 + `Install-Package` может понизить уровень существующий пакет в проекте. Например при наличии 5.1.0-rc1 Microsoft.AspNet.MVC установлен следующая команда будет понизить его до 5.0.0:
+В NuGet 2.8 + `Install-Package` возможность возврата существующего пакета в проекте. Например если у вас установлен 5.1.0-rc1 Microsoft.AspNet.MVC, следующую команду бы понизить его до 5.0.0:
 
 ```ps
 Install-Package Microsoft.AspNet.MVC -Version 5.0.0.
@@ -35,23 +34,23 @@ Install-Package Microsoft.AspNet.MVC -Version 5.0.0.
 
 ## <a name="parameters"></a>Параметры
 
-| Параметр | Описание: |
+| Параметр | Описание |
 | --- | --- |
-| Идентификатор | (Обязательно) Идентификатор пакета для установки. (*3.0 +*) может быть идентификатор или URL-адрес `packages.config` файл или `.nupkg` файла. — Идентификатор коммутатора сам является необязательным. |
-| IgnoreDependencies | Установите только этот пакет, а не его зависимости. |
-| ИмяПроекта | Проект, в который необходимо установить пакет, установка значений по умолчанию для проекта по умолчанию. |
-| Исходный код | Путь URL-адрес или папку источника пакета для поиска. Пути к локальной папке может быть абсолютным или относительным для текущей папки. Если не указано, `Install-Package` выполняет поиск в текущем выбранном источнике пакетов. |
-| Версия | Версия пакета, чтобы установить, по умолчанию используется последняя версия. |
-| IncludePrerelease | Считает, что предварительные версии пакетов для установки. Если не указано, рассматриваются только стабильные пакеты. |
-| FileConflictAction | Действие, выполняемое при появлении запроса, чтобы игнорировать существующие файлы, связанные с проектом или перезаписать. Возможными значениями являются *перезаписи, пропустить, None, OverwriteAll*, и *(3.0 +)* *IgnoreAll*. |
-| DependencyVersion | Версия пакеты зависимостей для использования, которые может принимать одно из следующих действий:<br/><ul><li>*Наименьший* (по умолчанию): самая ранняя версия</li><li>*HighestPatch*: версия с исправлением минимально основных минимально дополнительный: наибольшая</li><li>*HighestMinor*: версия с наименьшим основной, наивысший дополнительный номер: наибольшая исправления</li><li>*Наибольший* (по умолчанию для пакета обновления без параметров): самую новую версию</li></ul>Можно задать значение по умолчанию с помощью [ `dependencyVersion` ](../reference/nuget-config-file.md#config-section) в `Nuget.Config` файла. |
-| WhatIf | Показывает, что произойдет при запуске команды без фактического выполнения установки. |
+| Идентификатор | (Обязательно) Идентификатор пакета для установки. (*3.0 +*) идентификатор может быть путь или URL-адрес `packages.config` файл или `.nupkg` файл. — Идентификатор сам является необязательным. |
+| IgnoreDependencies | Установите только этот пакет, не к ее зависимостям. |
+| ИмяПроекта | Проект, в который необходимо установить пакет, по умолчанию используется тип проекта по умолчанию. |
+| Исходный код | Путь к URL-адрес или папке источника пакета для поиска. Пути к локальной папке может быть абсолютным или относительным для текущей папки. Если этот параметр опущен, `Install-Package` выполняет поиск в текущем выбранном источнике пакета. |
+| Версия | Версия пакета, чтобы установить, по умолчанию до последней версии. |
+| IncludePrerelease | Считает, что предварительные версии пакетов для установки. Если этот параметр опущен, учитываются только стабильные пакеты. |
+| FileConflictAction | Действие, выполняемое при появлении запроса на перезапись или игнорировать существующие файлы, связанные с проектом. Возможные значения: *перезаписи, игнорировать, None, OverwriteAll*, и *(3.0 или более поздней)* *IgnoreAll*. |
+| DependencyVersion | Версия пакеты зависимостей для использования, которые может принимать одно из следующих:<br/><ul><li>*Наименьшее* (по умолчанию): самую раннюю версию</li><li>*HighestPatch*: версии с улучшением минимально основных, минимально незначительные, самый высокий</li><li>*HighestMinor*: версия с наименьшим основных, наибольший исправления незначительных: наибольшая</li><li>*Самый высокий* (по умолчанию для Update-Package без параметров): самую старшую версию</li></ul>Можно задать значение по умолчанию с помощью [ `dependencyVersion` ](../reference/nuget-config-file.md#config-section) в `Nuget.Config` файл. |
+| WhatIf | Показывает, что произойдет при выполнении команды без фактического выполнения установки. |
 
 Ни один из этих параметров принимает входные данные или подстановочный знак символов конвейера.
 
 ## <a name="common-parameters"></a>Общие параметры
 
-`Install-Package` поддерживает следующие [Общие параметры PowerShell](http://go.microsoft.com/fwlink/?LinkID=113216): отладка, действие при возникновении ошибки, ErrorVariable, OutBuffer, OutVariable, PipelineVariable, Verbose, WarningAction и WarningVariable.
+`Install-Package` поддерживает следующие [Общие параметры PowerShell](http://go.microsoft.com/fwlink/?LinkID=113216): отладки, действие при возникновении ошибки, ErrorVariable, OutBuffer, OutVariable, PipelineVariable, Verbose, WarningAction и WarningVariable.
 
 ## <a name="examples"></a>Примеры
 

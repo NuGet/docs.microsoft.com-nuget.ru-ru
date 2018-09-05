@@ -3,16 +3,15 @@ title: Обзор API NuGet
 description: NuGet API — это набор конечных точек HTTP, которые могут использоваться для загрузки пакетов, получить метаданные, публикации новых пакетов и т. д.
 author: joelverhagen
 ms.author: jver
-manager: skofman
 ms.date: 10/26/2017
 ms.topic: reference
 ms.reviewer: kraigb
-ms.openlocfilehash: 0cb40a640a0bab63a63b3b690a34f1f8cbf7fcb8
-ms.sourcegitcommit: c643dd2c44e085601551ff7079d696bcc3ad2b49
+ms.openlocfilehash: 770173d6b84048cf42a5da46cbc474d8cf604a08
+ms.sourcegitcommit: 1d1406764c6af5fb7801d462e0c4afc9092fa569
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/21/2018
-ms.locfileid: "42793215"
+ms.lasthandoff: 09/04/2018
+ms.locfileid: "43547507"
 ---
 # <a name="nuget-api"></a>API NuGet
 
@@ -50,7 +49,7 @@ NuGet V3 API называется таким образом, так как он 
 
 **Индекс службы** описаны различные ресурсы. Ниже приведены текущий набор поддерживаемых ресурсов.
 
-Имя ресурса                                                          | Обязательно | Описание:
+Имя ресурса                                                          | Обязательно | Описание
 ---------------------------------------------------------------------- | -------- | -----------
 [`PackagePublish`](package-publish-resource.md)                        | да      | Push-уведомлений и удалить (или удалить из списка) пакеты.
 [`SearchQueryService`](search-query-service-resource.md)               | да      | Фильтровать и искать пакеты по ключевому слову.
@@ -81,7 +80,7 @@ DELETE | Удаляет или из списка ресурсов.
 
 ## <a name="http-status-codes"></a>Коды состояния HTTP
 
-Код | Описание:
+Код | Описание
 ---- | -----
 200  | Успех, и текст ответа.
 201  | Успех и ресурс был создан.
@@ -103,7 +102,7 @@ DELETE | Удаляет или из списка ресурсов.
 
 ## <a name="http-request-headers"></a>Заголовки HTTP-запроса
 
-name                     | Описание:
+name                     | Описание
 ------------------------ | -----------
 X-NuGet-ApiKey           | Требуется для принудительной отправки и удаления, см. в разделе [ `PackagePublish` ресурсов](package-publish-resource.md)
 X-NuGet версии клиента   | **Рекомендуется использовать** и заменяется `X-NuGet-Protocol-Version`

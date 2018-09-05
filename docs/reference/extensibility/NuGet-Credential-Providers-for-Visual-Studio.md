@@ -3,15 +3,14 @@ title: Поставщики учетных данных NuGet для Visual Stud
 description: Поставщики учетных данных NuGet пройти проверку подлинности с веб-каналами путем реализации интерфейса IVsCredentialProvider в расширении Visual Studio.
 author: karann-msft
 ms.author: karann
-manager: unnir
 ms.date: 01/09/2017
 ms.topic: conceptual
-ms.openlocfilehash: e8d8ae22300b55b93badb65864163d959105dca2
-ms.sourcegitcommit: 8d5121af528e68789485405e24e2100fda2868d6
+ms.openlocfilehash: abe009fee5863c55a188f4d7c71ed0924dd067ff
+ms.sourcegitcommit: 1d1406764c6af5fb7801d462e0c4afc9092fa569
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/23/2018
-ms.locfileid: "42793907"
+ms.lasthandoff: 09/04/2018
+ms.locfileid: "43547958"
 ---
 # <a name="authenticating-feeds-in-visual-studio-with-nuget-credential-providers"></a>Проверка подлинности веб-каналов в Visual Studio с помощью поставщиков учетных данных NuGet
 
@@ -78,7 +77,7 @@ public interface IVsCredentialProvider
 
 #### <a name="getcredentialasync"></a>GetCredentialAsync
 
-| Входной параметр |Описание:|
+| Входной параметр |Описание|
 | ----------------|-----------|
 | URI uri | Uri источника пакета, для которого запрашиваются учетные данные.|
 | IWebProxy прокси-сервера | Веб-прокси, который используется для связи в сети. Значение NULL, если проверка подлинности прокси-сервер не настроен. |

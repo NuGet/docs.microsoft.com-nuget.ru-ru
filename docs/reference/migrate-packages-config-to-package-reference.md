@@ -3,15 +3,14 @@ title: Переход с package.config на форматов PackageReference
 description: Сведения о том, как миграция проекта из формата управления package.config в PackageReference, который поддерживается в .NET Core 2.0 и Visual Studio 2017 и NuGet 4.0 +
 author: karann-msft
 ms.author: karann
-manager: unnir
 ms.date: 03/27/2018
 ms.topic: conceptual
-ms.openlocfilehash: b05192038bff071ca7a5b8f2e0f735696d09bef6
-ms.sourcegitcommit: 4d139cb54a46616ae48d1768fa108ae3bf450d5b
+ms.openlocfilehash: 05a82e48c7083a19c50a05fa1df74ebfff8030d1
+ms.sourcegitcommit: 1d1406764c6af5fb7801d462e0c4afc9092fa569
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/03/2018
-ms.locfileid: "39508274"
+ms.lasthandoff: 09/04/2018
+ms.locfileid: "43546690"
 ---
 # <a name="migrate-from-packagesconfig-to-packagereference"></a>Перенос из packages.config в PackageReference
 
@@ -41,7 +40,7 @@ Visual Studio 2017 версии 15.7 и более поздние версии �
 
 #### <a name="workaround"></a>Обходной путь 
 
-Выполните одно из следующих действий NuGet. 
+Выполните одно из следующих действий NuGet: 
 * Откройте пользовательский интерфейс диспетчера пакетов. Для этого щелкните правой кнопкой мыши `References` и выберите `Manage NuGet Packages...`. 
 * Откройте консоль диспетчера пакетов. В `Tools > NuGet Package Manager` выберите `Package Manager Console`. 
 * Запустите восстановление NuGet. Для этого щелкните правой кнопкой мыши узел решения в обозревателе решений и выберите `Restore NuGet Packages`. 

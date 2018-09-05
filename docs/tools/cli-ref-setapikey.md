@@ -1,23 +1,22 @@
 ---
-title: Команда setapikey NuGet CLI
-description: Справочник по командной setapikey nuget.exe
+title: Команды интерфейса командной строки NuGet setapikey
+description: Справочник по командам setapikey nuget.exe
 author: karann-msft
 ms.author: karann
-manager: unnir
 ms.date: 01/18/2018
 ms.topic: reference
-ms.openlocfilehash: 66fc62074b4e7c39ff2ed6b515eee9f821530536
-ms.sourcegitcommit: 2a6d200012cdb4cbf5ab1264f12fecf9ae12d769
+ms.openlocfilehash: b00e8b1f7a6fda9c1a0c079069fa8ee08a45b419
+ms.sourcegitcommit: 1d1406764c6af5fb7801d462e0c4afc9092fa569
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/06/2018
-ms.locfileid: "34817688"
+ms.lasthandoff: 09/04/2018
+ms.locfileid: "43549224"
 ---
 # <a name="setapikey-command-nuget-cli"></a>Команда setapikey (NuGet CLI)
 
-**Применяется к:** потребления пакета, публикация &bullet; **поддерживаемые версии:** все
+**Применяется к:** использование пакета, публикация &bullet; **поддерживаемые версии:** все
 
-Сохраняет ключ API для URL-адрес данного сервера в `NuGet.Config` , чтобы его не нужно вводить для последующих команд.
+Сохраняет ключ API для URL-адрес данного сервера в `NuGet.Config` таким образом, чтобы ничего не нужно вводить для последующих команд.
 
 ## <a name="usage"></a>Использование
 
@@ -25,19 +24,19 @@ ms.locfileid: "34817688"
 nuget setapikey <key> -Source <url> [options]
 ```
 
-где `<source>` определяет сервер и `<key>` ключа или пароля для сохранения. Если `<source>` — этот параметр опущен, подразумевается nuget.org.
+где `<source>` идентифицирует сервер и `<key>` ключ или пароль для сохранения. Если `<source>` является опущен, подразумевается nuget.org.
 
 ## <a name="options"></a>Параметры
 
-| Параметр | Описание: |
+| Параметр | Описание |
 | --- | --- |
-| ConfigFile | Файл конфигурации NuGet вступили в силу. Если не указан, `%AppData%\NuGet\NuGet.Config` (Windows) или `~/.nuget/NuGet/NuGet.Config` используется (Mac и Linux).|
-| ForceEnglishOutput | *(3.5 +)*  Принудительно nuget.exe выполняется с использованием инвариантных, на основе английского языка и региональных параметров. |
-| Справка | Отображает справку по команде. |
-| Неинтерактивные | Подавление для ввода данных и подтверждений. |
-| Уровень детализации | Указывает объем сведений в выходных данных: *обычного*, *тихий*, *подробные*. |
+| ConfigFile | Чтобы применить файл конфигурации NuGet. Если не указан, `%AppData%\NuGet\NuGet.Config` (Windows) или `~/.nuget/NuGet/NuGet.Config` используется (Mac/Linux).|
+| ForceEnglishOutput | *(3.5 и более поздние)*  Заставляет nuget.exe для выполнения с помощью инвариантный, основанное на английский язык и региональные параметры. |
+| Справка | Отображает справку для команды. |
+| Неинтерактивная | Подавление для пользователя данные или подтверждения. |
+| Уровень детализации | Указывает объем сведений, в выходных данных: *обычный*, *quiet*, *подробные*. |
 
-См. также [переменные среды](cli-ref-environment-variables.md)
+Также см. в разделе [переменные среды](cli-ref-environment-variables.md)
 
 ## <a name="examples"></a>Примеры
 

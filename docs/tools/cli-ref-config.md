@@ -1,23 +1,22 @@
 ---
-title: Команда config NuGet CLI
-description: Ссылка для выполнения команды конфигурации nuget.exe
+title: Команды интерфейса командной строки NuGet config
+description: Справочник по командам config nuget.exe
 author: karann-msft
 ms.author: karann
-manager: unnir
 ms.date: 01/18/2018
 ms.topic: reference
-ms.openlocfilehash: 9deab9fcca740ea99da61b7d54700a29c1813e88
-ms.sourcegitcommit: 2a6d200012cdb4cbf5ab1264f12fecf9ae12d769
+ms.openlocfilehash: 376b69186ad22d4d94a1df51146b833a1f6f9bd9
+ms.sourcegitcommit: 1d1406764c6af5fb7801d462e0c4afc9092fa569
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/06/2018
-ms.locfileid: "34818169"
+ms.lasthandoff: 09/04/2018
+ms.locfileid: "43546482"
 ---
-# <a name="config-command-nuget-cli"></a>Команда config (NuGet CLI)
+# <a name="config-command-nuget-cli"></a>команды config (NuGet CLI)
 
 **Применяется к:** все &bullet; **поддерживаемые версии**: все
 
-Возвращает или задает значения конфигурации NuGet. Дополнительные использования см. [Настройка поведения NuGet](../consume-packages/configuring-nuget-behavior.md). Дополнительные сведения на допустимые имена ключей [ссылку на файл конфигурации NuGet](../reference/nuget-config-file.md).
+Возвращает или задает значения конфигурации NuGet. Избыточное использование см. в разделе [Настройка поведения NuGet](../consume-packages/configuring-nuget-behavior.md). Дополнительные сведения о допустимых именах, см. [ссылку на файл конфигурации NuGet](../reference/nuget-config-file.md).
 
 ## <a name="usage"></a>Использование
 
@@ -26,24 +25,24 @@ nuget config -Set <name>=[<value>] [<name>=<value> ...] [options]
 nuget config -AsPath <name> [options]
 ```
 
-где `<name>` и `<value>` укажите пару "ключ значение" для установки в конфигурации. При желании можно указать столько пар. Чтобы удалить значение, укажите имя и `=` входа, но нет значения.
+где `<name>` и `<value>` укажите пару "ключ значение" для задания в конфигурации. При необходимости можно указать любое количество пар. Чтобы удалить значение, укажите имя и `=` входа, но без значения.
 
-Допустимые имена ключей, в разделе [ссылку на файл конфигурации NuGet](../reference/nuget-config-file.md).
+Допустимые имена ключей, см. в разделе [ссылку на файл конфигурации NuGet](../reference/nuget-config-file.md).
 
-В NuGet 3.4 + `<value>` можно использовать [переменных среды](cli-ref-environment-variables.md).
+В NuGet 3.4 + `<value>` можно использовать [переменные среды](cli-ref-environment-variables.md).
 
 ## <a name="options"></a>Параметры
 
-| Параметр | Описание: |
+| Параметр | Описание |
 | --- | --- |
 | AsPath | Возвращает значение конфигурации как путь, игнорируются, когда `-Set` используется. |
-| ConfigFile | Файл конфигурации NuGet для изменения. Если не указан, `%AppData%\NuGet\NuGet.Config` (Windows) или `~/.nuget/NuGet/NuGet.Config` используется (Mac и Linux).|
-| ForceEnglishOutput | *(3.5 +)*  Принудительно nuget.exe выполняется с использованием инвариантных, на основе английского языка и региональных параметров. |
-| Справка | Отображает справку по команде. |
-| Неинтерактивные | Подавление для ввода данных и подтверждений. |
-| Уровень детализации | Указывает объем сведений в выходных данных: *обычного*, *тихий*, *подробные*. |
+| ConfigFile | Чтобы изменить файл конфигурации NuGet. Если не указан, `%AppData%\NuGet\NuGet.Config` (Windows) или `~/.nuget/NuGet/NuGet.Config` используется (Mac/Linux).|
+| ForceEnglishOutput | *(3.5 и более поздние)*  Заставляет nuget.exe для выполнения с помощью инвариантный, основанное на английский язык и региональные параметры. |
+| Справка | Отображает справку для команды. |
+| Неинтерактивная | Подавление для пользователя данные или подтверждения. |
+| Уровень детализации | Указывает объем сведений, в выходных данных: *обычный*, *quiet*, *подробные*. |
 
-См. также [переменные среды](cli-ref-environment-variables.md)
+Также см. в разделе [переменные среды](cli-ref-environment-variables.md)
 
 ### <a name="examples"></a>Примеры
 
