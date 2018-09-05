@@ -1,51 +1,50 @@
 ---
-title: Команда config NuGet CLI
-description: Ссылка для выполнения команды конфигурации nuget.exe
+title: Команды интерфейса командной строки NuGet config
+description: Справочник по командам config nuget.exe
 author: karann-msft
 ms.author: karann
-manager: unnir
 ms.date: 01/18/2018
 ms.topic: reference
-ms.openlocfilehash: 9deab9fcca740ea99da61b7d54700a29c1813e88
-ms.sourcegitcommit: 2a6d200012cdb4cbf5ab1264f12fecf9ae12d769
+ms.openlocfilehash: 376b69186ad22d4d94a1df51146b833a1f6f9bd9
+ms.sourcegitcommit: 1d1406764c6af5fb7801d462e0c4afc9092fa569
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/06/2018
-ms.locfileid: "34818169"
+ms.lasthandoff: 09/04/2018
+ms.locfileid: "43546482"
 ---
-# <a name="config-command-nuget-cli"></a><span data-ttu-id="a3661-103">Команда config (NuGet CLI)</span><span class="sxs-lookup"><span data-stu-id="a3661-103">config command (NuGet CLI)</span></span>
+# <a name="config-command-nuget-cli"></a><span data-ttu-id="21683-103">команды config (NuGet CLI)</span><span class="sxs-lookup"><span data-stu-id="21683-103">config command (NuGet CLI)</span></span>
 
-<span data-ttu-id="a3661-104">**Применяется к:** все &bullet; **поддерживаемые версии**: все</span><span class="sxs-lookup"><span data-stu-id="a3661-104">**Applies to:** all &bullet; **Supported versions**: all</span></span>
+<span data-ttu-id="21683-104">**Применяется к:** все &bullet; **поддерживаемые версии**: все</span><span class="sxs-lookup"><span data-stu-id="21683-104">**Applies to:** all &bullet; **Supported versions**: all</span></span>
 
-<span data-ttu-id="a3661-105">Возвращает или задает значения конфигурации NuGet.</span><span class="sxs-lookup"><span data-stu-id="a3661-105">Gets or sets NuGet configuration values.</span></span> <span data-ttu-id="a3661-106">Дополнительные использования см. [Настройка поведения NuGet](../consume-packages/configuring-nuget-behavior.md).</span><span class="sxs-lookup"><span data-stu-id="a3661-106">For additional usage, see [Configuring NuGet Behavior](../consume-packages/configuring-nuget-behavior.md).</span></span> <span data-ttu-id="a3661-107">Дополнительные сведения на допустимые имена ключей [ссылку на файл конфигурации NuGet](../reference/nuget-config-file.md).</span><span class="sxs-lookup"><span data-stu-id="a3661-107">For details on allowable key names, refer to the [NuGet config file reference](../reference/nuget-config-file.md).</span></span>
+<span data-ttu-id="21683-105">Возвращает или задает значения конфигурации NuGet.</span><span class="sxs-lookup"><span data-stu-id="21683-105">Gets or sets NuGet configuration values.</span></span> <span data-ttu-id="21683-106">Избыточное использование см. в разделе [Настройка поведения NuGet](../consume-packages/configuring-nuget-behavior.md).</span><span class="sxs-lookup"><span data-stu-id="21683-106">For additional usage, see [Configuring NuGet Behavior](../consume-packages/configuring-nuget-behavior.md).</span></span> <span data-ttu-id="21683-107">Дополнительные сведения о допустимых именах, см. [ссылку на файл конфигурации NuGet](../reference/nuget-config-file.md).</span><span class="sxs-lookup"><span data-stu-id="21683-107">For details on allowable key names, refer to the [NuGet config file reference](../reference/nuget-config-file.md).</span></span>
 
-## <a name="usage"></a><span data-ttu-id="a3661-108">Использование</span><span class="sxs-lookup"><span data-stu-id="a3661-108">Usage</span></span>
+## <a name="usage"></a><span data-ttu-id="21683-108">Использование</span><span class="sxs-lookup"><span data-stu-id="21683-108">Usage</span></span>
 
 ```cli
 nuget config -Set <name>=[<value>] [<name>=<value> ...] [options]
 nuget config -AsPath <name> [options]
 ```
 
-<span data-ttu-id="a3661-109">где `<name>` и `<value>` укажите пару "ключ значение" для установки в конфигурации.</span><span class="sxs-lookup"><span data-stu-id="a3661-109">where `<name>` and `<value>` specify a key-value pair to be set in the configuration.</span></span> <span data-ttu-id="a3661-110">При желании можно указать столько пар.</span><span class="sxs-lookup"><span data-stu-id="a3661-110">You can specify as many pairs as desired.</span></span> <span data-ttu-id="a3661-111">Чтобы удалить значение, укажите имя и `=` входа, но нет значения.</span><span class="sxs-lookup"><span data-stu-id="a3661-111">To remove a value, specify the name and the `=` sign but no value.</span></span>
+<span data-ttu-id="21683-109">где `<name>` и `<value>` укажите пару "ключ значение" для задания в конфигурации.</span><span class="sxs-lookup"><span data-stu-id="21683-109">where `<name>` and `<value>` specify a key-value pair to be set in the configuration.</span></span> <span data-ttu-id="21683-110">При необходимости можно указать любое количество пар.</span><span class="sxs-lookup"><span data-stu-id="21683-110">You can specify as many pairs as desired.</span></span> <span data-ttu-id="21683-111">Чтобы удалить значение, укажите имя и `=` входа, но без значения.</span><span class="sxs-lookup"><span data-stu-id="21683-111">To remove a value, specify the name and the `=` sign but no value.</span></span>
 
-<span data-ttu-id="a3661-112">Допустимые имена ключей, в разделе [ссылку на файл конфигурации NuGet](../reference/nuget-config-file.md).</span><span class="sxs-lookup"><span data-stu-id="a3661-112">For allowable key names, see the [NuGet config file reference](../reference/nuget-config-file.md).</span></span>
+<span data-ttu-id="21683-112">Допустимые имена ключей, см. в разделе [ссылку на файл конфигурации NuGet](../reference/nuget-config-file.md).</span><span class="sxs-lookup"><span data-stu-id="21683-112">For allowable key names, see the [NuGet config file reference](../reference/nuget-config-file.md).</span></span>
 
-<span data-ttu-id="a3661-113">В NuGet 3.4 + `<value>` можно использовать [переменных среды](cli-ref-environment-variables.md).</span><span class="sxs-lookup"><span data-stu-id="a3661-113">In NuGet 3.4+, `<value>` can use [environment variables](cli-ref-environment-variables.md).</span></span>
+<span data-ttu-id="21683-113">В NuGet 3.4 + `<value>` можно использовать [переменные среды](cli-ref-environment-variables.md).</span><span class="sxs-lookup"><span data-stu-id="21683-113">In NuGet 3.4+, `<value>` can use [environment variables](cli-ref-environment-variables.md).</span></span>
 
-## <a name="options"></a><span data-ttu-id="a3661-114">Параметры</span><span class="sxs-lookup"><span data-stu-id="a3661-114">Options</span></span>
+## <a name="options"></a><span data-ttu-id="21683-114">Параметры</span><span class="sxs-lookup"><span data-stu-id="21683-114">Options</span></span>
 
-| <span data-ttu-id="a3661-115">Параметр</span><span class="sxs-lookup"><span data-stu-id="a3661-115">Option</span></span> | <span data-ttu-id="a3661-116">Описание:</span><span class="sxs-lookup"><span data-stu-id="a3661-116">Description</span></span> |
+| <span data-ttu-id="21683-115">Параметр</span><span class="sxs-lookup"><span data-stu-id="21683-115">Option</span></span> | <span data-ttu-id="21683-116">Описание</span><span class="sxs-lookup"><span data-stu-id="21683-116">Description</span></span> |
 | --- | --- |
-| <span data-ttu-id="a3661-117">AsPath</span><span class="sxs-lookup"><span data-stu-id="a3661-117">AsPath</span></span> | <span data-ttu-id="a3661-118">Возвращает значение конфигурации как путь, игнорируются, когда `-Set` используется.</span><span class="sxs-lookup"><span data-stu-id="a3661-118">Returns the config value as a path, ignored when `-Set` is used.</span></span> |
-| <span data-ttu-id="a3661-119">ConfigFile</span><span class="sxs-lookup"><span data-stu-id="a3661-119">ConfigFile</span></span> | <span data-ttu-id="a3661-120">Файл конфигурации NuGet для изменения.</span><span class="sxs-lookup"><span data-stu-id="a3661-120">The NuGet configuration file to modify.</span></span> <span data-ttu-id="a3661-121">Если не указан, `%AppData%\NuGet\NuGet.Config` (Windows) или `~/.nuget/NuGet/NuGet.Config` используется (Mac и Linux).</span><span class="sxs-lookup"><span data-stu-id="a3661-121">If not specified, `%AppData%\NuGet\NuGet.Config` (Windows) or `~/.nuget/NuGet/NuGet.Config` (Mac/Linux) is used.</span></span>|
-| <span data-ttu-id="a3661-122">ForceEnglishOutput</span><span class="sxs-lookup"><span data-stu-id="a3661-122">ForceEnglishOutput</span></span> | <span data-ttu-id="a3661-123">*(3.5 +)*  Принудительно nuget.exe выполняется с использованием инвариантных, на основе английского языка и региональных параметров.</span><span class="sxs-lookup"><span data-stu-id="a3661-123">*(3.5+)* Forces nuget.exe to run using an invariant, English-based culture.</span></span> |
-| <span data-ttu-id="a3661-124">Справка</span><span class="sxs-lookup"><span data-stu-id="a3661-124">Help</span></span> | <span data-ttu-id="a3661-125">Отображает справку по команде.</span><span class="sxs-lookup"><span data-stu-id="a3661-125">Displays help information for the command.</span></span> |
-| <span data-ttu-id="a3661-126">Неинтерактивные</span><span class="sxs-lookup"><span data-stu-id="a3661-126">NonInteractive</span></span> | <span data-ttu-id="a3661-127">Подавление для ввода данных и подтверждений.</span><span class="sxs-lookup"><span data-stu-id="a3661-127">Suppresses prompts for user input or confirmations.</span></span> |
-| <span data-ttu-id="a3661-128">Уровень детализации</span><span class="sxs-lookup"><span data-stu-id="a3661-128">Verbosity</span></span> | <span data-ttu-id="a3661-129">Указывает объем сведений в выходных данных: *обычного*, *тихий*, *подробные*.</span><span class="sxs-lookup"><span data-stu-id="a3661-129">Specifies the amount of detail displayed in the output: *normal*, *quiet*, *detailed*.</span></span> |
+| <span data-ttu-id="21683-117">AsPath</span><span class="sxs-lookup"><span data-stu-id="21683-117">AsPath</span></span> | <span data-ttu-id="21683-118">Возвращает значение конфигурации как путь, игнорируются, когда `-Set` используется.</span><span class="sxs-lookup"><span data-stu-id="21683-118">Returns the config value as a path, ignored when `-Set` is used.</span></span> |
+| <span data-ttu-id="21683-119">ConfigFile</span><span class="sxs-lookup"><span data-stu-id="21683-119">ConfigFile</span></span> | <span data-ttu-id="21683-120">Чтобы изменить файл конфигурации NuGet.</span><span class="sxs-lookup"><span data-stu-id="21683-120">The NuGet configuration file to modify.</span></span> <span data-ttu-id="21683-121">Если не указан, `%AppData%\NuGet\NuGet.Config` (Windows) или `~/.nuget/NuGet/NuGet.Config` используется (Mac/Linux).</span><span class="sxs-lookup"><span data-stu-id="21683-121">If not specified, `%AppData%\NuGet\NuGet.Config` (Windows) or `~/.nuget/NuGet/NuGet.Config` (Mac/Linux) is used.</span></span>|
+| <span data-ttu-id="21683-122">ForceEnglishOutput</span><span class="sxs-lookup"><span data-stu-id="21683-122">ForceEnglishOutput</span></span> | <span data-ttu-id="21683-123">*(3.5 и более поздние)*  Заставляет nuget.exe для выполнения с помощью инвариантный, основанное на английский язык и региональные параметры.</span><span class="sxs-lookup"><span data-stu-id="21683-123">*(3.5+)* Forces nuget.exe to run using an invariant, English-based culture.</span></span> |
+| <span data-ttu-id="21683-124">Справка</span><span class="sxs-lookup"><span data-stu-id="21683-124">Help</span></span> | <span data-ttu-id="21683-125">Отображает справку для команды.</span><span class="sxs-lookup"><span data-stu-id="21683-125">Displays help information for the command.</span></span> |
+| <span data-ttu-id="21683-126">Неинтерактивная</span><span class="sxs-lookup"><span data-stu-id="21683-126">NonInteractive</span></span> | <span data-ttu-id="21683-127">Подавление для пользователя данные или подтверждения.</span><span class="sxs-lookup"><span data-stu-id="21683-127">Suppresses prompts for user input or confirmations.</span></span> |
+| <span data-ttu-id="21683-128">Уровень детализации</span><span class="sxs-lookup"><span data-stu-id="21683-128">Verbosity</span></span> | <span data-ttu-id="21683-129">Указывает объем сведений, в выходных данных: *обычный*, *quiet*, *подробные*.</span><span class="sxs-lookup"><span data-stu-id="21683-129">Specifies the amount of detail displayed in the output: *normal*, *quiet*, *detailed*.</span></span> |
 
-<span data-ttu-id="a3661-130">См. также [переменные среды](cli-ref-environment-variables.md)</span><span class="sxs-lookup"><span data-stu-id="a3661-130">Also see [Environment variables](cli-ref-environment-variables.md)</span></span>
+<span data-ttu-id="21683-130">Также см. в разделе [переменные среды](cli-ref-environment-variables.md)</span><span class="sxs-lookup"><span data-stu-id="21683-130">Also see [Environment variables](cli-ref-environment-variables.md)</span></span>
 
-### <a name="examples"></a><span data-ttu-id="a3661-131">Примеры</span><span class="sxs-lookup"><span data-stu-id="a3661-131">Examples</span></span>
+### <a name="examples"></a><span data-ttu-id="21683-131">Примеры</span><span class="sxs-lookup"><span data-stu-id="21683-131">Examples</span></span>
 
 ```cli
 nuget config -Set repositoryPath=c:\packages -configfile c:\my.config
