@@ -3,15 +3,14 @@ title: Пакеты NuGet в шаблонах Visual Studio
 description: Инструкции по включению пакетов NuGet в состав шаблонов проектов и элементов Visual Studio.
 author: karann-msft
 ms.author: karann
-manager: unnir
 ms.date: 01/03/2018
 ms.topic: conceptual
-ms.openlocfilehash: e03d97eede3f4c91475fbb48804d0f4a08ff0750
-ms.sourcegitcommit: 2a6d200012cdb4cbf5ab1264f12fecf9ae12d769
+ms.openlocfilehash: be7c10fb6ce60375f77e38f9b604ec33063e52fc
+ms.sourcegitcommit: 1d1406764c6af5fb7801d462e0c4afc9092fa569
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/06/2018
-ms.locfileid: "34818806"
+ms.lasthandoff: 09/04/2018
+ms.locfileid: "43550514"
 ---
 # <a name="packages-in-visual-studio-templates"></a>Пакеты в шаблонах Visual Studio
 

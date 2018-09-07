@@ -3,15 +3,14 @@ title: Что такое NuGet и для чего он нужен
 description: Комплексное введение о том, что такое NuGet и для чего он нужен
 author: karann-msft
 ms.author: karann
-manager: unnir
 ms.date: 01/10/2018
 ms.topic: overview
-ms.openlocfilehash: b8929baa9022b7c40acbeb8a4f868fa5532ec13b
-ms.sourcegitcommit: 2a6d200012cdb4cbf5ab1264f12fecf9ae12d769
+ms.openlocfilehash: 0b7105ea5d183d139c8bac915378924ba9c0874a
+ms.sourcegitcommit: 1d1406764c6af5fb7801d462e0c4afc9092fa569
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/06/2018
-ms.locfileid: "34818364"
+ms.lasthandoff: 09/04/2018
+ms.locfileid: "43548823"
 ---
 # <a name="an-introduction-to-nuget"></a>Введение в NuGet
 

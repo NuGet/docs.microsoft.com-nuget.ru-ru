@@ -3,15 +3,14 @@ title: Способы установки пакетов NuGet
 description: В этой статье описывается процесс установки пакетов NuGet в проект, включая процессы на диске и все происходящее с применимыми файлами проекта.
 author: karann-msft
 ms.author: karann
-manager: unnir
 ms.date: 02/12/2018
 ms.topic: overview
-ms.openlocfilehash: 0f59c3b7f1e32ae34889921c13d15074ef5c1260
-ms.sourcegitcommit: 8e3546ab630a24cde8725610b6a68f8eb87afa47
+ms.openlocfilehash: 3cb3d5f97e9fb7ce292ddc5a95b61c13f64a17e7
+ms.sourcegitcommit: 1d1406764c6af5fb7801d462e0c4afc9092fa569
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/05/2018
-ms.locfileid: "37843385"
+ms.lasthandoff: 09/04/2018
+ms.locfileid: "43547670"
 ---
 # <a name="different-ways-to-install-a-nuget-package"></a>Способы установки пакета NuGet
 

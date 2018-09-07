@@ -3,15 +3,14 @@ title: Удаление пакетов NuGet с сайта nuget.org
 description: Политики для исключения пакетов с сайта nuget.org; окончательное удаление не поддерживается, если только пакеты не нарушают другие политики.
 author: karann-msft
 ms.author: karann
-manager: unnir
 ms.date: 01/18/2018
 ms.topic: conceptual
-ms.openlocfilehash: 84a27c16968fa55ff1929db1adf98b8242a64fcf
-ms.sourcegitcommit: 2a6d200012cdb4cbf5ab1264f12fecf9ae12d769
+ms.openlocfilehash: 901eb09711a6e32740c70829028da66b782870a0
+ms.sourcegitcommit: 1d1406764c6af5fb7801d462e0c4afc9092fa569
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/06/2018
-ms.locfileid: "34816997"
+ms.lasthandoff: 09/04/2018
+ms.locfileid: "43548132"
 ---
 # <a name="deleting-packages"></a>Удаление пакетов
 

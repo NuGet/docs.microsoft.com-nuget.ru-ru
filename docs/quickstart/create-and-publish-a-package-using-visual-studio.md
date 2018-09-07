@@ -3,15 +3,14 @@ title: Создание и публикация пакета .NET Standard с п
 description: Пошаговое руководство по созданию и публикации пакета NuGet .NET Standard с помощью Visual Studio 2017 в Windows.
 author: karann-msft
 ms.author: karann
-manager: unnir
 ms.date: 05/18/2018
 ms.topic: quickstart
-ms.openlocfilehash: af6e6e015f2e4adccd99171abb37e7291551351c
-ms.sourcegitcommit: 8d5121af528e68789485405e24e2100fda2868d6
+ms.openlocfilehash: a0bf174e3e27ad6d8fefe18f6213213a4bc77b53
+ms.sourcegitcommit: 1d1406764c6af5fb7801d462e0c4afc9092fa569
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/23/2018
-ms.locfileid: "42794103"
+ms.lasthandoff: 09/04/2018
+ms.locfileid: "43548942"
 ---
 # <a name="quickstart-create-and-publish-a-nuget-package-using-visual-studio-net-standard-windows-only"></a>Краткое руководство. Создание и публикация пакета NuGet с помощью Visual Studio (.NET Standard, только для Windows)
 

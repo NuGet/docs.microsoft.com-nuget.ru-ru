@@ -3,15 +3,14 @@ title: Общие сведения о создании пакетов NuGet и �
 description: Общие сведения о процессе использования пакетов NuGet в проекте со ссылками на отдельные части процесса.
 author: karann-msft
 ms.author: karann
-manager: unnir
 ms.date: 03/22/2018
 ms.topic: conceptual
-ms.openlocfilehash: 1c909a38fc48a7da7dd3bad25f34e0837d8b37bd
-ms.sourcegitcommit: 2a6d200012cdb4cbf5ab1264f12fecf9ae12d769
+ms.openlocfilehash: a5807a6895a76a7d6660d218b29e1d3a2802ca28
+ms.sourcegitcommit: 1d1406764c6af5fb7801d462e0c4afc9092fa569
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/06/2018
-ms.locfileid: "34818612"
+ms.lasthandoff: 09/04/2018
+ms.locfileid: "43545052"
 ---
 # <a name="package-consumption-workflow"></a>Рабочий процесс использования пакета
 

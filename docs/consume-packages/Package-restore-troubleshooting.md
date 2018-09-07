@@ -3,15 +3,14 @@ title: Устранение неполадок с восстановлением
 description: Описание распространенных ошибок восстановления NuGet в Visual Studio и способов их устранения.
 author: karann-msft
 ms.author: karann
-manager: unnir
 ms.date: 05/25/2018
 ms.topic: conceptual
-ms.openlocfilehash: 8e817b8e95c53d27120bf56db52b45b69a5ff973
-ms.sourcegitcommit: 2a6d200012cdb4cbf5ab1264f12fecf9ae12d769
+ms.openlocfilehash: 11acb90b45af73137faac1ec6bc403b109e6e808
+ms.sourcegitcommit: 1d1406764c6af5fb7801d462e0c4afc9092fa569
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/06/2018
-ms.locfileid: "34816977"
+ms.lasthandoff: 09/04/2018
+ms.locfileid: "43549604"
 ---
 # <a name="troubleshooting-package-restore-errors"></a>Устранение ошибок при восстановлении пакетов
 

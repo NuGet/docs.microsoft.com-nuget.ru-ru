@@ -3,15 +3,14 @@ title: Вопросы и ответы по NuGet
 description: Вопросы и ответы по использованию NuGet в командной строке и в Visual Studio, а также по работе с коллекцией NuGet.
 author: karann-msft
 ms.author: karann
-manager: unnir
 ms.date: 01/11/2018
 ms.topic: conceptual
-ms.openlocfilehash: 3fe59ef03632053182b034052e93a5f2e6f444bd
-ms.sourcegitcommit: c643dd2c44e085601551ff7079d696bcc3ad2b49
+ms.openlocfilehash: 8c63abc9971623e0732ae8d973fafcd04c5d9f48
+ms.sourcegitcommit: 1d1406764c6af5fb7801d462e0c4afc9092fa569
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/21/2018
-ms.locfileid: "42792955"
+ms.lasthandoff: 09/04/2018
+ms.locfileid: "43548808"
 ---
 # <a name="nuget-frequently-asked-questions"></a>Вопросы и ответы по NuGet
 
