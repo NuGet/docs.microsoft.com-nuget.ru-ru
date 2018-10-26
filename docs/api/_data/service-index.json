@@ -1,0 +1,29 @@
+{
+  "version": "3.0.0",
+  "resources": [
+    {
+      "@id": "https://API.NuGet.org/v3-flatcontainer/",
+      "@type": "PackageBaseAddress/3.0.0",
+      "comment": "Базовый URL-адрес Azure хранилища, где хранится информация о регистрации пакета NuGet для .NET Core, в формате https://api.nuget.org/v3-flatcontainer/ {идентификатор с нижним} / {идентификатор с нижним}. {версия с нижним} .nupkg"
+    },
+    {
+      "@id": "https://www.NuGet.org/API/v2/Package",
+      "@type": "PackagePublish/2.0.0"
+    },
+    {
+      "@id": "https://API-v2v3search-0.NuGet.org/Query",
+      "@type": "SearchQueryService/3.0.0-rc",
+      "comment": "Запрос конечной точки службы поиска NuGet (основная) используется клиентами для версии-КАНДИДАТА"
+    },
+    {
+      "@id": "https://API-v2v3search-0.NuGet.org/AutoComplete",
+      "@type": "SearchAutocompleteService/3.0.0-rc",
+      "comment": "Автозаполнение конечной точки службы поиска NuGet (основной) используется клиентами для версии-КАНДИДАТА"
+    },
+    {
+      "@id": "https://API.NuGet.org/v3/registration2/",
+      "@type": "RegistrationsBaseUrl/3.0.0-rc",
+      "comment": "Базовый URL-адрес Azure хранилище где хранится информация о регистрации пакета NuGet в версии-КАНДИДАТА клиентов. Этот базовый URL-адрес не включает пакеты SemVer 2.0.0."
+    }
+  ]
+}
