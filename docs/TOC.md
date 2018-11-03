@@ -31,7 +31,6 @@
 ## Направляющие
 ### [Создание пакетов универсальной платформы Windows](guides/create-uwp-packages.md)
 ### [Создание элементов управления пользовательским интерфейсо в виде пакетов NuGet](guides/create-UI-controls.md)
-### [Создание пакетов .NET Standard или .NET Framework с помощью Visual Studio 2015](guides/create-net-standard-packages-vs2015.md)
 ### [Создание пакетов для Xamarin с помощью Visual Studio 2015](guides/create-packages-for-xamarin.md)
 # Размещение пакетов
 ## [Обзор набора средств Visual Studio для Unity](hosting-packages/overview.md)
