@@ -10,12 +10,12 @@ f1_keywords:
 - vs.toolsoptionspages.nuget_package_manager.general
 - vs.toolsoptionspages.nuget_package_manager.package_sources
 - vs.nuget.packagemanager.ui
-ms.openlocfilehash: 651bbe63ec95fcedb8e9504022d08d6ba7f9219e
-ms.sourcegitcommit: 1d1406764c6af5fb7801d462e0c4afc9092fa569
+ms.openlocfilehash: 1de6ddeca6295c621a90409807af198bc3c7a068
+ms.sourcegitcommit: 09107c5092050f44a0c6abdfb21db73878f78bd0
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/04/2018
-ms.locfileid: "43551761"
+ms.lasthandoff: 11/03/2018
+ms.locfileid: "50981188"
 ---
 # <a name="nuget-package-manager-ui"></a>Пользовательский Интерфейс диспетчера пакетов NuGet
 
@@ -70,7 +70,11 @@ ms.locfileid: "43551761"
 
     ![Обновление пакета](media/UpdatePackages.png)
 
-1. <a name="implicit_reference"></a>Для некоторых пакетов **обновления** кнопка отключена, появится сообщение о том, что он является «неявно ссылается пакет SDK» (или «Автоссылками»). Сообщение указывает, что пакет, например Microsoft.NETCore.App или Microsoft.NETStandard.Library, является частью большего размера платформа или пакет SDK и не должны обновляться независимо друг от друга. (Такие пакеты отмечены внутренне `<IsImplicitlyDefined>True</IsImplicitlyDefined>`.) Чтобы обновить пакет, обновите SDK, к которой он принадлежит, вывод типа, содержащего пакет SDK по имени пакета. Например пакет Microsoft.NETCore.App является частью пакета SDK для .NET Core, поэтому вам потребуется обновить установку пакета SDK для .NET Core.
+1. <a name="implicit_reference"></a>Для некоторых пакетов **обновления** кнопка отключена, появится сообщение о том, что он является «неявно ссылается пакет SDK» (или «Автоссылками»). Это сообщение означает, что пакет является частью большего размера платформа или пакет SDK и не должны обновляться независимо друг от друга. (Такие пакеты отмечены внутренне `<IsImplicitlyDefined>True</IsImplicitlyDefined>`.) Например `Microsoft.NETCore.App` является частью пакета SDK для .NET Core, и версия пакета не соответствует версии платформы среды выполнения, используемые приложением. Вам нужно [обновить установку .NET Core](https://aka.ms/dotnet-download) для получения новых версий среды выполнения ASP.NET Core и .NET Core. [Дополнительные сведения см. в разделе о метапакеты .NET Core и управлении версиями](/dotnet/core/packages). Это относится к следующим пакетам часто используемые:
+    * Microsoft.AspNetCore.All
+    * Microsoft.AspNetCore.App
+    * Microsoft.NETCore.App
+    * NETStandard.Library
 
     ![Пример пакета помечен как неявно, ссылки или Автоссылками](media/PackageManagerUIAutoReferenced.png)
 

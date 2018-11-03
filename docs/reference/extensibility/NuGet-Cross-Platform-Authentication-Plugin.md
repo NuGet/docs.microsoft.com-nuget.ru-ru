@@ -5,12 +5,12 @@ author: nkolev92
 ms.author: nikolev
 ms.date: 07/01/2018
 ms.topic: conceptual
-ms.openlocfilehash: 1258ca4b30cb674c3832f12262940729438dd5b0
-ms.sourcegitcommit: 1d1406764c6af5fb7801d462e0c4afc9092fa569
+ms.openlocfilehash: d80339eb81ade1cf2c323a604cc4fac06dcb1012
+ms.sourcegitcommit: 09107c5092050f44a0c6abdfb21db73878f78bd0
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/04/2018
-ms.locfileid: "43546638"
+ms.lasthandoff: 11/03/2018
+ms.locfileid: "50981058"
 ---
 # <a name="nuget-cross-platform-authentication-plugin"></a>NuGet cross подключаемый модуль проверки подлинности платформы
 
@@ -36,7 +36,7 @@ Visual Studio и NuGet.exe, по умолчанию интерактивный. 
 
 ## <a name="creating-a-cross-platform-authentication-plugin"></a>Создание кроссплатформенный подключаемый модуль проверки подлинности
 
-Пример реализации можно найти в [подключаемый модуль MSCredProvider](https://github.com/Microsoft/mscredprovider).
+Пример реализации можно найти в [подключаемый модуль поставщика учетных данных Microsoft](https://github.com/Microsoft/artifacts-credprovider).
 
 Очень важно соответствие требованиям безопасности, установленных клиентских средств NuGet подключаемые модули.
 Минимальная требуемая версия для подключаемого модуля требуется подключаемый модуль проверки подлинности — *2.0.0*.

@@ -6,12 +6,12 @@ ms.author: diverdan92
 ms.date: 10/09/2017
 ms.topic: reference
 ms.reviewer: ananguar
-ms.openlocfilehash: 0711f3ee00b4a387d676ca43c98a9467effed90a
-ms.sourcegitcommit: 1d1406764c6af5fb7801d462e0c4afc9092fa569
+ms.openlocfilehash: 32f83bede42f7643a9a4fed593643eefea0453c1
+ms.sourcegitcommit: 09107c5092050f44a0c6abdfb21db73878f78bd0
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/04/2018
-ms.locfileid: "43546594"
+ms.lasthandoff: 11/03/2018
+ms.locfileid: "50981006"
 ---
 # <a name="package-id-prefix-reservation"></a>Резервирование префикса идентификатора пакета
 
@@ -65,7 +65,7 @@ ms.locfileid: "43546594"
 
 1. Просмотрите принятие [критерии для резервирования префикса идентификатора](#id-prefix-reservation-criteria).
 
-2. Определение пространства имен, которые требуется зарезервировать, в дополнение к любым [сложные сценарии резервирования префикса](#advanced-prefix-reservation-scenarios) вам может потребоваться.
+2. Определить префиксы, которые требуется зарезервировать, в дополнение к любым [сложные сценарии резервирования префикса](#advanced-prefix-reservation-scenarios) вам может потребоваться.
 
 3. Отправить почту адресату [ account@nuget.org ](mailto:account@nuget.org) с владельцем отображаемое имя на [nuget.org](https://www.nuget.org/), а также все зарезервированные префиксы, запрашивается. При делегировании подмножества префикс для нескольких владельцев, убедитесь, что упомянуть все отображаемые имена владельца и префикс подмножеств.
 
