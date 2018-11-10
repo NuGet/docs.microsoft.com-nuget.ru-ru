@@ -5,16 +5,17 @@ author: karann-msft
 ms.author: karann
 ms.date: 5/14/2018
 ms.topic: conceptual
-ms.openlocfilehash: d23c4a8874d3d2e1a9ea721c66b15bb458de88a3
-ms.sourcegitcommit: 47858da1103848cc1b15bdc00ac7219c0ee4a6a0
+ms.openlocfilehash: 641304059c90e360fae4d0956d7b922e34bc6501
+ms.sourcegitcommit: 09107c5092050f44a0c6abdfb21db73878f78bd0
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/12/2018
-ms.locfileid: "44516239"
+ms.lasthandoff: 11/03/2018
+ms.locfileid: "50981123"
 ---
 # <a name="nuget-48-rtm-release-notes"></a>Заметки о выпуске NuGet 4.8 RTM
 
 [Visual Studio 2017 15.8 RTW](https://www.visualstudio.com/news/releasenotes/vs2017-relnotes) включает функции NuGet 4.8 RTM.
+
 
 Также доступны версии этого компонента для командной строки:
 * NuGet.exe 4.8 — [nuget.org/downloads](https://nuget.org/downloads);
@@ -30,7 +31,7 @@ ms.locfileid: "44516239"
 ## <a name="known-issues"></a>Известные проблемы
 ### <a name="installing-signed-packages-on-a-ci-machine-or-in-an-offline-environment-takes-longer-than-usual"></a>Установка подписанных пакетов на компьютере непрерывной интеграции или в автономной среде занимает больше времени, чем обычно
 
-#### <a name="issue"></a>Проблема
+#### <a name="issue"></a>Проблемы
 Если для компьютера ограничен доступ к Интернету (например, в сценарии компьютера сборки для CI/CD), установка и восстановление подписанного пакета NuGet вызывает предупреждение ([NU3028](https://docs.microsoft.com/en-us/nuget/reference/errors-and-warnings/nu3028)), так как серверы отзыва недоступны. Подобный результат является ожидаемым. Но в некоторых случаях это может привести к непреднамеренным последствиям, например к непривычной длительности процессов установки и восстановления пакета.
 
 #### <a name="workaround"></a>Обходной путь
@@ -42,7 +43,7 @@ ms.locfileid: "44516239"
 
 ### <a name="the-migrate-packagesconfig-to-packagereference-option-is-not-available-in-the-right-click-context-menu"></a>Параметр `Migrate packages.config to PackageReference...` недоступен в контекстном меню, которое открывается по щелчку правой кнопкой мыши
 
-#### <a name="issue"></a>Проблеми
+#### <a name="issue"></a>Проблемы
 
 При первом открытии проект NuGet не удается инициализировать до выполнения операции NuGet. В результате параметр миграции не отображается в контекстном меню, которое открывается по щелчку правой кнопкой мыши `packages.config` или `References`.
 
