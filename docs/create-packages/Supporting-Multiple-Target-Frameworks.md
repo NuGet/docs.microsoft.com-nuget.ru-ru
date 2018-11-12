@@ -5,12 +5,12 @@ author: karann-msft
 ms.author: karann
 ms.date: 09/27/2017
 ms.topic: conceptual
-ms.openlocfilehash: 0b22d48b9151b903a5307beafa5ccef14e5fecf3
-ms.sourcegitcommit: 1d1406764c6af5fb7801d462e0c4afc9092fa569
+ms.openlocfilehash: c59839240935e2a6c590dea3adf623313f79f02f
+ms.sourcegitcommit: 09107c5092050f44a0c6abdfb21db73878f78bd0
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/04/2018
-ms.locfileid: "43551710"
+ms.lasthandoff: 11/03/2018
+ms.locfileid: "50981149"
 ---
 # <a name="supporting-multiple-net-framework-versions"></a>Поддержка нескольких версий платформы .NET Framework
 
@@ -65,7 +65,13 @@ ms.locfileid: "43551710"
             \native
             \lib\uap10.0
 
+Эти сборки будут доступны только во время выполнения. Поэтому если вы хотите предоставить соответствующую сборку, используемую во время компиляции, добавьте сборку `AnyCPU` в папку `/ref{tfm}`. 
+
+Обратите внимание, что NuGet всегда извлекает ресурсы, используемые во время компиляции или выполнения, из одной папки. Если в папке `/ref` есть совместимые ресурсы, то из папки `/lib` не будут добавляться сборки, используемые во время компиляции. Соответственно, если в папке `/runtime` есть совместимые ресурсы, то ресурсы из папки `/lib` будут игнорироваться.
+
 Пример указания ссылок на эти файлы в манифесте `.nuspec` см. в разделе [Создание пакетов универсальной платформы Windows](../guides/create-uwp-packages.md).
+
+Также ознакомьтесь с записью блога об [упаковке компонента приложения для Магазина Windows с помощью NuGet](https://blogs.msdn.microsoft.com/mim/2013/09/02/packaging-a-windows-store-apps-component-with-nuget-part-2).
 
 ## <a name="matching-assembly-versions-and-the-target-framework-in-a-project"></a>Сопоставление версий сборки и целевых платформ в проекте
 
