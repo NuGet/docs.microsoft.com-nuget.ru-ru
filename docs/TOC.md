@@ -24,8 +24,8 @@
 ## [Преобразования источника и файла конфигурации](create-packages/source-and-config-file-transformations.md)
 ## [Создание локализованных пакетов](create-packages/creating-localized-packages.md)
 ## [Предварительные версии пакетов](create-packages/prerelease-packages.md)
-## [Собственные пакеты](create-packages/native-packages.md)
-## [Пакеты символов](create-packages/symbol-packages.md)
+## [Создание собственных пакетов](create-packages/native-packages.md)
+## [Создание пакетов символов](create-packages/symbol-packages-snupkg.md)
 ## [Подписывание пакетов](create-packages/sign-a-package.md)
 ## [Публикация пакета](create-packages/publish-a-package.md)
 ## Направляющие
@@ -198,6 +198,7 @@
 ## [Практическое руководство. Запрос всех пакетов с помощью API](guides/api/query-for-all-published-packages.md)
 ## [Индекс службы](api/service-index.md)
 ## [Принудительная отправка и удаление](api/package-publish-resource.md)
+## [Отправить пакеты символов](api/symbol-package-publish-resource.md)
 ## [Поиск](api/search-query-service-resource.md)
 ## [Автозавершение](api/search-autocomplete-service-resource.md)
 ## [Метаданные пакета](api/registration-base-url-resource.md)
