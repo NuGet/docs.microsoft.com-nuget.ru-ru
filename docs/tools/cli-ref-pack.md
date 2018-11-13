@@ -5,12 +5,12 @@ author: karann-msft
 ms.author: karann
 ms.date: 01/18/2018
 ms.topic: reference
-ms.openlocfilehash: db236b0eaac34ca9f6f67fd15ca3ad6884f6a18d
-ms.sourcegitcommit: 1d1406764c6af5fb7801d462e0c4afc9092fa569
+ms.openlocfilehash: 826316bdbce881836836f2a667cfa5297996d14f
+ms.sourcegitcommit: ffbdf147f84f8bd60495d3288dff9a5275491c17
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/04/2018
-ms.locfileid: "43549100"
+ms.lasthandoff: 11/13/2018
+ms.locfileid: "51580315"
 ---
 # <a name="pack-command-nuget-cli"></a>Команда pack (NuGet CLI)
 
@@ -38,6 +38,7 @@ nuget pack <nuspecPath | projectPath> [options] [-Properties ...]
 | Исключить | Указывает один или несколько шаблонов с подстановочными знаками для исключения при создании пакета. Чтобы указать несколько шаблонов, повторите флаг - исключения. См. пример ниже. |
 | ExcludeEmptyDirectories | Предотвращает включение пустые каталоги, при сборке пакета. |
 | ForceEnglishOutput | *(3.5 и более поздние)*  Заставляет nuget.exe для выполнения с помощью инвариантный, основанное на английский язык и региональные параметры. |
+| ConfigFile | Укажите файл конфигурации для команды pack. |
 | Справка | Отображает справку для команды. |
 | IncludeReferencedProjects | Указывает, что встроенный пакет должен включать упоминаемые проекты как зависимости или как часть пакета. Если у упоминаемого проекта есть соответствующий `.nuspec` файл, который имеет имя, совпадающее с именем проекта, а затем этот проект добавляется в качестве зависимости. В противном случае проект добавляется как часть пакета. |
 | MinClientVersion | Задайте *minClientVersion* атрибут для созданного пакета. Это значение будет переопределять значение существующего *minClientVersion* атрибута (если таковые имеются) в `.nuspec` файл. |
@@ -48,7 +49,7 @@ nuget pack <nuspecPath | projectPath> [options] [-Properties ...]
 | OutputDirectory | Указывает папку, в которой будет храниться созданный пакет. Если папка не указана, используется текущая папка. |
 | Свойства | Последний в командной строке через появятся другие параметры. Указывает список свойств, которые переопределяют значения в файле проекта; см. в разделе [общие свойства проектов MSBuild](/visualstudio/msbuild/common-msbuild-project-properties) для имен свойств. Аргументе свойств приведен список маркер = пар "значение", разделенных точкой с запятой, где каждое вхождение `$token$` в `.nuspec` файл будет заменен на заданное значение. Значения могут быть строки в кавычках. Обратите внимание, что для свойства «Конфигурация», значение по умолчанию «Debug». Чтобы изменить конфигурацию выпуска, используйте `-Properties Configuration=Release`. |
 | Суффикс | *(3.4.4+)*  Добавляет суффикс для созданного внутреннего номер_версии, обычно используется для добавления сборки или другие идентификаторы предварительной версии. Например, с помощью `-suffix nightly` создаст пакет с like номера версии `1.2.3-nightly`. Суффиксы должны начинаться с буквы, чтобы избежать предупреждения, ошибки и потенциальных несовместимости с различными версиями NuGet и диспетчер пакетов NuGet. |
-| Символы | Указывает, что пакет содержит источники и символы. При использовании с `.nuspec` файл, это создает обычный файл пакета NuGet и соответствующий пакет символов. |
+| Символы | Указывает, что пакет содержит источники и символы. При использовании с `.nuspec` файл, это создает обычный файл пакета NuGet и соответствующий пакет символов. По умолчанию она создает [пакета устаревших символов](../create-packages/Symbol-Packages.md). Новый рекомендуемый формат для пакетов символов — .snupkg. См. в разделе [создание пакетов символов (.snupkg)](../create-packages/Symbol-Packages-snupkg.md). |
 | Средство | Указывает, что следует поместить выходные файлы проекта в `tool` папку. |
 | Уровень детализации | Указывает объем сведений, в выходных данных: *обычный*, *quiet*, *подробные*. |
 | Версия | Переопределяет номер версии из `.nuspec` файла. |
@@ -89,6 +90,9 @@ nuget pack foo.csproj -Build -Symbols -Properties owners=janedoe,xiaop;version="
 
 # Create a package from project foo.csproj, using MSBuild version 12 to build the project
 nuget pack foo.csproj -Build -Symbols -MSBuildVersion 12 -Properties owners=janedoe,xiaop;version="1.0.5
+
+# Create a package from project foo.nuspec and the corresponding symbol package using the new recommended format .snupkg
+nuget pack foo.nuspec -Symbols -SymbolPackageFormat snupkg
 
 nuget pack foo.nuspec -Version 2.1.0
 

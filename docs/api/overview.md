@@ -6,12 +6,12 @@ ms.author: jver
 ms.date: 10/26/2017
 ms.topic: reference
 ms.reviewer: kraigb
-ms.openlocfilehash: 770173d6b84048cf42a5da46cbc474d8cf604a08
-ms.sourcegitcommit: 1d1406764c6af5fb7801d462e0c4afc9092fa569
+ms.openlocfilehash: 7bb5e83b29d1d7e4bf06accfccb73db3aa9ee025
+ms.sourcegitcommit: ffbdf147f84f8bd60495d3288dff9a5275491c17
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/04/2018
-ms.locfileid: "43547507"
+ms.lasthandoff: 11/13/2018
+ms.locfileid: "51580341"
 ---
 # <a name="nuget-api"></a>API NuGet
 
@@ -49,16 +49,17 @@ NuGet V3 API называется таким образом, так как он 
 
 **Индекс службы** описаны различные ресурсы. Ниже приведены текущий набор поддерживаемых ресурсов.
 
-Имя ресурса                                                          | Обязательно | Описание
----------------------------------------------------------------------- | -------- | -----------
+Имя ресурса                                                           | Обязательно | Описание
+----------------------------------------------------------------------  | -------- | -----------
 [`PackagePublish`](package-publish-resource.md)                        | да      | Push-уведомлений и удалить (или удалить из списка) пакеты.
 [`SearchQueryService`](search-query-service-resource.md)               | да      | Фильтровать и искать пакеты по ключевому слову.
 [`RegistrationsBaseUrl`](registration-base-url-resource.md)            | да      | Получите метаданные пакета.
 [`PackageBaseAddress`](package-base-address-resource.md)               | да      | Получение содержимого пакета (файла nupkg).
 [`SearchAutocompleteService`](search-autocomplete-service-resource.md) | Нет       | Найдите идентификаторы пакетов и версий, подстроку.
 [`ReportAbuseUriTemplate`](report-abuse-resource.md)                   | Нет       | Создать URL-адрес для доступа к веб-страницы «сообщить о нарушении».
-[`RepositorySignatures`](repository-signatures-resource.md)            | Нет       | Получение сертификатов, используемый для подписания репозитория.
-[`Catalog`](catalog-resource.md)                                       | Нет       | Полную запись всех событий пакета.
+[`RepositorySignatures`](repository-signatures-resource.md)             | Нет      | Получение сертификатов, используемый для подписания репозитория.
+[`Catalog`](catalog-resource.md)                                         | Нет      | Полную запись всех событий пакета.
+[`SymbolPackagePublish`](symbol-package-publish-resource.md)            | Нет      | Отправьте пакеты символов.
 
 Как правило сериализуются все недвоичные данные, возвращаемые API ресурса с помощью JSON. Схема ответа, возвращаемая функцией каждого ресурса в индекс службы определяется по отдельности для этого ресурса. Дополнительные сведения о каждом ресурсе см. в разделах, перечисленных выше.
 
