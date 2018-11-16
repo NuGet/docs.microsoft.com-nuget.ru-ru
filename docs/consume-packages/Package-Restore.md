@@ -5,12 +5,12 @@ author: karann-msft
 ms.author: karann
 ms.date: 03/16/2018
 ms.topic: conceptual
-ms.openlocfilehash: b95c4462a214a78452f9dbe35936620636c4f60b
-ms.sourcegitcommit: 1d1406764c6af5fb7801d462e0c4afc9092fa569
+ms.openlocfilehash: da69181aebe3bebcea6acd6e15fde6b77dd33452
+ms.sourcegitcommit: ffbdf147f84f8bd60495d3288dff9a5275491c17
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/04/2018
-ms.locfileid: "43548776"
+ms.lasthandoff: 11/13/2018
+ms.locfileid: "51580302"
 ---
 # <a name="package-restore"></a>Восстановление пакетов
 
@@ -62,9 +62,9 @@ ms.locfileid: "43548776"
         </packageRestore>
     </configuration>
     ```
-    <br/>
-    > [!Note]
-    >  Параметр `packageRestore/enabled` можно переопределить на глобальном уровне, задав для переменной среды с именем **EnableNuGetPackageRestore** значение TRUE или FALSE перед запуском Visual Studio или началом сборки.
+
+> [!Note]
+>  Параметр `packageRestore/enabled` можно переопределить на глобальном уровне, задав для переменной среды с именем **EnableNuGetPackageRestore** значение TRUE или FALSE перед запуском Visual Studio или началом сборки.
 
 - **Автоматически проверять отсутствие пакетов при сборке в Visual Studio**: управляет автоматическим восстановлением, изменяя параметр `packageRestore/automatic` в файле `NuGet.Config`, как показано ниже (`%AppData%\NuGet\NuGet.Config` в Windows, `~/.nuget/NuGet/NuGet.Config` в Mac/Linux). Когда этот параметр задан, при запуске сборки из Visual Studio все отсутствующие пакеты восстанавливаются автоматически. Этот параметр не затрагивает сборки, запускаемые из командной строки с помощью MSBuild.
 
