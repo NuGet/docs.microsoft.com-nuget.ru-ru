@@ -5,12 +5,12 @@ author: karann-msft
 ms.author: karann
 ms.date: 03/22/2018
 ms.topic: conceptual
-ms.openlocfilehash: a5807a6895a76a7d6660d218b29e1d3a2802ca28
-ms.sourcegitcommit: 1d1406764c6af5fb7801d462e0c4afc9092fa569
+ms.openlocfilehash: 5f52b00e0c45882fb7a4bd1c1a80022192f3be6b
+ms.sourcegitcommit: ffbdf147f84f8bd60495d3288dff9a5275491c17
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/04/2018
-ms.locfileid: "43545052"
+ms.lasthandoff: 11/13/2018
+ms.locfileid: "51580250"
 ---
 # <a name="package-consumption-workflow"></a>Рабочий процесс использования пакета
 
@@ -18,7 +18,7 @@ ms.locfileid: "43545052"
 
 ![Вы узнаете, как перейти к источнику пакета, найти нужный пакет и установить его в проект, а затем добавить оператор using и вызовы в API пакета](media/Overview-01-GeneralFlow.png)
 
-\* _Только Visual Studio и dotnet.ex`. Команда nuget install не изменяет файлы проекта или файл packages.config. Записями нужно управлять вручную._
+\* Только _Visual Studio и `dotnet.exe`. Команда `nuget install` не изменяет файлы проекта или файл `packages.config`. Записями нужно управлять вручную._
 
 Дополнительные сведения см. в статьях [Поиск и пробное использование пакетов NuGet для проекта](../consume-packages/finding-and-choosing-packages.md) и [Способы установки пакета NuGet](ways-to-install-a-package.md).
 

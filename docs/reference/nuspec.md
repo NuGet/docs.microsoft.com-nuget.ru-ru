@@ -6,12 +6,12 @@ ms.author: karann
 ms.date: 08/29/2017
 ms.topic: reference
 ms.reviewer: anangaur
-ms.openlocfilehash: 48f56ec5f042f6e78e38a202f0879c6949e7ee11
-ms.sourcegitcommit: ffbdf147f84f8bd60495d3288dff9a5275491c17
+ms.openlocfilehash: e8d4ed1f3fe4394d084a5847200901b23a1b7b39
+ms.sourcegitcommit: c825eb7e222d4a551431643f5b5617ae868ebe0a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/13/2018
-ms.locfileid: "51580402"
+ms.lasthandoff: 11/19/2018
+ms.locfileid: "51944084"
 ---
 # <a name="nuspec-reference"></a>Справочник по файлу NUSPEC
 
@@ -79,7 +79,49 @@ ms.locfileid: "51580402"
 #### <a name="projecturl"></a>projectUrl
 URL-адрес для домашней страницы пакета, часто указываемый при отображении пользовательского интерфейса, также как и nuget.org. 
 #### <a name="licenseurl"></a>licenseUrl
+> [!Important]
+> licenseUrl устарел. Вместо этого используйте лицензию.
+
 URL-адрес для лицензии пакета, часто указываемый при отображении пользовательского интерфейса, так же как и nuget.org.
+#### <a name="license"></a>лицензии
+Выражение SPDX лицензии или путь к файлу лицензии внутри пакета, часто отображающийся в пользовательском интерфейсе как nuget.org. Если лицензируется пакета распространенных лицензия, например BSD-2-предложение или MIT, используйте связанный идентификатор SPDX лицензии.<br>Пример: `<license type="expression">MIT</license>`
+
+Ниже приведен полный список [SPDX лицензии идентификаторы](https://spdx.org/licenses/). NuGet.org принимает только OSI или утверждены FSF лицензии при использовании лицензий выражение типа.
+
+Если ваш пакет лицензируется распространенных сразу несколько лицензий, можно указать составного лицензии с помощью [SPDX выражение синтаксис версии 2.0](https://spdx.org/spdx-specification-21-web-version#h.jxpfx0ykyb60).<br>Пример: `<license type="expression">BSD-2-Clause OR MIT</license>`
+
+Если вы используете лицензию, которая не была назначена SPDX идентификатор или он является пользовательской лицензии, вы можете упаковать файл с текстом лицензии. Пример:
+```xml
+<package>
+  <metadata>
+    ...
+    <license type="file">LICENSE.txt</license>
+    ...
+  </metadata>
+  <files>
+    ...
+    <file src="licenses\LICENSE.txt" target="" />
+    ...
+  </files>
+</package>
+```
+Точный синтаксис выражений лицензии NuGet описан ниже в [ABNF](https://tools.ietf.org/html/rfc5234).
+```cli
+license-id            = <short form license identifier from https://spdx.org/spdx-specification-21-web-version#h.luq9dgcle9mo>
+
+license-exception-id  = <short form license exception identifier from https://spdx.org/spdx-specification-21-web-version#h.ruv3yl8g6czd>
+
+simple-expression = license-id / license-id”+”
+
+compound-expression =  1*1(simple-expression /
+                simple-expression "WITH" license-exception-id /
+                compound-expression "AND" compound-expression /
+                compound-expression "OR" compound-expression ) /                
+                "(" compound-expression ")" )
+
+license-expression =  1*1(simple-expression / compound-expression / UNLICENSED)
+```
+
 #### <a name="iconurl"></a>iconUrl
 URL-адрес для изображения размером 64x64 с прозрачным фоном, используемого в качестве значка для пакета при отображении пользовательского интерфейса. Убедитесь, что этот элемент содержит *прямой URL-адрес изображения*, а не URL-адрес веб-страницы, на которой содержится изображение. Например, чтобы использовать изображение из GitHub, используйте необработанного файла, URL-адрес, например <em>https://github.com/\<username\>/\<repository\>/raw/\<branch\>/\<logo.png\></em>. 
 
@@ -173,7 +215,7 @@ nuget pack MyProject.csproj
 
 Элемент `<dependencies>` внутри элемента `<metadata>` содержит любое число элементов `<dependency>`, идентифицирующих другие пакеты, от которых зависит пакет верхнего уровня. Ниже перечислены атрибуты каждого элемента `<dependency>`:
 
-| Атрибут | Описание |
+| Атрибут | Описание: |
 | --- | --- |
 | `id` | Идентификатор пакета зависимости, например EntityFramework и NUnit, являющийся именем пакета nuget.org, показан на странице пакета (обязательно). |
 | `version` | Диапазон версий, которые допустимы в качестве зависимости (обязательно). Точный синтаксис см. в разделе [Управление версиями пакета](../reference/package-versioning.md#version-ranges-and-wildcards). |
@@ -297,7 +339,7 @@ nuget pack MyProject.csproj
 
 Элемент `<frameworkAssemblies>` содержит ноль или более элементов `<frameworkAssembly>`, каждый из которых задает следующие атрибуты:
 
-| Атрибут | Описание |
+| Атрибут | Описание: |
 | --- | --- |
 | **имя_сборки** | Полное имя сборки (обязательно). |
 | **targetFramework** | Указывает целевую платформу, к которой применяется эта ссылка (необязательно). Если этот атрибут опущен, указывает, что ссылка применяется ко всем платформам. Точное описание идентификаторов платформы см. в разделе [Целевые платформы](../reference/target-frameworks.md). |
@@ -337,7 +379,7 @@ nuget pack MyProject.csproj
 
 Каждый элемент `<file>` задает указанные ниже атрибуты:
 
-| Атрибут | Описание |
+| Атрибут | Описание: |
 | --- | --- |
 | **src** | Расположение файла или файлов, которые требуется включить, с учетом исключений, задаваемых атрибутом `exclude`. Если не указан абсолютный путь, этот путь задается относительно файла `.nuspec`. Допускается использовать подстановочный знак `*`. Наличие сдвоенного подстановочного знака `**` подразумевает выполнение рекурсивного поиска в папке. |
 | **target** | Относительный путь к папке в пакете, куда помещаются файлы исходного кода. Должен начинаться с `lib`, `content`, `build` или `tools`. См. раздел [Создание файла NUSPEC на основе рабочего каталога, соответствующего соглашениям](../create-packages/creating-a-package.md#from-a-convention-based-working-directory). |
@@ -542,7 +584,7 @@ nuget pack MyProject.csproj
 
 Эти файлы задаются с набором атрибутов, который описывает их использование в системе проекта:
 
-| Атрибут | Описание |
+| Атрибут | Описание: |
 | --- | --- |
 | **include** | Расположение файла или файлов, которые требуется включить, с учетом исключений, задаваемых атрибутом `exclude` (обязательно). Если не указан абсолютный путь, этот путь задается относительно файла `.nuspec`. Допускается использовать подстановочный знак `*`. Наличие сдвоенного подстановочного знака `**` подразумевает выполнение рекурсивного поиска в папке. |
 | **exclude** | Разделенный точками с запятой список файлов или шаблонов файлов, которые исключаются из расположения `src`. Допускается использовать подстановочный знак `*`. Наличие сдвоенного подстановочного знака `**` подразумевает выполнение рекурсивного поиска в папке. |
@@ -614,7 +656,7 @@ nuget pack MyProject.csproj
         <description>Sample exists only to show a sample .nuspec file.</description>
         <language>en-US</language>
         <projectUrl>http://xunit.codeplex.com/</projectUrl>
-        <licenseUrl>http://xunit.codeplex.com/license</licenseUrl>
+        <license type="expression">MIT</license>
     </metadata>
 </package>
 ```

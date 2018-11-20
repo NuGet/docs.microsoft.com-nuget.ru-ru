@@ -6,12 +6,12 @@ ms.author: karann
 ms.date: 04/24/2017
 ms.topic: conceptual
 ms.reviewer: anangaur
-ms.openlocfilehash: c2cd61b692b80cdc45fce399483cda3b57d12e5e
-ms.sourcegitcommit: 1d1406764c6af5fb7801d462e0c4afc9092fa569
+ms.openlocfilehash: 830714269ac422a4784c15b000e374195f02332f
+ms.sourcegitcommit: ffbdf147f84f8bd60495d3288dff9a5275491c17
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/04/2018
-ms.locfileid: "43547689"
+ms.lasthandoff: 11/13/2018
+ms.locfileid: "51580289"
 ---
 # <a name="transforming-source-code-and-configuration-files"></a>Преобразования исходного кода и файлов конфигурации
 
@@ -114,7 +114,7 @@ ms.locfileid: "43547689"
 
 ### <a name="xdt-transforms"></a>Преобразования XDT
 
-Вы можете изменять файлы конфигурации с помощью [синтаксиса XDT](https://msdn.microsoft.com/library/dd465326.aspx). Кроме того, NuGet может заменять маркеры [свойствами проекта](/dotnet/api/vslangproj.projectproperties?view=visualstudiosdk-2017&viewFallbackFrom=netframework-4.7), включая имена свойств с разделителями `$` (без учета регистра символов).
+Вы можете изменять файлы конфигурации с помощью [синтаксиса XDT](https://msdn.microsoft.com/library/dd465326.aspx). Кроме того, NuGet может заменять токены [свойствами проекта](/dotnet/api/vslangproj.projectproperties?view=visualstudiosdk-2017&viewFallbackFrom=netframework-4.7), включая имена свойств с разделителями `$` (без учета регистра символов).
 
 Например, следующий файл `app.config.install.xdt` вставит элемент `appSettings` в файл `app.config`, содержащий значения `FullPath`, `FileName` и `ActiveConfigurationSettings` из проекта:
 

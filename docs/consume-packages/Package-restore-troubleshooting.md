@@ -5,12 +5,12 @@ author: karann-msft
 ms.author: karann
 ms.date: 05/25/2018
 ms.topic: conceptual
-ms.openlocfilehash: dacc95c557af016f535bc1b758473d7062f2ad3f
-ms.sourcegitcommit: 09107c5092050f44a0c6abdfb21db73878f78bd0
+ms.openlocfilehash: 51dd78ef7cc427232982df15657d76d117146853
+ms.sourcegitcommit: ffbdf147f84f8bd60495d3288dff9a5275491c17
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/03/2018
-ms.locfileid: "50981019"
+ms.lasthandoff: 11/13/2018
+ms.locfileid: "51580361"
 ---
 # <a name="troubleshooting-package-restore-errors"></a>Устранение ошибок при восстановлении пакетов
 
@@ -42,7 +42,7 @@ This project references NuGet package(s) that are missing on this computer.
 Use NuGet Package Restore to download them. The missing file is {name}.
 ```
 
-Эта ошибка возникает при попытке выполнить сборку проекта, содержащего ссылки на один пакет NuGet или несколько, которые сейчас не установлены на компьютере или в проекте.
+Эта ошибка возникает при попытке выполнить сборку проекта, содержащего ссылки на один или несколько пакетов NuGet, которые сейчас не установлены на компьютере или в проекте.
 
 - Если используется формат управления PackageReference, эта ошибка означает, что пакет не установлен в папке *global-packages*, как описано в статье [Управление папкой установки глобальных пакетов, кэшем и временными папками](managing-the-global-packages-and-cache-folders.md).
 - Если используется файл `packages.config`, эта ошибка означает, что пакет не установлен в папке `packages` в корневом узле решения.

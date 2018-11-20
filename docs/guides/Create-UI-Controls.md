@@ -5,12 +5,12 @@ author: karann-msft
 ms.author: karann
 ms.date: 05/23/2018
 ms.topic: tutorial
-ms.openlocfilehash: dd36987e020c2daa02bb875aa9dbd69c85bba4d3
-ms.sourcegitcommit: 1bd72dca2f85b4267b9924236f1d23dd7b0ed733
+ms.openlocfilehash: dfbd6a3e6d59dfcea6394891703ea66bce5e8e92
+ms.sourcegitcommit: ffbdf147f84f8bd60495d3288dff9a5275491c17
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/23/2018
-ms.locfileid: "49951750"
+ms.lasthandoff: 11/13/2018
+ms.locfileid: "51580278"
 ---
 # <a name="creating-ui-controls-as-nuget-packages"></a>Создание элементов управления пользовательским интерфейсом в виде пакетов NuGet
 
@@ -89,7 +89,11 @@ ms.locfileid: "49951750"
 
 Чтобы на панели элементов или в области ресурсов отображался пользовательский значок, добавьте изображение в свой проект или соответствующий проект `design.dll` с именем Namespace.ControlName.extension и выберите действие сборки "Внедренный ресурс". Также нужно убедиться, что в соответствующем файле `AssemblyInfo.cs` указан атрибут ProvideMetadata — `[assembly: ProvideMetadata(typeof(RegisterMetadata))]`. См. этот [пример](https://github.com/NuGet/Samples/blob/master/ExtensionSDKasNuGetPackage/NativePackage.Design/Properties/AssemblyInfo.cs#L20).
 
-Поддерживаемые форматы: `.png`, `.jpg`, `.jpeg`, `.gif` и `.bmp`. Рекомендуемый размер изображения — 64 на 64 пикселя.
+Поддерживаемые форматы: `.png`, `.jpg`, `.jpeg`, `.gif` и `.bmp`. Рекомендуемый формат — BMP24 размером 16 на 16 пикселей.
+
+![Пример значка поля инструмента](https://raw.githubusercontent.com/NuGet/docs.microsoft.com-nuget/live/docs/guides/media/ColorPicker_16x16x24.bmp)
+
+Розовый фон заменяется во время выполнения. Цвет значков меняется при изменении темы Visual Studio и если ожидается этот цвет фона. Дополнительные сведения см. в разделе [Изображения и значки для Visual Studio](https://docs.microsoft.com/en-us/visualstudio/extensibility/ux-guidelines/images-and-icons-for-visual-studio).
 
 В приведенном ниже примере проект содержит файл изображения с именем ManagedPackage.MyCustomControl.png.
 
