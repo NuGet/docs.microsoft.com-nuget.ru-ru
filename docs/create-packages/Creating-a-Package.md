@@ -5,12 +5,12 @@ author: karann-msft
 ms.author: karann
 ms.date: 12/12/2017
 ms.topic: conceptual
-ms.openlocfilehash: 1221631b22eed7d2d8e58bd08ff120d91231d49b
-ms.sourcegitcommit: ffbdf147f84f8bd60495d3288dff9a5275491c17
+ms.openlocfilehash: db02089bec3d2b8c001518fa0542375dc5418eb8
+ms.sourcegitcommit: c825eb7e222d4a551431643f5b5617ae868ebe0a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/13/2018
-ms.locfileid: "51580406"
+ms.lasthandoff: 11/19/2018
+ms.locfileid: "51944071"
 ---
 # <a name="creating-nuget-packages"></a>Создание пакетов NuGet
 
@@ -61,7 +61,8 @@ ms.locfileid: "51580406"
 - сведения об авторских правах;
 - краткое описание для [пользовательского интерфейса диспетчера пакетов в Visual Studio](../tools/package-manager-ui.md);
 - код языка;
-- URL-адреса домашней страницы и лицензии;
+- URL проекта;
+- лицензия в виде выражения или файла (`licenseUrl` скоро станет нерекомендуемым, используйте [nuspec-элемент метаданных `license`](../reference/nuspec.md#license));
 - URL-адрес значка;
 - список зависимостей и ссылок;
 - теги, упрощающие поиск в коллекции.
@@ -86,10 +87,13 @@ ms.locfileid: "51580406"
             users to easily find other packages by the same owners.  
         -->
         <owners>dejanatc, rjdey</owners>
-
-         <!-- License and project URLs provide links for the gallery -->
-        <licenseUrl>http://opensource.org/licenses/MS-PL</licenseUrl>
+        
+         <!-- Project URL provides a link for the gallery -->
         <projectUrl>http://github.com/contoso/UsefulStuff</projectUrl>
+
+         <!-- License information is displayed on the gallery -->
+        <license type="expression">Apache-2.0</license>
+        
 
         <!-- The icon is used in Visual Studio's package manager UI -->
         <iconUrl>http://github.com/contoso/UsefulStuff/nuget_icon.png</iconUrl>
