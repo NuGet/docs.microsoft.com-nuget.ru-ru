@@ -6,12 +6,12 @@ ms.author: jver
 ms.date: 10/30/2017
 ms.topic: reference
 ms.reviewer: kraigb
-ms.openlocfilehash: d4c13200494ed3c6fa897ce0083a52c13688b44b
-ms.sourcegitcommit: 1d1406764c6af5fb7801d462e0c4afc9092fa569
+ms.openlocfilehash: fd5188c92f8154391359b8da5c8a32f4d5d6f2c0
+ms.sourcegitcommit: 0c5a49ec6e0254a4e7a9d8bca7daeefb853c433a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/04/2018
-ms.locfileid: "43547397"
+ms.lasthandoff: 11/28/2018
+ms.locfileid: "52453589"
 ---
 # <a name="catalog"></a>Catalog
 
@@ -27,7 +27,7 @@ ms.locfileid: "43547397"
 
 Следующие `@type` используется значение:
 
-Значение @type   | Примечания
+Значение@type    | Примечания
 ------------- | -----
 CATALOG/3.0.0 | Первоначальный выпуск
 
@@ -213,7 +213,7 @@ requireLicenseAgreement | boolean                    | Нет       | Предп
 заголовок                   | string                     | Нет       |
 verbatimVersion         | string                     | Нет       | Строка версии, так как он изначально находится в файла nuspec
 
-Пакет `version` свойство — это строка нормализованной полной версией. Это означает, что данные SemVer 2.0.0 сборки можно включить здесь.
+Пакет `version` свойство — это строка полной версии после нормализации. Это означает, что данные SemVer 2.0.0 сборки можно включить здесь.
 
 `created` Метка времени — это, если пакет сначала получен от источника пакета, как правило, некоторое время перед меткой времени фиксации элемента каталога.
 
