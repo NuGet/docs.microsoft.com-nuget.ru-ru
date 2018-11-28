@@ -5,12 +5,12 @@ author: karann-msft
 ms.author: karann
 ms.date: 03/23/2018
 ms.topic: conceptual
-ms.openlocfilehash: 07296ce5a9ba85d68eca5f4915d6efea00dc8980
-ms.sourcegitcommit: 1d1406764c6af5fb7801d462e0c4afc9092fa569
+ms.openlocfilehash: 7b3fc72ddd3ad6c9185c2bd0f2563df59e77f1c8
+ms.sourcegitcommit: 0c5a49ec6e0254a4e7a9d8bca7daeefb853c433a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/04/2018
-ms.locfileid: "43548876"
+ms.lasthandoff: 11/28/2018
+ms.locfileid: "52453550"
 ---
 # <a name="nuget-pack-and-restore-as-msbuild-targets"></a>Объекты pack и restore NuGet в качестве целевых объектов MSBuild
 
@@ -37,7 +37,7 @@ ms.locfileid: "43548876"
 
 ## <a name="pack-target"></a>Целевой объект pack
 
-Для проектов .NET Standard с помощью формата PackageReference, `msbuild /t:pack` рисует входные данные из файла проекта для использования при создании пакета NuGet.
+Для проектов .NET Standard с помощью формата PackageReference, `msbuild -t:pack` рисует входные данные из файла проекта для использования при создании пакета NuGet.
 
 В следующей таблице описываются свойства MSBuild, которые можно добавить в файл проекта в первом узле `<PropertyGroup>`. Эти изменения легко внести в Visual Studio 2017 и более поздней версии, щелкнув проект правой кнопкой мыши и выбрав пункт **Изменить {project_name}**. Для удобства таблица упорядочена по эквивалентным свойствам в [файле `.nuspec`](../reference/nuspec.md).
 
@@ -52,10 +52,12 @@ ms.locfileid: "43548876"
 | Authors | Authors | Имя текущего пользователя | |
 | Владельцы | Н/Д | Не существует в NuSpec | |
 | Заголовок | Заголовок | Идентификатор пакета| |
-| Описание | Описание | "Описание пакета" | |
+| Описание: | Описание: | "Описание пакета" | |
 | Copyright | Copyright | пустой | |
 | RequireLicenseAcceptance | PackageRequireLicenseAcceptance | False | |
-| LicenseUrl | PackageLicenseUrl | пустой | |
+| лицензии | PackageLicenseExpression | пустой | Соответствует `<license type="expression">` |
+| лицензии | PackageLicenseFile | пустой | Соответствует `<license type="file">`. Может потребоваться явно пакета файл лицензии, на которую указывает ссылка. |
+| LicenseUrl | PackageLicenseUrl | пустой | `licenseUrl` является устаревшим, используйте свойство PackageLicenseExpression или PackageLicenseFile |
 | ProjectUrl | PackageProjectUrl | пустой | |
 | IconUrl | PackageIconUrl | пустой | |
 | Теги | PackageTags | пустой | Теги разделяются точкой с запятой. |
@@ -73,10 +75,12 @@ ms.locfileid: "43548876"
 - PackageVersion
 - PackageId
 - Authors
-- Описание
+- Описание:
 - Copyright
 - PackageRequireLicenseAcceptance
 - DevelopmentDependency
+- PackageLicenseExpression
+- PackageLicenseFile
 - PackageLicenseUrl
 - PackageProjectUrl
 - PackageIconUrl
@@ -177,7 +181,7 @@ ms.locfileid: "43548876"
 
 ### <a name="includesymbols"></a>IncludeSymbols
 
-При использовании `MSBuild /t:pack /p:IncludeSymbols=true` соответствующие файлы `.pdb` копируются вместе с другими выходными файлами (`.dll`, `.exe`, `.winmd`, `.xml`, `.json`, `.pri`). Обратите внимание, что при задании `IncludeSymbols=true` создается обычный пакет *и* пакет символов.
+При использовании `MSBuild -t:pack -p:IncludeSymbols=true` соответствующие файлы `.pdb` копируются вместе с другими выходными файлами (`.dll`, `.exe`, `.winmd`, `.xml`, `.json`, `.pri`). Обратите внимание, что при задании `IncludeSymbols=true` создается обычный пакет *и* пакет символов.
 
 ### <a name="includesource"></a>IncludeSource
 
@@ -185,28 +189,46 @@ ms.locfileid: "43548876"
 
 Если файл типа Compile находится вне папки проекта, он просто добавляется в `src\<ProjectName>\`.
 
+### <a name="packing-a-license-expression-or-a-license-file"></a>Упаковка выражении лицензии или файл лицензии
+
+При использовании выражения лицензии, следует использовать свойство PackageLicenseExpression. 
+[Пример выражения лицензии](#https://github.com/NuGet/Samples/tree/master/PackageLicenseExpressionExample).
+
+При упаковке файл лицензии, необходимо использовать свойство PackageLicenseFile чтобы указать путь к пакету, относительно корня пакета. Кроме того необходимо убедиться, что файл включается в пакет. Пример:
+
+```xml
+<PropertyGroup>
+    <PackageLicenseFile>LICENSE.txt</PackageLicenseFile>
+</PropertyGroup>
+
+<ItemGroup>
+    <None Include="licenses\LICENSE.txt" Pack="true" PackagePath="$(PackageLicenseFile)"/>
+</ItemGroup>
+```
+[Образец лицензии жизнь](#https://github.com/NuGet/Samples/tree/master/PackageLicenseFileExample).
+
 ### <a name="istool"></a>IsTool
 
-При использовании `MSBuild /t:pack /p:IsTool=true` все выходные файлы, как указано в сценарии [Выходные сборки](#output-assemblies), копируются в папку `tools` вместо папки `lib`. Обратите внимание, что это свойство отличается от `DotNetCliTool`, которое указывается путем задания `PackageType` в файле `.csproj`.
+При использовании `MSBuild -t:pack -p:IsTool=true` все выходные файлы, как указано в сценарии [Выходные сборки](#output-assemblies), копируются в папку `tools` вместо папки `lib`. Обратите внимание, что это свойство отличается от `DotNetCliTool`, которое указывается путем задания `PackageType` в файле `.csproj`.
 
 ### <a name="packing-using-a-nuspec"></a>Упаковка с помощью NUSPEC
 
 Можно использовать `.nuspec` файл для упаковки проекта, при условии, что у вас есть файл проекта SDK для импорта `NuGet.Build.Tasks.Pack.targets` , чтобы можно было выполнить задачу пакета. По-прежнему необходимо восстановить проект, прежде чем можно упаковать в файл nuspec. Требуемая версия .NET framework файл проекта не имеет значения и не использовались при упаковке nuspec. Следующие три свойства MSBuild связаны с упаковкой с помощью `.nuspec`:
 
 1. `NuspecFile`: относительный или абсолютный путь к файлу `.nuspec`, используемому для упаковки.
-1. `NuspecProperties`: список разделенных точками с запятой пар "ключ-значение". Из-за особенностей работы анализа в командной строке MSBuild несколько свойств нужно указать следующим образом: `/p:NuspecProperties=\"key1=value1;key2=value2\"`.  
+1. `NuspecProperties`: список разделенных точками с запятой пар "ключ-значение". Из-за особенностей работы анализа в командной строке MSBuild несколько свойств нужно указать следующим образом: `-p:NuspecProperties=\"key1=value1;key2=value2\"`.  
 1. `NuspecBasePath`: базовый путь для файла `.nuspec`.
 
 Если вы используете `dotnet.exe` для упаковки проекта, воспользуйтесь командой, аналогичной следующей:
 
 ```cli
-dotnet pack <path to .csproj file> /p:NuspecFile=<path to nuspec file> /p:NuspecProperties=<> /p:NuspecBasePath=<Base path> 
+dotnet pack <path to .csproj file> -p:NuspecFile=<path to nuspec file> -p:NuspecProperties=<> -p:NuspecBasePath=<Base path> 
 ```
 
 Если вы используете MSBuild для упаковки проекта, воспользуйтесь командой, аналогичной следующей:
 
 ```cli
-msbuild /t:pack <path to .csproj file> /p:NuspecFile=<path to nuspec file> /p:NuspecProperties=<> /p:NuspecBasePath=<Base path> 
+msbuild -t:pack <path to .csproj file> -p:NuspecFile=<path to nuspec file> -p:NuspecProperties=<> -p:NuspecBasePath=<Base path> 
 ```
 
 Обратите внимание на то, что упаковки nuspec использование dotnet.exe или msbuild также приводит к сборке проекта по умолчанию. Этого можно избежать путем передачи ```--no-build``` dotnet.exe, это эквивалентно заданию свойства ```<NoBuild>true</NoBuild> ``` в файле проекта, а также параметр ```<IncludeBuildOutput>false</IncludeBuildOutput> ``` в файле проекта
@@ -283,7 +305,7 @@ msbuild /t:pack <path to .csproj file> /p:NuspecFile=<path to nuspec file> /p:Nu
 
 ## <a name="restore-target"></a>Целевой объект restore
 
-`MSBuild /t:restore` (который `nuget restore` и `dotnet restore` используют с проектами .NET Core) восстанавливает пакеты, на которые ссылается файл проекта:
+`MSBuild -t:restore` (который `nuget restore` и `dotnet restore` используют с проектами .NET Core) восстанавливает пакеты, на которые ссылается файл проекта:
 
 1. Чтение перекрестных ссылок между проектами.
 1. Чтение свойств проекта, чтобы найти промежуточную папку и целевые платформы.
@@ -296,9 +318,9 @@ msbuild /t:pack <path to .csproj file> /p:NuspecFile=<path to nuspec file> /p:Nu
 
 ### <a name="restore-properties"></a>Свойства восстановления
 
-Дополнительные параметры восстановления могут поступать из свойств MSBuild в файле проекта. Значения также можно задать из командной строки с помощью параметра `/p:` (см. примеры ниже).
+Дополнительные параметры восстановления могут поступать из свойств MSBuild в файле проекта. Значения также можно задать из командной строки с помощью параметра `-p:` (см. примеры ниже).
 
-| Свойство. | Описание |
+| Свойство. | Описание: |
 |--------|--------|
 | RestoreSources | Разделенный точками с запятой список источников пакетов. |
 | RestorePackagesPath | Путь к папке пакетов пользователя. |
@@ -315,7 +337,7 @@ msbuild /t:pack <path to .csproj file> /p:NuspecFile=<path to nuspec file> /p:Nu
 Командная строка:
 
 ```cli
-msbuild /t:restore /p:RestoreConfigFile=<path>
+msbuild -t:restore -p:RestoreConfigFile=<path>
 ```
 
 Файл проекта:
@@ -330,7 +352,7 @@ msbuild /t:restore /p:RestoreConfigFile=<path>
 
 Операция восстановления создает в папке сборки `obj` следующие файлы:
 
-| Файл | Описание |
+| Файл | Описание: |
 |--------|--------|
 | `project.assets.json` | Содержит все ссылки на пакеты в графе зависимостей. |
 | `{projectName}.projectFileExtension.nuget.g.props` | Ссылки на свойства MSBuild, содержащиеся в пакетах. |
