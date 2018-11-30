@@ -5,12 +5,12 @@ author: karann-msft
 ms.author: karann
 ms.date: 05/25/2018
 ms.topic: conceptual
-ms.openlocfilehash: 51dd78ef7cc427232982df15657d76d117146853
-ms.sourcegitcommit: ffbdf147f84f8bd60495d3288dff9a5275491c17
+ms.openlocfilehash: b85b586e76e424442dc0ba3acfecbee1e8755345
+ms.sourcegitcommit: 0c5a49ec6e0254a4e7a9d8bca7daeefb853c433a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/13/2018
-ms.locfileid: "51580361"
+ms.lasthandoff: 11/28/2018
+ms.locfileid: "52453472"
 ---
 # <a name="troubleshooting-package-restore-errors"></a>Устранение ошибок при восстановлении пакетов
 
@@ -57,7 +57,7 @@ Use NuGet Package Restore to download them. The missing file is {name}.
 - В Visual Studio включите восстановление пакетов, выбрав команду **Сервис > Диспетчер пакетов NuGet > Параметры диспетчера пакета**, задав оба параметра в разделе **Восстановление пакета** и нажав кнопку **ОК**. Выполните сборку решения еще раз.
 - Для проектов .NET Core запустите `dotnet restore` или `dotnet build` (при этом восстановление запускается автоматически).
 - В командной строке запустите `nuget restore` (за исключением проектов, созданных с помощью `dotnet`, для них используйте `dotnet restore`).
-- В командной строке с проектами, использующими формат PackageReference, запустите `msbuild /t:restore`.
+- В командной строке с проектами, использующими формат PackageReference, запустите `msbuild -t:restore`.
 
 После восстановления пакет должен присутствовать в папке *global-packages*. В проектах, использующих формат PackageReference, в процессе восстановления повторно создается файл `obj/project.assets.json`, а в проектах, использующих файл `packages.config`, пакет должен появиться в папке `packages`. Теперь сборка проекта должна пройти без ошибок. В противном случае [сообщите о проблеме на GitHub](https://github.com/NuGet/docs.microsoft.com-nuget/issues), чтобы мы могли связаться с вами.
 
@@ -73,7 +73,7 @@ Assets file '<path>\project.assets.json' not found. Run a NuGet package restore 
 
 Если используется формат управления PackageReference, который проверяет, установлены ли на компьютере все необходимые пакеты, в файле `project.assets.json` определена схема зависимостей проекта. Этот файл создается динамически во время восстановления пакета. Поэтому он обычно не добавляется в систему управления версиями. В результате эта ошибка возникает при попытке выполнить сборку проекта с помощью такого средства, как `msbuild`, которое не восстанавливает пакеты автоматически.
 
-В этом случае запустите `msbuild /t:restore` и затем `msbuild` или используйте `dotnet build` (при этом пакеты восстанавливаются автоматически). Кроме того, вы можете использовать любой из методов восстановления пакетов, описанных в [предыдущем разделе](#missing).
+В этом случае запустите `msbuild -t:restore` и затем `msbuild` или используйте `dotnet build` (при этом пакеты восстанавливаются автоматически). Кроме того, вы можете использовать любой из методов восстановления пакетов, описанных в [предыдущем разделе](#missing).
 
 <a name="consent"></a>
 

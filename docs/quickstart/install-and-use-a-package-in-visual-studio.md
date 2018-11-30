@@ -5,12 +5,12 @@ author: karann-msft
 ms.author: karann
 ms.date: 01/23/2018
 ms.topic: quickstart
-ms.openlocfilehash: 7b30fce4a2d9ad0bd7bc2b97f69b8d5d25101b72
-ms.sourcegitcommit: 1d1406764c6af5fb7801d462e0c4afc9092fa569
+ms.openlocfilehash: 15268ae33d56042a765420e5076dac49db6cce04
+ms.sourcegitcommit: 1591bb230e106b94162a87dd1d86fe427366730a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/04/2018
-ms.locfileid: "43545230"
+ms.lasthandoff: 11/30/2018
+ms.locfileid: "52671179"
 ---
 # <a name="quickstart-install-and-use-a-package-in-visual-studio"></a>Краткое руководство. Установка и использование пакета в Visual Studio
 
@@ -64,7 +64,7 @@ ms.locfileid: "43545230"
 
     ![Поиск пакета Newtonsoft.Json](media/QS_Use-08-Console1.png)
 
-1. Введите команду `Install-Package Newtonsoft.json` (см. сведения о ней в [этой статье](../tools/ps-ref-install-package.md)). В окне консоли отображаются выходные данные команды. Ошибки обычно означают, что пакет не совместим с целевой платформой проекта.
+1. Введите команду `Install-Package Newtonsoft.Json` (см. сведения о ней в [этой статье](../tools/ps-ref-install-package.md)). В окне консоли отображаются выходные данные команды. Ошибки обычно означают, что пакет не совместим с целевой платформой проекта.
 
 ## <a name="use-the-newtonsoftjson-api-in-the-app"></a>Использование интерфейса API Newtonsoft.Json в приложении
 
@@ -107,7 +107,7 @@ ms.locfileid: "43545230"
 1. Несмотря на то что вы добавили пакет Newtonsoft.Json в проект, `JsonConvert` подчеркивается красной волнистой линией, так как оператор `using` требуется в верхней части файла кода.
 
     ```cs
-    using Newtonsoft.json;
+    using Newtonsoft.Json;
     ```
 
 1. Выполните сборку и запустите приложение, нажав клавишу F5 или выбрав команду **Отладка > Начать отладку**.
