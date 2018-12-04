@@ -16,12 +16,12 @@ keywords: пакеты символов NuGet, отладка пакета NuGet
 ms.reviewer:
 - anangaur
 - karann
-ms.openlocfilehash: a72b59a391ed25e9617ba3ba3656301a2ed90ddc
-ms.sourcegitcommit: ffbdf147f84f8bd60495d3288dff9a5275491c17
+ms.openlocfilehash: 48ca4b62e722988b3dfe69306565d7f159805962
+ms.sourcegitcommit: 0c5a49ec6e0254a4e7a9d8bca7daeefb853c433a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/13/2018
-ms.locfileid: "51580437"
+ms.lasthandoff: 11/28/2018
+ms.locfileid: "52453459"
 ---
 # <a name="creating-symbol-packages-snupkg"></a>Создание пакетов символов (SNUPKG)
 
@@ -41,12 +41,12 @@ nuget pack MyPackage.nuspec -Symbols -SymbolPackageFormat snupkg
 
 nuget pack MyPackage.csproj -Symbols -SymbolPackageFormat snupkg
 
-msbuild /t:pack MyPackage.csproj /p:IncludeSymbols=true /p:SymbolPackageFormat=snupkg
+msbuild -t:pack MyPackage.csproj -p:IncludeSymbols=true -p:SymbolPackageFormat=snupkg
 ```
 
-`.snupkgs` не создаются по умолчанию. В случае использования nuget.exe необходимо передать свойство `SymbolsPackageFormat` вместе с `-Symbols`, в случае использования dotnet.exe — `--include-symbols`, а в случае использования msbuild — `/p:IncludeSymbols`.
+`.snupkgs` не создаются по умолчанию. В случае использования nuget.exe необходимо передать свойство `SymbolPackageFormat` вместе с `-Symbols`, в случае использования dotnet.exe — `--include-symbols`, а в случае использования msbuild — `-p:IncludeSymbols`.
 
-Свойство SymbolsPackageFormat может иметь одно из двух значений: `symbols.nupkg` (по умолчанию) или `snupkg`. Если значение SymbolsPackageFormat не указано, по умолчанию будет использоваться `symbols.nupkg` и будет создан устаревший пакет символов.
+Свойство SymbolPackageFormat может иметь одно из двух значений: `symbols.nupkg` (по умолчанию) или `snupkg`. Если значение SymbolPackageFormat не указано, по умолчанию будет использоваться `symbols.nupkg` и будет создан устаревший пакет символов.
 
 > [!Note]
 > Устаревший формат `.symbols.nupkg` все еще поддерживается, но только в целях совместимости (см. раздел [Устаревшие пакеты символов](Symbol-Packages.md)). Сервер символов NuGet.org принимает только новый формат пакетов символов: `.snupkg`.
@@ -65,13 +65,13 @@ msbuild /t:pack MyPackage.csproj /p:IncludeSymbols=true /p:SymbolPackageFormat=s
     nuget push MyPackage.snupkg
     ```
 
-1. Также можно выполнить принудительную отправку одновременно основного пакета и пакета символов, используя указанную ниже команду. Оба файла, NUPKG и SNUPKG, должны находиться в текущей папке.
+1. Также можно выполнить принудительную отправку одновременно основного пакета и пакета символов, используя указанную ниже команду. Оба файла (.nupkg и .snupkg) должны находиться в текущей папке.
 
     ```cli
     nuget push MyPackage.nupkg
     ```
 
-В этом случае NuGet сначала опубликует `MyPackage.nupkg` в nuget.org, а затем `MyPackage.snupkg`.
+NuGet опубликует оба пакета на сайте nuget.org. Пакет `MyPackage.nupkg` будет опубликован первым, а `MyPackage.snupkg` — вторым.
 
 ## <a name="nugetorg-symbol-server"></a>Сервер символов NuGet.org
 

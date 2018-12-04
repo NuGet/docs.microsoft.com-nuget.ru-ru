@@ -6,12 +6,12 @@ ms.author: karann
 ms.date: 08/25/2017
 ms.topic: conceptual
 ms.reviewer: anangaur
-ms.openlocfilehash: 80f9354e149129fff043b470d833f348df15c0a7
-ms.sourcegitcommit: 1d1406764c6af5fb7801d462e0c4afc9092fa569
+ms.openlocfilehash: 4741d780afa4fbe11001aed49a9f72bf608d96d9
+ms.sourcegitcommit: a1846edf70ddb2505d58e536e08e952d870931b0
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/04/2018
-ms.locfileid: "43545495"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "52303568"
 ---
 # <a name="hosting-your-own-nuget-feeds"></a>Размещение своих веб-каналов NuGet
 
@@ -32,6 +32,7 @@ ms.locfileid: "43545495"
 - [Сервер NuGet (открытый исходный код)](http://nuget-server.net) — реализация, аналогичная серверу NuGet от Inedo, с открытым исходным кодом
 - [LiGet](https://github.com/ai-traders/liget) — реализация с открытым исходным кодом для сервера NuGet V2, на котором выполняется Kestrel в Docker
 - [BaGet](https://github.com/loic-sharma/BaGet) — реализация для сервера NuGet V3 с открытым кодом на платформе ASP.NET Core
+- [Sleet](https://github.com/emgarten/sleet) —статический генератор веб-канала NuGet V3 с открытым исходным кодом.
 - [Artifactory](https://www.jfrog.com/artifactory/) от JFrog.
 - [Nexus](http://www.sonatype.org/nexus/) от Sonatype.
 - [TeamCity](https://www.jetbrains.com/teamcity/) от JetBrains.

@@ -5,12 +5,12 @@ author: karann-msft
 ms.author: karann
 ms.date: 03/16/2018
 ms.topic: conceptual
-ms.openlocfilehash: da69181aebe3bebcea6acd6e15fde6b77dd33452
-ms.sourcegitcommit: ffbdf147f84f8bd60495d3288dff9a5275491c17
+ms.openlocfilehash: 9acb87a5f5731fb33c91a1ae9b106c6df492ddcd
+ms.sourcegitcommit: 0c5a49ec6e0254a4e7a9d8bca7daeefb853c433a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/13/2018
-ms.locfileid: "51580302"
+ms.lasthandoff: 11/28/2018
+ms.locfileid: "52453537"
 ---
 # <a name="package-restore"></a>Восстановление пакетов
 
@@ -39,7 +39,7 @@ ms.locfileid: "51580302"
 
 - **NuGet CLI.** Выполните команду [nuget restore](../tools/cli-ref-restore.md), которая позволяет восстановить пакеты, указанные в файле проекта или файле `packages.config`. Вы можете также указать файл решения.
 
-- **MSBuild.** Выполните команду [msbuild /t:restore](../reference/msbuild-targets.md#restore-target), которая позволяет восстановить пакеты в файле проекта (только формат PackageReference). Доступно только в NuGet версии 4.x и более поздних и MSBuild версии 15.1 и более поздних, включенных в Visual Studio 2017. `nuget restore` и `dotnet restore` используют эту команду для подходящих проектов.
+- **MSBuild**. Выполните команду [msbuild -t:restore](../reference/msbuild-targets.md#restore-target), которая восстанавливает пакеты в файле проекта (только PackageReference). Доступно только в NuGet версии 4.x и более поздних и MSBuild версии 15.1 и более поздних, включенных в Visual Studio 2017. `nuget restore` и `dotnet restore` используют эту команду для подходящих проектов.
 
 - **Visual Studio Team Services**: при создании определения сборки в Team Services включите в него задачу [восстановления NuGet](/vsts/build-release/tasks/package/nuget#restore-nuget-packages) или [.NET Core](/vsts/build-release/tasks/build/dotnet-core#restore-nuget-packages), а затем добавьте задачу сборки. Эта задача по умолчанию входит в несколько шаблонов сборки.
 
