@@ -5,12 +5,12 @@ author: karann-msft
 ms.author: karann
 ms.date: 03/23/2018
 ms.topic: conceptual
-ms.openlocfilehash: 7b3fc72ddd3ad6c9185c2bd0f2563df59e77f1c8
-ms.sourcegitcommit: 0c5a49ec6e0254a4e7a9d8bca7daeefb853c433a
+ms.openlocfilehash: a9427d87f69a2e942a9802fbdae5193eead1c724
+ms.sourcegitcommit: af58d59669674c3bc0a230d5764e37020a9a3f1e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/28/2018
-ms.locfileid: "52453550"
+ms.lasthandoff: 12/04/2018
+ms.locfileid: "52831024"
 ---
 # <a name="nuget-pack-and-restore-as-msbuild-targets"></a>Объекты pack и restore NuGet в качестве целевых объектов MSBuild
 
@@ -192,7 +192,7 @@ ms.locfileid: "52453550"
 ### <a name="packing-a-license-expression-or-a-license-file"></a>Упаковка выражении лицензии или файл лицензии
 
 При использовании выражения лицензии, следует использовать свойство PackageLicenseExpression. 
-[Пример выражения лицензии](#https://github.com/NuGet/Samples/tree/master/PackageLicenseExpressionExample).
+[Пример выражения лицензии](https://github.com/NuGet/Samples/tree/master/PackageLicenseExpressionExample).
 
 При упаковке файл лицензии, необходимо использовать свойство PackageLicenseFile чтобы указать путь к пакету, относительно корня пакета. Кроме того необходимо убедиться, что файл включается в пакет. Пример:
 
@@ -205,7 +205,7 @@ ms.locfileid: "52453550"
     <None Include="licenses\LICENSE.txt" Pack="true" PackagePath="$(PackageLicenseFile)"/>
 </ItemGroup>
 ```
-[Образец лицензии жизнь](#https://github.com/NuGet/Samples/tree/master/PackageLicenseFileExample).
+[Образец файла лицензии](https://github.com/NuGet/Samples/tree/master/PackageLicenseFileExample).
 
 ### <a name="istool"></a>IsTool
 
