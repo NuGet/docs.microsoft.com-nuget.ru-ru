@@ -10,6 +10,7 @@
 ## [Общие сведения и рабочий процесс](consume-packages/overview-and-workflow.md)
 ## [Поиск и выбор пакетов](consume-packages/finding-and-choosing-packages.md)
 ## [Установка пакетов](consume-packages/ways-to-install-a-package.md)
+###[Подписанные пакеты](consume-packages/installing-signed-packages.md)
 ## [Восстановление пакетов](consume-packages/package-restore.md)
 ### [Устранение неполадок](consume-packages/package-restore-troubleshooting.md)
 ## [Повторная установка и обновление пакетов](consume-packages/reinstalling-and-updating-packages.md)

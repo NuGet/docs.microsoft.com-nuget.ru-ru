@@ -6,12 +6,12 @@ ms.author: rmpablos
 ms.date: 05/18/2018
 ms.topic: reference
 ms.reviewer: ananguar
-ms.openlocfilehash: c36db9486ad787f19430c75fc38a2e9dd8ba6e37
-ms.sourcegitcommit: 1d1406764c6af5fb7801d462e0c4afc9092fa569
+ms.openlocfilehash: 486bf4032e156168f9b2fef57ccdae0c372b2eff
+ms.sourcegitcommit: 673e580ae749544a4a071b4efe7d42fd2bb6d209
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/04/2018
-ms.locfileid: "43550425"
+ms.lasthandoff: 12/06/2018
+ms.locfileid: "52977515"
 ---
 # <a name="signed-packages"></a>Подписанные пакеты
 
@@ -32,47 +32,13 @@ ms.locfileid: "43550425"
 
 Подписание пакета требует сертификата, который — это специальный тип сертификата, который является допустимым для подписи кода `id-kp-codeSigning` назначения [[RFC 5280 разделе 4.2.1.12](https://tools.ietf.org/html/rfc5280#section-4.2.1.12)]. Кроме того сертификат должен иметь RSA длина открытого ключа 2048 бит или более поздней версии.
 
-## <a name="get-a-code-signing-certificate"></a>Получение сертификата подписи кода
-
-Действительные сертификаты может быть получен из общедоступного ЦС, например:
-
-- [Symantec](https://trustcenter.websecurity.symantec.com/process/trust/productOptions?productType=SoftwareValidationClass3)
-- [DigiCert](https://www.digicert.com/code-signing/)
-- [Go Daddy](https://www.godaddy.com/web-security/code-signing-certificate)
-- [Глобальные входа](https://www.globalsign.com/en/code-signing-certificate/)
-- [Comodo](https://www.comodo.com/e-commerce/code-signing/code-signing-certificate.php)
-- [Certum](https://www.certum.eu/certum/cert,offer_en_open_source_cs.xml) 
-
-Полный список центров сертификации, доверенным для Windows можно получить из [ http://aka.ms/trustcertpartners ](http://aka.ms/trustcertpartners).
-
-## <a name="create-a-test-certificate"></a>Создание тестового сертификата
-
-Для целей тестирования можно использовать самостоятельно выданные сертификаты. Чтобы создать самостоятельно выданный сертификат, используйте [команду PowerShell New-SelfSignedCertificate](/powershell/module/pkiclient/new-selfsignedcertificate.md).
-
-```ps
-New-SelfSignedCertificate -Subject "CN=NuGet Test Developer, OU=Use for testing purposes ONLY" `
-                          -FriendlyName "NuGetTestDeveloper" `
-                          -Type CodeSigning `
-                          -KeyUsage DigitalSignature `
-                          -KeyLength 2048 `
-                          -KeyAlgorithm RSA `
-                          -HashAlgorithm SHA256 `
-                          -Provider "Microsoft Enhanced RSA and AES Cryptographic Provider" `
-                          -CertStoreLocation "Cert:\CurrentUser\My" 
-```
-
-Эта команда создает сертификат тестирования, доступный в хранилище личных сертификатов текущего пользователя. Можно открыть хранилище сертификатов, выполнив `certmgr.msc` для просмотра только что созданный сертификат.
-
-> [!Warning]
-> NuGet.org не принимает пакеты, подписанные самостоятельно выданные сертификаты.
-
 ## <a name="timestamp-requirements"></a>Требования к отметки времени
 
 Подписанные пакеты должны включать отметку времени RFC 3161 чтобы обеспечить достоверность подписи за пределы периода действия сертификата подписи пакета. Сертификат, используемый для подписи отметку времени должен быть допустимым для `id-kp-timeStamping` назначения [[RFC 5280 разделе 4.2.1.12](https://tools.ietf.org/html/rfc5280#section-4.2.1.12)]. Кроме того сертификат должен иметь RSA длина открытого ключа 2048 бит или более поздней версии.
 
 Дополнительные технические сведения можно найти в [пакет подпись технические спецификации](https://github.com/NuGet/Home/wiki/Package-Signatures-Technical-Details) (GitHub).
 
-## <a name="signature-requirements-on-nugetorg"></a>Требования к подписи на сайте nuget.org
+## <a name="signature-requirements-on-nugetorg"></a>Требования к подписи на сайте NuGet.org
 
 NuGet.org имеет дополнительные требования к выполнению подписанных пакетов:
 
@@ -86,32 +52,9 @@ NuGet.org имеет дополнительные требования к вып
     - Сертификат для подписи автор должен быть допустимым для подписывания кода.
     - Метка времени сертификат должен быть непригоден для.
   - Не должен быть отозван в времени подписи. (Это может не быть knowable во время отправки, поэтому nuget.org периодически проверяет состояние отзыва).
+  
+  
+## <a name="related-articles"></a>Связанные статьи
 
-## <a name="register-certificate-on-nugetorg"></a>Регистрация сертификата на сайте nuget.org
-
-Для отправки подписанных пакетов, необходимо сначала зарегистрировать сертификат с сайта nuget.org. Вам потребуется сертификат как `.cer` файл в двоичном DER-формате. Существующий сертификат можно экспортировать в двоичном DER-формате с помощью мастера экспорта сертификатов.
-
-![Мастер экспорта сертификатов](media/CertificateExportWizard.png)
-
-Опытные пользователи могут экспортировать сертификат с помощью [команду PowerShell для экспорта сертификата](/powershell/module/pkiclient/export-certificate.md).
-
-Чтобы зарегистрировать сертификат с сайта nuget.org, перейдите к статье `Certificates` разделе `Account settings` страницы (или организации на странице "Параметры") и выберите `Register new certificate`.
-
-![Зарегистрированных сертификатов](media/registered-certs.png)
-
-> [!Tip]
-> Один пользователь может отправить несколько сертификатов и тот же сертификат можно зарегистрировать несколько пользователей.
-
-Имеющийся у пользователя сертификат зарегистрирован, пакет будущих передачу **необходимо** быть подписаны с помощью одного из сертификатов.
-
-Пользователи также могут удалять зарегистрированный сертификат из учетной записи. После удаления сертификата во отправки сбой пакеты, подписанные этим сертификатом. Существующие пакеты не затрагиваются.
-
-## <a name="configure-package-signing-requirements"></a>Настройка требований для подписи пакета
-
-Если вы являетесь единственным владельцем пакета, не требуется подписавшего. То есть можно использовать любой из зарегистрированных сертификатов для подписывания пакетов и отправки на сайте nuget.org.
-
-Если пакет содержит несколько владельцев по умолчанию, «Любой» владелец сертификаты могут использоваться для подписи пакета. Как владелец пакета можно переопределить «Любой» с самостоятельно или любые другие совладелец быть требуется подписавшего. Если владелец, который не поддерживает любой сертификат, зарегистрированный, неподписанных пакетов разрешается. 
-
-Аналогичным образом, если для пакета, где один владелец имеет сертификат, зарегистрированный и другого владельца выбран «Any» параметр по умолчанию не имеет любой сертификат, зарегистрированный, затем nuget.org принимает подписанных пакетов с сигнатурой, зарегистрированные с одним из владельцев или Неподписанный пакет (так как один из владельцев имеет любой сертификат, зарегистрированный).
-
-![Настройка пакета подписавших](media/configure-package-signers.png)
+- [Подписывание пакетов NuGet](../create-packages/Sign-a-Package.md)
+- [Установка подписанные пакеты](../consume-packages/installing-signed-packages.md)
