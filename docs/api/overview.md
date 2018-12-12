@@ -6,12 +6,12 @@ ms.author: jver
 ms.date: 10/26/2017
 ms.topic: reference
 ms.reviewer: kraigb
-ms.openlocfilehash: 7bb5e83b29d1d7e4bf06accfccb73db3aa9ee025
-ms.sourcegitcommit: ffbdf147f84f8bd60495d3288dff9a5275491c17
+ms.openlocfilehash: bb47c72768b0698d8e712c8261321ff38bba2764
+ms.sourcegitcommit: be9c51b4b095aea40ef41bbea7e12ef0a194ee74
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/13/2018
-ms.locfileid: "51580341"
+ms.lasthandoff: 12/11/2018
+ms.locfileid: "53248433"
 ---
 # <a name="nuget-api"></a>API NuGet
 
@@ -62,6 +62,8 @@ NuGet V3 API называется таким образом, так как он 
 [`SymbolPackagePublish`](symbol-package-publish-resource.md)            | Нет      | Отправьте пакеты символов.
 
 Как правило сериализуются все недвоичные данные, возвращаемые API ресурса с помощью JSON. Схема ответа, возвращаемая функцией каждого ресурса в индекс службы определяется по отдельности для этого ресурса. Дополнительные сведения о каждом ресурсе см. в разделах, перечисленных выше.
+
+В будущем по мере развития протокола для ответов JSON могут добавляться новые свойства. Для клиента должно быть устарели реализация не следует предполагать, что схема ответа является окончательным и не может включать дополнительные данные. Все свойства, которые не поддерживает реализацию можно проигнорировать.
 
 > [!Note]
 > Если источник не реализует `SearchAutocompleteService` корректно следует отключить любое поведение автозавершения. Когда `ReportAbuseUriTemplate` не реализован, о нарушении URL-адрес отчетов официальный возвращается клиента NuGet к nuget.org (отслеживаемые по [4924 # NuGet/Home](https://github.com/NuGet/Home/issues/4924)). Другие клиенты могут выбрать просто не отображать URL-адрес отчета о нарушении для пользователя.
