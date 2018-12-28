@@ -5,12 +5,12 @@ author: karann-msft
 ms.author: karann
 ms.date: 03/23/2018
 ms.topic: conceptual
-ms.openlocfilehash: a9427d87f69a2e942a9802fbdae5193eead1c724
-ms.sourcegitcommit: af58d59669674c3bc0a230d5764e37020a9a3f1e
+ms.openlocfilehash: 878fb582a31667c84f3ae306b554718de72eca7a
+ms.sourcegitcommit: 5c5f0f0e1f79098e27d9566dd98371f6ee16f8b5
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/04/2018
-ms.locfileid: "52831024"
+ms.lasthandoff: 12/20/2018
+ms.locfileid: "53645676"
 ---
 # <a name="nuget-pack-and-restore-as-msbuild-targets"></a>Объекты pack и restore NuGet в качестве целевых объектов MSBuild
 
@@ -65,7 +65,7 @@ ms.locfileid: "52831024"
 | URL-адрес репозитория / | RepositoryUrl | пустой | URL-адрес репозитория можно клонировать или загрузить исходный код. Пример: *https://github.com/NuGet/NuGet.Client.git* |
 | / Тип репозитория | RepositoryType | пустой | Тип репозитория. Примеры: *git*, *tfs*. |
 | Репозитория или ветви | RepositoryBranch | пустой | Сведения о ветви необязательно репозитории. *RepositoryUrl* также должен быть указан для этого свойства для включения. Пример: *master* (NuGet 4.7.0+) |
-| Репозиторий и фиксации | RepositoryCommit | пустой | Необязательный репозитория фиксацию или набор изменений, чтобы указать, что источник пакета было выполнено построение. *RepositoryUrl* также должен быть указан для этого свойства для включения. Пример: *0e4d1b598f350b3dc675018d539114d1328189ef* (NuGet 4.7.0+) |
+| Репозиторий и фиксации | RepositoryCommit | пустой | Необязательный репозитория фиксацию или набор изменений, чтобы указать, что источник пакета было выполнено построение. *RepositoryUrl* также должен быть указан для этого свойства для включения. Пример *0e4d1b598f350b3dc675018d539114d1328189ef* (NuGet 4.7.0+) |
 | PackageType | `<PackageType>DotNetCliTool, 1.0.0.0;Dependency, 2.0.0.0</PackageType>` | | |
 | Сводка | Не поддерживается | | |
 
@@ -117,8 +117,8 @@ ms.locfileid: "52831024"
 
 Существует два свойства MSBuild, которые можно использовать в файле проекта или командной строке для управления местом назначения для выходных сборок:
 
-- `IncludeBuildOutput`: логическое значение, определяющее, следует ли включать выходные сборки в пакете.
-- `BuildOutputTargetFolder`: указывает папку, куда следует помещать выходные сборки. Выходные сборки (и другие выходные файлы) копируются в соответствующие папки платформы.
+- `IncludeBuildOutput`: Логическое значение, определяющее, следует ли включать выходные сборки в пакете.
+- `BuildOutputTargetFolder`: Указывает папку, в котором должны размещаться выходные сборки. Выходные сборки (и другие выходные файлы) копируются в соответствующие папки платформы.
 
 ### <a name="package-references"></a>Ссылки на пакеты
 
@@ -202,7 +202,7 @@ ms.locfileid: "52831024"
 </PropertyGroup>
 
 <ItemGroup>
-    <None Include="licenses\LICENSE.txt" Pack="true" PackagePath="$(PackageLicenseFile)"/>
+    <None Include="licenses\LICENSE.txt" Pack="true" PackagePath=""/>
 </ItemGroup>
 ```
 [Образец файла лицензии](https://github.com/NuGet/Samples/tree/master/PackageLicenseFileExample).
@@ -217,7 +217,7 @@ ms.locfileid: "52831024"
 
 1. `NuspecFile`: относительный или абсолютный путь к файлу `.nuspec`, используемому для упаковки.
 1. `NuspecProperties`: список разделенных точками с запятой пар "ключ-значение". Из-за особенностей работы анализа в командной строке MSBuild несколько свойств нужно указать следующим образом: `-p:NuspecProperties=\"key1=value1;key2=value2\"`.  
-1. `NuspecBasePath`: базовый путь для файла `.nuspec`.
+1. `NuspecBasePath`: Базовый путь для `.nuspec` файла.
 
 Если вы используете `dotnet.exe` для упаковки проекта, воспользуйтесь командой, аналогичной следующей:
 
@@ -252,15 +252,15 @@ msbuild -t:pack <path to .csproj file> -p:NuspecFile=<path to nuspec file> -p:Nu
 
 `pack` Целевой предоставляет две точки расширения, которые работают в определенной сборки внутренний целевой платформы. Точки расширения поддерживают определенное содержимое целевой платформы и сборки в пакет:
 
-- `TargetsForTfmSpecificBuildOutput` целевой объект: используется для файлов в `lib` папка или папка, заданные с помощью `BuildOutputTargetFolder`.
-- `TargetsForTfmSpecificContentInPackage` целевой объект: используется для файлов за пределами `BuildOutputTargetFolder`.
+- `TargetsForTfmSpecificBuildOutput` целевой объект: Используйте для файлов в `lib` папка или папка, заданные с помощью `BuildOutputTargetFolder`.
+- `TargetsForTfmSpecificContentInPackage` целевой объект: Используйте для файлов за пределами `BuildOutputTargetFolder`.
 
 #### <a name="targetsfortfmspecificbuildoutput"></a>TargetsForTfmSpecificBuildOutput
 
 Запишите пользовательский целевой объект и укажите его в качестве значения `$(TargetsForTfmSpecificBuildOutput)` свойство. Для всех файлов, которые необходимо перевести в `BuildOutputTargetFolder` (по умолчанию), lib целевой объект должен записывать файлы в ItemGroup `BuildOutputInPackage` и задайте следующие два значения метаданных:
 
 - `FinalOutputPath`: Абсолютный путь к файлу; Если не указано, удостоверение используется для оценки исходный путь.
-- `TargetPath`: (Необязательно) значение, когда файл должен располагаться в подпапке в `lib\<TargetFramework>` , такие как вспомогательные сборки, учитываемых в своих папках соответствующего языка и региональных параметров. По умолчанию указывается имя файла.
+- `TargetPath`:  (Необязательно) Значение, когда файл должен располагаться в подпапке в `lib\<TargetFramework>` , такие как вспомогательные сборки, учитываемых в своих папках соответствующего языка и региональных параметров. По умолчанию указывается имя файла.
 
 Пример
 
