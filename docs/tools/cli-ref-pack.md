@@ -5,16 +5,16 @@ author: karann-msft
 ms.author: karann
 ms.date: 01/18/2018
 ms.topic: reference
-ms.openlocfilehash: b5bd8bd30ad134f36433b8e4721ce131425a1483
-ms.sourcegitcommit: 0c5a49ec6e0254a4e7a9d8bca7daeefb853c433a
+ms.openlocfilehash: d39ec8caf94caa767b6c502cc475e278aa718b95
+ms.sourcegitcommit: 6ea2ff8aaf7743a6f7c687c8a9400b7b60f21a52
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/28/2018
-ms.locfileid: "52453368"
+ms.lasthandoff: 01/16/2019
+ms.locfileid: "54324790"
 ---
 # <a name="pack-command-nuget-cli"></a>Команда pack (NuGet CLI)
 
-**Применяется к:** Создание пакета &bullet; **поддерживаемые версии:** 2.7 +
+**Применяется к:** Создание пакета &bullet; **поддерживаемые версии:** 2.7+
 
 Создает пакет NuGet на основе указанного `.nuspec` или файла проекта. `dotnet pack` Команды (см. в разделе [команды dotnet](dotnet-Commands.md)) и `msbuild -t:pack` (см. в разделе [целевых объектов MSBuild](../reference/msbuild-targets.md)) может использоваться в качестве альтернативы.
 
@@ -31,7 +31,7 @@ nuget pack <nuspecPath | projectPath> [options] [-Properties ...]
 
 ## <a name="options"></a>Параметры
 
-| Параметр | Описание: |
+| Параметр | Описание |
 | --- | --- |
 | BasePath | Задает базовый путь к файлам, определенным в `.nuspec` файл. |
 | Построить | Указывает, что проект должен быть создан перед созданием пакета. |
@@ -89,7 +89,7 @@ nuget pack foo.csproj -Properties Configuration=Release
 nuget pack foo.csproj -Build -Symbols -Properties owners=janedoe,xiaop;version="1.0.5"
 
 # Create a package from project foo.csproj, using MSBuild version 12 to build the project
-nuget pack foo.csproj -Build -Symbols -MSBuildVersion 12 -Properties owners=janedoe,xiaop;version="1.0.5
+nuget pack foo.csproj -Build -Symbols -MSBuildVersion 12 -Properties owners=janedoe,xiaop;version="1.0.5"
 
 # Create a package from project foo.nuspec and the corresponding symbol package using the new recommended format .snupkg
 nuget pack foo.nuspec -Symbols -SymbolPackageFormat snupkg

@@ -34,7 +34,7 @@
 ### [Создание элементов управления пользовательским интерфейсо в виде пакетов NuGet](guides/create-UI-controls.md)
 ### [Создание пакетов для Xamarin с помощью Visual Studio 2015](guides/create-packages-for-xamarin.md)
 # Размещение пакетов
-## [Обзор набора средств Visual Studio для Unity](hosting-packages/overview.md)
+## [Обзор](hosting-packages/overview.md)
 ## [Локальные веб-каналы](hosting-packages/local-feeds.md)
 ## [NuGet.Server](hosting-packages/nuget-server.md)
 # Инструменты
@@ -181,6 +181,7 @@
 ### [NU5033](reference/errors-and-warnings/NU5033.md)
 ### [NU5034](reference/errors-and-warnings/NU5034.md)
 ### [NU5035](reference/errors-and-warnings/NU5035.md)
+### [NU5036](reference/errors-and-warnings/NU5036.md)
 ### [NU5100](reference/errors-and-warnings/NU5100.md)
 ### [NU5101](reference/errors-and-warnings/NU5101.md)
 ### [NU5102](reference/errors-and-warnings/NU5102.md)
@@ -218,7 +219,7 @@
 ### [project.json и универсальная платформа Windows](archive/project-json-and-uwp.md)
 ### [Влияние project.json](archive/project-json-impact.md)
 # API
-## [Обзор набора средств Visual Studio для Unity](api/overview.md)
+## [Обзор](api/overview.md)
 ## [Практическое руководство. Запрос всех пакетов с помощью API](guides/api/query-for-all-published-packages.md)
 ## [Индекс службы](api/service-index.md)
 ## [Принудительная отправка и удаление](api/package-publish-resource.md)

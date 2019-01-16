@@ -6,12 +6,12 @@ ms.author: jver
 ms.date: 10/26/2017
 ms.topic: reference
 ms.reviewer: kraigb
-ms.openlocfilehash: ba47d6fdeeaa4ee9de83ef4dd990707bd4928063
-ms.sourcegitcommit: 0c5a49ec6e0254a4e7a9d8bca7daeefb853c433a
+ms.openlocfilehash: 19a1f48164f65f1ff805e036e55abb110247aa72
+ms.sourcegitcommit: 6ea2ff8aaf7743a6f7c687c8a9400b7b60f21a52
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/28/2018
-ms.locfileid: "52453563"
+ms.lasthandoff: 01/16/2019
+ms.locfileid: "54324868"
 ---
 # <a name="package-metadata"></a>Метаданные пакета
 
@@ -141,7 +141,8 @@ dependencyGroups         | Массив объектов           | Нет     
 Описание              | string                     | Нет       | 
 iconUrl                  | string                     | Нет       | 
 id                       | string                     | да      | Идентификатор пакета
-licenseUrl               | string                     | Нет       | 
+licenseUrl               | string                     | Нет       |
+licenseExpression        | string                     | Нет       | 
 перечисленные                   | boolean                    | Нет       | Можно рассматривать как перечисленные Если значение отсутствует
 MinClientVersion         | string                     | Нет       | 
 projectUrl               | string                     | Нет       | 
@@ -155,6 +156,8 @@ version                  | string                     | да      | Полная
 Пакет `version` свойство — это строка полной версии после нормализации. Это означает, что данные SemVer 2.0.0 сборки можно включить здесь.
 
 `dependencyGroups` Свойство представляет собой массив объектов, представляющих зависимости пакета, сгруппированных по целевой платформе. Если пакет не имеет зависимостей, `dependencyGroups` свойство отсутствует, пустой массив, или `dependencies` свойства всех групп пуст или отсутствует.
+
+Значение `licenseExpression` соответствует свойство [синтаксис выражений лицензии NuGet](https://docs.microsoft.com/en-us/nuget/reference/nuspec#license).
 
 #### <a name="package-dependency-group"></a>Группа зависимостей пакета
 

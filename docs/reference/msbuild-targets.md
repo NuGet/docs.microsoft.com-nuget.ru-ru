@@ -5,12 +5,12 @@ author: karann-msft
 ms.author: karann
 ms.date: 03/23/2018
 ms.topic: conceptual
-ms.openlocfilehash: 878fb582a31667c84f3ae306b554718de72eca7a
-ms.sourcegitcommit: 5c5f0f0e1f79098e27d9566dd98371f6ee16f8b5
+ms.openlocfilehash: 8132595cbfaf553736fbcc81aada283a44d6cdbf
+ms.sourcegitcommit: 6ea2ff8aaf7743a6f7c687c8a9400b7b60f21a52
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/20/2018
-ms.locfileid: "53645676"
+ms.lasthandoff: 01/16/2019
+ms.locfileid: "54324855"
 ---
 # <a name="nuget-pack-and-restore-as-msbuild-targets"></a>Объекты pack и restore NuGet в качестве целевых объектов MSBuild
 
@@ -72,6 +72,7 @@ ms.locfileid: "53645676"
 ### <a name="pack-target-inputs"></a>Входные данные целевого объекта pack
 
 - IsPackable
+- SuppressDependenciesWhenPacking
 - PackageVersion
 - PackageId
 - Authors
@@ -106,6 +107,10 @@ ms.locfileid: "53645676"
 - NuspecProperties
 
 ## <a name="pack-scenarios"></a>Сценарии использования pack
+
+### <a name="suppress-dependencies"></a>Подавлять зависимостей
+
+Чтобы отключить зависимости пакетов из созданного пакета NuGet, присвойте параметру `SuppressDependenciesWhenPacking` для `true` которых пропускает все зависимости из файла созданного nupkg.
 
 ### <a name="packageiconurl"></a>PackageIconUrl
 
@@ -193,6 +198,14 @@ ms.locfileid: "53645676"
 
 При использовании выражения лицензии, следует использовать свойство PackageLicenseExpression. 
 [Пример выражения лицензии](https://github.com/NuGet/Samples/tree/master/PackageLicenseExpressionExample).
+
+```xml
+<PropertyGroup>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
+</PropertyGroup>
+```
+
+[Дополнительные сведения о выражениях лицензии и лицензии, которые может принимать NuGet.org](nuspec.md#license).
 
 При упаковке файл лицензии, необходимо использовать свойство PackageLicenseFile чтобы указать путь к пакету, относительно корня пакета. Кроме того необходимо убедиться, что файл включается в пакет. Пример:
 
@@ -320,7 +333,7 @@ msbuild -t:pack <path to .csproj file> -p:NuspecFile=<path to nuspec file> -p:Nu
 
 Дополнительные параметры восстановления могут поступать из свойств MSBuild в файле проекта. Значения также можно задать из командной строки с помощью параметра `-p:` (см. примеры ниже).
 
-| Свойство. | Описание: |
+| Свойство. | Описание |
 |--------|--------|
 | RestoreSources | Разделенный точками с запятой список источников пакетов. |
 | RestorePackagesPath | Путь к папке пакетов пользователя. |
@@ -352,7 +365,7 @@ msbuild -t:restore -p:RestoreConfigFile=<path>
 
 Операция восстановления создает в папке сборки `obj` следующие файлы:
 
-| Файл | Описание: |
+| Файл | Описание |
 |--------|--------|
 | `project.assets.json` | Содержит все ссылки на пакеты в графе зависимостей. |
 | `{projectName}.projectFileExtension.nuget.g.props` | Ссылки на свойства MSBuild, содержащиеся в пакетах. |

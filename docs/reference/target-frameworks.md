@@ -6,29 +6,29 @@ ms.author: karann
 ms.date: 12/11/2017
 ms.topic: reference
 ms.reviewer: anangaur
-ms.openlocfilehash: 047ede14c7935844cb4f6d0315772c2a1190e5b8
-ms.sourcegitcommit: 1d1406764c6af5fb7801d462e0c4afc9092fa569
+ms.openlocfilehash: 0c76ea43e871009223cc4328449e21e5d02129bb
+ms.sourcegitcommit: 6ea2ff8aaf7743a6f7c687c8a9400b7b60f21a52
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/04/2018
-ms.locfileid: "43547263"
+ms.lasthandoff: 01/16/2019
+ms.locfileid: "54324881"
 ---
 # <a name="target-frameworks"></a>Требуемые версии .NET Framework
 
 NuGet использует ссылки на целевую платформу в различных местах, чтобы точно определить и изолировать зависимые от платформы компоненты пакета:
 
-- [Манифест .nuspec](../reference/nuspec.md). Можно указать в пакете на необходимость включить в проект отдельные пакеты в зависимости от целевой платформы проекта.
-- [Имя папки .nupkg](../create-packages/creating-a-package.md#from-a-convention-based-working-directory). Папки внутри папки `lib` пакета могут иметь имена, соответствующие целевой платформе, и содержать DLL и другие файлы, необходимые для соответствующей платформы.
-- [packages.config](../reference/packages-config.md). Атрибут `targetframework` зависимости задает устанавливаемый вариант пакета.
+- [манифест .nuspec](../reference/nuspec.md): Можно указать отдельные пакеты, которые будут включены в проект, в зависимости от целевой платформы проекта в пакете.
+- [Имя папки .nupkg](../create-packages/creating-a-package.md#from-a-convention-based-working-directory): Папки внутри пакета `lib` папке можно присвоить имя в соответствии с целевой платформы, каждый из которых содержит библиотеки DLL и другие материалы, необходимые для соответствующей платформы.
+- [Packages.config](../reference/packages-config.md): `targetframework` Атрибут зависимости задает вариант пакета для установки.
 
 > [!Note]
 > Исходный код клиента NuGet, который рассчитывает приведенные ниже таблицы, располагается в следующих местах:
-> - Названия поддерживаемых платформ: [FrameworkConstants.cs](https://github.com/NuGet/NuGet.Client/blob/dev/src/NuGet.Core/NuGet.Frameworks/FrameworkConstants.cs)
-> - Приоритет и сопоставление платформ: [DefaultFrameworkMappings.cs](https://github.com/NuGet/NuGet.Client/blob/dev/src/NuGet.Core/NuGet.Frameworks/DefaultFrameworkMappings.cs)
+> - Имена поддерживаемых .NET framework: [FrameworkConstants.cs](https://github.com/NuGet/NuGet.Client/blob/dev/src/NuGet.Core/NuGet.Frameworks/FrameworkConstants.cs)
+> - Приоритет и сопоставление: [DefaultFrameworkMappings.cs](https://github.com/NuGet/NuGet.Client/blob/dev/src/NuGet.Core/NuGet.Frameworks/DefaultFrameworkMappings.cs)
 
 ## <a name="supported-frameworks"></a>Поддерживаемые платформы
 
-Платформа обычно указывается коротким моникером целевой платформы (TFM). В .NET Standard этот метод можно обобщить как *TxM*, чтобы одной ссылкой описать сразу несколько платформ.
+Платформа обычно указывается коротким моникером целевой платформы (TFM). В .NET Standard этот метод можно обобщить для *TxM* , чтобы одной ссылкой для нескольких платформ.
 
 Клиенты NuGet поддерживают платформы, представленные в следующей таблице. Эквивалентные обозначения отображаются в квадратных скобках []. Обратите внимание, что некоторые средства, например `dotnet`, могут использовать в некоторых файлах варианты канонических моникеров целевой платформы (TFM). Например, `dotnet pack` использует `.NETCoreApp2.0` в файле `.nuspec` вместо `netcoreapp2.0`. Различные клиентские средства NuGet обрабатывают эти варианты различным образом, однако при непосредственном редактировании файлов всегда следует использовать канонические моникеры целевой платформы (TFM).
 
@@ -279,7 +279,7 @@ Tizen | tizen | tizen3 |
 
 Кроме того, пакеты NuGet для Xamarin могут использовать дополнительные платформы, определенные для Xamarin. См. раздел [Создание пакетов NuGet для Xamarin](https://developer.xamarin.com/guides/cross-platform/advanced/nuget/).
 
-| name | Описание | .NET Standard |
+| name | Описание: | .NET Standard |
 | --- | --- | ---
 | monoandroid | Поддержка Mono для ОС Android | netstandard1.4 |
 | monotouch | Поддержка Mono для iOS | netstandard1.4 |
