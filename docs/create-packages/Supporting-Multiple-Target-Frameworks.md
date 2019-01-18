@@ -5,12 +5,12 @@ author: karann-msft
 ms.author: karann
 ms.date: 09/27/2017
 ms.topic: conceptual
-ms.openlocfilehash: c59839240935e2a6c590dea3adf623313f79f02f
-ms.sourcegitcommit: 09107c5092050f44a0c6abdfb21db73878f78bd0
+ms.openlocfilehash: a755438c1f63d33271f636cb663cc5b51a5aecbc
+ms.sourcegitcommit: 6ea2ff8aaf7743a6f7c687c8a9400b7b60f21a52
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/03/2018
-ms.locfileid: "50981149"
+ms.lasthandoff: 01/16/2019
+ms.locfileid: "54324816"
 ---
 # <a name="supporting-multiple-net-framework-versions"></a>Поддержка нескольких версий платформы .NET Framework
 
@@ -116,17 +116,17 @@ NuGet также поддерживает нацеливание на опред
 
 Поддерживаются следующие профили:
 
-- `client`: клиентский профиль;
+- `client`: профиль клиента;
 - `full`: полный профиль;
-- `wp`: Windows Phone;
+- `wp`: Windows Phone
 - `cf`: Compact Framework.
 
 ## <a name="determining-which-nuget-target-to-use"></a>Определение требуемой цели NuGet
 
 При упаковке библиотек, предназначенных для переносимой библиотеки классов, может быть нелегко определить цель NuGet, которую следует использовать в именах папок и файле `.nuspec`, особенно если нацеливание производится лишь на подмножество переносимой библиотеки классов. Следующие внешние ресурсы могут помочь в решении этой задачи:
 
-- [Профили платформы в .NET](http://blog.stephencleary.com/2012/05/framework-profiles-in-net.html) (stephenclearly.com)
-- [Профили переносимой библиотеки классов](http://embed.plnkr.co/03ck2dCtnJogBKHJ9EjY/preview) (plnkr.co): таблица, в которой перечисляются профили переносимой библиотеки классов и эквивалентные цели NuGet
+- [Framework profiles in .NET](http://blog.stephencleary.com/2012/05/framework-profiles-in-net.html) (Профили платформы в .NET) (stephencleary.com);
+- [Portable Class Library profiles](http://embed.plnkr.co/03ck2dCtnJogBKHJ9EjY/preview) (Профили переносимой библиотеки классов) (plnkr.co): таблица, в которой перечисляются профили переносимой библиотеки классов и эквивалентные цели NuGet;
 - [Программа для работы с профилями переносимой библиотеки классов](https://github.com/StephenCleary/PortableLibraryProfiles) (github.com): программа командной строки, позволяющая определить профили переносимой библиотеки классов, доступные в системе
 
 ## <a name="content-files-and-powershell-scripts"></a>Файлы содержимого и скрипты PowerShell
@@ -134,7 +134,7 @@ NuGet также поддерживает нацеливание на опред
 > [!Warning]
 > Изменяемые файлы содержимого и выполнение скриптов можно использовать только с форматом `packages.config`. Их не рекомендуется использовать с другими форматами и не следует применять для новых пакетов.
 
-При использовании `packages.config` файлы содержимого и скрипты PowerShell можно группировать по целевой платформе в папках `content` и `tools`, используя те же соглашения в отношении папок. Пример:
+При использовании `packages.config` файлы содержимого и скрипты PowerShell можно группировать по целевой платформе в папках `content` и `tools`, используя те же соглашения в отношении папок. Например:
 
     \content
         \net46

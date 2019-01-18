@@ -5,12 +5,12 @@ author: karann-msft
 ms.author: karann
 ms.date: 5/14/2018
 ms.topic: conceptual
-ms.openlocfilehash: 641304059c90e360fae4d0956d7b922e34bc6501
-ms.sourcegitcommit: 09107c5092050f44a0c6abdfb21db73878f78bd0
+ms.openlocfilehash: cf15c4f6a2e3e9f6ce7b6acb2304648041043685
+ms.sourcegitcommit: 6ea2ff8aaf7743a6f7c687c8a9400b7b60f21a52
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/03/2018
-ms.locfileid: "50981123"
+ms.lasthandoff: 01/16/2019
+ms.locfileid: "54324829"
 ---
 # <a name="nuget-48-rtm-release-notes"></a>Заметки о выпуске NuGet 4.8 RTM
 
@@ -22,9 +22,9 @@ ms.locfileid: "50981123"
 * DotNet.exe — [пакет SDK 2.1.400 для .NET Core](https://www.microsoft.com/net/download/visual-studio-sdks).
 
 
-## <a name="summary-whats-new-in-this-release"></a>Сводка. Новые возможности этого выпуска
+## <a name="summary-whats-new-in-this-release"></a>Сводка: Новые возможности этого выпуска
 * NuGet.exe теперь поддерживает длинные имена файлов в Windows 10 — [#6937](https://github.com/NuGet/Home/issues/6937)
-* Подключаемые модули аутентификации теперь работают на платформах MsBuild, DotNet.exe, NuGet.exe и Visual Studio, в том числе на нескольких сразу. Подключаемые модули аутентификации первого поколения не поддерживались в MsBuild и DotNet.exe. Примечание: предварительные версии сборок Visual Studio 2017 15.9 уже содержат подключаемый модуль аутентификации VSTS. [#6486](https://github.com/NuGet/Home/issues/6486)
+* Подключаемые модули аутентификации теперь работают на платформах MsBuild, DotNet.exe, NuGet.exe и Visual Studio, в том числе на нескольких сразу. Подключаемые модули аутентификации первого поколения не поддерживались в MsBuild и DotNet.exe. Примечание. Предварительные версии сборок Visual Studio 2017 15.9 уже содержат подключаемый модуль аутентификации VSTS. [#6486](https://github.com/NuGet/Home/issues/6486)
 * Сопоставитель пакетов SDK для MsBuild теперь компилируется вместе с NuGet и устанавливается через средства NuGet для Visual Studio. Это позволяет избежать рассинхронизации версий. [#6799](https://github.com/NuGet/Home/issues/6799)
 * PackageReference теперь поддерживает метаданные DevelopmentDependency — [#4125](https://github.com/NuGet/Home/issues/4125)
 
@@ -56,13 +56,13 @@ ms.locfileid: "50981123"
 * Создайте проект, активизирующий восстановление NuGet.
 
 Теперь параметр миграции должен отобразиться. Обратите внимание, что этот параметр не поддерживается и не будет отображаться для типов проектов ASP.NET и C++.
-Примечание. Эта проблема исправлена в VS 2017 15.9 предварительной версии 3
+Примечание. Эта проблема исправлена в VS 2017 15.9 предварительной версии 3
 
 ## <a name="issues-fixed-in-this-release"></a>Исправленные ошибки в этом выпуске
 
 ### <a name="bugs"></a>Ошибки
 #### <a name="signing"></a>Добавление подписи
-* Подписывание. Установка подписанного пакета в автономной среде исправлена в версии 4.8.1 — [#7008](https://github.com/NuGet/Home/issues/7008)
+* Подписи. Установка подписанного пакета в автономной среде исправлена в версии 4.8.1 — [#7008](https://github.com/NuGet/Home/issues/7008)
 * Подписывание. Неверная проверка URL-адресов — [#7174](https://github.com/NuGet/Home/issues/7174)
 * Подписывание. Проверка целостности пакета в RepositorySignatureVerifier, если к пакету добавлена вторая подпись репозитория — [#6926](https://github.com/NuGet/Home/issues/6926)
 * Ошибка "Проверка целостности пакета не пройдена." должна содержать в тексте сообщения (и коде ошибки) идентификатор пакета — [#6944](https://github.com/NuGet/Home/issues/6944)
@@ -72,7 +72,7 @@ ms.locfileid: "50981123"
 * При обновлении сведений о подписавшем возникает ошибка недопустимой памяти, когда добавляется метка времени для второй подписи — [#6840](https://github.com/NuGet/Home/issues/6840)
 * Подписывание. Удаление исключений CTL — [#6794](https://github.com/NuGet/Home/issues/6794)
 * Подписывание. ContentUrl должен быть ТОЛЬКО HTTPS — [#6777](https://github.com/NuGet/Home/issues/6777)
-* Подписывание. SignedPackageVerifierSettings.VSClientDefaultPolicy не применяется — [#6601](https://github.com/NuGet/Home/issues/6601)
+* Подписи.  SignedPackageVerifierSettings.VSClientDefaultPolicy не применяется — [#6601](https://github.com/NuGet/Home/issues/6601)
 
 
 #### <a name="pack"></a>Упаковка
