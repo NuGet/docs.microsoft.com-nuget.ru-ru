@@ -1,11 +1,3 @@
----
-ms.openlocfilehash: c5b0a8efeaadbfb0cbebf72e818683c1ec9a5077
-ms.sourcegitcommit: a801052aa728a3a137225ca3ef3ff89f2d1c6b76
-ms.translationtype: HT
-ms.contentlocale: ru-RU
-ms.lasthandoff: 01/18/2019
-ms.locfileid: "54403181"
----
 # [Что такое NuGet?](what-is-nuget.md)
 # [Установка клиентских средств NuGet](install-nuget-client-tools.md)
 # Краткие руководства
