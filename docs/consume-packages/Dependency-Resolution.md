@@ -5,12 +5,12 @@ author: karann-msft
 ms.author: karann
 ms.date: 08/14/2017
 ms.topic: conceptual
-ms.openlocfilehash: cdbe13df04bb27091b684a4ae27b0e751da1098f
-ms.sourcegitcommit: 1d1406764c6af5fb7801d462e0c4afc9092fa569
+ms.openlocfilehash: a561a49f2e733929e32584adf7b6849ea535c440
+ms.sourcegitcommit: 585394f063e95dcbc24d7ac0ce07de643eaf6f4d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/04/2018
-ms.locfileid: "43549038"
+ms.lasthandoff: 01/25/2019
+ms.locfileid: "55046260"
 ---
 # <a name="how-nuget-resolves-package-dependencies"></a>Принципы разрешения зависимостей пакетов в NuGet
 
@@ -117,10 +117,10 @@ ms.locfileid: "43549038"
 
 Чтобы разрешить эту ситуацию, нужно напрямую сослаться на нужную `C.dll` (или использовать другой пакет с правильной ссылкой) и затем добавить зависимость от пакета C, которая исключает все его ресурсы. Это делается следующим образом в зависимости от используемого формата управления пакетами:
 
-- [PackageReference](../consume-packages/package-references-in-project-files.md): добавьте `Exclude="All"` в зависимость:
+- [PackageReference](../consume-packages/package-references-in-project-files.md): добавьте `ExcludeAssets="All"` в зависимость:
 
     ```xml
-    <PackageReference Include="PackageC" Version="1.0.0" Exclude="All" />
+    <PackageReference Include="PackageC" Version="1.0.0" ExcludeAssets="All" />
     ```
 
 - `packages.config`: удалите ссылку на пакет PackageC из файла `.csproj`, чтобы он ссылался только на нужную версию `C.dll`.
