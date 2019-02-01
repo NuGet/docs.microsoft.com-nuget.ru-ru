@@ -5,12 +5,12 @@ author: karann-msft
 ms.author: karann
 ms.date: 11/20/2018
 ms.topic: conceptual
-ms.openlocfilehash: 7dcb2e430ad80815f716f5567b511ff08acfe31b
-ms.sourcegitcommit: a9babe261f67da0f714d168d04ea54a66628974b
+ms.openlocfilehash: 99578c5ed7e88b7269872bf88c465bbda462870a
+ms.sourcegitcommit: 585394f063e95dcbc24d7ac0ce07de643eaf6f4d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/21/2018
-ms.locfileid: "53735140"
+ms.lasthandoff: 01/25/2019
+ms.locfileid: "55045112"
 ---
 # <a name="nuget-49-release-notes"></a>Заметки о выпуске NuGet 4.9
 
@@ -18,9 +18,11 @@ ms.locfileid: "53735140"
 
 | Версия NuGet | Доступно в версии Visual Studio| Доступно в пакетах SDK для .NET|
 |:---|:---|:---|
-| **4.9.0** | Visual Studio 2017 версии 15.9.0 | 2.1.500, 2.2.100 |
-| **4.9.1** | Н/Д | Н/Д |
+| [**4.9.0**](https://nuget.org/downloads) | [Visual Studio 2017 версии 15.9.0](https://visualstudio.microsoft.com/downloads/) | [2.1.500, 2.2.100](https://www.microsoft.com/net/download/visual-studio-sdks) |
+| [**4.9.1**](https://nuget.org/downloads) | Н/Д | Н/Д |
 | [**4.9.2**](https://nuget.org/downloads) |[Visual Studio 2017 версии 15.9.4](https://visualstudio.microsoft.com/downloads/) | [2.1.502, 2.2.101](https://www.microsoft.com/net/download/visual-studio-sdks) |
+| [**4.9.3**](https://nuget.org/downloads) |[Visual Studio 2017 версии 15.9.6](https://visualstudio.microsoft.com/downloads/) | Н/Д |
+
 
 ## <a name="summary-whats-new-in-490"></a>Сводка: Новые возможности версии 4.9.0
 
@@ -35,6 +37,8 @@ ms.locfileid: "53735140"
 * Включение согласия для метаданных GeneratePathProperty в PackageReference для создания свойства MSBuild для каждого пакета в каталоге Foo.Bar\1.0\" — [#6949](https://github.com/NuGet/Home/issues/6949).
 
 * Улучшение опыта использования NuGet клиентами — [#7108](https://github.com/NuGet/Home/issues/7108).
+
+* Включение многократного восстановления пакетов с помощью файла блокировки — [#5602](https://github.com/NuGet/Home/issues/5602), [объявление](https://github.com/NuGet/Announcements/issues/28), [запись блога](https://blog.nuget.org/20181217/Enable-repeatable-package-restores-using-a-lock-file.html)
 
 ### <a name="issues-fixed-in-this-release"></a>Исправленные ошибки в этом выпуске
 
@@ -106,6 +110,35 @@ ms.locfileid: "53735140"
 
 [Список всех проблем, исправленных в выпуске 4.9.2](https://github.com/NuGet/Home/issues?q=is%3Aissue+is%3Aclosed+milestone%3A%224.9.2")
 
+## <a name="summary-whats-new-in-493"></a>Сводка: Новые возможности версии 4.9.3
+
+### <a name="issues-fixed-in-this-release"></a>Исправленные ошибки в этом выпуске
+#### <a name="repeatable-package-restores-using-a-lock-file-issues"></a>Проблемы с многократным восстановлением пакетов с помощью файла блокировки
+
+* Режим блокировки не работает из-за неправильного вычисления хэша для кэшированных пакетов — [#7682](https://github.com/NuGet/Home/issues/7682)
+
+* Восстановление разрешается для другой версии, отличной от указанной в файле `packages.lock.json` — [#7667](https://github.com/NuGet/Home/issues/7667)
+
+* --locked-mode / RestoreLockedMode вызывает ложные ошибки восстановления при использовании ProjectReferences — [#7646](https://github.com/NuGet/Home/issues/7646)
+
+* Сопоставитель пакетов SDK MSBuild пытается проверить агент работоспособности системы для пакета SDK, который не удалось восстановить с использованием файла packages.lock.json — [#7599](https://github.com/NuGet/Home/issues/7599)
+
+#### <a name="lock-down-your-dependencies-using-configurable-trust-policies-issues"></a>Проблемы с блокировкой зависимостей с помощью настраиваемых политик доверия
+* Инструмент dotnet.exe не должен проверять доверенную подписывающую сторону, так как подписанные пакеты не поддерживаются — [#7574](https://github.com/NuGet/Home/issues/7574)
+
+* Порядок объектов trustedSigners в файле конфигурации влияет на проверку доверия — [#7572](https://github.com/NuGet/Home/issues/7572)
+
+* Невозможно реализовать ISettings [из-за рефакторинга API-интерфейсов параметров для поддержки функции политики доверия] — [#7614](https://github.com/NuGet/Home/issues/7614)
+
+#### <a name="improved-debugging-experience-issues"></a>Проблемы, связанные с улучшением процесса отладки
+
+* Не удается опубликовать пакет символов для глобального средства .NET Core — [#7632](https://github.com/NuGet/Home/issues/7632)
+
+#### <a name="self-contained-nuget-packages---license-issues"></a>Проблемы с автономными пакетами NuGet — лицензия
+
+* Ошибка при создании пакета символов с расширением .snupkg при использовании встроенного файла лицензии — [#7591](https://github.com/NuGet/Home/issues/7591)
+
+[Список всех проблем, исправленных в выпуске 4.9.3](https://github.com/nuget/home/issues?q=is%3Aissue+is%3Aclosed+milestone%3A%224.9.3")
 ## <a name="known-issues"></a>Известные проблемы
 
 ### <a name="dotnet-nuget-push---interactive-gives-an-error-on-mac---7519httpsgithubcomnugethomeissues7519"></a>Выполнение команды dotnet nuget push с параметром --interactive выдает сообщение об ошибке на компьютере Mac. - [#7519](https://github.com/NuGet/Home/issues/7519)
