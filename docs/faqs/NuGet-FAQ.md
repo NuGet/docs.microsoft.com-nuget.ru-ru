@@ -5,12 +5,12 @@ author: shishirx34
 ms.author: shishirh
 ms.date: 01/15/2019
 ms.topic: conceptual
-ms.openlocfilehash: dbdd171321c2560adc06feccbd60fc4e84dcf0a3
-ms.sourcegitcommit: a801052aa728a3a137225ca3ef3ff89f2d1c6b76
+ms.openlocfilehash: 290055a306306e944695d3a6ac970819882ee0c6
+ms.sourcegitcommit: 046717af2eba9ff6f619a0533844dee56a600d1c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/18/2019
-ms.locfileid: "54403228"
+ms.lasthandoff: 02/01/2019
+ms.locfileid: "55648274"
 ---
 # <a name="nuget-frequently-asked-questions"></a>Вопросы и ответы по NuGet
 
@@ -235,10 +235,17 @@ NuGet использует для скачивания пакетов прото
 
 Если этот способ не помогает, попробуйте советы, приведенные в этой [статье на веб-сайте StackOverflow](http://stackoverflow.com/questions/21049908/using-fiddler-to-sniff-visual-studio-2013-requests-proxy-firewall).
 
-**Каковы конечные точки API для nuget.org?**
+## <a name="what-is-the-api-endpoint-for-nugetorg"></a>Какая конечная точка API нужна для nuget.org?
 
-- Версия 3: `https://api.nuget.org/v3/index.json`
-- Версия 2: `https://www.nuget.org/api/v2/` (Обратите внимание, что все API версии 2 не рекомендуются к использованию и не работают с NuGet 4 или более поздних версий.)
+Чтобы использовать nuget.org в качестве репозитория пакетов в клиентах NuGet, вам нужна следующая конечная точка API версии 3: 
+
+**`https://api.nuget.org/v3/index.json`**
+
+Предыдущие версии клиентов по-прежнему могут использовать протокол версии 2 для доступа к nuget.org. Однако обратите внимание, что клиенты NuGet версии 3.0 и выше будут работать с протоколом версии 2 медленнее и с меньшей надежностью:
+
+`https://www.nuget.org/api/v2/` (Не рекомендуется!!!) **Примечание:** часть "www." имеет значение.
+
+Кроме того, команда *NuGet.exe List* работает только с протоколом версии 2.
 
 ## <a name="nugetorg-account-management"></a>Управление учетной записью nuget.org
 
