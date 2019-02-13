@@ -6,12 +6,12 @@ ms.author: jver
 ms.date: 10/26/2017
 ms.topic: reference
 ms.reviewer: kraigb
-ms.openlocfilehash: 39b710c483ce4b3f2da30df6bb5b6842f9ee1fca
-ms.sourcegitcommit: 6ea2ff8aaf7743a6f7c687c8a9400b7b60f21a52
+ms.openlocfilehash: 5d0d60cbcf6516d24efeb04f8262902da69d92d1
+ms.sourcegitcommit: d5a35a097e6b461ae791d9f66b3a85d5219d7305
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/16/2019
-ms.locfileid: "54324842"
+ms.lasthandoff: 02/12/2019
+ms.locfileid: "56145661"
 ---
 # <a name="nuget-api"></a>API NuGet
 
@@ -49,17 +49,17 @@ NuGet V3 API называется таким образом, так как он 
 
 **Индекс службы** описаны различные ресурсы. Ниже приведены текущий набор поддерживаемых ресурсов.
 
-Имя ресурса                                                           | Обязательно | Описание
-----------------------------------------------------------------------  | -------- | -----------
+Имя ресурса                                                          | Обязательно | Описание
+---------------------------------------------------------------------- | -------- | -----------
 [`PackagePublish`](package-publish-resource.md)                        | да      | Push-уведомлений и удалить (или удалить из списка) пакеты.
 [`SearchQueryService`](search-query-service-resource.md)               | да      | Фильтровать и искать пакеты по ключевому слову.
 [`RegistrationsBaseUrl`](registration-base-url-resource.md)            | да      | Получите метаданные пакета.
 [`PackageBaseAddress`](package-base-address-resource.md)               | да      | Получение содержимого пакета (файла nupkg).
 [`SearchAutocompleteService`](search-autocomplete-service-resource.md) | Нет       | Найдите идентификаторы пакетов и версий, подстроку.
 [`ReportAbuseUriTemplate`](report-abuse-resource.md)                   | Нет       | Создать URL-адрес для доступа к веб-страницы «сообщить о нарушении».
-[`RepositorySignatures`](repository-signatures-resource.md)             | Нет      | Получение сертификатов, используемый для подписания репозитория.
-[`Catalog`](catalog-resource.md)                                         | Нет      | Полную запись всех событий пакета.
-[`SymbolPackagePublish`](symbol-package-publish-resource.md)            | Нет      | Отправьте пакеты символов.
+[`RepositorySignatures`](repository-signatures-resource.md)            | Нет       | Получение сертификатов, используемый для подписания репозитория.
+[`Catalog`](catalog-resource.md)                                       | Нет       | Полную запись всех событий пакета.
+[`SymbolPackagePublish`](symbol-package-publish-resource.md)           | Нет       | Отправьте пакеты символов.
 
 Как правило сериализуются все недвоичные данные, возвращаемые API ресурса с помощью JSON. Схема ответа, возвращаемая функцией каждого ресурса в индекс службы определяется по отдельности для этого ресурса. Дополнительные сведения о каждом ресурсе см. в разделах, перечисленных выше.
 
@@ -67,6 +67,19 @@ NuGet V3 API называется таким образом, так как он 
 
 > [!Note]
 > Если источник не реализует `SearchAutocompleteService` корректно следует отключить любое поведение автозавершения. Когда `ReportAbuseUriTemplate` не реализован, о нарушении URL-адрес отчетов официальный возвращается клиента NuGet к nuget.org (отслеживаемые по [4924 # NuGet/Home](https://github.com/NuGet/Home/issues/4924)). Другие клиенты могут выбрать просто не отображать URL-адрес отчета о нарушении для пользователя.
+
+### <a name="undocumented-resources-on-nugetorg"></a>Недокументированные ресурсы на сайте nuget.org
+
+Индекс службы V3 на сайте nuget.org имеет некоторые ресурсы, которые не были описаны выше. Существует несколько причин не, документирование ресурса.
+
+Во-первых мы не добавляем ресурсы, используемые как деталь реализации nuget.org. `SearchGalleryQueryService` Попадают в эту категорию. [NuGetGallery](https://github.com/NuGet/NuGetGallery) использует этот ресурс, делегировать некоторые V2 запросов (OData) нашей индекс поиска вместо использования базы данных. Этот ресурс был введен для масштабируемости и не предназначен для внешнего использования.
+
+Во-вторых мы не добавляем ресурсы, которые никогда не поставляется в RTM-версию официальный клиент.
+`PackageDisplayMetadataUriTemplate` и `PackageVersionDisplayMetadataUriTemplate` попадают в эту категорию.
+
+В-третьих, мы не документировать ресурсы, тесно связана с протоколом V2, который сам не намеренно задокументирован. `LegacyGallery` Ресурсов попадают в эту категорию. Этот ресурс позволяет индекс службы V3, чтобы они указывали на соответствующий URL-адрес V2 источника. Этот ресурс поддерживает `nuget.exe list`.
+
+Если ресурс не описанным здесь, мы *строго* рекомендуем не допускайте зависимостей на них. Мы может удалить или изменить поведение этих недокументированные ресурсов, что может привести к нарушению реализации непредвиденным образом.
 
 ## <a name="timestamps"></a>Метки времени
 
