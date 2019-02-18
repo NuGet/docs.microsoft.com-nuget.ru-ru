@@ -5,16 +5,16 @@ author: karann-msft
 ms.author: karann
 ms.date: 01/09/2017
 ms.topic: conceptual
-ms.openlocfilehash: f054a1cae7328d3e910d11ac1bfc5f98505e5879
-ms.sourcegitcommit: 1d1406764c6af5fb7801d462e0c4afc9092fa569
+ms.openlocfilehash: e0ec5323f7be53bef6637ad69540a66abbf22711
+ms.sourcegitcommit: d5a35a097e6b461ae791d9f66b3a85d5219d7305
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/04/2018
-ms.locfileid: "43546537"
+ms.lasthandoff: 02/12/2019
+ms.locfileid: "56145583"
 ---
 # <a name="creating-native-packages"></a>Создание собственных пакетов
 
-Собственный пакет содержит машинный код C++, а не управляемый код, что позволяет использовать его в проектах C++. (См. [Собственные пакеты C++](../consume-packages/finding-and-choosing-packages.md#native-c-packages) в разделе "Использование".)
+Собственный пакет содержит двоичные файлы машинного кода, а не управляемые сборки, что позволяет использовать его в проектах C++ (или аналогичных). (См. [Собственные пакеты C++](../consume-packages/finding-and-choosing-packages.md#native-c-packages) в разделе "Использование".)
 
 Для использования в проекте C++ пакет должен быть ориентирован на платформу `native`. Сейчас нет номеров версий, связанных с этой платформой, так как NuGet обрабатывает все проекты C++ одинаково.
 

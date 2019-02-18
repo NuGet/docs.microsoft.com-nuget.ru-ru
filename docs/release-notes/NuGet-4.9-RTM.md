@@ -5,12 +5,12 @@ author: karann-msft
 ms.author: karann
 ms.date: 11/20/2018
 ms.topic: conceptual
-ms.openlocfilehash: 99578c5ed7e88b7269872bf88c465bbda462870a
-ms.sourcegitcommit: 585394f063e95dcbc24d7ac0ce07de643eaf6f4d
+ms.openlocfilehash: aa9bf87504477506dbb1e9ac10d5c1d5841c224f
+ms.sourcegitcommit: 885973352d31808e3ddbb45da6d6e54d1e4fca9d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/25/2019
-ms.locfileid: "55045112"
+ms.lasthandoff: 02/13/2019
+ms.locfileid: "56224948"
 ---
 # <a name="nuget-49-release-notes"></a>Заметки о выпуске NuGet 4.9
 
@@ -21,7 +21,7 @@ ms.locfileid: "55045112"
 | [**4.9.0**](https://nuget.org/downloads) | [Visual Studio 2017 версии 15.9.0](https://visualstudio.microsoft.com/downloads/) | [2.1.500, 2.2.100](https://www.microsoft.com/net/download/visual-studio-sdks) |
 | [**4.9.1**](https://nuget.org/downloads) | Н/Д | Н/Д |
 | [**4.9.2**](https://nuget.org/downloads) |[Visual Studio 2017 версии 15.9.4](https://visualstudio.microsoft.com/downloads/) | [2.1.502, 2.2.101](https://www.microsoft.com/net/download/visual-studio-sdks) |
-| [**4.9.3**](https://nuget.org/downloads) |[Visual Studio 2017 версии 15.9.6](https://visualstudio.microsoft.com/downloads/) | Н/Д |
+| [**4.9.3**](https://nuget.org/downloads) |[Visual Studio 2017 версии 15.9.6](https://visualstudio.microsoft.com/downloads/) | [2.1.504, 2.2.104](https://www.microsoft.com/net/download/visual-studio-sdks) |
 
 
 ## <a name="summary-whats-new-in-490"></a>Сводка: Новые возможности версии 4.9.0
@@ -143,7 +143,7 @@ ms.locfileid: "55045112"
 
 ### <a name="dotnet-nuget-push---interactive-gives-an-error-on-mac---7519httpsgithubcomnugethomeissues7519"></a>Выполнение команды dotnet nuget push с параметром --interactive выдает сообщение об ошибке на компьютере Mac. - [#7519](https://github.com/NuGet/Home/issues/7519)
 
-#### <a name="issue"></a>Проблемы
+#### <a name="issue"></a>Выпуск
 Аргумент `--interactive` не перенаправляется интерфейсом командной строки dotnet, что приводит к ошибке `error: Missing value for option 'interactive'`.
 
 #### <a name="workaround"></a>Обходной путь
@@ -151,7 +151,7 @@ ms.locfileid: "55045112"
 
 ### <a name="packages-in-fallbackfolders-installed-by-net-core-sdk-are-custom-installed-and-fail-signature-validation---7414httpsgithubcomnugethomeissues7414"></a>Пакеты в FallbackFolders, устанавливаемые пакетом SDK для .NET Core, являются пользовательской установкой и не проходят проверку подписи. - [#7414](https://github.com/NuGet/Home/issues/7414)
 
-#### <a name="issue"></a>Проблемы
+#### <a name="issue"></a>Выпуск
 При использовании dotnet.exe 2.x для восстановления проекта с несколькими целевыми объектами (netcoreapp 1.x и netcoreapp 2.x) резервная папка обрабатывается как веб-канал файла. Это значит, что при восстановлении NuGet пытается установить пакет из резервной папки в папку глобальных пакетов и выполнить обычную проверки подписи, что приводит к ошибке.
 
 #### <a name="workaround"></a>Обходной путь

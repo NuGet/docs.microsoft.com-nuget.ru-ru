@@ -5,18 +5,18 @@ author: karann-msft
 ms.author: karann
 ms.date: 01/24/2018
 ms.topic: quickstart
-ms.openlocfilehash: 02aa7bb9d27352bbecfc718ef5bd6ee33501018d
-ms.sourcegitcommit: 1d1406764c6af5fb7801d462e0c4afc9092fa569
+ms.openlocfilehash: 3e459999eea45c5ae705a7e07c1a0fbb2e0cd1a1
+ms.sourcegitcommit: d5a35a097e6b461ae791d9f66b3a85d5219d7305
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/04/2018
-ms.locfileid: "43548433"
+ms.lasthandoff: 02/12/2019
+ms.locfileid: "56145622"
 ---
 # <a name="quickstart-create-and-publish-a-package-dotnet-cli"></a>Краткое руководство. Создание и публикация пакета (dotnet CLI)
 
 Создание пакета NuGet из библиотеки классов .NET и его публикация на сайте nuget.org выполняются очень просто с помощью интерфейса командной строки (CLI) `dotnet`.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Необходимые компоненты
 
 1. Установите [пакет SDK для .NET Core](https://www.microsoft.com/net/download/), содержащий CLI `dotnet`.
 
@@ -109,4 +109,5 @@ Copyright (C) Microsoft Corporation. All rights reserved.
 - [Поддержка нескольких целевых платформ](../create-packages/supporting-multiple-target-frameworks.md)
 - [Управление версиями пакета](../reference/package-versioning.md)
 - [Создание локализованных пакетов](../create-packages/creating-localized-packages.md)
+- [Создание пакетов символов](../create-packages/symbol-packages-snupkg.md)
 - [Подписывание пакетов](../create-packages/Sign-a-package.md)

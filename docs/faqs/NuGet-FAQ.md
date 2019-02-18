@@ -5,12 +5,12 @@ author: shishirx34
 ms.author: shishirh
 ms.date: 01/15/2019
 ms.topic: conceptual
-ms.openlocfilehash: 290055a306306e944695d3a6ac970819882ee0c6
-ms.sourcegitcommit: 046717af2eba9ff6f619a0533844dee56a600d1c
+ms.openlocfilehash: f15639c883241c328b5fc0a4bf5617540b52b7ee
+ms.sourcegitcommit: d5a35a097e6b461ae791d9f66b3a85d5219d7305
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/01/2019
-ms.locfileid: "55648274"
+ms.lasthandoff: 02/12/2019
+ms.locfileid: "56145687"
 ---
 # <a name="nuget-frequently-asked-questions"></a>Вопросы и ответы по NuGet
 
@@ -243,9 +243,7 @@ NuGet использует для скачивания пакетов прото
 
 Предыдущие версии клиентов по-прежнему могут использовать протокол версии 2 для доступа к nuget.org. Однако обратите внимание, что клиенты NuGet версии 3.0 и выше будут работать с протоколом версии 2 медленнее и с меньшей надежностью:
 
-`https://www.nuget.org/api/v2/` (Не рекомендуется!!!) **Примечание:** часть "www." имеет значение.
-
-Кроме того, команда *NuGet.exe List* работает только с протоколом версии 2.
+`https://www.nuget.org/api/v2` (Не рекомендуется!!!) **Примечание**. Для наилучшей надежности используйте "www.".
 
 ## <a name="nugetorg-account-management"></a>Управление учетной записью nuget.org
 
