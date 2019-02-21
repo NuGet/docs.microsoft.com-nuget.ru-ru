@@ -163,7 +163,7 @@ DotNetCLIToolReferences нужно изменить вручную в файле
 
 - [DesignConsistency] Вводящее в заблуждение сообщение при добавлении пакета NuGet — [#5641](https://github.com/NuGet/Home/issues/5641)
 
-- [Предупреждения и ошибки] NoWarn не переходит транзитивно по одноранговым ссылкам — [#5501](https://github.com/NuGet/Home/issues/5501)
+- [Предупреждения и ошибки] NoWarn не переходит транзитивно по одноранговым ссылкам — [#5501](https://github.com/NuGet/Home/issues/5501)
 
 - Упрощенная загрузка решения: общее ядро для пользовательского интерфейса PM, PMC и векторов инициализации — [#5057](https://github.com/NuGet/Home/issues/5057)
 
