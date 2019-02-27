@@ -6,12 +6,12 @@ ms.author: karann
 ms.date: 08/29/2017
 ms.topic: reference
 ms.reviewer: anangaur
-ms.openlocfilehash: fec6dd0fb97b565b364a7ffcb192d2eb99187e83
-ms.sourcegitcommit: b15fdd101aec13ea5fe9dd12845051d648034abd
+ms.openlocfilehash: a8be66f5871df260581b6baca8eb7959279d66cd
+ms.sourcegitcommit: b6efd4b210d92bf163c67e412ca9a5a018d117f0
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "55480144"
+ms.lasthandoff: 02/26/2019
+ms.locfileid: "56852589"
 ---
 # <a name="nuspec-reference"></a>Справочник по файлу NUSPEC
 
@@ -192,7 +192,7 @@ nuget pack MyProject.csproj
 | --- | --- | ---
 | **$id$** | Файл проекта | AssemblyName (заголовок) из файла проекта |
 | **$version$** | AssemblyInfo | AssemblyInformationalVersion, если присутствует, в противном случае AssemblyVersion |
-| **$authors$** | AssemblyInfo | AssemblyCompany |
+| **$author$** | AssemblyInfo | AssemblyCompany |
 | **$title$** | AssemblyInfo | AssemblyTitle |
 | **$description$** | AssemblyInfo | AssemblyDescription |
 | **$copyright$** | AssemblyInfo | AssemblyCopyright |
@@ -218,7 +218,7 @@ nuget pack MyProject.csproj
 
 Элемент `<dependencies>` внутри элемента `<metadata>` содержит любое число элементов `<dependency>`, идентифицирующих другие пакеты, от которых зависит пакет верхнего уровня. Ниже перечислены атрибуты каждого элемента `<dependency>`:
 
-| Атрибут | Описание: |
+| Атрибут | Описание |
 | --- | --- |
 | `id` | Идентификатор пакета зависимости, например EntityFramework и NUnit, являющийся именем пакета nuget.org, показан на странице пакета (обязательно). |
 | `version` | Диапазон версий, которые допустимы в качестве зависимости (обязательно). Точный синтаксис см. в разделе [Управление версиями пакета](../reference/package-versioning.md#version-ranges-and-wildcards). |
@@ -382,7 +382,7 @@ nuget pack MyProject.csproj
 
 Каждый элемент `<file>` задает указанные ниже атрибуты:
 
-| Атрибут | Описание: |
+| Атрибут | Описание |
 | --- | --- |
 | **src** | Расположение файла или файлов, которые требуется включить, с учетом исключений, задаваемых атрибутом `exclude`. Если не указан абсолютный путь, этот путь задается относительно файла `.nuspec`. Допускается использовать подстановочный знак `*`. Наличие сдвоенного подстановочного знака `**` подразумевает выполнение рекурсивного поиска в папке. |
 | **target** | Относительный путь к папке в пакете, куда помещаются файлы исходного кода. Должен начинаться с `lib`, `content`, `build` или `tools`. См. раздел [Создание файла NUSPEC на основе рабочего каталога, соответствующего соглашениям](../create-packages/creating-a-package.md#from-a-convention-based-working-directory). |
@@ -587,7 +587,7 @@ nuget pack MyProject.csproj
 
 Эти файлы задаются с набором атрибутов, который описывает их использование в системе проекта:
 
-| Атрибут | Описание |
+| Атрибут | Описание: |
 | --- | --- |
 | **include** | Расположение файла или файлов, которые требуется включить, с учетом исключений, задаваемых атрибутом `exclude` (обязательно). Если не указан абсолютный путь, этот путь задается относительно файла `.nuspec`. Допускается использовать подстановочный знак `*`. Наличие сдвоенного подстановочного знака `**` подразумевает выполнение рекурсивного поиска в папке. |
 | **exclude** | Разделенный точками с запятой список файлов или шаблонов файлов, которые исключаются из расположения `src`. Допускается использовать подстановочный знак `*`. Наличие сдвоенного подстановочного знака `**` подразумевает выполнение рекурсивного поиска в папке. |
