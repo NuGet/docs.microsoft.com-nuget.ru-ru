@@ -5,19 +5,61 @@ author: anangaur
 ms.author: anangaur
 ms.date: 1/25/2019
 ms.topic: conceptual
-ms.openlocfilehash: 5889ea52f993fa8fe841f8eb83b6da659cdede93
-ms.sourcegitcommit: 1ab750ff17e55c763d646c50e7630138804ce8b8
+ms.openlocfilehash: 57b66b347ac47a3d05907a4bb237002de8981ecc
+ms.sourcegitcommit: 85bf94e0efcfcee1f914650bdc142309ef3e06d9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/14/2019
-ms.locfileid: "56247663"
+ms.lasthandoff: 03/01/2019
+ms.locfileid: "57196204"
 ---
 # <a name="nuget-50-preview-release-notes"></a>Заметки о выпуске NuGet Предварительная версия 5.0
 
 ## <a name="nuget-50-preview-releases"></a>NuGet 5.0 предварительных выпусков
 
+* 27 февраля 2010 г. — [NuGet 5.0 Preview 4](#summary-whats-new-in-50-preview-4)
 * 13 февраля 2019 г. - [NuGet 5.0 Preview 3](#summary-whats-new-in-50-preview-3)
 * 23 января 2019 г. - [NuGet 5.0 предварительной версии 2](#summary-whats-new-in-50-preview-2)
+
+## <a name="summary-whats-new-in-nuget-50-preview-4"></a>Сводка: Новые возможности в предварительной версии NuGet 5.0 4
+
+### <a name="issues-fixed-in-this-release"></a>Исправленные ошибки в этом выпуске
+
+**Ошибок:**
+
+* NuGet.VisualStudio.IVsPackageInstaller - вызов метода для проекта без пакета ссылается на всегда использует packages.config, даже если значение по умолчанию имеет значение PackageReference - [#7005](https://github.com/NuGet/Home/issues/7005)
+
+* В КОНСОЛИ ДИСПЕТЧЕРА ПАКЕТОВ: Update-Package переустановите завершается сбоем («не удалось найти пакет») на delisted пакетов. - [#7268](https://github.com/NuGet/Home/issues/7268)
+
+* Добавить уведомление третьих лиц в репозиторий, а также VSIX - [#7409](https://github.com/NuGet/Home/issues/7409)
+
+* NuGet.VisualStudio.IVsPackageInstaller.InstallPackage следует установить последнюю версию, если версия, не учитывая - [#7493](https://github.com/NuGet/Home/issues/7493)
+
+* --интерактивной поддержки dotnet nuget push - [#7519](https://github.com/NuGet/Home/issues/7519)
+
+* При восстановлении с помощью блокировки файла, не должны вызываться NU1603 предупреждение. - [#7529](https://github.com/NuGet/Home/issues/7529)
+
+* NuGet не следует печатать путь проекта во время восстановления при минимальном ведении журнала - [#7647](https://github.com/NuGet/Home/issues/7647)
+
+* --пакет удаляется интерактивной поддержки для команды dotnet - [#7727](https://github.com/NuGet/Home/issues/7727)
+
+* Добавьте обратно NuGet.Packaging.Core с TypeForwardedTo attrs - [#7768](https://github.com/NuGet/Home/issues/7768)
+
+* plugins_cache требуется более короткий путь к работают хорошо - [#7770](https://github.com/NuGet/Home/issues/7770)
+
+* Предпочитать путь для обнаружения msbuild, если пользователь не запросить определенные msbuild версии - [#7786](https://github.com/NuGet/Home/issues/7786)
+
+**Запросы на изменение структуры:**
+
+* Максимальное число запросов http на каждый источник через NuGet.Config - [#4538](https://github.com/NuGet/Home/issues/4538)
+
+* NuGet должны быть нацелены на Net472 (для очистки 16.0 сборку VSIX) — [#7143](https://github.com/NuGet/Home/issues/7143)
+
+* В КОНСОЛИ ДИСПЕТЧЕРА ПАКЕТОВ: Удалить команду OpenPackagePage - [#7384](https://github.com/NuGet/Home/issues/7384)
+
+* Создание NetCoreApp 3.0 сопоставляются NetStandard 2.1 — [#7762](https://github.com/NuGet/Home/issues/7762)
+
+* Добавление поддержки netstandard2.0 к пакетам NuGet.* - [#6516](https://github.com/NuGet/Home/issues/6516)
+
 
 ## <a name="summary-whats-new-in-nuget-50-preview-3"></a>Сводка: Новые возможности в предварительной версии NuGet 5.0 3
 
@@ -39,7 +81,7 @@ ms.locfileid: "56247663"
 
 * минимальной детализации MSBuild/t: RESTORE должно быть более минимальным - [#4695](https://github.com/NuGet/Home/issues/4695)
 
-**Запросы на изменение структуры**
+**Запросы на изменение структуры:**
 
 * Авторы пакета для определения поведения транзитивное активы сборки - [#6091](https://github.com/NuGet/Home/issues/6091)
 
@@ -92,7 +134,7 @@ ms.locfileid: "56247663"
 
 * Команда DotNet restore завершается ошибкой из-за расширенных веб-канала - отключено машины [#5410](https://github.com/NuGet/Home/issues/5410)
 
-**Запросы на изменение структуры**
+**Запросы на изменение структуры:**
 
 * Сборки NuGet 5.0 требуется .NET Framework 4.7.2 (посредством изменения TFM) - [#7510](https://github.com/NuGet/Home/issues/7510)
 
@@ -109,10 +151,6 @@ ms.locfileid: "56247663"
 [Список всех ошибок, исправленных в этом выпуске 5.0.0-preview2](https://github.com/NuGet/Home/issues?q=is%3Aissue+is%3Aclosed+milestone%3A%224.9.2")
 
 ### <a name="known-issues"></a>Известные проблемы
-
-#### <a name="dotnet-nuget-push---interactive-gives-an-error-on-mac---7519httpsgithubcomnugethomeissues7519"></a>Выполнение команды dotnet nuget push с параметром --interactive выдает сообщение об ошибке на компьютере Mac. - [#7519](https://github.com/NuGet/Home/issues/7519)
-**Проблема** `--interactive` аргумент не перенаправляется интерфейсом командной строки dotnet и приводит к ошибке `error: Missing value for option 'interactive'` 
- **решение** выполнить любые другие команды dotnet с интерактивной например `dotnet restore --interactive` и пройти проверку подлинности. Результат проверки подлинности затем может быть кэширован поставщиком учетных данных. Затем выполните `dotnet nuget push`.
 
 #### <a name="packages-in-fallbackfolders-installed-by-net-core-sdk-are-custom-installed-and-fail-signature-validation---7414httpsgithubcomnugethomeissues7414"></a>Пакеты в FallbackFolders, устанавливаемые пакетом SDK для .NET Core, являются пользовательской установкой и не проходят проверку подписи. - [#7414](https://github.com/NuGet/Home/issues/7414)
 **Проблема** при использовании dotnet.exe 2.x для восстановления этой netcoreapp нескольких целевых объектов проекта 1.x и netcoreapp 2.x, папке резервной обрабатывается как файл веб-канала. Это значит, что при восстановлении NuGet пытается установить пакет из резервной папки в папку глобальных пакетов и выполнить обычную проверки подписи, что приводит к ошибке.
