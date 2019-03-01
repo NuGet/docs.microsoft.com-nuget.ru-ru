@@ -6,21 +6,21 @@ ms.author: karann
 ms.date: 05/18/2018
 ms.topic: conceptual
 ms.reviewer: anangaur
-ms.openlocfilehash: bd36ae311da1ec824726c5d73670b1232a3f89e0
-ms.sourcegitcommit: 1d1406764c6af5fb7801d462e0c4afc9092fa569
+ms.openlocfilehash: bd19bc402ff9d66d7e2baa4f326d75f0ed444f30
+ms.sourcegitcommit: b6efd4b210d92bf163c67e412ca9a5a018d117f0
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/04/2018
-ms.locfileid: "43549590"
+ms.lasthandoff: 02/26/2019
+ms.locfileid: "56852576"
 ---
 # <a name="publishing-packages"></a>Публикация пакетов
 
 После создания пакета и получения файла `.nupkg` его можно легко опубликовать для других разработчиков на общедоступных или закрытых ресурсах:
 
 - Открытые пакеты публикуются для других разработчиков на глобальном веб-сайте [nuget.org](https://www.nuget.org/packages/manage/upload), как описывается в этой статье (требуется NuGet 4.1.0+).
-- Закрытые пакеты публикуются только для команд или организаций путем размещения на общем файловом ресурсе, закрытом сервере NuGet, в [среде управления пакетами Visual Studio Team Services](https://www.visualstudio.com/docs/package/nuget/publish) или стороннем репозитории, таком как myget, ProGet, Nexus Repository или Artifactory. Дополнительные сведения см. в разделе [Общее сведения о размещении пакетов](../hosting-packages/overview.md).
+- Закрытые пакеты публикуются только для команд или организаций путем размещения на общем файловом ресурсе, закрытом сервере NuGet, в [Azure Artifacts](https://www.visualstudio.com/docs/package/nuget/publish) или стороннем репозитории, таком как myget, ProGet, Nexus Repository или Artifactory. Дополнительные сведения см. в разделе [Общее сведения о размещении пакетов](../hosting-packages/overview.md).
 
-В этой статье описывается публикация на веб-сайте nuget.org. Сведения о публикации в Visual Studio Team Services см. в [этой статье](https://www.visualstudio.com/docs/package/nuget/publish).
+В этой статье описывается публикация на веб-сайте nuget.org. Сведения о публикации в Azure Artifacts см. в статье [Управление пакетами](https://www.visualstudio.com/docs/package/nuget/publish).
 
 ## <a name="publish-to-nugetorg"></a>Публикация на веб-сайте nuget.org
 
@@ -28,7 +28,7 @@ ms.locfileid: "43549590"
 
 ![Местоположение входа в NuGet](media/publish_NuGetSignIn.png)
 
-Далее можно отправить пакет через веб-портал nuget.org, выполнить принудительную отправку на веб-сайт nuget.org из командной строки (требуется `nuget.exe` 4.1.0 или более поздней версии) или опубликовать в рамках процесса непрерывной интеграции и развертывания через Visual Studio Team Services, как описывается в следующих разделах.
+Далее можно отправить пакет через веб-портал nuget.org, выполнить принудительную отправку на веб-сайт nuget.org из командной строки (требуется `nuget.exe` 4.1.0 или более поздних версий) или опубликовать в рамках процесса непрерывной интеграции и развертывания (CI/CD) через Azure DevOps Services, как описывается в следующих разделах.
 
 ### <a name="web-portal-use-the-upload-package-tab-on-nugetorg"></a>Веб-портал. Использование вкладки Upload Package (Отправить пакет) на сайте nuget.org
 
@@ -93,9 +93,9 @@ ms.locfileid: "43549590"
 
 ![Сообщение о том, что пакет не опубликовано](media/publish_NotYetIndexed.png)
 
-### <a name="visual-studio-team-services-cicd"></a>Visual Studio Team Services (непрерывная интеграция и развертывание)
+### <a name="azure-devops-services-cicd"></a>Azure DevOps Services (CI/CD)
 
-Если вы отправляете пакеты на веб-сайт nuget.org с использованием Visual Studio Team Services в рамках процесса непрерывной интеграции и развертывания, необходимо использовать `nuget.exe` 4.1 или более поздней версии в задачах NuGet. Дополнительные сведения см. в разделе [Использование последней версии NuGet в сборках](https://blogs.msdn.microsoft.com/devops/2017/09/29/using-the-latest-nuget-in-your-build/) (блог Microsoft DevOps).
+Если вы отправляете пакеты на веб-сайт nuget.org с использованием Azure DevOps Services в рамках процесса непрерывной интеграции и развертывания, необходимо использовать `nuget.exe` 4.1 или более поздних версий в задачах NuGet. Дополнительные сведения см. в разделе [Использование последней версии NuGet в сборках](https://blogs.msdn.microsoft.com/devops/2017/09/29/using-the-latest-nuget-in-your-build/) (блог Microsoft DevOps).
 
 ## <a name="managing-package-owners-on-nugetorg"></a>Управление владельцами пакетов на веб-сайте nuget.org
 
