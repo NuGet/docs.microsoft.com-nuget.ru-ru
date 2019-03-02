@@ -5,26 +5,26 @@ author: anangaur
 ms.author: anangaur
 ms.date: 1/25/2019
 ms.topic: conceptual
-ms.openlocfilehash: 57b66b347ac47a3d05907a4bb237002de8981ecc
-ms.sourcegitcommit: 85bf94e0efcfcee1f914650bdc142309ef3e06d9
+ms.openlocfilehash: 4b05dcb9a2960c1e3231e81d4b4c122d3a518753
+ms.sourcegitcommit: 571644118e3c5a2fd818891d305b4b8de8ef21de
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57196204"
+ms.lasthandoff: 03/02/2019
+ms.locfileid: "57225892"
 ---
 # <a name="nuget-50-preview-release-notes"></a>Заметки о выпуске NuGet Предварительная версия 5.0
 
 ## <a name="nuget-50-preview-releases"></a>NuGet 5.0 предварительных выпусков
 
-* 27 февраля 2010 г. — [NuGet 5.0 Preview 4](#summary-whats-new-in-50-preview-4)
-* 13 февраля 2019 г. - [NuGet 5.0 Preview 3](#summary-whats-new-in-50-preview-3)
-* 23 января 2019 г. - [NuGet 5.0 предварительной версии 2](#summary-whats-new-in-50-preview-2)
+* 27 февраля 2019 г. - [NuGet 5.0 Preview 4](#whats-new-in-nuget-50-preview-4)
+* 13 февраля 2019 г. - [NuGet 5.0 Preview 3](#whats-new-in-nuget-50-preview-3)
+* 23 января 2019 г. - [NuGet 5.0 предварительной версии 2](#whats-new-in-nuget-50-preview-2)
 
-## <a name="summary-whats-new-in-nuget-50-preview-4"></a>Сводка: Новые возможности в предварительной версии NuGet 5.0 4
+## <a name="whats-new-in-nuget-50-preview-4"></a>Новые возможности в предварительной версии NuGet 5.0 4
 
 ### <a name="issues-fixed-in-this-release"></a>Исправленные ошибки в этом выпуске
 
-**Ошибок:**
+**Ошибки**
 
 * NuGet.VisualStudio.IVsPackageInstaller - вызов метода для проекта без пакета ссылается на всегда использует packages.config, даже если значение по умолчанию имеет значение PackageReference - [#7005](https://github.com/NuGet/Home/issues/7005)
 
@@ -48,7 +48,7 @@ ms.locfileid: "57196204"
 
 * Предпочитать путь для обнаружения msbuild, если пользователь не запросить определенные msbuild версии - [#7786](https://github.com/NuGet/Home/issues/7786)
 
-**Запросы на изменение структуры:**
+**Запросы на изменение структуры**
 
 * Максимальное число запросов http на каждый источник через NuGet.Config - [#4538](https://github.com/NuGet/Home/issues/4538)
 
@@ -61,11 +61,11 @@ ms.locfileid: "57196204"
 * Добавление поддержки netstandard2.0 к пакетам NuGet.* - [#6516](https://github.com/NuGet/Home/issues/6516)
 
 
-## <a name="summary-whats-new-in-nuget-50-preview-3"></a>Сводка: Новые возможности в предварительной версии NuGet 5.0 3
+## <a name="whats-new-in-nuget-50-preview-3"></a>Новые возможности в предварительной версии NuGet 5.0 3
 
 ### <a name="issues-fixed-in-this-release"></a>Исправленные ошибки в этом выпуске 
 
-**Ошибок:**
+**Ошибки**
 
 * nuget.exe /? должно отобразиться правильное msbuild версии — [#7794](https://github.com/NuGet/Home/issues/7794)
 
@@ -81,18 +81,18 @@ ms.locfileid: "57196204"
 
 * минимальной детализации MSBuild/t: RESTORE должно быть более минимальным - [#4695](https://github.com/NuGet/Home/issues/4695)
 
-**Запросы на изменение структуры:**
+**Запросы на изменение структуры**
 
 * Авторы пакета для определения поведения транзитивное активы сборки - [#6091](https://github.com/NuGet/Home/issues/6091)
 
 * Включить восстановление в Visual STUDIO завершится успешно, если проект не является частью решения или не загружен, но ранее был восстановлен - [#5820](https://github.com/NuGet/Home/issues/5820)
 
 
-## <a name="summary-whats-new-in-50-preview-2"></a>Сводка: Новые возможности в версии 5.0 предварительной версии 2
+## <a name="whats-new-in-nuget-50-preview-2"></a>Новые возможности в предварительной версии NuGet 5.0 2
 
 ### <a name="issues-fixed-in-this-release"></a>Исправленные ошибки в этом выпуске
 
-**Ошибок:**
+**Ошибки**
 
 * VS 16.0 в пользовательский Интерфейс NuGet может быть прочитан появляются из-за проблем цвет - [#7735](https://github.com/NuGet/Home/issues/7735)
 
@@ -134,7 +134,7 @@ ms.locfileid: "57196204"
 
 * Команда DotNet restore завершается ошибкой из-за расширенных веб-канала - отключено машины [#5410](https://github.com/NuGet/Home/issues/5410)
 
-**Запросы на изменение структуры:**
+**Запросы на изменение структуры**
 
 * Сборки NuGet 5.0 требуется .NET Framework 4.7.2 (посредством изменения TFM) - [#7510](https://github.com/NuGet/Home/issues/7510)
 
