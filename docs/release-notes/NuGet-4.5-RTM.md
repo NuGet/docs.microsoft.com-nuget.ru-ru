@@ -5,16 +5,26 @@ author: anangaur
 ms.author: anangaur
 ms.date: 12/4/2017
 ms.topic: conceptual
-ms.openlocfilehash: 01ecd8c7de1a0f713766e3c413d889038522bac7
-ms.sourcegitcommit: 1d1406764c6af5fb7801d462e0c4afc9092fa569
+ms.openlocfilehash: 321aedb471bc6f86e9c03878093b199267e31195
+ms.sourcegitcommit: 74bf831e013470da8b0c1f43193df10bfb1f4fe6
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/04/2018
-ms.locfileid: "43548300"
+ms.lasthandoff: 03/26/2019
+ms.locfileid: "58432508"
 ---
-# <a name="nuget-45-rtm-release-notes"></a>Заметки о выпуске версии NuGet 4.5 RTM
+# <a name="nuget-45-release-notes"></a>Заметки о выпуске NuGet 4.5
 
 [Visual Studio 2017 15.5 RTW](https://www.visualstudio.com/news/releasenotes/vs2017-relnotes) включает в себя [NuGet 4.5 RTM](https://dist.nuget.org/win-x86-commandline/v4.5.0/nuget.exe).
+
+## <a name="summary-whats-new-in-450"></a>Сводка: Новые возможности версии 4.5.0
+
+## <a name="summary-whats-new-in-452"></a>Сводка: Новые возможности версии 4.5.2
+
+* Исправление безопасности: разрешения на файлы, созданные внутри ~/.nuget, слишком открыты [#7673](https://github.com/NuGet/Home/issues/7673)[CVE-2019-0757](https://portal.msrc.microsoft.com/en-us/security-guidance/advisory/CVE-2019-0757)
+
+## <a name="summary-whats-new-in-453"></a>Сводка: Новые возможности версии 4.5.3
+
+* Исправление безопасности: файлы внутри NUPKG могут иметь относительный путь выше каталога NUPKG [#7906](https://github.com/NuGet/Home/issues/7906)
 
 ## <a name="known-issues"></a>Известные проблемы
 
@@ -24,7 +34,7 @@ ms.locfileid: "43548300"
 
 ### <a name="you-are-unable-to-view-add-or-update-dotnetclitools-using-nuget-package-manager"></a>Вы не можете просмотреть, добавить или обновить DotNetCLITools с помощью диспетчера пакетов NuGet.
 
-#### <a name="issue"></a>Проблеми
+#### <a name="issue"></a>Проблемы
 
 Диспетчер пакетов NuGet не отображается и не позволяет добавить или обновить DotNetCLITools. [NuGet#4256](https://github.com/NuGet/Home/issues/4256)
 
@@ -34,7 +44,7 @@ DotNetCLIToolReferences нужно изменить вручную в файле
 
 ### <a name="retargeting-target-framework-version-may-lead-to-incomplete-intellisense"></a>Изменение требуемой версии .NET Framework может привести к частичному отсутствию данных функции IntelliSense
 
-#### <a name="issue"></a>Проблеми
+#### <a name="issue"></a>Проблемы
 
 Если изменить требуемую версию .NET Framework в Visual Studio, вы можете получить неполные данные функции IntelliSense. Это происходит, если использовать PackageReferences в качестве формата диспетчера пакетов. [NuGet#4216](https://github.com/NuGet/Home/issues/4216)
 
@@ -44,7 +54,7 @@ DotNetCLIToolReferences нужно изменить вручную в файле
 
 ### <a name="a-package-in-a-net-core-project-that-contains-an-assembly-with-an-invalid-signature-can-trigger-an-infinite-restore-loop"></a>Пакет в проекте .NET Core, который содержит сборку с недопустимой подписью, может инициировать бесконечный цикл восстановления.
 
-#### <a name="issue"></a>Проблеми
+#### <a name="issue"></a>Проблемы
 
 Иногда при использовании пакета, содержащего сборку с недопустимой подписью, или при использовании пакета, версия которого задается с помощью параметра DateTime, возникает бесконечный цикл автоматического восстановления пакета [dotnet/project-system#1457](https://github.com/dotnet/project-system/issues/1457).
 
@@ -62,7 +72,7 @@ DotNetCLIToolReferences нужно изменить вручную в файле
 
 ### <a name="bugs"></a>Ошибки
 
-- [Регрессия] в 15.5p1: Portable0.0 пропускается — [#6105](https://github.com/NuGet/Home/issues/6105)
+- [Регрессия] в 15.5p1: Portable0.0 пропускается — [#6105](https://github.com/NuGet/Home/issues/6105)
 - Отсутствуют ресурсы в пакетах после восстановления — [#5995](https://github.com/NuGet/Home/issues/5995)
 - Поставщики учетных данных подключаемых модулей не работают с URI, содержащими пробелы, — [#5982](https://github.com/NuGet/Home/issues/5982)
 - Если не удалось восстановить пакет, ошибка должна присутствовать в выходных данных, даже если включен режим минимальной детализации — [#5658](https://github.com/NuGet/Home/issues/5658)

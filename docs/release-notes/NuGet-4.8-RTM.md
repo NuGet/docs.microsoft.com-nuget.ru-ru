@@ -5,14 +5,14 @@ author: karann-msft
 ms.author: karann
 ms.date: 5/14/2018
 ms.topic: conceptual
-ms.openlocfilehash: cf15c4f6a2e3e9f6ce7b6acb2304648041043685
-ms.sourcegitcommit: 6ea2ff8aaf7743a6f7c687c8a9400b7b60f21a52
+ms.openlocfilehash: f85042b8fe1511934d6a3ac7de34da92c575f6e0
+ms.sourcegitcommit: 74bf831e013470da8b0c1f43193df10bfb1f4fe6
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/16/2019
-ms.locfileid: "54324829"
+ms.lasthandoff: 03/26/2019
+ms.locfileid: "58432530"
 ---
-# <a name="nuget-48-rtm-release-notes"></a>Заметки о выпуске NuGet 4.8 RTM
+# <a name="nuget-48-release-notes"></a>Заметки о выпуске NuGet 4.8
 
 [Visual Studio 2017 15.8 RTW](https://www.visualstudio.com/news/releasenotes/vs2017-relnotes) включает функции NuGet 4.8 RTM.
 
@@ -22,11 +22,15 @@ ms.locfileid: "54324829"
 * DotNet.exe — [пакет SDK 2.1.400 для .NET Core](https://www.microsoft.com/net/download/visual-studio-sdks).
 
 
-## <a name="summary-whats-new-in-this-release"></a>Сводка: Новые возможности этого выпуска
+## <a name="summary-whats-new-in-480"></a>Сводка: Новые возможности версии 4.8.0
 * NuGet.exe теперь поддерживает длинные имена файлов в Windows 10 — [#6937](https://github.com/NuGet/Home/issues/6937)
 * Подключаемые модули аутентификации теперь работают на платформах MsBuild, DotNet.exe, NuGet.exe и Visual Studio, в том числе на нескольких сразу. Подключаемые модули аутентификации первого поколения не поддерживались в MsBuild и DotNet.exe. Примечание. Предварительные версии сборок Visual Studio 2017 15.9 уже содержат подключаемый модуль аутентификации VSTS. [#6486](https://github.com/NuGet/Home/issues/6486)
 * Сопоставитель пакетов SDK для MsBuild теперь компилируется вместе с NuGet и устанавливается через средства NuGet для Visual Studio. Это позволяет избежать рассинхронизации версий. [#6799](https://github.com/NuGet/Home/issues/6799)
 * PackageReference теперь поддерживает метаданные DevelopmentDependency — [#4125](https://github.com/NuGet/Home/issues/4125)
+
+## <a name="summary-whats-new-in-482"></a>Сводка: Новые возможности версии 4.8.2
+
+* Исправление безопасности: разрешения на файлы, созданные внутри ~/.nuget, слишком открыты [#7673](https://github.com/NuGet/Home/issues/7673)[CVE-2019-0757](https://portal.msrc.microsoft.com/en-us/security-guidance/advisory/CVE-2019-0757)
 
 ## <a name="known-issues"></a>Известные проблемы
 ### <a name="installing-signed-packages-on-a-ci-machine-or-in-an-offline-environment-takes-longer-than-usual"></a>Установка подписанных пакетов на компьютере непрерывной интеграции или в автономной среде занимает больше времени, чем обычно

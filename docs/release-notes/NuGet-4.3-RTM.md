@@ -6,22 +6,29 @@ ms.author: karann
 ms.date: 08/14/2017
 ms.topic: conceptual
 ms.reviewer: anangaur
-ms.openlocfilehash: 4bee32995884f4c003ebb963d2fd5b2d04363bab
-ms.sourcegitcommit: 1d1406764c6af5fb7801d462e0c4afc9092fa569
+ms.openlocfilehash: 72d707cb9bacd8abbac873ee10b2fd00f233d3cc
+ms.sourcegitcommit: 74bf831e013470da8b0c1f43193df10bfb1f4fe6
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/04/2018
-ms.locfileid: "43551628"
+ms.lasthandoff: 03/26/2019
+ms.locfileid: "58432482"
 ---
-# <a name="nuget-43-rtm-release-notes"></a>Заметки о выпуске версии NuGet 4.3 RTM
+# <a name="nuget-43-release-notes"></a>Заметки о выпуске NuGet 4.3
 
 [Visual Studio 2017 15.3 RTW](https://www.visualstudio.com/news/releasenotes/vs2017-relnotes) включает в себя NuGet 4.3 RTM, который добавляет поддержку новых сценариев, таких как .NET Standard 2.0/.NET Core 2.0, содержит множество исправлений, а также повышает производительность. Кроме того, этот выпуск привносит несколько усовершенствований, таких как поддержка семантического версионирования 2.0.0, интеграция ошибок и предупреждений NuGet в MSBuild и многое другое.
+
+## <a name="summary-whats-new-in-430"></a>Сводка: Новые возможности версии 4.3.0
+
+## <a name="summary-whats-new-in-431"></a>Сводка: Новые возможности версии 4.3.1
+
+* Исправление безопасности: разрешения на файлы, созданные внутри ~/.nuget, слишком открыты [#7673](https://github.com/NuGet/Home/issues/7673)[CVE-2019-0757](https://portal.msrc.microsoft.com/en-us/security-guidance/advisory/CVE-2019-0757)
+* Исправление безопасности: файлы внутри NUPKG могут иметь относительный путь выше каталога NUPKG [#7906](https://github.com/NuGet/Home/issues/7906)
 
 ## <a name="known-issues"></a>Известные проблемы
 
 ### <a name="nuget-restore-may-treat-disabled-package-sources-as-enabled-in-some-cases"></a>Восстановление NuGet может в некоторых случаях считать отключенные источники пакетов включенными.
 
-#### <a name="issue"></a>Проблеми
+#### <a name="issue"></a>Проблемы
 
 Следующие методы восстановления в командной строке обрабатывают отключенные источники пакетов как включенные. [NuGet#5704](https://github.com/NuGet/Home/issues/5704)
 - `msbuild /t:restore`
@@ -35,7 +42,7 @@ ms.locfileid: "43551628"
 
 ### <a name="while-using-package-manager-console-enter-key-may-not-work"></a>При использовании консоли диспетчера пакетов клавиша ВВОД может не работать
 
-#### <a name="issue"></a>Проблеми
+#### <a name="issue"></a>Проблемы
 
 Периодически клавиша ВВОД не работает в консоли диспетчера пакетов. В этом случае проверьте ход исправления и укажите дополнительные сведения для воспроизведения ошибки. [NuGet#4204](https://github.com/NuGet/Home/issues/4204) [NuGet#4570](https://github.com/NuGet/Home/issues/4570)
 
@@ -45,7 +52,7 @@ ms.locfileid: "43551628"
 
 ### <a name="you-are-unable-to-view-add-or-update-dotnetclitools-using-nuget-package-manager"></a>Вы не можете просмотреть, добавить или обновить DotNetCLITools с помощью диспетчера пакетов NuGet.
 
-#### <a name="issue"></a>Проблеми
+#### <a name="issue"></a>Проблемы
 
 Диспетчер пакетов NuGet не отображается и не позволяет добавить или обновить DotNetCLITools. [NuGet#4256](https://github.com/NuGet/Home/issues/4256)
 
@@ -55,7 +62,7 @@ DotNetCLIToolReferences нужно изменить вручную в файле
 
 ### <a name="retargeting-target-framework-version-may-lead-to-incomplete-intellisense"></a>Изменение требуемой версии .NET Framework может привести к частичному отсутствию данных функции IntelliSense
 
-#### <a name="issue"></a>Проблеми
+#### <a name="issue"></a>Проблемы
 
 Если изменить требуемую версию .NET Framework в Visual Studio, вы можете получить неполные данные функции IntelliSense. Это происходит, если использовать PackageReferences в качестве формата диспетчера пакетов. [NuGet#4216](https://github.com/NuGet/Home/issues/4216)
 
@@ -71,11 +78,11 @@ DotNetCLIToolReferences нужно изменить вручную в файле
 
 - Улучшение производительности восстановления NuGet: реализация оптимизированного NoOp для восстановлений из командной строки и VS — [#5080](https://github.com/NuGet/Home/issues/5080)
 
-- NET Core 2.0: интерфейс командной строки VS/Dotnet должен запускаться с использованием имеющейся функциональности NuGet: резервные папки — [#4939](https://github.com/NuGet/Home/issues/4939)
+- NET Core 2.0: интерфейс командной строки VS/Dotnet должен запускаться с использованием имеющейся функциональности NuGet: резервные папки — [#4939](https://github.com/NuGet/Home/issues/4939)
 
-- NET Core 2.0: разрешение пользователям пропускать определенные предупреждения о восстановлении (или повышать их до ошибки) — [#4898](https://github.com/NuGet/Home/issues/4898)
+- NET Core 2.0: разрешение пользователям пропускать определенные предупреждения о восстановлении (или повышать их до ошибки) — [#4898](https://github.com/NuGet/Home/issues/4898)
 
-- NET Core 2.0: локализованные сборки в интерфейсе командной строки — [#4896](https://github.com/NuGet/Home/issues/4896)
+- NET Core 2.0: локализованные сборки в интерфейсе командной строки — [#4896](https://github.com/NuGet/Home/issues/4896)
 
 - NET Core 2.0: регистрация всех предупреждений/ошибок в файле ресурсов (включая PackageTargetFallback) — [#4895](https://github.com/NuGet/Home/issues/4895)
 

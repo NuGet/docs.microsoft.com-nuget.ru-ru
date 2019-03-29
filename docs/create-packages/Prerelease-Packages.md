@@ -5,12 +5,12 @@ author: karann-msft
 ms.author: karann
 ms.date: 08/14/2017
 ms.topic: conceptual
-ms.openlocfilehash: d6925df63daf3096455a8205d6aeb07b4475f715
-ms.sourcegitcommit: 5c5f0f0e1f79098e27d9566dd98371f6ee16f8b5
+ms.openlocfilehash: 150fc61e51fe10622fe6b369b60dfc61a9ac916f
+ms.sourcegitcommit: 74bf831e013470da8b0c1f43193df10bfb1f4fe6
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/20/2018
-ms.locfileid: "53645637"
+ms.lasthandoff: 03/26/2019
+ms.locfileid: "58432456"
 ---
 # <a name="building-pre-release-packages"></a>Сборка пакетов предварительных версий
 
@@ -56,7 +56,7 @@ ms.locfileid: "53645637"
 
 ## <a name="semantic-versioning"></a>Семантическое версионирование
 
-[Соглашение о семантическом версионировании (SemVer)](http://semver.org/spec/v1.0.0.html) описывает то, как следует использовать строки в номерах версий для передачи назначения базового кода.
+[Соглашение о семантическом версионировании (SemVer)](http://semver.org/spec/v1.0.0.html) описывает, как следует использовать строки в номерах версий для передачи назначения базового кода.
 
 Согласно этому соглашению каждый номер версии состоит из трех частей (`Major.Minor.Patch`) со следующими значениями:
 

@@ -5,12 +5,12 @@ author: karann-msft
 ms.author: karann
 ms.date: 11/20/2018
 ms.topic: conceptual
-ms.openlocfilehash: aa9bf87504477506dbb1e9ac10d5c1d5841c224f
-ms.sourcegitcommit: 885973352d31808e3ddbb45da6d6e54d1e4fca9d
+ms.openlocfilehash: e0dea74fe179c0dce4996f3e498185bb3a491856
+ms.sourcegitcommit: 74bf831e013470da8b0c1f43193df10bfb1f4fe6
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/13/2019
-ms.locfileid: "56224948"
+ms.lasthandoff: 03/26/2019
+ms.locfileid: "58432495"
 ---
 # <a name="nuget-49-release-notes"></a>Заметки о выпуске NuGet 4.9
 
@@ -139,11 +139,17 @@ ms.locfileid: "56224948"
 * Ошибка при создании пакета символов с расширением .snupkg при использовании встроенного файла лицензии — [#7591](https://github.com/NuGet/Home/issues/7591)
 
 [Список всех проблем, исправленных в выпуске 4.9.3](https://github.com/nuget/home/issues?q=is%3Aissue+is%3Aclosed+milestone%3A%224.9.3")
+
+## <a name="summary-whats-new-in-494"></a>Сводка: Новые возможности версии 4.9.4
+
+* Исправление безопасности: разрешения на файлы, созданные внутри ~/.nuget, слишком открыты [#7673](https://github.com/NuGet/Home/issues/7673)[CVE-2019-0757](https://portal.msrc.microsoft.com/en-us/security-guidance/advisory/CVE-2019-0757)
+
+
 ## <a name="known-issues"></a>Известные проблемы
 
 ### <a name="dotnet-nuget-push---interactive-gives-an-error-on-mac---7519httpsgithubcomnugethomeissues7519"></a>Выполнение команды dotnet nuget push с параметром --interactive выдает сообщение об ошибке на компьютере Mac. - [#7519](https://github.com/NuGet/Home/issues/7519)
 
-#### <a name="issue"></a>Выпуск
+#### <a name="issue"></a>Проблемы
 Аргумент `--interactive` не перенаправляется интерфейсом командной строки dotnet, что приводит к ошибке `error: Missing value for option 'interactive'`.
 
 #### <a name="workaround"></a>Обходной путь
@@ -151,7 +157,7 @@ ms.locfileid: "56224948"
 
 ### <a name="packages-in-fallbackfolders-installed-by-net-core-sdk-are-custom-installed-and-fail-signature-validation---7414httpsgithubcomnugethomeissues7414"></a>Пакеты в FallbackFolders, устанавливаемые пакетом SDK для .NET Core, являются пользовательской установкой и не проходят проверку подписи. - [#7414](https://github.com/NuGet/Home/issues/7414)
 
-#### <a name="issue"></a>Выпуск
+#### <a name="issue"></a>Проблемы
 При использовании dotnet.exe 2.x для восстановления проекта с несколькими целевыми объектами (netcoreapp 1.x и netcoreapp 2.x) резервная папка обрабатывается как веб-канал файла. Это значит, что при восстановлении NuGet пытается установить пакет из резервной папки в папку глобальных пакетов и выполнить обычную проверки подписи, что приводит к ошибке.
 
 #### <a name="workaround"></a>Обходной путь

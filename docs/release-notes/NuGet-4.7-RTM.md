@@ -5,28 +5,36 @@ author: karann-msft
 ms.author: karann
 ms.date: 5/14/2018
 ms.topic: conceptual
-ms.openlocfilehash: 4ecbdc5475837b1aa1e723a94c2c6c3e8460f9ef
-ms.sourcegitcommit: 1d1406764c6af5fb7801d462e0c4afc9092fa569
+ms.openlocfilehash: f1397e2f42fd65c3a883c864bd430ba5892c12b2
+ms.sourcegitcommit: 74bf831e013470da8b0c1f43193df10bfb1f4fe6
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/04/2018
-ms.locfileid: "43549432"
+ms.lasthandoff: 03/26/2019
+ms.locfileid: "58432534"
 ---
-# <a name="nuget-47-rtm-release-notes"></a>Заметки о выпуске версии NuGet 4.7 RTM
+# <a name="nuget-47-release-notes"></a>Заметки о выпуске NuGet 4.7
 
 [Visual Studio 2017 15.7 RTW](https://www.visualstudio.com/news/releasenotes/vs2017-relnotes) включает в себя [NuGet 4.7.0](https://dist.nuget.org/win-x86-commandline/v4.7.0/nuget.exe).
 
-## <a name="summary-whats-new-in-this-release"></a>Сводка. Новые возможности этого выпуска
+## <a name="summary-whats-new-in-470"></a>Сводка: Новые возможности версии 4.7.0
 
 * Усовершенствовано подписывание пакетов: теперь поддерживаются [пакеты с подписями репозитория](https://github.com/NuGet/Home/wiki/Repository-Signatures)
 
 * В Visual Studio версии 15.7 мы реализовали возможность [переноса существующих проектов, которые используют формат packages.config вместо PackageReference](https://docs.microsoft.com/en-us/nuget/reference/migrate-packages-config-to-package-reference).
 
+## <a name="summary-whats-new-in-472"></a>Сводка: Новые возможности версии 4.7.2
+
+* Исправление безопасности: разрешения на файлы, созданные внутри ~/.nuget, слишком открыты [#7673](https://github.com/NuGet/Home/issues/7673)[CVE-2019-0757](https://portal.msrc.microsoft.com/en-us/security-guidance/advisory/CVE-2019-0757)
+
+## <a name="summary-whats-new-in-473"></a>Сводка: Новые возможности версии 4.7.3
+
+* Исправление безопасности: файлы внутри NUPKG могут иметь относительный путь выше каталога NUPKG [#7906](https://github.com/NuGet/Home/issues/7906)
+
 ## <a name="known-issues"></a>Известные проблемы
 
 ### <a name="the-migrate-packagesconfig-to-packagereference-option-is-not-available-in-the-right-click-context-menu"></a>Параметр `Migrate packages.config to PackageReference...` недоступен в контекстном меню, которое открывается по щелчку правой кнопкой мыши
 
-#### <a name="issue"></a>Проблеми
+#### <a name="issue"></a>Проблемы
 
 При первом открытии проект NuGet не удается инициализировать до выполнения операции NuGet. В результате параметр миграции не отображается в контекстном меню, которое открывается по щелчку правой кнопкой мыши `packages.config` или `References`.
 
@@ -49,16 +57,16 @@ ms.locfileid: "43549432"
 ### <a name="bugs"></a>Ошибки
 
 * NuGet достигает взаимоблокировки в системе проектов .Net Core (новая регрессия). - [#6733](https://github.com/NuGet/Home/issues/6733)
-* Пакет: PackagePath создается неправильно при использовании TfmSpecificPackageFile с путями глобализации — [#6726](https://github.com/NuGet/Home/issues/6726)
+* Пакет: PackagePath создается неправильно при использовании TfmSpecificPackageFile с путями глобализации — [#6726](https://github.com/NuGet/Home/issues/6726)
 * Пакет: проект веб-API не может создать пакет, если явно не указать ispackable. - [#6156](https://github.com/NuGet/Home/issues/6156)
 * Пользовательский интерфейс VS и PMC отображает новый пакет через 30 минут (nuget.exe отображает его сразу) — [#6657](https://github.com/NuGet/Home/issues/6657)
-* Подписи: SignatureUtility.GetCertificateChain(...) не проверяет все состояния цепочки — [#6565](https://github.com/NuGet/Home/issues/6565)
+* Подписи.  SignatureUtility.GetCertificateChain(...) не проверяет все состояния цепочки — [#6565](https://github.com/NuGet/Home/issues/6565)
 * Подписи: улучшение обработки DER GeneralizedTime — [#6564](https://github.com/NuGet/Home/issues/6564)
-* Подписи: VS не отображает ошибку NU3002 при установке подделанного пакета — [#6337](https://github.com/NuGet/Home/issues/6337)
+* Подписи. VS не отображает ошибку NU3002 при установке подделанного пакета — [#6337](https://github.com/NuGet/Home/issues/6337)
 * Для lockFile.GetLibrary учитывается регистр — [#6500](https://github.com/NuGet/Home/issues/6500)
 * Операции установки или обновления кода восстановления и восстановления путей кода не соответствуют — [#3471](https://github.com/NuGet/Home/issues/3471)
 * ComboBox версии решения PackageManager поддерживает выбор разделителя с помощью клавиатуры — [#2606](https://github.com/NuGet/Home/issues/2606)
-* Не удается загрузить индекс службы для источника `https://www.myget.org/F/<id>` ---> System.Net.Http.HttpRequestException: код состояния ответа не указывает на успешное выполнение: 403 (запрещено) — [#2530](https://github.com/NuGet/Home/issues/2530)
+* Не удалось загрузить индекс службы для источника `https://www.myget.org/F/<id>` ---> System.Net.Http.HttpRequestException: код состояния ответа не указывает на успешное выполнение: 403 (Запрещено) — [#2530](https://github.com/NuGet/Home/issues/2530)
 
 ### <a name="dcrs"></a>Запросы на изменение структуры
 
@@ -67,7 +75,7 @@ ms.locfileid: "43549432"
 * NuGet.exe: -NoServiceEndpoint позволяет избежать добавления суффикса URL-адреса службы — [#6586](https://github.com/NuGet/Home/issues/6586)
 * Добавление хэша фиксации к информационной версии — [#6492](https://github.com/NuGet/Home/issues/6492)
 * Подписи: включение удаления подписи или подписи другой стороны репозитория — [#6646](https://github.com/NuGet/Home/issues/6646)
-* Подписи: API для удаления подписи или подписи другой стороны репозитория — [#6589](https://github.com/NuGet/Home/issues/6589)
+* Подписи.  API для удаления подписи или подписи другой стороны репозитория — [#6589](https://github.com/NuGet/Home/issues/6589)
 * Включение в журнал сведений об источнике в VS — [#6527](https://github.com/NuGet/Home/issues/6527)
 * Фильтрация для папки /tools только в TFM и RID, чтобы параметры XML можно было включить в папку /tools — [#6197](https://github.com/NuGet/Home/issues/6197)
 * Предупреждение, когда команда упаковывания исключает файл, который начинается с .  - [#3308](https://github.com/NuGet/Home/issues/3308)

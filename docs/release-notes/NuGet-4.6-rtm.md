@@ -5,22 +5,30 @@ author: anangaur
 ms.author: anangaur
 ms.date: 3/7/2018
 ms.topic: conceptual
-ms.openlocfilehash: 3c71d05144aa2b92b916d4ebf319c5a4e321581f
-ms.sourcegitcommit: 1d1406764c6af5fb7801d462e0c4afc9092fa569
+ms.openlocfilehash: eacd29d4c9340a0f015fcdf6c5b9dd41bf781419
+ms.sourcegitcommit: 74bf831e013470da8b0c1f43193df10bfb1f4fe6
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/04/2018
-ms.locfileid: "43549848"
+ms.lasthandoff: 03/26/2019
+ms.locfileid: "58432560"
 ---
-# <a name="nuget-46-rtm-release-notes"></a>Заметки о выпуске версии NuGet 4.6 RTM
+# <a name="nuget-46-release-notes"></a>Заметки о выпуске NuGet 4.6
 
 [Visual Studio 2017 15.6 RTW](https://www.visualstudio.com/news/releasenotes/vs2017-relnotes) включает в себя [NuGet 4.6.0](https://dist.nuget.org/win-x86-commandline/v4.6.0/nuget.exe).
 
-## <a name="summary-whats-new-in-this-release"></a>Сводка. Новые возможности этого выпуска
+## <a name="summary-whats-new-in-460"></a>Сводка: Новые возможности версии 4.6.0
 
 * Добавлена поддержка для [подписывания пакетов](../create-packages/sign-a-package.md).
 * Теперь Visual Studio 2017 и nuget.exe проверяют целостность пакетов перед установкой, восстанавливая пакеты для [подписанных пакетов](../reference/signed-packages-reference.md).
 * Улучшена производительность последовательных восстановлений.
+
+## <a name="summary-whats-new-in-463"></a>Сводка: Новые возможности версии 4.6.3
+
+* Исправление безопасности: разрешения на файлы, созданные внутри ~/.nuget, слишком открыты [#7673](https://github.com/NuGet/Home/issues/7673)[CVE-2019-0757](https://portal.msrc.microsoft.com/en-us/security-guidance/advisory/CVE-2019-0757)
+
+## <a name="summary-whats-new-in-464"></a>Сводка: Новые возможности версии 4.6.4
+
+* Исправление безопасности: файлы внутри NUPKG могут иметь относительный путь выше каталога NUPKG [#7906](https://github.com/NuGet/Home/issues/7906)
 
 ## <a name="known-issues"></a>Известные проблемы
 
