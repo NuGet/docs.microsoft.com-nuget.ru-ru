@@ -10,12 +10,12 @@ f1_keywords:
 - vs.toolsoptionspages.nuget_package_manager.general
 - vs.toolsoptionspages.nuget_package_manager.package_sources
 - vs.nuget.packagemanager.ui
-ms.openlocfilehash: 1de6ddeca6295c621a90409807af198bc3c7a068
-ms.sourcegitcommit: 09107c5092050f44a0c6abdfb21db73878f78bd0
+ms.openlocfilehash: 422faf99e58e058d86db774a8f3c1c576b3dc393
+ms.sourcegitcommit: 2af17c8bb452a538977794bf559cdd78d58f2790
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/03/2018
-ms.locfileid: "50981188"
+ms.lasthandoff: 03/29/2019
+ms.locfileid: "58637627"
 ---
 # <a name="nuget-package-manager-ui"></a>Пользовательский Интерфейс диспетчера пакетов NuGet
 
@@ -127,7 +127,7 @@ ms.locfileid: "50981188"
 1. Чтобы изменить источник пакета, выберите его, внесите изменения в **имя** и **источника** поля, а затем выберите **обновления**.
 1. Чтобы отключить источник пакетов, снимите флажок слева от имени в списке.
 1. Чтобы удалить источник пакета, выберите его, а затем выберите **X** кнопки.
-1. Используйте вверх и со стрелкой вниз, чтобы изменить порядок источников пакетов. Visual Studio выполняет поиск этих источников в порядке приоритета, при восстановлении пакетов для проекта. Дополнительные сведения см. в разделе [восстановление пакетов](../consume-packages/package-restore.md).
+1. С помощью вверх и Стрелка вниз кнопки не изменяет порядок источников пакетов. Visual Studio игнорирует порядок источников пакетов, используя пакет из любого источника, первым отвечать на запросы. Дополнительные сведения см. в разделе [восстановление пакетов](../consume-packages/package-restore.md).
 
 > [!Tip]
 > Если источник пакета снова появится после его удаления, могут быть указаны на уровне компьютера или пользователя на уровне `NuGet.Config` файлов. См. в разделе [Настройка поведения NuGet](../consume-packages/configuring-nuget-behavior.md) для расположения этих файлов, затем удалите исходную, изменив файлы вручную или с помощью [nuget источники команда](../tools/nuget-exe-CLI-reference.md).

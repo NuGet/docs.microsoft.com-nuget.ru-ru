@@ -6,12 +6,12 @@ ms.author: jver
 ms.date: 10/26/2017
 ms.topic: reference
 ms.reviewer: kraigb
-ms.openlocfilehash: 5d0d60cbcf6516d24efeb04f8262902da69d92d1
-ms.sourcegitcommit: d5a35a097e6b461ae791d9f66b3a85d5219d7305
+ms.openlocfilehash: bb15b4decef104f1aefe37fd18f3358181a848af
+ms.sourcegitcommit: 2af17c8bb452a538977794bf559cdd78d58f2790
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/12/2019
-ms.locfileid: "56145661"
+ms.lasthandoff: 03/29/2019
+ms.locfileid: "58637666"
 ---
 # <a name="nuget-api"></a>API NuGet
 
@@ -49,17 +49,18 @@ NuGet V3 API называется таким образом, так как он 
 
 **Индекс службы** описаны различные ресурсы. Ниже приведены текущий набор поддерживаемых ресурсов.
 
-Имя ресурса                                                          | Обязательно | Описание
----------------------------------------------------------------------- | -------- | -----------
-[`PackagePublish`](package-publish-resource.md)                        | да      | Push-уведомлений и удалить (или удалить из списка) пакеты.
-[`SearchQueryService`](search-query-service-resource.md)               | да      | Фильтровать и искать пакеты по ключевому слову.
-[`RegistrationsBaseUrl`](registration-base-url-resource.md)            | да      | Получите метаданные пакета.
-[`PackageBaseAddress`](package-base-address-resource.md)               | да      | Получение содержимого пакета (файла nupkg).
-[`SearchAutocompleteService`](search-autocomplete-service-resource.md) | Нет       | Найдите идентификаторы пакетов и версий, подстроку.
-[`ReportAbuseUriTemplate`](report-abuse-resource.md)                   | Нет       | Создать URL-адрес для доступа к веб-страницы «сообщить о нарушении».
-[`RepositorySignatures`](repository-signatures-resource.md)            | Нет       | Получение сертификатов, используемый для подписания репозитория.
-[`Catalog`](catalog-resource.md)                                       | Нет       | Полную запись всех событий пакета.
-[`SymbolPackagePublish`](symbol-package-publish-resource.md)           | Нет       | Отправьте пакеты символов.
+Имя ресурса                                                        | Обязательно | Описание
+-------------------------------------------------------------------- | -------- | -----------
+[Каталог](catalog-resource.md)                                       | Нет       | Полную запись всех событий пакета.
+[PackageBaseAddress](package-base-address-resource.md)               | да      | Получение содержимого пакета (файла nupkg).
+[PackageDetailsUriTemplate](package-details-template-resource.md)    | Нет       | Создать URL-адрес для доступа к веб-странице сведений о пакете.
+[PackagePublish](package-publish-resource.md)                        | да      | Push-уведомлений и удалить (или удалить из списка) пакеты.
+[RegistrationsBaseUrl](registration-base-url-resource.md)            | да      | Получите метаданные пакета.
+[ReportAbuseUriTemplate](report-abuse-resource.md)                   | Нет       | Создать URL-адрес для доступа к веб-страницы отчета о нарушении.
+[RepositorySignatures](repository-signatures-resource.md)            | Нет       | Получение сертификатов, используемый для подписания репозитория.
+[SearchAutocompleteService](search-autocomplete-service-resource.md) | Нет       | Найдите идентификаторы пакетов и версий, подстроку.
+[SearchQueryService](search-query-service-resource.md)               | да      | Фильтровать и искать пакеты по ключевому слову.
+[SymbolPackagePublish](symbol-package-publish-resource.md)           | Нет       | Отправьте пакеты символов.
 
 Как правило сериализуются все недвоичные данные, возвращаемые API ресурса с помощью JSON. Схема ответа, возвращаемая функцией каждого ресурса в индекс службы определяется по отдельности для этого ресурса. Дополнительные сведения о каждом ресурсе см. в разделах, перечисленных выше.
 
@@ -96,7 +97,7 @@ DELETE | Удаляет или из списка ресурсов.
 
 ## <a name="http-status-codes"></a>Коды состояния HTTP
 
-Код | Описание:
+Код | Описание
 ---- | -----
 200  | Успех, и текст ответа.
 201  | Успех и ресурс был создан.
@@ -118,12 +119,14 @@ DELETE | Удаляет или из списка ресурсов.
 
 ## <a name="http-request-headers"></a>Заголовки HTTP-запроса
 
-name                     | Описание:
+name                     | Описание
 ------------------------ | -----------
 X-NuGet-ApiKey           | Требуется для принудительной отправки и удаления, см. в разделе [ `PackagePublish` ресурсов](package-publish-resource.md)
 X-NuGet-Client-Version   | **Рекомендуется использовать** и заменяется `X-NuGet-Protocol-Version`
 X-NuGet-Protocol-Version | Требуется в некоторых случаях только на сайте nuget.org, см. в разделе [протоколы nuget.org](NuGet-Protocols.md)
-X-NuGet-Session-Id       | *Необязательный*. NuGet клиентов v4.7 + определите HTTP-запросы, которые являются частью одного сеанса клиента NuGet. Для `PackageReference` операции восстановления является идентификатором одного сеанса, для других сценариев, таких как автоматическое завершение, и `packages.config` восстановления, может существовать несколько разных идентификатор сеанса из-за как добавляется код.
+X-NuGet-Session-Id       | *Необязательный*. NuGet клиентов v4.7 + определите HTTP-запросы, которые являются частью одного сеанса клиента NuGet.
+
+`X-NuGet-Session-Id` Имеет одно значение для всех операций, связанных с одной восстановления в `PackageReference`. Для других сценариев, такие как автозавершение и `packages.config` идентификаторы могут существовать несколько разных сеанса восстановления из-за как добавляется код.
 
 ## <a name="authentication"></a>Проверка подлинности
 
