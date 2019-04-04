@@ -6,12 +6,12 @@ ms.author: jver
 ms.date: 10/26/2017
 ms.topic: reference
 ms.reviewer: kraigb
-ms.openlocfilehash: 2d2b20c1ea439ec0a3225cf983d9a4d2eedb0333
-ms.sourcegitcommit: 6ea2ff8aaf7743a6f7c687c8a9400b7b60f21a52
+ms.openlocfilehash: fdc3ad8aa239a42d8a4c169a757715e856bdcb41
+ms.sourcegitcommit: 9f94e00428d83aef4a7a87db679129eff7720c59
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/16/2019
-ms.locfileid: "54324764"
+ms.lasthandoff: 04/03/2019
+ms.locfileid: "58911053"
 ---
 # <a name="autocomplete"></a>Автозавершение
 
@@ -114,7 +114,7 @@ name      | Тип             | Обязательно | Примечания
 --------- | ---------------- | -------- | -----
 Данные      | Массив строк | да      | Версии пакетов, совпадающих с запроса
 
-Версии пакетов в `data` массив может содержать метаданные сборки SemVer 2.0.0 (например `1.0.0+metadata`) Если `semVerLevel=2.0.0` был представлен в строке запроса.
+Версии пакетов в `data` массива могут содержать метаданные сборки SemVer 2.0.0 (например `1.0.0+metadata`) Если `semVerLevel=2.0.0` предоставляется в строке запроса.
 
 ### <a name="sample-request"></a>Пример запроса
 

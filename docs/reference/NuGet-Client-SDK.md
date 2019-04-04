@@ -5,19 +5,19 @@ author: karann-msft
 ms.author: karann
 ms.date: 01/09/2018
 ms.topic: conceptual
-ms.openlocfilehash: 97ed3ec7d41d2847c0521af69373a1871eb585dd
-ms.sourcegitcommit: 6ea2ff8aaf7743a6f7c687c8a9400b7b60f21a52
+ms.openlocfilehash: 8f96bf289e8121fd25262fb95c2f36dfc89045c5
+ms.sourcegitcommit: 9f94e00428d83aef4a7a87db679129eff7720c59
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/16/2019
-ms.locfileid: "54324686"
+ms.lasthandoff: 04/03/2019
+ms.locfileid: "58911040"
 ---
 # <a name="nuget-client-sdk"></a>Пакет SDK для клиента NuGet
 
 > [!Note]
 > Не следует путать с [NuGet *Web* API](https://docs.microsoft.com/en-us/nuget/api/overview)
 
-*Пакет SDK для клиента NuGet* относится к группе библиотек .NET вокруг [NuGet.Client](https://www.nuget.org/packages/NuGet.Client), [Nuget.Packaging](https://www.nuget.org/packages/NuGet.Packaging), и [NuGet.Protocol](https://www.nuget.org/packages/NuGet.Protocol). Эти пакеты замените раннюю [NuGet.Core](https://www.nuget.org/packages/NuGet.Core/) библиотеки.
+*Пакет SDK для клиента NuGet* относится к группе библиотек .NET вокруг [NuGet.Commands](https://www.nuget.org/packages/NuGet.Commands), [Nuget.Packaging](https://www.nuget.org/packages/NuGet.Packaging), и [NuGet.Protocol](https://www.nuget.org/packages/NuGet.Protocol). Эти пакеты замените раннюю [NuGet.Core](https://www.nuget.org/packages/NuGet.Core/) библиотеки.
 
 Мы работаем над наличие стабильной контактную зону, который мы скоро документировать.
 
