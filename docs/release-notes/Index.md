@@ -5,26 +5,26 @@ author: karann-msft
 ms.author: karann
 ms.date: 08/14/2017
 ms.topic: conceptual
-ms.openlocfilehash: a9b497fd8e5e74f66f9fdf0ef882cd57befcafe6
-ms.sourcegitcommit: 0cb4c9853cde3647291062eadee2298dd273311e
+ms.openlocfilehash: 42d497dabd41d7487bb8bf4adef0dfdb424f13f8
+ms.sourcegitcommit: 9f94e00428d83aef4a7a87db679129eff7720c59
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/26/2019
-ms.locfileid: "55084929"
+ms.lasthandoff: 04/03/2019
+ms.locfileid: "58911118"
 ---
 # <a name="release-notes"></a>Заметки о выпуске
 
 [Известные проблемы](../release-notes/known-issues.md)
 
-[Предварительная версия NuGet 5.0](../release-notes/NuGet-5.0-preview.md)
+[NuGet 5.0 RTM](../release-notes/NuGet-5.0-RTM.md)
 
 [NuGet 4.9 RTM](../release-notes/NuGet-4.9-RTM.md)
 
-[NuGet 4.8 RTM](../release-notes/nuget-4.8-rtm.md)
+[NuGet 4.8 RTM](../release-notes/nuget-4.8-rtm.md)
 
-[NuGet 4.7 RTM](../release-notes/nuget-4.7-rtm.md)
+[NuGet 4.7 RTM](../release-notes/nuget-4.7-rtm.md)
 
-[NuGet 4.6 RTM](../release-notes/nuget-4.6-rtm.md)
+[NuGet 4.6 RTM](../release-notes/nuget-4.6-rtm.md)
 
 [NuGet 4.5 RTM](../release-notes/nuget-4.5-rtm.md)
 
@@ -74,9 +74,9 @@ ms.locfileid: "55084929"
 
 [NuGet 3.0 RC](../release-notes/nuget-3.0-rc.md)
 
-[NuGet 3.0 Beta](../release-notes/nuget-3.0-beta.md)
+[NuGet 3.0 (бета-версия)](../release-notes/nuget-3.0-beta.md)
 
-[Предварительная версия NuGet 3.0](../release-notes/nuget-3.0-preview.md)
+[NuGet 3.0 (предварительная версия)](../release-notes/nuget-3.0-preview.md)
 
 [NuGet 2.12](../release-notes/nuget-2.12.md)
 
@@ -104,7 +104,7 @@ ms.locfileid: "55084929"
 
 [NuGet 2.7.1](../release-notes/nuget-2.7.1.md)
 
-[NuGet 2.7](../release-notes/nuget-2.7.md)
+[NuGet 2.7](../release-notes/nuget-2.7.md)
 
 [NuGet 2.6](../release-notes/nuget-2.6.md)
 

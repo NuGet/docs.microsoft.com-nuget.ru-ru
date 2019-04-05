@@ -6,12 +6,12 @@ ms.author: rmpablos
 ms.date: 03/06/2018
 ms.topic: conceptual
 ms.reviewer: anangaur
-ms.openlocfilehash: e8955f9d46bab235c8755d5654814a4291d542d6
-ms.sourcegitcommit: 673e580ae749544a4a071b4efe7d42fd2bb6d209
+ms.openlocfilehash: 8ff92e5a3ab2d5c13ee02a9e49709866e2ac0e87
+ms.sourcegitcommit: 8793f528a11bd8e8fb229cd12e9abba50d61e104
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/06/2018
-ms.locfileid: "52977567"
+ms.lasthandoff: 04/04/2019
+ms.locfileid: "58921576"
 ---
 # <a name="signing-nuget-packages"></a>Подписывание пакетов NuGet
 
@@ -29,7 +29,7 @@ ms.locfileid: "52977567"
 
   ![Мастер экспорта сертификатов](../reference/media/CertificateExportWizard.png)
 
-* Вы можете также экспортировать сертификат с помощью [команды Export-Certificate PowerShell](/powershell/module/pkiclient/export-certificate.md).
+* Вы можете также экспортировать сертификат с помощью [команды Export-Certificate PowerShell](/powershell/module/pkiclient/export-certificate).
 
 ## <a name="sign-the-package"></a>Подписывание пакета
 
@@ -39,8 +39,11 @@ ms.locfileid: "52977567"
 Подпишите пакет с помощью команды [nuget sign](../tools/cli-ref-sign.md):
 
 ```cli
-nuget sign MyPackage.nupkg -CertificateFilePath <PathToTheCertificate> -Timestamper <TimestampServiceURL>
+nuget sign MyPackage.nupkg -CertificatePath <PathToTheCertificate> -Timestamper <TimestampServiceURL>
 ```
+
+> [!Tip]
+> Поставщик сертификатов также часто предоставляет URL-адрес сервера меток времени, который можно указать в качестве значения необязательного аргумента `Timestamper` выше. Чтобы получить URL-адрес этой службы, обратитесь к документации и (или) в службу поддержки своего поставщика.
 
 * Вы можете использовать сертификат, доступный в хранилище сертификатов, или сертификат из файла. См. справочник по CLI для [nuget sign](../tools/cli-ref-sign.md).
 * Подписанные пакеты должны включать метку времени, чтобы подпись оставалась действительной после истечения срока действия сертификата для подписывания. В противном случае операция sign вызовет [предупреждение](../reference/errors-and-warnings/NU3002.md).
@@ -56,7 +59,7 @@ nuget sign MyPackage.nupkg -CertificateFilePath <PathToTheCertificate> -Timestam
 1. Найдите и выберите файл сертификата, экспортированного ранее.
   ![Зарегистрированные сертификаты](../reference/media/registered-certs.png)
 
-**Примечание**
+**Бумага для заметок**
 * Один пользователь может отправить несколько сертификатов. Один и тот же сертификат может быть зарегистрирован несколькими пользователями.
 * После регистрации сертификата все будущие отправки пакетов **должны** быть подписаны с помощью одного из сертификатов. См. раздел [Управление требованиями к подписи для вашего пакета на сайте NuGet.org](#manage-signing-requirements-for-your-package-on-nugetorg)
 * Пользователи могут также удалить зарегистрированный сертификат из учетной записи. После удаления сертификата новые пакеты, подписанные с его помощью, вызовут сбой при отправке. Существующие пакеты не будут затронуты.
@@ -67,7 +70,7 @@ nuget sign MyPackage.nupkg -CertificateFilePath <PathToTheCertificate> -Timestam
 
 ## <a name="create-a-test-certificate"></a>Создание тестового сертификата
 
-Для тестирования можно использовать самовыданные сертификаты. Чтобы создать самовыданный сертификат, используйте [команду New-SelfSignedCertificate PowerShell](/powershell/module/pkiclient/new-selfsignedcertificate.md).
+Для тестирования можно использовать самовыданные сертификаты. Чтобы создать самовыданный сертификат, используйте [команду New-SelfSignedCertificate PowerShell](/powershell/module/pkiclient/new-selfsignedcertificate).
 
 ```ps
 New-SelfSignedCertificate -Subject "CN=NuGet Test Developer, OU=Use for testing purposes ONLY" `
@@ -90,7 +93,7 @@ New-SelfSignedCertificate -Subject "CN=NuGet Test Developer, OU=Use for testing 
 1. [Войдите](https://www.nuget.org/users/account/LogOn?returnUrl=%2F) на сайт NuGet.org.
 
 1. Перейдите в раздел `Manage Packages` 
-   ![Настройка подписывающих лиц пакета](../reference/media/configure-package-signers.png).
+   ![Настройка подписывающих лиц пакета](../reference/media/configure-package-signers.png)
 
 * Если вы — единственный владелец пакета, вам нужно подписывающее лицо. То есть вы можете использовать любой из зарегистрированных сертификатов для подписи и публикации пакетов на сайте NuGet.org.
 
