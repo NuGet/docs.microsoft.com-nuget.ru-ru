@@ -7,10 +7,10 @@ ms.date: 03/06/2018
 ms.topic: conceptual
 ms.reviewer: anangaur
 ms.openlocfilehash: 8ff92e5a3ab2d5c13ee02a9e49709866e2ac0e87
-ms.sourcegitcommit: 8793f528a11bd8e8fb229cd12e9abba50d61e104
+ms.sourcegitcommit: 573af6133a39601136181c1d98c09303f51a1ab2
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/04/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "58921576"
 ---
 # <a name="signing-nuget-packages"></a>Подписывание пакетов NuGet
@@ -59,7 +59,7 @@ nuget sign MyPackage.nupkg -CertificatePath <PathToTheCertificate> -Timestamper 
 1. Найдите и выберите файл сертификата, экспортированного ранее.
   ![Зарегистрированные сертификаты](../reference/media/registered-certs.png)
 
-**Бумага для заметок**
+**Примечание**
 * Один пользователь может отправить несколько сертификатов. Один и тот же сертификат может быть зарегистрирован несколькими пользователями.
 * После регистрации сертификата все будущие отправки пакетов **должны** быть подписаны с помощью одного из сертификатов. См. раздел [Управление требованиями к подписи для вашего пакета на сайте NuGet.org](#manage-signing-requirements-for-your-package-on-nugetorg)
 * Пользователи могут также удалить зарегистрированный сертификат из учетной записи. После удаления сертификата новые пакеты, подписанные с его помощью, вызовут сбой при отправке. Существующие пакеты не будут затронуты.
@@ -93,7 +93,7 @@ New-SelfSignedCertificate -Subject "CN=NuGet Test Developer, OU=Use for testing 
 1. [Войдите](https://www.nuget.org/users/account/LogOn?returnUrl=%2F) на сайт NuGet.org.
 
 1. Перейдите в раздел `Manage Packages` 
-   ![Настройка подписывающих лиц пакета](../reference/media/configure-package-signers.png)
+   ![Настройка подписывающих лиц пакета](../reference/media/configure-package-signers.png).
 
 * Если вы — единственный владелец пакета, вам нужно подписывающее лицо. То есть вы можете использовать любой из зарегистрированных сертификатов для подписи и публикации пакетов на сайте NuGet.org.
 

@@ -6,10 +6,10 @@ ms.author: karann
 ms.date: 08/14/2017
 ms.topic: conceptual
 ms.openlocfilehash: 42d497dabd41d7487bb8bf4adef0dfdb424f13f8
-ms.sourcegitcommit: 9f94e00428d83aef4a7a87db679129eff7720c59
+ms.sourcegitcommit: 573af6133a39601136181c1d98c09303f51a1ab2
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/03/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "58911118"
 ---
 # <a name="release-notes"></a>Заметки о выпуске
@@ -20,11 +20,11 @@ ms.locfileid: "58911118"
 
 [NuGet 4.9 RTM](../release-notes/NuGet-4.9-RTM.md)
 
-[NuGet 4.8 RTM](../release-notes/nuget-4.8-rtm.md)
+[NuGet 4.8 RTM](../release-notes/nuget-4.8-rtm.md)
 
-[NuGet 4.7 RTM](../release-notes/nuget-4.7-rtm.md)
+[NuGet 4.7 RTM](../release-notes/nuget-4.7-rtm.md)
 
-[NuGet 4.6 RTM](../release-notes/nuget-4.6-rtm.md)
+[NuGet 4.6 RTM](../release-notes/nuget-4.6-rtm.md)
 
 [NuGet 4.5 RTM](../release-notes/nuget-4.5-rtm.md)
 
@@ -74,9 +74,9 @@ ms.locfileid: "58911118"
 
 [NuGet 3.0 RC](../release-notes/nuget-3.0-rc.md)
 
-[NuGet 3.0 (бета-версия)](../release-notes/nuget-3.0-beta.md)
+[NuGet 3.0 Beta](../release-notes/nuget-3.0-beta.md)
 
-[NuGet 3.0 (предварительная версия)](../release-notes/nuget-3.0-preview.md)
+[Предварительная версия NuGet 3.0](../release-notes/nuget-3.0-preview.md)
 
 [NuGet 2.12](../release-notes/nuget-2.12.md)
 
@@ -104,7 +104,7 @@ ms.locfileid: "58911118"
 
 [NuGet 2.7.1](../release-notes/nuget-2.7.1.md)
 
-[NuGet 2.7](../release-notes/nuget-2.7.md)
+[NuGet 2.7](../release-notes/nuget-2.7.md)
 
 [NuGet 2.6](../release-notes/nuget-2.6.md)
 
