@@ -5,12 +5,12 @@ author: karann-msft
 ms.author: karann
 ms.date: 03/23/2018
 ms.topic: conceptual
-ms.openlocfilehash: 8132595cbfaf553736fbcc81aada283a44d6cdbf
-ms.sourcegitcommit: 6ea2ff8aaf7743a6f7c687c8a9400b7b60f21a52
+ms.openlocfilehash: 1e89aeb46f2538d46c013561a51a41702b2472d8
+ms.sourcegitcommit: 6b71926f062ecddb8729ef8567baf67fd269642a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/16/2019
-ms.locfileid: "54324855"
+ms.lasthandoff: 04/22/2019
+ms.locfileid: "59932103"
 ---
 # <a name="nuget-pack-and-restore-as-msbuild-targets"></a>Объекты pack и restore NuGet в качестве целевых объектов MSBuild
 
@@ -52,7 +52,7 @@ ms.locfileid: "54324855"
 | Authors | Authors | Имя текущего пользователя | |
 | Владельцы | Н/Д | Не существует в NuSpec | |
 | Заголовок | Заголовок | Идентификатор пакета| |
-| Описание: | Описание: | "Описание пакета" | |
+| Описание | Описание | "Описание пакета" | |
 | Copyright | Copyright | пустой | |
 | RequireLicenseAcceptance | PackageRequireLicenseAcceptance | False | |
 | лицензии | PackageLicenseExpression | пустой | Соответствует `<license type="expression">` |
@@ -76,7 +76,7 @@ ms.locfileid: "54324855"
 - PackageVersion
 - PackageId
 - Authors
-- Описание:
+- Описание
 - Copyright
 - PackageRequireLicenseAcceptance
 - DevelopmentDependency
@@ -333,7 +333,7 @@ msbuild -t:pack <path to .csproj file> -p:NuspecFile=<path to nuspec file> -p:Nu
 
 Дополнительные параметры восстановления могут поступать из свойств MSBuild в файле проекта. Значения также можно задать из командной строки с помощью параметра `-p:` (см. примеры ниже).
 
-| Свойство. | Описание |
+| Свойство | Описание |
 |--------|--------|
 | RestoreSources | Разделенный точками с запятой список источников пакетов. |
 | RestorePackagesPath | Путь к папке пакетов пользователя. |
@@ -341,9 +341,14 @@ msbuild -t:pack <path to .csproj file> -p:NuspecFile=<path to nuspec file> -p:Nu
 | RestoreConfigFile | Путь к применяемому файлу `Nuget.Config`. |
 | RestoreNoCache | Если значение равно true, позволяет избежать использования кэшированные пакеты. См. в разделе [управление папкой установки глобальных пакетов и папками кэша](../consume-packages/managing-the-global-packages-and-cache-folders.md). |
 | RestoreIgnoreFailedSources | Если значение равно true, нерабочие или отсутствующие источники пакетов игнорируются. |
+| RestoreFallbackFolders | Резервные папки используется таким же образом пользователя пакеты, которые будет использоваться папка. |
+| RestoreAdditionalProjectSources | Дополнительные источники, которые используются во время восстановления. |
+| RestoreAdditionalProjectFallbackFolders | Дополнительные резервные папки для использования во время восстановления. |
+| RestoreAdditionalProjectFallbackFoldersExcludes | Исключает резервной папки, указанные в `RestoreAdditionalProjectFallbackFolders` |
 | RestoreTaskAssemblyFile | Путь к `NuGet.Build.Tasks.dll`. |
 | RestoreGraphProjectInput | Разделенный точками с запятой список проектов для восстановления, который должен содержать абсолютные пути. |
-| RestoreOutputPath | Выходная папка, по умолчанию используется `obj`. |
+| RestoreUseSkipNonexistentTargets  | Если проекты собираются с помощью MSBuild, он определяет, является ли они собираются с помощью `SkipNonexistentTargets` оптимизации. Если значение не задано, по умолчанию используется `true`. Результат при поведение высокопроизводительную целевыми платформами проекта не может быть импортирован. |
+| MSBuildProjectExtensionsPath | Выходная папка по умолчанию принимается `BaseIntermediateOutputPath` и `obj` папки. |
 
 #### <a name="examples"></a>Примеры
 
@@ -370,6 +375,23 @@ msbuild -t:restore -p:RestoreConfigFile=<path>
 | `project.assets.json` | Содержит все ссылки на пакеты в графе зависимостей. |
 | `{projectName}.projectFileExtension.nuget.g.props` | Ссылки на свойства MSBuild, содержащиеся в пакетах. |
 | `{projectName}.projectFileExtension.nuget.g.targets` | Ссылки на целевые объекты MSBuild, содержащиеся в пакетах. |
+
+### <a name="restoring-and-building-with-one-msbuild-command"></a>Восстановление и построение с помощью одной команды MSBuild
+
+Тем, что NuGet можно восстановить пакеты, обеспечивающие работу целевых объектов MSBuild и свойств, восстановления и ознакомительные версии сборки выполняются с другими глобальными свойствами.
+Это означает, что ниже будут непредсказуемыми и часто неправильное поведение.
+
+```cli
+msbuild -t:restore,build
+```
+
+ Вместо этого рекомендуется:
+
+```cli
+msbuild -t:build -restore
+```
+
+Эта же логика применяется к другим целевым объектам, аналогичную `build`.
 
 ### <a name="packagetargetfallback"></a>PackageTargetFallback
 
