@@ -5,12 +5,12 @@ author: karann-msft
 ms.author: karann
 ms.date: 01/18/2018
 ms.topic: reference
-ms.openlocfilehash: 125671ca3f695f82bd74f8097e590c3972003e22
-ms.sourcegitcommit: 1d1406764c6af5fb7801d462e0c4afc9092fa569
+ms.openlocfilehash: 4a9460944e2c232e2a72195434a491d26eee3559
+ms.sourcegitcommit: 3fc93f7a64be040699fe12125977dd25a7948470
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/04/2018
-ms.locfileid: "43548347"
+ms.lasthandoff: 04/29/2019
+ms.locfileid: "64877957"
 ---
 # <a name="push-command-nuget-cli"></a>Команда Push (NuGet CLI)
 
@@ -39,14 +39,14 @@ nuget push <packagePath> [options]
 | ConfigFile | Чтобы применить файл конфигурации NuGet. Если не указан, `%AppData%\NuGet\NuGet.Config` (Windows) или `~/.nuget/NuGet/NuGet.Config` используется (Mac/Linux).|
 | DisableBuffering | Отключает буферизацию при передаче на сервер HTTP (s), чтобы уменьшить использование памяти. Внимание: Если этот параметр используется, встроенная проверка подлинности Windows может не работать. |
 | ForceEnglishOutput | *(3.5 и более поздние)*  Заставляет nuget.exe для выполнения с помощью инвариантный, основанное на английский язык и региональные параметры. |
-| Справка | Отображает справку для команды. |
-| Неинтерактивная | Подавление для пользователя данные или подтверждения. |
+| Help | Отображает справку для команды. |
+| NonInteractive | Подавление для пользователя данные или подтверждения. |
 | NoSymbols | *(3.5 и более поздние)*  Если существует пакет символов, он не будет включено на сервере символов. |
-| Исходный код | Определяет URL-адрес сервера. NuGet идентифицирует UNC-путь или локальную папку источника и просто копирует в нее файл вместо передачи его с помощью HTTP.  Кроме того, начиная с NuGet 3.4.2, это является обязательным параметром Если `NuGet.Config` указывает файл *DefaultPushSource* значение (см. в разделе [Настройка поведения NuGet](../consume-packages/configuring-nuget-behavior.md)). |
+| Source | Определяет URL-адрес сервера. NuGet идентифицирует UNC-путь или локальную папку источника и просто копирует в нее файл вместо передачи его с помощью HTTP.  Кроме того, начиная с NuGet 3.4.2, это является обязательным параметром Если `NuGet.Config` указывает файл *DefaultPushSource* значение (см. в разделе [Настройка поведения NuGet](../consume-packages/configuring-nuget-behavior.md)). |
 | SymbolSource | *(3.5 и более поздние)*  Указывает URL-адрес сервера символов; nuget.smbsrc.net используется при передаче данных на сайте nuget.org |
 | SymbolApiKey | *(3.5 и более поздние)*  Содержит ключ API для URL-адрес, указанной в `-SymbolSource`. |
 | Время ожидания | Указывает время ожидания в секундах, для передачи на сервер. Значение по умолчанию — 300 секунд (5 минут). |
-| Уровень детализации | Указывает объем сведений, в выходных данных: *обычный*, *quiet*, *подробные*. |
+| Verbosity | Указывает объем сведений, в выходных данных: *обычный*, *quiet*, *подробные*. |
 
 Также см. в разделе [переменные среды](cli-ref-environment-variables.md)
 
@@ -67,5 +67,5 @@ nuget push foo.nupkg 4003d786-cc37-4004-bfdf-c4f3e8ef9b3a -Source https://api.nu
 
 nuget push foo.nupkg 4003d786-cc37-4004-bfdf-c4f3e8ef9b3a
 
-nuget push foo.nupkg 4003d786-cc37-4004-bfdf-c4f3e8ef9b3a -s https://customsource/
+nuget push foo.nupkg 4003d786-cc37-4004-bfdf-c4f3e8ef9b3a -src https://customsource/
 ```
