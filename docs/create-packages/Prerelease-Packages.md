@@ -5,12 +5,12 @@ author: karann-msft
 ms.author: karann
 ms.date: 08/14/2017
 ms.topic: conceptual
-ms.openlocfilehash: 150fc61e51fe10622fe6b369b60dfc61a9ac916f
-ms.sourcegitcommit: 74bf831e013470da8b0c1f43193df10bfb1f4fe6
+ms.openlocfilehash: 696f51905198defdbfd475ba7d010ac3e27ac557
+ms.sourcegitcommit: 3fc93f7a64be040699fe12125977dd25a7948470
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/26/2019
-ms.locfileid: "58432456"
+ms.lasthandoff: 04/29/2019
+ms.locfileid: "64877940"
 ---
 # <a name="building-pre-release-packages"></a>Сборка пакетов предварительных версий
 
@@ -22,7 +22,7 @@ ms.locfileid: "58432456"
 
 Для поддержки жизненного цикла выпуска программного обеспечения в NuGet 1.6 и более поздних версиях возможно распространение пакетов предварительных версий, номера версий которых включают в себя суффикс семантического версионирования, например `-alpha`, `-beta` или `-rc`. Дополнительные сведения см. в разделе [Управление версиями пакета](../reference/package-versioning.md#pre-release-versions).
 
-Такие версии можно указывать двумя способами.
+Такие версии можно указывать тремя способами.
 
 - Файл `.nuspec`: включите суффикс семантического версионирования в элемент `version`.
 
@@ -30,7 +30,15 @@ ms.locfileid: "58432456"
     <version>1.0.1-alpha</version>
     ```
 
-- Атрибуты сборки: при выполнении сборки пакета в рамках проекта Visual Studio (`.csproj` или `.vbproj`) используйте атрибут `AssemblyInformationalVersionAttribute` для указания версии.
+- Файл `.csproj`: включите суффикс семантического версионирования в элемент `PackageVersion`.
+
+    ```xml
+    <PropertyGroup>
+        <PackageVersion>1.0.1-alpha</PackageVersion>
+    </PropertyGroup>
+    ```
+
+- Атрибуты сборки: укажите версию с помощью `AssemblyInformationalVersionAttribute`.
 
     ```cs
     [assembly: AssemblyInformationalVersion("1.0.1-beta")]
