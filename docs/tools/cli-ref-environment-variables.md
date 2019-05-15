@@ -5,12 +5,12 @@ author: karann-msft
 ms.author: karann
 ms.date: 01/18/2018
 ms.topic: reference
-ms.openlocfilehash: ac1bf2b65ab6ec4e8cf864810181fc661236262a
-ms.sourcegitcommit: 6b71926f062ecddb8729ef8567baf67fd269642a
+ms.openlocfilehash: 9f26f75a70a996cad158fd125e86d98e10c3dac1
+ms.sourcegitcommit: 4ea46498aee386b4f592b5ebba4af7f9092ac607
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/22/2019
-ms.locfileid: "59931986"
+ms.lasthandoff: 05/14/2019
+ms.locfileid: "65610635"
 ---
 # <a name="nuget-cli-environment-variables"></a>Переменные среды интерфейса командной строки NuGet
 
@@ -33,7 +33,7 @@ ms.locfileid: "59931986"
 | NUGET_HTTP_CACHE_PATH | Путь, используемый для *http-cache* папки, как описано в разделе [управление папкой установки глобальных пакетов и папками кэша](../consume-packages/managing-the-global-packages-and-cache-folders.md). | Указан как абсолютный путь. |
 | NUGET_PERSIST_DG | Флаг, указывающий, если необходимо сохранить файлы dg (данные, собранные из MSBuild). | Указанный в виде *true* или *false* (по умолчанию), если не задано NUGET_PERSIST_DG_PATH будут храниться во временный каталог (NuGetScratch папку в текущем каталоге среды temp). |
 | NUGET_PERSIST_DG_PATH | Путь для сохранения файлов рассылки. | Указано как абсолютный путь, этот параметр используется, только если *NUGET_PERSIST_DG* задано значение true. |
-| NUGET_RESTORE_MSBUILD_ARGS | Задает дополнительные аргументы MSBuild. | |
+| NUGET_RESTORE_MSBUILD_ARGS | Задает дополнительные аргументы MSBuild. | Передайте аргументы идентична как их будет передан в msbuild.exe. Пример настройки свойства проекта Foo из командной строки к строке значение было бы /p:Foo = панели |
 | NUGET_RESTORE_MSBUILD_VERBOSITY | Задает уровень детализации журнала MSBuild. | Значение по умолчанию — *quiet* ("/ v: q»). Возможные значения *q [uiet]*, *m [inimal]*, *n [ormal]*, *d [etailed]*, и *diag [nostic]*. |
 | NUGET_SHOW_STACK | Определяет, должно ли отображаться пользователю полный исключения (включая трассировку стека). | Указанный в виде *true* или *false* (по умолчанию). |
 | NUGET_XMLDOC_MODE | Определяет, как должны обрабатываться извлечения файла документации XML сборок. | Ниже приведены поддерживаемые режимы *пропустить* (не извлекайте файлы XML-документации), *сжимать* (хранить XML-файлов документации как ZIP-архив) или *none* (по умолчанию, обрабатывать XML-файлов документации, как обычный файлы). |

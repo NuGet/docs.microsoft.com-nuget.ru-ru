@@ -6,12 +6,12 @@ ms.author: karann
 ms.date: 12/11/2017
 ms.topic: reference
 ms.reviewer: anangaur
-ms.openlocfilehash: c74a128c87a7700232a4fbddb73ff7c8f1984a29
-ms.sourcegitcommit: 885973352d31808e3ddbb45da6d6e54d1e4fca9d
+ms.openlocfilehash: 0b2a4fe45d0311b7540c73b481d6821357c723af
+ms.sourcegitcommit: 4ea46498aee386b4f592b5ebba4af7f9092ac607
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/13/2019
-ms.locfileid: "56224961"
+ms.lasthandoff: 05/14/2019
+ms.locfileid: "65610646"
 ---
 # <a name="target-frameworks"></a>Требуемые версии .NET Framework
 
@@ -48,6 +48,7 @@ NuGet использует ссылки на целевую платформу �
 | | | net47 |
 | | | net471 |
 | | | net472 |
+| | | net48 |
 |Microsoft Store (Магазин Windows) | netcore | netcore [netcore45] |
 | | | netcore45 [win, win8] |
 | | | netcore451 [win81] |
@@ -80,6 +81,7 @@ Windows Phone (UWP) | | wpa81 |
 | | | netcoreapp1.1 |
 | | | netcoreapp2.0 |
 | | | netcoreapp2.1 |
+| | | netcoreapp2.2 |
 Tizen | tizen | tizen3 |
 | | | tizen4 |
 
