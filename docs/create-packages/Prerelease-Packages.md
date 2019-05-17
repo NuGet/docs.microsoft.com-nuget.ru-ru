@@ -5,12 +5,12 @@ author: karann-msft
 ms.author: karann
 ms.date: 08/14/2017
 ms.topic: conceptual
-ms.openlocfilehash: 696f51905198defdbfd475ba7d010ac3e27ac557
-ms.sourcegitcommit: 3fc93f7a64be040699fe12125977dd25a7948470
+ms.openlocfilehash: 845f0ea84bcb92fedf9e5f4fb2b1deee1462a004
+ms.sourcegitcommit: 4ea46498aee386b4f592b5ebba4af7f9092ac607
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/29/2019
-ms.locfileid: "64877940"
+ms.lasthandoff: 05/14/2019
+ms.locfileid: "65610495"
 ---
 # <a name="building-pre-release-packages"></a>Сборка пакетов предварительных версий
 
@@ -22,15 +22,9 @@ ms.locfileid: "64877940"
 
 Для поддержки жизненного цикла выпуска программного обеспечения в NuGet 1.6 и более поздних версиях возможно распространение пакетов предварительных версий, номера версий которых включают в себя суффикс семантического версионирования, например `-alpha`, `-beta` или `-rc`. Дополнительные сведения см. в разделе [Управление версиями пакета](../reference/package-versioning.md#pre-release-versions).
 
-Такие версии можно указывать тремя способами.
+Можно указать такие версии одним из следующих способов:
 
-- Файл `.nuspec`: включите суффикс семантического версионирования в элемент `version`.
-
-    ```xml
-    <version>1.0.1-alpha</version>
-    ```
-
-- Файл `.csproj`: включите суффикс семантического версионирования в элемент `PackageVersion`.
+- **Если в проекте используется [`PackageReference`](../consume-packages/package-references-in-project-files.md)**. Включите суффикс семантической версии в элементе [`PackageVersion`](/dotnet/core/tools/csproj.md#packageversion) файла `.csproj`:
 
     ```xml
     <PropertyGroup>
@@ -38,13 +32,11 @@ ms.locfileid: "64877940"
     </PropertyGroup>
     ```
 
-- Атрибуты сборки: укажите версию с помощью `AssemblyInformationalVersionAttribute`.
+- **Если в проекте используется [файл`packages.config`](../reference/packages-config.md)**. Включите суффикс семантической версии в элементе [`version`](../reference/nuspec.md#version) файла [`.nuspec`](../reference/nuspec.md):
 
-    ```cs
-    [assembly: AssemblyInformationalVersion("1.0.1-beta")]
+    ```xml
+    <version>1.0.1-alpha</version>
     ```
-
-    NuGet использует это значение вместо указанного в атрибуте `AssemblyVersion`, который не поддерживает семантическое версионирование.
 
 Когда вы будете готовы выпустить стабильную версию, просто удалите суффикс, и пакет будет иметь приоритет над любыми предварительными версиями. См. раздел [Управление версиями пакета](../reference/package-versioning.md#pre-release-versions).
 

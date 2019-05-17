@@ -16,12 +16,12 @@ keywords: пакеты символов NuGet, отладка пакета NuGet
 ms.reviewer:
 - anangaur
 - karann
-ms.openlocfilehash: 43f346dc64ebbc59d02b9c7875b04205d8c5d83a
-ms.sourcegitcommit: b6efd4b210d92bf163c67e412ca9a5a018d117f0
+ms.openlocfilehash: 18d54e28d77f2bdcfea70ff9ae9def05278cb26c
+ms.sourcegitcommit: 4ea46498aee386b4f592b5ebba4af7f9092ac607
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/26/2019
-ms.locfileid: "56852446"
+ms.lasthandoff: 05/14/2019
+ms.locfileid: "65610555"
 ---
 # <a name="creating-symbol-packages-snupkg"></a>Создание пакетов символов (SNUPKG)
 
@@ -54,7 +54,7 @@ nuget pack MyPackage.csproj -Symbols -SymbolPackageFormat snupkg
 
 1. Упакуйте проект с `dotnet pack MyPackage.csproj` или `msbuild -t:pack MyPackage.csproj`.
 
-Свойство `SymbolPackageFormat` может иметь одно из двух значений: `symbols.nupkg` (по умолчанию) или `snupkg`. Если значение свойства `SymbolPackageFormat` не указано, по умолчанию будет использоваться `symbols.nupkg` и будет создан устаревший пакет символов.
+Свойство [`SymbolPackageFormat`](/dotnet/core/tools/csproj.md#symbolpackageformat) может иметь одно из двух значений: `symbols.nupkg` (по умолчанию) или `snupkg`. Если значение свойства [`SymbolPackageFormat`](/dotnet/core/tools/csproj.md#symbolpackageformat) не указано, будет создан устаревший пакет символов.
 
 > [!Note]
 > Устаревший формат `.symbols.nupkg` все еще поддерживается, но только в целях совместимости (см. раздел [Устаревшие пакеты символов](Symbol-Packages.md)). Сервер символов NuGet.org принимает только новый формат пакетов символов: `.snupkg`.
@@ -80,6 +80,9 @@ nuget pack MyPackage.csproj -Symbols -SymbolPackageFormat snupkg
     ```
 
 NuGet опубликует оба пакета на сайте nuget.org. Пакет `MyPackage.nupkg` будет опубликован первым, а `MyPackage.snupkg` — вторым.
+
+> [!Note]
+> Если пакет символов не опубликован, убедитесь, что вы настроили источник NuGet.org в виде `https://api.nuget.org/v3/index.json`. Публикация пакетов символов поддерживается только в [API NuGet версии 3](../api/overview.md#versioning).
 
 ## <a name="nugetorg-symbol-server"></a>Сервер символов NuGet.org
 
