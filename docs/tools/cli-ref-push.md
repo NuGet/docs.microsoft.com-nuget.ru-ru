@@ -5,12 +5,12 @@ author: karann-msft
 ms.author: karann
 ms.date: 01/18/2018
 ms.topic: reference
-ms.openlocfilehash: 4a9460944e2c232e2a72195434a491d26eee3559
-ms.sourcegitcommit: 3fc93f7a64be040699fe12125977dd25a7948470
+ms.openlocfilehash: bce04864224a66019a52cdfff8355f68dc424204
+ms.sourcegitcommit: 69b5eb1494a1745a4b1a7f320a91255d5d8356a9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/29/2019
-ms.locfileid: "64877957"
+ms.lasthandoff: 05/21/2019
+ms.locfileid: "65975005"
 ---
 # <a name="push-command-nuget-cli"></a>Команда Push (NuGet CLI)
 
@@ -43,6 +43,7 @@ nuget push <packagePath> [options]
 | NonInteractive | Подавление для пользователя данные или подтверждения. |
 | NoSymbols | *(3.5 и более поздние)*  Если существует пакет символов, он не будет включено на сервере символов. |
 | Source | Определяет URL-адрес сервера. NuGet идентифицирует UNC-путь или локальную папку источника и просто копирует в нее файл вместо передачи его с помощью HTTP.  Кроме того, начиная с NuGet 3.4.2, это является обязательным параметром Если `NuGet.Config` указывает файл *DefaultPushSource* значение (см. в разделе [Настройка поведения NuGet](../consume-packages/configuring-nuget-behavior.md)). |
+| SkipDuplicate | Если уже существует пакет и версию, пропустить этот шаг и продолжить со следующего пакета Push-уведомления, если таковые имеются. |
 | SymbolSource | *(3.5 и более поздние)*  Указывает URL-адрес сервера символов; nuget.smbsrc.net используется при передаче данных на сайте nuget.org |
 | SymbolApiKey | *(3.5 и более поздние)*  Содержит ключ API для URL-адрес, указанной в `-SymbolSource`. |
 | Время ожидания | Указывает время ожидания в секундах, для передачи на сервер. Значение по умолчанию — 300 секунд (5 минут). |
@@ -68,4 +69,7 @@ nuget push foo.nupkg 4003d786-cc37-4004-bfdf-c4f3e8ef9b3a -Source https://api.nu
 nuget push foo.nupkg 4003d786-cc37-4004-bfdf-c4f3e8ef9b3a
 
 nuget push foo.nupkg 4003d786-cc37-4004-bfdf-c4f3e8ef9b3a -src https://customsource/
+
+:: In the example below -SkipDuplicate will skip pushing the package if package "Foo" version "5.0.2" already exists on NuGet.org
+nuget push Foo.5.0.2.nupkg 4003d786-cc37-4004-bfdf-c4f3e8ef9b3a -src https://api.nuget.org/v3/index.json -SkipDuplicate
 ```
