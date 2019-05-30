@@ -6,16 +6,16 @@ ms.author: jver
 ms.date: 10/30/2017
 ms.topic: reference
 ms.reviewer: kraigb
-ms.openlocfilehash: fd5188c92f8154391359b8da5c8a32f4d5d6f2c0
-ms.sourcegitcommit: 0c5a49ec6e0254a4e7a9d8bca7daeefb853c433a
+ms.openlocfilehash: 4884de71151ee1ae3c0a78b803c9222f9c1d86ec
+ms.sourcegitcommit: ef08f376688f0191a8d3d873b6a4386afd799373
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/28/2018
-ms.locfileid: "52453589"
+ms.lasthandoff: 05/28/2019
+ms.locfileid: "66266359"
 ---
 # <a name="catalog"></a>Catalog
 
-**Каталога** — это ресурс, в котором фиксируются все операции пакета источника пакета, например операции создания и удаления. У ресурса каталога `Catalog` введите [индекс службы](service-index.md).
+**Каталога** — это ресурс, в котором фиксируются все операции пакета источника пакета, например операции создания и удаления. У ресурса каталога `Catalog` введите [индекс службы](service-index.md). Можно использовать этот ресурс для [запроса все опубликованные пакеты](../guides/api/query-for-all-published-packages.md).
 
 > [!Note]
 > Так как каталог не используется официального клиента NuGet, не все источники пакетов реализовать каталога.
