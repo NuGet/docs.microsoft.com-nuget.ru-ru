@@ -3,14 +3,14 @@ title: Создание и публикация пакета .NET Standard с п
 description: Пошаговое руководство по созданию и публикации пакета NuGet .NET Standard с помощью Visual Studio 2017 в Windows.
 author: karann-msft
 ms.author: karann
-ms.date: 05/18/2018
+ms.date: 05/24/2019
 ms.topic: quickstart
-ms.openlocfilehash: faea00372bd387aee1502e388ad1ea88de07b95d
-ms.sourcegitcommit: 0c5a49ec6e0254a4e7a9d8bca7daeefb853c433a
+ms.openlocfilehash: d30e89473b5f00895136b75a90d8d95b7645a100
+ms.sourcegitcommit: b8c63744252a5a37a2843f6bc1d5917496ee40dd
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/28/2018
-ms.locfileid: "52453524"
+ms.lasthandoff: 06/07/2019
+ms.locfileid: "66812979"
 ---
 # <a name="quickstart-create-and-publish-a-nuget-package-using-visual-studio-net-standard-windows-only"></a>Краткое руководство. Создание и публикация пакета NuGet с помощью Visual Studio (.NET Standard, только для Windows)
 
@@ -23,9 +23,11 @@ ms.locfileid: "52453524"
 
 1. Установите любой выпуск Visual Studio 2017 со страницы [visualstudio.com](https://www.visualstudio.com/) с помощью любой рабочей нагрузки, связанной с .NET. После установки рабочей нагрузки .NET Visual Studio 2017 автоматически добавит возможности NuGet.
 
-1. Установите интерфейс командной строки `nuget.exe`, скачав его на сайте [nuget.org](https://dist.nuget.org/win-x86-commandline/latest/nuget.exe), и сохраните этот файл `.exe` в подходящую папку. Добавьте эту папку в переменную среды PATH.
+1. Установите одно из средств CLI.
 
-    Кроме того, если у вас есть установленный [пакет SDK для .NET Core](https://www.microsoft.com/net/download/), можно использовать интерфейс командной строки `dotnet`.
+   * Для средства CLI `dotnet` установите [пакет SDK для .NET Core](https://www.microsoft.com/net/download/). CLI для .NET является обязательным для проектов .NET Standard с форматом в стиле пакета SDK (атрибут SDK).
+
+   * Установите средство CLI `nuget.exe`, скачав его на сайте [nuget.org](https://dist.nuget.org/win-x86-commandline/latest/nuget.exe), и сохраните этот файл `.exe` в подходящую папку. Добавьте эту папку в переменную среды PATH. CLI nuget.exe используется для библиотек .NET Standard в формате со стилем, отличным от пакета SDK.
 
 1. [Зарегистрируйтесь для получения бесплатной учетной записи на nuget.org](https://www.nuget.org/users/account/LogOn?returnUrl=%2F), если вы не сделали этого ранее. При создании учетной записи вам направляется сообщение электронной почты с подтверждением. Перед отправкой пакета вам нужно подтвердить учетную запись.
 
@@ -112,7 +114,13 @@ msbuild -t:pack -p:Configuration=Release
 
 [!INCLUDE [publish-api-key](includes/publish-api-key.md)]
 
-### <a name="publish-with-nuget-push"></a>Публикация с помощью команды nuget push
+### <a name="publish-with-dotnet-nuget-push-dotnet-cli"></a>Публикация с помощью команды dotnet nuget push (CLI для .NET)
+
+Эту команду можно использовать вместо `nuget.exe`.
+
+[!INCLUDE [publish-dotnet](includes/publish-dotnet.md)]
+
+### <a name="publish-with-nuget-push-nugetexe-cli"></a>Публикация с помощью команды nuget push (CLI nuget.exe)
 
 Эту команду можно использовать вместо `dotnet.exe`.
 
@@ -134,12 +142,6 @@ msbuild -t:pack -p:Configuration=Release
     ```
 
 Ознакомьтесь со сведениями о [команде nuget push](../tools/cli-ref-push.md).
-
-### <a name="publish-with-dotnet-nuget-push"></a>Публикация с помощью команды dotnet nuget push
-
-Эту команду можно использовать вместо `nuget.exe`.
-
-[!INCLUDE [publish-dotnet](includes/publish-dotnet.md)]
 
 ### <a name="publish-errors"></a>Ошибки публикации
 

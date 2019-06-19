@@ -3,25 +3,31 @@ title: Создание пакетов NuGet
 description: Подробное руководство по проектированию и созданию пакета NuGet, включая принятие решений по ключевым аспектам, таким как файлы и управление версиями.
 author: karann-msft
 ms.author: karann
-ms.date: 12/12/2017
+ms.date: 05/24/2019
 ms.topic: conceptual
-ms.openlocfilehash: f0d9667b752caf7831278ac3fd63cfd67f7d34a4
-ms.sourcegitcommit: 4ea46498aee386b4f592b5ebba4af7f9092ac607
+ms.openlocfilehash: 5e362673acfab4b31c8a2e02a521afd8b19d2754
+ms.sourcegitcommit: b8c63744252a5a37a2843f6bc1d5917496ee40dd
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/14/2019
-ms.locfileid: "65610587"
+ms.lasthandoff: 06/07/2019
+ms.locfileid: "66812920"
 ---
 # <a name="creating-nuget-packages"></a>Создание пакетов NuGet
 
-Независимо от назначения вашего пакета или содержащегося в нем кода, вы можете создать с помощью программы `nuget.exe` компонент, которым можно поделиться с любым количеством разработчиков для совместного использования. Инструкции по установке `nuget.exe` см. в разделе [Установка интерфейса командной строки NuGet](../install-nuget-client-tools.md#nugetexe-cli). Обратите внимание на то, что программа `nuget.exe` не входит в состав Visual Studio по умолчанию.
+Независимо от назначения вашего пакета или содержащегося в нем кода, с помощью одного из средств CLI (`nuget.exe` или `dotnet.exe`) вы можете создать компонент, которым можно поделиться с любым количеством разработчиков для совместного использования. Инструкции по установке средств CLI для NuGet см. в статье [Установка клиентских средств NuGet](../install-nuget-client-tools.md). Обратите внимание на то, что средство CLI не входит в состав Visual Studio по умолчанию.
+
+- Для проектов .NET Core и .NET Standard с форматом в стиле пакета SDK ([атрибут пакета SDK](/dotnet/core/tools/csproj#additions)) и других проектов в таком стиле NuGet использует сведения в файле проекта напрямую для создания пакета. Подробные сведения см. в разделах [Создание пакетов .NET Standard с помощью Visual Studio 2017](../quickstart/create-and-publish-a-package-using-visual-studio.md) и [Пакет NuGet и восстановление целевых объектов MSBuild](../reference/msbuild-targets.md).
+
+- Чтобы создать пакет для проектов в другом стиле, выполните шаги, описанные в этой статье.
+
+- Для проектов, перенесенных из `packages.config` в [PackageReference](../consume-packages/package-references-in-project-files.md), используйте [msbuild -t:pack](../reference/migrate-packages-config-to-package-reference.md#create-a-package-after-migration).
 
 С технической точки зрения, пакет NuGet — это просто ZIP-файл, расширение которого изменено на `.nupkg` и содержимое которого соответствует определенным соглашениям. В этом разделе подробно описывается создание пакета, в котором соблюдаются эти соглашения. Краткое руководство приводится в статье по [созданию и публикации пакета](../quickstart/create-and-publish-a-package.md).
 
 Создание пакета начинается с подготовки скомпилированного кода (сборок), символов и других файлов, которые должны быть включены в пакет (см. раздел [Процесс создания пакета](overview-and-workflow.md)). Этот процесс не зависит от компиляции и других задач по созданию файлов для пакета, хотя вы можете использовать информацию из файла проекта для синхронизации скомпилированных сборок и пакетов.
 
 > [!Note]
-> Этот раздел относится к любым типам проектов, кроме проектов .NET Core с использованием Visual Studio 2017 и NuGet 4.0 или более поздней версии. В таких проектах .NET Core NuGet использует сведения в файле проекта напрямую. Подробные сведения см. в разделах [Создание пакетов .NET Standard с помощью Visual Studio 2017](../guides/create-net-standard-packages-vs2017.md) и [Пакет NuGet и восстановление целевых объектов MSBuild](../reference/msbuild-targets.md).
+> Эта статья применяется к проектам со стилем, отличным от пакетов SDK, то есть не таких как проекты .NET Core и .NET Standard, для которых используется Visual Studio 2017 и NuGet 4.0 и более поздних версий.
 
 ## <a name="deciding-which-assemblies-to-package"></a>Выбор сборок для добавления в пакет
 

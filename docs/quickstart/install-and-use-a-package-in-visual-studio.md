@@ -5,12 +5,12 @@ author: karann-msft
 ms.author: karann
 ms.date: 01/23/2018
 ms.topic: quickstart
-ms.openlocfilehash: 15268ae33d56042a765420e5076dac49db6cce04
-ms.sourcegitcommit: 1591bb230e106b94162a87dd1d86fe427366730a
+ms.openlocfilehash: 8cfb7bd31c37847d83ffe31f11ba61eadc717eb8
+ms.sourcegitcommit: b8c63744252a5a37a2843f6bc1d5917496ee40dd
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/30/2018
-ms.locfileid: "52671179"
+ms.lasthandoff: 06/07/2019
+ms.locfileid: "66812910"
 ---
 # <a name="quickstart-install-and-use-a-package-in-visual-studio"></a>Краткое руководство. Установка и использование пакета в Visual Studio
 
@@ -19,7 +19,7 @@ ms.locfileid: "52671179"
 После установки ссылаться на пакет в коде можно с помощью `using <namespace>`, где \<namespace\> соответствует используемому пакету. После указания ссылки можно обращаться к пакету посредством его интерфейса API.
 
 > [!Tip]
-> **Начните с сайта nuget.org**: разработчики .NET обычно находят компоненты, которые можно использовать в собственных приложениях, просматривая сайт nuget.org. Вы можете выполнить поиск непосредственно на сайте nuget.org или найти и установить пакеты в Visual Studio, как описано в этой статье.
+> **Начните работу с сайта nuget.org**: разработчики .NET обычно находят компоненты, которые можно использовать в собственных приложениях, просматривая сайт nuget.org. Вы можете выполнить поиск непосредственно на сайте nuget.org или найти и установить пакеты в Visual Studio, как описано в этой статье.
 
 ## <a name="prerequisites"></a>Предварительные требования
 
@@ -27,6 +27,8 @@ ms.locfileid: "52671179"
 - Visual Studio 2015 с обновлением 3 и инструментами для разработки универсальных приложений для Windows.
 
 Вы можете установить бесплатный выпуск Community 2017 с сайта [visualstudio.com](https://www.visualstudio.com/) либо использовать выпуск Professional или Enterprise.
+
+Если вы используете Visual Studio для Mac, см. статью [Включение пакета NuGet в проект](/visualstudio/mac/nuget-walkthrough).
 
 ## <a name="create-a-project"></a>Создание проекта
 
