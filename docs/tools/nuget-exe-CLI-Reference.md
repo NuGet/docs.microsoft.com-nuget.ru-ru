@@ -5,12 +5,12 @@ author: karann-msft
 ms.author: karann
 ms.date: 01/23/2018
 ms.topic: reference
-ms.openlocfilehash: 2743dde63487124c706f2b1521ef2c6c3b28339d
-ms.sourcegitcommit: 1d1406764c6af5fb7801d462e0c4afc9092fa569
+ms.openlocfilehash: a257dbbd9d56b5989e050ed4096d096cd1036184
+ms.sourcegitcommit: b6810860b77b2d50aab031040b047c20a333aca3
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/04/2018
-ms.locfileid: "43548082"
+ms.lasthandoff: 06/28/2019
+ms.locfileid: "67426025"
 ---
 # <a name="nuget-cli-reference"></a>Справочник по интерфейсу командной строки NuGet
 
@@ -19,6 +19,8 @@ ms.locfileid: "43548082"
 Чтобы использовать любые команды, откройте окно командной строки или оболочку bash, а затем запустите `nuget` следуют команды и соответствующие параметры, такие как `nuget help pack` (Чтобы просмотреть справку по команде pack).
 
 Эта документация отражает последнюю версию интерфейса командной строки NuGet. Полные сведения для каждой версии, вы используете, выполните `nuget help` для нужную команду.
+
+Чтобы узнать, как использовать основные команды с `nuget.exe` CLI, см. в разделе [установить и использовать пакеты, используя интерфейс командной строки nuget.exe](../consume-packages/install-use-packages-nuget-cli.md).
 
 ## <a name="installing-nugetexe"></a>Установка nuget.exe
 

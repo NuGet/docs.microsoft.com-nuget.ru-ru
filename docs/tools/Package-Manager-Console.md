@@ -1,24 +1,26 @@
 ---
-title: Руководство по консоли диспетчера пакетов NuGet
+title: Установка и управление пакетами NuGet с помощью PowerShell в Visual Studio
 description: Инструкции по использованию консоли диспетчера пакетов NuGet в Visual Studio для работы с пакетами.
 author: karann-msft
 ms.author: karann
-ms.date: 01/23/2018
+ms.date: 06/24/2019
 ms.topic: conceptual
 f1_keywords:
 - vs.nuget.packagemanager.console
-ms.openlocfilehash: 88979c67ea7f073f2ea5a02c445186642f77f210
-ms.sourcegitcommit: 1d1406764c6af5fb7801d462e0c4afc9092fa569
+ms.openlocfilehash: 11ec25598d3110ba84dec5044642e205e13346af
+ms.sourcegitcommit: b6810860b77b2d50aab031040b047c20a333aca3
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/04/2018
-ms.locfileid: "43546882"
+ms.lasthandoff: 06/28/2019
+ms.locfileid: "67426217"
 ---
-# <a name="package-manager-console"></a>Консоль диспетчера пакетов
+# <a name="install-and-manage-packages-using-powershell-in-visual-studio"></a>Установка пакетов и управления ими с помощью PowerShell в Visual Studio
 
-Консоль диспетчера пакетов NuGet встроены в Visual Studio в Windows 2012 и более поздних версий. (Это не входит в состав Visual Studio для Mac или Visual Studio Code.)
+Консоль диспетчера пакетов NuGet позволяет использовать [команд NuGet PowerShell](../tools/powershell-reference.md) для поиска, установка, удаление и обновление пакетов NuGet. С помощью консоли необходим в случаях, когда пользовательский Интерфейс диспетчера пакетов, не позволяют выполнить операцию. Чтобы использовать `nuget.exe` команд интерфейса командной строки в консоли, см. в разделе [с помощью интерфейса командной строки nuget.exe в консоли](#using-the-nugetexe-cli-in-the-console).
 
-Консоль позволяет использовать [команд NuGet PowerShell](../tools/powershell-reference.md) для поиска, установка, удаление и обновление пакетов NuGet. С помощью консоли необходим в случаях, когда пользовательский Интерфейс диспетчера пакетов, не позволяют выполнить операцию. Чтобы использовать `nuget.exe` команды в консоли, см. в разделе [с помощью интерфейса командной строки nuget.exe в консоли](#using-the-nugetexe-cli-in-the-console).
+Консоль встроена в Visual Studio в Windows. Это не входит в состав Visual Studio для Mac или Visual Studio Code.
+
+## <a name="find-and-install-a-package"></a>Найти и установить пакет
 
 Например поиск и установка пакета выполняется с помощью трех простых действий:
 
@@ -74,7 +76,7 @@ Install-Package Elmah -ProjectName UtilitiesLib
 
 См. в разделе [Install-Package](../tools/ps-ref-install-package.md).
 
-Установка пакета в консоли выполняет те же действия, как описано в разделе [что происходит при установке пакета](../consume-packages/ways-to-install-a-package.md#what-happens-when-a-package-is-installed), со следующими дополнениями:
+Установка пакета в консоли выполняет те же действия, как описано в разделе [что происходит при установке пакета](../concepts/package-installation-process.md), со следующими дополнениями:
 
 - В консоли отображаются применимых условиях лицензии в своем окне неявные соглашения. Если вы не согласны с условиями, следует удалить пакет немедленно.
 - Также добавляется к файлу проекта ссылку на пакет и отображается в **обозревателе решений** под **ссылки** узла, необходимо сохранить проект, чтобы увидеть изменения в файл проекта напрямую.
@@ -139,7 +141,7 @@ Find-Package jquery -AllVersions -ExactMatch
 
 ## <a name="availability-of-the-console"></a>Доступность консоли
 
-В Visual Studio 2017 NuGet и диспетчер пакетов NuGet автоматически устанавливаются при выборе любого. Рабочим нагрузкам, связанным с NET; Можно также установить его по отдельности, установив **отдельные компоненты > средства кода > Диспетчер пакетов NuGet** флажок в установщике Visual Studio 2017.
+Начиная с Visual Studio 2017, NuGet и диспетчер пакетов NuGet автоматически устанавливаются при выборе любого. Рабочим нагрузкам, связанным с NET; Можно также установить его по отдельности, установив **отдельные компоненты > средства кода > Диспетчер пакетов NuGet** параметр в установщике Visual Studio.
 
 Кроме того, если вы пропустили диспетчер пакетов NuGet в Visual Studio 2015 и более ранних версий, проверьте **Сервис > расширения и обновления...**  и выполните поиск расширение диспетчера пакетов NuGet. Если вы не удается использовать установщик расширений в Visual Studio, можно загрузить модуль непосредственно из [ https://dist.nuget.org/index.html ](https://dist.nuget.org/index.html).
 

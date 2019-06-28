@@ -5,16 +5,16 @@ author: karann-msft
 ms.author: karann
 ms.date: 10/02/2017
 ms.topic: reference
-ms.openlocfilehash: 45c8be9956ceaab844bdcd89f1b96adc256f805c
-ms.sourcegitcommit: 1d1406764c6af5fb7801d462e0c4afc9092fa569
+ms.openlocfilehash: 977e06d36962366abd69f1c7f21ef33eca4e5029
+ms.sourcegitcommit: b6810860b77b2d50aab031040b047c20a333aca3
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/04/2018
-ms.locfileid: "43546668"
+ms.lasthandoff: 06/28/2019
+ms.locfileid: "67426124"
 ---
 # <a name="powershell-reference"></a>Справочник по PowerShell
 
-Консоль диспетчера пакетов предоставляет интерфейс PowerShell в Visual Studio для Windows для взаимодействия с NuGet через определенные команды перечисленные ниже. (Консоль не является в настоящее время доступен в Visual Studio для Mac.) Руководство по использованию консоли, см. в разделе [консоль диспетчера пакетов](../tools/package-manager-console.md) раздела.
+Консоль диспетчера пакетов предоставляет интерфейс PowerShell в Visual Studio для Windows для взаимодействия с NuGet через определенные команды перечисленные ниже. (Консоль не является в настоящее время доступен в Visual Studio для Mac.) Руководство по использованию консоли, см. в разделе [Установка пакетов с помощью PowerShell и управления ими](../tools/package-manager-console.md) раздела.
 
 > [!Tip]
 > Все команды PowerShell относятся только к использование пакета. Команды PowerShell, не связаны с создания и публикации пакетов, за исключением того, при условии, что пакет также может быть объект-получатель другие пакеты.

@@ -5,16 +5,16 @@ author: karann-msft
 ms.author: karann
 ms.date: 10/25/2017
 ms.topic: reference
-ms.openlocfilehash: d7c943c1f13edf782dabe4afee9d19a1a42bd42a
-ms.sourcegitcommit: 573af6133a39601136181c1d98c09303f51a1ab2
+ms.openlocfilehash: 2eceb6e94a353cb29b83aea114c6cea2acbac266
+ms.sourcegitcommit: b6810860b77b2d50aab031040b047c20a333aca3
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "58911092"
+ms.lasthandoff: 06/28/2019
+ms.locfileid: "67426150"
 ---
 # <a name="nugetconfig-reference"></a>Справочник по NuGet.config
 
-Для управления работой NuGet используются параметры в различных файлах `NuGet.Config`, как описано в разделе [Настройка поведения NuGet](../consume-packages/configuring-nuget-behavior.md).
+Управления работой NuGet используются параметры в различных `NuGet.Config` файлы, как описано в разделе [NuGet распространенных конфигураций](../consume-packages/configuring-nuget-behavior.md).
 
 `nuget.config` — это XML-файл, содержащий узел `<configuration>` верхнего уровня, который, в свою очередь, содержит элементы разделов, описываемые в этой статье. Каждый раздел содержит ноль или более элементов. См. [пример файла конфигурации](#example-config-file). В именах регистр символов не учитывается, а в качестве значений могут использоваться [переменные среды](#using-environment-variables).
 

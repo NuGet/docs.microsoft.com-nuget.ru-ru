@@ -6,12 +6,12 @@ ms.author: jver
 ms.date: 10/26/2017
 ms.topic: reference
 ms.reviewer: kraigb
-ms.openlocfilehash: cfcb52ba7689f1b392c782b4ad42ba820a76c8bf
-ms.sourcegitcommit: 09107c5092050f44a0c6abdfb21db73878f78bd0
+ms.openlocfilehash: d462b289c39c2dd1418304dabcad47d0d4217f82
+ms.sourcegitcommit: b6810860b77b2d50aab031040b047c20a333aca3
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/03/2018
-ms.locfileid: "50981136"
+ms.lasthandoff: 06/28/2019
+ms.locfileid: "67426732"
 ---
 # <a name="search"></a>Поиск
 
@@ -21,7 +21,7 @@ ms.locfileid: "50981136"
 
 Следующие `@type` значения используются:
 
-Значение@type                    | Примечания
+Значение@type                   | Примечания
 ----------------------------- | -----
 SearchQueryService            | Первоначальный выпуск
 SearchQueryService/3.0.0-beta | Псевдоним `SearchQueryService`
@@ -97,7 +97,7 @@ projectUrl     | string                     | Нет       |
 теги           | Строка или массив строк | Нет       | 
 заголовок          | string                     | Нет       | 
 totalDownloads | целочисленный                    | Нет       | Это значение может быть выведен на сумму загружаемые файлы в `versions` массива
-проверить       | boolean                    | Нет       | Логическое значение, указывающее, является ли пакет JSON [проверен](../reference/id-prefix-reservation.md)
+проверить       | boolean                    | Нет       | Логическое значение, указывающее, является ли пакет JSON [проверен](../nuget-org/id-prefix-reservation.md)
 
 На сайте nuget.org проверенного пакета источник, который имеет идентификатор пакета, сопоставления зарезервированный префикс идентификатора и принадлежит одному из владельцев зарезервированный префикс. Дополнительные сведения см. в разделе [документацию о резервирование префикса идентификатора](../reference/id-prefix-reservation.md).
 

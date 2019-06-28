@@ -5,12 +5,12 @@ author: karann-msft
 ms.author: karann
 ms.date: 01/18/2018
 ms.topic: reference
-ms.openlocfilehash: 9964186dcbfedfbf2415a57102f8f019a1eef23a
-ms.sourcegitcommit: 6b71926f062ecddb8729ef8567baf67fd269642a
+ms.openlocfilehash: 3d7a4188de4fb6f812ca19e7f9e302a5a133c58b
+ms.sourcegitcommit: b6810860b77b2d50aab031040b047c20a333aca3
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/22/2019
-ms.locfileid: "59931999"
+ms.lasthandoff: 06/28/2019
+ms.locfileid: "67425970"
 ---
 # <a name="restore-command-nuget-cli"></a>Команда RESTORE (NuGet CLI)
 
@@ -50,7 +50,7 @@ nuget restore <projectPath> [options]
 | RequireConsent | При восстановлении пакетов проверяет, включена ли перед загрузкой и установкой пакетов. Дополнительные сведения см. в разделе [восстановление пакета](../consume-packages/package-restore.md). |
 | SolutionDirectory | Указывает папку решения. Не является допустимым при восстановлении пакетов для решения. Требуется, если восстановление с помощью `packages.config` файла `PackagesDirectory` или `OutputDirectory` используется. |
 | Source | Указывает список источников пакетов (в качестве URL-адреса) для восстановления. Если не указано, команда использует эти источники, в файлах конфигурации, см. в разделе [Настройка поведения NuGet](../consume-packages/configuring-nuget-behavior.md). |
-| Verbosity |> указывает объем сведений, в выходных данных: *обычный*, *quiet*, *подробные*. |
+| Verbosity | Указывает объем сведений, в выходных данных: *обычный*, *quiet*, *подробные*. |
 
 Также см. в разделе [переменные среды](cli-ref-environment-variables.md)
 

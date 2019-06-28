@@ -6,12 +6,12 @@ ms.author: jver
 ms.date: 10/26/2017
 ms.topic: reference
 ms.reviewer: kraigb
-ms.openlocfilehash: 740defc34077793b81fb35db73a2eee393ae3bac
-ms.sourcegitcommit: 1d1406764c6af5fb7801d462e0c4afc9092fa569
+ms.openlocfilehash: 2f0f93e0cee78ea03cbd53194cdc2a10871fd7e1
+ms.sourcegitcommit: b6810860b77b2d50aab031040b047c20a333aca3
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/04/2018
-ms.locfileid: "43547158"
+ms.lasthandoff: 06/28/2019
+ms.locfileid: "67426765"
 ---
 # <a name="package-content"></a>Содержимое пакета
 
@@ -23,7 +23,7 @@ ms.locfileid: "43547158"
 
 Следующие `@type` используется значение:
 
-Значение @type              | Примечания
+Значение@type              | Примечания
 ------------------------ | -----
 PackageBaseAddress/3.0.0 | Первоначальный выпуск
 
@@ -114,10 +114,10 @@ LOWER_VERSION | URL-адрес    | string | да      | Версия пакет
 
 ### <a name="request-parameters"></a>Параметры запроса
 
-name          | Увеличение     | Тип    | Обязательно | Примечания
-------------- | ------ | ------- | -------- | -----
-LOWER_ID      | URL-адрес    | string  | да      | Идентификатор пакета, нижний регистр
-LOWER_VERSION | URL-адрес    | целочисленный | да      | Версия пакета, нормализованную и букв
+name          | Увеличение     | Тип   | Обязательно | Примечания
+------------- | ------ | ------ | -------- | -----
+LOWER_ID      | URL-адрес    | string | да      | Идентификатор пакета, нижний регистр
+LOWER_VERSION | URL-адрес    | string | да      | Версия пакета, нормализованную и букв
 
 Оба `LOWER_ID` и `LOWER_VERSION` являются букв с помощью правил, реализованных по. NET [ `System.String.ToLowerInvariant()` ](/dotnet/api/system.string.tolowerinvariant?view=netstandard-2.0#System_String_ToLowerInvariant) метод.
 
