@@ -5,12 +5,12 @@ author: karann-msft
 ms.author: karann
 ms.date: 12/07/2017
 ms.topic: reference
-ms.openlocfilehash: d47e1978ab7d827e0b8b97cd4e7237019185b50f
-ms.sourcegitcommit: 1d1406764c6af5fb7801d462e0c4afc9092fa569
+ms.openlocfilehash: a5b5a11ee11d9e2cf6a90d56ac63b1f7bad750ea
+ms.sourcegitcommit: 2a9d149bc6f5ff76b0b657324820bd0429cddeef
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/04/2018
-ms.locfileid: "43546080"
+ms.lasthandoff: 07/01/2019
+ms.locfileid: "67496493"
 ---
 # <a name="update-package-package-manager-console-in-visual-studio"></a>Update-Package (консоль диспетчера пакетов в Visual Studio)
 
@@ -41,12 +41,12 @@ Update-Package Microsoft.AspNet.MVC -Version 5.0.0.
 | ИмяПроекта | Имя проекта, содержащего пакеты для обновления, установка значений по умолчанию для всех проектов. |
 | Версия | Версия, используемая для обновления, установка значений по умолчанию до последней версии. В NuGet 3.0 +, значение версии должно быть одно из *Lowest, самое высокое, HighestMinor*, или *HighestPatch* (эквивалент метода - Safe). |
 | Safe | Ограничивает обновления до версии с той же версии основного и дополнительного номера, что и установленный пакет. |
-| Исходный код | Путь к URL-адрес или папке источника пакета для поиска. Пути к локальной папке может быть абсолютным или относительным для текущей папки. Если этот параметр опущен, `Update-Package` выполняет поиск в текущем выбранном источнике пакета. |
+| Source | Путь к URL-адрес или папке источника пакета для поиска. Пути к локальной папке может быть абсолютным или относительным для текущей папки. Если этот параметр опущен, `Update-Package` выполняет поиск в текущем выбранном источнике пакета. |
 | IncludePrerelease | Включает в себя предварительные выпуски пакетов обновлений. |
 | Переустановка | Resintalls пакетов с помощью их текущей установленной версии. Дополнительные сведения см. в разделе [Ограничение версий для обновления](../consume-packages/reinstalling-and-updating-packages.md). |
 | FileConflictAction | Действие, выполняемое при появлении запроса на перезапись или игнорировать существующие файлы, связанные с проектом. Возможные значения: *перезаписи, игнорировать, None, OverwriteAll*, и *IgnoreAll* (3.0 или более поздней). |
 | DependencyVersion | Версия пакеты зависимостей для использования, которые может принимать одно из следующих:<br/><ul><li>*Наименьшее* (по умолчанию): самую раннюю версию</li><li>*HighestPatch*: версии с улучшением минимально основных, минимально незначительные, самый высокий</li><li>*HighestMinor*: версия с наименьшим основных, наибольший исправления незначительных: наибольшая</li><li>*Самый высокий* (по умолчанию для Update-Package без параметров): самую старшую версию</li></ul>Можно задать значение по умолчанию с помощью [ `dependencyVersion` ](../reference/nuget-config-file.md#config-section) в `Nuget.Config` файл. |
-| ToHighestPatch | Ограничивает обновления до версий только с той же дополнительный номер версии, что установленный пакет. |
+| ToHighestPatch | Эквивалент - Safe. |
 | ToHighestMinor | Ограничивает обновления до версий только с той же основной версией, что и установленный пакет. |
 | WhatIf | Показывает, что произойдет при выполнении команды без фактического выполнения обновления. |
 
@@ -54,7 +54,7 @@ Update-Package Microsoft.AspNet.MVC -Version 5.0.0.
 
 ### <a name="common-parameters"></a>Общие параметры
 
-`Update-Package` поддерживает следующие [Общие параметры PowerShell](http://go.microsoft.com/fwlink/?LinkID=113216): отладки, действие при возникновении ошибки, ErrorVariable, OutBuffer, OutVariable, PipelineVariable, Verbose, WarningAction и WarningVariable.
+`Update-Package` поддерживает следующие [Общие параметры PowerShell](http://go.microsoft.com/fwlink/?LinkID=113216): Отладка, действие при возникновении ошибки, ErrorVariable, OutBuffer, OutVariable, PipelineVariable, Verbose, WarningAction и WarningVariable.
 
 ### <a name="examples"></a>Примеры
 

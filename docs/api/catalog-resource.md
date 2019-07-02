@@ -6,12 +6,12 @@ ms.author: jver
 ms.date: 10/30/2017
 ms.topic: reference
 ms.reviewer: kraigb
-ms.openlocfilehash: 34c205e7dac60c7abfb6323b4dc45bf4f074d46a
-ms.sourcegitcommit: b6810860b77b2d50aab031040b047c20a333aca3
+ms.openlocfilehash: 8e4fb376e471a207333d241aeb414da7d5c3571e
+ms.sourcegitcommit: 2a9d149bc6f5ff76b0b657324820bd0429cddeef
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/28/2019
-ms.locfileid: "67426789"
+ms.lasthandoff: 07/01/2019
+ms.locfileid: "67496542"
 ---
 # <a name="catalog"></a>Catalog
 
@@ -194,7 +194,8 @@ name                    | Тип                       | Обязательно 
 ----------------------- | -------------------------- | -------- | -----
 authors                 | string                     | Нет       |
 created                 | string                     | Нет       | Отметка времени при первом создании пакета. Резервный свойство: `published`.
-dependencyGroups        | Массив объектов           | Нет       | Такой же формат, как [ресурс метаданных пакета](registration-base-url-resource.md#package-dependency-group)
+dependencyGroups        | Массив объектов           | Нет       | Зависимости пакета, сгруппированных по целевой платформы ([же формат, что ресурс метаданных пакета](registration-base-url-resource.md#package-dependency-group))
+Об устаревании             | object                     | Нет       | Об устаревании, связанные с данным пакетом ([же формат, что ресурс метаданных пакета](registration-base-url-resource.md#package-deprecation))
 Описание             | string                     | Нет       |
 iconUrl                 | string                     | Нет       |
 isPrerelease            | boolean                    | Нет       | Ли версия пакета является предварительной версией. Могут быть обнаружены из `version`.
