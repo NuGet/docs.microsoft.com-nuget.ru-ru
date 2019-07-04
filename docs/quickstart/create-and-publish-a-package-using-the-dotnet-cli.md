@@ -5,36 +5,36 @@ author: karann-msft
 ms.author: karann
 ms.date: 05/24/2019
 ms.topic: quickstart
-ms.openlocfilehash: 6aa5c7bcb2a46e5f8dcf8f2c04a91eafe9ca03b6
-ms.sourcegitcommit: b8c63744252a5a37a2843f6bc1d5917496ee40dd
+ms.openlocfilehash: 051fcc355fb78c0ab208125c2295b6316236fd46
+ms.sourcegitcommit: b6810860b77b2d50aab031040b047c20a333aca3
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/07/2019
-ms.locfileid: "66812990"
+ms.lasthandoff: 06/28/2019
+ms.locfileid: "67426359"
 ---
-# <a name="quickstart-create-and-publish-a-package-dotnet-cli"></a><span data-ttu-id="7bae9-103">Краткое руководство. Создание и публикация пакета (dotnet CLI)</span><span class="sxs-lookup"><span data-stu-id="7bae9-103">Quickstart: Create and publish a package (dotnet CLI)</span></span>
+# <a name="quickstart-create-and-publish-a-package-dotnet-cli"></a><span data-ttu-id="da916-103">Краткое руководство. Создание и публикация пакета (dotnet CLI)</span><span class="sxs-lookup"><span data-stu-id="da916-103">Quickstart: Create and publish a package (dotnet CLI)</span></span>
 
-<span data-ttu-id="7bae9-104">Создание пакета NuGet из библиотеки классов .NET и его публикация на сайте nuget.org выполняются очень просто с помощью интерфейса командной строки (CLI) `dotnet`.</span><span class="sxs-lookup"><span data-stu-id="7bae9-104">It's a simple process to create a NuGet package from a .NET Class Library and publish it to nuget.org using the `dotnet` command-line interface (CLI).</span></span>
+<span data-ttu-id="da916-104">Создание пакета NuGet из библиотеки классов .NET и его публикация на сайте nuget.org выполняются очень просто с помощью интерфейса командной строки (CLI) `dotnet`.</span><span class="sxs-lookup"><span data-stu-id="da916-104">It's a simple process to create a NuGet package from a .NET Class Library and publish it to nuget.org using the `dotnet` command-line interface (CLI).</span></span>
 
-## <a name="prerequisites"></a><span data-ttu-id="7bae9-105">Предварительные требования</span><span class="sxs-lookup"><span data-stu-id="7bae9-105">Prerequisites</span></span>
+## <a name="prerequisites"></a><span data-ttu-id="da916-105">Предварительные требования</span><span class="sxs-lookup"><span data-stu-id="da916-105">Prerequisites</span></span>
 
-1. <span data-ttu-id="7bae9-106">Установите [пакет SDK для .NET Core](https://www.microsoft.com/net/download/), содержащий CLI `dotnet`.</span><span class="sxs-lookup"><span data-stu-id="7bae9-106">Install the [.NET Core SDK](https://www.microsoft.com/net/download/), which includes the `dotnet` CLI.</span></span>
+1. <span data-ttu-id="da916-106">Установите [пакет SDK для .NET Core](https://www.microsoft.com/net/download/), содержащий CLI `dotnet`.</span><span class="sxs-lookup"><span data-stu-id="da916-106">Install the [.NET Core SDK](https://www.microsoft.com/net/download/), which includes the `dotnet` CLI.</span></span>
 
-1. <span data-ttu-id="7bae9-107">[Зарегистрируйтесь для получения бесплатной учетной записи на nuget.org](https://www.nuget.org/users/account/LogOn?returnUrl=%2F), если вы не сделали этого ранее.</span><span class="sxs-lookup"><span data-stu-id="7bae9-107">[Register for a free account on nuget.org](https://www.nuget.org/users/account/LogOn?returnUrl=%2F) if you don't have one already.</span></span> <span data-ttu-id="7bae9-108">При создании учетной записи вам направляется сообщение электронной почты с подтверждением.</span><span class="sxs-lookup"><span data-stu-id="7bae9-108">Creating a new account sends a confirmation email.</span></span> <span data-ttu-id="7bae9-109">Перед отправкой пакета вам нужно подтвердить учетную запись.</span><span class="sxs-lookup"><span data-stu-id="7bae9-109">You must confirm the account before you can upload a package.</span></span>
+1. <span data-ttu-id="da916-107">[Зарегистрируйтесь для получения бесплатной учетной записи на nuget.org](https://www.nuget.org/users/account/LogOn?returnUrl=%2F), если вы не сделали этого ранее.</span><span class="sxs-lookup"><span data-stu-id="da916-107">[Register for a free account on nuget.org](https://www.nuget.org/users/account/LogOn?returnUrl=%2F) if you don't have one already.</span></span> <span data-ttu-id="da916-108">При создании учетной записи вам направляется сообщение электронной почты с подтверждением.</span><span class="sxs-lookup"><span data-stu-id="da916-108">Creating a new account sends a confirmation email.</span></span> <span data-ttu-id="da916-109">Перед отправкой пакета вам нужно подтвердить учетную запись.</span><span class="sxs-lookup"><span data-stu-id="da916-109">You must confirm the account before you can upload a package.</span></span>
 
-## <a name="create-a-class-library-project"></a><span data-ttu-id="7bae9-110">Создание проекта библиотеки классов</span><span class="sxs-lookup"><span data-stu-id="7bae9-110">Create a class library project</span></span>
+## <a name="create-a-class-library-project"></a><span data-ttu-id="da916-110">Создание проекта библиотеки классов</span><span class="sxs-lookup"><span data-stu-id="da916-110">Create a class library project</span></span>
 
-<span data-ttu-id="7bae9-111">Вы можете использовать имеющийся проект библиотеки классов .NET для кода, который нужно упаковать, или же создать простой проект, как показано ниже:</span><span class="sxs-lookup"><span data-stu-id="7bae9-111">You can use an existing .NET Class Library project for the code you want to package, or create a simple one as follows:</span></span>
+<span data-ttu-id="da916-111">Вы можете использовать имеющийся проект библиотеки классов .NET для кода, который нужно упаковать, или же создать простой проект, как показано ниже:</span><span class="sxs-lookup"><span data-stu-id="da916-111">You can use an existing .NET Class Library project for the code you want to package, or create a simple one as follows:</span></span>
 
-1. <span data-ttu-id="7bae9-112">Создайте папку с именем `AppLogger` и перейдите в нее.</span><span class="sxs-lookup"><span data-stu-id="7bae9-112">Create a folder called `AppLogger` and change into it.</span></span>
+1. <span data-ttu-id="da916-112">Создайте папку с именем `AppLogger` и перейдите в нее.</span><span class="sxs-lookup"><span data-stu-id="da916-112">Create a folder called `AppLogger` and change into it.</span></span>
 
-1. <span data-ttu-id="7bae9-113">Создайте проект с помощью команды `dotnet new classlib`, которая использует имя текущей папки для проекта.</span><span class="sxs-lookup"><span data-stu-id="7bae9-113">Create the project using `dotnet new classlib`, which uses the name of the current folder for the project.</span></span>
+1. <span data-ttu-id="da916-113">Создайте проект с помощью команды `dotnet new classlib`, которая использует имя текущей папки для проекта.</span><span class="sxs-lookup"><span data-stu-id="da916-113">Create the project using `dotnet new classlib`, which uses the name of the current folder for the project.</span></span>
 
-## <a name="add-package-metadata-to-the-project-file"></a><span data-ttu-id="7bae9-114">Добавление метаданных пакета в файл проекта</span><span class="sxs-lookup"><span data-stu-id="7bae9-114">Add package metadata to the project file</span></span>
+## <a name="add-package-metadata-to-the-project-file"></a><span data-ttu-id="da916-114">Добавление метаданных пакета в файл проекта</span><span class="sxs-lookup"><span data-stu-id="da916-114">Add package metadata to the project file</span></span>
 
-<span data-ttu-id="7bae9-115">Каждому пакету NuGet нужен манифест, описывающий его содержимое и зависимости.</span><span class="sxs-lookup"><span data-stu-id="7bae9-115">Every NuGet package needs a manifest that describes the package's contents and dependencies.</span></span> <span data-ttu-id="7bae9-116">В итоговом пакете манифестом является файл `.nuspec`, созданный из свойств метаданных NuGet, включенных в файл проекта.</span><span class="sxs-lookup"><span data-stu-id="7bae9-116">In a final package, the manifest is a `.nuspec` file that is generated from the NuGet metadata properties that you include in the project file.</span></span>
+<span data-ttu-id="da916-115">Каждому пакету NuGet нужен манифест, описывающий его содержимое и зависимости.</span><span class="sxs-lookup"><span data-stu-id="da916-115">Every NuGet package needs a manifest that describes the package's contents and dependencies.</span></span> <span data-ttu-id="da916-116">В итоговом пакете манифестом является файл `.nuspec`, созданный из свойств метаданных NuGet, включенных в файл проекта.</span><span class="sxs-lookup"><span data-stu-id="da916-116">In a final package, the manifest is a `.nuspec` file that is generated from the NuGet metadata properties that you include in the project file.</span></span>
 
-1. <span data-ttu-id="7bae9-117">Откройте файл проекта (`.csproj`) и добавьте внутри тега `<PropertyGroup>` следующие минимальные свойства. При этом измените значения соответствующим образом.</span><span class="sxs-lookup"><span data-stu-id="7bae9-117">Open your project file (`.csproj`) and add the following minimal properties inside the existing `<PropertyGroup>` tag, changing the values as appropriate:</span></span>
+1. <span data-ttu-id="da916-117">Откройте файл проекта (`.csproj`) и добавьте внутри тега `<PropertyGroup>` следующие минимальные свойства. При этом измените значения соответствующим образом.</span><span class="sxs-lookup"><span data-stu-id="da916-117">Open your project file (`.csproj`) and add the following minimal properties inside the existing `<PropertyGroup>` tag, changing the values as appropriate:</span></span>
 
     ```xml
     <PackageId>AppLogger</PackageId>
@@ -44,23 +44,23 @@ ms.locfileid: "66812990"
     ```
 
     > [!Important]
-    > <span data-ttu-id="7bae9-118">Присвойте пакету идентификатор, уникальный на сайте nuget.org или в другом используемом узле.</span><span class="sxs-lookup"><span data-stu-id="7bae9-118">Give the package an identifier that's unique across nuget.org or whatever host you're using.</span></span> <span data-ttu-id="7bae9-119">При работе с этим руководством мы рекомендуем добавить к имени слово "Sample" или "Test", так как позже, после публикации, пакет станет общедоступным (хотя маловероятно, что кто-то будет его использовать).</span><span class="sxs-lookup"><span data-stu-id="7bae9-119">For this walkthrough we recommend including "Sample" or "Test" in the name as the later publishing step does make the package publicly visible (though it's unlikely anyone will actually use it).</span></span>
+    > <span data-ttu-id="da916-118">Присвойте пакету идентификатор, уникальный на сайте nuget.org или в другом используемом узле.</span><span class="sxs-lookup"><span data-stu-id="da916-118">Give the package an identifier that's unique across nuget.org or whatever host you're using.</span></span> <span data-ttu-id="da916-119">При работе с этим руководством мы рекомендуем добавить к имени слово "Sample" или "Test", так как позже, после публикации, пакет станет общедоступным (хотя маловероятно, что кто-то будет его использовать).</span><span class="sxs-lookup"><span data-stu-id="da916-119">For this walkthrough we recommend including "Sample" or "Test" in the name as the later publishing step does make the package publicly visible (though it's unlikely anyone will actually use it).</span></span>
 
-1. <span data-ttu-id="7bae9-120">Укажите любые дополнительные свойства, описанные в разделе [Свойства метаданных NuGet](/dotnet/core/tools/csproj#nuget-metadata-properties).</span><span class="sxs-lookup"><span data-stu-id="7bae9-120">Add any optional properties described on [NuGet metadata properties](/dotnet/core/tools/csproj#nuget-metadata-properties).</span></span>
+1. <span data-ttu-id="da916-120">Укажите любые дополнительные свойства, описанные в разделе [Свойства метаданных NuGet](/dotnet/core/tools/csproj#nuget-metadata-properties).</span><span class="sxs-lookup"><span data-stu-id="da916-120">Add any optional properties described on [NuGet metadata properties](/dotnet/core/tools/csproj#nuget-metadata-properties).</span></span>
 
     > [!Note]
-    > <span data-ttu-id="7bae9-121">Если пакет будет общедоступным, обратите особое внимание на свойство **PackageTags**, так как теги помогают найти ваш пакет и понять его назначение.</span><span class="sxs-lookup"><span data-stu-id="7bae9-121">For packages built for public consumption, pay special attention to the **PackageTags** property, as tags help others find your package and understand what it does.</span></span>
+    > <span data-ttu-id="da916-121">Если пакет будет общедоступным, обратите особое внимание на свойство **PackageTags**, так как теги помогают найти ваш пакет и понять его назначение.</span><span class="sxs-lookup"><span data-stu-id="da916-121">For packages built for public consumption, pay special attention to the **PackageTags** property, as tags help others find your package and understand what it does.</span></span>
 
-## <a name="run-the-pack-command"></a><span data-ttu-id="7bae9-122">Выполнение команды pack</span><span class="sxs-lookup"><span data-stu-id="7bae9-122">Run the pack command</span></span>
+## <a name="run-the-pack-command"></a><span data-ttu-id="da916-122">Выполнение команды pack</span><span class="sxs-lookup"><span data-stu-id="da916-122">Run the pack command</span></span>
 
-<span data-ttu-id="7bae9-123">Чтобы создать пакет NuGet (`.nupkg` файл) из проекта, запустите команду `dotnet pack`, которая также автоматически построит проект:</span><span class="sxs-lookup"><span data-stu-id="7bae9-123">To build a NuGet package (a `.nupkg` file) from the project, run the `dotnet pack` command, which also builds the project automatically:</span></span>
+<span data-ttu-id="da916-123">Чтобы создать пакет NuGet (`.nupkg` файл) из проекта, запустите команду `dotnet pack`, которая также автоматически построит проект:</span><span class="sxs-lookup"><span data-stu-id="da916-123">To build a NuGet package (a `.nupkg` file) from the project, run the `dotnet pack` command, which also builds the project automatically:</span></span>
 
 ```cli
 # Uses the project file in the current folder by default
 dotnet pack
 ```
 
-<span data-ttu-id="7bae9-124">На выходе показан путь к `.nupkg` файлу:</span><span class="sxs-lookup"><span data-stu-id="7bae9-124">The output shows the path to the `.nupkg` file:</span></span>
+<span data-ttu-id="da916-124">На выходе показан путь к `.nupkg` файлу:</span><span class="sxs-lookup"><span data-stu-id="da916-124">The output shows the path to the `.nupkg` file:</span></span>
 
 ```output
 Microsoft (R) Build Engine version 15.5.180.51428 for .NET Core
@@ -71,43 +71,43 @@ Copyright (C) Microsoft Corporation. All rights reserved.
   Successfully created package 'D:\proj\AppLoggerNet\AppLogger\bin\Debug\AppLogger.1.0.0.nupkg'.
 ```
 
-### <a name="automatically-generate-package-on-build"></a><span data-ttu-id="7bae9-125">Автоматическое создание пакета при сборке</span><span class="sxs-lookup"><span data-stu-id="7bae9-125">Automatically generate package on build</span></span>
+### <a name="automatically-generate-package-on-build"></a><span data-ttu-id="da916-125">Автоматическое создание пакета при сборке</span><span class="sxs-lookup"><span data-stu-id="da916-125">Automatically generate package on build</span></span>
 
-<span data-ttu-id="7bae9-126">Чтобы автоматически выполнить команду `dotnet pack` вместе с командой `dotnet build`, в разделе `<PropertyGroup>` файла проекта добавьте следующую строку:</span><span class="sxs-lookup"><span data-stu-id="7bae9-126">To automatically run `dotnet pack` when you run `dotnet build`, add the following line to your project file within `<PropertyGroup>`:</span></span>
+<span data-ttu-id="da916-126">Чтобы автоматически выполнить команду `dotnet pack` вместе с командой `dotnet build`, в разделе `<PropertyGroup>` файла проекта добавьте следующую строку:</span><span class="sxs-lookup"><span data-stu-id="da916-126">To automatically run `dotnet pack` when you run `dotnet build`, add the following line to your project file within `<PropertyGroup>`:</span></span>
 
 ```xml
 <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
 ```
 
-## <a name="publish-the-package"></a><span data-ttu-id="7bae9-127">Публикация пакета</span><span class="sxs-lookup"><span data-stu-id="7bae9-127">Publish the package</span></span>
+## <a name="publish-the-package"></a><span data-ttu-id="da916-127">Публикация пакета</span><span class="sxs-lookup"><span data-stu-id="da916-127">Publish the package</span></span>
 
-<span data-ttu-id="7bae9-128">Получив файл `.nupkg`, опубликуйте его на сайте nuget.org, используя команду `dotnet nuget push`, а также ключ API, полученный на этом сайте.</span><span class="sxs-lookup"><span data-stu-id="7bae9-128">Once you have a `.nupkg` file, you publish it to nuget.org using the `dotnet nuget push` command along with an API key acquired from nuget.org.</span></span>
+<span data-ttu-id="da916-128">Получив файл `.nupkg`, опубликуйте его на сайте nuget.org, используя команду `dotnet nuget push`, а также ключ API, полученный на этом сайте.</span><span class="sxs-lookup"><span data-stu-id="da916-128">Once you have a `.nupkg` file, you publish it to nuget.org using the `dotnet nuget push` command along with an API key acquired from nuget.org.</span></span>
 
 [!INCLUDE [publish-notes](includes/publish-notes.md)]
 
-### <a name="acquire-your-api-key"></a><span data-ttu-id="7bae9-129">Получение ключа API</span><span class="sxs-lookup"><span data-stu-id="7bae9-129">Acquire your API key</span></span>
+### <a name="acquire-your-api-key"></a><span data-ttu-id="da916-129">Получение ключа API</span><span class="sxs-lookup"><span data-stu-id="da916-129">Acquire your API key</span></span>
 
 [!INCLUDE [publish-api-key](includes/publish-api-key.md)]
 
-### <a name="publish-with-dotnet-nuget-push"></a><span data-ttu-id="7bae9-130">Публикация с помощью команды dotnet nuget push</span><span class="sxs-lookup"><span data-stu-id="7bae9-130">Publish with dotnet nuget push</span></span>
+### <a name="publish-with-dotnet-nuget-push"></a><span data-ttu-id="da916-130">Публикация с помощью команды dotnet nuget push</span><span class="sxs-lookup"><span data-stu-id="da916-130">Publish with dotnet nuget push</span></span>
 
 [!INCLUDE [publish-dotnet](includes/publish-dotnet.md)]
 
-### <a name="publish-errors"></a><span data-ttu-id="7bae9-131">Ошибки публикации</span><span class="sxs-lookup"><span data-stu-id="7bae9-131">Publish errors</span></span>
+### <a name="publish-errors"></a><span data-ttu-id="da916-131">Ошибки публикации</span><span class="sxs-lookup"><span data-stu-id="da916-131">Publish errors</span></span>
 
 [!INCLUDE [publish-errors](includes/publish-errors.md)]
 
-### <a name="manage-the-published-package"></a><span data-ttu-id="7bae9-132">Управление опубликованным пакетом</span><span class="sxs-lookup"><span data-stu-id="7bae9-132">Manage the published package</span></span>
+### <a name="manage-the-published-package"></a><span data-ttu-id="da916-132">Управление опубликованным пакетом</span><span class="sxs-lookup"><span data-stu-id="da916-132">Manage the published package</span></span>
 
 [!INCLUDE [publish-manage](includes/publish-manage.md)]
 
-## <a name="related-topics"></a><span data-ttu-id="7bae9-133">См. также</span><span class="sxs-lookup"><span data-stu-id="7bae9-133">Related topics</span></span>
+## <a name="related-topics"></a><span data-ttu-id="da916-133">См. также</span><span class="sxs-lookup"><span data-stu-id="da916-133">Related topics</span></span>
 
-- [<span data-ttu-id="7bae9-134">Создание пакета</span><span class="sxs-lookup"><span data-stu-id="7bae9-134">Create a Package</span></span>](../create-packages/creating-a-package.md)
-- [<span data-ttu-id="7bae9-135">Публикация пакета</span><span class="sxs-lookup"><span data-stu-id="7bae9-135">Publish a Package</span></span>](../create-packages/publish-a-package.md)
-- [<span data-ttu-id="7bae9-136">Пакеты предварительного выпуска</span><span class="sxs-lookup"><span data-stu-id="7bae9-136">Pre-release Packages</span></span>](../create-packages/Prerelease-Packages.md)
-- [<span data-ttu-id="7bae9-137">Поддержка нескольких целевых платформ</span><span class="sxs-lookup"><span data-stu-id="7bae9-137">Support multiple target frameworks</span></span>](../create-packages/supporting-multiple-target-frameworks.md)
-- [<span data-ttu-id="7bae9-138">Управление версиями пакета</span><span class="sxs-lookup"><span data-stu-id="7bae9-138">Package versioning</span></span>](../reference/package-versioning.md)
-- [<span data-ttu-id="7bae9-139">Создание локализованных пакетов</span><span class="sxs-lookup"><span data-stu-id="7bae9-139">Creating localized packages</span></span>](../create-packages/creating-localized-packages.md)
-- [<span data-ttu-id="7bae9-140">Создание пакетов символов</span><span class="sxs-lookup"><span data-stu-id="7bae9-140">Creating symbol packages</span></span>](../create-packages/symbol-packages-snupkg.md)
-- [<span data-ttu-id="7bae9-141">Подписывание пакетов</span><span class="sxs-lookup"><span data-stu-id="7bae9-141">Signing packages</span></span>](../create-packages/Sign-a-package.md)
+- [<span data-ttu-id="da916-134">Создание пакета</span><span class="sxs-lookup"><span data-stu-id="da916-134">Create a Package</span></span>](../create-packages/creating-a-package.md)
+- [<span data-ttu-id="da916-135">Публикация пакета</span><span class="sxs-lookup"><span data-stu-id="da916-135">Publish a Package</span></span>](../nuget-org/publish-a-package.md)
+- [<span data-ttu-id="da916-136">Пакеты предварительного выпуска</span><span class="sxs-lookup"><span data-stu-id="da916-136">Pre-release Packages</span></span>](../create-packages/Prerelease-Packages.md)
+- [<span data-ttu-id="da916-137">Поддержка нескольких целевых платформ</span><span class="sxs-lookup"><span data-stu-id="da916-137">Support multiple target frameworks</span></span>](../create-packages/supporting-multiple-target-frameworks.md)
+- [<span data-ttu-id="da916-138">Управление версиями пакета</span><span class="sxs-lookup"><span data-stu-id="da916-138">Package versioning</span></span>](../reference/package-versioning.md)
+- [<span data-ttu-id="da916-139">Создание локализованных пакетов</span><span class="sxs-lookup"><span data-stu-id="da916-139">Creating localized packages</span></span>](../create-packages/creating-localized-packages.md)
+- [<span data-ttu-id="da916-140">Создание пакетов символов</span><span class="sxs-lookup"><span data-stu-id="da916-140">Creating symbol packages</span></span>](../create-packages/symbol-packages-snupkg.md)
+- [<span data-ttu-id="da916-141">Подписывание пакетов</span><span class="sxs-lookup"><span data-stu-id="da916-141">Signing packages</span></span>](../create-packages/Sign-a-package.md)
