@@ -16,12 +16,12 @@ keywords: пакеты символов NuGet, отладка пакета NuGet
 ms.reviewer:
 - anangaur
 - karann
-ms.openlocfilehash: 18d54e28d77f2bdcfea70ff9ae9def05278cb26c
-ms.sourcegitcommit: 4ea46498aee386b4f592b5ebba4af7f9092ac607
+ms.openlocfilehash: 0d82cf8614b88247bc3a3ba3019c11bf1b5e2593
+ms.sourcegitcommit: b6810860b77b2d50aab031040b047c20a333aca3
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/14/2019
-ms.locfileid: "65610555"
+ms.lasthandoff: 06/28/2019
+ms.locfileid: "67426804"
 ---
 # <a name="creating-symbol-packages-snupkg"></a>Создание пакетов символов (SNUPKG)
 
@@ -61,7 +61,7 @@ nuget pack MyPackage.csproj -Symbols -SymbolPackageFormat snupkg
 
 ## <a name="publishing-a-symbol-package"></a>Публикация пакета символов
 
-1. Для удобства сначала сохраните ключ API с NuGet (см. раздел [Публикация пакета](../create-packages/publish-a-package.md)).
+1. Для удобства сначала сохраните ключ API с NuGet (см. раздел [Публикация пакета](../nuget-org/publish-a-package.md)).
 
     ```cli
     nuget SetApiKey Your-API-Key
@@ -121,6 +121,6 @@ NUPKG-файл не будет отличаться от текущего, а SN
 4) Если автор решит создать пакеты NUPKG и SNUPKG с помощью пользовательского NUSPEC-файла, пакет SNUPKG должен иметь иерархию папок и файлы, указанные в пункте 2).
 5) Поля ```authors``` и ```owners``` будут исключены из NUSPEC-файла пакета SNUPKG.
 
-## <a name="see-also"></a>См. также раздел
+## <a name="see-also"></a>См. также
 
 [Отладка пакетов NuGet и улучшения символов](https://github.com/NuGet/Home/wiki/NuGet-Package-Debugging-&-Symbols-Improvements)

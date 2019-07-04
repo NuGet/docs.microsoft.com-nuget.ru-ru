@@ -5,12 +5,12 @@ author: karann-msft
 ms.author: karann
 ms.date: 07/26/2017
 ms.topic: conceptual
-ms.openlocfilehash: 6b41b23df115c45e830404afcf9defa23615bd7c
-ms.sourcegitcommit: ce97dded7715f217ec44f6c8368ab0df19c38342
+ms.openlocfilehash: a285650034c99026e34fcda398ca7ced4855e40a
+ms.sourcegitcommit: b6810860b77b2d50aab031040b047c20a333aca3
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/29/2018
-ms.locfileid: "52615760"
+ms.lasthandoff: 06/28/2019
+ms.locfileid: "67425720"
 ---
 # <a name="package-creation-workflow"></a>Рабочий процесс создания пакета
 
@@ -41,6 +41,6 @@ ms.locfileid: "52615760"
 - [Собственные пакеты](../create-packages/native-packages.md). В этом разделе описывается порядок создания пакета для потребителей C++.
 - [Подписывание пакетов](../create-packages/sign-a-package.md). Этот раздел описывает добавление цифровой подписи для пакета.
 
-Если вы готовы опубликовать пакет на веб-сайте nuget.org, выполните простой процесс, описываемый в разделе [Публикация пакета](../create-packages/publish-a-package.md).
+Если вы готовы опубликовать пакет на веб-сайте nuget.org, выполните простой процесс, описываемый в разделе [Публикация пакета](../nuget-org/publish-a-package.md).
 
 Если вы хотите использовать вместо nuget.org закрытый веб-канал, ознакомьтесь с разделом [Общие сведения о размещении пакетов](../hosting-packages/overview.md)

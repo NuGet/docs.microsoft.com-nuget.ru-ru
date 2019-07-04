@@ -5,12 +5,12 @@ author: karann-msft
 ms.author: karann
 ms.date: 05/24/2019
 ms.topic: quickstart
-ms.openlocfilehash: d30e89473b5f00895136b75a90d8d95b7645a100
-ms.sourcegitcommit: b8c63744252a5a37a2843f6bc1d5917496ee40dd
+ms.openlocfilehash: c75785d361f25564c8a59d7a2d85924c570a7b9a
+ms.sourcegitcommit: b9a134a6e10d7d8502613f389f7d5f9b9e206ec8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/07/2019
-ms.locfileid: "66812979"
+ms.lasthandoff: 06/28/2019
+ms.locfileid: "67467818"
 ---
 # <a name="quickstart-create-and-publish-a-nuget-package-using-visual-studio-net-standard-windows-only"></a>Краткое руководство. Создание и публикация пакета NuGet с помощью Visual Studio (.NET Standard, только для Windows)
 
@@ -29,7 +29,7 @@ ms.locfileid: "66812979"
 
    * Установите средство CLI `nuget.exe`, скачав его на сайте [nuget.org](https://dist.nuget.org/win-x86-commandline/latest/nuget.exe), и сохраните этот файл `.exe` в подходящую папку. Добавьте эту папку в переменную среды PATH. CLI nuget.exe используется для библиотек .NET Standard в формате со стилем, отличным от пакета SDK.
 
-1. [Зарегистрируйтесь для получения бесплатной учетной записи на nuget.org](https://www.nuget.org/users/account/LogOn?returnUrl=%2F), если вы не сделали этого ранее. При создании учетной записи вам направляется сообщение электронной почты с подтверждением. Перед отправкой пакета вам нужно подтвердить учетную запись.
+1. [Зарегистрируйтесь для получения бесплатной учетной записи на nuget.org](https://docs.microsoft.com/en-us/nuget/nuget-org/individual-accounts#add-a-new-individual-account), если вы не сделали этого ранее. При создании учетной записи вам направляется сообщение электронной почты с подтверждением. Перед отправкой пакета вам нужно подтвердить учетную запись.
 
 ## <a name="create-a-class-library-project"></a>Создание проекта библиотеки классов
 
@@ -174,7 +174,7 @@ msbuild -t:pack -p:Configuration=Release
 ## <a name="related-topics"></a>См. также
 
 - [Создание пакета](../create-packages/creating-a-package.md)
-- [Публикация пакета](../create-packages/publish-a-package.md)
+- [Публикация пакета](../nuget-org/publish-a-package.md)
 - [Пакеты предварительного выпуска](../create-packages/Prerelease-Packages.md)
 - [Поддержка нескольких целевых платформ](../create-packages/supporting-multiple-target-frameworks.md)
 - [Управление версиями пакета](../reference/package-versioning.md)

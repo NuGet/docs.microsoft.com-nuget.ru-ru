@@ -6,12 +6,12 @@ ms.author: rmpablos
 ms.date: 03/06/2018
 ms.topic: conceptual
 ms.reviewer: anangaur
-ms.openlocfilehash: 8ff92e5a3ab2d5c13ee02a9e49709866e2ac0e87
-ms.sourcegitcommit: 573af6133a39601136181c1d98c09303f51a1ab2
+ms.openlocfilehash: abdd06642ccc652527a1a005eda2689ce97df74c
+ms.sourcegitcommit: b6810860b77b2d50aab031040b047c20a333aca3
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "58921576"
+ms.lasthandoff: 06/28/2019
+ms.locfileid: "67426814"
 ---
 # <a name="signing-nuget-packages"></a>Подписывание пакетов NuGet
 
@@ -66,7 +66,7 @@ nuget sign MyPackage.nupkg -CertificatePath <PathToTheCertificate> -Timestamper 
 
 ## <a name="publish-the-package"></a>Публикация пакета
 
-Теперь вы готовы к публикации пакета на сайте NuGet.org. См. раздел [Публикация пакетов](Publish-a-package.md).
+Теперь вы готовы к публикации пакета на сайте NuGet.org. См. раздел [Публикация пакетов](../nuget-org/Publish-a-package.md).
 
 ## <a name="create-a-test-certificate"></a>Создание тестового сертификата
 
@@ -103,5 +103,5 @@ New-SelfSignedCertificate -Subject "CN=NuGet Test Developer, OU=Use for testing 
 
 ## <a name="related-articles"></a>Связанные статьи
 
-- [Установка подписанных пакетов](../consume-packages/installing-signed-packages.md)
+- [Управление границами доверия пакета](../consume-packages/installing-signed-packages.md)
 - [Справочник по подписанным пакетам](../reference/Signed-Packages-Reference.md)

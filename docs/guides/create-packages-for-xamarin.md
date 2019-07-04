@@ -5,12 +5,12 @@ author: karann-msft
 ms.author: karann
 ms.date: 01/09/2017
 ms.topic: tutorial
-ms.openlocfilehash: c43f4e80d456214ca354e136db6419a95fc797a0
-ms.sourcegitcommit: 1d1406764c6af5fb7801d462e0c4afc9092fa569
+ms.openlocfilehash: d737b70febd1e18aa8a39cc73a9a9cf333f758c6
+ms.sourcegitcommit: b6810860b77b2d50aab031040b047c20a333aca3
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/04/2018
-ms.locfileid: "43551912"
+ms.lasthandoff: 06/28/2019
+ms.locfileid: "67426841"
 ---
 # <a name="create-packages-for-xamarin-with-visual-studio-2015"></a>Создание пакетов для Xamarin с помощью Visual Studio 2015
 
@@ -260,7 +260,7 @@ nuget pack LoggingLibrary.nuspec
 > [!Tip]
 > Файл `.nupkg` — это просто ZIP-файл с другим расширением. Поэтому чтобы просмотреть содержимое пакета, можно просто изменить расширение `.nupkg` на `.zip`, но не забудьте восстановить расширение перед отправкой пакета на сайт nuget.org.
 
-Чтобы предоставить доступ к пакету другим разработчикам, следуйте инструкциям в разделе [Публикация пакета](../create-packages/publish-a-package.md).
+Чтобы предоставить доступ к пакету другим разработчикам, следуйте инструкциям в разделе [Публикация пакета](../nuget-org/publish-a-package.md).
 
 ## <a name="related-topics"></a>См. также
 

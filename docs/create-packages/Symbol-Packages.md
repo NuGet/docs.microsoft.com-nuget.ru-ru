@@ -6,12 +6,12 @@ ms.author: karann
 ms.date: 09/12/2017
 ms.topic: conceptual
 ms.reviewer: anangaur
-ms.openlocfilehash: 56125516345b2255998c1f734db60b58b9a92a06
-ms.sourcegitcommit: 585394f063e95dcbc24d7ac0ce07de643eaf6f4d
+ms.openlocfilehash: 40f934f3c3fcea62acae66639c22108a93363b8b
+ms.sourcegitcommit: b6810860b77b2d50aab031040b047c20a333aca3
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/25/2019
-ms.locfileid: "55046332"
+ms.lasthandoff: 06/28/2019
+ms.locfileid: "67426769"
 ---
 # <a name="creating-symbol-packages-legacy"></a>Создание пакетов символов (устарело)
 
@@ -102,7 +102,7 @@ nuget pack MyProject.csproj -Symbols
 > [!Important]
 > Для принудительной отправки пакетов на веб-сайт nuget.org необходимо использовать [nuget.exe версии 4.9.1 или более поздней](https://www.nuget.org/downloads), где реализуются требуемые [протоколы NuGet](../api/nuget-protocols.md).
 
-1. Для удобства сначала следует сохранить ключ API с помощью NuGet (см. раздел [Публикация пакета](../create-packages/publish-a-package.md)), который будет применяться и к nuget.org, и к symbolsource.org, поскольку веб-сайт symbolsource.org будет проверять информацию о том, что вы являетесь владельцем пакета, на веб-сайте nuget.org.
+1. Для удобства сначала следует сохранить ключ API с помощью NuGet (см. раздел [Публикация пакета](../nuget-org/publish-a-package.md)), который будет применяться и к nuget.org, и к symbolsource.org, поскольку веб-сайт symbolsource.org будет проверять информацию о том, что вы являетесь владельцем пакета, на веб-сайте nuget.org.
 
     ```cli
     nuget SetApiKey Your-API-Key
@@ -131,6 +131,6 @@ nuget pack MyProject.csproj -Symbols
    
 В этом случае NuGet опубликует файл `MyPackage.symbols.nupkg` (если он есть) на веб-сайте https://nuget.smbsrc.net/ (URL-адрес принудительной отправки для веб-сайта symbolsource.org) после публикации основного пакета на веб-сайте nuget.org.
 
-## <a name="see-also"></a>См. также раздел
+## <a name="see-also"></a>См. также
 
 [Сведения о переходе на новый модуль SymbolSource](https://tripleemcoder.com/2015/10/04/moving-to-the-new-symbolsource-engine/) (symbolsource.org)

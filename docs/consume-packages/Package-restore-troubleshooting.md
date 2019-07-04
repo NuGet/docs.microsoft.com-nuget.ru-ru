@@ -5,16 +5,16 @@ author: karann-msft
 ms.author: karann
 ms.date: 05/25/2018
 ms.topic: conceptual
-ms.openlocfilehash: b85b586e76e424442dc0ba3acfecbee1e8755345
-ms.sourcegitcommit: 0c5a49ec6e0254a4e7a9d8bca7daeefb853c433a
+ms.openlocfilehash: 3be8d1dad6552db2fc04b2f324145ac7ce86acb2
+ms.sourcegitcommit: b9a134a6e10d7d8502613f389f7d5f9b9e206ec8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/28/2018
-ms.locfileid: "52453472"
+ms.lasthandoff: 06/28/2019
+ms.locfileid: "67467777"
 ---
 # <a name="troubleshooting-package-restore-errors"></a>Устранение ошибок при восстановлении пакетов
 
-Эта статья посвящена распространенным ошибкам, возникающим при восстановлении пакетов, и мерам по их устранению. Дополнительные сведения о восстановлении пакетов см. в разделе [Восстановление пакета](../consume-packages/package-restore.md#enabling-and-disabling-package-restore).
+Эта статья посвящена распространенным ошибкам, возникающим при восстановлении пакетов, и мерам по их устранению. Дополнительные сведения о восстановлении пакетов см. в разделе [Восстановление пакета](../consume-packages/package-restore.md#enable-and-disable-package-restore).
 
 Если приведенные здесь инструкции не работают, [сообщите о проблеме на GitHub](https://github.com/NuGet/docs.microsoft.com-nuget/issues), чтобы мы могли тщательнее изучить ваш случай. Не используйте элемент управления "Была ли эта страница полезной?", который может отображаться на этой странице, так как это не позволяет нам связаться с вами для получения дополнительной информации.
 
