@@ -1,18 +1,18 @@
 ---
-title: Установка подписанного пакета NuGet
+title: Управление границами доверия пакета
 description: Описание процесса установки подписанных пакетов NuGet и настройки параметров доверия подписи пакетов.
 author: karann-msft
 ms.author: karann
 ms.date: 11/29/2018
 ms.topic: conceptual
-ms.openlocfilehash: 11ffaee96b6f6a9260f38c534328b6631cd96abf
-ms.sourcegitcommit: 673e580ae749544a4a071b4efe7d42fd2bb6d209
+ms.openlocfilehash: 8da57dc295ea78f2eb183226fc9b2f4a37e3f5db
+ms.sourcegitcommit: b6810860b77b2d50aab031040b047c20a333aca3
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/06/2018
-ms.locfileid: "52977838"
+ms.lasthandoff: 06/28/2019
+ms.locfileid: "67426637"
 ---
-# <a name="install-a-signed-package"></a>Установка подписанного пакета
+# <a name="manage-package-trust-boundaries"></a>Управление границами доверия пакета
 
 Для установки подписанных пакетов не требуются какие-либо специальные действия. Но если содержимое было изменено с момента подписания, установка блокируется и выдается ошибка [NU3008](../reference/errors-and-warnings/NU3008.md).
 
@@ -24,7 +24,7 @@ ms.locfileid: "52977838"
 > [!Note]
 > Требуется NuGet 4.9.0 и выше и Visual Studio версии 15.9 и более поздней в Windows.
 
-Вы можете настроить способ проверки подписей пакетов в клиентах NuGet, задав для `signatureValidationMode` значение `require` в файле [nuget.config](../reference/nuget-config-file) с помощью команды [`nuget config`](../tools/cli-ref-config).
+Вы можете настроить способ проверки подписей пакетов в клиентах NuGet, задав для `signatureValidationMode` значение `require` в файле [nuget.config](../reference/nuget-config-file.md) с помощью команды [`nuget config`](../tools/cli-ref-config.md).
 
 ```cmd
 nuget.exe config -set signatureValidationMode=require
@@ -40,7 +40,7 @@ nuget.exe config -set signatureValidationMode=require
 
 ### <a name="trust-package-author"></a>Доверие к автору пакета
 
-Чтобы доверять пакету на основе подписи автора, используйте команду [`trusted-signers`](..tools/cli-ref-trusted-signers) для задания свойства `author` в файле nuget.config.
+Чтобы доверять пакету на основе подписи автора, используйте команду [`trusted-signers`](../tools/cli-ref-trusted-signers.md) для задания свойства `author` в файле nuget.config.
 
 ```cmd
 nuget.exe  trusted-signers Add -Name MyCompanyCert -CertificateFingerprint CE40881FF5F0AD3E58965DA20A9F571EF1651A56933748E1BF1C99E537C4E039 -FingerprintAlgorithm SHA256
@@ -55,7 +55,7 @@ nuget.exe  trusted-signers Add -Name MyCompanyCert -CertificateFingerprint CE408
 ```
 
 >[!TIP]
->Используйте [команду проверки](https://docs.microsoft.com/en-us/nuget/tools/cli-ref-verify) `nuget.exe`, чтобы получить значение `SHA256` отпечатка сертификата.
+>Используйте [команду проверки](../tools/cli-ref-verify.md) `nuget.exe`, чтобы получить значение `SHA256` отпечатка сертификата.
 
 
 ### <a name="trust-all-packages-from-a-repository"></a>Доверие ко всем пакетам в репозитории
@@ -95,14 +95,13 @@ nuget.exe  trusted-signers Add -Name MyCompanyCert -CertificateFingerprint CE408
 
 ### <a name="sync-repository-certificates"></a>Синхронизация сертификатов репозитория
 
-Репозитории пакетов должны объявлять о сертификатах, используемых в [индексе службы](https://docs.microsoft.com/en-us/nuget/api/service-index). Со временем репозиторий обновит эти сертификаты, например, по истечении срока их действия. При этом клиенты с определенными политиками потребуют обновления конфигурации, чтобы включить новый добавленный сертификат. Вы можете легко обновить доверенных подписывающих лиц, связанных с репозиторием, с помощью [команды синхронизации доверенных подписывающих лиц](/nuget/tools/cli-ref-trusted-signers.md#nuget-trusted-signers-sync--name-) `nuget.exe`.
+Репозитории пакетов должны объявлять о сертификатах, используемых в [индексе службы](../api/service-index.md). Со временем репозиторий обновит эти сертификаты, например, по истечении срока их действия. При этом клиенты с определенными политиками потребуют обновления конфигурации, чтобы включить новый добавленный сертификат. Вы можете легко обновить доверенных подписывающих лиц, связанных с репозиторием, с помощью [команды синхронизации доверенных подписывающих лиц](../tools/cli-ref-trusted-signers.md#nuget-trusted-signers-sync--name-) `nuget.exe`.
 
 ### <a name="schema-reference"></a>Справочник схем
 
-Полный справочник схем для политик клиентов см. в [справочнике nuget.config](/nuget/reference/nuget-config-file#trustedsigners-section)
+Полный справочник схем для политик клиентов см. в [справочнике nuget.config](../reference/nuget-config-file.md#trustedsigners-section)
 
 ## <a name="related-articles"></a>Связанные статьи
 
-- [Способы установки пакета NuGet](ways-to-install-a-package.md)
 - [Подписывание пакетов NuGet](../create-packages/Sign-a-Package.md)
 - [Справочник по подписанным пакетам](../reference/Signed-Packages-Reference.md)

@@ -6,12 +6,12 @@ ms.author: karann
 ms.date: 08/25/2017
 ms.topic: conceptual
 ms.reviewer: anangaur
-ms.openlocfilehash: 45d8a6557ee02998f3d12b128ee2dc4fd6ae48bb
-ms.sourcegitcommit: d5a35a097e6b461ae791d9f66b3a85d5219d7305
+ms.openlocfilehash: f05c3a7a51bdc0760097422004cfc4339bf9ee2c
+ms.sourcegitcommit: b6810860b77b2d50aab031040b047c20a333aca3
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/12/2019
-ms.locfileid: "56145596"
+ms.lasthandoff: 06/28/2019
+ms.locfileid: "67426610"
 ---
 # <a name="hosting-your-own-nuget-feeds"></a>Размещение своих веб-каналов NuGet
 
@@ -28,6 +28,7 @@ ms.locfileid: "56145596"
 - [Azure Artifacts](https://www.visualstudio.com/docs/package/nuget/publish), доступные также в Team Foundation Server 2017 и более поздних версий.
 - [MyGet](http://myget.org)
 - [ProGet](http://inedo.com/proget) от Inedo
+- [Реестр пакетов GitHub](https://help.github.com/articles/configuring-nuget-for-use-with-github-package-registry)
 - [Сервер NuGet](http://nugetserver.net/) — проект сообщества от Inedo
 - [Сервер NuGet (открытый исходный код)](http://nuget-server.net) — реализация, аналогичная серверу NuGet от Inedo, с открытым исходным кодом
 - [LiGet](https://github.com/ai-traders/liget) — реализация с открытым исходным кодом для сервера NuGet V2, на котором выполняется Kestrel в Docker

@@ -5,12 +5,12 @@ author: karann-msft
 ms.author: karann
 ms.date: 01/23/2018
 ms.topic: quickstart
-ms.openlocfilehash: 4b593cc215ad68629e5a93d1f17c90e53c0b4f4f
-ms.sourcegitcommit: 6ea2ff8aaf7743a6f7c687c8a9400b7b60f21a52
+ms.openlocfilehash: 1060d98278fed89ac63ee17c1896ae8bdce72a9e
+ms.sourcegitcommit: b6810860b77b2d50aab031040b047c20a333aca3
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/16/2019
-ms.locfileid: "54324634"
+ms.lasthandoff: 06/28/2019
+ms.locfileid: "67426168"
 ---
 # <a name="quickstart-install-and-use-a-package-using-the-dotnet-cli"></a>Краткое руководство. Установка и использование пакета с помощью CLI dotnet
 
@@ -103,7 +103,7 @@ ms.locfileid: "54324634"
 
 ## <a name="related-articles"></a>Связанные статьи
 
+- [Установка и использование пакета с помощью CLI dotnet](../consume-packages/install-use-packages-dotnet-cli.md)
 - [Общие сведения и процесс использования пакетов](../consume-packages/overview-and-workflow.md)
 - [Поиск и выбор пакетов](../consume-packages/finding-and-choosing-packages.md)
-- [Способы установки пакета NuGet](../consume-packages/ways-to-install-a-package.md)
-- [Настройка поведения NuGet](../consume-packages/configuring-nuget-behavior.md)
+- [Распространенные конфигурации NuGet](../consume-packages/configuring-nuget-behavior.md)

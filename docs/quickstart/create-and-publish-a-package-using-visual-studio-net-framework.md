@@ -1,16 +1,16 @@
 ---
 title: Создание и публикация пакета .NET Framework с помощью Visual Studio в Windows
-description: Пошаговое руководство по созданию и публикации пакета NuGet .NET Framework с помощью Visual Studio 2017 в Windows.
+description: Пошаговое руководство по созданию и публикации пакета NuGet .NET Framework с помощью Visual Studio в Windows.
 author: karann-msft
 ms.author: karann
 ms.date: 05/13/2018
 ms.topic: quickstart
-ms.openlocfilehash: 68593211da1a34649c7050753a5db0f3a03cb41b
-ms.sourcegitcommit: 1d1406764c6af5fb7801d462e0c4afc9092fa569
+ms.openlocfilehash: efdaa0128d47f948c86c3cc83d6a332410cbf99f
+ms.sourcegitcommit: b6810860b77b2d50aab031040b047c20a333aca3
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/04/2018
-ms.locfileid: "43549632"
+ms.lasthandoff: 06/28/2019
+ms.locfileid: "67426327"
 ---
 # <a name="quickstart-create-and-publish-a-package-using-visual-studio-net-framework-windows"></a>Краткое руководство. Создание и публикация пакета с помощью Visual Studio (.NET Framework, Windows)
 
@@ -175,7 +175,7 @@ namespace AppLogger
 ## <a name="related-topics"></a>См. также
 
 - [Создание пакета](../create-packages/creating-a-package.md)
-- [Публикация пакета](../create-packages/publish-a-package.md)
+- [Публикация пакета](../nuget-org/publish-a-package.md)
 - [Пакеты предварительного выпуска](../create-packages/Prerelease-Packages.md)
 - [Поддержка нескольких целевых платформ](../create-packages/supporting-multiple-target-frameworks.md)
 - [Управление версиями пакета](../reference/package-versioning.md)

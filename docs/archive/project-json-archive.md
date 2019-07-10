@@ -5,12 +5,12 @@ author: karann-msft
 ms.author: karann
 ms.date: 01/17/2018
 ms.topic: conceptual
-ms.openlocfilehash: aa5cd1a2f3e3a6707a9d68204306db85651b0a18
-ms.sourcegitcommit: 1d1406764c6af5fb7801d462e0c4afc9092fa569
+ms.openlocfilehash: d43f002b740b669de13f5872844ac0df97fc8fdc
+ms.sourcegitcommit: b9a134a6e10d7d8502613f389f7d5f9b9e206ec8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/04/2018
-ms.locfileid: "43545204"
+ms.lasthandoff: 06/28/2019
+ms.locfileid: "67467788"
 ---
 # <a name="projectjson-archive"></a>Устарелый формат project.json
 
@@ -38,9 +38,9 @@ ms.locfileid: "43545204"
 
 ## <a name="constraining-package-versions-with-restore"></a>Ограничение версий пакетов при восстановлении
 
-*Полное описание см. в статье о [восстановлении пакетов](../consume-packages/package-restore.md#constraining-package-versions-with-restore).*
+*Полное описание см. в статье о [восстановлении пакетов](../consume-packages/package-restore.md#constrain-package-versions-with-restore).*
 
-- `project.json`: укажите диапазон версий непосредственно с номером версии зависимости. Пример:
+- `project.json`: укажите диапазон версий непосредственно с номером версии зависимости. Например:
 
     ```json
     "Newtonsoft.json": "[6, 7)"
@@ -93,7 +93,7 @@ ms.locfileid: "43545204"
 
 *Полное описание см. в статье о [требуемых версиях .NET Framework](../reference/target-frameworks.md).*
 
-- [project.json](project-json.md). Узел `frameworks` задает версии платформы, для которых может быть скомпилирован пакет.
+- [project.json](project-json.md): узел `frameworks` задает версии платформы, для которых может быть скомпилирован пакет.
 
 ## <a name="creating-a-package"></a>Создание пакета
 

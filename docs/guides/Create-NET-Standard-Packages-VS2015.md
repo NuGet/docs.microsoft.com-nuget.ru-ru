@@ -5,16 +5,16 @@ author: karann-msft
 ms.author: karann
 ms.date: 02/02/2018
 ms.topic: tutorial
-ms.openlocfilehash: 7b1ccfbede4cec53cee3ec7d1c023e4c5be60bf0
-ms.sourcegitcommit: 1d1406764c6af5fb7801d462e0c4afc9092fa569
+ms.openlocfilehash: af0c42853a9e407557a010ff2793406499b4b2ef
+ms.sourcegitcommit: b6810860b77b2d50aab031040b047c20a333aca3
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/04/2018
-ms.locfileid: "43545917"
+ms.lasthandoff: 06/28/2019
+ms.locfileid: "67426877"
 ---
 # <a name="create-net-standard-and-net-framework-packages-with-visual-studio-2015"></a>Создание пакетов .NET Standard или .NET Framework с помощью Visual Studio 2015
 
-**Примечание.** Рекомендуем разрабатывать библиотеки .NET Standard с помощью Visual Studio 2017. Вы можете использовать и Visual Studio 2015, но средства .NET Core доступны только в предварительной пробной версии. Сведения о работе с NuGet 4.x или более поздних версий и Visual Studio 2017 см. в статье [Создание и публикация пакета с помощью Visual Studio (.NET Standard)](../quickstart/create-and-publish-a-package-using-visual-studio.md).
+**Примечание.** Рекомендуем разрабатывать библиотеки .NET Standard с помощью Visual Studio 2017. Вы можете использовать и Visual Studio 2015, но средства .NET Core доступны только в предварительной пробной версии. Сведения о работе с NuGet 4.x или более поздних версий и Visual Studio 2017 см. в статье [Создание и публикация пакета с помощью Visual Studio (.NET Standard)](../quickstart/create-and-publish-a-package-using-visual-studio.md).
 
 [Библиотека .NET Standard](/dotnet/articles/standard/library) представляет собой формальную спецификацию интерфейсов API .NET, которые должны быть доступны во всех средах выполнения .NET, что позволяет повысить степень унификации экосистемы .NET. Библиотека .NET Standard определяет унифицированный набор API-интерфейсов библиотеки базовых классов (BCL) для реализации всеми платформами .NET независимо от рабочей нагрузки. Это позволяет разработчикам создавать код, который можно использовать во всех средах выполнения .NET, а также позволяет свести к минимуму число директив условной компиляции, предназначенных для конкретных платформ, в общем коде либо полностью исключить их.
 
@@ -159,7 +159,7 @@ nuget pack AppLogger.nuspec
 > [!Tip]
 > Файл `.nupkg` — это просто ZIP-файл с другим расширением. Поэтому чтобы просмотреть содержимое пакета, можно просто изменить расширение `.nupkg` на `.zip`, но не забудьте восстановить расширение перед отправкой пакета на сайт nuget.org.
 
-Чтобы предоставить доступ к пакету другим разработчикам, следуйте инструкциям в разделе [Публикация пакета](../create-packages/publish-a-package.md).
+Чтобы предоставить доступ к пакету другим разработчикам, следуйте инструкциям в разделе [Публикация пакета](../nuget-org/publish-a-package.md).
 
 Обратите внимание, что команда `pack` требует наличия Mono 4.4.2 в Mac OS X и не работает в системах Linux. На компьютерах Mac также необходимо преобразовать пути в формате Windows, указанные в файле `.nuspec`, в формат Unix.
 
