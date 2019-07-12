@@ -5,16 +5,16 @@ author: karann-msft
 ms.author: karann
 ms.date: 06/01/2017
 ms.topic: reference
-ms.openlocfilehash: e7ddf9ad97cbb4ec9cfc8b01f366511239f41416
-ms.sourcegitcommit: 1d1406764c6af5fb7801d462e0c4afc9092fa569
+ms.openlocfilehash: 755c87bbc68d3b688c81e16edbc1faabdc9e0520
+ms.sourcegitcommit: 0dea3b153ef823230a9d5f38351b7cef057cb299
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/04/2018
-ms.locfileid: "43546030"
+ms.lasthandoff: 07/12/2019
+ms.locfileid: "67842497"
 ---
 # <a name="install-package-package-manager-console-in-visual-studio"></a>Install-Package (консоль диспетчера пакетов в Visual Studio)
 
-*В этом разделе описываются команды в [консоли диспетчера пакетов NuGet](package-manager-console.md) в Visual Studio в Windows. Общая команда PowerShell Install-Package, см. в разделе [Справочник по PowerShell PackageManagement](/powershell/module/packagemanagement/?view=powershell-6).*
+*В этом разделе описываются команды в [консоль диспетчера пакетов](package-manager-console.md) в Visual Studio в Windows. Общая команда PowerShell Install-Package, см. в разделе [Справочник по PowerShell PackageManagement](/powershell/module/packagemanagement/?view=powershell-6).*
 
 Устанавливает пакет и его зависимости в проект.
 
@@ -36,10 +36,10 @@ Install-Package Microsoft.AspNet.MVC -Version 5.0.0.
 
 | Параметр | Описание |
 | --- | --- |
-| Идентификатор | (Обязательно) Идентификатор пакета для установки. (*3.0 +*) идентификатор может быть путь или URL-адрес `packages.config` файл или `.nupkg` файл. — Идентификатор сам является необязательным. |
+| Идентификатор | (Обязательно) Идентификатор пакета для установки. (*3.0 +* ) идентификатор может быть путь или URL-адрес `packages.config` файл или `.nupkg` файл. — Идентификатор сам является необязательным. |
 | IgnoreDependencies | Установите только этот пакет, не к ее зависимостям. |
 | ИмяПроекта | Проект, в который необходимо установить пакет, по умолчанию используется тип проекта по умолчанию. |
-| Исходный код | Путь к URL-адрес или папке источника пакета для поиска. Пути к локальной папке может быть абсолютным или относительным для текущей папки. Если этот параметр опущен, `Install-Package` выполняет поиск в текущем выбранном источнике пакета. |
+| Source | Путь к URL-адрес или папке источника пакета для поиска. Пути к локальной папке может быть абсолютным или относительным для текущей папки. Если этот параметр опущен, `Install-Package` выполняет поиск в текущем выбранном источнике пакета. |
 | Версия | Версия пакета, чтобы установить, по умолчанию до последней версии. |
 | IncludePrerelease | Считает, что предварительные версии пакетов для установки. Если этот параметр опущен, учитываются только стабильные пакеты. |
 | FileConflictAction | Действие, выполняемое при появлении запроса на перезапись или игнорировать существующие файлы, связанные с проектом. Возможные значения: *перезаписи, игнорировать, None, OverwriteAll*, и *(3.0 или более поздней)* *IgnoreAll*. |
@@ -50,7 +50,7 @@ Install-Package Microsoft.AspNet.MVC -Version 5.0.0.
 
 ## <a name="common-parameters"></a>Общие параметры
 
-`Install-Package` поддерживает следующие [Общие параметры PowerShell](http://go.microsoft.com/fwlink/?LinkID=113216): отладки, действие при возникновении ошибки, ErrorVariable, OutBuffer, OutVariable, PipelineVariable, Verbose, WarningAction и WarningVariable.
+`Install-Package` поддерживает следующие [Общие параметры PowerShell](http://go.microsoft.com/fwlink/?LinkID=113216): Отладка, действие при возникновении ошибки, ErrorVariable, OutBuffer, OutVariable, PipelineVariable, Verbose, WarningAction и WarningVariable.
 
 ## <a name="examples"></a>Примеры
 

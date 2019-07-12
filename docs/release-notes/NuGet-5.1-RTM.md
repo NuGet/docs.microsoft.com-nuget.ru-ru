@@ -1,10 +1,16 @@
 ---
-ms.openlocfilehash: 48306e77a017c11fa7dc0d695e0177edf4e79d1e
-ms.sourcegitcommit: 69b5eb1494a1745a4b1a7f320a91255d5d8356a9
+title: Заметки о выпуске NuGet 5.1 RTM
+description: Заметки о выпуске для NuGet 5.1, включая новые возможности, исправления ошибок и запросы на изменение структуры.
+author: karann-msft
+ms.author: karann
+ms.date: 05/21/2019
+ms.topic: conceptual
+ms.openlocfilehash: 384145947b19af6577dc1255985df1a361c72bb5
+ms.sourcegitcommit: 0dea3b153ef823230a9d5f38351b7cef057cb299
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/21/2019
-ms.locfileid: "65975838"
+ms.lasthandoff: 07/12/2019
+ms.locfileid: "67842580"
 ---
 # <a name="nuget-51-release-notes"></a>Заметки о выпуске 5.1 NuGet
 
@@ -12,7 +18,7 @@ ms.locfileid: "65975838"
 
 | Версия NuGet | Доступно в версии Visual Studio| Доступно в пакетах SDK для .NET|
 |:---|:---|:---|
-| [**5.1.0**](https://nuget.org/downloads) | [Версия 16.1 2019 г. Visual Studio](https://visualstudio.microsoft.com/downloads/) | [2.1.70X](https://dotnet.microsoft.com/download/dotnet-core/2.1)<sup>1</sup>, [2.2.30X](https://dotnet.microsoft.com/download/dotnet-core/2.2)<sup>2</sup> |
+| [**5.1.0**](https://nuget.org/downloads) | [Visual Studio 2019 версии 16.1](https://visualstudio.microsoft.com/downloads/) | [2.1.70X](https://dotnet.microsoft.com/download/dotnet-core/2.1)<sup>1</sup>, [2.2.30X](https://dotnet.microsoft.com/download/dotnet-core/2.2)<sup>2</sup> |
 
 <sup>1</sup>устанавливается вместе с Visual Studio 2019 с рабочей нагрузкой .NET Core 
 

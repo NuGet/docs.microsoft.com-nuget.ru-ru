@@ -1,5 +1,5 @@
 ---
-title: Установка и управление пакетами NuGet с помощью PowerShell в Visual Studio
+title: Установка и управление пакетами NuGet, использование консоли в Visual Studio
 description: Инструкции по использованию консоли диспетчера пакетов NuGet в Visual Studio для работы с пакетами.
 author: karann-msft
 ms.author: karann
@@ -7,14 +7,14 @@ ms.date: 06/24/2019
 ms.topic: conceptual
 f1_keywords:
 - vs.nuget.packagemanager.console
-ms.openlocfilehash: 11ec25598d3110ba84dec5044642e205e13346af
-ms.sourcegitcommit: b6810860b77b2d50aab031040b047c20a333aca3
+ms.openlocfilehash: 91ab3859994e5ae738c6637219681ebbfc92d420
+ms.sourcegitcommit: 0dea3b153ef823230a9d5f38351b7cef057cb299
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/28/2019
-ms.locfileid: "67426217"
+ms.lasthandoff: 07/12/2019
+ms.locfileid: "67842584"
 ---
-# <a name="install-and-manage-packages-using-powershell-in-visual-studio"></a>Установка пакетов и управления ими с помощью PowerShell в Visual Studio
+# <a name="install-and-manage-packages-with-the-package-manager-console-in-visual-studio-powershell"></a>Установка пакетов и управления ими с помощью консоли диспетчера пакетов в Visual Studio (PowerShell)
 
 Консоль диспетчера пакетов NuGet позволяет использовать [команд NuGet PowerShell](../tools/powershell-reference.md) для поиска, установка, удаление и обновление пакетов NuGet. С помощью консоли необходим в случаях, когда пользовательский Интерфейс диспетчера пакетов, не позволяют выполнить операцию. Чтобы использовать `nuget.exe` команд интерфейса командной строки в консоли, см. в разделе [с помощью интерфейса командной строки nuget.exe в консоли](#using-the-nugetexe-cli-in-the-console).
 

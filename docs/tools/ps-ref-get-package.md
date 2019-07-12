@@ -5,16 +5,16 @@ author: karann-msft
 ms.author: karann
 ms.date: 12/07/2017
 ms.topic: reference
-ms.openlocfilehash: a28b29614dfe5abdeb24438b3451d96634a120db
-ms.sourcegitcommit: 1d1406764c6af5fb7801d462e0c4afc9092fa569
+ms.openlocfilehash: d0d25cb6e21f6d0d42389e08340b6f1e1baf8a64
+ms.sourcegitcommit: 0dea3b153ef823230a9d5f38351b7cef057cb299
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/04/2018
-ms.locfileid: "43551446"
+ms.lasthandoff: 07/12/2019
+ms.locfileid: "67842508"
 ---
 # <a name="get-package-package-manager-console-in-visual-studio"></a>Get-Package (консоль диспетчера пакетов в Visual Studio)
 
-*В этом разделе описываются команды в [консоли диспетчера пакетов NuGet](package-manager-console.md) в Visual Studio в Windows. Общая команда PowerShell Get-Package, см. в разделе [Справочник по PowerShell PackageManagement](/powershell/module/packagemanagement/?view=powershell-6).*
+*В этом разделе описываются команды в [консоль диспетчера пакетов](package-manager-console.md) в Visual Studio в Windows. Общая команда PowerShell Get-Package, см. в разделе [Справочник по PowerShell PackageManagement](/powershell/module/packagemanagement/?view=powershell-6).*
 
 Извлекает список пакетов, установленных в локальном репозитории, содержит список пакетов из источника пакета при использовании с параметром - ListAvailable или список доступных обновлений, при использовании с параметром - Update.
 
@@ -32,12 +32,12 @@ Get-Package -Source <string> [-ListAvailable] [-Updates] [-ProjectName <string>]
 
 | Параметр | Описание |
 | --- | --- |
-| Исходный код | Путь URL-адрес или папку для пакета. Пути к локальной папке может быть абсолютным или относительным для текущей папки. Если этот параметр опущен, `Get-Package` выполняет поиск в текущем выбранном источнике пакета. При использовании с параметром - ListAvailable, по умолчанию на сайте nuget.org. |
+| Source | Путь URL-адрес или папку для пакета. Пути к локальной папке может быть абсолютным или относительным для текущей папки. Если этот параметр опущен, `Get-Package` выполняет поиск в текущем выбранном источнике пакета. При использовании с параметром - ListAvailable, по умолчанию на сайте nuget.org. |
 | ListAvailable | Список пакетов, доступных из источника пакета, установка значений по умолчанию на сайте nuget.org. Показывает 50 пакетов по умолчанию, если не указаны - PageSize и (или) - первый. |
 | Обновления | Список пакетов, для которых доступно обновление из источника пакета. |
 | ИмяПроекта | Проект, из которого необходимо получить установленные пакеты. Если не указано, возвращает сведения об установленных проекты для всего решения. |
-| Фильтр | Строка фильтра, используемая для сужения списка пакетов, применяя его к идентификатор пакета, описание и теги. |
-| First | Количество возвращаемых пакетов из начала списка. Если не указан, значение по умолчанию — 50. |
+| Filter | Строка фильтра, используемая для сужения списка пакетов, применяя его к идентификатор пакета, описание и теги. |
+| Первая | Количество возвращаемых пакетов из начала списка. Если не указан, значение по умолчанию — 50. |
 | Skip | Пропускает первый &lt;int&gt; пакеты из отображаемого списка.  |
 | AllVersions | Отображает все доступные версии каждого пакета, а не только последнюю версию. |
 | IncludePrerelease | Включает в себя предварительные выпуски пакетов в результатах. |
@@ -47,7 +47,7 @@ Get-Package -Source <string> [-ListAvailable] [-Updates] [-ProjectName <string>]
 
 ## <a name="common-parameters"></a>Общие параметры
 
-`Get-Package` поддерживает следующие [Общие параметры PowerShell](http://go.microsoft.com/fwlink/?LinkID=113216): отладки, действие при возникновении ошибки, ErrorVariable, OutBuffer, OutVariable, PipelineVariable, Verbose, WarningAction и WarningVariable.
+`Get-Package` поддерживает следующие [Общие параметры PowerShell](http://go.microsoft.com/fwlink/?LinkID=113216): Отладка, действие при возникновении ошибки, ErrorVariable, OutBuffer, OutVariable, PipelineVariable, Verbose, WarningAction и WarningVariable.
 
 ## <a name="examples"></a>Примеры
 
