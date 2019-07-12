@@ -11,7 +11,8 @@
 ## [Разрешение спорных вопросов](policies/dispute-resolution.md)
 ## [Удаление пакетов](policies/deleting-packages.md)
 ## [Экспорт элементов управления](policies/export-control.md)
-# Ссылка
+# Справочники
 ## [API NuGet](../api/overview.md)
 ## [licenses.nuget.org](licenses.nuget.org.md)
-## [FAQ](nuget-org-faq.md)
+# Ресурсы
+## [Часто задаваемые вопросы](nuget-org-faq.md)
