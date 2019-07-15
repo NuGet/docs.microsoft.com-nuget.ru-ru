@@ -15,7 +15,7 @@
 ### [Visual Studio для Mac](/visualstudio/mac/nuget-walkthrough?toc=/nuget/toc.json)
 ### [dotnet CLI](consume-packages/install-use-packages-dotnet-cli.md)
 ### [Интерфейс командной строки nuget.exe](consume-packages/install-use-packages-nuget-cli.md)
-### [PowerShell](tools/package-manager-console.md)
+### [Консоль диспетчера пакетов (PowerShell)](tools/package-manager-console.md)
 ## Настройка NuGet
 ### Параметры восстановления пакетов
 #### [Параметры восстановления](consume-packages/package-restore.md)
@@ -31,21 +31,23 @@
 ### [packages.config](reference/packages-config.md)
 # Создание пакетов
 ## [Общие сведения и рабочий процесс](create-packages/overview-and-workflow.md)
-## [Создание пакета — nuget.exe CLI](create-packages/creating-a-package.md)
+## [Создание пакета](create-packages/creating-a-package.md)
 ## [Создание пакета с помощью MSBuild](reference/msbuild-targets.md)
 ## [Поддержка нескольких целевых платформ](create-packages/supporting-multiple-target-frameworks.md)
 ## [Сборка предварительной версии пакета](create-packages/prerelease-packages.md)
 ## [Создание пакета символов](create-packages/symbol-packages-snupkg.md)
 ## Расширенные задачи
 ### [Изменение исходного кода и файлов конфигурации](create-packages/source-and-config-file-transformations.md)
-### [Создание локализованного пакета](create-packages/creating-localized-packages.md)
 ### [Выбор сборок, на которые ссылается проект](create-packages/select-assemblies-referenced-by-projects.md)
+### [Определение типа пакета](create-packages/set-package-type.md)
+### [Создание локализованного пакета](create-packages/creating-localized-packages.md)
 ## Руководства по содержимому
 ### [Создание пакета UWP](guides/create-uwp-packages.md)
 ### [Создание собственного пакета](create-packages/native-packages.md)
 ### [Создание элементов управления пользовательским интерфейсом в виде пакета NuGet](guides/create-UI-controls.md)
 ### [Создание анализатора в виде пакета NuGet](reference/analyzers-conventions.md)
 ### [Создание пакета для Xamarin с помощью Visual Studio 2015](guides/create-packages-for-xamarin.md)
+### [Создание пакета, содержащего сборки COM-взаимодействия](create-packages/author-packages-with-COM-interop-assemblies.md)
 ## Подписывание пакетов
 ### [Подписывание пакета](create-packages/sign-a-package.md)
 ### [Подписи и требования подписанных пакетов](reference/signed-packages-reference.md)
@@ -62,7 +64,7 @@
 ## [Процесс установки пакета](concepts/package-installation-process.md)
 ## [Управление версиями пакета](reference/package-versioning.md)
 ## [Разрешение зависимостей](consume-packages/dependency-resolution.md)
-# Ссылка
+# Справочники
 ## [.nuspec](reference/nuspec.md)
 ## [Файл Nuget.Config](reference/nuget-config-file.md)
 ## [Целевые платформы](reference/target-frameworks.md)
@@ -335,4 +337,5 @@
 #### [NuGet 1.2](release-notes/NuGet-1.2.md)
 #### [NuGet 1.1](release-notes/NuGet-1.1.md)
 ## [Вопросы и ответы](faqs/nuget-faq.md)
+## [Формат проекта](resources/check-project-format.md)
 # [NuGet.org](nuget-org/overview-nuget-org.md)
