@@ -16,12 +16,12 @@ keywords: пакеты символов NuGet, отладка пакета NuGet
 ms.reviewer:
 - anangaur
 - karann
-ms.openlocfilehash: 0d82cf8614b88247bc3a3ba3019c11bf1b5e2593
-ms.sourcegitcommit: b6810860b77b2d50aab031040b047c20a333aca3
+ms.openlocfilehash: 9f9cdd188cf2ec678bc9047604e618f1af9124ae
+ms.sourcegitcommit: 0dea3b153ef823230a9d5f38351b7cef057cb299
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/28/2019
-ms.locfileid: "67426804"
+ms.lasthandoff: 07/12/2019
+ms.locfileid: "67842454"
 ---
 # <a name="creating-symbol-packages-snupkg"></a>Создание пакетов символов (SNUPKG)
 
@@ -54,7 +54,7 @@ nuget pack MyPackage.csproj -Symbols -SymbolPackageFormat snupkg
 
 1. Упакуйте проект с `dotnet pack MyPackage.csproj` или `msbuild -t:pack MyPackage.csproj`.
 
-Свойство [`SymbolPackageFormat`](/dotnet/core/tools/csproj.md#symbolpackageformat) может иметь одно из двух значений: `symbols.nupkg` (по умолчанию) или `snupkg`. Если значение свойства [`SymbolPackageFormat`](/dotnet/core/tools/csproj.md#symbolpackageformat) не указано, будет создан устаревший пакет символов.
+Свойство [`SymbolPackageFormat`](/dotnet/core/tools/csproj#symbolpackageformat) может иметь одно из двух значений: `symbols.nupkg` (по умолчанию) или `snupkg`. Если значение свойства [`SymbolPackageFormat`](/dotnet/core/tools/csproj#symbolpackageformat) не указано, будет создан устаревший пакет символов.
 
 > [!Note]
 > Устаревший формат `.symbols.nupkg` все еще поддерживается, но только в целях совместимости (см. раздел [Устаревшие пакеты символов](Symbol-Packages.md)). Сервер символов NuGet.org принимает только новый формат пакетов символов: `.snupkg`.

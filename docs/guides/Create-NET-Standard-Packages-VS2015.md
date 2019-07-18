@@ -5,12 +5,12 @@ author: karann-msft
 ms.author: karann
 ms.date: 02/02/2018
 ms.topic: tutorial
-ms.openlocfilehash: af0c42853a9e407557a010ff2793406499b4b2ef
-ms.sourcegitcommit: b6810860b77b2d50aab031040b047c20a333aca3
+ms.openlocfilehash: 1198a781543e581f55740cc0ae5a212d3f8a8b61
+ms.sourcegitcommit: 0dea3b153ef823230a9d5f38351b7cef057cb299
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/28/2019
-ms.locfileid: "67426877"
+ms.lasthandoff: 07/12/2019
+ms.locfileid: "67842441"
 ---
 # <a name="create-net-standard-and-net-framework-packages-with-visual-studio-2015"></a>Создание пакетов .NET Standard или .NET Framework с помощью Visual Studio 2015
 
@@ -31,7 +31,7 @@ ms.locfileid: "67426877"
 
 ## <a name="create-the-class-library-project"></a>Создание проекта для библиотеки классов
 
-1. В Visual Studio выберите **Файл > Создать > Проект**, разверните узел **Visual C# > Windows**, выберите **Библиотека классов (переносимая)**, измените имя на AppLogger и нажмите кнопку **ОК**.
+1. В Visual Studio выберите **Файл > Создать > Проект**, разверните узел **Visual C# > Windows**, выберите **Библиотека классов (переносимая)** , измените имя на AppLogger и нажмите кнопку **ОК**.
 
     ![Создание нового проекта для библиотеки классов](media/NetStandard-NewProject.png)
 
@@ -68,7 +68,7 @@ ms.locfileid: "67426877"
     nuget spec
     ```
 
-1. Откройте файл `AppLogger.nuspec` в редакторе и измените его содержимое так, как показано ниже, заменив YOUR_NAME на соответствующее значение. Значение `<id>` должно быть уникальным в пределах nuget.org (см. соглашения об именовании, описанные в разделе [Создание пакета](../create-packages/creating-a-package.md#choosing-a-unique-package-identifier-and-setting-the-version-number)). Кроме того, обратите внимание на то, что необходимо изменить теги author и description, иначе на этапе упаковки произойдет ошибка.
+1. Откройте файл `AppLogger.nuspec` в редакторе и измените его содержимое так, как показано ниже, заменив YOUR_NAME на соответствующее значение. Значение `<id>` должно быть уникальным в пределах nuget.org (см. соглашения об именовании, описанные в разделе [Создание пакета](../create-packages/creating-a-package.md#choose-a-unique-package-identifier-and-setting-the-version-number)). Кроме того, обратите внимание на то, что необходимо изменить теги author и description, иначе на этапе упаковки произойдет ошибка.
 
     ```xml
     <?xml version="1.0"?>
@@ -167,7 +167,7 @@ nuget pack AppLogger.nuspec
 
 - [Справочник по файлу NUSPEC](../reference/nuspec.md)
 - [Поддержка нескольких версий платформы .NET Framework](../create-packages/supporting-multiple-target-frameworks.md)
-- [Включение в пакет свойств и целей MSBuild](../create-packages/creating-a-package.md#including-msbuild-props-and-targets-in-a-package)
+- [Включение в пакет свойств и целей MSBuild](../create-packages/creating-a-package.md#include-msbuild-props-and-targets-in-a-package)
 - [Создание локализованных пакетов](../create-packages/creating-localized-packages.md)
 - [Пакеты символов](../create-packages/symbol-packages.md)
 - [Управление версиями пакета](../reference/package-versioning.md)

@@ -5,12 +5,12 @@ author: karann-msft
 ms.author: karann
 ms.date: 01/09/2017
 ms.topic: tutorial
-ms.openlocfilehash: d737b70febd1e18aa8a39cc73a9a9cf333f758c6
-ms.sourcegitcommit: b6810860b77b2d50aab031040b047c20a333aca3
+ms.openlocfilehash: 81f78de02d9b6510f195e04c78436e38f9b7353d
+ms.sourcegitcommit: 0dea3b153ef823230a9d5f38351b7cef057cb299
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/28/2019
-ms.locfileid: "67426841"
+ms.lasthandoff: 07/12/2019
+ms.locfileid: "67842420"
 ---
 # <a name="create-packages-for-xamarin-with-visual-studio-2015"></a>Создание пакетов для Xamarin с помощью Visual Studio 2015
 
@@ -111,7 +111,7 @@ namespace Plugin.LoggingLibrary.Abstractions
     ```
 
 1. Переименуйте этот файл на `LoggingLibrary.nuspec` и откройте его в редакторе.
-1. Измените содержимое файла так, как показано ниже, заменив YOUR_NAME на соответствующее значение. Значение `<id>` должно быть уникальным в пределах nuget.org (см. соглашения об именовании, описанные в разделе [Создание пакета](../create-packages/creating-a-package.md#choosing-a-unique-package-identifier-and-setting-the-version-number)). Кроме того, обратите внимание на то, что необходимо изменить теги author и description, иначе на этапе упаковки произойдет ошибка.
+1. Измените содержимое файла так, как показано ниже, заменив YOUR_NAME на соответствующее значение. Значение `<id>` должно быть уникальным в пределах nuget.org (см. соглашения об именовании, описанные в разделе [Создание пакета](../create-packages/creating-a-package.md#choose-a-unique-package-identifier-and-setting-the-version-number)). Кроме того, обратите внимание на то, что необходимо изменить теги author и description, иначе на этапе упаковки произойдет ошибка.
 
     ```xml
     <?xml version="1.0"?>
@@ -268,5 +268,5 @@ nuget pack LoggingLibrary.nuspec
 - [Пакеты символов](../create-packages/symbol-packages.md)
 - [Управление версиями пакета](../reference/package-versioning.md)
 - [Поддержка нескольких версий платформы .NET Framework](../create-packages/supporting-multiple-target-frameworks.md)
-- [Включение в пакет свойств и целевых объектов MSBuild](../create-packages/creating-a-package.md#including-msbuild-props-and-targets-in-a-package)
+- [Включение в пакет свойств и целей MSBuild](../create-packages/creating-a-package.md#include-msbuild-props-and-targets-in-a-package)
 - [Создание локализованных пакетов](../create-packages/creating-localized-packages.md)

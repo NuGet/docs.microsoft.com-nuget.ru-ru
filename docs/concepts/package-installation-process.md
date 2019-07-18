@@ -3,14 +3,14 @@ title: Процесс установки пакета
 description: Подробные сведения о процессе установки пакета
 author: karann-msft
 ms.author: karann
-ms.date: 0/20/2019
+ms.date: 06/20/2019
 ms.topic: conceptual
-ms.openlocfilehash: 9ea0e6d28fa7af6e4061f762ea9af06c3028c247
-ms.sourcegitcommit: b6810860b77b2d50aab031040b047c20a333aca3
+ms.openlocfilehash: 5676239bedb7f8fbe9f74725864afd297405d5c1
+ms.sourcegitcommit: 0dea3b153ef823230a9d5f38351b7cef057cb299
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/28/2019
-ms.locfileid: "67427459"
+ms.lasthandoff: 07/12/2019
+ms.locfileid: "67842336"
 ---
 # <a name="what-happens-when-a-nuget-package-is-installed"></a>Процесс установки пакета NuGet
 
