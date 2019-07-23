@@ -5,12 +5,12 @@ author: karann-msft
 ms.author: karann
 ms.date: 05/13/2018
 ms.topic: quickstart
-ms.openlocfilehash: efdaa0128d47f948c86c3cc83d6a332410cbf99f
-ms.sourcegitcommit: b6810860b77b2d50aab031040b047c20a333aca3
+ms.openlocfilehash: bf561d36a06bf42c029eb96ff1b7930abffa4c0a
+ms.sourcegitcommit: 0dea3b153ef823230a9d5f38351b7cef057cb299
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/28/2019
-ms.locfileid: "67426327"
+ms.lasthandoff: 07/12/2019
+ms.locfileid: "67842041"
 ---
 # <a name="quickstart-create-and-publish-a-package-using-visual-studio-net-framework-windows"></a>Краткое руководство. Создание и публикация пакета с помощью Visual Studio (.NET Framework, Windows)
 
@@ -70,7 +70,7 @@ namespace AppLogger
     >
     > При попытке опубликовать пакет с именем, которое уже занято, появится сообщение об ошибке.
 
-1. Нажмите кнопку **Сведения о сборке...**, чтобы открыть диалоговое окно, где можно ввести другие свойства, которые переносятся в манифест (см. [описание токенов замены в справочнике по файлу NUSPEC](../reference/nuspec.md#replacement-tokens)). Чаще всего используются поля **Заголовок**, **Описание**, **Компания**, **Авторские права** и **Версия сборки**. В конечном счете эти свойства отображаются вместе с пакетом на узле, таком как nuget.org, поэтому задайте для них очевидное и понятное значение.
+1. Нажмите кнопку **Сведения о сборке...** , чтобы открыть диалоговое окно, где можно ввести другие свойства, которые переносятся в манифест (см. [описание токенов замены в справочнике по файлу NUSPEC](../reference/nuspec.md#replacement-tokens)). Чаще всего используются поля **Заголовок**, **Описание**, **Компания**, **Авторские права** и **Версия сборки**. В конечном счете эти свойства отображаются вместе с пакетом на узле, таком как nuget.org, поэтому задайте для них очевидное и понятное значение.
 
     ![Сведения о сборке в проекте .NET Framework в Visual Studio](media/qs_create-vs-01b-project-properties.png)
 
@@ -145,7 +145,7 @@ namespace AppLogger
 
 ### <a name="publish-with-nuget-push"></a>Публикация с помощью команды nuget push
 
-1. Перейдите в папку, содержащую файл `.nupkg`.
+1. Откройте командную строку и перейдите к папке с файлом `.nupkg`.
 
 1. Выполните следующую команду, указав имя пакета и заменив значение ключа на ключ API:
 

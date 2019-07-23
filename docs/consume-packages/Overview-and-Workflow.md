@@ -5,12 +5,12 @@ author: karann-msft
 ms.author: karann
 ms.date: 03/22/2018
 ms.topic: conceptual
-ms.openlocfilehash: eeae62a09a9f405d27cd113ff586393f6305ba47
-ms.sourcegitcommit: b6810860b77b2d50aab031040b047c20a333aca3
+ms.openlocfilehash: 4cfc2fde08b240288851b87a391dc42c1ac8ecaf
+ms.sourcegitcommit: 0dea3b153ef823230a9d5f38351b7cef057cb299
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/28/2019
-ms.locfileid: "67426712"
+ms.lasthandoff: 07/12/2019
+ms.locfileid: "67842318"
 ---
 # <a name="package-consumption-workflow"></a>Рабочий процесс использования пакета
 
@@ -49,5 +49,5 @@ NuGet также проверяет совместимость целевых п
 | --- | --- |
 | [Интерфейс командной строки dotnet.exe](install-use-packages-dotnet-cli.md) | (Все платформы.) Средство CLI для библиотек .NET Core и .NET Standard, а также для проектов в стиле пакета SDK, нацеленных на .NET Framework (см. раздел [Атрибут SDK](/dotnet/core/tools/csproj#additions)). Извлекает пакет, определяемый атрибутом \<package_name\>, и добавляет ссылку в файл проекта. Кроме того, извлекает и устанавливает зависимости. |
 | Visual Studio | (Компьютеры с Windows и Mac.) Пользовательский интерфейс, через который можно просматривать, выбирать и устанавливать в проект пакеты и их зависимости из указанного источника пакетов. Добавляет ссылки на установленные пакеты в файл проекта.<ul><li>[Установка пакетов и управление ими с использованием Visual Studio](../tools/package-manager-ui.md)</li><li>[Включение пакета NuGet в проект](/visualstudio/mac/nuget-walkthrough)</li></ul> |
-| [PowerShell в Visual Studio](../tools/package-manager-console.md) | (Только компьютеры с Windows.) Извлекает пакет, определенный атрибутом \<имя_пакета\>, из выбранного источника и устанавливает его в указанный проект в решении, а затем добавляет ссылку в файл проекта. Кроме того, извлекает и устанавливает зависимости. |
+| [Консоль диспетчера пакетов в Visual Studio](../tools/package-manager-console.md) | (Только компьютеры с Windows.) Извлекает пакет, определенный атрибутом \<имя_пакета\>, из выбранного источника и устанавливает его в указанный проект в решении, а затем добавляет ссылку в файл проекта. Кроме того, извлекает и устанавливает зависимости. |
 | [Интерфейс командной строки nuget.exe](install-use-packages-dotnet-cli.md) | (Все платформы.) Средство CLI для библиотек .NET Framework и проектов со стилем, отличным от пакета SDK, нацеленных на библиотеки .NET Standard. Извлекает пакет, определенный атрибутом \<package_name\>, и развертывает его содержимое в папку в текущем каталоге. Кроме того, может извлекать все пакеты, перечисленные в файле `packages.config`. Извлекает и устанавливает зависимости, но не вносит никаких изменений в файлы проекта или файл `packages.config`. |

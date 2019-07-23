@@ -5,18 +5,18 @@ author: mikejo5000
 ms.author: mikejo
 ms.date: 06/03/2019
 ms.topic: conceptual
-ms.openlocfilehash: e60bca8fe2f80b044e466db2a100d6c6d167edb7
-ms.sourcegitcommit: b6810860b77b2d50aab031040b047c20a333aca3
+ms.openlocfilehash: a7177b956930835693921163e634321548c22462
+ms.sourcegitcommit: 0dea3b153ef823230a9d5f38351b7cef057cb299
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/28/2019
-ms.locfileid: "67427379"
+ms.lasthandoff: 07/12/2019
+ms.locfileid: "67842372"
 ---
 # <a name="manage-packages-using-the-nugetexe-cli"></a>Управление пакетами с использованием CLI nuget.exe
 
 С помощью средства CLI вы можете легко восстанавливать пакеты NuGet в проектах и решениях. Это средство обеспечивает все функциональные возможности NuGet в Windows и большинство функций, выполняемых в рамках проекта Mono на компьютере Mac и Linux.
 
-Средство CLI nuget.exe предназначено для работы с проектом .NET Framework и проектами, стиль которых отличается от пакета SDK (например, для проектов, нацеленных на библиотеки .NET Standard). Если вы используете проект в стиле, отличающемся от пакета SDK, перенесенный в `PackageReference`, следует выбирать для работы CLI dotnet. Чтобы указывать ссылки на пакеты, в CLI NuGet используется файл [packages.config](../reference/packages-config.md).
+Средство CLI nuget.exe предназначено для работы с проектом .NET Framework и проектами, стиль которых отличается от пакета SDK (например, для проектов не в стиле пакета SDK, нацеленных на библиотеки .NET Standard). Если вы используете проект в стиле, отличающемся от пакета SDK, перенесенный в `PackageReference`, следует выбирать для работы CLI dotnet. Чтобы указывать ссылки на пакеты, в CLI NuGet используется файл [packages.config](../reference/packages-config.md).
 
 > [!NOTE]
 > В большинстве сценариев рекомендуется [переносить проекты в стиле, отличающемся от пакета SDK](../reference/migrate-packages-config-to-package-reference.md), в котором используется файл `packages.config`, в PackageReference. В таких случаях можно использовать CLI dotnet вместо CLI `nuget.exe`. На данный момент не поддерживается миграция для проектов C++ и ASP.NET.
@@ -113,6 +113,8 @@ nuget update
 Используйте команду [restore](../tools/cli-ref-restore.md), которая скачивает и устанавливает любые отсутствующие пакеты из папки *packages*.
 
 Команда `restore` добавляет пакеты на диск, но не изменяет список зависимых компонентов проекта. Чтобы восстановить зависимые компоненты пакета, измените файл `packages.config` и затем выполните команду `restore`.
+
+Как и с другими командами CLI `dotnet`, откройте командную строку и перейдите к каталогу, в котором находится файл проекта.
 
 Восстановление пакета с помощью `restore`.
 

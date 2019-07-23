@@ -5,12 +5,12 @@ author: karann-msft
 ms.author: karann
 ms.date: 06/20/2019
 ms.topic: quickstart
-ms.openlocfilehash: 6e3011493b7b89bc43cd9a267aea7fd32d668cec
-ms.sourcegitcommit: b6810860b77b2d50aab031040b047c20a333aca3
+ms.openlocfilehash: a4a3f5509792e56c09d18b3da98588d17f4756ee
+ms.sourcegitcommit: 0dea3b153ef823230a9d5f38351b7cef057cb299
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/28/2019
-ms.locfileid: "67426561"
+ms.lasthandoff: 07/12/2019
+ms.locfileid: "67841945"
 ---
 # <a name="install-nuget-client-tools"></a>Установка клиентских средств NuGet
 
@@ -20,8 +20,8 @@ ms.locfileid: "67426561"
 
 | Средство&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | ОПИСАНИЕ | Скачать&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; |
 |:------------- |:-------------|:-----|
-| [dotnet.exe](#dotnetexe-cli) | Средство CLI для библиотек .NET Core и .NET Standard, а также для любых проектов в стиле пакета SDK, нацеленных на .NET Framework (см. раздел [Атрибут SDK](/dotnet/core/tools/csproj#additions)). Входит в состав пакета SDK для .NET Core и обеспечивает основные функции NuGet на всех платформах. | [Пакет SDK для .NET Core](https://www.microsoft.com/net/download/) |
-| [nuget.exe](#nugetexe-cli) | Средство CLI для библиотек .NET Framework и проектов со стилем, отличным от пакета SDK, нацеленных на библиотеки .NET Standard. Обеспечивает все функциональные возможности NuGet в Windows и большинство функций, выполняемых в рамках проекта Mono на компьютере Mac и Linux. | [nuget.exe](https://dist.nuget.org/win-x86-commandline/latest/nuget.exe) |
+| [dotnet.exe](#dotnetexe-cli) | Средство CLI для библиотек .NET Core и .NET Standard, а также для любых [проектов в стиле пакета SDK](resources/check-project-format.md), нацеленных на .NET Framework. Входит в состав пакета SDK для .NET Core и обеспечивает основные функции NuGet на всех платформах. (Начиная с версии Visual Studio 2017 средство CLI dotnet автоматически устанавливается вместе с любыми рабочими нагрузками, связанными с .NET Core.)| [Пакет SDK для .NET Core](https://www.microsoft.com/net/download/) |
+| [nuget.exe](#nugetexe-cli) | Средство CLI для библиотек .NET Framework и [проектов не в стиле пакета SDK](resources/check-project-format.md), нацеленных на библиотеки .NET Standard. Обеспечивает все функциональные возможности NuGet в Windows и большинство функций, выполняемых в рамках проекта Mono на компьютере Mac и Linux. | [nuget.exe](https://dist.nuget.org/win-x86-commandline/latest/nuget.exe) |
 | [Visual Studio](#visual-studio) | В Windows предоставляет возможности NuGet через пользовательский интерфейс и консоль диспетчера пакетов. Прилагается к рабочим нагрузкам, связанным с .NET. На компьютере Mac предоставляет определенные возможности через пользовательский интерфейс. В Visual Studio Code функции NuGet предоставляются через расширения. | [Visual Studio 2017](https://www.visualstudio.com/downloads/) |
 
 [MSBuild CLI](reference/msbuild-targets.md) также предоставляет возможности восстановления и создания пакетов, которые применяются на серверах сборки. MSBuild не является универсальным средством для работы с NuGet.
@@ -31,7 +31,7 @@ ms.locfileid: "67426561"
 Два средства CLI для NuGet — `dotnet.exe` и `nuget.exe`. См. сравнительную таблицу [доступности функций](#feature-availability).
 
 * Для нацеливания на .NET Core или .NET Standard используйте CLI для .NET. CLI для .NET является обязательным для проекта с форматом в стиле пакета SDK, использующего [атрибут SDK](/dotnet/core/tools/csproj#additions).
-* Для нацеливания на .NET Framework (только проекты со стилем, отличным от пакета SDK) используйте `nuget.exe CLI`. При переносе проекта в `packages.config` используйте CLI dotnet.
+* Для нацеливания на .NET Framework (только проекты со стилем, отличным от пакета SDK) используйте `nuget.exe CLI`. Если проект переносится из `packages.config` в PackageReference, используйте CLI dotnet.
 
 ### <a name="dotnetexe-cli"></a>Интерфейс командной строки dotnet.exe
 
@@ -39,7 +39,7 @@ ms.locfileid: "67426561"
 
 Установка:
 
-- на компьютерах разработчиков установите [пакет SDK для .NET Core](https://aka.ms/dotnetcoregs);
+- на компьютерах разработчиков установите [пакет SDK для .NET Core](https://aka.ms/dotnetcoregs); Начиная с версии Visual Studio 2017, средство CLI dotnet автоматически устанавливается вместе с любыми рабочими нагрузками, связанными с .NET Core.
 - для серверов сборки следуйте инструкциям в статье [Использование пакета SDK и средств .NET Core при непрерывной интеграции (CI)](/dotnet/core/tools/using-ci-with-cli).
 
 Сведения об использовании основных команд с CLI dotnet см. в статье [Установка и использование пакета с помощью CLI dotnet](consume-packages/install-use-packages-dotnet-cli.md).
@@ -48,14 +48,14 @@ ms.locfileid: "67426561"
 
 Интерфейс командной строки `nuget.exe` (`nuget.exe`) — это программа командной строки для Windows, которая предоставляет все возможности NuGet. С некоторыми ограничениями ее также можно запустить на Mac OSX и Linux с помощью [Mono](http://www.mono-project.com/docs/getting-started/install/).
 
+Сведения об использовании основных команд с CLI `nuget.exe` см. в статье [Установка и использование пакета с помощью CLI nuget.exe](consume-packages/install-use-packages-nuget-cli.md).
+
 Установка:
 
 [!INCLUDE [install-cli](includes/install-cli.md)]
 
 > [!Tip]
 > Вы можете обновить существующий nuget.exe до последней версии с помощью команды `nuget update -self` в Windows.
-
-Сведения об использовании основных команд с CLI `nuget.exe` см. в статье [Установка и использование пакета с помощью CLI nuget.exe](consume-packages/install-use-packages-nuget-cli.md).
 
 > [!Note]
 > Последняя рекомендуемая версия интерфейса командной строки NuGet всегда доступна по адресу `https://dist.nuget.org/win-x86-commandline/latest/nuget.exe`. Чтобы обеспечить совместимость со старыми системами непрерывной интеграции, сейчас можно скачать [средство CLI 2.8.6](https://github.com/NuGet/NuGetGallery/issues/5381) по URL-адресу `https://nuget.org/nuget.exe`.
@@ -103,7 +103,7 @@ ms.locfileid: "67426561"
 ### <a name="related-topics"></a>См. также
 
 - [Установка пакетов и управление ими с использованием Visual Studio](tools/package-manager-ui.md)
-- [Установка пакетов и управление ими с использованием PowerShell](tools/package-manager-console.md)
+- [Установка пакетов и управление ими с использованием консоли диспетчера пакетов](tools/package-manager-console.md)
 - [Установка пакетов и управление ими с использованием CLI dotnet](consume-packages/install-use-packages-dotnet-cli.md)
 - [Установка пакетов и управление ими с использованием CLI nuget.exe](consume-packages/install-use-packages-nuget-cli.md)
 - [Справочник по PowerShell для консоли диспетчера пакетов](tools/powershell-reference.md)
