@@ -5,20 +5,20 @@ author: karann-msft
 ms.author: karann
 ms.date: 03/23/2018
 ms.topic: conceptual
-ms.openlocfilehash: 1e89aeb46f2538d46c013561a51a41702b2472d8
-ms.sourcegitcommit: 6b71926f062ecddb8729ef8567baf67fd269642a
+ms.openlocfilehash: 8e662194fffc031d0cfc0aa129a5a15b555a4231
+ms.sourcegitcommit: e65180e622f6233b51bb0b41d0e919688083eb26
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/22/2019
-ms.locfileid: "59932103"
+ms.lasthandoff: 07/23/2019
+ms.locfileid: "68420013"
 ---
 # <a name="nuget-pack-and-restore-as-msbuild-targets"></a>Объекты pack и restore NuGet в качестве целевых объектов MSBuild
 
 *NuGet 4.0+*
 
-Благодаря формату PackageReference в NuGet 4.0 и более поздних версиях все метаданные манифеста могут храниться прямо в файле проекта, не требуя использования отдельного файла `.nuspec`.
+В формате [PackageReference](../consume-packages/package-references-in-project-files.md) NuGet 4.0 + может хранить все метаданные манифеста непосредственно в файле проекта вместо использования отдельного `.nuspec` файла.
 
-При использовании MSBuild 15.1+ NuGet также является привилегированным компонентом MSBuild с целевыми объектами `pack` и `restore`, как описано ниже. Эти целевые объекты позволяют работать с NuGet, как с любой другой задачей или другим целевым объектом MSBuild. (Для NuGet 3.x и более ранних версий можно использовать команды [pack](../tools/cli-ref-pack.md) и [restore](../tools/cli-ref-restore.md) в NuGet CLI.)
+При использовании MSBuild 15.1+ NuGet также является привилегированным компонентом MSBuild с целевыми объектами `pack` и `restore`, как описано ниже. Эти целевые объекты позволяют работать с NuGet, как с любой другой задачей или другим целевым объектом MSBuild. (Для NuGet 3.x и более ранних версий можно использовать команды [pack](../reference/cli-reference/cli-ref-pack.md) и [restore](../reference/cli-reference/cli-ref-restore.md) в NuGet CLI.)
 
 ## <a name="target-build-order"></a>Порядок сборки целевого объекта
 
@@ -37,9 +37,9 @@ ms.locfileid: "59932103"
 
 ## <a name="pack-target"></a>Целевой объект pack
 
-Для проектов .NET Standard с помощью формата PackageReference, `msbuild -t:pack` рисует входные данные из файла проекта для использования при создании пакета NuGet.
+Для .NET Standard проектов, использующих формат PackageReference `msbuild -t:pack` , команда рисует входные данные из файла проекта для использования при создании пакета NuGet.
 
-В следующей таблице описываются свойства MSBuild, которые можно добавить в файл проекта в первом узле `<PropertyGroup>`. Эти изменения легко внести в Visual Studio 2017 и более поздней версии, щелкнув проект правой кнопкой мыши и выбрав пункт **Изменить {project_name}**. Для удобства таблица упорядочена по эквивалентным свойствам в [файле `.nuspec`](../reference/nuspec.md).
+В следующей таблице описываются свойства MSBuild, которые можно добавить в файл проекта в первом узле `<PropertyGroup>`. Эти изменения легко внести в Visual Studio 2017 и более поздней версии, щелкнув проект правой кнопкой мыши и выбрав пункт **Изменить {project_name}** . Для удобства таблица упорядочена по эквивалентным свойствам в [файле `.nuspec`](../reference/nuspec.md).
 
 Обратите внимание, что свойства `Owners` и `Summary` из `.nuspec` не поддерживаются в MSBuild.
 
@@ -55,24 +55,24 @@ ms.locfileid: "59932103"
 | Описание | Описание | "Описание пакета" | |
 | Copyright | Copyright | пустой | |
 | RequireLicenseAcceptance | PackageRequireLicenseAcceptance | False | |
-| лицензии | PackageLicenseExpression | пустой | Соответствует `<license type="expression">` |
-| лицензии | PackageLicenseFile | пустой | Соответствует `<license type="file">`. Может потребоваться явно пакета файл лицензии, на которую указывает ссылка. |
-| LicenseUrl | PackageLicenseUrl | пустой | `licenseUrl` является устаревшим, используйте свойство PackageLicenseExpression или PackageLicenseFile |
+| Лицензии | PackageLicenseExpression | пустой | Соответствует`<license type="expression">` |
+| Лицензии | PackageLicenseFile | пустой | Соответствует `<license type="file">`. Возможно, потребуется явно упаковать файл лицензии, на который указывает ссылка. |
+| LicenseUrl | PackageLicenseUrl | пустой | `licenseUrl`является устаревшим, используйте свойство Паккажелиценсикспрессион или Паккажелиценсефиле. |
 | ProjectUrl | PackageProjectUrl | пустой | |
 | IconUrl | PackageIconUrl | пустой | |
 | Теги | PackageTags | пустой | Теги разделяются точкой с запятой. |
 | ReleaseNotes | PackageReleaseNotes | пустой | |
-| URL-адрес репозитория / | RepositoryUrl | пустой | URL-адрес репозитория можно клонировать или загрузить исходный код. Пример: *https://github.com/NuGet/NuGet.Client.git* |
-| / Тип репозитория | RepositoryType | пустой | Тип репозитория. Примеры: *git*, *tfs*. |
-| Репозитория или ветви | RepositoryBranch | пустой | Сведения о ветви необязательно репозитории. *RepositoryUrl* также должен быть указан для этого свойства для включения. Пример: *master* (NuGet 4.7.0+) |
-| Репозиторий и фиксации | RepositoryCommit | пустой | Необязательный репозитория фиксацию или набор изменений, чтобы указать, что источник пакета было выполнено построение. *RepositoryUrl* также должен быть указан для этого свойства для включения. Пример *0e4d1b598f350b3dc675018d539114d1328189ef* (NuGet 4.7.0+) |
+| Репозиторий/URL-адрес | RepositoryUrl | пустой | URL-адрес репозитория, используемый для клонирования или извлечения исходного кода. Например *https://github.com/NuGet/NuGet.Client.git* |
+| Репозиторий или тип | RepositoryType | пустой | Тип репозитория. Примеры: *Git*, *TFS*. |
+| Репозиторий или ветвь | репоситорибранч | пустой | Дополнительные сведения о ветви репозитория. Для включения этого свойства также необходимо указать *репоситорюрл* . Пример: *master* (NuGet 4.7.0 +) |
+| Репозиторий/фиксация | репоситорикоммит | пустой | Необязательная фиксация или набор изменений репозитория для указания источника, на основе которого был создан пакет. Для включения этого свойства также необходимо указать *репоситорюрл* . Пример *0e4d1b598f350b3dc675018d539114d1328189ef* (NuGet 4.7.0 +) |
 | PackageType | `<PackageType>DotNetCliTool, 1.0.0.0;Dependency, 2.0.0.0</PackageType>` | | |
 | Сводка | Не поддерживается | | |
 
 ### <a name="pack-target-inputs"></a>Входные данные целевого объекта pack
 
 - IsPackable
-- SuppressDependenciesWhenPacking
+- суппрессдепенденЦиесвхенпаккинг
 - PackageVersion
 - PackageId
 - Authors
@@ -94,8 +94,8 @@ ms.locfileid: "59932103"
 - IsTool
 - RepositoryUrl
 - RepositoryType
-- RepositoryBranch
-- RepositoryCommit
+- репоситорибранч
+- репоситорикоммит
 - NoPackageAnalysis
 - MinClientVersion
 - IncludeBuildOutput
@@ -108,13 +108,13 @@ ms.locfileid: "59932103"
 
 ## <a name="pack-scenarios"></a>Сценарии использования pack
 
-### <a name="suppress-dependencies"></a>Подавлять зависимостей
+### <a name="suppress-dependencies"></a>Подавлять зависимости
 
-Чтобы отключить зависимости пакетов из созданного пакета NuGet, присвойте параметру `SuppressDependenciesWhenPacking` для `true` которых пропускает все зависимости из файла созданного nupkg.
+Чтобы исключить зависимости пакета из созданного пакета NuGet, `SuppressDependenciesWhenPacking` задайте `true` для значение, которое позволит пропустить все зависимости из созданного файла nupkg.
 
 ### <a name="packageiconurl"></a>PackageIconUrl
 
-В процессе изменения для [352 проблема NuGet](https://github.com/NuGet/Home/issues/352), `PackageIconUrl` со временем изменяется `PackageIconUri` и может быть относительным путем к файлу значка, который будет включен в корень итогового пакета.
+Как часть изменения для проблемы с [NuGet 352](https://github.com/NuGet/Home/issues/352), `PackageIconUrl` в конечном итоге будет изменен на `PackageIconUri` и может быть относительным путем к файлу значка, который будет включен в корень полученного пакета.
 
 ### <a name="output-assemblies"></a>Выходные сборки
 
@@ -122,8 +122,8 @@ ms.locfileid: "59932103"
 
 Существует два свойства MSBuild, которые можно использовать в файле проекта или командной строке для управления местом назначения для выходных сборок:
 
-- `IncludeBuildOutput`: Логическое значение, определяющее, следует ли включать выходные сборки в пакете.
-- `BuildOutputTargetFolder`: Указывает папку, в котором должны размещаться выходные сборки. Выходные сборки (и другие выходные файлы) копируются в соответствующие папки платформы.
+- `IncludeBuildOutput`: Логическое значение, определяющее, следует ли включать в пакет сборки выходных данных сборки.
+- `BuildOutputTargetFolder`: Указывает папку, в которой должны размещаться выходные сборки. Выходные сборки (и другие выходные файлы) копируются в соответствующие папки платформы.
 
 ### <a name="package-references"></a>Ссылки на пакеты
 
@@ -194,9 +194,9 @@ ms.locfileid: "59932103"
 
 Если файл типа Compile находится вне папки проекта, он просто добавляется в `src\<ProjectName>\`.
 
-### <a name="packing-a-license-expression-or-a-license-file"></a>Упаковка выражении лицензии или файл лицензии
+### <a name="packing-a-license-expression-or-a-license-file"></a>Упаковка выражения лицензии или файла лицензии
 
-При использовании выражения лицензии, следует использовать свойство PackageLicenseExpression. 
+При использовании выражения лицензии следует использовать свойство Паккажелиценсикспрессион. 
 [Пример выражения лицензии](https://github.com/NuGet/Samples/tree/master/PackageLicenseExpressionExample).
 
 ```xml
@@ -205,9 +205,9 @@ ms.locfileid: "59932103"
 </PropertyGroup>
 ```
 
-[Дополнительные сведения о выражениях лицензии и лицензии, которые может принимать NuGet.org](nuspec.md#license).
+Дополнительные [сведения о лицензионных выражениях и лицензиях, принимаемых NuGet.org](nuspec.md#license).
 
-При упаковке файл лицензии, необходимо использовать свойство PackageLicenseFile чтобы указать путь к пакету, относительно корня пакета. Кроме того необходимо убедиться, что файл включается в пакет. Пример:
+При упаковке файла лицензии необходимо использовать свойство Паккажелиценсефиле, чтобы указать путь к пакету относительно корня пакета. Кроме того, необходимо убедиться, что файл включен в пакет. Например:
 
 ```xml
 <PropertyGroup>
@@ -218,7 +218,7 @@ ms.locfileid: "59932103"
     <None Include="licenses\LICENSE.txt" Pack="true" PackagePath=""/>
 </ItemGroup>
 ```
-[Образец файла лицензии](https://github.com/NuGet/Samples/tree/master/PackageLicenseFileExample).
+[Пример файла лицензии](https://github.com/NuGet/Samples/tree/master/PackageLicenseFileExample).
 
 ### <a name="istool"></a>IsTool
 
@@ -226,11 +226,13 @@ ms.locfileid: "59932103"
 
 ### <a name="packing-using-a-nuspec"></a>Упаковка с помощью NUSPEC
 
-Можно использовать `.nuspec` файл для упаковки проекта, при условии, что у вас есть файл проекта SDK для импорта `NuGet.Build.Tasks.Pack.targets` , чтобы можно было выполнить задачу пакета. По-прежнему необходимо восстановить проект, прежде чем можно упаковать в файл nuspec. Требуемая версия .NET framework файл проекта не имеет значения и не использовались при упаковке nuspec. Следующие три свойства MSBuild связаны с упаковкой с помощью `.nuspec`:
+Хотя рекомендуется включить в файл проекта [все свойства](../reference/msbuild-targets.md#pack-target) , которые обычно находятся в `.nuspec` файле, можно использовать `.nuspec` файл для упаковки проекта. Для проекта в стиле, отличном от SDK, `PackageReference`который использует, необходимо `NuGet.Build.Tasks.Pack.targets` импортировать, чтобы можно было выполнить задачу «Pack». Вам по-прежнему потребуется восстановить проект, чтобы можно было упаковать файл nuspec. (Проект в стиле SDK включает целевые объекты Pack по умолчанию.)
+
+Целевая платформа файла проекта несущественна и не используется при упаковке nuspec. Следующие три свойства MSBuild связаны с упаковкой с помощью `.nuspec`:
 
 1. `NuspecFile`: относительный или абсолютный путь к файлу `.nuspec`, используемому для упаковки.
 1. `NuspecProperties`: список разделенных точками с запятой пар "ключ-значение". Из-за особенностей работы анализа в командной строке MSBuild несколько свойств нужно указать следующим образом: `-p:NuspecProperties=\"key1=value1;key2=value2\"`.  
-1. `NuspecBasePath`: Базовый путь для `.nuspec` файла.
+1. `NuspecBasePath`: Базовый путь `.nuspec` к файлу.
 
 Если вы используете `dotnet.exe` для упаковки проекта, воспользуйтесь командой, аналогичной следующей:
 
@@ -244,9 +246,9 @@ dotnet pack <path to .csproj file> -p:NuspecFile=<path to nuspec file> -p:Nuspec
 msbuild -t:pack <path to .csproj file> -p:NuspecFile=<path to nuspec file> -p:NuspecProperties=<> -p:NuspecBasePath=<Base path> 
 ```
 
-Обратите внимание на то, что упаковки nuspec использование dotnet.exe или msbuild также приводит к сборке проекта по умолчанию. Этого можно избежать путем передачи ```--no-build``` dotnet.exe, это эквивалентно заданию свойства ```<NoBuild>true</NoBuild> ``` в файле проекта, а также параметр ```<IncludeBuildOutput>false</IncludeBuildOutput> ``` в файле проекта
+Обратите внимание, что упаковка a nuspec с помощью DotNet. exe или MSBuild также ведет к построению проекта по умолчанию. Это можно избежать, передав ```--no-build``` свойство в файл DotNet. exe, эквивалентное параметру ```<NoBuild>true</NoBuild> ``` в файле проекта, а также задав параметр ```<IncludeBuildOutput>false</IncludeBuildOutput> ``` в файле проекта.
 
-Приведен пример файла csproj, упаковать в файл nuspec.
+Пример файла *. csproj* для упаковки файла nuspec:
 
 ```xml
 <Project Sdk="Microsoft.NET.Sdk">
@@ -261,19 +263,19 @@ msbuild -t:pack <path to .csproj file> -p:NuspecFile=<path to nuspec file> -p:Nu
 </Project>
 ```
 
-### <a name="advanced-extension-points-to-create-customized-package"></a>Дополнительные точки расширения, чтобы создать настроенный пакет
+### <a name="advanced-extension-points-to-create-customized-package"></a>Дополнительные точки расширения для создания настраиваемого пакета
 
-`pack` Целевой предоставляет две точки расширения, которые работают в определенной сборки внутренний целевой платформы. Точки расширения поддерживают определенное содержимое целевой платформы и сборки в пакет:
+`pack` Целевой объект предоставляет две точки расширения, которые выполняются во внутренней и целевой сборке конкретной платформы. Поддержка точек расширения включает в пакет содержимое и сборки, относящиеся к целевой платформе.
 
-- `TargetsForTfmSpecificBuildOutput` целевой объект: Используйте для файлов в `lib` папка или папка, заданные с помощью `BuildOutputTargetFolder`.
-- `TargetsForTfmSpecificContentInPackage` целевой объект: Используйте для файлов за пределами `BuildOutputTargetFolder`.
+- `TargetsForTfmSpecificBuildOutput`мишень Используется для файлов в `lib` папке или в папке, заданной с помощью. `BuildOutputTargetFolder`
+- `TargetsForTfmSpecificContentInPackage`мишень Используется для файлов за пределами `BuildOutputTargetFolder`.
 
-#### <a name="targetsfortfmspecificbuildoutput"></a>TargetsForTfmSpecificBuildOutput
+#### <a name="targetsfortfmspecificbuildoutput"></a>таржетсфортфмспеЦификбуилдаутпут
 
-Запишите пользовательский целевой объект и укажите его в качестве значения `$(TargetsForTfmSpecificBuildOutput)` свойство. Для всех файлов, которые необходимо перевести в `BuildOutputTargetFolder` (по умолчанию), lib целевой объект должен записывать файлы в ItemGroup `BuildOutputInPackage` и задайте следующие два значения метаданных:
+Напишите настраиваемый целевой объект и укажите его в качестве значения `$(TargetsForTfmSpecificBuildOutput)` свойства. Для файлов, которые необходимо `BuildOutputTargetFolder` переключать в (LIB по умолчанию), целевой объект должен записать эти файлы в ItemGroup `BuildOutputInPackage` и задать следующие два значения метаданных:
 
-- `FinalOutputPath`: Абсолютный путь к файлу; Если не указано, удостоверение используется для оценки исходный путь.
-- `TargetPath`:  (Необязательно) Значение, когда файл должен располагаться в подпапке в `lib\<TargetFramework>` , такие как вспомогательные сборки, учитываемых в своих папках соответствующего языка и региональных параметров. По умолчанию указывается имя файла.
+- `FinalOutputPath`: Абсолютный путь к файлу; Если этот параметр не указан, для вычисления исходного пути используется удостоверение.
+- `TargetPath`:  Используемых Задается, когда файл необходимо переключиться во `lib\<TargetFramework>` вложенную папку в, например вспомогательные сборки, которые находятся в соответствующих папках языка и региональных параметров. По умолчанию используется имя файла.
 
 Пример
 
@@ -291,12 +293,12 @@ msbuild -t:pack <path to .csproj file> -p:NuspecFile=<path to nuspec file> -p:Nu
 </Target>
 ```
 
-#### <a name="targetsfortfmspecificcontentinpackage"></a>TargetsForTfmSpecificContentInPackage
+#### <a name="targetsfortfmspecificcontentinpackage"></a>таржетсфортфмспеЦификконтентинпаккаже
 
-Запишите пользовательский целевой объект и укажите его в качестве значения `$(TargetsForTfmSpecificContentInPackage)` свойство. Для всех файлов, включаемых в пакет, целевой объект должен записывать файлы в ItemGroup `TfmSpecificPackageFile` и задайте следующие необязательные метаданные:
+Напишите настраиваемый целевой объект и укажите его в качестве значения `$(TargetsForTfmSpecificContentInPackage)` свойства. Для всех файлов, включаемых в пакет, целевой объект должен записать эти файлы в ItemGroup `TfmSpecificPackageFile` и задать следующие необязательные метаданные:
 
-- `PackagePath`: Путь, где этот файл должен быть выходные данные в пакете. NuGet выдает предупреждение, если же путь к пакету добавляется более одного файла.
-- `BuildAction`: Действие построения файла, требуется только путь к пакету в `contentFiles` папку. По умолчанию — «None».
+- `PackagePath`: Путь, по которому файл должен быть выведен в пакете. NuGet выдает предупреждение, если в один и тот же путь к пакету добавляется несколько файлов.
+- `BuildAction`: Действие сборки, присваиваемое файлу, требуется только в том случае, если путь к пакету `contentFiles` находится в папке. По умолчанию используется значение "нет".
 
 Пример:
 ```xml
@@ -322,33 +324,33 @@ msbuild -t:pack <path to .csproj file> -p:NuspecFile=<path to nuspec file> -p:Nu
 
 1. Чтение перекрестных ссылок между проектами.
 1. Чтение свойств проекта, чтобы найти промежуточную папку и целевые платформы.
-1. Передача данных MSBuild в NuGet.Build.Tasks.dll.
+1. Передача данных MSBuild в NuGet. Build. Tasks. dll
 1. Запуск восстановления.
 1. Скачивание пакетов.
 1. Запись файла ресурсов, целевых объектов и свойств.
 
-`restore` Целевой works **только** для проектов, использующих формат PackageReference. Да **не** работают для проектов с помощью `packages.config` форматирования; используйте [восстановление nuget](../tools/cli-ref-restore.md) вместо этого.
+Целевой объект работает только для проектов, использующих формат PackageReference.  `restore` Он **не** работает для проектов, использующих этот `packages.config` формат; вместо этого используйте [Восстановление NuGet](../reference/cli-reference/cli-ref-restore.md) .
 
 ### <a name="restore-properties"></a>Свойства восстановления
 
 Дополнительные параметры восстановления могут поступать из свойств MSBuild в файле проекта. Значения также можно задать из командной строки с помощью параметра `-p:` (см. примеры ниже).
 
-| Свойство | Описание |
+| Свойство. | Описание |
 |--------|--------|
 | RestoreSources | Разделенный точками с запятой список источников пакетов. |
 | RestorePackagesPath | Путь к папке пакетов пользователя. |
 | RestoreDisableParallel | Ограничение скачиваний до одного за раз. |
 | RestoreConfigFile | Путь к применяемому файлу `Nuget.Config`. |
-| RestoreNoCache | Если значение равно true, позволяет избежать использования кэшированные пакеты. См. в разделе [управление папкой установки глобальных пакетов и папками кэша](../consume-packages/managing-the-global-packages-and-cache-folders.md). |
+| RestoreNoCache | Значение true позволяет избежать использования кэшированных пакетов. См. раздел [Управление глобальными пакетами и папками кэша](../consume-packages/managing-the-global-packages-and-cache-folders.md). |
 | RestoreIgnoreFailedSources | Если значение равно true, нерабочие или отсутствующие источники пакетов игнорируются. |
-| RestoreFallbackFolders | Резервные папки используется таким же образом пользователя пакеты, которые будет использоваться папка. |
-| RestoreAdditionalProjectSources | Дополнительные источники, которые используются во время восстановления. |
-| RestoreAdditionalProjectFallbackFolders | Дополнительные резервные папки для использования во время восстановления. |
-| RestoreAdditionalProjectFallbackFoldersExcludes | Исключает резервной папки, указанные в `RestoreAdditionalProjectFallbackFolders` |
+| ресторефаллбаккфолдерс | Резервные папки используются так же, как и папка User Packages. |
+| рестореаддитионалпрожектсаурцес | Дополнительные источники, используемые во время восстановления. |
+| рестореаддитионалпрожектфаллбаккфолдерс | Дополнительные резервные папки для использования во время восстановления. |
+| рестореаддитионалпрожектфаллбаккфолдерсексклудес | Исключает резервные папки, указанные в`RestoreAdditionalProjectFallbackFolders` |
 | RestoreTaskAssemblyFile | Путь к `NuGet.Build.Tasks.dll`. |
 | RestoreGraphProjectInput | Разделенный точками с запятой список проектов для восстановления, который должен содержать абсолютные пути. |
-| RestoreUseSkipNonexistentTargets  | Если проекты собираются с помощью MSBuild, он определяет, является ли они собираются с помощью `SkipNonexistentTargets` оптимизации. Если значение не задано, по умолчанию используется `true`. Результат при поведение высокопроизводительную целевыми платформами проекта не может быть импортирован. |
-| MSBuildProjectExtensionsPath | Выходная папка по умолчанию принимается `BaseIntermediateOutputPath` и `obj` папки. |
+| рестореусескипнонексистенттаржетс  | При сборе проектов с помощью MSBuild определяет, будут ли они собраны с `SkipNonexistentTargets` помощью оптимизации. Если значение не задано, по `true`умолчанию используется значение. Следствием является быстрое поведение при сбое, если целевые объекты проекта не могут быть импортированы. |
+| MSBuildProjectExtensionsPath | Папка Output, по умолчанию `BaseIntermediateOutputPath` — `obj` и папка. |
 
 #### <a name="examples"></a>Примеры
 
@@ -372,26 +374,26 @@ msbuild -t:restore -p:RestoreConfigFile=<path>
 
 | Файл | Описание |
 |--------|--------|
-| `project.assets.json` | Содержит все ссылки на пакеты в графе зависимостей. |
+| `project.assets.json` | Содержит диаграмму зависимостей всех ссылок на пакеты. |
 | `{projectName}.projectFileExtension.nuget.g.props` | Ссылки на свойства MSBuild, содержащиеся в пакетах. |
 | `{projectName}.projectFileExtension.nuget.g.targets` | Ссылки на целевые объекты MSBuild, содержащиеся в пакетах. |
 
-### <a name="restoring-and-building-with-one-msbuild-command"></a>Восстановление и построение с помощью одной команды MSBuild
+### <a name="restoring-and-building-with-one-msbuild-command"></a>Восстановление и сборка с помощью одной команды MSBuild
 
-Тем, что NuGet можно восстановить пакеты, обеспечивающие работу целевых объектов MSBuild и свойств, восстановления и ознакомительные версии сборки выполняются с другими глобальными свойствами.
-Это означает, что ниже будут непредсказуемыми и часто неправильное поведение.
+Из-за того, что NuGet может восстанавливать пакеты, которые выводят цели и свойства MSBuild, оценки восстановления и сборки выполняются с разными глобальными свойствами.
+Это означает, что следующие действия будут иметь непредсказуемое и неправильное поведение.
 
 ```cli
 msbuild -t:restore,build
 ```
 
- Вместо этого рекомендуется:
+ Вместо этого рекомендуемый подход:
 
 ```cli
 msbuild -t:build -restore
 ```
 
-Эта же логика применяется к другим целевым объектам, аналогичную `build`.
+Одна и та же логика применяется к другим `build`целевым объектам, аналогичным.
 
 ### <a name="packagetargetfallback"></a>PackageTargetFallback
 

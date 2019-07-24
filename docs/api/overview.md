@@ -1,21 +1,21 @@
 ---
-title: Общие сведения об API NuGet
-description: API NuGet — это набор конечных точек HTTP, которые можно использовать для загрузки пакетов, получения метаданных, публикации новых пакетов и т. д.
+title: Общие сведения об API сервера NuGet
+description: Серверный API NuGet — это набор конечных точек HTTP, которые можно использовать для скачивания пакетов, получения метаданных, публикации новых пакетов и т. д.
 author: joelverhagen
 ms.author: jver
 ms.date: 10/26/2017
 ms.topic: reference
 ms.reviewer: kraigb
-ms.openlocfilehash: e8e8fdeee4f0765e2409aea261db8217744ae2c7
-ms.sourcegitcommit: efc18d484fdf0c7a8979b564dcb191c030601bb4
+ms.openlocfilehash: aacf56a5dc5af9abf6f60d42bc7fd530a128d0d8
+ms.sourcegitcommit: e65180e622f6233b51bb0b41d0e919688083eb26
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/18/2019
-ms.locfileid: "68316997"
+ms.lasthandoff: 07/23/2019
+ms.locfileid: "68419831"
 ---
-# <a name="nuget-api"></a>API NuGet
+# <a name="nuget-server-api"></a>API сервера NuGet
 
-API NuGet — это набор конечных точек HTTP, которые можно использовать для загрузки пакетов, получения метаданных, публикации новых пакетов и выполнения большинства других операций, доступных в официальных клиентах NuGet.
+API сервера NuGet — это набор конечных точек HTTP, которые можно использовать для скачивания пакетов, получения метаданных, публикации новых пакетов и выполнения большинства других операций, доступных в официальных клиентах NuGet.
 
 Этот API используется клиентом NuGet в Visual Studio, NuGet. exe и .net CLI для выполнения операций NuGet, таких как [`dotnet restore`](/dotnet/core/tools/dotnet-restore?tabs=netcore2x), поиск в пользовательском интерфейсе Visual Studio и. [`nuget.exe push`](../reference/cli-reference/cli-ref-push.md)
 

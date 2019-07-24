@@ -1,20 +1,20 @@
 ---
-title: Справочник по файлу NuGet.config
+title: Справочник по файлу NuGet. config
 description: Справочник по файлу NuGet.Config, включая разделы config, bindingRedirects, packageRestore, solution и packageSource.
 author: karann-msft
 ms.author: karann
 ms.date: 10/25/2017
 ms.topic: reference
-ms.openlocfilehash: 2eceb6e94a353cb29b83aea114c6cea2acbac266
-ms.sourcegitcommit: b6810860b77b2d50aab031040b047c20a333aca3
+ms.openlocfilehash: b03bb8da0191a679671e5898ac70fff2024d52f2
+ms.sourcegitcommit: efc18d484fdf0c7a8979b564dcb191c030601bb4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/28/2019
-ms.locfileid: "67426150"
+ms.lasthandoff: 07/18/2019
+ms.locfileid: "68317223"
 ---
-# <a name="nugetconfig-reference"></a>Справочник по NuGet.config
+# <a name="nugetconfig-reference"></a>Справочник по NuGet. config
 
-Управления работой NuGet используются параметры в различных `NuGet.Config` файлы, как описано в разделе [NuGet распространенных конфигураций](../consume-packages/configuring-nuget-behavior.md).
+Поведение NuGet управляется параметрами в различных `NuGet.Config` файлах, как описано в разделе [Общие конфигурации NuGet](../consume-packages/configuring-nuget-behavior.md).
 
 `nuget.config` — это XML-файл, содержащий узел `<configuration>` верхнего уровня, который, в свою очередь, содержит элементы разделов, описываемые в этой статье. Каждый раздел содержит ноль или более элементов. См. [пример файла конфигурации](#example-config-file). В именах регистр символов не учитывается, а в качестве значений могут использоваться [переменные среды](#using-environment-variables).
 
@@ -30,7 +30,7 @@ ms.locfileid: "67426150"
   - [apikeys](#apikeys)
   - [disabledPackageSources](#disabledpackagesources)
   - [activePackageSource](#activepackagesource)
-- [раздел trustedSigners](#trustedsigners-section)
+- [раздел Трустедсигнерс](#trustedsigners-section)
 - [Использование переменных среды](#using-environment-variables)
 - [Пример файла конфигурации](#example-config-file)
 
@@ -41,18 +41,18 @@ ms.locfileid: "67426150"
 
 ## <a name="config-section"></a>Раздел config
 
-Содержит различные параметры конфигурации, которые можно задавать с помощью [команды `nuget config`](../tools/cli-ref-config.md).
+Содержит различные параметры конфигурации, которые можно задавать с помощью [команды `nuget config`](../reference/cli-reference/cli-ref-config.md).
 
-`dependencyVersion` и `repositoryPath` применяются только к проектам с помощью `packages.config`. `globalPackagesFolder` применяется только к проектам, в формате PackageReference.
+`dependencyVersion`и `repositoryPath` применяются только к проектам `packages.config`с помощью. `globalPackagesFolder`применяется только к проектам, использующим формат PackageReference.
 
 | Ключ | Значение |
 | --- | --- |
 | dependencyVersion (только `packages.config`) | Значение `DependencyVersion` по умолчанию для установки, восстановления и обновления пакета, если параметр `-DependencyVersion` не указан напрямую. Это значение также используется в пользовательском интерфейсе диспетчера пакетов NuGet. Возможные значения: `Lowest`, `HighestPatch`, `HighestMinor`, `Highest`. |
-| globalPackagesFolder (проекты только с помощью PackageReference) | Расположение глобальной папки пакетов по умолчанию. Значение по умолчанию — `%userprofile%\.nuget\packages` (Windows) или `~/.nuget/packages` (Mac и Linux). В файлах `nuget.config` для конкретных проектов можно использовать относительный путь. Чтобы переопределить этот параметр, в переменной среды NUGET_PACKAGES, который имеет более высокий приоритет. |
-| repositoryPath (только `packages.config`) | Расположение, в котором следует установить пакеты NuGet вместо папки `$(Solutiondir)/packages` по умолчанию. В файлах `nuget.config` для конкретных проектов можно использовать относительный путь. Чтобы переопределить этот параметр, в переменной среды NUGET_PACKAGES, который имеет более высокий приоритет. |
+| globalPackagesFolder (проекты, использующие только PackageReference) | Расположение глобальной папки пакетов по умолчанию. Значение по умолчанию — `%userprofile%\.nuget\packages` (Windows) или `~/.nuget/packages` (Mac и Linux). В файлах `nuget.config` для конкретных проектов можно использовать относительный путь. Этот параметр переопределяется переменной среды NUGET_PACKAGES, которая имеет приоритет. |
+| repositoryPath (только `packages.config`) | Расположение, в котором следует установить пакеты NuGet вместо папки `$(Solutiondir)/packages` по умолчанию. В файлах `nuget.config` для конкретных проектов можно использовать относительный путь. Этот параметр переопределяется переменной среды NUGET_PACKAGES, которая имеет приоритет. |
 | defaultPushSource | Определяет URL-адрес источника пакета или путь к нему, который следует использовать по умолчанию, если другие источники пакета для операции не обнаружены. |
 | http_proxy http_proxy.user http_proxy.password no_proxy | Параметры прокси-сервера, которые следует использовать при подключении к источникам пакета; значение `http_proxy` должно иметь формат `http://<username>:<password>@<domain>`. Пароли зашифровываются, и их нельзя добавить вручную. Значение параметра `no_proxy` представляет собой разделенный запятыми список доменов, для которых производится обход прокси-сервера. В качестве этих значений можно также использовать переменные среды http_proxy и no_proxy. Дополнительные сведения см. в записи блога [Параметры прокси-сервера в NuGet](http://skolima.blogspot.com/2012/07/nuget-proxy-settings.html) (skolima.blogspot.com). |
-| signatureValidationMode | Указывает режим проверки, используемый для проверки подписи пакетов для установки и восстановления. Значения: `accept`, `require`. По умолчанию — `accept`.
+| сигнатуревалидатионмоде | Указывает режим проверки, используемый для проверки сигнатур пакетов при установке пакета и восстановления. Значения: `accept`, `require`. По умолчанию — `accept`.
 
 **Пример**:
 
@@ -118,15 +118,15 @@ ms.locfileid: "67426150"
 
 ## <a name="package-source-sections"></a>Разделы источников пакета
 
-`packageSources`, `packageSourceCredentials`, `apikeys`, `activePackageSource`, `disabledPackageSources` И `trustedSigners` все работают вместе, чтобы настроить, как NuGet работает с репозиториями пакетов во время установки, восстановления и операций обновления.
+`packageSources`Параметры, `packageSourceCredentials`, ,`apikeys` исовместно`trustedSigners` используются для настройки способа работы NuGet с репозиториями пакетов во время операций установки, восстановления и обновления. `activePackageSource` `disabledPackageSources`
 
-[ `nuget sources` Команда](../tools/cli-ref-sources.md) обычно используется для управления этими параметрами, за исключением `apikeys` который настраивается с помощью [ `nuget setapikey` команда](../tools/cli-ref-setapikey.md), и `trustedSigners` управляемых с помощью [ `nuget trusted-signers` команда](../tools/cli-ref-trusted-signers.md).
+[ `nuget setapikey` ](../reference/cli-reference/cli-ref-setapikey.md) `apikeys` `trustedSigners` [ `nuget trusted-signers` ](../reference/cli-reference/cli-ref-trusted-signers.md) [ Команда`nuget sources` ](../reference/cli-reference/cli-ref-sources.md) обычно используется для управления этими параметрами, за исключением того, что управляется с помощью команды и управляется с помощью команды.
 
 Обратите внимание, что URL-адрес источника для nuget.org — `https://api.nuget.org/v3/index.json`.
 
 ### <a name="packagesources"></a>packageSources
 
-Выводит список всех известных источников пакетов. Порядок игнорируется во время операций восстановления, а также для любого проекта, в формате PackageReference. NuGet учитывает порядок источников для установки и операции обновления с проектами, использующими `packages.config`.
+Выводит список всех известных источников пакетов. Порядок пропускается во время операций восстановления и с любым проектом, использующим формат PackageReference. NuGet учитывает порядок источников для операций установки и обновления с проектами с помощью `packages.config`.
 
 | Ключ | Значение |
 | --- | --- |
@@ -186,7 +186,7 @@ ms.locfileid: "67426150"
 
 ### <a name="apikeys"></a>apikeys
 
-Содержит ключи для источников, которые используют проверку подлинности на основе ключей API. Эти ключи задаются с помощью [команды `nuget setapikey`](../tools/cli-ref-setapikey.md).
+Содержит ключи для источников, которые используют проверку подлинности на основе ключей API. Эти ключи задаются с помощью [команды `nuget setapikey`](../reference/cli-reference/cli-ref-setapikey.md).
 
 | Ключ | Значение |
 | --- | --- |
@@ -240,21 +240,21 @@ ms.locfileid: "67426150"
     <add key="All" value="(Aggregate source)" />
 </activePackageSource>
 ```
-## <a name="trustedsigners-section"></a>раздел trustedSigners
+## <a name="trustedsigners-section"></a>раздел Трустедсигнерс
 
-Хранилища доверенных подписавших, используемый для обеспечения пакета при установке или восстановлении. Этот список не может быть пустым, когда пользователь устанавливает `signatureValidationMode` для `require`. 
+Хранит доверенные подписывающих, используемые для разрешения пакета во время установки или восстановления. Этот список не может быть пустым, если пользователь `signatureValidationMode` задает `require`значение. 
 
-В этом разделе можно обновить с помощью [ `nuget trusted-signers` команда](../tools/cli-ref-trusted-signers.md).
+Этот раздел можно обновить с помощью [ `nuget trusted-signers` команды](../reference/cli-reference/cli-ref-trusted-signers.md).
 
-**Схемы**:
+**Схема**:
 
-Доверенным лицом имеет коллекцию `certificate` элементы, которые прикрепить все сертификаты, которые идентифицируют заданного подписавшего. Доверенным лицом может быть либо `Author` или `Repository`.
+Доверенный подписывающий имеет коллекцию `certificate` элементов, которые закрепляют все сертификаты, которые обозначают данного подписавший. Доверенный подписывающий может быть `Author` `Repository`либо.
 
-Доверенная *репозитория* также указывает `serviceIndex` для репозитория (которого должен быть допустимым `https` uri) и при необходимости можно указать точку с запятой список с разделителями `owners` ограничить еще более, является доверенным из этого конкретного репозитория.
+В доверенном репозитории также `serviceIndex` указывается для репозитория (который должен быть допустимым  `https` универсальным кодом ресурса (URI)). Кроме того, можно указать список разделенных `owners` точкой с запятой списка, чтобы ограничить еще больше пользователей, которым доверяет данный репозитория.
 
-Поддерживаемые алгоритмы хэширования для отпечаток сертификата, `SHA256`, `SHA384` и `SHA512`.
+Поддерживаемые алгоритмы хэширования, используемые для отпечатка `SHA384` сертификата `SHA512`, — это `SHA256`, и.
 
-Если `certificate` указывает `allowUntrustedRoot` как `true` заданного сертификата может создать недоверенный корневой цепочку при построении цепочки сертификатов, как часть проверки подписи.
+Значение, `certificate` если `allowUntrustedRoot` указывает `true` , что данный сертификат может быть связан с недоверенным корнем при построении цепочки сертификатов в ходе проверки подписи.
 
 **Пример**:
 

@@ -5,12 +5,12 @@ author: karann-msft
 ms.author: karann
 ms.date: 01/18/2018
 ms.topic: reference
-ms.openlocfilehash: 51c4c9937483e7f8a57356515c06a60c0f9e6f62
-ms.sourcegitcommit: efc18d484fdf0c7a8979b564dcb191c030601bb4
+ms.openlocfilehash: 384e708187a747221de103720cc51af07acf713e
+ms.sourcegitcommit: f9e39ff9ca19ba4a26e52b8a5e01e18eb0de5387
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/18/2019
-ms.locfileid: "68327851"
+ms.lasthandoff: 07/24/2019
+ms.locfileid: "68433317"
 ---
 # <a name="config-command-nuget-cli"></a>Команда config (интерфейс командной строки NuGet)
 
@@ -36,7 +36,7 @@ nuget config -AsPath <name> [options]
 | Параметр | Описание |
 | --- | --- |
 | аспас | Возвращает значение конфигурации в виде пути, которое игнорируется `-Set` , если используется. |
-| ConfigFile | Файл конфигурации NuGet для изменения. Если не указано, `%AppData%\NuGet\NuGet.Config` используется (Windows) `~/.nuget/NuGet/NuGet.Config` или (Mac/Linux).|
+| ConfigFile | Файл конфигурации NuGet для изменения. Если этот параметр не указан, используется файл по умолчанию —`%AppData%\NuGet\NuGet.Config` (Windows) или `~/.config/NuGet/NuGet.Config` (Mac/Linux `~/.nuget/NuGet/NuGet.Config` ) или (зависит от дистрибутива ОС).|
 | форцеенглишаутпут | *(3.5 +)* Принудительное выполнение NuGet. exe с использованием инвариантного языка и региональных параметров, основанных на английском языке. |
 | Help | Отображает справочные сведения для команды. |
 | NonInteractive | Подавляет запросы на ввод или подтверждение пользователя. |
