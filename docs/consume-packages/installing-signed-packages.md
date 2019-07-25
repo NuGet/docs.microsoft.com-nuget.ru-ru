@@ -5,12 +5,12 @@ author: karann-msft
 ms.author: karann
 ms.date: 11/29/2018
 ms.topic: conceptual
-ms.openlocfilehash: 8da57dc295ea78f2eb183226fc9b2f4a37e3f5db
-ms.sourcegitcommit: b6810860b77b2d50aab031040b047c20a333aca3
+ms.openlocfilehash: 7b92d07d19a2e9073ecc38ed37b4ee2491080443
+ms.sourcegitcommit: efc18d484fdf0c7a8979b564dcb191c030601bb4
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/28/2019
-ms.locfileid: "67426637"
+ms.lasthandoff: 07/18/2019
+ms.locfileid: "68317771"
 ---
 # <a name="manage-package-trust-boundaries"></a>Управление границами доверия пакета
 
@@ -24,7 +24,7 @@ ms.locfileid: "67426637"
 > [!Note]
 > Требуется NuGet 4.9.0 и выше и Visual Studio версии 15.9 и более поздней в Windows.
 
-Вы можете настроить способ проверки подписей пакетов в клиентах NuGet, задав для `signatureValidationMode` значение `require` в файле [nuget.config](../reference/nuget-config-file.md) с помощью команды [`nuget config`](../tools/cli-ref-config.md).
+Вы можете настроить способ проверки подписей пакетов в клиентах NuGet, задав для `signatureValidationMode` значение `require` в файле [nuget.config](../reference/nuget-config-file.md) с помощью команды [`nuget config`](../reference/cli-reference/cli-ref-config.md).
 
 ```cmd
 nuget.exe config -set signatureValidationMode=require
@@ -40,7 +40,7 @@ nuget.exe config -set signatureValidationMode=require
 
 ### <a name="trust-package-author"></a>Доверие к автору пакета
 
-Чтобы доверять пакету на основе подписи автора, используйте команду [`trusted-signers`](../tools/cli-ref-trusted-signers.md) для задания свойства `author` в файле nuget.config.
+Чтобы доверять пакету на основе подписи автора, используйте команду [`trusted-signers`](../reference/cli-reference/cli-ref-trusted-signers.md) для задания свойства `author` в файле nuget.config.
 
 ```cmd
 nuget.exe  trusted-signers Add -Name MyCompanyCert -CertificateFingerprint CE40881FF5F0AD3E58965DA20A9F571EF1651A56933748E1BF1C99E537C4E039 -FingerprintAlgorithm SHA256
@@ -55,7 +55,7 @@ nuget.exe  trusted-signers Add -Name MyCompanyCert -CertificateFingerprint CE408
 ```
 
 >[!TIP]
->Используйте [команду проверки](../tools/cli-ref-verify.md) `nuget.exe`, чтобы получить значение `SHA256` отпечатка сертификата.
+>Используйте [команду проверки](../reference/cli-reference/cli-ref-verify.md) `nuget.exe`, чтобы получить значение `SHA256` отпечатка сертификата.
 
 
 ### <a name="trust-all-packages-from-a-repository"></a>Доверие ко всем пакетам в репозитории
@@ -95,7 +95,7 @@ nuget.exe  trusted-signers Add -Name MyCompanyCert -CertificateFingerprint CE408
 
 ### <a name="sync-repository-certificates"></a>Синхронизация сертификатов репозитория
 
-Репозитории пакетов должны объявлять о сертификатах, используемых в [индексе службы](../api/service-index.md). Со временем репозиторий обновит эти сертификаты, например, по истечении срока их действия. При этом клиенты с определенными политиками потребуют обновления конфигурации, чтобы включить новый добавленный сертификат. Вы можете легко обновить доверенных подписывающих лиц, связанных с репозиторием, с помощью [команды синхронизации доверенных подписывающих лиц](../tools/cli-ref-trusted-signers.md#nuget-trusted-signers-sync--name-) `nuget.exe`.
+Репозитории пакетов должны объявлять о сертификатах, используемых в [индексе службы](../api/service-index.md). Со временем репозиторий обновит эти сертификаты, например, по истечении срока их действия. При этом клиенты с определенными политиками потребуют обновления конфигурации, чтобы включить новый добавленный сертификат. Вы можете легко обновить доверенных подписывающих лиц, связанных с репозиторием, с помощью [команды синхронизации доверенных подписывающих лиц](../reference/cli-reference/cli-ref-trusted-signers.md#nuget-trusted-signers-sync--name-) `nuget.exe`.
 
 ### <a name="schema-reference"></a>Справочник схем
 

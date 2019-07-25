@@ -5,12 +5,12 @@ author: karann-msft
 ms.author: karann
 ms.date: 10/25/2017
 ms.topic: conceptual
-ms.openlocfilehash: 57b7f29b533a8e6d7db2710c7e42a239f50199a1
-ms.sourcegitcommit: b6810860b77b2d50aab031040b047c20a333aca3
+ms.openlocfilehash: 5309d94fafea9cdfc3699d443393be5d381dd145
+ms.sourcegitcommit: efc18d484fdf0c7a8979b564dcb191c030601bb4
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/28/2019
-ms.locfileid: "67426654"
+ms.lasthandoff: 07/18/2019
+ms.locfileid: "68317733"
 ---
 # <a name="common-nuget-configurations"></a>Распространенные конфигурации NuGet
 
@@ -32,7 +32,7 @@ ms.locfileid: "67426654"
 
 Файл `NuGet.Config` представляет собой простой текстовый файл в формате XML, который содержит пары ключей и значений, описываемые в разделе [Параметры конфигурации NuGet](../reference/nuget-config-file.md).
 
-Управление параметрами осуществляется с помощью команды [config command](../tools/cli-ref-config.md) интерфейса командной строки NuGet:
+Управление параметрами осуществляется с помощью команды [config command](../reference/cli-reference/cli-ref-config.md) интерфейса командной строки NuGet:
 - По умолчанию изменения вносятся в файл конфигурации уровня пользователя.
 - Для изменения параметров в другом файле используйте параметр `-configFile`. В таком случае файлы могут иметь любые имена.
 - Ключи всегда задаются с учетом регистра символов.

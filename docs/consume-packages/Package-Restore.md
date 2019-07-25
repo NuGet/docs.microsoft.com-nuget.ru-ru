@@ -5,12 +5,12 @@ author: karann-msft
 ms.author: karann
 ms.date: 06/24/2019
 ms.topic: conceptual
-ms.openlocfilehash: e85d8cc3fd9492118bd8f34cfd05f20a9724c281
-ms.sourcegitcommit: 0dea3b153ef823230a9d5f38351b7cef057cb299
+ms.openlocfilehash: 0df2b0ebcf438fba99291558f1cf929dcb32618b
+ms.sourcegitcommit: efc18d484fdf0c7a8979b564dcb191c030601bb4
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/12/2019
-ms.locfileid: "67842339"
+ms.lasthandoff: 07/18/2019
+ms.locfileid: "68316986"
 ---
 # <a name="package-restore-options"></a>Параметры восстановления пакетов
 
@@ -41,7 +41,7 @@ ms.locfileid: "67842339"
 
 - **CLI dotnet**: В командной строке перейдите к папке с проектом, а затем с помощью команды [dotnet restore](/dotnet/core/tools/dotnet-restore?tabs=netcore2x) восстановите пакеты, перечисленные в файле проекта с использованием [PackageReference](../consume-packages/package-references-in-project-files.md). При использовании .NET Core версии 2.0 и более поздней автоматическое восстановление доступно с помощью команд `dotnet build` и `dotnet run`.  
 
-- **Интерфейс командной строки nuget.exe**: В командной строке перейдите к папке с проектом, а затем с помощью команды [nuget restore](../tools/cli-ref-restore.md) восстановите пакеты, перечисленные в файле проекта или решения либо в `packages.config`. 
+- **Интерфейс командной строки nuget.exe**: В командной строке перейдите к папке с проектом, а затем с помощью команды [nuget restore](../reference/cli-reference/cli-ref-restore.md) восстановите пакеты, перечисленные в файле проекта или решения либо в `packages.config`. 
 
 - **MSBuild**: С помощью команды [msbuild -t:restore](../reference/msbuild-targets.md#restore-target) вы можете восстановить пакеты, включенные в файл проекта с PackageReference. Эта команда доступна только в NuGet версии 4.x и более поздних и MSBuild версии 15.1 и более поздних, включенных в Visual Studio 2017 и более поздних версий. `nuget restore` и `dotnet restore` используют эту команду для подходящих проектов.
 

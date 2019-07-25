@@ -5,12 +5,12 @@ author: karann-msft
 ms.author: karann
 ms.date: 03/13/2018
 ms.topic: conceptual
-ms.openlocfilehash: e99d42744ec860976ae098be94e747ec4bc9a7c6
-ms.sourcegitcommit: 1d1406764c6af5fb7801d462e0c4afc9092fa569
+ms.openlocfilehash: 734f0a609f243c7bdb218a53ed664de68c707dd7
+ms.sourcegitcommit: efc18d484fdf0c7a8979b564dcb191c030601bb4
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/04/2018
-ms.locfileid: "43551960"
+ms.lasthandoff: 07/18/2019
+ms.locfileid: "68317649"
 ---
 # <a name="nugetserver"></a>NuGet.Server
 
@@ -76,7 +76,7 @@ NuGet.Server — это предоставляемый организацией
 
 ## <a name="adding-packages-to-the-feed-externally"></a>Добавление пакетов в веб-канал извне
 
-После запуска сайта NuGet.Server можно добавить пакеты с помощью [nuget push](../tools/cli-ref-push.md) при условии, что в файле `web.config` задано значение ключа API.
+После запуска сайта NuGet.Server можно добавить пакеты с помощью [nuget push](../reference/cli-reference/cli-ref-push.md) при условии, что в файле `web.config` задано значение ключа API.
 
 После установки пакета NuGet.Server файл `web.config` содержит пустое значение `appSetting/apiKey`.
 
@@ -104,7 +104,7 @@ NuGet.Server — это предоставляемый организацией
 
 ## <a name="removing-packages-from-the-feed"></a>Удаление пакетов из веб-канала
 
-При использовании NuGet.Server команда [nuget delete](../tools/cli-ref-delete.md) удаляет пакет из репозитория при условии, что вы указали ключ API вместе с комментарием.
+При использовании NuGet.Server команда [nuget delete](../reference/cli-reference/cli-ref-delete.md) удаляет пакет из репозитория при условии, что вы указали ключ API вместе с комментарием.
 
 Если вы хотите изменить поведение, чтобы вместо этого удалить пакет из списка (оставив его доступным для восстановления), измените значение ключа `enableDelisting` в `web.config` на true.
 

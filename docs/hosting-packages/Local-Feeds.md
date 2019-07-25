@@ -5,18 +5,18 @@ author: karann-msft
 ms.author: karann
 ms.date: 12/06/2017
 ms.topic: conceptual
-ms.openlocfilehash: 91c072c8895ab4267c64fd04deae010ae5af4d37
-ms.sourcegitcommit: 1d1406764c6af5fb7801d462e0c4afc9092fa569
+ms.openlocfilehash: 42a5c30c058a9efb35338c1b484235b6ad111bd0
+ms.sourcegitcommit: efc18d484fdf0c7a8979b564dcb191c030601bb4
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/04/2018
-ms.locfileid: "43545456"
+ms.lasthandoff: 07/18/2019
+ms.locfileid: "68317590"
 ---
 # <a name="local-feeds"></a>Локальные веб-каналы
 
 Локальные веб-каналы пакетов NuGet — это просто иерархические структуры папок в локальной сети (или даже просто на локальном компьютере), где размещаются пакеты. Эти веб-каналы можно использовать в качестве источников пакетов во всех других операциях NuGet с использованием интерфейса командной строки, пользовательского интерфейса диспетчера пакетов и консоли диспетчера пакетов.
 
-Чтобы включить источник, добавьте путь к нему (например, `\\myserver\packages`) в список источников с помощью [пользовательского интерфейса диспетчера пакетов](../tools/package-manager-ui.md#package-sources) или команды [`nuget sources`](../tools/cli-ref-sources.md).
+Чтобы включить источник, добавьте путь к нему (например, `\\myserver\packages`) в список источников с помощью [пользовательского интерфейса диспетчера пакетов](../consume-packages/install-use-packages-visual-studio.md#package-sources) или команды [`nuget sources`](../reference/cli-reference/cli-ref-sources.md).
 
 > [!Note]
 > Иерархические структуры папок поддерживаются в NuGet 3.3+. Более старые версии NuGet используют лишь отдельную папку, содержащую пакеты, производительность которой значительно ниже, чем у иерархической структуры.
@@ -31,7 +31,7 @@ ms.locfileid: "43545456"
           ├─<packageID>.<version>.nupkg
           └─<other files>
 
-NuGet автоматически создает эту структуру, когда вы используете команду [`nuget add`](../tools/cli-ref-add.md) для копирования пакета в веб-канал:
+NuGet автоматически создает эту структуру, когда вы используете команду [`nuget add`](../reference/cli-reference/cli-ref-add.md) для копирования пакета в веб-канал:
 
 ```cli
 nuget add new_package.1.0.0.nupkg -source \\myserver\packages
@@ -39,7 +39,7 @@ nuget add new_package.1.0.0.nupkg -source \\myserver\packages
 
 Команда `nuget add` работает с одним пакетом за раз, что может быть неудобно при настройке веб-канала с несколькими пакетами.
 
-В таких случаях используйте команду [`nuget init`](../tools/cli-ref-init.md), чтобы скопировать все пакеты из папки в веб-канал, как если бы вы запустили `nuget add` для каждого из них по отдельности. Например, следующая команда копирует все пакеты из `c:\packages` в иерархическое дерево в `\\myserver\packages`:
+В таких случаях используйте команду [`nuget init`](../reference/cli-reference/cli-ref-init.md), чтобы скопировать все пакеты из папки в веб-канал, как если бы вы запустили `nuget add` для каждого из них по отдельности. Например, следующая команда копирует все пакеты из `c:\packages` в иерархическое дерево в `\\myserver\packages`:
 
 ```cli
 nuget init c:\packages \\myserver\packages

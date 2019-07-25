@@ -5,12 +5,12 @@ author: karann-msft
 ms.author: karann
 ms.date: 12/07/2017
 ms.topic: conceptual
-ms.openlocfilehash: 9b2a7b299a0cb944ad9045684e14cc7b83e1cff4
-ms.sourcegitcommit: b6810860b77b2d50aab031040b047c20a333aca3
+ms.openlocfilehash: 32b01e6066cf60f7a0942508e640fdd5658b4444
+ms.sourcegitcommit: efc18d484fdf0c7a8979b564dcb191c030601bb4
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/28/2019
-ms.locfileid: "67426665"
+ms.lasthandoff: 07/18/2019
+ms.locfileid: "68316977"
 ---
 # <a name="how-to-reinstall-and-update-packages"></a>Переустановка и обновление пакетов
 
@@ -61,7 +61,7 @@ ms.locfileid: "67426665"
 
 ## <a name="using-update-package"></a>Использование команды Update-Package
 
-Учитывая описанные ниже [особенности](#considerations), вы можете легко переустановить пакет с помощью [команды Update-Package](../Tools/ps-ref-update-package.md) в консоли диспетчера пакетов Visual Studio (**Сервис** > **Диспетчер пакетов NuGet** > **Консоль диспетчера пакетов**):
+Учитывая описанные ниже [особенности](#considerations), вы можете легко переустановить пакет с помощью [команды Update-Package](../reference/ps-reference/ps-ref-update-package.md) в консоли диспетчера пакетов Visual Studio (**Сервис** > **Диспетчер пакетов NuGet** > **Консоль диспетчера пакетов**):
 
 ```ps
 Update-Package -Id <package_name> –reinstall
@@ -97,7 +97,7 @@ Update-Package
 
 При обновлении пакетов в проекте или решении с помощью [PackageReference](../Consume-Packages/Package-References-in-Project-Files.md) всегда применяется последняя версия пакета (кроме пакетов предварительного выпуска). Проекты, использующие `packages.config`, при необходимости могут ограничить версии обновления, как описано ниже в разделе [Ограничение версий для обновления](#constraining-upgrade-versions).
 
-Дополнительные сведения о команде см. по ссылке [Update-Package](../Tools/ps-ref-update-package.md).
+Дополнительные сведения о команде см. по ссылке [Update-Package](../reference/ps-reference/ps-ref-update-package.md).
 
 ### <a name="considerations"></a>Особенности
 

@@ -6,12 +6,12 @@ ms.author: rmpablos
 ms.date: 03/06/2018
 ms.topic: conceptual
 ms.reviewer: anangaur
-ms.openlocfilehash: abdd06642ccc652527a1a005eda2689ce97df74c
-ms.sourcegitcommit: b6810860b77b2d50aab031040b047c20a333aca3
+ms.openlocfilehash: 85a862852761b68db882abdc1ca0e84d83d95f07
+ms.sourcegitcommit: efc18d484fdf0c7a8979b564dcb191c030601bb4
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/28/2019
-ms.locfileid: "67426814"
+ms.lasthandoff: 07/18/2019
+ms.locfileid: "68317642"
 ---
 # <a name="signing-nuget-packages"></a>Подписывание пакетов NuGet
 
@@ -36,7 +36,7 @@ ms.locfileid: "67426814"
 > [!note]
 > Требуется nuget.exe 4.6.0 или более поздней версии.
 
-Подпишите пакет с помощью команды [nuget sign](../tools/cli-ref-sign.md):
+Подпишите пакет с помощью команды [nuget sign](../reference/cli-reference/cli-ref-sign.md):
 
 ```cli
 nuget sign MyPackage.nupkg -CertificatePath <PathToTheCertificate> -Timestamper <TimestampServiceURL>
@@ -45,9 +45,9 @@ nuget sign MyPackage.nupkg -CertificatePath <PathToTheCertificate> -Timestamper 
 > [!Tip]
 > Поставщик сертификатов также часто предоставляет URL-адрес сервера меток времени, который можно указать в качестве значения необязательного аргумента `Timestamper` выше. Чтобы получить URL-адрес этой службы, обратитесь к документации и (или) в службу поддержки своего поставщика.
 
-* Вы можете использовать сертификат, доступный в хранилище сертификатов, или сертификат из файла. См. справочник по CLI для [nuget sign](../tools/cli-ref-sign.md).
+* Вы можете использовать сертификат, доступный в хранилище сертификатов, или сертификат из файла. См. справочник по CLI для [nuget sign](../reference/cli-reference/cli-ref-sign.md).
 * Подписанные пакеты должны включать метку времени, чтобы подпись оставалась действительной после истечения срока действия сертификата для подписывания. В противном случае операция sign вызовет [предупреждение](../reference/errors-and-warnings/NU3002.md).
-* Просмотреть сведения о подписи заданного пакета можно с помощью [nuget verify](../tools/cli-ref-verify.md).
+* Просмотреть сведения о подписи заданного пакета можно с помощью [nuget verify](../reference/cli-reference/cli-ref-verify.md).
 
 ## <a name="register-the-certificate-on-nugetorg"></a>Регистрация сертификата на сайте NuGet.org
 

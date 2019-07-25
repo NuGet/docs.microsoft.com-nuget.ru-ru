@@ -5,12 +5,12 @@ author: karann-msft
 ms.author: karann
 ms.date: 06/04/2018
 ms.topic: conceptual
-ms.openlocfilehash: 8cd7529c4a1ecf659abde03fb1632e26431aebf3
-ms.sourcegitcommit: b6810860b77b2d50aab031040b047c20a333aca3
+ms.openlocfilehash: 3af29e2f9b09ba5bd82779f9aacf314bd8933436
+ms.sourcegitcommit: efc18d484fdf0c7a8979b564dcb191c030601bb4
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/28/2019
-ms.locfileid: "67426750"
+ms.lasthandoff: 07/18/2019
+ms.locfileid: "68317031"
 ---
 # <a name="finding-and-evaluating-nuget-packages-for-your-project"></a>Поиск и пробное использование пакетов NuGet для проекта
 
@@ -40,7 +40,7 @@ NuGet устанавливает пакет в проект только в то
 
 Однако при необходимости поддерживаемые платформы можно определить другими способами:
 
-1. Попытайтесь установить пакет в проект, используя команду [`Install-Package`](../tools/ps-ref-install-package.md) в консоли диспетчера пакетов NuGet. Если пакет несовместим, эта команда выведет список поддерживаемых пакетом платформ.
+1. Попытайтесь установить пакет в проект, используя команду [`Install-Package`](../reference/ps-reference/ps-ref-install-package.md) в консоли диспетчера пакетов NuGet. Если пакет несовместим, эта команда выведет список поддерживаемых пакетом платформ.
 
 1. Скачайте пакет с его страницы на веб-сайте nuget.org по ссылке **Скачать вручную** в разделе **Сведения**. Измените расширение с `.nupkg` на `.zip` и откройте файл, чтобы просмотреть содержимое его папки `lib`. В ней представлены вложенные папки для каждой поддерживаемой платформы, обозначенные с помощью моникера целевой платформы (TFM). Дополнительные сведения см. в статье [Требуемые версии .NET Framework](../reference/target-frameworks.md). Если в папке `lib` нет вложенных папок и располагается только один DLL-файл, попробуйте установить пакет в проект, чтобы определить его совместимость.
 
@@ -58,9 +58,9 @@ NuGet устанавливает пакет в проект только в то
 
     ![Флажок "Включить предварительные версии" в Visual Studio](media/Prerelease_02-CheckPrerelease.png)
 
-- **Консоль диспетчера пакетов**. Используйте параметр `-IncludePrerelease` с командами `Find-Package`, `Get-Package`, `Install-Package`, `Sync-Package` и `Update-Package`. См. [справочник по PowerShell](../tools/powershell-reference.md).
+- **Консоль диспетчера пакетов**. Используйте параметр `-IncludePrerelease` с командами `Find-Package`, `Get-Package`, `Install-Package`, `Sync-Package` и `Update-Package`. См. [справочник по PowerShell](../reference/powershell-reference.md).
 
-- **Интерфейс командной строки nuget.exe**: Используйте параметр `-prerelease` с командами `install`, `update`, `delete` и `mirror`. См. [справочник по интерфейсу командной строки NuGet](../tools/nuget-exe-cli-reference.md)
+- **Интерфейс командной строки nuget.exe**: Используйте параметр `-prerelease` с командами `install`, `update`, `delete` и `mirror`. См. [справочник по интерфейсу командной строки NuGet](../reference/nuget-exe-cli-reference.md)
 
 - **Интерфейс командной строки dotnet.exe**: укажите точную предварительную версию с помощью аргумента `-v`. Дополнительные сведения см. в статье о команде [dotnet add package](/dotnet/core/tools/dotnet-add-package).
 
