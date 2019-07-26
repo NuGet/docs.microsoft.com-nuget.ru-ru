@@ -66,7 +66,7 @@
 ## [Процесс установки пакета](concepts/package-installation-process.md)
 ## [Управление версиями пакета](reference/package-versioning.md)
 ## [Разрешение зависимостей](consume-packages/dependency-resolution.md)
-# Справочник
+# Справочники
 ## [.nuspec](reference/nuspec.md)
 ## [Файл Nuget.Config](reference/nuget-config-file.md)
 ## [Целевые платформы](reference/target-frameworks.md)
@@ -276,6 +276,7 @@
 ## заметки о выпуске;
 ### [Известные проблемы](release-notes/known-issues.md)
 ### NuGet 5.x
+#### [NuGet 5.2 RTM](release-notes/NuGet-5.2-RTM.md)
 #### [NuGet 5.1 RTM](release-notes/NuGet-5.1-RTM.md)
 #### [NuGet 5.0 RTM](release-notes/NuGet-5.0-RTM.md)
 ### NuGet 4.x
