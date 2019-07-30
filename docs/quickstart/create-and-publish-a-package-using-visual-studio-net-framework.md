@@ -1,16 +1,16 @@
 ---
-title: Создание и публикация пакета .NET Framework с помощью Visual Studio в Windows
+title: Создание и публикация пакета NuGet .NET Framework с помощью Visual Studio в Windows
 description: Пошаговое руководство по созданию и публикации пакета NuGet .NET Framework с помощью Visual Studio в Windows.
 author: karann-msft
 ms.author: karann
 ms.date: 05/13/2018
 ms.topic: quickstart
-ms.openlocfilehash: bf561d36a06bf42c029eb96ff1b7930abffa4c0a
-ms.sourcegitcommit: 0dea3b153ef823230a9d5f38351b7cef057cb299
+ms.openlocfilehash: 75160bf2b01f6d4707162e019a6263ddc64a6f5e
+ms.sourcegitcommit: 0f5363353f9dc1c3d68e7718f51b7ff92bb35e21
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/12/2019
-ms.locfileid: "67842041"
+ms.lasthandoff: 07/19/2019
+ms.locfileid: "68342520"
 ---
 # <a name="quickstart-create-and-publish-a-package-using-visual-studio-net-framework-windows"></a>Краткое руководство. Создание и публикация пакета с помощью Visual Studio (.NET Framework, Windows)
 
@@ -70,7 +70,7 @@ namespace AppLogger
     >
     > При попытке опубликовать пакет с именем, которое уже занято, появится сообщение об ошибке.
 
-1. Нажмите кнопку **Сведения о сборке...** , чтобы открыть диалоговое окно, где можно ввести другие свойства, которые переносятся в манифест (см. [описание токенов замены в справочнике по файлу NUSPEC](../reference/nuspec.md#replacement-tokens)). Чаще всего используются поля **Заголовок**, **Описание**, **Компания**, **Авторские права** и **Версия сборки**. В конечном счете эти свойства отображаются вместе с пакетом на узле, таком как nuget.org, поэтому задайте для них очевидное и понятное значение.
+1. Нажмите кнопку **Сведения о сборке...**, чтобы открыть диалоговое окно, где можно ввести другие свойства, которые переносятся в манифест (см. [описание токенов замены в справочнике по файлу NUSPEC](../reference/nuspec.md#replacement-tokens)). Чаще всего используются поля **Заголовок**, **Описание**, **Компания**, **Авторские права** и **Версия сборки**. В конечном счете эти свойства отображаются вместе с пакетом на узле, таком как nuget.org, поэтому задайте для них очевидное и понятное значение.
 
     ![Сведения о сборке в проекте .NET Framework в Visual Studio](media/qs_create-vs-01b-project-properties.png)
 
@@ -162,7 +162,7 @@ namespace AppLogger
     Your package was pushed.
     ```
 
-Ознакомьтесь со сведениями о [команде nuget push](../tools/cli-ref-push.md).
+Ознакомьтесь со сведениями о [команде nuget push](../reference/cli-reference/cli-ref-push.md).
 
 ### <a name="publish-errors"></a>Ошибки публикации
 
@@ -172,9 +172,15 @@ namespace AppLogger
 
 [!INCLUDE [publish-manage](includes/publish-manage.md)]
 
-## <a name="related-topics"></a>См. также
+## <a name="next-steps"></a>Следующие шаги
 
-- [Создание пакета](../create-packages/creating-a-package.md)
+Поздравляем! Вы создали пакет NuGet.
+
+> [!div class="nextstepaction"]
+> [Создание пакета](../create-packages/creating-a-package.md)
+
+См. подробнее о возможностях NuGet по приведенным ниже ссылкам.
+
 - [Публикация пакета](../nuget-org/publish-a-package.md)
 - [Пакеты предварительного выпуска](../create-packages/Prerelease-Packages.md)
 - [Поддержка нескольких целевых платформ](../create-packages/supporting-multiple-target-frameworks.md)

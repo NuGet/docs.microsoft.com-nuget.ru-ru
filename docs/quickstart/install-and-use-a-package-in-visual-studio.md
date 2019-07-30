@@ -1,32 +1,31 @@
 ---
-title: Вводное руководство по использованию пакетов NuGet в Visual Studio
+title: Установка и использование пакета NuGet в Visual Studio
 description: Пошаговое руководство по установке и использованию пакета NuGet в проекте Visual Studio.
 author: karann-msft
 ms.author: karann
-ms.date: 01/23/2018
+ms.date: 07/24/2018
 ms.topic: quickstart
-ms.openlocfilehash: 014b316ea03b45584406c313d46b96ad36340124
-ms.sourcegitcommit: b6810860b77b2d50aab031040b047c20a333aca3
+ms.openlocfilehash: a2be42aeb322cfd0ab43c9cec6ad1b063cbc3089
+ms.sourcegitcommit: f291ff91561a6b58c2aec41c624d798e00ce41fa
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/28/2019
-ms.locfileid: "67426234"
+ms.lasthandoff: 07/24/2019
+ms.locfileid: "68462482"
 ---
-# <a name="quickstart-install-and-use-a-package-in-visual-studio"></a>Краткое руководство. Установка и использование пакета в Visual Studio
+# <a name="quickstart-install-and-use-a-package-in-visual-studio-windows-only"></a>Краткое руководство. Установка и использование пакета в Visual Studio (только в Windows)
 
-Пакеты NuGet содержат многократно используемый код, предлагаемый другими разработчиками для ваших проектов. Дополнительные сведения см. в разделе [Что такое NuGet?](../What-is-NuGet.md). Пакеты устанавливаются в проект Visual Studio с помощью пользовательского интерфейса или консоли диспетчера пакетов. В этой статье описан процесс с использованием популярного пакета [Newtonsoft.Json](https://www.nuget.org/packages/Newtonsoft.Json/) и проекта универсальной платформы Windows (UWP). Тот же процесс применяется к любому другому проекту .NET или .NET Core.
+Пакеты NuGet содержат многократно используемый код, предлагаемый другими разработчиками для ваших проектов. Дополнительные сведения см. в разделе [Что такое NuGet?](../What-is-NuGet.md). Пакеты устанавливаются в проекте Visual Studio с помощью диспетчера пакетов NuGet или консоли диспетчера пакетов. В этой статье описано, как использовать популярный пакет [Newtonsoft.Json](https://www.nuget.org/packages/Newtonsoft.Json/) и проект Windows Presentation Foundation (WPF). Тот же процесс применяется к любому другому проекту .NET или .NET Core.
 
 После установки ссылаться на пакет в коде можно с помощью `using <namespace>`, где \<namespace\> соответствует используемому пакету. После указания ссылки можно обращаться к пакету посредством его интерфейса API.
 
 > [!Tip]
-> **Начните работу с сайта nuget.org**: разработчики .NET обычно находят компоненты, которые можно использовать в собственных приложениях, просматривая сайт nuget.org. Вы можете выполнить поиск непосредственно на сайте nuget.org или найти и установить пакеты в Visual Studio, как описано в этой статье.
+> **Начните работу с сайта nuget.org**: Разработчики .NET обычно находят компоненты, которые можно использовать в собственных приложениях, просматривая сайт *nuget.org*. Вы можете выполнить поиск непосредственно на сайте *nuget.org* или найти и установить пакеты в Visual Studio, как описано в этой статье. См. подробнее о [поиске и оценке пакетов NuGet](../consume-packages/finding-and-choosing-packages.md).
 
 ## <a name="prerequisites"></a>Предварительные требования
 
-- Visual Studio 2017 с рабочей нагрузкой универсальной платформы Windows или
-- Visual Studio 2015 с обновлением 3 и инструментами для разработки универсальных приложений для Windows.
+- Использование Visual Studio 2019 с рабочей нагрузкой "Разработка классических приложений .NET".
 
-Вы можете установить бесплатный выпуск Community 2017 с сайта [visualstudio.com](https://www.visualstudio.com/) либо использовать выпуск Professional или Enterprise.
+Вы можете установить бесплатный выпуск Community 2019 с сайта [visualstudio.com](https://www.visualstudio.com/) либо использовать выпуск Professional или Enterprise.
 
 Если вы используете Visual Studio для Mac, см. статью [Включение пакета NuGet в проект](/visualstudio/mac/nuget-walkthrough).
 
@@ -34,13 +33,15 @@ ms.locfileid: "67426234"
 
 Пакеты NuGet можно установить в проект .NET, если эти пакеты поддерживают ту же требуемую версию .NET Framework, что и проект.
 
-В этом пошаговом руководстве используется простое приложение универсальной Windows (UWP). Создайте проект в Visual Studio, выбрав пункты **Файл > Новый проект...**, а затем — **Универсальные приложения Windows > Пустое приложение (универсальное приложение для Windows)**. При появлении запроса оставьте значения свойств "Конечная версия" и "Минимальная версия" по умолчанию.
+В этом пошаговом руководстве описано, как использовать простое приложение WPF. Создайте проект в Visual Studio, щелкнув **Файл > Создать проект** и введя **.NET** в поле поиска. Затем выберите **Приложение WPF (.NET Framework)**. Нажмите кнопку **Далее**. При появлении запроса примите значения по умолчанию для **платформы**.
+
+Visual Studio создаст проект и откроет его в обозревателе решений.
 
 ## <a name="add-the-newtonsoftjson-nuget-package"></a>Добавление пакета NuGet Newtonsoft.Json
 
-Для установки пакета можно использовать пользовательский интерфейс или консоль диспетчера пакетов. При установке пакета NuGet регистрирует зависимость в файле проекта или файле `packages.config`. Дополнительные сведения см. в разделе [Обзор использования пакетов и рабочий процесс](../consume-packages/Overview-and-Workflow.md).
+Для установки пакета можно использовать диспетчер пакетов NuGet или консоль диспетчера пакетов. При установке пакета NuGet регистрирует зависимость в файле проекта или файле `packages.config` (в зависимости от формата проекта). Дополнительные сведения см. в разделе [Обзор использования пакетов и рабочий процесс](../consume-packages/Overview-and-Workflow.md).
 
-### <a name="package-manager-ui"></a>Пользовательский интерфейс диспетчера пакетов
+### <a name="nuget-package-manager"></a>Диспетчер пакетов NuGet
 
 1. В обозревателе решений щелкните правой кнопкой мыши узел **Ссылки** и выберите пункт **Управление пакетами NuGet**.
 
@@ -50,9 +51,11 @@ ms.locfileid: "67426234"
 
     ![Поиск пакета Newtonsoft.Json](media/QS_Use-03-NewtonsoftJson.png)
 
+    См. подробнее о диспетчере пакетов NuGet в руководстве по [установке пакетов и управлении ими с помощью Visual Studio](../consume-packages/install-use-packages-visual-studio.md).
+
 1. Примите все запросы касательно лицензии.
 
-1. (Visual Studio 2017.) Если вам будет предложено выбрать формат управления пакетом, выберите **PackageReference в файле проекта**.
+1. (Только в Visual Studio 2017.) Если вам будет предложено выбрать формат управления пакетом, выберите **PackageReference в файле проекта**.
 
     ![Выбор формата управления пакетами](media/QS_Use-03b-SelectFormat.png)
 
@@ -66,24 +69,26 @@ ms.locfileid: "67426234"
 
     ![Поиск пакета Newtonsoft.Json](media/QS_Use-08-Console1.png)
 
-1. Введите команду `Install-Package Newtonsoft.Json` (см. сведения о ней в [этой статье](../tools/ps-ref-install-package.md)). В окне консоли отображаются выходные данные команды. Ошибки обычно означают, что пакет не совместим с целевой платформой проекта.
+1. Введите команду `Install-Package Newtonsoft.Json` (см. сведения о ней в [этой статье](../reference/ps-reference/ps-ref-install-package.md)). В окне консоли отображаются выходные данные команды. Ошибки обычно означают, что пакет не совместим с целевой платформой проекта.
+
+   См. подробнее о консоли диспетчера пакетов в руководстве по [установке пакетов и управлении ими с помощью консоли диспетчера пакетов](../consume-packages/install-use-packages-powershell.md).
 
 ## <a name="use-the-newtonsoftjson-api-in-the-app"></a>Использование интерфейса API Newtonsoft.Json в приложении
 
 Добавив пакет Newtonsoft.Json в проект, вы можете вызывать его метод `JsonConvert.SerializeObject` для преобразования объекта в удобную для восприятия строку.
 
-1. Откройте файл `MainPage.xaml` и замените существующий элемент `Grid` следующим кодом:
+1. Откройте файл `MainWindow.xaml` и замените существующий элемент `Grid` следующим кодом:
 
     ```xaml
-    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+    <Grid Background="White">
         <StackPanel VerticalAlignment="Center">
-            <Button Click="Button_Click" Content="Click Me" Margin="10"/>
-            <TextBlock Name="TextBlock" Text="TextBlock" Margin="10"/>
+            <Button Click="Button_Click" Width="100px" HorizontalAlignment="Center" Content="Click Me" Margin="10"/>
+            <TextBlock Name="TextBlock" HorizontalAlignment="Center" Text="TextBlock" Margin="10"/>
         </StackPanel>
     </Grid>
     ```
 
-1. Откройте файл `MainPage.xaml.cs` (который находится в обозревателе решений в узле `MainPage.xaml`) и вставьте в конструктор `MainPage` следующий код:
+1. Откройте файл `MainWindow.xaml.cs` (который находится в обозревателе решений в узле `MainWindow.xaml`) и вставьте в класс `MainWindow` следующий код.
 
     ```cs
     public class Account
@@ -114,15 +119,24 @@ ms.locfileid: "67426234"
 
 1. Выполните сборку и запустите приложение, нажав клавишу F5 или выбрав команду **Отладка > Начать отладку**.
 
-    ![Изначальные выходные данные приложения UWP](media/QS_Use-06-AppStart.png)
+    ![Изначальные выходные данные приложения WPF](media/QS_Use-06-AppStart.png)
 
 1. Нажмите кнопку. Надпись TextBlock заменится текстом в формате JSON:
 
-    ![Выходные данные приложения UWP после нажатия кнопки](media/QS_Use-07-AppEnd.png)
+    ![Выходные данные приложения WPF после нажатия кнопки](media/QS_Use-07-AppEnd.png)
 
-## <a name="related-articles"></a>Связанные статьи
+## <a name="next-steps"></a>Следующие шаги
+
+Поздравляем! Вы установили пакет NuGet и поработали с ним.
+
+> [!div class="nextstepaction"]
+> [Установка пакетов и управление ими с использованием Visual Studio](../consume-packages/install-use-packages-visual-studio.md)
+
+> [!div class="nextstepaction"]
+> [Установка пакетов и управление ими с использованием консоли диспетчера пакетов](../consume-packages/install-use-packages-powershell.md)
+
+См. подробнее о возможностях NuGet по приведенным ниже ссылкам.
 
 - [Общие сведения и процесс использования пакетов](../consume-packages/overview-and-workflow.md)
-- [Установка пакетов и управление ими с использованием Visual Studio](../tools/package-manager-ui.md)
 - [Поиск и выбор пакетов](../consume-packages/finding-and-choosing-packages.md)
-- [Распространенные конфигурации NuGet](../consume-packages/configuring-nuget-behavior.md)
+- [Ссылки на пакеты в файлах проекта](../consume-packages/package-references-in-project-files.md)

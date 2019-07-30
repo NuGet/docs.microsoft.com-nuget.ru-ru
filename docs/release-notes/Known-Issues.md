@@ -5,12 +5,12 @@ author: karann-msft
 ms.author: karann
 ms.date: 11/11/2016
 ms.topic: conceptual
-ms.openlocfilehash: fc338ba3810a125f638a937cf14456bf519a24a8
-ms.sourcegitcommit: 1d1406764c6af5fb7801d462e0c4afc9092fa569
+ms.openlocfilehash: b104eb39ddeacd9ca1ea45937cf98ad57531112a
+ms.sourcegitcommit: efc18d484fdf0c7a8979b564dcb191c030601bb4
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/04/2018
-ms.locfileid: "43548478"
+ms.lasthandoff: 07/18/2019
+ms.locfileid: "68317146"
 ---
 # <a name="known-issues-with-nuget"></a>Известные проблемы в NuGet
 
@@ -29,7 +29,7 @@ $PAT = "Личный маркер доступа" $Feed = "URL-адрес" .\nug
 
 **Решение:**
 
-Сохраняйте пароли в виде обычного текста с помощью параметра [-StorePasswordInClearText](../tools/cli-ref-sources.md).
+Сохраняйте пароли в виде обычного текста с помощью параметра [-StorePasswordInClearText](../reference/cli-reference/cli-ref-sources.md).
 
 ## <a name="error-installing-packages-with-nuget-34-341"></a>Ошибка при установке пакетов с помощью NuGet версии 3.4 или 3.4.1
 
@@ -75,7 +75,7 @@ install-package log4net
 
 ## <a name="build-failure-after-package-update-in-vs-2012"></a>Сбой сборки после обновления пакета в Visual Studio 2012
 
-Проблема: вы используете Visual Studio 2012 RTM. При обновлении пакетов NuGet появляется сообщение "Не удалось полностью удалить один или несколько пакетов" и запрос на перезапуск Visual Studio. После перезапуска Visual Studio возникают странные ошибки сборки.
+Проблема: Вы используете Visual Studio 2012 RTM. При обновлении пакетов NuGet появляется следующее сообщение: "Не удалось удалить один или нескольких пакетов". и запрос на перезапуск Visual Studio. После перезапуска Visual Studio возникают странные ошибки сборки.
 
 Причина в том, что некоторые файлы в старых пакетах блокируются фоновым процессом MSBuild. Даже после перезапуска Visual Studio фоновый процесс MSBuild по-прежнему использует файлы из старых пакетов, что приводит к сбоям сборки.
 
@@ -134,7 +134,7 @@ install-package log4net
 
 Мы обратились к автору этой надстройки с просьбой выработать решение.
 
-<p class="info">Обновление: мы протестировали последнюю версию надстройки Reflector (6.5) и убедились в том, что она больше не вызывает этого исключения в консоли.</p>
+<p class="info">Обновление: мы протестировали последнюю версию надстройки Reflector (6.5) и убедились в том, что она больше не вызывает это исключение в консоли.</p>
 
 ## <a name="opening-package-manager-console-fails-with-objectsecurity-exception"></a>Сбой при открытии консоли диспетчера пакетов с исключением ObjectSecurity
 

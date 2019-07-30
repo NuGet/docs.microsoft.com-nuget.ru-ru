@@ -1,16 +1,16 @@
 ---
-title: Создание и публикация пакета .NET Standard с помощью Visual Studio в Windows
+title: Создание и публикация пакета NuGet .NET Standard с помощью Visual Studio в Windows
 description: Пошаговое руководство по созданию и публикации пакета NuGet .NET Standard с помощью Visual Studio в Windows.
 author: karann-msft
 ms.author: karann
 ms.date: 07/09/2019
 ms.topic: quickstart
-ms.openlocfilehash: d9eccfa373a5a283542fd158e76ba74b1872f3d6
-ms.sourcegitcommit: 0dea3b153ef823230a9d5f38351b7cef057cb299
+ms.openlocfilehash: 86e71460094de9b799384db83456a68db57647af
+ms.sourcegitcommit: e65180e622f6233b51bb0b41d0e919688083eb26
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/12/2019
-ms.locfileid: "67842150"
+ms.lasthandoff: 07/23/2019
+ms.locfileid: "68419926"
 ---
 # <a name="quickstart-create-and-publish-a-nuget-package-using-visual-studio-net-standard-windows-only"></a>Краткое руководство. Создание и публикация пакета NuGet с помощью Visual Studio (.NET Standard, только для Windows)
 
@@ -21,9 +21,9 @@ ms.locfileid: "67842150"
 
 ## <a name="prerequisites"></a>Предварительные требования
 
-1. Установите любой выпуск Visual Studio 2017 или более поздней версии со страницы [visualstudio.com](https://www.visualstudio.com/) с помощью любой рабочей нагрузки, связанной с .NET. После установки рабочей нагрузки .NET Visual Studio 2017 или более поздней версии автоматически добавляет возможности NuGet.
+1. Установите любой выпуск Visual Studio 2017 или более поздней версии со страницы [visualstudio.com](https://www.visualstudio.com/) с помощью рабочей нагрузки, связанной с .NET. Core.
 
-1. Установите CLI `dotnet`.
+1. При необходимости установите CLI `dotnet`.
 
    Для CLI `dotnet` начиная с версии Visual Studio 2017 CLI `dotnet` автоматически устанавливается вместе с любыми рабочими нагрузками, связанными с .NET Core. При использовании другой версии установите [пакет SDK для .NET Core](https://www.microsoft.com/net/download/), чтобы получить CLI `dotnet`. CLI `dotnet` является обязательным для проектов .NET Standard с [форматом в стиле пакета SDK](../resources/check-project-format.md) (атрибут SDK). Шаблон библиотеки классов по умолчанию в Visual Studio 2017 и более поздних версий, который применяется в рамках этой статьи, использует атрибут пакета SDK.
    
@@ -150,7 +150,7 @@ msbuild -t:pack -p:Configuration=Release
     Your package was pushed.
     ```
 
-Ознакомьтесь со сведениями о [команде nuget push](../tools/cli-ref-push.md).
+Ознакомьтесь со сведениями о [команде nuget push](../reference/cli-reference/cli-ref-push.md).
 
 ### <a name="publish-errors"></a>Ошибки публикации
 
@@ -185,7 +185,7 @@ msbuild -t:pack -p:Configuration=Release
 - [Создание пакета](../create-packages/creating-a-package.md)
 - [Публикация пакета](../nuget-org/publish-a-package.md)
 - [Пакеты предварительного выпуска](../create-packages/Prerelease-Packages.md)
-- [Поддержка нескольких целевых платформ](../create-packages/supporting-multiple-target-frameworks.md)
+- [Поддержка нескольких целевых платформ](../create-packages/multiple-target-frameworks-project-file.md)
 - [Управление версиями пакета](../reference/package-versioning.md)
 - [Создание локализованных пакетов](../create-packages/creating-localized-packages.md)
 - [Документация по библиотеке .NET Standard](/dotnet/articles/standard/library)

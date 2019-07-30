@@ -5,12 +5,12 @@ author: karann-msft
 ms.author: karann
 ms.date: 05/24/2019
 ms.topic: overview
-ms.openlocfilehash: e11eed5c614a7634fa578ebc84c3ab2068522fe2
-ms.sourcegitcommit: 0dea3b153ef823230a9d5f38351b7cef057cb299
+ms.openlocfilehash: e8e806e0a893d62d9d3189396dc47250ae9c8cf3
+ms.sourcegitcommit: e65180e622f6233b51bb0b41d0e919688083eb26
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/12/2019
-ms.locfileid: "67842201"
+ms.lasthandoff: 07/23/2019
+ms.locfileid: "68420026"
 ---
 # <a name="an-introduction-to-nuget"></a>Введение в NuGet
 
@@ -45,10 +45,10 @@ ms.locfileid: "67842201"
 
 | Средство | Платформы | Применимые сценарии | ОПИСАНИЕ |
 | --- | --- | --- | --- |
-| [dotnet CLI](consume-packages/install-use-packages-dotnet-cli.md) | Все | Создание, потребление | Средство CLI для библиотек .NET Core и .NET Standard, а также для [проектов в стиле пакета SDK](resources/check-project-format.md), нацеленных на .NET Framework. Предоставляет определенные возможности CLI NuGet непосредственно внутри цепочки инструментов .NET Core. Как и интерфейс командной строки NuGet, CLI dotnet не взаимодействует с проектами Visual Studio. |
-| [Интерфейс командной строки nuget.exe](consume-packages/install-use-packages-nuget-cli.md) | Все | Создание, потребление | Средство CLI для библиотек .NET Framework и [проектов не в стиле пакета SDK](resources/check-project-format.md), нацеленных на библиотеки .NET Standard. Предоставляет все функциональные возможности NuGet, при этом часть команд относится к создателям пакета, часть — только к потребителям, а остальные — ко всем. Например, создатели пакета используют команду `nuget pack` для создания пакета из различных сборок и связанных файлов, потребители пакета используют `nuget install` для включения пакетов в папку проекта, при этом все используют `nuget config` для задания переменных конфигурации NuGet. Как независящее от платформы средство, интерфейс командной строки NuGet не взаимодействует с проектами Visual Studio. |
-| [Консоль диспетчера пакетов](tools/package-manager-console.md) | Visual Studio в Windows | Потребление | Предоставляет [команды PowerShell](tools/Powershell-Reference.md) для установки пакетов и управления ими в проектах Visual Studio. |
-| [Пользовательский интерфейс диспетчера пакетов](tools/package-manager-ui.md) | Visual Studio в Windows | Потребление | Предоставляет удобный пользовательский интерфейс для установки пакетов и управления ими в проектах Visual Studio. |
+| [dotnet CLI](consume-packages/install-use-packages-dotnet-cli.md) | Все | Создание, потребление | Средство CLI для библиотек .NET Core и .NET Standard, а также для проектов в стиле пакета SDK, нацеленных на .NET Framework (см. раздел [Атрибут SDK](/dotnet/core/tools/csproj#additions)). Предоставляет определенные возможности CLI NuGet непосредственно внутри цепочки инструментов .NET Core. Как и CLI `nuget.exe`, CLI dotnet не взаимодействует с проектами Visual Studio. |
+| [Интерфейс командной строки nuget.exe](consume-packages/install-use-packages-nuget-cli.md) | Все | Создание, потребление | Средство CLI для библиотек .NET Framework и проектов со стилем, отличным от пакета SDK, нацеленных на библиотеки .NET Standard. Предоставляет все функциональные возможности NuGet, при этом часть команд относится к создателям пакета, часть — только к потребителям, а остальные — ко всем. Например, создатели пакета используют команду `nuget pack` для создания пакета из различных сборок и связанных файлов, потребители пакета используют `nuget install` для включения пакетов в папку проекта, при этом все используют `nuget config` для задания переменных конфигурации NuGet. Как независящее от платформы средство, интерфейс командной строки NuGet не взаимодействует с проектами Visual Studio. |
+| [Консоль диспетчера пакетов](consume-packages/install-use-packages-powershell.md) | Visual Studio в Windows | Потребление | Предоставляет [команды PowerShell](reference/Powershell-Reference.md) для установки пакетов и управления ими в проектах Visual Studio. |
+| [Пользовательский интерфейс диспетчера пакетов](consume-packages/install-use-packages-visual-studio.md) | Visual Studio в Windows | Потребление | Предоставляет удобный пользовательский интерфейс для установки пакетов и управления ими в проектах Visual Studio. |
 | [Управление пользовательским интерфейсом NuGet](/visualstudio/mac/nuget-walkthrough) | Visual Studio для Mac | Потребление | Предоставляет удобный пользовательский интерфейс для установки пакетов и управления ими в проектах Visual Studio для Mac. |
 | [MSBuild](reference/msbuild-targets.md) | Windows | Создание, потребление | Предоставляет возможность создавать и восстанавливать используемые в проекте пакеты напрямую с помощью цепочки инструментов MSBuild. |
 

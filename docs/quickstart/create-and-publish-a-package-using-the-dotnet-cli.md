@@ -1,16 +1,16 @@
 ---
-title: Создание и публикация пакета NuGet с помощью интерфейса командной строки dotnet
+title: Создание и публикация пакета NuGet с помощью CLI dotnet
 description: Пошаговое руководство по созданию и публикации пакета NuGet с помощью .NET Core CLI — dotnet.
 author: karann-msft
 ms.author: karann
 ms.date: 05/24/2019
 ms.topic: quickstart
-ms.openlocfilehash: 4e96d9969c8b4570ee69501d6529986f891ea4dc
-ms.sourcegitcommit: 0dea3b153ef823230a9d5f38351b7cef057cb299
+ms.openlocfilehash: 30a77b427fe0a33b41262c5784045e5a6b10852f
+ms.sourcegitcommit: e65180e622f6233b51bb0b41d0e919688083eb26
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/12/2019
-ms.locfileid: "67842608"
+ms.lasthandoff: 07/23/2019
+ms.locfileid: "68419985"
 ---
 # <a name="quickstart-create-and-publish-a-package-dotnet-cli"></a>Краткое руководство. Создание и публикация пакета (dotnet CLI)
 
@@ -101,12 +101,18 @@ Copyright (C) Microsoft Corporation. All rights reserved.
 
 [!INCLUDE [publish-manage](includes/publish-manage.md)]
 
-## <a name="related-topics"></a>См. также
+## <a name="next-steps"></a>Следующие шаги
 
-- [Создание пакета](../create-packages/creating-a-package.md)
+Поздравляем! Вы создали пакет NuGet.
+
+> [!div class="nextstepaction"]
+> [Создание пакета](../create-packages/creating-a-package-dotnet-cli.md)
+
+См. подробнее о возможностях NuGet по приведенным ниже ссылкам.
+
 - [Публикация пакета](../nuget-org/publish-a-package.md)
 - [Пакеты предварительного выпуска](../create-packages/Prerelease-Packages.md)
-- [Поддержка нескольких целевых платформ](../create-packages/supporting-multiple-target-frameworks.md)
+- [Поддержка нескольких целевых платформ](../create-packages/multiple-target-frameworks-project-file.md)
 - [Управление версиями пакета](../reference/package-versioning.md)
 - [Создание локализованных пакетов](../create-packages/creating-localized-packages.md)
 - [Создание пакетов символов](../create-packages/symbol-packages-snupkg.md)

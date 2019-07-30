@@ -5,12 +5,12 @@ author: karann-msft
 ms.author: karann
 ms.date: 03/19/2018
 ms.topic: conceptual
-ms.openlocfilehash: 4b365488c8dd0e081449552b06451e7b40b5223b
-ms.sourcegitcommit: b6810860b77b2d50aab031040b047c20a333aca3
+ms.openlocfilehash: f5d418fd5b6b9bb88958d6b7e9e3034f40485a7d
+ms.sourcegitcommit: e65180e622f6233b51bb0b41d0e919688083eb26
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/28/2019
-ms.locfileid: "67426616"
+ms.lasthandoff: 07/23/2019
+ms.locfileid: "68419958"
 ---
 # <a name="managing-the-global-packages-cache-and-temp-folders"></a>Управление папкой установки глобальных пакетов, кэшем и временными папками
 
@@ -18,7 +18,7 @@ ms.locfileid: "67426616"
 
 | name | Описание и расположение (в зависимости от пользователя)|
 | --- | --- |
-| global&#8209;packages | В папку *global-packages* NuGet устанавливает любой загруженный пакет. Каждый пакет полностью развертывается во вложенную папку, соответствующую идентификатору пакета и номеру версии. Проекты в формате PackageReference всегда используют пакеты непосредственно из этой папки. При использовании `packages.config` пакеты устанавливаются в папку *global-packages*, а затем копируются папку проекта `packages`.<br/><ul><li>Windows: `%userprofile%\.nuget\packages`</li><li>Mac/Linux: `~/.nuget/packages`</li><li>Переопределяет с помощью переменной среды NUGET_PACKAGES [параметры конфигурации](../reference/nuget-config-file.md#config-section) `globalPackagesFolder` или `repositoryPath` (при использовании PackageReference и `packages.config` соответственно) или свойство MSBuild `RestorePackagesPath` (только MSBuild). Переменная среды имеет приоритет над параметром конфигурации.</li></ul> |
+| global&#8209;packages | В папку *global-packages* NuGet устанавливает любой загруженный пакет. Каждый пакет полностью развертывается во вложенную папку, соответствующую идентификатору пакета и номеру версии. Проекты в формате [PackageReference](package-references-in-project-files.md) всегда используют пакеты непосредственно из этой папки. При использовании [packages.config](../reference/packages-config.md) пакеты устанавливаются в папку *global-packages*, а затем копируются в папку `packages` проекта.<br/><ul><li>Windows: `%userprofile%\.nuget\packages`</li><li>Mac/Linux: `~/.nuget/packages`</li><li>Переопределяет с помощью переменной среды NUGET_PACKAGES [параметры конфигурации](../reference/nuget-config-file.md#config-section) `globalPackagesFolder` или `repositoryPath` (при использовании PackageReference и `packages.config` соответственно) или свойство MSBuild `RestorePackagesPath` (только MSBuild). Переменная среды имеет приоритет над параметром конфигурации.</li></ul> |
 | http&#8209;cache | Диспетчер пакетов Visual Studio (NuGet 3.x +) и `dotnet` инструмент хранят копии загруженных пакетов в этом кеше (сохраненные как `.dat` файла), организованные в подпапки для каждого источника пакета. Пакеты не развернуты. Срок действия кэша составляет 30 минут.<br/><ul><li>Windows: `%localappdata%\NuGet\v3-cache`</li><li>Mac/Linux: `~/.local/share/NuGet/v3-cache`</li><li>Переопределяет с помощью переменной среды NUGET_HTTP_CACHE_PATH.</li></ul> |
 | temp | Папка, в которой NuGet хранит временные файлы, используемые в различных операциях.<br/><li>Windows: `%temp%\NuGetScratch`</li><li>Mac/Linux: `/tmp/NuGetScratch`</li></ul> |
 | plugins-cache **4.8+** | Папка, в которой NuGet хранит результаты запросов на утверждение операций.<br/><ul><li>Windows: `%localappdata%\NuGet\plugins-cache`</li><li>Mac/Linux: `~/.local/share/NuGet/plugins-cache`</li><li>Переопределите с помощью переменной среды NUGET_PLUGINS_CACHE_PATH.</li></ul> |
@@ -34,7 +34,7 @@ ms.locfileid: "67426616"
 
 ## <a name="viewing-folder-locations"></a>Просмотр расположения папок
 
-Расположение можно просмотреть с помощью команды [nuget locals](../tools/cli-ref-locals.md):
+Расположение можно просмотреть с помощью команды [nuget locals](../reference/cli-reference/cli-ref-locals.md):
 
 ```cli
 # Display locals for all folders: global-packages, http cache, temp and plugins cache

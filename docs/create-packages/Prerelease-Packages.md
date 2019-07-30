@@ -5,12 +5,12 @@ author: karann-msft
 ms.author: karann
 ms.date: 08/14/2017
 ms.topic: conceptual
-ms.openlocfilehash: 845f0ea84bcb92fedf9e5f4fb2b1deee1462a004
-ms.sourcegitcommit: 4ea46498aee386b4f592b5ebba4af7f9092ac607
+ms.openlocfilehash: 726f983c2522fdb538dfce858fdf2371ec0ce188
+ms.sourcegitcommit: f9e39ff9ca19ba4a26e52b8a5e01e18eb0de5387
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/14/2019
-ms.locfileid: "65610495"
+ms.lasthandoff: 07/24/2019
+ms.locfileid: "68433341"
 ---
 # <a name="building-pre-release-packages"></a>Сборка пакетов предварительных версий
 
@@ -50,9 +50,9 @@ ms.locfileid: "65610495"
 
     При установке или снятии этого флажка список доступных версий, которые можно установить, в пользовательском интерфейсе диспетчера пакетов обновляется.
 
-- **Консоль диспетчера пакетов**. Используйте параметр `-IncludePrerelease` с командами `Find-Package`, `Get-Package`, `Install-Package`, `Sync-Package` и `Update-Package`. См. [справочник по PowerShell](../tools/powershell-reference.md).
+- **Консоль диспетчера пакетов**. Используйте параметр `-IncludePrerelease` с командами `Find-Package`, `Get-Package`, `Install-Package`, `Sync-Package` и `Update-Package`. См. [справочник по PowerShell](../reference/powershell-reference.md).
 
-- **Интерфейс командной строки NuGet**. Используйте параметр `-prerelease` с командами `install`, `update`, `delete` и `mirror`. См. [справочник по интерфейсу командной строки NuGet](../tools/nuget-exe-cli-reference.md)
+- **Интерфейс командной строки NuGet**. Используйте параметр `-prerelease` с командами `install`, `update`, `delete` и `mirror`. См. [справочник по интерфейсу командной строки NuGet](../reference/nuget-exe-cli-reference.md)
 
 ## <a name="semantic-versioning"></a>Семантическое версионирование
 
@@ -81,10 +81,12 @@ ms.locfileid: "65610495"
     1.0.1-zzz
     1.0.1-rc
     1.0.1-open
-    1.0.1-beta12
-    1.0.1-beta05
+    1.0.1-beta.12
+    1.0.1-beta.5
     1.0.1-beta
-    1.0.1-alpha2
+    1.0.1-alpha.2
     1.0.1-alpha
 
-Из этого следует, что версия с номером без суффикса всегда будет иметь приоритет над предварительными версиями. Кроме того, имейте в виду, что если в тегах предварительных версий используются числовые суффиксы из двух или более цифр, следует добавлять начальные нули, например beta01 или beta05. Это позволит обеспечить правильную сортировку номеров.
+Из этого следует, что версия с номером без суффикса всегда будет иметь приоритет над предварительными версиями.
+
+Начальные нули для SemVer 2 не требуются, но они присутствуют в старой схеме версий. Если в тегах предварительных версий используются числовые суффиксы из двух или более цифр, следует добавлять начальные нули, например beta.01 или beta.05. Это обеспечит правильную сортировку номеров. Эта рекомендация применима только к старой схеме версий.

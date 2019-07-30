@@ -1,24 +1,24 @@
 ---
-title: Создание пакетов NuGet
+title: Создание пакета NuGet с помощью CLI nuget.exe
 description: Подробное руководство по проектированию и созданию пакета NuGet, включая принятие решений по ключевым аспектам, таким как файлы и управление версиями.
 author: karann-msft
 ms.author: karann
 ms.date: 07/09/2019
 ms.topic: conceptual
-ms.openlocfilehash: 1dce8556448131c36680167fdc3605e4378b9178
-ms.sourcegitcommit: 0dea3b153ef823230a9d5f38351b7cef057cb299
+ms.openlocfilehash: 894a39e9e67508234295db128928b09da7f468f0
+ms.sourcegitcommit: e65180e622f6233b51bb0b41d0e919688083eb26
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/12/2019
-ms.locfileid: "67842308"
+ms.lasthandoff: 07/23/2019
+ms.locfileid: "68419815"
 ---
-# <a name="create-nuget-packages"></a>Создание пакетов NuGet
+# <a name="create-a-package-using-the-nugetexe-cli"></a>Создание пакета с помощью CLI nuget.exe
 
 Независимо от назначения вашего пакета или содержащегося в нем кода, с помощью одного из средств CLI (`nuget.exe` или `dotnet.exe`) вы можете создать компонент, которым можно поделиться с любым количеством разработчиков для совместного использования. Инструкции по установке средств CLI для NuGet см. в статье [Установка клиентских средств NuGet](../install-nuget-client-tools.md). Обратите внимание на то, что средство CLI не входит в состав Visual Studio по умолчанию.
 
-- Для проектов .NET Core и .NET Standard с [форматом в стиле пакета SDK](../resources/check-project-format.md) и других проектов в таком стиле NuGet использует сведения в файле проекта напрямую для создания пакета. См. дополнительные сведения о [создании пакетов .NET Standard с использованием CLI dotnet](../quickstart/create-and-publish-a-package-using-the-dotnet-cli.md), [создании пакетов .NET Standard с помощью Visual Studio](../quickstart/create-and-publish-a-package-using-visual-studio.md), а также об [использовании объектов pack и restore NuGet в качестве целевых объектов MSBuild](../reference/msbuild-targets.md).
+- Чтобы создать пакет для проектов в другом стиле (например, для проектов .NET Framework) выполните шаги, описанные в этой статье. Пошаговые инструкции по использованию Visual Studio и CLI `nuget.exe` см. в руководстве по [созданию и публикации пакета .NET Framework](../quickstart/create-and-publish-a-package-using-visual-studio-net-framework.md).
 
-- Чтобы создать пакет для проектов в другом стиле (например, для проектов .NET Framework) выполните шаги, описанные в этой статье. Кроме того, вы можете выполнить инструкции по [созданию и публикации пакетов .NET Framework](../quickstart/create-and-publish-a-package-using-visual-studio-net-framework.md), чтобы создать пакет с помощью CLI `nuget.exe` и Visual Studio.
+- См. подробнее о проектах .NET Core и .NET Standard [не на основе пакетов SDK](../resources/check-project-format.md) и других проектах на основе пакетов SDK в руководстве по [созданию пакета NuGet с помощью CLI dotnet](creating-a-package-dotnet-cli.md).
 
 - Для проектов, перенесенных из `packages.config` в [PackageReference](../consume-packages/package-references-in-project-files.md), используйте [msbuild -t:pack](../reference/migrate-packages-config-to-package-reference.md#create-a-package-after-migration).
 
@@ -56,7 +56,7 @@ ms.locfileid: "67842308"
 Обязательные свойства:
 
 - идентификатор пакета, который должен быть уникальным в пределах коллекции, содержащей пакет;
-- определенный номер версии в формате *основной_номер.дополнительный_номер.исправление[-суффикс]* , где *-суффикс* указывает на [предварительные версии](prerelease-packages.md);
+- определенный номер версии в формате *основной_номер.дополнительный_номер.исправление[-суффикс]*, где *-суффикс* указывает на [предварительные версии](prerelease-packages.md);
 - название пакета, которое должно отображаться на сайте размещения (например, nuget.org);
 - сведения об авторе и владельце;
 - подробное описание пакета.
@@ -65,7 +65,7 @@ ms.locfileid: "67842308"
 
 - заметки о выпуске;
 - сведения об авторских правах;
-- краткое описание для [пользовательского интерфейса диспетчера пакетов в Visual Studio](../tools/package-manager-ui.md);
+- краткое описание для [пользовательского интерфейса диспетчера пакетов в Visual Studio](../consume-packages/install-use-packages-visual-studio.md);
 - код языка;
 - URL проекта
 - лицензия в виде выражения или файла (`licenseUrl` скоро станет нерекомендуемым, используйте [nuspec-элемент метаданных `license`](../reference/nuspec.md#license));
@@ -369,7 +369,7 @@ NuGet указывает, есть ли в файле `.nuspec` ошибки, т
 
 ### <a name="additional-options"></a>Дополнительные параметры
 
-С командой `nuget pack` можно использовать различные параметры командной строки для исключения файлов, переопределения номера версии в манифесте, изменения папки выходных данных и совершения других действий. Полный список параметров см. в [справочнике по команде pack](../tools/cli-ref-pack.md).
+С командой `nuget pack` можно использовать различные параметры командной строки для исключения файлов, переопределения номера версии в манифесте, изменения папки выходных данных и совершения других действий. Полный список параметров см. в [справочнике по команде pack](../reference/cli-reference/cli-ref-pack.md).
 
 Ниже приводятся некоторые часто используемые с проектами Visual Studio параметры.
 
@@ -404,7 +404,7 @@ NuGet указывает, есть ли в файле `.nuspec` ошибки, т
 Для автоматического тестирования выполните указанные ниже основные действия.
 
 1. Скопируйте файл `.nupkg` в локальную папку.
-1. Добавьте эту папку в источники пакета с помощью команды `nuget sources add -name <name> -source <path>` (см. описание [команды nuget sources](../tools/cli-ref-sources.md)). Обратите внимание на то, что на каждом компьютере этот локальный источник необходимо задать только один раз.
+1. Добавьте эту папку в источники пакета с помощью команды `nuget sources add -name <name> -source <path>` (см. описание [команды nuget sources](../reference/cli-reference/cli-ref-sources.md)). Обратите внимание на то, что на каждом компьютере этот локальный источник необходимо задать только один раз.
 1. Установите пакет из источника с помощью команды `nuget install <packageID> -source <name>`, где `<name>` соответствует имени источника, предоставленному команде `nuget sources`. Указание источника позволяет гарантировать, что пакет будет устанавливаться только из него.
 1. В файловой системе проверьте, правильно ли установились файлы.
 
