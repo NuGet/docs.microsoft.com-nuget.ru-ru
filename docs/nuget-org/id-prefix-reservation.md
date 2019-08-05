@@ -6,12 +6,12 @@ ms.author: diverdan92
 ms.date: 10/09/2017
 ms.topic: reference
 ms.reviewer: ananguar
-ms.openlocfilehash: 94036e3ca7c65e6878f24a5a8514cbb0d8816d9c
-ms.sourcegitcommit: b6810860b77b2d50aab031040b047c20a333aca3
+ms.openlocfilehash: 650f570ec65a665e3d452af732ea22337835d8d9
+ms.sourcegitcommit: cae759ad8518c049575a30ad3bf04fe5d06244fb
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/28/2019
-ms.locfileid: "67427229"
+ms.lasthandoff: 07/29/2019
+ms.locfileid: "68616801"
 ---
 # <a name="package-id-prefix-reservation"></a>Резервирование префикса идентификатора пакета
 
@@ -76,6 +76,8 @@ ms.locfileid: "67427229"
 При рассмотрении любых заявок на резервирование префикса идентификатора команда сайта [nuget.org](https://www.nuget.org/) оценивает соответствие приведенным ниже критериям. Для резервирования префикса не обязательно соблюдение всех критериев, однако если не удается получить достаточные свидетельства их выполнения, заявка может быть отклонена с указанием причин:
 
 1. Позволяет ли префикс идентификатора пакета надлежащим образом однозначно определить владельца пакета?
+
+1. Включил ли владелец пакета [двухфакторную проверку подлинности для своей учетной записи NuGet.org](individual-accounts.md#enable-two-factor-authentication-2fa)?
 
 1. Насколько велико количество пакетов, ранее отправленных этим владельцем с использованием этого префикса идентификатора пакета?
 
