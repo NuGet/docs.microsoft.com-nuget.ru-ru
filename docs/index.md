@@ -7,12 +7,12 @@ ms.date: 02/12/2018
 ms.topic: hub-page
 layout: HubPage
 hide_bc: true
-ms.openlocfilehash: 5fd6556470f544b4f42512708be469bbf8bb72c0
-ms.sourcegitcommit: f9e39ff9ca19ba4a26e52b8a5e01e18eb0de5387
+ms.openlocfilehash: cdd032a5a7268a7ffddff5141229fd021ec275a5
+ms.sourcegitcommit: 5aa49478dc466c67db5c3edda7c6ce8dcd8ae033
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/24/2019
-ms.locfileid: "68433334"
+ms.lasthandoff: 08/06/2019
+ms.locfileid: "68817540"
 ---
 <div id="main" class="v2">
     <div class="container">
@@ -128,6 +128,9 @@ ms.locfileid: "68433334"
                             <a href="create-packages/creating-a-package.md">Создание пакета — CLI nuget.exe</a>
                         </p>
                         <p>
+                            <a href="create-packages/creating-a-package.md">Создание пакета — MSBuild</a>
+                        </p>
+                        <p>
                             <a href="create-packages/multiple-target-frameworks-project-file.md">Поддержка нескольких целевых платформ</a>
                         </p>
                     </div>
@@ -240,7 +243,7 @@ ms.locfileid: "68433334"
                             <a href="nuget-org/policies/data-requests.md">Политики — NuGet.org</a>
                         </p>
                         <p>
-                            <a href="release-notes/">Заметки о выпуске</a>
+                            <a href="release-notes/known-issues.md">Заметки о выпуске</a>
                         </p>
                         <p>
                             <a href="faqs/nuget-faq.md">Вопросы и ответы: NuGet</a>
