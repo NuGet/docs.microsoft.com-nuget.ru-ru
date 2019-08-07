@@ -5,12 +5,12 @@ author: karann-msft
 ms.author: karann
 ms.date: 03/23/2018
 ms.topic: conceptual
-ms.openlocfilehash: 8e662194fffc031d0cfc0aa129a5a15b555a4231
-ms.sourcegitcommit: e65180e622f6233b51bb0b41d0e919688083eb26
+ms.openlocfilehash: 8403ae38b5d2e907c6f06b162a18cdcd5425565b
+ms.sourcegitcommit: 5aa49478dc466c67db5c3edda7c6ce8dcd8ae033
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/23/2019
-ms.locfileid: "68420013"
+ms.lasthandoff: 08/06/2019
+ms.locfileid: "68817522"
 ---
 # <a name="nuget-pack-and-restore-as-msbuild-targets"></a>Объекты pack и restore NuGet в качестве целевых объектов MSBuild
 
@@ -18,7 +18,7 @@ ms.locfileid: "68420013"
 
 В формате [PackageReference](../consume-packages/package-references-in-project-files.md) NuGet 4.0 + может хранить все метаданные манифеста непосредственно в файле проекта вместо использования отдельного `.nuspec` файла.
 
-При использовании MSBuild 15.1+ NuGet также является привилегированным компонентом MSBuild с целевыми объектами `pack` и `restore`, как описано ниже. Эти целевые объекты позволяют работать с NuGet, как с любой другой задачей или другим целевым объектом MSBuild. (Для NuGet 3.x и более ранних версий можно использовать команды [pack](../reference/cli-reference/cli-ref-pack.md) и [restore](../reference/cli-reference/cli-ref-restore.md) в NuGet CLI.)
+При использовании MSBuild 15.1+ NuGet также является привилегированным компонентом MSBuild с целевыми объектами `pack` и `restore`, как описано ниже. Эти целевые объекты позволяют работать с NuGet, как с любой другой задачей или другим целевым объектом MSBuild. Инструкции по созданию пакета NuGet с помощью MSBuild см. в статье [Создание пакета NuGet с помощью MSBuild](../create-packages/creating-a-package-msbuild.md). (Для NuGet 3.x и более ранних версий можно использовать команды [pack](../reference/cli-reference/cli-ref-pack.md) и [restore](../reference/cli-reference/cli-ref-restore.md) в NuGet CLI.)
 
 ## <a name="target-build-order"></a>Порядок сборки целевого объекта
 
@@ -55,8 +55,8 @@ ms.locfileid: "68420013"
 | Описание | Описание | "Описание пакета" | |
 | Copyright | Copyright | пустой | |
 | RequireLicenseAcceptance | PackageRequireLicenseAcceptance | False | |
-| Лицензии | PackageLicenseExpression | пустой | Соответствует`<license type="expression">` |
-| Лицензии | PackageLicenseFile | пустой | Соответствует `<license type="file">`. Возможно, потребуется явно упаковать файл лицензии, на который указывает ссылка. |
+| лицензии | PackageLicenseExpression | пустой | Соответствует`<license type="expression">` |
+| лицензии | PackageLicenseFile | пустой | Соответствует `<license type="file">`. Возможно, потребуется явно упаковать файл лицензии, на который указывает ссылка. |
 | LicenseUrl | PackageLicenseUrl | пустой | `licenseUrl`является устаревшим, используйте свойство Паккажелиценсикспрессион или Паккажелиценсефиле. |
 | ProjectUrl | PackageProjectUrl | пустой | |
 | IconUrl | PackageIconUrl | пустой | |
@@ -329,7 +329,7 @@ msbuild -t:pack <path to .csproj file> -p:NuspecFile=<path to nuspec file> -p:Nu
 1. Скачивание пакетов.
 1. Запись файла ресурсов, целевых объектов и свойств.
 
-Целевой объект работает только для проектов, использующих формат PackageReference.  `restore` Он **не** работает для проектов, использующих этот `packages.config` формат; вместо этого используйте [Восстановление NuGet](../reference/cli-reference/cli-ref-restore.md) .
+Целевой объект работает только для проектов, использующих формат PackageReference. `restore` Он **не** работает для проектов, использующих этот `packages.config` формат; вместо этого используйте [Восстановление NuGet](../reference/cli-reference/cli-ref-restore.md) .
 
 ### <a name="restore-properties"></a>Свойства восстановления
 

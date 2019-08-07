@@ -33,12 +33,13 @@
 ## [Общие сведения и рабочий процесс](create-packages/overview-and-workflow.md)
 ## [Создание пакета (dotnet CLI)](create-packages/creating-a-package-dotnet-cli.md)
 ## [Создание пакета (nuget.exe CLI)](create-packages/creating-a-package.md)
-## [Создание пакета с помощью MSBuild](reference/msbuild-targets.md)
+## [Создание пакета (MSBuild)](create-packages/creating-a-package-msbuild.md)
 ## [Поддержка указания нескольких целевых платформ в файле проекта](create-packages/multiple-target-frameworks-project-file.md)
 ## [Сборка предварительной версии пакета](create-packages/prerelease-packages.md)
 ## [Создание пакета символов](create-packages/symbol-packages-snupkg.md)
 ## Расширенные задачи
 ### [Поддержка нескольких целевых платформ](create-packages/supporting-multiple-target-frameworks.md)
+### [Целевые объекты pack и restore для MSBuild](reference/msbuild-targets.md)
 ### [Изменение исходного кода и файлов конфигурации](create-packages/source-and-config-file-transformations.md)
 ### [Выбор сборок, на которые ссылается проект](create-packages/select-assemblies-referenced-by-projects.md)
 ### [Определение типа пакета](create-packages/set-package-type.md)
@@ -66,7 +67,7 @@
 ## [Процесс установки пакета](concepts/package-installation-process.md)
 ## [Управление версиями пакета](reference/package-versioning.md)
 ## [Разрешение зависимостей](consume-packages/dependency-resolution.md)
-# Справочники
+# Справочник
 ## [.nuspec](reference/nuspec.md)
 ## [Файл Nuget.Config](reference/nuget-config-file.md)
 ## [Целевые платформы](reference/target-frameworks.md)
