@@ -39,7 +39,6 @@
 ## [Создание пакета символов](create-packages/symbol-packages-snupkg.md)
 ## Расширенные задачи
 ### [Поддержка нескольких целевых платформ](create-packages/supporting-multiple-target-frameworks.md)
-### [Целевые объекты pack и restore для MSBuild](reference/msbuild-targets.md)
 ### [Изменение исходного кода и файлов конфигурации](create-packages/source-and-config-file-transformations.md)
 ### [Выбор сборок, на которые ссылается проект](create-packages/select-assemblies-referenced-by-projects.md)
 ### [Определение типа пакета](create-packages/set-package-type.md)
@@ -71,6 +70,7 @@
 ## [.nuspec](reference/nuspec.md)
 ## [Файл Nuget.Config](reference/nuget-config-file.md)
 ## [Целевые платформы](reference/target-frameworks.md)
+## [Объекты pack и restore в качестве целевых объектов MSBuild](reference/msbuild-targets.md)
 ## [dotnet CLI](reference/dotnet-Commands.md)
 ## [Справочник по интерфейсу командной строки nuget.exe](reference/nuget-exe-cli-reference.md)
 ### [add](reference/cli-reference/cli-ref-add.md)
