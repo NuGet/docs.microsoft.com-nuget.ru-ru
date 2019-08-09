@@ -18,7 +18,7 @@
 ### [Консоль диспетчера пакетов (PowerShell)](consume-packages/install-use-packages-powershell.md)
 ## Настройка NuGet
 ### Параметры восстановления пакетов
-#### [Параметры восстановления](consume-packages/package-restore.md)
+#### [Восстановление пакетов](consume-packages/package-restore.md)
 #### [Устранение неполадок](consume-packages/package-restore-troubleshooting.md)
 ### [Переустановка и обновление пакетов](consume-packages/reinstalling-and-updating-packages.md)
 ### [Управление глобальными пакетами и папками кэша](consume-packages/managing-the-global-packages-and-cache-folders.md)
