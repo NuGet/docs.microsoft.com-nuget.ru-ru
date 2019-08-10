@@ -6,12 +6,12 @@ ms.author: karann
 ms.date: 05/24/2019
 ms.topic: reference
 ms.reviewer: anangaur
-ms.openlocfilehash: 5b9be55b593890127d8fe0ad1a9357b89527a09a
-ms.sourcegitcommit: f9e39ff9ca19ba4a26e52b8a5e01e18eb0de5387
+ms.openlocfilehash: 9c608c5455bc83874b670b7f2b9a0ceeeafdc8e5
+ms.sourcegitcommit: dec3fa44547c6a00d0ae6cbb6c64cdc65660d808
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/24/2019
-ms.locfileid: "68433370"
+ms.lasthandoff: 08/09/2019
+ms.locfileid: "68912578"
 ---
 # <a name="nuspec-reference"></a>Справочник по файлу NUSPEC
 
@@ -94,7 +94,7 @@ URL-адрес для домашней страницы пакета, часто
 
 URL-адрес для лицензии пакета, часто показанный в пользовательских интерфейсах, таких как nuget.org.
 
-#### <a name="license"></a>Лицензии
+#### <a name="license"></a>лицензии
 Выражение лицензии СПДКС или путь к файлу лицензии в пакете, который часто отображается в пользовательских интерфейсах, например nuget.org. Если вы намерены лицензирование пакета с помощью обычной лицензии, например MIT или BSD-2-предложения, используйте соответствующий [идентификатор лицензии спдкс](https://spdx.org/licenses/). Например:
 
 `<license type="expression">MIT</license>`
@@ -293,7 +293,8 @@ nuget pack MyProject.csproj
 </dependencies>
 ```
 
-Примечание. При создании `.nuspec` из проекта с помощью `nuget spec`, зависимости, существующие в этом проекте, автоматически включаются в результирующий `.nuspec` файл.
+> [!Important]
+> При создании `.nuspec` из проекта с помощью `nuget spec`, зависимости, существующие в этом проекте, не включаются автоматически в результирующий `.nuspec` файл. Вместо этого используйте `nuget pack myproject.csproj`и получите файл с *расширением nuspec* в созданном nupkgном файле. Этот *nuspec* содержит зависимости.
 
 ### <a name="dependency-groups"></a>Группы зависимостей
 
