@@ -5,12 +5,12 @@ author: karann-msft
 ms.author: karann
 ms.date: 07/09/2019
 ms.topic: quickstart
-ms.openlocfilehash: 86e71460094de9b799384db83456a68db57647af
-ms.sourcegitcommit: e65180e622f6233b51bb0b41d0e919688083eb26
+ms.openlocfilehash: 0fc3b15c6d5ffa93eb6e26660f71cea2286ba77d
+ms.sourcegitcommit: aed04cc04b0902403612de6736a900d41c265afd
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/23/2019
-ms.locfileid: "68419926"
+ms.lasthandoff: 08/06/2019
+ms.locfileid: "68821422"
 ---
 # <a name="quickstart-create-and-publish-a-nuget-package-using-visual-studio-net-standard-windows-only"></a>Краткое руководство. Создание и публикация пакета NuGet с помощью Visual Studio (.NET Standard, только для Windows)
 
@@ -99,17 +99,24 @@ namespace AppLogger
     ========== Build: 1 succeeded, 0 failed, 0 up-to-date, 0 skipped ==========
     ```
 
-### <a name="alternate-option-pack-with-msbuild"></a>Альтернативный вариант: упаковка с помощью MSBuild
+### <a name="optional-generate-package-on-build"></a>(Необязательно) Создание пакета при сборке
+
+Вы можете настроить в Visual Studio автоматическое создание пакета NuGet при сборке проекта.
+
+1. В обозревателе решений щелкните правой кнопкой мыши проект и выберите пункт **Свойства**.
+
+2. На вкладке **Пакет** выберите **Создать пакет NuGet при сборке**.
+
+   ![Автоматическое создание пакета при сборке](media/qs_create-vs-05-generate-on-build.png)
+
+> [!NOTE]
+> При автоматическом создании пакета время на упаковку увеличивает время сборки проекта.
+
+### <a name="optional-pack-with-msbuild"></a>(Необязательно) Упаковка с помощью MSBuild
 
 В качестве альтернативы команде меню **Pack** в NuGet 4.x+ и MSBuild 15.1+ можно использовать целевой объект `pack`, когда проект содержит необходимые данные о пакете. Откройте командную строку, перейдите в папку проекта и запустите приведенную ниже команду. (В общем случае следует запустить Командную строку разработчика для Visual Studio из меню "Пуск", так как в этом случае настраиваются все необходимые пути для MSBuild.)
 
-```cli
-msbuild -t:pack -p:Configuration=Release
-```
-
-Этот пакет должен находиться в папке `bin\Release`.
-
-Дополнительные сведения об использовании `msbuild -t:pack` см. в описании [объектов pack и restore NuGet в качестве целевых объектов MSBuild](../reference/msbuild-targets.md#pack-target).
+Дополнительные сведения см. в разделе [Создание пакета с помощью MSBuild](../create-packages/creating-a-package-msbuild.md).
 
 ## <a name="publish-the-package"></a>Публикация пакета
 

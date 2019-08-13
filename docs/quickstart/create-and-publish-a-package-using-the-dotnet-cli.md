@@ -5,12 +5,12 @@ author: karann-msft
 ms.author: karann
 ms.date: 05/24/2019
 ms.topic: quickstart
-ms.openlocfilehash: 30a77b427fe0a33b41262c5784045e5a6b10852f
-ms.sourcegitcommit: e65180e622f6233b51bb0b41d0e919688083eb26
+ms.openlocfilehash: f663b1b2176a5f0ae5bc6d82873193638e0efdaa
+ms.sourcegitcommit: ba8ad1bd13a4bba3df94374e34e20c425a05af2f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/23/2019
-ms.locfileid: "68419985"
+ms.lasthandoff: 08/06/2019
+ms.locfileid: "68833382"
 ---
 # <a name="quickstart-create-and-publish-a-package-dotnet-cli"></a>Краткое руководство. Создание и публикация пакета (dotnet CLI)
 
@@ -26,9 +26,15 @@ ms.locfileid: "68419985"
 
 Вы можете использовать имеющийся проект библиотеки классов .NET для кода, который нужно упаковать, или же создать простой проект, как показано ниже:
 
-1. Создайте папку с именем `AppLogger` и перейдите в нее.
+1. Создайте папку с именем `AppLogger`.
 
-1. Создайте проект с помощью команды `dotnet new classlib`, которая использует имя текущей папки для проекта.
+1. Откройте командную строку и перейдите в папку `AppLogger`.
+
+1. Введите `dotnet new classlib`; команда использует имя текущей папки для проекта.
+
+   Будет создан новый проект.
+
+1. Чтобы проверить, что приложение создано правильно, используйте команду `dotnet run`.
 
 ## <a name="add-package-metadata-to-the-project-file"></a>Добавление метаданных пакета в файл проекта
 

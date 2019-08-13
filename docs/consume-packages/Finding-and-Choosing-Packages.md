@@ -5,12 +5,12 @@ author: karann-msft
 ms.author: karann
 ms.date: 06/04/2018
 ms.topic: conceptual
-ms.openlocfilehash: 3af29e2f9b09ba5bd82779f9aacf314bd8933436
-ms.sourcegitcommit: efc18d484fdf0c7a8979b564dcb191c030601bb4
+ms.openlocfilehash: cbe6fd964e88b054b9e2c5c8ead71d1f9090d63c
+ms.sourcegitcommit: 5aa49478dc466c67db5c3edda7c6ce8dcd8ae033
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/18/2019
-ms.locfileid: "68317031"
+ms.lasthandoff: 08/06/2019
+ms.locfileid: "68817561"
 ---
 # <a name="finding-and-evaluating-nuget-packages-for-your-project"></a>Поиск и пробное использование пакетов NuGet для проекта
 
@@ -82,6 +82,10 @@ NuGet поддерживает собственные пакеты C++, кото
 
     ![Статистика скачиваний на странице сведений о пакете](media/Finding-03-Downloads.png)
 
+- *Использование GitHub*. На странице пакета в разделе **Использование GitHub** перечислены основные репозитории GitHub, которые зависят от этого пакета. Обычно лучше подходит пакет, от которого зависят многие популярные репозитории GitHub.
+
+    ![Использование GitHub](media/GitHub-Usage.png)
+
 - *История версий*. На странице пакета в разделе **Сведения** показана дата последнего обновления и **история версий** пакета. Если разработчик обеспечивает эффективное сопровождение пакета, у него будет обширная история версий и недавняя дата обновления. Непопулярные пакеты обновляются редко.
 
     ![История версий на странице сведений о пакете](media/Finding-04-VersionHistory.png)
@@ -115,6 +119,7 @@ NuGet поддерживает собственные пакеты C++, кото
 1. Он должен иметь такой тег: `<license type="file">license\license.txt</license>`. Это означает, что файл лицензии `license.txt` находится в папке `license`, которая также расположена в корневой папке, созданной при распаковке.
 1. Перейдите в папку `license` и откройте файл `license.txt`.
 
+Чтобы получить в MSBuild эквивалент для установки лицензии в `.nuspec`, ознакомьтесь с разделом [Упаковка лицензионного выражения или файла лицензии](/nuget/reference/msbuild-targets#packing-a-license-expression-or-a-license-file).
 
 ## <a name="search-syntax"></a>Синтаксис поиска
 
