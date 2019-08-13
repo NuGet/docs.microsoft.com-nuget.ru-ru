@@ -5,18 +5,18 @@ author: karann-msft
 ms.author: karann
 ms.date: 01/18/2018
 ms.topic: reference
-ms.openlocfilehash: 0e12944bdd5d43b8b9e84908be480a5249dd924f
-ms.sourcegitcommit: efc18d484fdf0c7a8979b564dcb191c030601bb4
+ms.openlocfilehash: cab56cb87f46335f9fdebdbc1649fead16459877
+ms.sourcegitcommit: 9803981c90a1ed954dc11ed71731264c0e75ea0a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/18/2019
-ms.locfileid: "68327661"
+ms.lasthandoff: 08/12/2019
+ms.locfileid: "68959726"
 ---
 # <a name="pack-command-nuget-cli"></a>Команда pack (NuGet CLI)
 
 Область **применения:** &bullet; **Поддерживаемые версии** для создания пакетов: 2.7+
 
-Создает пакет NuGet на основе указанного `.nuspec` файла или проекта. Команда (см. [команды DotNet](../dotnet-Commands.md)) и `msbuild -t:pack` (см. [целевые объекты MSBuild](../msbuild-targets.md)) могут использоваться в качестве альтернатив. `dotnet pack`
+Создает пакет NuGet на основе указанного файла [. nuspec](../nuspec.md) или проекта. Команда (см. [команды DotNet](../dotnet-Commands.md)) и `msbuild -t:pack` (см. [целевые объекты MSBuild](../msbuild-targets.md)) могут использоваться в качестве альтернатив. `dotnet pack`
 
 > [!Important]
 > В группе Mono создание пакета из файла проекта не поддерживается. Кроме того, необходимо изменить нелокальные пути в `.nuspec` файле на пути в стиле UNIX, так как NuGet. exe не преобразует сами пути Windows.
@@ -33,7 +33,7 @@ nuget pack <nuspecPath | projectPath> [options] [-Properties ...]
 
 | Параметр | Описание |
 | --- | --- |
-| BasePath | Задает базовый путь к файлам, определенным в `.nuspec` файле. |
+| BasePath | Задает базовый путь к файлам, определенным в файле [nuspec](../nuspec.md) . |
 | Построить | Указывает, что проект должен быть построен перед построением пакета. |
 | Исключить | Задает шаблоны с подстановочными знаками, исключаемые при создании пакета. Чтобы указать более одного шаблона, повторите флаг-Exclude. См. пример ниже. |
 | ексклудимптидиректориес | Предотвращает включение пустых каталогов при сборке пакета. |

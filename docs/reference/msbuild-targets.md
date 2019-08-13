@@ -5,12 +5,12 @@ author: karann-msft
 ms.author: karann
 ms.date: 03/23/2018
 ms.topic: conceptual
-ms.openlocfilehash: 8403ae38b5d2e907c6f06b162a18cdcd5425565b
-ms.sourcegitcommit: 5aa49478dc466c67db5c3edda7c6ce8dcd8ae033
+ms.openlocfilehash: d8d1b2ef0185381d16c1bb73035588fe90bcfd14
+ms.sourcegitcommit: 9803981c90a1ed954dc11ed71731264c0e75ea0a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/06/2019
-ms.locfileid: "68817522"
+ms.lasthandoff: 08/12/2019
+ms.locfileid: "68959683"
 ---
 # <a name="nuget-pack-and-restore-as-msbuild-targets"></a>Объекты pack и restore NuGet в качестве целевых объектов MSBuild
 
@@ -34,6 +34,9 @@ ms.locfileid: "68817522"
 ```
 
 Аналогичным образом, вы можете создать задачу MSBuild и собственный целевой объект и использовать свойства NuGet в этой задаче MSBuild.
+
+> [!NOTE]
+> `$(OutputPath)`является относительным и предполагает, что команда выполняется из корневого каталога проекта.
 
 ## <a name="pack-target"></a>Целевой объект pack
 

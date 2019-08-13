@@ -5,12 +5,12 @@ author: karann-msft
 ms.author: karann
 ms.date: 01/18/2018
 ms.topic: reference
-ms.openlocfilehash: 076d7a480e2f07149e4ec7ac58c7ab37040e7a8f
-ms.sourcegitcommit: efc18d484fdf0c7a8979b564dcb191c030601bb4
+ms.openlocfilehash: 81866172bfbf55c42ee96c213c0117f1f986235c
+ms.sourcegitcommit: 9803981c90a1ed954dc11ed71731264c0e75ea0a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/18/2019
-ms.locfileid: "68327671"
+ms.lasthandoff: 08/12/2019
+ms.locfileid: "68959713"
 ---
 # <a name="mirror-command-nuget-cli"></a>Команда mirror (NuGet CLI)
 
@@ -19,7 +19,7 @@ ms.locfileid: "68327671"
 Отражает пакет и его зависимости от указанных исходных репозиториев в целевом репозитории.
 
 > [!NOTE]
-> Чтобы включить эту команду для версий NuGet до 3,2, перейдите на [https://nuget.codeplex.com/releases](https://nuget.codeplex.com/releases)страницу, выберите последний стабильный выпуск, `NuGet.ServerExtensions.dll` Скачайте `Nuget-Signed.exe` и перейдите на локальный диск и `Nuget-Signed.exe` переименуйте в `nuget.exe`.
+> NuGet. Серверекстенсионс. dll и нужет-сигнед. exe, которые ранее поддерживали эту команду в NuGet 2. x (путем переименования нужет-сигнед. exe в NuGet. exe), больше не доступны для загрузки. Чтобы использовать команду, аналогичную этой, попробуйте [нужетмиррор](https://www.nuget.org/packages/NuGetMirror/).
 
 ## <a name="usage"></a>Использование
 
