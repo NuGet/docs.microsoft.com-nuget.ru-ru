@@ -3,36 +3,20 @@ title: Справочник по файлу NuGet. config
 description: Справочник по файлу NuGet.Config, включая разделы config, bindingRedirects, packageRestore, solution и packageSource.
 author: karann-msft
 ms.author: karann
-ms.date: 10/25/2017
+ms.date: 08/13/2019
 ms.topic: reference
-ms.openlocfilehash: b03bb8da0191a679671e5898ac70fff2024d52f2
-ms.sourcegitcommit: efc18d484fdf0c7a8979b564dcb191c030601bb4
+ms.openlocfilehash: a2955617b899bfadab42d1ae98dd20c8fc6ddca9
+ms.sourcegitcommit: fc1b716afda999148eb06d62beedb350643eb346
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/18/2019
-ms.locfileid: "68317223"
+ms.lasthandoff: 08/14/2019
+ms.locfileid: "69020051"
 ---
 # <a name="nugetconfig-reference"></a>Справочник по NuGet. config
 
 Поведение NuGet управляется параметрами в различных `NuGet.Config` файлах, как описано в разделе [Общие конфигурации NuGet](../consume-packages/configuring-nuget-behavior.md).
 
 `nuget.config` — это XML-файл, содержащий узел `<configuration>` верхнего уровня, который, в свою очередь, содержит элементы разделов, описываемые в этой статье. Каждый раздел содержит ноль или более элементов. См. [пример файла конфигурации](#example-config-file). В именах регистр символов не учитывается, а в качестве значений могут использоваться [переменные среды](#using-environment-variables).
-
-В этом разделе.
-
-- [Раздел config](#config-section)
-- [Раздел bindingRedirects](#bindingredirects-section)
-- [Раздел packageRestore](#packagerestore-section)
-- [Раздел solution](#solution-section)
-- [Разделы источников пакета](#package-source-sections):
-  - [packageSources](#packagesources)
-  - [packageSourceCredentials](#packagesourcecredentials)
-  - [apikeys](#apikeys)
-  - [disabledPackageSources](#disabledpackagesources)
-  - [activePackageSource](#activepackagesource)
-- [раздел Трустедсигнерс](#trustedsigners-section)
-- [Использование переменных среды](#using-environment-variables)
-- [Пример файла конфигурации](#example-config-file)
 
 <a name="dependencyVersion"></a>
 <a name="globalPackagesFolder"></a>
@@ -240,6 +224,7 @@ ms.locfileid: "68317223"
     <add key="All" value="(Aggregate source)" />
 </activePackageSource>
 ```
+
 ## <a name="trustedsigners-section"></a>раздел Трустедсигнерс
 
 Хранит доверенные подписывающих, используемые для разрешения пакета во время установки или восстановления. Этот список не может быть пустым, если пользователь `signatureValidationMode` задает `require`значение. 
@@ -250,7 +235,7 @@ ms.locfileid: "68317223"
 
 Доверенный подписывающий имеет коллекцию `certificate` элементов, которые закрепляют все сертификаты, которые обозначают данного подписавший. Доверенный подписывающий может быть `Author` `Repository`либо.
 
-В доверенном репозитории также `serviceIndex` указывается для репозитория (который должен быть допустимым  `https` универсальным кодом ресурса (URI)). Кроме того, можно указать список разделенных `owners` точкой с запятой списка, чтобы ограничить еще больше пользователей, которым доверяет данный репозитория.
+В доверенном репозитории также `serviceIndex` указывается для репозитория (который должен быть допустимым `https` универсальным кодом ресурса (URI)). Кроме того, можно указать список разделенных `owners` точкой с запятой списка, чтобы ограничить еще больше пользователей, которым доверяет данный репозитория.
 
 Поддерживаемые алгоритмы хэширования, используемые для отпечатка `SHA384` сертификата `SHA512`, — это `SHA256`, и.
 
@@ -268,6 +253,50 @@ ms.locfileid: "68317223"
         <owners>microsoft;aspnet;nuget</owners>
     </repository>
 </trustedSigners>
+```
+
+## <a name="fallbackpackagefolders-section"></a>раздел Фаллбаккпаккажефолдерс
+
+*(3.5 +)* Предоставляет способ предварительной установки пакетов, чтобы не выполнять никаких действий, если пакет найден в резервных папках. Папки с резервными пакетами имеют точно такую же структуру файлов, как и папка глобального пакета: *. nupkg* существует, и все файлы извлекаются.
+
+Логика поиска для этой конфигурации:
+
+- Найдите папку Global Package, чтобы узнать, не скачан ли уже пакет или версия.
+
+- Найдите в папках резервные папки, соответствующие пакету или версии.
+
+Если поиск выполнен успешно, загрузка не требуется.
+
+Если совпадение не найдено, NuGet проверяет источники файлов, а затем HTTP-источники, а затем загружает пакеты.
+
+| Ключ | Значение |
+| --- | --- |
+| (имя резервной папки) | Путь к резервной папке. |
+
+**Пример**:
+
+```xml
+<fallbackPackageFolders>
+   <add key="XYZ Offline Packages" value="C:\somePath\someFolder\"/>
+</fallbackPackageFolders>
+```
+
+## <a name="packagemanagement-section"></a>раздел packageManagement
+
+Задает формат управления пакетами по умолчанию: *Packages. config* или PackageReference. Проекты в стиле SDK всегда используют PackageReference.
+
+| Ключ | Значение |
+| --- | --- |
+| format | Логическое значение, указывающее формат управления пакетами по умолчанию. Если `1`значение равно, то используется формат PackageReference. Если `0`задано значение, используется формат *Packages. config*. |
+| отключенные | Логическое значение, указывающее, следует ли отображать запрос на выбор формата пакета по умолчанию при первом установке пакета. `False`скрывает запрос. |
+
+**Пример**:
+
+```xml
+<packageManagement>
+   <add key="format" value="1" />
+   <add key="disabled" value="False" />
+</packageManagement>
 ```
 
 ## <a name="using-environment-variables"></a>Использование переменных среды
