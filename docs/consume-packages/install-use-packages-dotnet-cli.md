@@ -5,12 +5,12 @@ author: mikejo5000
 ms.author: mikejo
 ms.date: 06/03/2019
 ms.topic: conceptual
-ms.openlocfilehash: a796c7a7537c3052259c7cf3f17d60981a495442
-ms.sourcegitcommit: efc18d484fdf0c7a8979b564dcb191c030601bb4
+ms.openlocfilehash: d9e9f0026e4c907351b4b0cd0adced28a4670575
+ms.sourcegitcommit: e763d9549cee3b6254ec2d6382baccb44433d42c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/18/2019
-ms.locfileid: "68317718"
+ms.lasthandoff: 08/09/2019
+ms.locfileid: "68860593"
 ---
 # <a name="install-and-manage-packages-using-the-dotnet-cli"></a>Установка пакетов и управление ими с использованием CLI dotnet
 
@@ -94,12 +94,4 @@ dotnet remove package Newtonsoft.Json
 
 ## <a name="restore-packages"></a>Восстановление пакетов
 
-С помощью команды [dotnet restore](/dotnet/core/tools/dotnet-restore?tabs=netcore2x) вы можете восстановить пакеты, включенные в файл проекта (см. [PackageReference](../consume-packages/package-references-in-project-files.md)). При использовании .NET Core версии 2.0 и более поздней автоматическое восстановление доступно с помощью команд `dotnet build` и `dotnet run`. В версии NuGet 4.0 при этом выполняется тот же код, что и для команды `nuget restore`.
-
-Как и с другими командами CLI `dotnet`, откройте командную строку и перейдите к каталогу, в котором находится файл проекта.
-
-Восстановление пакета с помощью `dotnet restore`.
-
-```cli
-dotnet restore 
-```
+[!INCLUDE [restore-dotnet-cli](includes/restore-dotnet-cli.md)]

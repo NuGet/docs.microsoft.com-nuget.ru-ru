@@ -5,12 +5,12 @@ author: mikejo5000
 ms.author: mikejo
 ms.date: 06/03/2019
 ms.topic: conceptual
-ms.openlocfilehash: 9eefed6f2c1a362f27c4a5d33d07645d743379fa
-ms.sourcegitcommit: efc18d484fdf0c7a8979b564dcb191c030601bb4
+ms.openlocfilehash: 9ef990c16cca62a1fbad25ff1582bfa543135fab
+ms.sourcegitcommit: e763d9549cee3b6254ec2d6382baccb44433d42c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/18/2019
-ms.locfileid: "68317748"
+ms.lasthandoff: 08/09/2019
+ms.locfileid: "68860584"
 ---
 # <a name="manage-packages-using-the-nugetexe-cli"></a>Управление пакетами с использованием CLI nuget.exe
 
@@ -110,14 +110,4 @@ nuget update
 
 ## <a name="restore-packages"></a>Восстановление пакетов
 
-Используйте команду [restore](../reference/cli-reference/cli-ref-restore.md), которая скачивает и устанавливает любые отсутствующие пакеты из папки *packages*.
-
-Команда `restore` добавляет пакеты на диск, но не изменяет список зависимых компонентов проекта. Чтобы восстановить зависимые компоненты пакета, измените файл `packages.config` и затем выполните команду `restore`.
-
-Как и с другими командами CLI `nuget.exe`, откройте командную строку и перейдите к каталогу, в котором находится файл проекта.
-
-Восстановление пакета с помощью `restore`.
-
-```cli
-nuget restore MySolution.sln
-```
+[!INCLUDE [restore-nuget-exe-cli](includes/restore-nuget-exe-cli.md)]
