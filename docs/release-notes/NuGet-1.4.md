@@ -5,12 +5,12 @@ author: karann-msft
 ms.author: karann
 ms.date: 11/11/2016
 ms.topic: conceptual
-ms.openlocfilehash: de76cf610e580a36014be9274b9c2c762b1015ac
-ms.sourcegitcommit: efc18d484fdf0c7a8979b564dcb191c030601bb4
+ms.openlocfilehash: 5f1d3ed6a1b20fb07437f1718faafaac0a193773
+ms.sourcegitcommit: 7441f12f06ca380feb87c6192ec69f6108f43ee3
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/18/2019
-ms.locfileid: "68317167"
+ms.lasthandoff: 08/15/2019
+ms.locfileid: "69488699"
 ---
 # <a name="nuget-14-release-notes"></a>Заметки о выпуске NuGet 1,4
 
@@ -60,7 +60,7 @@ NuGet 1,4 добавляет поддержку установки, удален
 По умолчанию при выполнении `Update-Package` команды в пакете (или обновлении пакета с помощью диалогового окна) он будет обновлен до последней версии в веб-канале. Благодаря новой поддержке обновления всех пакетов могут возникнуть ситуации, в которых необходимо заблокировать пакет для определенного диапазона версий. Например, вы можете заранее понять, что приложение будет работать только с версией 2. * пакета, но не 3,0 и выше. Чтобы предотвратить случайное обновление пакета до 3, NuGet 1,4 добавляет поддержку ограничения диапазона версий, до которого можно обновить пакеты, вручную редактируя `packages.config` файл с помощью нового `allowedVersions` атрибута.
 
 Например, в следующем примере показано, как заблокировать `SomePackage` пакет с диапазоном версий 2,0-3,0 (эксклюзивный).
-Атрибут принимает значения, используя [Формат диапазона версий.](../reference/package-versioning.md#version-ranges-and-wildcards) `allowedVersions`
+Атрибут принимает значения, используя [Формат диапазона версий.](../concepts/package-versioning.md#version-ranges-and-wildcards) `allowedVersions`
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
