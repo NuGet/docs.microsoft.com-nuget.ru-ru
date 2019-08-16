@@ -27,7 +27,7 @@
 ### [Распространенные конфигурации NuGet](consume-packages/configuring-nuget-behavior.md)
 ## Ссылка на пакеты в проекте
 ### [Ссылки на пакеты в файлах проекта](consume-packages/package-references-in-project-files.md)
-### [Перенос packages.config в PackageReference](reference/migrate-packages-config-to-package-reference.md)
+### [Перенос packages.config в PackageReference](consume-packages/migrate-packages-config-to-package-reference.md)
 ### [packages.config](reference/packages-config.md)
 # Создание пакетов
 ## [Общие сведения и рабочий процесс](create-packages/overview-and-workflow.md)
@@ -45,9 +45,9 @@
 ### [Создание локализованного пакета](create-packages/creating-localized-packages.md)
 ## Руководства по содержимому
 ### [Создание пакета UWP](guides/create-uwp-packages.md)
-### [Создание собственного пакета](create-packages/native-packages.md)
+### [Создание собственного пакета](guides/native-packages.md)
 ### [Создание элементов управления пользовательским интерфейсом в виде пакета NuGet](guides/create-UI-controls.md)
-### [Создание анализатора в виде пакета NuGet](reference/analyzers-conventions.md)
+### [Создание анализатора в виде пакета NuGet](guides/analyzers-conventions.md)
 ### [Создание пакета для Xamarin с помощью Visual Studio 2015](guides/create-packages-for-xamarin.md)
 ### [Создание пакета, содержащего сборки COM-взаимодействия](create-packages/author-packages-with-COM-interop-assemblies.md)
 ## Подписывание пакетов
@@ -64,8 +64,8 @@
 ### [Локальные веб-каналы](hosting-packages/local-feeds.md)
 # Основные понятия
 ## [Процесс установки пакета](concepts/package-installation-process.md)
-## [Управление версиями пакета](reference/package-versioning.md)
-## [Разрешение зависимостей](consume-packages/dependency-resolution.md)
+## [Управление версиями пакета](concepts/package-versioning.md)
+## [Разрешение зависимостей](concepts/dependency-resolution.md)
 # Справочник
 ## [.nuspec](reference/nuspec.md)
 ## [Файл Nuget.Config](reference/nuget-config-file.md)
@@ -342,6 +342,6 @@
 #### [NuGet 1.3](release-notes/NuGet-1.3.md)
 #### [NuGet 1.2](release-notes/NuGet-1.2.md)
 #### [NuGet 1.1](release-notes/NuGet-1.1.md)
-## [Вопросы и ответы](faqs/nuget-faq.md)
+## [Вопросы и ответы](resources/nuget-faq.md)
 ## [Формат проекта](resources/check-project-format.md)
 # [NuGet.org](nuget-org/overview-nuget-org.md)
