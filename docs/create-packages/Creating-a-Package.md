@@ -5,12 +5,12 @@ author: karann-msft
 ms.author: karann
 ms.date: 07/09/2019
 ms.topic: conceptual
-ms.openlocfilehash: f33624cf50248d8a137216ed0d725ed88c0defd2
-ms.sourcegitcommit: ba8ad1bd13a4bba3df94374e34e20c425a05af2f
+ms.openlocfilehash: a9224ce4e515cf98893a7134077c90a47df1862a
+ms.sourcegitcommit: fc1b716afda999148eb06d62beedb350643eb346
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/06/2019
-ms.locfileid: "68833372"
+ms.lasthandoff: 08/14/2019
+ms.locfileid: "69020075"
 ---
 # <a name="create-a-package-using-the-nugetexe-cli"></a>Создание пакета с помощью CLI nuget.exe
 
@@ -184,7 +184,9 @@ nuget locals -list global-packages
 | ref/{tfm} | Файлы сборки (`.dll`) и символов (`.pdb`) для определенного моникера целевой платформы (TFM) | Сборки добавляются как ссылки для использования только во время компиляции. Поэтому в папку bin проекта ничего не копируется. |
 | runtimes | Файлы сборки (`.dll`), символов (`.pdb`) и машинных ресурсов (`.pri`) для определенной архитектуры | Сборки добавляются как ссылки для использования только во время выполнения. Остальные файлы копируются в папки проекта. В папке `/ref/{tfm}` всегда должна быть соответствующая сборка (TFM) для `AnyCPU`, чтобы предоставить соответствующие сборки, используемые во время компиляции. См. раздел [Поддержка нескольких целевых платформ](supporting-multiple-target-frameworks.md). |
 | содержание | Произвольные файлы | Содержимое копируется в корневую папку проекта. Папку **content** можно представить как корневую папку целевого приложения, которое будет использовать пакет. Чтобы пакет добавил изображение в папку */images* приложения, поместите это изображение в папку *content/images* пакета. |
-| выполнить сборку | Файлы MSBuild `.targets` и `.props` | Автоматически вставляются в файл проекта или файл `project.lock.json` (NuGet 3.x или более поздней версии). |
+| выполнить сборку | Файлы MSBuild `.targets` и `.props` | Автоматическое добавление в проект (NuGet 3.x+). |
+| buildMultiTargeting | Файлы MSBuild `.targets` и `.props` для кроссплатформенного определения. | Автоматическое добавление в проект. |
+| buildTransitive | Файлы MSBuild `.targets` и `.props` *(5.0+)* , которые можно транзитивно передавать в любой соответствующий проект. См. об [этой функции](https://github.com/NuGet/Home/wiki/Allow-package--authors-to-define-build-assets-transitive-behavior). | Автоматическое добавление в проект. |
 | средства | Скрипты и программы PowerShell, доступные из консоли диспетчера пакетов | Папка `tools` добавляется в переменную среды `PATH` только для консоли диспетчера пакетов (в частности, она *не* добавляется в переменную `PATH` для среды MSBuild при сборке проекта). |
 
 Так как в структуре папок может быть сколько угодно сборок для любого числа целевых платформ, этот метод обязателен при создании пакетов, поддерживающих несколько платформ.
@@ -218,7 +220,15 @@ nuget spec
 
 Получившийся файл `<project-name>.nuspec` содержит *токены*, которые заменяются во время создания пакета значениями их проекта, включая ссылки на другие пакеты, которые уже установлены.
 
-Токен отделяется символами `$` с обеих сторон свойства проекта. Например, значение `<id>` в созданном таким образом манифесте, как правило, имеет следующий вид:
+Если у вас есть зависимости пакетов для включения в файл *.nuspec*, используйте вместо этого `nuget pack` и получите файл *.nuspec* из созданного файла *.nupkg*. Например, используйте следующую команду.
+
+```cli
+# Use in a folder containing a project file <project-name>.csproj or <project-name>.vbproj
+nuget pack myproject.csproj
+```
+```
+
+A token is delimited by `$` symbols on both sides of the project property. For example, the `<id>` value in a manifest generated in this way typically appears as follows:
 
 ```xml
 <id>$id$</id>
@@ -339,7 +349,7 @@ nuget spec [<package-name>]
 
 Файлы MSBuild `.props` и `.targets` для трансграничного таргетинга можно поместить в папку `\buildMultiTargeting`. Во время установки пакета NuGet добавляет соответствующие элементы `<Import>` в файл проекта с условием, что требуемую версию .NET Framework не задано (свойство MSBuild `$(TargetFramework)` должно быть пустым).
 
-В NuGet 3.x целевые платформы не добавляются в проект, а предоставляются через файл `project.lock.json`.
+В NuGet 3.x целевые объекты не добавляются в проект, а предоставляются через `{projectName}.nuget.g.targets` и `{projectName}.nuget.g.props`.
 
 ## <a name="run-nuget-pack-to-generate-the-nupkg-file"></a>Выполнение команды nuget pack для создания файла NUPKG
 

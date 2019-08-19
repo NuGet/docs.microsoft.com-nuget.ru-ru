@@ -5,12 +5,12 @@ author: karann-msft
 ms.author: karann
 ms.date: 08/05/2019
 ms.topic: conceptual
-ms.openlocfilehash: a0db6dc95ffa5ad73741ae53a6be9d6f937c1dbf
-ms.sourcegitcommit: ba8ad1bd13a4bba3df94374e34e20c425a05af2f
+ms.openlocfilehash: 92b42f0a6133565844d0b6df2cb50770793055ec
+ms.sourcegitcommit: e763d9549cee3b6254ec2d6382baccb44433d42c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/06/2019
-ms.locfileid: "68833231"
+ms.lasthandoff: 08/09/2019
+ms.locfileid: "68860635"
 ---
 # <a name="create-a-nuget-package-using-msbuild"></a>Создание пакета NuGet с помощью MSBuild
 
@@ -105,7 +105,7 @@ ms.locfileid: "68833231"
 
 Чтобы создать пакет NuGet (`.nupkg` файл) из проекта, запустите команду `msbuild -t:pack`, которая также автоматически построит проект:
 
-В командной строке разработчика введите следующую команду:
+В командной строке разработчика для Visual Studio введите следующую команду:
 
 ```cmd
 # Uses the project file in the current folder by default

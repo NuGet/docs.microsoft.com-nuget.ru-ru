@@ -5,12 +5,12 @@ author: karann-msft
 ms.author: karann
 ms.date: 07/15/2019
 ms.topic: conceptual
-ms.openlocfilehash: b7870bb6aac39f0865d88efc8c16751fdbecc3a8
-ms.sourcegitcommit: cae759ad8518c049575a30ad3bf04fe5d06244fb
+ms.openlocfilehash: 8c1d8a479747f6f7bce388c1555589543c8824a0
+ms.sourcegitcommit: fc1b716afda999148eb06d62beedb350643eb346
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/29/2019
-ms.locfileid: "68616778"
+ms.lasthandoff: 08/14/2019
+ms.locfileid: "69020061"
 ---
 # <a name="support-multiple-net-framework-versions-in-your-project-file"></a>Поддержка выбора нескольких версий платформ .NET в файле проекта
 
@@ -27,9 +27,13 @@ ms.locfileid: "68616778"
 
    Рекомендуется создать библиотеку классов .NET Standard для обеспечения лучшей совместимости.
 
-2. Измените файл *.csproj*, чтобы обеспечить поддержку целевых платформ.
-
-   Например, измените `<TargetFramework>netstandard2.0</TargetFramework>` на `<TargetFrameworks>netstandard2.0;net45</TargetFrameworks>`.
+2. Измените файл *.csproj*, чтобы обеспечить поддержку целевых платформ. Например, измените
+   
+   `<TargetFramework>netstandard2.0</TargetFramework>`
+   
+   на:
+   
+   `<TargetFrameworks>netstandard2.0;net45</TargetFrameworks>`
 
    Убедитесь, что для XML-элемента единственное число изменено на множественное (добавьте s в теги открытия и закрытия).
 

@@ -5,12 +5,12 @@ author: karann-msft
 ms.author: karann
 ms.date: 03/16/2018
 ms.topic: conceptual
-ms.openlocfilehash: 16a14a72f8bb2e5d5a56f6c3c277f0988869273d
-ms.sourcegitcommit: b6810860b77b2d50aab031040b047c20a333aca3
+ms.openlocfilehash: 05ece5f36ff7ae5920960c42cfde8b271dc3e712
+ms.sourcegitcommit: fc1b716afda999148eb06d62beedb350643eb346
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/28/2019
-ms.locfileid: "67426700"
+ms.lasthandoff: 08/14/2019
+ms.locfileid: "69020013"
 ---
 # <a name="package-references-packagereference-in-project-files"></a>Ссылки на пакеты (PackageReference) в файлах проектов
 
@@ -105,7 +105,9 @@ PackageReference также позволяет использовать усло
 | compile | Содержимое папки `lib`; управляет возможностью компиляции проекта с использованием сборок в этой папке |
 | исполняющая среда | Содержимое папки `lib` и `runtimes`; управляет возможностью копирования этих сборок в выходной каталог сборки |
 | contentFiles | Содержимое папки `contentfiles` |
-| выполнить сборку | Свойства и цели в папке `build` |
+| выполнить сборку | `.props` и `.targets` в папке `build` |
+| buildMultitargeting | `.props` и `.targets` в папке `buildMultitargeting` для кроссплатформенного определения. |
+| buildTransitive | Файлы `.props` и `.targets` *(5.0+)* в папке `buildTransitive`для ресурсов, которые можно транзитивно передавать в любой соответствующий проект. См. об [этой функции](https://github.com/NuGet/Home/wiki/Allow-package--authors-to-define-build-assets-transitive-behavior). |
 | analyzers | Анализаторы .NET |
 | в машинном коде | Содержимое папки `native` |
 | Нет | Никакие из перечисленных выше ресурсов не используются. |
@@ -228,7 +230,7 @@ ProjectA
   |------> ProjectB
              |------>PackageX 1.0.0
 ```
-Если `ProjectA` зависит от `PackageX` версии `2.0.0` и ссылается на проект `ProjectB`, который зависит от `PackageX` версии `1.0.0`, файл блокировки для `ProjectB` будет содержать зависимость от `PackageX` версии `1.0.0`. Но при создании проекта `ProjectA` его файл блокировки будет содержать зависимость от `PackageX` версии **`2.0.0`**, а **не** `1.0.0`, как указано в файле блокировки для `ProjectB`. Таким образом, файл блокировки проекта общего кода играет незначительную роль для разрешенных пакетов, от которых зависят проекты.
+Если `ProjectA` зависит от `PackageX` версии `2.0.0` и ссылается на проект `ProjectB`, который зависит от `PackageX` версии `1.0.0`, файл блокировки для `ProjectB` будет содержать зависимость от `PackageX` версии `1.0.0`. Но при создании проекта `ProjectA` его файл блокировки будет содержать зависимость от `PackageX` версии **`2.0.0`** , а **не** `1.0.0`, как указано в файле блокировки для `ProjectB`. Таким образом, файл блокировки проекта общего кода играет незначительную роль для разрешенных пакетов, от которых зависят проекты.
 
 ### <a name="lock-file-extensibility"></a>Расширяемость файла блокировки
 Вы можете управлять различным поведением восстановления с использованием файла блокировки, как описано ниже.

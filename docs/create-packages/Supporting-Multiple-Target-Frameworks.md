@@ -5,12 +5,12 @@ author: karann-msft
 ms.author: karann
 ms.date: 07/15/2019
 ms.topic: conceptual
-ms.openlocfilehash: d12b12c4670f5dcb4c1e7e475d77926bd5d3935b
-ms.sourcegitcommit: 0f5363353f9dc1c3d68e7718f51b7ff92bb35e21
+ms.openlocfilehash: 14483264030dd3bb32c7295886f2d37d52e735cc
+ms.sourcegitcommit: fc1b716afda999148eb06d62beedb350643eb346
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/19/2019
-ms.locfileid: "68342501"
+ms.lasthandoff: 08/14/2019
+ms.locfileid: "69020032"
 ---
 # <a name="support-multiple-net-versions"></a>Поддержка нескольких версий .NET
 
@@ -120,6 +120,32 @@ NuGet также поддерживает нацеливание на опред
 - `full`: полный профиль;
 - `wp`: Windows Phone
 - `cf`: Compact Framework.
+
+## <a name="declaring-dependencies-advanced"></a>Объявление зависимостей (расширенные сценарии)
+
+При упаковке файла проекта NuGet пытается автоматически создать зависимости из проекта. Приведенные в этом разделе инструкции по объявлению зависимостей с помощью файла *.nuspec* обычно выполняются только в расширенных сценариях.
+
+*(Версия 2.0+)* Зависимости пакетов можно объявить в файле *.nuspec* с учетом целевой платформы целевого проекта с помощью элементов `<group>` в элементе `<dependencies>`. См. об [элементах зависимостей](../reference/nuspec.md#dependencies-element).
+
+Каждый элемент group имеет атрибут `targetFramework` и содержит ноль или более элементов `<dependency>`. Эти зависимости устанавливаются вместе, если целевая платформа совместима с профилем платформы проекта. Точное описание идентификаторов платформы см. в разделе [Целевые платформы](../reference/target-frameworks.md).
+
+Мы рекомендуем использовать одну группу для моникера целевой платформы (TFM) для файлов в папках *lib/* и *ref/* .
+
+В следующем примере приводятся различные варианты элемента `<group>`:
+
+```xml
+<dependencies>
+
+    <group targetFramework="net472">
+        <dependency id="jQuery" version="1.10.2" />
+        <dependency id="WebActivatorEx" version="2.2.0" />
+    </group>
+
+    <group targetFramework="net20">
+    </group>
+
+</dependencies>
+```
 
 ## <a name="determining-which-nuget-target-to-use"></a>Определение требуемой цели NuGet
 

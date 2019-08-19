@@ -5,16 +5,18 @@ author: karann-msft
 ms.author: karann
 ms.date: 12/07/2017
 ms.topic: conceptual
-ms.openlocfilehash: 32b01e6066cf60f7a0942508e640fdd5658b4444
-ms.sourcegitcommit: efc18d484fdf0c7a8979b564dcb191c030601bb4
+ms.openlocfilehash: bc077220e05b14180baac9611fda9234675ad640
+ms.sourcegitcommit: e763d9549cee3b6254ec2d6382baccb44433d42c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/18/2019
-ms.locfileid: "68316977"
+ms.lasthandoff: 08/09/2019
+ms.locfileid: "68860528"
 ---
 # <a name="how-to-reinstall-and-update-packages"></a>Переустановка и обновление пакетов
 
 Существует несколько ситуаций, описанных ниже в разделе [Когда следует переустанавливать пакет](#when-to-reinstall-a-package), когда ссылки на пакет в проекте Visual Studio могут быть нарушены. В этих случаях удаление и повторная установка той же версии пакета восстанавливает работоспособность ссылок. Обновление пакета означает простую установку обновленной версии, что часто позволяет восстановить работоспособность пакета.
+
+В Visual Studio консоль диспетчера пакетов позволяет обновлять и переустанавливать пакеты несколькими способами.
 
 Обновление и переустановка пакетов выполняются следующим образом:
 
@@ -25,7 +27,7 @@ ms.locfileid: "68316977"
 | Интерфейс командной строки nuget.exe | Команда `nuget update` | Для всех пакетов удалите папку пакета, а затем запустите `nuget install`. Для одного пакета удалите папку пакета, а затем используйте `nuget install <id>` для переустановки того же пакета. |
 
 > [!NOTE]
-> Для интерфейса командной строки dotnet такая процедура не требуется. В аналогичном сценарии вы можете [восстановить пакеты с помощью интерфейса командной строки dotnet](../consume-packages/install-use-packages-dotnet-cli.md#restore-packages).
+> Для интерфейса командной строки dotnet такая процедура не требуется. В аналогичном сценарии вы можете [восстановить пакеты с помощью интерфейса командной строки dotnet](package-restore.md#restore-using-the-dotnet-cli).
 
 Содержание этой статьи
 
@@ -61,7 +63,7 @@ ms.locfileid: "68316977"
 
 ## <a name="using-update-package"></a>Использование команды Update-Package
 
-Учитывая описанные ниже [особенности](#considerations), вы можете легко переустановить пакет с помощью [команды Update-Package](../reference/ps-reference/ps-ref-update-package.md) в консоли диспетчера пакетов Visual Studio (**Сервис** > **Диспетчер пакетов NuGet** > **Консоль диспетчера пакетов**):
+Учитывая описанные ниже [особенности](#considerations), вы можете легко переустановить пакет с помощью [команды Update-Package](../reference/ps-reference/ps-ref-update-package.md) в консоли диспетчера пакетов Visual Studio (**Средства** > **Диспетчер пакетов NuGet** > **Консоль диспетчера пакетов**).
 
 ```ps
 Update-Package -Id <package_name> –reinstall

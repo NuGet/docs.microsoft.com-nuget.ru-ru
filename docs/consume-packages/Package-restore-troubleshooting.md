@@ -5,16 +5,18 @@ author: karann-msft
 ms.author: karann
 ms.date: 05/25/2018
 ms.topic: conceptual
-ms.openlocfilehash: 287237cf4041870c562a6a7f48f233d8fdc8ef33
-ms.sourcegitcommit: 0dea3b153ef823230a9d5f38351b7cef057cb299
+ms.openlocfilehash: a1f9f1d03e9a6e58466fa92426bd655d5e8ed83d
+ms.sourcegitcommit: e763d9549cee3b6254ec2d6382baccb44433d42c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/12/2019
-ms.locfileid: "67842388"
+ms.lasthandoff: 08/09/2019
+ms.locfileid: "68860624"
 ---
 # <a name="troubleshooting-package-restore-errors"></a>Устранение ошибок при восстановлении пакетов
 
-Эта статья посвящена распространенным ошибкам, возникающим при восстановлении пакетов, и мерам по их устранению. Дополнительные сведения о восстановлении пакетов см. в разделе [Восстановление пакета](../consume-packages/package-restore.md#enable-and-disable-package-restore-visual-studio).
+Эта статья посвящена распространенным ошибкам, возникающим при восстановлении пакетов, и мерам по их устранению. 
+
+Функция восстановления пакетов пытается установить все зависимости пакетов в правильном состоянии с учетом ссылок на пакет в файле проекта ( *.csproj*) или файле *packages.config*. (В Visual Studio ссылки отображаются в обозревателе решений в узле **Зависимости \ NuGet** или **Ссылки**.) См. о [восстановлении пакетов](../consume-packages/package-restore.md#restore-packages). Если пакет ссылается на файл проекта( *.csproj*) или если файл *packages.config* неправильный (не соответствует требуемому состоянию после восстановления пакета), необходимо установить или обновить пакеты. Не используйте вместо этого функцию восстановления пакетов.
 
 Если приведенные здесь инструкции не работают, [сообщите о проблеме на GitHub](https://github.com/NuGet/docs.microsoft.com-nuget/issues), чтобы мы могли тщательнее изучить ваш случай. Не используйте элемент управления "Была ли эта страница полезной?", который может отображаться на этой странице, так как это не позволяет нам связаться с вами для получения дополнительной информации.
 
@@ -44,8 +46,8 @@ Use NuGet Package Restore to download them. The missing file is {name}.
 
 Эта ошибка возникает при попытке выполнить сборку проекта, содержащего ссылки на один или несколько пакетов NuGet, которые сейчас не установлены на компьютере или в проекте.
 
-- Если используется формат управления PackageReference, эта ошибка означает, что пакет не установлен в папке *global-packages*, как описано в статье [Управление папкой установки глобальных пакетов, кэшем и временными папками](managing-the-global-packages-and-cache-folders.md).
-- Если используется файл `packages.config`, эта ошибка означает, что пакет не установлен в папке `packages` в корневом узле решения.
+- Если используется формат управления [PackageReference](package-references-in-project-files.md), эта ошибка означает, что пакет не установлен в папке *global-packages*, как описано в руководстве по [управлению папкой кэша и глобальных пакетов](managing-the-global-packages-and-cache-folders.md).
+- Если используется файл [packages.config](../reference/packages-config.md) эта ошибка означает, что пакет не установлен в папке`packages` в корне решения.
 
 Обычно такая ситуация возникает при получении исходного кода проекта из системы управления версиями или другого скачанного файла. Пакеты обычно исключаются из системы управления версиями или скачиваемых файлов, так как их можно восстановить из веб-каналов пакета, например nuget.org (см. раздел [Пакеты и система управления версиями](Packages-and-Source-Control.md)). Их включение приведет к раздуванию репозитория или созданию слишком больших ZIP-файлов.
 
@@ -54,10 +56,12 @@ Use NuGet Package Restore to download them. The missing file is {name}.
 Для восстановления пакетов используйте один из следующих методов.
 
 - После перемещения файла проекта отредактируйте его напрямую, чтобы обновить ссылки на пакеты.
-- Visual Studio — включите восстановление пакетов. Для этого выберите команду меню **Сервис > Диспетчер пакетов NuGet > Параметры диспетчера пакета**, задайте оба параметра в разделе **Восстановление пакета** и нажмите кнопку **ОК**. Выполните сборку решения еще раз.
-- CLI dotnet — в командной строке перейдите к папке с проектом, а затем выполните `dotnet restore` или `dotnet build` (автоматический запуск восстановления).
-- CLI NuGet. exe — в командной строке перейдите к папке с проектом, а затем выполните команду `nuget restore` (за исключением проектов, созданных с помощью CLI `dotnet`; в этом случае используйте `dotnet restore`).
-- Проекты перенесенные в PackageReference — в командной строке выполните команду `msbuild -t:restore`.
+- [Visual Studio](package-restore.md#restore-using-visual-studio) ([автоматическое восстановление](package-restore.md#restore-packages-automatically-using-visual-studio) или [восстановление вручную](package-restore.md#restore-packages-manually-using-visual-studio))
+- [dotnet CLI](package-restore.md#restore-using-the-dotnet-cli)
+- [Интерфейс командной строки nuget.exe](package-restore.md#restore-using-the-nugetexe-cli)
+- [MSBuild](package-restore.md#restore-using-msbuild)
+- [Azure Pipelines](package-restore.md#restore-using-azure-pipelines)
+- [Azure DevOps Server](package-restore.md#restore-using-azure-devops-server)
 
 После восстановления пакет должен присутствовать в папке *global-packages*. В проектах, использующих формат PackageReference, в процессе восстановления повторно создается файл `obj/project.assets.json`, а в проектах, использующих файл `packages.config`, пакет должен появиться в папке `packages`. Теперь сборка проекта должна пройти без ошибок. В противном случае [сообщите о проблеме на GitHub](https://github.com/NuGet/docs.microsoft.com-nuget/issues), чтобы мы могли связаться с вами.
 
