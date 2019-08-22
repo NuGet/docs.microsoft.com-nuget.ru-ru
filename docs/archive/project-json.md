@@ -5,12 +5,12 @@ author: karann-msft
 ms.author: karann
 ms.date: 07/27/2017
 ms.topic: reference
-ms.openlocfilehash: e4d8b5b9ab4605516827ead8939f278d110c7a48
-ms.sourcegitcommit: 1d1406764c6af5fb7801d462e0c4afc9092fa569
+ms.openlocfilehash: 5ecbcd4855de8ea7b6301a5e307779216baf96fc
+ms.sourcegitcommit: 7441f12f06ca380feb87c6192ec69f6108f43ee3
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/04/2018
-ms.locfileid: "43547788"
+ms.lasthandoff: 08/15/2019
+ms.locfileid: "69488286"
 ---
 # <a name="projectjson-reference"></a>Справочник по файлу project.json
 
@@ -47,7 +47,7 @@ ms.locfileid: "43547788"
 "PackageID" : "version_constraint"
 ```
 
-Пример:
+Например:
 
 ```json
 "dependencies": {
@@ -62,7 +62,7 @@ ms.locfileid: "43547788"
 
 При восстановлении пакетов ограничение версии `"5.0.0"` означает `>= 5.0.0`. То есть если версия 5.0.0 недоступна на сервере, но версия 5.0.1 имеется, NuGet устанавливает версию 5.0.1 и предупреждает об обновлении. NuGet выбирает самую раннюю доступную версию на сервере, соответствующую ограничению.
 
-Дополнительные сведения о правилах разрешения см. в разделе [Разрешение зависимостей](../consume-packages/dependency-resolution.md).
+Дополнительные сведения о правилах разрешения см. в разделе [Разрешение зависимостей](../concepts/dependency-resolution.md).
 
 ### <a name="managing-dependency-assets"></a>Управление ресурсами зависимостей
 

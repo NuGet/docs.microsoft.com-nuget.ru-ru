@@ -5,12 +5,12 @@ author: karann-msft
 ms.author: karann
 ms.date: 08/14/2017
 ms.topic: conceptual
-ms.openlocfilehash: 726f983c2522fdb538dfce858fdf2371ec0ce188
-ms.sourcegitcommit: f9e39ff9ca19ba4a26e52b8a5e01e18eb0de5387
+ms.openlocfilehash: a7d07da30daf3f94db99476b88d9abaad1bb8a07
+ms.sourcegitcommit: 7441f12f06ca380feb87c6192ec69f6108f43ee3
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/24/2019
-ms.locfileid: "68433341"
+ms.lasthandoff: 08/15/2019
+ms.locfileid: "69488855"
 ---
 # <a name="building-pre-release-packages"></a>Сборка пакетов предварительных версий
 
@@ -20,11 +20,11 @@ ms.locfileid: "68433341"
 
 Стабильная версия — это версия, которая считается достаточно надежной для использования в рабочей среде. Последняя стабильная версия также устанавливается в качестве обновления пакета или во время восстановления пакета (с учетом ограничений, которые описываются в разделе [Повторная установка и обновление пакетов](../consume-packages/reinstalling-and-updating-packages.md)).
 
-Для поддержки жизненного цикла выпуска программного обеспечения в NuGet 1.6 и более поздних версиях возможно распространение пакетов предварительных версий, номера версий которых включают в себя суффикс семантического версионирования, например `-alpha`, `-beta` или `-rc`. Дополнительные сведения см. в разделе [Управление версиями пакета](../reference/package-versioning.md#pre-release-versions).
+Для поддержки жизненного цикла выпуска программного обеспечения в NuGet 1.6 и более поздних версиях возможно распространение пакетов предварительных версий, номера версий которых включают в себя суффикс семантического версионирования, например `-alpha`, `-beta` или `-rc`. Дополнительные сведения см. в разделе [Управление версиями пакета](../concepts/package-versioning.md#pre-release-versions).
 
 Можно указать такие версии одним из следующих способов:
 
-- **Если в проекте используется [`PackageReference`](../consume-packages/package-references-in-project-files.md)**. Включите суффикс семантической версии в элементе [`PackageVersion`](/dotnet/core/tools/csproj.md#packageversion) файла `.csproj`:
+- **Если в проекте используется [`PackageReference`](../consume-packages/package-references-in-project-files.md)** . Включите суффикс семантической версии в элементе [`PackageVersion`](/dotnet/core/tools/csproj.md#packageversion) файла `.csproj`:
 
     ```xml
     <PropertyGroup>
@@ -32,13 +32,13 @@ ms.locfileid: "68433341"
     </PropertyGroup>
     ```
 
-- **Если в проекте используется [файл`packages.config`](../reference/packages-config.md)**. Включите суффикс семантической версии в элементе [`version`](../reference/nuspec.md#version) файла [`.nuspec`](../reference/nuspec.md):
+- **Если в проекте используется [файл`packages.config`](../reference/packages-config.md)** . Включите суффикс семантической версии в элементе [`version`](../reference/nuspec.md#version) файла [`.nuspec`](../reference/nuspec.md):
 
     ```xml
     <version>1.0.1-alpha</version>
     ```
 
-Когда вы будете готовы выпустить стабильную версию, просто удалите суффикс, и пакет будет иметь приоритет над любыми предварительными версиями. См. раздел [Управление версиями пакета](../reference/package-versioning.md#pre-release-versions).
+Когда вы будете готовы выпустить стабильную версию, просто удалите суффикс, и пакет будет иметь приоритет над любыми предварительными версиями. См. раздел [Управление версиями пакета](../concepts/package-versioning.md#pre-release-versions).
 
 ## <a name="installing-and-updating-pre-release-packages"></a>Установка и обновление пакетов предварительных версий
 

@@ -5,12 +5,12 @@ author: karann-msft
 ms.author: karann
 ms.date: 07/09/2019
 ms.topic: conceptual
-ms.openlocfilehash: 8222e1edfa13951d2fda9a2384d93bba38ef4979
-ms.sourcegitcommit: ba8ad1bd13a4bba3df94374e34e20c425a05af2f
+ms.openlocfilehash: 40a42be91d3848db3e721a674e3fec4096fccd08
+ms.sourcegitcommit: 7441f12f06ca380feb87c6192ec69f6108f43ee3
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/06/2019
-ms.locfileid: "68833299"
+ms.lasthandoff: 08/15/2019
+ms.locfileid: "69489011"
 ---
 # <a name="create-a-nuget-package-using-the-dotnet-cli"></a>Создание пакета NuGet с помощью CLI dotnet
 
@@ -66,7 +66,7 @@ ms.locfileid: "68833299"
 > [!NOTE]
 > Если пакет будет общедоступным, обратите особое внимание на свойство **PackageTags**, так как теги помогают найти ваш пакет и понять его назначение.
 
-Подробные сведения об объявлении зависимостей и указании номеров версий см. в разделе [Ссылки на пакеты в файлах проекта](../consume-packages/package-references-in-project-files.md) и [Управление версиями пакетов](../reference/package-versioning.md). Доступ к ресурсам зависимостей в пакете можно также предоставлять напрямую с помощью атрибутов `<IncludeAssets>` и `<ExcludeAssets>`. См. подробнее об [управлении ресурсами зависимостей](../consume-packages/package-references-in-project-files.md#controlling-dependency-assets).
+Подробные сведения об объявлении зависимостей и указании номеров версий см. в разделе [Ссылки на пакеты в файлах проекта](../consume-packages/package-references-in-project-files.md) и [Управление версиями пакетов](../concepts/package-versioning.md). Доступ к ресурсам зависимостей в пакете можно также предоставлять напрямую с помощью атрибутов `<IncludeAssets>` и `<ExcludeAssets>`. См. подробнее об [управлении ресурсами зависимостей](../consume-packages/package-references-in-project-files.md#controlling-dependency-assets).
 
 ## <a name="choose-a-unique-package-identifier-and-set-the-version-number"></a>Выбор уникального идентификатора пакета и номера версии
 
@@ -120,7 +120,7 @@ Copyright (C) Microsoft Corporation. All rights reserved.
 
 Вы также можете расширить возможности пакета или обеспечить поддержку других сценариев, как описано в следующих разделах:
 
-- [Управление версиями пакета](../reference/package-versioning.md)
+- [Управление версиями пакета](../concepts/package-versioning.md)
 - [Поддержка нескольких целевых платформ](../create-packages/multiple-target-frameworks-project-file.md)
 - [Преобразования исходных файлов и файлов конфигурации](../create-packages/source-and-config-file-transformations.md)
 - [Локализация](../create-packages/creating-localized-packages.md)
@@ -130,5 +130,5 @@ Copyright (C) Microsoft Corporation. All rights reserved.
 
 Наконец, существуют дополнительные типы пакетов, о которых нужно знать:
 
-- [Собственные пакеты](../create-packages/native-packages.md)
+- [Собственные пакеты](../guides/native-packages.md)
 - [Пакеты символов](../create-packages/symbol-packages.md)

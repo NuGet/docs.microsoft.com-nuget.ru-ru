@@ -5,12 +5,12 @@ author: karann-msft
 ms.author: karann
 ms.date: 5/14/2018
 ms.topic: conceptual
-ms.openlocfilehash: f1397e2f42fd65c3a883c864bd430ba5892c12b2
-ms.sourcegitcommit: 74bf831e013470da8b0c1f43193df10bfb1f4fe6
+ms.openlocfilehash: fe769f95e3eda4bc07db4369544472c00b35363d
+ms.sourcegitcommit: 7441f12f06ca380feb87c6192ec69f6108f43ee3
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/26/2019
-ms.locfileid: "58432534"
+ms.lasthandoff: 08/15/2019
+ms.locfileid: "69488657"
 ---
 # <a name="nuget-47-release-notes"></a>Заметки о выпуске NuGet 4.7
 
@@ -20,7 +20,7 @@ ms.locfileid: "58432534"
 
 * Усовершенствовано подписывание пакетов: теперь поддерживаются [пакеты с подписями репозитория](https://github.com/NuGet/Home/wiki/Repository-Signatures)
 
-* В Visual Studio версии 15.7 мы реализовали возможность [переноса существующих проектов, которые используют формат packages.config вместо PackageReference](https://docs.microsoft.com/en-us/nuget/reference/migrate-packages-config-to-package-reference).
+* В Visual Studio версии 15.7 мы реализовали возможность [переноса существующих проектов, которые используют формат packages.config вместо PackageReference](https://docs.microsoft.com/en-us/nuget/consume-packages/migrate-packages-config-to-package-reference).
 
 ## <a name="summary-whats-new-in-472"></a>Сводка: Новые возможности версии 4.7.2
 

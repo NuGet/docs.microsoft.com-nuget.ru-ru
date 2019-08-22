@@ -5,12 +5,12 @@ author: karann-msft
 ms.author: karann
 ms.date: 06/20/2019
 ms.topic: conceptual
-ms.openlocfilehash: 5676239bedb7f8fbe9f74725864afd297405d5c1
-ms.sourcegitcommit: 0dea3b153ef823230a9d5f38351b7cef057cb299
+ms.openlocfilehash: 69ef02e3c935287759b4012aadcfb1cb9811367c
+ms.sourcegitcommit: 7441f12f06ca380feb87c6192ec69f6108f43ee3
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/12/2019
-ms.locfileid: "67842336"
+ms.lasthandoff: 08/15/2019
+ms.locfileid: "69488449"
 ---
 # <a name="what-happens-when-a-nuget-package-is-installed"></a>Процесс установки пакета NuGet
 
@@ -39,7 +39,7 @@ ms.locfileid: "67842336"
 
 4. После загрузки устанавливает в папке *global-packages* пользователя. NuGet создает вложенную папку для каждого идентификатора пакета, а затем создает вложенные папки для каждой установленной версии пакета.
 
-5. При необходимости NuGet устанавливает зависимые компоненты пакета. Этот процесс может обновить версии пакетов, как описано в статье [Принципы разрешения зависимостей пакетов в NuGet](../consume-packages/dependency-resolution.md).
+5. При необходимости NuGet устанавливает зависимые компоненты пакета. Этот процесс может обновить версии пакетов, как описано в статье [Принципы разрешения зависимостей пакетов в NuGet](../concepts/dependency-resolution.md).
 
 6. Обновление других файлов и папок проекта:
 

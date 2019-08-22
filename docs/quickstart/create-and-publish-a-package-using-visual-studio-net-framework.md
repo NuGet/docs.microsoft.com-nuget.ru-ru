@@ -5,12 +5,12 @@ author: karann-msft
 ms.author: karann
 ms.date: 05/13/2018
 ms.topic: quickstart
-ms.openlocfilehash: 75160bf2b01f6d4707162e019a6263ddc64a6f5e
-ms.sourcegitcommit: 0f5363353f9dc1c3d68e7718f51b7ff92bb35e21
+ms.openlocfilehash: 7bfe041c01114ac61e811497ecc31ebfdad45029
+ms.sourcegitcommit: 7441f12f06ca380feb87c6192ec69f6108f43ee3
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/19/2019
-ms.locfileid: "68342520"
+ms.lasthandoff: 08/15/2019
+ms.locfileid: "69488903"
 ---
 # <a name="quickstart-create-and-publish-a-package-using-visual-studio-net-framework-windows"></a>Краткое руководство. Создание и публикация пакета с помощью Visual Studio (.NET Framework, Windows)
 
@@ -70,7 +70,7 @@ namespace AppLogger
     >
     > При попытке опубликовать пакет с именем, которое уже занято, появится сообщение об ошибке.
 
-1. Нажмите кнопку **Сведения о сборке...**, чтобы открыть диалоговое окно, где можно ввести другие свойства, которые переносятся в манифест (см. [описание токенов замены в справочнике по файлу NUSPEC](../reference/nuspec.md#replacement-tokens)). Чаще всего используются поля **Заголовок**, **Описание**, **Компания**, **Авторские права** и **Версия сборки**. В конечном счете эти свойства отображаются вместе с пакетом на узле, таком как nuget.org, поэтому задайте для них очевидное и понятное значение.
+1. Нажмите кнопку **Сведения о сборке...** , чтобы открыть диалоговое окно, где можно ввести другие свойства, которые переносятся в манифест (см. [описание токенов замены в справочнике по файлу NUSPEC](../reference/nuspec.md#replacement-tokens)). Чаще всего используются поля **Заголовок**, **Описание**, **Компания**, **Авторские права** и **Версия сборки**. В конечном счете эти свойства отображаются вместе с пакетом на узле, таком как nuget.org, поэтому задайте для них очевидное и понятное значение.
 
     ![Сведения о сборке в проекте .NET Framework в Visual Studio](media/qs_create-vs-01b-project-properties.png)
 
@@ -184,5 +184,5 @@ namespace AppLogger
 - [Публикация пакета](../nuget-org/publish-a-package.md)
 - [Пакеты предварительного выпуска](../create-packages/Prerelease-Packages.md)
 - [Поддержка нескольких целевых платформ](../create-packages/supporting-multiple-target-frameworks.md)
-- [Управление версиями пакета](../reference/package-versioning.md)
+- [Управление версиями пакета](../concepts/package-versioning.md)
 - [Создание локализованных пакетов](../create-packages/creating-localized-packages.md)

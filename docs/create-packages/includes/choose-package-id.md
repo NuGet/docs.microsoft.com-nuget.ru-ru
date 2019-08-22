@@ -1,10 +1,10 @@
 ---
-ms.openlocfilehash: e8949e9964ed19d342df53f08f59bb0f89e5feb0
-ms.sourcegitcommit: 5aa49478dc466c67db5c3edda7c6ce8dcd8ae033
+ms.openlocfilehash: 7ebe3c0f75b8de158879119bce4df26217849251
+ms.sourcegitcommit: 7441f12f06ca380feb87c6192ec69f6108f43ee3
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/06/2019
-ms.locfileid: "68817479"
+ms.lasthandoff: 08/15/2019
+ms.locfileid: "69488969"
 ---
 Идентификатор пакета и номер версии — два самых важных значения в проекте, так как они однозначно определяют код, содержащийся в пакете.
 
@@ -17,9 +17,9 @@ ms.locfileid: "68817479"
 **Рекомендации в отношении версии пакета**
 
 - Как правило, версия пакета должна соответствовать версии проекта (или сборки), хотя это не строгое требование. Но это упрощает работу, когда вы используете для пакета одну сборку. В целом помните, что при разрешении зависимостей диспетчер NuGet ориентируется на версии пакетов, а не на версии сборок.
-- При применении нестандартной схемы версий обязательно учитывайте правила управления версиями в NuGet, которые изложены в разделе [Управление версиями пакета](../../reference/package-versioning.md). NuGet в основном поддерживает [SemVer 2](../../reference/package-versioning.md#semantic-versioning-200).
+- При применении нестандартной схемы версий обязательно учитывайте правила управления версиями в NuGet, которые изложены в разделе [Управление версиями пакета](../../concepts/package-versioning.md). NuGet в основном поддерживает [SemVer 2](../../concepts/package-versioning.md#semantic-versioning-200).
 
-> См. подробнее о [разрешении зависимостей с помощью PackageReference](../../consume-packages/dependency-resolution.md#dependency-resolution-with-packagereference). Более старые сведения, которые помогут вам узнать об управлении версиями, см. в этой серии записей блога.
+> См. подробнее о [разрешении зависимостей с помощью PackageReference](../../concepts/dependency-resolution.md#dependency-resolution-with-packagereference). Более старые сведения, которые помогут вам узнать об управлении версиями, см. в этой серии записей блога.
 >
 > - [Часть 1. Решение проблем с DLL](http://blog.davidebbo.com/2011/01/nuget-versioning-part-1-taking-on-dll.html)
 > - [Часть 2. Базовый алгоритм](http://blog.davidebbo.com/2011/01/nuget-versioning-part-2-core-algorithm.html)

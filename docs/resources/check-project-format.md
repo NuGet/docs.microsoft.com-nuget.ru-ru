@@ -5,12 +5,12 @@ author: mikejo5000
 ms.author: mikejo
 ms.date: 07/09/2019
 ms.topic: conceptual
-ms.openlocfilehash: 3d8745ea30115a2d7f3954d171d92b75a434a55b
-ms.sourcegitcommit: 0dea3b153ef823230a9d5f38351b7cef057cb299
+ms.openlocfilehash: b151547e40e567b38acc2b0b9ee84c50d85000c9
+ms.sourcegitcommit: 7441f12f06ca380feb87c6192ec69f6108f43ee3
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/12/2019
-ms.locfileid: "67843446"
+ms.lasthandoff: 08/15/2019
+ms.locfileid: "69488483"
 ---
 # <a name="identify-the-project-format"></a>Определение формата проекта
 
@@ -23,7 +23,7 @@ NuGet работает со всеми проектами .NET. Но форма�
 | .NET Standard | Стиль пакета SDK | [dotnet CLI](../install-nuget-client-tools.md#dotnetexe-cli) | Проекты, созданные в версиях, которые выпущены до Visual Studio 2017, разработаны не в стиле пакета SDK. Используйте CLI `nuget.exe`. |
 | .NET Core | Стиль пакета SDK | [dotnet CLI](../install-nuget-client-tools.md#dotnetexe-cli) | Проекты, созданные в версиях, которые выпущены до Visual Studio 2017, разработаны не в стиле пакета SDK. Используйте CLI `nuget.exe`. |
 | .NET Framework | Проекты не в стиле пакета SDK | [Интерфейс командной строки nuget.exe](../install-nuget-client-tools.md#nugetexe-cli) | Проекты .NET Framework, созданные с помощью других методов, можно преобразовать в стиль пакета SDK. Для этого воспользуйтесь [CLI dotnet](../install-nuget-client-tools.md#dotnetexe-cli). |
-| [Перенесенный](../reference/migrate-packages-config-to-package-reference.md) проект .NET | Проекты не в стиле пакета SDK| Создавайте пакеты с помощью [msbuild -t:pack](../reference/migrate-packages-config-to-package-reference.md#create-a-package-after-migration). | Для создания пакетов рекомендуем использовать `msbuild -t:pack`. Для других целей используйте [CLI dotnet](../install-nuget-client-tools.md#dotnetexe-cli). Перенесенные проекты не разработаны не в стиле SDK. |
+| [Перенесенный](../consume-packages/migrate-packages-config-to-package-reference.md) проект .NET | Проекты не в стиле пакета SDK| Создавайте пакеты с помощью [msbuild -t:pack](../consume-packages/migrate-packages-config-to-package-reference.md#create-a-package-after-migration). | Для создания пакетов рекомендуем использовать `msbuild -t:pack`. Для других целей используйте [CLI dotnet](../install-nuget-client-tools.md#dotnetexe-cli). Перенесенные проекты не разработаны не в стиле SDK. |
 
 ## <a name="check-the-project-format"></a>Проверка формата проекта
 

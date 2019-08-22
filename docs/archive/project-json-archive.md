@@ -5,12 +5,12 @@ author: karann-msft
 ms.author: karann
 ms.date: 01/17/2018
 ms.topic: conceptual
-ms.openlocfilehash: 8d732e87f01c55bde87da0a2e382fd6d509886a3
-ms.sourcegitcommit: efc18d484fdf0c7a8979b564dcb191c030601bb4
+ms.openlocfilehash: 87116669c1e685ffd0dbe4142c2f7e357c413497
+ms.sourcegitcommit: 7441f12f06ca380feb87c6192ec69f6108f43ee3
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/18/2019
-ms.locfileid: "68317016"
+ms.lasthandoff: 08/15/2019
+ms.locfileid: "69488249"
 ---
 # <a name="projectjson-archive"></a>Устарелый формат project.json
 
@@ -54,19 +54,19 @@ ms.locfileid: "68317016"
 
 ## <a name="dependency-resolution-with-packagereference"></a>Разрешение зависимостей при использовании PackageReference
 
-*Полное описание см. в разделе о [разрешении зависимостей](../consume-packages/dependency-resolution.md#dependency-resolution-with-packagereference).*
+*Полное описание см. в разделе о [разрешении зависимостей](../concepts/dependency-resolution.md#dependency-resolution-with-packagereference).*
 
 Поведение PackageReference также применяется к файлу `project.json`. Команда восстановления NuGet записывает схему зависимостей в файл с именем `project.lock.json`, а также `project.json`.
 
 ## <a name="managing-dependency-assets"></a>Управление ресурсами зависимостей
 
-*Полное описание см. в разделе о [разрешении зависимостей](../consume-packages/dependency-resolution.md#managing-dependency-assets).*
+*Полное описание см. в разделе о [разрешении зависимостей](../concepts/dependency-resolution.md#managing-dependency-assets).*
 
 При использовании формата `project.json` вы можете управлять тем, какие ресурсы из зависимостей переходят в проект верхнего уровня. Дополнительные сведения см. в [справочнике по файлу project.json](project-json.md).
 
 ## <a name="excluding-references"></a>Исключение ссылок
 
-*Полное описание см. в разделе о [разрешении зависимостей](../consume-packages/dependency-resolution.md#excluding-references).*
+*Полное описание см. в разделе о [разрешении зависимостей](../concepts/dependency-resolution.md#excluding-references).*
 
 - `project.json`: добавьте `"exclude" : "all"` в зависимость для пакета PackageC:
 
@@ -83,7 +83,7 @@ ms.locfileid: "68317016"
 
 ## <a name="resolving-incompatible-package-errors"></a>Устранение ошибок с несовместимостью пакетов
 
-*Полное описание см. в разделе о [разрешении зависимостей](../consume-packages/dependency-resolution.md#resolving-incompatible-package-errors).*
+*Полное описание см. в разделе о [разрешении зависимостей](../concepts/dependency-resolution.md#resolving-incompatible-package-errors).*
 
 Добавленный метод устранения ошибок:
 
@@ -124,7 +124,7 @@ ms.locfileid: "68317016"
 
 ### <a name="package-versioning"></a>Управление версиями пакета
 
-*Полное описание см. в статье об [управлении версиями пакета](../reference/package-versioning.md).*
+*Полное описание см. в статье об [управлении версиями пакета](../concepts/package-versioning.md).*
 
 При использовании формата `project.json` NuGet также поддерживает применение нотации с использованием подстановочного знака \* для суффикса номера основной, дополнительной, предварительной версии и версии с исправлением.
 

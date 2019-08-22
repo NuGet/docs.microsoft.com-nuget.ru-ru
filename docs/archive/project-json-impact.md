@@ -5,12 +5,12 @@ author: karann-msft
 ms.author: karann
 ms.date: 01/18/2018
 ms.topic: conceptual
-ms.openlocfilehash: 8c85c1a89469c491c6be1f81961197450744349c
-ms.sourcegitcommit: 1d1406764c6af5fb7801d462e0c4afc9092fa569
+ms.openlocfilehash: 34b08f06f04efdcf7bf73efc2cbdb5a5494ae2d9
+ms.sourcegitcommit: 7441f12f06ca380feb87c6192ec69f6108f43ee3
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/04/2018
-ms.locfileid: "43545577"
+ms.lasthandoff: 08/15/2019
+ms.locfileid: "69488198"
 ---
 # <a name="impact-of-projectjson-when-creating-packages"></a>Влияние project.json при создании пакетов
 
@@ -25,7 +25,7 @@ ms.locfileid: "43545577"
 
 ### <a name="install-and-uninstall-scripts-are-ignored"></a>Скрипты установки и удаления игнорируются
 
-В модели транзитивного восстановления, описанной в разделе [Разрешение зависимостей](../consume-packages/dependency-resolution.md#dependency-resolution-with-packagereference), отсутствует понятие "время установки пакета". Пакет присутствует или отсутствует, но не существует никакого согласованного процесса, реализуемого при установке пакета.
+В модели транзитивного восстановления, описанной в разделе [Разрешение зависимостей](../concepts/dependency-resolution.md#dependency-resolution-with-packagereference), отсутствует понятие "время установки пакета". Пакет присутствует или отсутствует, но не существует никакого согласованного процесса, реализуемого при установке пакета.
 
 Кроме того, скрипты установки поддерживались только в Visual Studio. Другим интегрированным средам разработки для поддержки таких скриптов пришлось имитировать API расширяемости Visual Studio, а в распространенных редакторах и программах командной строки такая поддержка отсутствовала.
 
