@@ -12,12 +12,12 @@ keywords: пакеты символов NuGet, отладка пакета NuGet
 ms.reviewer:
 - anangaur
 - karann
-ms.openlocfilehash: e62d1872497e0e5e703bf7c49a87249ce9a996c7
-ms.sourcegitcommit: 9803981c90a1ed954dc11ed71731264c0e75ea0a
+ms.openlocfilehash: 992b3ddd04a1bb34e7aca25dfaa6f7df5485907b
+ms.sourcegitcommit: 80cf99f40759911324468be1ec815c96aebf376d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/12/2019
-ms.locfileid: "68959680"
+ms.lasthandoff: 08/17/2019
+ms.locfileid: "69564543"
 ---
 # <a name="creating-symbol-packages-snupkg"></a>Создание пакетов символов (SNUPKG)
 
@@ -118,7 +118,7 @@ NUPKG-файл не будет отличаться от текущего, а SN
 
 4) Если автор решит создать пакеты NUPKG и SNUPKG с помощью пользовательского NUSPEC-файла, пакет SNUPKG должен иметь иерархию папок и файлы, указанные в пункте 2).
 5) Поля ```authors``` и ```owners``` будут исключены из NUSPEC-файла пакета SNUPKG.
-6) Не используйте элемент <license>. Файл .snupkg рассматривается в рамках той же лицензии, что и соответствующий файл .nupk.
+6) Не используйте элемент <license>. SNUPKG-файл рассматривается в рамках той же лицензии, что и соответствующий NUPKG-файл.
 
 ## <a name="see-also"></a>См. также
 

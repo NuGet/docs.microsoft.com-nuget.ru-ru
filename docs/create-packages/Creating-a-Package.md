@@ -5,12 +5,12 @@ author: karann-msft
 ms.author: karann
 ms.date: 07/09/2019
 ms.topic: conceptual
-ms.openlocfilehash: a9224ce4e515cf98893a7134077c90a47df1862a
-ms.sourcegitcommit: fc1b716afda999148eb06d62beedb350643eb346
+ms.openlocfilehash: e4223c25daa1c14c30de1ef063cd0f48df70c8b5
+ms.sourcegitcommit: 80cf99f40759911324468be1ec815c96aebf376d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/14/2019
-ms.locfileid: "69020075"
+ms.lasthandoff: 08/17/2019
+ms.locfileid: "69564576"
 ---
 # <a name="create-a-package-using-the-nugetexe-cli"></a>Создание пакета с помощью CLI nuget.exe
 
@@ -20,7 +20,7 @@ ms.locfileid: "69020075"
 
 - См. подробнее о проектах .NET Core и .NET Standard [не на основе пакетов SDK](../resources/check-project-format.md) и других проектах на основе пакетов SDK в руководстве по [созданию пакета NuGet с помощью CLI dotnet](creating-a-package-dotnet-cli.md).
 
-- Для проектов, перенесенных из `packages.config` в [PackageReference](../consume-packages/package-references-in-project-files.md), используйте [msbuild -t:pack](../reference/migrate-packages-config-to-package-reference.md#create-a-package-after-migration).
+- Для проектов, перенесенных из `packages.config` в [PackageReference](../consume-packages/package-references-in-project-files.md), используйте [msbuild -t:pack](../consume-packages/migrate-packages-config-to-package-reference.md#create-a-package-after-migration).
 
 С технической точки зрения, пакет NuGet — это просто ZIP-файл, расширение которого изменено на `.nupkg` и содержимое которого соответствует определенным соглашениям. В этом разделе подробно описывается создание пакета, в котором соблюдаются эти соглашения.
 
@@ -138,7 +138,7 @@ ms.locfileid: "69020075"
 </package>
 ```
 
-Подробные сведения об объявлении зависимостей и указании номеров версий см. в разделе [packages.config](../reference/packages-config.md) и [Управление версиями пакета](../reference/package-versioning.md). Доступ к ресурсам зависимостей в пакете можно также предоставлять напрямую с помощью атрибутов `include` и `exclude` элемента `dependency`. См. подраздел "Зависимости" в разделе [Справочник по файлам NUSPEC](../reference/nuspec.md#dependencies).
+Подробные сведения об объявлении зависимостей и указании номеров версий см. в разделе [packages.config](../reference/packages-config.md) и [Управление версиями пакета](../concepts/package-versioning.md). Доступ к ресурсам зависимостей в пакете можно также предоставлять напрямую с помощью атрибутов `include` и `exclude` элемента `dependency`. См. подраздел "Зависимости" в разделе [Справочник по файлам NUSPEC](../reference/nuspec.md#dependencies).
 
 Так как манифест включается в пакет, создаваемый на его основе, вы можете получить дополнительные примеры, изучив существующие пакеты. Хорошим их источником может служить папка *global-packages* на компьютере, расположение которой можно получить с помощью следующей команды:
 
@@ -184,8 +184,8 @@ nuget locals -list global-packages
 | ref/{tfm} | Файлы сборки (`.dll`) и символов (`.pdb`) для определенного моникера целевой платформы (TFM) | Сборки добавляются как ссылки для использования только во время компиляции. Поэтому в папку bin проекта ничего не копируется. |
 | runtimes | Файлы сборки (`.dll`), символов (`.pdb`) и машинных ресурсов (`.pri`) для определенной архитектуры | Сборки добавляются как ссылки для использования только во время выполнения. Остальные файлы копируются в папки проекта. В папке `/ref/{tfm}` всегда должна быть соответствующая сборка (TFM) для `AnyCPU`, чтобы предоставить соответствующие сборки, используемые во время компиляции. См. раздел [Поддержка нескольких целевых платформ](supporting-multiple-target-frameworks.md). |
 | содержание | Произвольные файлы | Содержимое копируется в корневую папку проекта. Папку **content** можно представить как корневую папку целевого приложения, которое будет использовать пакет. Чтобы пакет добавил изображение в папку */images* приложения, поместите это изображение в папку *content/images* пакета. |
-| выполнить сборку | Файлы MSBuild `.targets` и `.props` | Автоматическое добавление в проект (NuGet 3.x+). |
-| buildMultiTargeting | Файлы MSBuild `.targets` и `.props` для кроссплатформенного определения. | Автоматическое добавление в проект. |
+| выполнить сборку | Файлы MSBuild `.targets` и `.props` *(3.x+)* . | Автоматическое добавление в проект. |
+| buildMultiTargeting | Файлы MSBuild `.targets` и `.props` *(4.0+)* для кроссплатформенного определения. | Автоматическое добавление в проект. |
 | buildTransitive | Файлы MSBuild `.targets` и `.props` *(5.0+)* , которые можно транзитивно передавать в любой соответствующий проект. См. об [этой функции](https://github.com/NuGet/Home/wiki/Allow-package--authors-to-define-build-assets-transitive-behavior). | Автоматическое добавление в проект. |
 | средства | Скрипты и программы PowerShell, доступные из консоли диспетчера пакетов | Папка `tools` добавляется в переменную среды `PATH` только для консоли диспетчера пакетов (в частности, она *не* добавляется в переменную `PATH` для среды MSBuild при сборке проекта). |
 
@@ -226,9 +226,8 @@ nuget spec
 # Use in a folder containing a project file <project-name>.csproj or <project-name>.vbproj
 nuget pack myproject.csproj
 ```
-```
 
-A token is delimited by `$` symbols on both sides of the project property. For example, the `<id>` value in a manifest generated in this way typically appears as follows:
+Токен отделяется символами `$` с обеих сторон свойства проекта. Например, значение `<id>` в созданном таким образом манифесте, как правило, имеет следующий вид:
 
 ```xml
 <id>$id$</id>
@@ -273,7 +272,7 @@ nuget spec [<package-name>]
 **Рекомендации в отношении версии пакета**
 
 - Как правило, версия пакета должна соответствовать версии библиотеки, хотя это не строгое требование. Это легко реализовать, если пакет ограничен единственной сборкой, как было описано выше в подразделе [Выбор сборок для добавления в пакет](#decide-which-assemblies-to-package). В целом помните, что при разрешении зависимостей диспетчер NuGet ориентируется на версии пакетов, а не на версии сборок.
-- При применении нестандартной схемы версий обязательно учитывайте правила управления версиями в NuGet, которые изложены в разделе [Управление версиями пакета](../reference/package-versioning.md).
+- При применении нестандартной схемы версий обязательно учитывайте правила управления версиями в NuGet, которые изложены в разделе [Управление версиями пакета](../concepts/package-versioning.md).
 
 > Разобраться в принципах управления версиями также может помочь следующая серия коротких записей блога:
 >
@@ -424,7 +423,7 @@ NuGet указывает, есть ли в файле `.nuspec` ошибки, т
 
 Вы также можете расширить возможности пакета или обеспечить поддержку других сценариев, как описано в следующих разделах:
 
-- [Управление версиями пакета](../reference/package-versioning.md)
+- [Управление версиями пакета](../concepts/package-versioning.md)
 - [Поддержка нескольких целевых платформ](../create-packages/supporting-multiple-target-frameworks.md)
 - [Преобразования исходных файлов и файлов конфигурации](../create-packages/source-and-config-file-transformations.md)
 - [Локализация](../create-packages/creating-localized-packages.md)
@@ -434,5 +433,5 @@ NuGet указывает, есть ли в файле `.nuspec` ошибки, т
 
 Наконец, существуют дополнительные типы пакетов, о которых нужно знать:
 
-- [Собственные пакеты](../create-packages/native-packages.md)
+- [Собственные пакеты](../guides/native-packages.md)
 - [Пакеты символов](../create-packages/symbol-packages.md)
