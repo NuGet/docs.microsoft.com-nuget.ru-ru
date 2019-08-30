@@ -5,12 +5,12 @@ author: karann-msft
 ms.author: karann
 ms.date: 08/05/2019
 ms.topic: conceptual
-ms.openlocfilehash: dfe5f2ef4f0ababd81b91073938752aab2bdc01e
-ms.sourcegitcommit: 7441f12f06ca380feb87c6192ec69f6108f43ee3
+ms.openlocfilehash: 93a94a5468b48179d27b89825cebf2447657c8f2
+ms.sourcegitcommit: 7c9f157ba02d9be543de34ab06813ab1ec10192a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/15/2019
-ms.locfileid: "69488809"
+ms.lasthandoff: 08/23/2019
+ms.locfileid: "69999981"
 ---
 # <a name="restore-packages-using-package-restore"></a>Восстановление пакетов с помощью функции восстановления пакетов
 
@@ -44,7 +44,7 @@ ms.locfileid: "69488809"
 
    Если для проектов используется PackageReference, после успешного восстановления пакет должен присутствовать в *global-packages*, а файл `obj/project.assets.json` будет создан повторно. Если для проектов используется `packages.config`, пакет должен отображаться в папке `packages` проекта. Теперь сборка проекта должна пройти без ошибок. 
 
-2. Если после запуска функции восстановления пакетов пакеты по-прежнему отсутствуют или появляются связанные с пакетами ошибки (например, значки ошибок в обозревателе решений в Visual Studio), попробуйте [переустановить и обновить пакеты](../consume-packages/reinstalling-and-updating-packages.md).
+2. Если после запуска функции восстановления пакетов пакеты по-прежнему отсутствуют или появляются связанные с пакетами ошибки (например, значки ошибок в обозревателе решений в Visual Studio), следуйте инструкциям, описанным в разделе [Устранение ошибок при восстановлении пакетов](package-restore-troubleshooting.md) или попробуйте [переустановить и обновить пакеты](../consume-packages/reinstalling-and-updating-packages.md).
 
    В Visual Studio консоль диспетчера пакетов позволяет переустанавливать пакеты несколькими способами. См. об [использовании Package-Update](reinstalling-and-updating-packages.md#using-update-package).
 

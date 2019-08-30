@@ -1,18 +1,18 @@
 ---
-title: Индивидуальные учетные записи
+title: Индивидуальные учетные записи — NuGet.org
 description: Для публикации пакетов требуются индивидуальные учетные записи на сайте NuGet.org
 author: mikejo5000
 ms.author: mikejo
 ms.date: 06/05/2019
 ms.topic: conceptual
-ms.openlocfilehash: c88b88015bd6d5bae4789765126c0a3dec527e24
-ms.sourcegitcommit: e65180e622f6233b51bb0b41d0e919688083eb26
+ms.openlocfilehash: 63c6b5eb5ad635e436b4d53a5f833af35f72d76f
+ms.sourcegitcommit: 7c9f157ba02d9be543de34ab06813ab1ec10192a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/23/2019
-ms.locfileid: "68419839"
+ms.lasthandoff: 08/23/2019
+ms.locfileid: "69999969"
 ---
-# <a name="individual-accounts"></a>Индивидуальные учетные записи
+# <a name="individual-accounts-on-nugetorg"></a>Индивидуальные учетные записи на NuGet.org
 
 Чтобы осуществлять публикацию пакетов на сайте NuGet.org и управлять ими, вам необходимо создать индивидуальную учетную запись.
 
@@ -69,3 +69,7 @@ ms.locfileid: "68419839"
    ![Включение 2FA](media/nuget-org-enter-code-2fa.png)
 
 5. Выполните дополнительные инструкции, чтобы выполнить двухфакторную проверку подлинности.
+
+## <a name="delete-a-nugetorg-account"></a>Удаление учетной записи NuGet.org
+
+Сведения о дополнительных задачах, связанных с учетной записью, таких как удаление учетной записи NuGet.org, см. в разделе [Управление учетной записью NuGet.org](nuget-org-faq.md#nugetorg-account-management).
