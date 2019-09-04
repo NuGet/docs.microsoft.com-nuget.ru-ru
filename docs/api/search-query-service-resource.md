@@ -6,12 +6,12 @@ ms.author: jver
 ms.date: 10/26/2017
 ms.topic: reference
 ms.reviewer: kraigb
-ms.openlocfilehash: b898b389ee6c962831ce789a7c304c75e6bd8774
-ms.sourcegitcommit: 7441f12f06ca380feb87c6192ec69f6108f43ee3
+ms.openlocfilehash: be25e9bf72b9115de8ae55f6296195fed3152f10
+ms.sourcegitcommit: ac9a00ccaf90e539a381e92b650074910b21eb0d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/15/2019
-ms.locfileid: "69488213"
+ms.lasthandoff: 09/03/2019
+ms.locfileid: "70235124"
 ---
 # <a name="search"></a>Поиск
 
@@ -62,7 +62,7 @@ skip        | URL    | целочисленный | Нет       | Число п
 Если `prerelease` не указан, пакеты предварительной версии исключаются.
 
 Параметр запроса используется для явного согласия на [пакеты 2.0.0 SemVer.](https://github.com/NuGet/Home/wiki/SemVer2-support-for-nuget.org-%28server-side%29#identifying-semver-v200-packages) `semVerLevel`
-Если этот параметр запроса исключен, будут возвращены только пакеты с совместимыми с SemVer 1.0.0 версиями (со стандартными предупреждениями [управления версиями NuGet](../concepts/package-versioning.md) , такими как строки версии с 4 целыми частями).
+Если этот параметр запроса исключен, будут возвращены только пакеты с совместимыми с SemVer 1.0.0 версиями (со [стандартными предупреждениями управления версиями NuGet](../concepts/package-versioning.md) , такими как строки версии с 4 целыми частями).
 Если `semVerLevel=2.0.0` указан, будут возвращены совместимые пакеты SemVer 1.0.0 и SemVer 2.0.0. Дополнительные сведения см. в разделе [Поддержка SemVer 2.0.0 для NuGet.org](https://github.com/NuGet/Home/wiki/SemVer2-support-for-nuget.org-%28server-side%29) .
 
 ### <a name="response"></a>Отклик
@@ -99,7 +99,7 @@ projectUrl     | string                     | Нет       |
 тоталдовнлоадс | целочисленный                    | Нет       | Это значение может выводиться суммой загрузок в `versions` массиве.
 верификаци       | boolean                    | Нет       | Логическое значение JSON, указывающее, [проверен](../nuget-org/id-prefix-reservation.md) ли пакет
 
-В nuget.org проверенный пакет содержит идентификатор пакета, совпадающий с зарезервированным префиксом идентификатора и принадлежащий одному из владельцев зарезервированного префикса. Дополнительные сведения см. в [документации](../reference/id-prefix-reservation.md)по зарезервированию ПРЕФИКСов идентификаторов.
+В nuget.org проверенный пакет содержит идентификатор пакета, совпадающий с зарезервированным префиксом идентификатора и принадлежащий одному из владельцев зарезервированного префикса. Дополнительные сведения см. в [документации по зарезервированию префиксов идентификаторов](../reference/id-prefix-reservation.md).
 
 Метаданные, содержащиеся в объекте результата поиска, берутся из последней версии пакета. Каждый элемент `versions` массива является объектом JSON со следующими свойствами:
 
@@ -111,7 +111,7 @@ version   | string  | да      | Полная строка версии SemVer 
 
 ### <a name="sample-request"></a>Пример запроса
 
-    GET https://api-v2v3search-0.nuget.org/query?q=NuGet.Versioning&prerelease=false
+    GET https://azuresearch-usnc.nuget.org/query?q=NuGet.Versioning&prerelease=false&semVerLevel=2.0.0
 
 ### <a name="sample-response"></a>Пример ответа
 
