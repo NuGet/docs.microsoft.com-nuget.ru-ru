@@ -5,12 +5,12 @@ author: karann-msft
 ms.author: karann
 ms.date: 03/23/2018
 ms.topic: conceptual
-ms.openlocfilehash: d8d1b2ef0185381d16c1bb73035588fe90bcfd14
-ms.sourcegitcommit: 9803981c90a1ed954dc11ed71731264c0e75ea0a
+ms.openlocfilehash: a9331ad2ea0482737d84f4ea9a9babf95da8d66f
+ms.sourcegitcommit: d5cc3f01a92c2d69b794343c09aff07ba9e912e5
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/12/2019
-ms.locfileid: "68959683"
+ms.lasthandoff: 09/05/2019
+ms.locfileid: "70385894"
 ---
 # <a name="nuget-pack-and-restore-as-msbuild-targets"></a>Объекты pack и restore NuGet в качестве целевых объектов MSBuild
 
@@ -49,7 +49,7 @@ ms.locfileid: "68959683"
 | Значение атрибута или NuSpec | Свойство MSBuild | Значение по умолчанию | Примечания |
 |--------|--------|--------|--------|
 | Идентификатор | PackageId | AssemblyName | $(AssemblyName) из MSBuild |
-| Версия | PackageVersion | Версия | Это значение совместимо с SemVer, например "1.0.0", "1.0.0-beta" или "1.0.0-beta-00345" |
+| Version | PackageVersion | Version | Это значение совместимо с SemVer, например "1.0.0", "1.0.0-beta" или "1.0.0-beta-00345" |
 | VersionPrefix | PackageVersionPrefix | пустой | Задав PackageVersion, вы перезапишите PackageVersionPrefix |
 | VersionSuffix | PackageVersionSuffix | пустой | $(VersionSuffix) из MSBuild. Задав PackageVersion, вы перезапишите PackageVersionSuffix |
 | Authors | Authors | Имя текущего пользователя | |
@@ -57,13 +57,14 @@ ms.locfileid: "68959683"
 | Заголовок | Заголовок | Идентификатор пакета| |
 | Описание | Описание | "Описание пакета" | |
 | Copyright | Copyright | пустой | |
-| RequireLicenseAcceptance | PackageRequireLicenseAcceptance | False | |
+| RequireLicenseAcceptance | PackageRequireLicenseAcceptance | false | |
 | лицензии | PackageLicenseExpression | пустой | Соответствует`<license type="expression">` |
 | лицензии | PackageLicenseFile | пустой | Соответствует `<license type="file">`. Возможно, потребуется явно упаковать файл лицензии, на который указывает ссылка. |
-| LicenseUrl | PackageLicenseUrl | пустой | `licenseUrl`является устаревшим, используйте свойство Паккажелиценсикспрессион или Паккажелиценсефиле. |
+| LicenseUrl | PackageLicenseUrl | пустой | `PackageLicenseUrl`является устаревшим, используйте свойство Паккажелиценсикспрессион или Паккажелиценсефиле. |
 | ProjectUrl | PackageProjectUrl | пустой | |
-| IconUrl | PackageIconUrl | пустой | |
-| Теги | PackageTags | пустой | Теги разделяются точкой с запятой. |
+| Значок | паккажеикон | пустой | Может потребоваться явно упаковать файл изображения значка, на который указывает ссылка.|
+| IconUrl | PackageIconUrl | пустой | `PackageIconUrl`является устаревшим, используйте свойство Паккажеикон |
+| Tags | PackageTags | пустой | Теги разделяются точкой с запятой. |
 | ReleaseNotes | PackageReleaseNotes | пустой | |
 | Репозиторий/URL-адрес | RepositoryUrl | пустой | URL-адрес репозитория, используемый для клонирования или извлечения исходного кода. Например *https://github.com/NuGet/NuGet.Client.git* |
 | Репозиторий или тип | RepositoryType | пустой | Тип репозитория. Примеры: *Git*, *TFS*. |
@@ -117,7 +118,32 @@ ms.locfileid: "68959683"
 
 ### <a name="packageiconurl"></a>PackageIconUrl
 
-Как часть изменения для проблемы с [NuGet 352](https://github.com/NuGet/Home/issues/352), `PackageIconUrl` в конечном итоге будет изменен на `PackageIconUri` и может быть относительным путем к файлу значка, который будет включен в корень полученного пакета.
+> [!Important]
+> Паккажеиконурл является устаревшим. Вместо этого используйте [паккажеикон](#packing-an-icon-image-file) .
+
+### <a name="packing-an-icon-image-file"></a>Упаковка файла изображения значка
+
+При упаковке файла изображения значка необходимо использовать свойство Паккажеикон, чтобы указать путь к пакету относительно корня пакета. Кроме того, необходимо убедиться, что файл включен в пакет. Размер файла изображения ограничен 1 МБ. Поддерживаются следующие форматы файлов: JPEG и PNG. Рекомендуется разрешение изображения 64 x 64.
+
+Например:
+
+```xml
+<PropertyGroup>
+    ...
+    <PackageIcon>icon.png</PackageIcon>
+    ...
+</PropertyGroup>
+
+<ItemGroup>
+    ...
+    <None Include="images\icon.png" Pack="true" PackagePath="\"/>
+    ...
+</ItemGroup>
+```
+
+[Пример значка пакета](https://github.com/NuGet/Samples/tree/master/PackageIconExample).
+
+Чтобы получить nuspec эквивалент, просмотрите [ссылку на nuspec для значка](nuspec.md#icon).
 
 ### <a name="output-assemblies"></a>Выходные сборки
 
@@ -221,6 +247,7 @@ ms.locfileid: "68959683"
     <None Include="licenses\LICENSE.txt" Pack="true" PackagePath=""/>
 </ItemGroup>
 ```
+
 [Пример файла лицензии](https://github.com/NuGet/Samples/tree/master/PackageLicenseFileExample).
 
 ### <a name="istool"></a>IsTool

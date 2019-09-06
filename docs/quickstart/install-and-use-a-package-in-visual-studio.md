@@ -5,12 +5,12 @@ author: karann-msft
 ms.author: karann
 ms.date: 07/24/2018
 ms.topic: quickstart
-ms.openlocfilehash: a2be42aeb322cfd0ab43c9cec6ad1b063cbc3089
-ms.sourcegitcommit: f291ff91561a6b58c2aec41c624d798e00ce41fa
+ms.openlocfilehash: d9937a2b087fd88c1e6fd9f07a513b5047bdcf2e
+ms.sourcegitcommit: ac9a00ccaf90e539a381e92b650074910b21eb0d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/24/2019
-ms.locfileid: "68462482"
+ms.lasthandoff: 09/03/2019
+ms.locfileid: "70235079"
 ---
 # <a name="quickstart-install-and-use-a-package-in-visual-studio-windows-only"></a>Краткое руководство. Установка и использование пакета в Visual Studio (только в Windows)
 
@@ -27,13 +27,13 @@ ms.locfileid: "68462482"
 
 Вы можете установить бесплатный выпуск Community 2019 с сайта [visualstudio.com](https://www.visualstudio.com/) либо использовать выпуск Professional или Enterprise.
 
-Если вы используете Visual Studio для Mac, см. статью [Включение пакета NuGet в проект](/visualstudio/mac/nuget-walkthrough).
+См. сведения об [установке и использовании пакета в Visual Studio для Mac](install-and-use-a-package-in-visual-studio-mac.md).
 
 ## <a name="create-a-project"></a>Создание проекта
 
 Пакеты NuGet можно установить в проект .NET, если эти пакеты поддерживают ту же требуемую версию .NET Framework, что и проект.
 
-В этом пошаговом руководстве описано, как использовать простое приложение WPF. Создайте проект в Visual Studio, щелкнув **Файл > Создать проект** и введя **.NET** в поле поиска. Затем выберите **Приложение WPF (.NET Framework)**. Нажмите кнопку **Далее**. При появлении запроса примите значения по умолчанию для **платформы**.
+В этом пошаговом руководстве описано, как использовать простое приложение WPF. Создайте проект в Visual Studio, щелкнув **Файл > Создать проект** и введя **.NET** в поле поиска. Затем выберите **Приложение WPF (.NET Framework)** . Нажмите кнопку **Далее**. При появлении запроса примите значения по умолчанию для **платформы**.
 
 Visual Studio создаст проект и откроет его в обозревателе решений.
 

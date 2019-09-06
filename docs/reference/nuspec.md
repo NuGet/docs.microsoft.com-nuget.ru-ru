@@ -6,12 +6,12 @@ ms.author: karann
 ms.date: 05/24/2019
 ms.topic: reference
 ms.reviewer: anangaur
-ms.openlocfilehash: 29c52b6684dff252e9c45bf5365d83b6a3fe5201
-ms.sourcegitcommit: c65e7a889ddf64a8e2ff7bc59ec08edb308e16ca
+ms.openlocfilehash: ea40f80a482a290b7399e5a6abc69e0c6fe32b77
+ms.sourcegitcommit: a0807671386782021acb7588741390e6f07e94e1
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/27/2019
-ms.locfileid: "70060241"
+ms.lasthandoff: 09/05/2019
+ms.locfileid: "70384460"
 ---
 # <a name="nuspec-reference"></a>Справочник по файлу NUSPEC
 
@@ -102,7 +102,7 @@ URL-адрес для лицензии пакета, часто показанн
 > [!Note]
 > NuGet.org принимает только те лицензионные выражения, которые утверждены инициативой Open Source или Free Software Foundation.
 
-Если пакет лицензирован в нескольких распространенных лицензиях, можно указать составную лицензию с помощью синтаксиса [выражений спдкс версии 2,0](https://spdx.org/spdx-specification-21-web-version#h.jxpfx0ykyb60). Например:
+Если пакет лицензирован в нескольких распространенных лицензиях, можно указать составную лицензию с помощью [синтаксиса выражений спдкс версии 2,0](https://spdx.org/spdx-specification-21-web-version#h.jxpfx0ykyb60). Например:
 
 `<license type="expression">BSD-2-Clause OR MIT</license>`
 
@@ -143,7 +143,36 @@ license-expression =  1*1(simple-expression / compound-expression / UNLICENSED)
 ```
 
 #### <a name="iconurl"></a>iconUrl
+
+> [!Important]
+> Иконурл является устаревшим. Вместо этого используйте значок.
+
 URL-адрес для изображения размером 64x64 с прозрачным фоном, используемого в качестве значка для пакета при отображении пользовательского интерфейса. Убедитесь, что этот элемент содержит *прямой URL-адрес изображения*, а не URL-адрес веб-страницы, на которой содержится изображение. Например, чтобы использовать изображение из GitHub, используйте URL-адрес необработанного файла <em>https://github.com/\<username\>/\<repository\>/raw/\<branch\>/\<logo.png\></em>, например. 
+   
+#### <a name="icon"></a>значок
+
+Это путь к файлу изображения в пакете, который часто отображается в пользовательских интерфейсах, таких как nuget.org, как значок пакета. Размер файла изображения ограничен 1 МБ. Поддерживаются следующие форматы файлов: JPEG и PNG. Рекомендуется ресаулутион Image of 64 x 64.
+
+Например, при создании пакета с помощью NuGet. exe в nuspec можно добавить следующее:
+
+```xml
+<package>
+  <metadata>
+    ...
+    <icon>images\icon.png</icon>
+    ...
+  </metadata>
+  <files>
+    ...
+    <file src="..\icon.png" target="images\" />
+    ...
+  </files>
+</package>
+```
+
+[Значок пакета nuspec Sample.](https://github.com/NuGet/Samples/tree/master/PackageIconNuspecExample)
+
+Чтобы получить эквивалент MSBuild, Взгляните на [упаковку файла изображения значка](msbuild-targets.md#packing-an-icon-image-file).
 
 #### <a name="requirelicenseacceptance"></a>requireLicenseAcceptance
 Логическое значение, указывающее, должен ли клиент просить потребителя принять условия лицензии перед установкой пакета.
@@ -317,7 +346,7 @@ nuget pack MyProject.csproj
 ```
 
 > [!Important]
-> При создании `.nuspec` из проекта с помощью `nuget spec`, зависимости, существующие в этом проекте, не включаются автоматически в результирующий `.nuspec` файл. Вместо этого используйте `nuget pack myproject.csproj`и получите файл с *расширением nuspec* в созданном nupkgном файле. Этот *nuspec* содержит зависимости.
+> При создании `.nuspec` из проекта с помощью `nuget spec`, зависимости, существующие в этом проекте, не включаются автоматически в результирующий `.nuspec` файл. Вместо этого используйте `nuget pack myproject.csproj`и получите файл с *расширением nuspec* в созданном *nupkgном* файле. Этот *nuspec* содержит зависимости.
 
 ### <a name="dependency-groups"></a>Группы зависимостей
 
