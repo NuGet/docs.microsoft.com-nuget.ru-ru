@@ -5,12 +5,12 @@ author: karann-msft
 ms.author: karann
 ms.date: 03/23/2018
 ms.topic: conceptual
-ms.openlocfilehash: a9331ad2ea0482737d84f4ea9a9babf95da8d66f
-ms.sourcegitcommit: d5cc3f01a92c2d69b794343c09aff07ba9e912e5
+ms.openlocfilehash: 16b8ff532b87a3e3f96029e77dd166eb39294c0b
+ms.sourcegitcommit: 5a741f025e816b684ffe44a81ef7d3fbd2800039
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/05/2019
-ms.locfileid: "70385894"
+ms.lasthandoff: 09/09/2019
+ms.locfileid: "70815343"
 ---
 # <a name="nuget-pack-and-restore-as-msbuild-targets"></a>Объекты pack и restore NuGet в качестве целевых объектов MSBuild
 
@@ -109,6 +109,7 @@ ms.locfileid: "70385894"
 - NuspecFile
 - NuspecBasePath
 - NuspecProperties
+- Детерминированный
 
 ## <a name="pack-scenarios"></a>Сценарии использования pack
 
@@ -172,6 +173,18 @@ ms.locfileid: "70385894"
 <IncludeAssets>
 <ExcludeAssets>
 <PrivateAssets>
+```
+
+### <a name="deterministic"></a>Детерминированный
+
+При использовании `MSBuild -t:pack -p:Deterministic=true`несколько вызовов целевого объекта Pack будут создавать один и тот же пакет.
+На выходные данные команды Pack не влияет внешнее состояние компьютера. В частности, записи zip будут иметь метку времени 1980-01-01. Чтобы добиться полного детерминирования, сборки должны быть построены с соответствующим параметром компилятора [— детерминированным](/dotnet/csharp/language-reference/compiler-options/deterministic-compiler-option).
+Рекомендуется указать детерминированное свойство, как указано ниже, поэтому компилятор и NuGet будут учитывать его.
+
+```xml
+<PropertyGroup>
+  <Deterministic>true</Deterministic>
+</PropertyGroup>
 ```
 
 ### <a name="including-content-in-a-package"></a>Включение содержимого в пакет
