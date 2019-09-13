@@ -100,7 +100,7 @@ ms.locfileid: "69020051"
 </solution>
 ```
 
-## <a name="package-source-sections"></a>Разделы источников пакета
+## <a name="package-source-sections"></a>Разделы packageSources
 
 `packageSources`Параметры, `packageSourceCredentials`, ,`apikeys` исовместно`trustedSigners` используются для настройки способа работы NuGet с репозиториями пакетов во время операций установки, восстановления и обновления. `activePackageSource` `disabledPackageSources`
 
@@ -225,7 +225,7 @@ ms.locfileid: "69020051"
 </activePackageSource>
 ```
 
-## <a name="trustedsigners-section"></a>раздел Трустедсигнерс
+## <a name="trustedsigners-section"></a>Раздел trustedSigners 
 
 Хранит доверенные подписывающих, используемые для разрешения пакета во время установки или восстановления. Этот список не может быть пустым, если пользователь `signatureValidationMode` задает `require`значение. 
 
@@ -255,7 +255,7 @@ ms.locfileid: "69020051"
 </trustedSigners>
 ```
 
-## <a name="fallbackpackagefolders-section"></a>раздел Фаллбаккпаккажефолдерс
+## <a name="fallbackpackagefolders-section"></a>Раздел fallbackPackageFolders 
 
 *(3.5 +)* Предоставляет способ предварительной установки пакетов, чтобы не выполнять никаких действий, если пакет найден в резервных папках. Папки с резервными пакетами имеют точно такую же структуру файлов, как и папка глобального пакета: *. nupkg* существует, и все файлы извлекаются.
 
@@ -281,7 +281,7 @@ ms.locfileid: "69020051"
 </fallbackPackageFolders>
 ```
 
-## <a name="packagemanagement-section"></a>раздел packageManagement
+## <a name="packagemanagement-section"></a>Раздел packageManagement
 
 Задает формат управления пакетами по умолчанию: *Packages. config* или PackageReference. Проекты в стиле SDK всегда используют PackageReference.
 
