@@ -6,12 +6,12 @@ ms.author: karann
 ms.date: 08/25/2017
 ms.topic: conceptual
 ms.reviewer: anangaur
-ms.openlocfilehash: 737b13be70de9aaa7dec7904d4c2a4ec494ef7b3
-ms.sourcegitcommit: efc18d484fdf0c7a8979b564dcb191c030601bb4
+ms.openlocfilehash: 10651e2cc26f7df4115e4de5dac8c91c93af7374
+ms.sourcegitcommit: 5a741f025e816b684ffe44a81ef7d3fbd2800039
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/18/2019
-ms.locfileid: "68317554"
+ms.lasthandoff: 09/09/2019
+ms.locfileid: "70815289"
 ---
 # <a name="hosting-your-own-nuget-feeds"></a>Размещение своих веб-каналов NuGet
 
@@ -23,19 +23,20 @@ ms.locfileid: "68317554"
 - NuGet.Server: пакеты предоставляются через локальный HTTP-сервер. Дополнительные сведения см. в разделе [NuGet.Server](../hosting-packages/nuget-server.md).
 - Коллекция NuGet: пакеты размещаются на интернет-сервере с помощью [проекта коллекции NuGet](https://github.com/NuGet/NuGetGallery#build-and-run-the-gallery-in-arbitrary-number-easy-steps) (github.com). Коллекция NuGet позволяет управлять пользователями и предоставляет такие функции, как расширенный пользовательский веб-интерфейс, позволяющий искать и просматривать пакеты с помощью браузера, аналогично nuget.org.
 
-Существует несколько других продуктов для размещения NuGet, которые поддерживают удаленные закрытые веб-каналы, включая следующие:
+Существует также несколько других продуктов размещения NuGet, таких как [Azure Artifacts](https://www.visualstudio.com/docs/package/nuget/publish) и [реестр пакетов GitHub](https://help.github.com/articles/configuring-nuget-for-use-with-github-package-registry), поддерживающих удаленные частные каналы. Ниже приведен список таких продуктов.
 
-- [Azure Artifacts](https://www.visualstudio.com/docs/package/nuget/publish), доступные также в Team Foundation Server 2017 и более поздних версий.
-- [MyGet](http://myget.org)
-- [ProGet](http://inedo.com/proget) от Inedo
-- [Реестр пакетов GitHub](https://help.github.com/articles/configuring-nuget-for-use-with-github-package-registry)
-- [Сервер NuGet](http://nugetserver.net/) — проект сообщества от Inedo
-- [Сервер NuGet (открытый исходный код)](http://nuget-server.net) — реализация, аналогичная серверу NuGet от Inedo, с открытым исходным кодом
-- [LiGet](https://github.com/ai-traders/liget) — реализация с открытым исходным кодом для сервера NuGet V2, на котором выполняется Kestrel в Docker
-- [BaGet](https://github.com/loic-sharma/BaGet) — реализация для сервера NuGet V3 с открытым кодом на платформе ASP.NET Core
-- [Sleet](https://github.com/emgarten/sleet) —статический генератор веб-канала NuGet V3 с открытым исходным кодом.
 - [Artifactory](https://www.jfrog.com/artifactory/) от JFrog.
+- [Azure Artifacts](https://www.visualstudio.com/docs/package/nuget/publish), доступные также в Team Foundation Server 2017 и более поздних версий.
+- [BaGet](https://github.com/loic-sharma/BaGet) — реализация для сервера NuGet V3 с открытым кодом на платформе ASP.NET Core
+- [Cloudsmith](https://cloudsmith.io/l/nuget-feed/), полностью управляемое решение для управления пакетами, поставляемое по модели SaaS
+- [Реестр пакетов GitHub](https://help.github.com/articles/configuring-nuget-for-use-with-github-package-registry)
+- [LiGet](https://github.com/ai-traders/liget) — реализация с открытым исходным кодом для сервера NuGet V2, на котором выполняется Kestrel в Docker
+- [MyGet](http://myget.org)
 - [Nexus](http://www.sonatype.org/nexus/) от Sonatype.
+- [Сервер NuGet (открытый исходный код)](http://nuget-server.net) — реализация, аналогичная серверу NuGet от Inedo, с открытым исходным кодом
+- [Сервер NuGet](http://nugetserver.net/) — проект сообщества от Inedo
+- [ProGet](http://inedo.com/proget) от Inedo
+- [Sleet](https://github.com/emgarten/sleet) —статический генератор веб-канала NuGet V3 с открытым исходным кодом.
 - [TeamCity](https://www.jetbrains.com/teamcity/) от JetBrains.
 
 Независимо от способа размещения пакетов доступ к ним осуществляется путем добавления их в список доступных источников в `NuGet.Config`. Это можно сделать в Visual Studio, как описано в разделе [Источники пакетов](../consume-packages/install-use-packages-visual-studio.md#package-sources), или из командной строки с помощью [`nuget sources`](../reference/cli-reference/cli-ref-sources.md). Путь к источнику может быть путем к локальной папке, сетевым именем или URL-адресом.

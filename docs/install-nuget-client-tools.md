@@ -5,12 +5,12 @@ author: karann-msft
 ms.author: karann
 ms.date: 06/20/2019
 ms.topic: quickstart
-ms.openlocfilehash: d7aa2e4bdb78dcc6747d9775cbdf0d6c41855b96
-ms.sourcegitcommit: e65180e622f6233b51bb0b41d0e919688083eb26
+ms.openlocfilehash: 417388872a74b29a469d6a5c17c079a0d1a35dc3
+ms.sourcegitcommit: a0807671386782021acb7588741390e6f07e94e1
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/23/2019
-ms.locfileid: "68419812"
+ms.lasthandoff: 09/05/2019
+ms.locfileid: "70384463"
 ---
 # <a name="install-nuget-client-tools"></a>Установка клиентских средств NuGet
 
@@ -22,7 +22,7 @@ ms.locfileid: "68419812"
 |:------------- |:-------------|:-----|
 | [dotnet.exe](#dotnetexe-cli) | Средство CLI для библиотек .NET Core и .NET Standard, а также для любых [проектов в стиле пакета SDK](resources/check-project-format.md), нацеленных на .NET Framework. Входит в состав пакета SDK для .NET Core и обеспечивает основные функции NuGet на всех платформах. (Начиная с версии Visual Studio 2017 средство CLI dotnet автоматически устанавливается вместе с любыми рабочими нагрузками, связанными с .NET Core.)| [Пакет SDK для .NET Core](https://www.microsoft.com/net/download/) |
 | [nuget.exe](#nugetexe-cli) | Средство CLI для библиотек .NET Framework, а также для любых [проектов не на основе пакетов SDK](resources/check-project-format.md), нацеленных на библиотеки .NET Standard. Обеспечивает все функциональные возможности NuGet в Windows и большинство функций, выполняемых в рамках проекта Mono на компьютере Mac и Linux. | [nuget.exe](https://dist.nuget.org/win-x86-commandline/latest/nuget.exe) |
-| [Visual Studio](#visual-studio) | В Windows предоставляет возможности NuGet через пользовательский интерфейс и консоль диспетчера пакетов. Прилагается к рабочим нагрузкам, связанным с .NET. На компьютере Mac предоставляет определенные возможности через пользовательский интерфейс. В Visual Studio Code функции NuGet предоставляются через расширения. | [Visual Studio 2017](https://www.visualstudio.com/downloads/) |
+| [Visual Studio](#visual-studio) | В Windows предоставляет возможности NuGet через пользовательский интерфейс и консоль диспетчера пакетов. Прилагается к рабочим нагрузкам, связанным с .NET. На компьютере Mac предоставляет определенные возможности через пользовательский интерфейс. В Visual Studio Code функции NuGet предоставляются через расширения. | [Visual Studio](https://www.visualstudio.com/downloads/) |
 
 [MSBuild CLI](reference/msbuild-targets.md) также предоставляет возможности восстановления и создания пакетов, которые применяются на серверах сборки. MSBuild не является универсальным средством для работы с NuGet.
 
@@ -73,7 +73,7 @@ ms.locfileid: "68419812"
   - Команды консоли диспетчера пакетов работают только в Visual Studio для Windows, но не в других средах PowerShell.
   - Для Visual Studio 2010 и более ранних версий установите расширение "Диспетчер пакетов NuGet для Visual Studio".
   - Расширения NuGet для Visual Studio 2013 и 2015 можно скачать по адресу [https://dist.nuget.org/index.html](https://dist.nuget.org/index.html).
-  - Если вы хотите заранее оценить предстоящие возможности NuGet, установите предварительную версию [Visual Studio 2017 Preview](https://www.visualstudio.com/vs/preview/), которая работает параллельно со стабильными выпусками Visual Studio. Чтобы сообщить о проблемах или обменяться идеями о предварительных версиях, откройте обращение в [репозитории NuGet GitHub](https://github.com/Nuget/Home/issues).
+  - Если вы хотите заранее оценить предстоящие возможности NuGet, установите предварительную версию [Visual Studio Preview](https://www.visualstudio.com/vs/preview/), которая работает параллельно со стабильными выпусками Visual Studio. Чтобы сообщить о проблемах или обменяться идеями о предварительных версиях, откройте обращение в [репозитории NuGet GitHub](https://github.com/Nuget/Home/issues).
 
 ## <a name="feature-availability"></a>Доступность функций
 
