@@ -100,7 +100,7 @@ ms.locfileid: "69020051"
 </solution>
 ```
 
-## <a name="package-source-sections"></a>Разделы packageSources
+## <a name="package-source-sections"></a>Разделы источников пакета
 
 `packageSources`Параметры, `packageSourceCredentials`, ,`apikeys` исовместно`trustedSigners` используются для настройки способа работы NuGet с репозиториями пакетов во время операций установки, восстановления и обновления. `activePackageSource` `disabledPackageSources`
 
