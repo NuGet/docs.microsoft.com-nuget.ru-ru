@@ -225,7 +225,7 @@ ms.locfileid: "69020051"
 </activePackageSource>
 ```
 
-## <a name="trustedsigners-section"></a>Раздел trustedSigners 
+## <a name="trustedsigners-section"></a>Раздел trustedSigners
 
 Хранит доверенные подписывающих, используемые для разрешения пакета во время установки или восстановления. Этот список не может быть пустым, если пользователь `signatureValidationMode` задает `require`значение. 
 

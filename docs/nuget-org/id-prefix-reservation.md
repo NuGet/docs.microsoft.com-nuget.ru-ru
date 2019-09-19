@@ -1,17 +1,17 @@
 ---
 title: Резервирование префикса идентификатора
 description: Описание функции, позволяющей резервировать префикс идентификатора пакета, а также рекомендации по разработке.
-author: diverdan92
-ms.author: diverdan92
-ms.date: 10/09/2017
+author: karann-msft
+ms.author: karann
+ms.date: 09/07/2019
 ms.topic: reference
-ms.reviewer: ananguar
-ms.openlocfilehash: 650f570ec65a665e3d452af732ea22337835d8d9
-ms.sourcegitcommit: cae759ad8518c049575a30ad3bf04fe5d06244fb
+ms.reviewer: karann
+ms.openlocfilehash: 630c2b193500ec0b9aa5a7fe4af3ea95ae52aeec
+ms.sourcegitcommit: 5a741f025e816b684ffe44a81ef7d3fbd2800039
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/29/2019
-ms.locfileid: "68616801"
+ms.lasthandoff: 09/09/2019
+ms.locfileid: "70815277"
 ---
 # <a name="package-id-prefix-reservation"></a>Резервирование префикса идентификатора пакета
 
@@ -88,6 +88,8 @@ ms.locfileid: "68616801"
 1. Достаточно ли четко и однозначно определены идентифицирующие свойства пакетов, соответствующие префиксу идентификатора пакета (в особенности сведения об авторе пакета)?
 
 1. Имеет ли пакет лицензию (на основе элемента метаданных [license](../reference/nuspec.md#license), а НЕ устаревшего элемента licenseUrl)?
+
+1. Если у пакетов есть значок, использующий элемент метаданных iconUrl, используют ли они и элемент метаданных [icon](../reference/nuspec.md#icon)? Удалять элемент iconUrl не требуется.
 
 ## <a name="third-party-feed-provider-scenarios"></a>Сценарии с участием стороннего поставщика веб-канала
 
