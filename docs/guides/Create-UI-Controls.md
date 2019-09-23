@@ -157,3 +157,5 @@ NuGet автоматически проверит TPMinV для использу
 
 - [Создание пакетов универсальной платформы Windows](create-uwp-packages.md)
 - [Образец ExtensionSDKasNuGetPackage](https://github.com/NuGet/Samples/tree/master/ExtensionSDKasNuGetPackage)
+
+<!-- test -->
