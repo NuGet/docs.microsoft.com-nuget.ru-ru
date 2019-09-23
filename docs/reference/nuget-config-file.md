@@ -255,7 +255,7 @@ ms.locfileid: "69020051"
 </trustedSigners>
 ```
 
-## <a name="fallbackpackagefolders-section"></a>Раздел fallbackPackageFolders
+## <a name="fallbackpackagefolders-section"></a>Раздел fallbackPackageFolders 
 
 *(3.5 +)* Предоставляет способ предварительной установки пакетов, чтобы не выполнять никаких действий, если пакет найден в резервных папках. Папки с резервными пакетами имеют точно такую же структуру файлов, как и папка глобального пакета: *. nupkg* существует, и все файлы извлекаются.
 
