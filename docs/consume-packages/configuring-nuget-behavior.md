@@ -5,12 +5,12 @@ author: karann-msft
 ms.author: karann
 ms.date: 10/25/2017
 ms.topic: conceptual
-ms.openlocfilehash: 5309d94fafea9cdfc3699d443393be5d381dd145
-ms.sourcegitcommit: efc18d484fdf0c7a8979b564dcb191c030601bb4
+ms.openlocfilehash: 89127203df0aa1eb24f36b8ec64c5bb4a4d59319
+ms.sourcegitcommit: 1eda83ab537c86cc27316e7bc67f95a358766e63
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/18/2019
-ms.locfileid: "68317733"
+ms.lasthandoff: 09/18/2019
+ms.locfileid: "71094073"
 ---
 # <a name="common-nuget-configurations"></a>Распространенные конфигурации NuGet
 
@@ -25,7 +25,7 @@ ms.locfileid: "68317733"
 | Компьютер | Windows: `%ProgramFiles(x86)%\NuGet\Config`<br/>Mac/Linux: `$XDG_DATA_HOME`. Если значение `$XDG_DATA_HOME` — null или пусто, будет использоваться `~/.local/share` или `/usr/local/share` (зависит от дистрибутива ОС)  | Параметры применяются ко всем операциям на компьютере, но переопределяются любыми параметрами, задаваемыми на уровне пользователя или проекта. |
 
 Примечания для более ранних версий NuGet:
-- В NuGet 3.3 и более ранних версий параметры уровня решения располагались в папке `.nuget`. В NuGet версии 3.4 и более поздних этот файл не используется.
+- В NuGet 3.3 и более ранних версий параметры уровня решения располагались в папке `.nuget`. В NuGet версии 3.4 и более поздних эта папка не используется.
 - В версиях NuGet с 2.6 по 3.x файл конфигурации уровня компьютера для Windows располагался в папке %ProgramData%\NuGet\Config[\\{IDE}[\\{версия}[\\{SKU}]]]\NuGet.Config, где атрибут *{IDE}* мог иметь значение *VisualStudio*, атрибут *{версия}* указывал на версию Visual Studio, например *14.0*, а атрибут *{SKU}* определял выпуск *Community*, *Pro* или *Enterprise*. Чтобы перенести параметры в NuGet версии 4.0 или более поздней, просто скопируйте файл конфигурации в папку %ProgramFiles(x86)%\NuGet\Config. В Linux ранее использовалось расположение /etc/opt, а в Mac — /Library/Application Support.
 
 ## <a name="changing-config-settings"></a>Изменение параметров конфигурации
