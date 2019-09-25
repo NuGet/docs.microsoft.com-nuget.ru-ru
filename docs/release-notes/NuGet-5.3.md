@@ -5,12 +5,12 @@ author: karann-msft
 ms.author: karann
 ms.date: 09/06/2019
 ms.topic: conceptual
-ms.openlocfilehash: f16bfe5481009f7924a61f03233d288d25ac618f
-ms.sourcegitcommit: f4bfdbf62302c95f1f39e81ccf998f8bbc6d56b0
+ms.openlocfilehash: 96d176beaa6b2f0c4f53488390e585b70c9ba846
+ms.sourcegitcommit: 188ade66b7ac807ba1667c77cfb9325bf89a8a4a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70774089"
+ms.lasthandoff: 09/24/2019
+ms.locfileid: "71248163"
 ---
 # <a name="nuget-53-release-notes"></a>Заметки о выпуске NuGet 5,3
 
@@ -18,11 +18,11 @@ ms.locfileid: "70774089"
 
 | Версия NuGet | Доступно в версии Visual Studio| Доступно в пакетах SDK для .NET|
 |:---|:---|:---|
-| [**5.3.0 — preview3**](https://nuget.org/downloads) | [Visual Studio 2019 версии 16,3, предварительная версия 3](https://visualstudio.microsoft.com/vs/preview/) | [3.0.100 — preview9](https://dotnet.microsoft.com/download/dotnet-core/3.0) <sup>1</sup> |
+| [**5.3.0**](https://nuget.org/downloads) | [Visual Studio 2019 версии 16,3](https://visualstudio.microsoft.com/downloads/) | [3.0.100](https://dotnet.microsoft.com/download/dotnet-core/3.0) <sup>1</sup> |
 
 <sup>1</sup> Устанавливается вместе с Visual Studio 2019 с рабочей нагрузкой .NET Core
 
-## <a name="summary-whats-new-in-53-preview-3"></a>Сводка: Новые возможности 5,3 Preview 3
+## <a name="summary-whats-new-in-53"></a>Сводка: Новые возможности в 5,3
 
 * [Значок пакета можно встроить в пакет](../reference/msbuild-targets.md#packing-an-icon-image-file), вместо того чтобы использовать внешний URL-адрес. - [#352](https://github.com/NuGet/Home/issues/352)
 
@@ -32,6 +32,10 @@ ms.locfileid: "70774089"
 
 **Ошибки**
 
+* Пакеты NuGet, созданные с помощью пакета SDK 3.0.100-preview9, не могут использоваться пользователями пакета SDK 2,2... в зависимости от часового пояса [#8603](https://github.com/NuGet/Home/issues/8603)
+
+* Кавычки "символы в пути приводят к сбою" недопустимых `nuget restore` символов в пути "в [#8168](https://github.com/NuGet/Home/issues/8168)
+
 * VS: сборки полностью являются NGen-ED, а не частично NGen-ED- [#8513](https://github.com/NuGet/Home/issues/8513)
 
 * Уменьшение использования памяти (Отмена подписки на события) — [#8471](https://github.com/NuGet/Home/issues/8471)
@@ -40,7 +44,7 @@ ms.locfileid: "70774089"
 
 * Улучшения NU1403 — проверка всех пакетов, включение ожидаемых/фактических значений SHA — [#8424](https://github.com/NuGet/Home/issues/8424)
 
-* Множественное перечисление в Нужетпаккажеманажер. Превиевупдатепаккажесасинк- [#8401](https://github.com/NuGet/Home/issues/8401)
+* Множественное перечисление в `NuGetPackageManager.PreviewUpdatePackagesAsync` [#8401](https://github.com/NuGet/Home/issues/8401)  - 
 
 * Отмена изменений "Public-> internal" в Плугинпроцесс- [#8390](https://github.com/NuGet/Home/issues/8390)
 
@@ -64,7 +68,7 @@ ms.locfileid: "70774089"
 
 * Сделайте чтение параметров в VS Lazy- [#8156](https://github.com/NuGet/Home/issues/8156)
 
-* Регрессия в "Добавление источников NuGet" приводит к тому, что символ ":", шестнадцатеричное значение 0x3A, не может быть добавлен в имя "Errors- [#7948](https://github.com/NuGet/Home/issues/7948)
+* Регрессия в `Nuget sources add` приводит к тому, что символ ":", шестнадцатеричное значение 0x3A, не может быть добавлен в имя "Errors- [#7948](https://github.com/NuGet/Home/issues/7948)
 
 * Поставщики учетных данных подключаемого модуля NuGet — скрытие окна процесса — [#7511](https://github.com/NuGet/Home/issues/7511)
 
@@ -86,6 +90,4 @@ ms.locfileid: "70774089"
 
 * Добавление параметров-Солутиондиректори и-Паккажедиректори в NuGet. exe Pack — [#7163](https://github.com/NuGet/Home/issues/7163)
 
-* Включение детерминированного пакета NuGet — [#6229](https://github.com/NuGet/Home/issues/6229)
-
-**[Список всех проблем, исправленных в этом выпуске — 5,3 Preview 3](https://github.com/nuget/home/issues?q=is%3Aissue+is%3Aclosed+milestone%3A%225.3")**
+**[Список всех проблем, исправленных в этом выпуске — 5,3](https://github.com/nuget/home/issues?q=is%3Aissue+is%3Aclosed+milestone%3A%225.3")**
