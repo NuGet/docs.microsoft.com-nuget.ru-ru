@@ -12,12 +12,12 @@ keywords: пакеты символов NuGet, отладка пакета NuGet
 ms.reviewer:
 - anangaur
 - karann
-ms.openlocfilehash: 5546881dbf7577eb289a28b35bc2c0e7dc5cac40
-ms.sourcegitcommit: 1eda83ab537c86cc27316e7bc67f95a358766e63
+ms.openlocfilehash: 0197902e4dbc18893d68833fbcfe4263f185a594
+ms.sourcegitcommit: e4b0ff4460865db6dc7bc9f20e9f644d98493011
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/18/2019
-ms.locfileid: "71094106"
+ms.lasthandoff: 09/26/2019
+ms.locfileid: "71307189"
 ---
 # <a name="creating-symbol-packages-snupkg"></a>Создание пакетов символов (SNUPKG)
 
@@ -92,7 +92,7 @@ NuGet опубликует оба пакета на сайте nuget.org. Пак
 
 ## <a name="nugetorg-symbol-server"></a>Сервер символов NuGet.org
 
-NuGet.org поддерживает собственный репозиторий сервера символов и принимает только новый формат пакетов символов: `.snupkg`. Потребители пакетов могут добавить `https://symbols.nuget.org/download/symbols` в соответствующие источники символов в Visual Studio с помощью символов, опубликованных на сервер символов nuget.org, что позволяет осуществлять пошаговую отладку кода пакета в отладчике Visual Studio. Дополнительные сведения об этом процессе см. в разделе [Указание файлов символов (.pdb) и файлов с исходным кодом в отладчике Visual Studio](/visualstudio/debugger/specify-symbol-dot-pdb-and-source-files-in-the-visual-studio-debugger.md).
+NuGet.org поддерживает собственный репозиторий сервера символов и принимает только новый формат пакетов символов: `.snupkg`. Потребители пакетов могут добавить `https://symbols.nuget.org/download/symbols` в соответствующие источники символов в Visual Studio с помощью символов, опубликованных на сервер символов nuget.org, что позволяет осуществлять пошаговую отладку кода пакета в отладчике Visual Studio. Дополнительные сведения об этом процессе см. в разделе [Указание файлов символов (.pdb) и файлов с исходным кодом в отладчике Visual Studio](/visualstudio/debugger/specify-symbol-dot-pdb-and-source-files-in-the-visual-studio-debugger).
 
 ### <a name="nugetorg-symbol-package-constraints"></a>Ограничения пакета символов NuGet.org
 
@@ -132,6 +132,6 @@ NUPKG-файл не будет отличаться от текущего, а SN
 
 ## <a name="see-also"></a>См. также
 
-Чтобы обеспечить возможность отладки исходного кода сборок .NET, рекомендуется использовать Source Link. Дополнительные сведения см. в [руководстве по Source Link](/dotnet/standard/library-guidance/sourcelink.md).
+Чтобы обеспечить возможность отладки исходного кода сборок .NET, рекомендуется использовать Source Link. Дополнительные сведения см. в [руководстве по Source Link](/dotnet/standard/library-guidance/sourcelink).
 
 Дополнительные сведения о пакетах символов см. в проектной спецификации по [Отладка пакетов NuGet и улучшение символов](https://github.com/NuGet/Home/wiki/NuGet-Package-Debugging-&-Symbols-Improvements).
