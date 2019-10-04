@@ -111,3 +111,4 @@ NuGet.Server — это предоставляемый организацией
 ## <a name="nugetserver-support"></a>Поддержка NuGet.Server
 
 Для получения дополнительной помощи по использованию NuGet.Server сообщите о проблеме на сайте [https://github.com/nuget/NuGetGallery/issues](https://github.com/nuget/NuGetGallery/issues).
+<!--test-->
