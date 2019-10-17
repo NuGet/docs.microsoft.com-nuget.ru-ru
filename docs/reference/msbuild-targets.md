@@ -5,12 +5,12 @@ author: karann-msft
 ms.author: karann
 ms.date: 03/23/2018
 ms.topic: conceptual
-ms.openlocfilehash: 3093761bda456ff5463f708c4d2d12f606dcecbd
-ms.sourcegitcommit: 7dba5be7b983ff508834c60caaa8b504f5fa1ae8
+ms.openlocfilehash: 6a49e410617c14e22f0d4a67d8bfe280f64f5505
+ms.sourcegitcommit: 8a424829b1f70cf7590e95db61997af6ae2d7a41
 ms.translationtype: MT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 10/16/2019
-ms.locfileid: "72393019"
+ms.locfileid: "72510791"
 ---
 # <a name="nuget-pack-and-restore-as-msbuild-targets"></a>Объекты pack и restore NuGet в качестве целевых объектов MSBuild
 
@@ -382,6 +382,10 @@ msbuild -t:pack <path to .csproj file> -p:NuspecFile=<path to nuspec file> -p:Nu
 | рестореусескипнонексистенттаржетс  | При сборе проектов с помощью MSBuild определяет, собираются ли они с помощью оптимизации `SkipNonexistentTargets`. Если значение не задано, по умолчанию используется значение `true`. Следствием является быстрое поведение при сбое, если целевые объекты проекта не могут быть импортированы. |
 | MSBuildProjectExtensionsPath | Папка Output, по умолчанию — `BaseIntermediateOutputPath` и папка `obj`. |
 | ресторефорце | В проектах на основе PackageReference принудительно разрешаются все зависимости, даже если последнее восстановление прошло успешно. Установка этого флага аналогична удалению файла `project.assets.json`. Это не позволяет обходить HTTP-кэш. |
+| ресторепаккажесвислоккфиле | Заменяют использование файла блокировки. |
+| ресторелоккедмоде | Запустите восстановление в заблокированном режиме. Это означает, что восстановление не будет переоценивать зависимости. |
+| нужетлоккфилепас | Пользовательское расположение файла блокировки. Расположение по умолчанию находится рядом с проектом и имеет имя `packages.lock.json`. |
+| ресторефорцеевалуате | Принудительное восстановление для повторного расчета зависимостей и обновление файла блокировки без предупреждения. | 
 
 #### <a name="examples"></a>Примеры
 

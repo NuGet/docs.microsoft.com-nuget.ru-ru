@@ -5,12 +5,12 @@ author: karann-msft
 ms.author: karann
 ms.date: 07/09/2019
 ms.topic: conceptual
-ms.openlocfilehash: e4223c25daa1c14c30de1ef063cd0f48df70c8b5
-ms.sourcegitcommit: 80cf99f40759911324468be1ec815c96aebf376d
+ms.openlocfilehash: 353654d12e137222ab24417f30fd22e9f027c324
+ms.sourcegitcommit: 363ec6843409b4714c91b75b105619a3a3184b43
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/17/2019
-ms.locfileid: "69564576"
+ms.lasthandoff: 10/16/2019
+ms.locfileid: "72380709"
 ---
 # <a name="create-a-package-using-the-nugetexe-cli"></a>Создание пакета с помощью CLI nuget.exe
 
@@ -434,4 +434,4 @@ NuGet указывает, есть ли в файле `.nuspec` ошибки, т
 Наконец, существуют дополнительные типы пакетов, о которых нужно знать:
 
 - [Собственные пакеты](../guides/native-packages.md)
-- [Пакеты символов](../create-packages/symbol-packages.md)
+- [Пакеты символов](../create-packages/symbol-packages-snupkg.md)

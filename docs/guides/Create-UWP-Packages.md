@@ -5,12 +5,12 @@ author: karann-msft
 ms.author: karann
 ms.date: 03/21/2017
 ms.topic: tutorial
-ms.openlocfilehash: 1683349faacdf5ad47baafeef3457bbb3bb1baa9
-ms.sourcegitcommit: 7441f12f06ca380feb87c6192ec69f6108f43ee3
+ms.openlocfilehash: 77aa186291122a8d05018ecacd1329da459badad
+ms.sourcegitcommit: 363ec6843409b4714c91b75b105619a3a3184b43
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/15/2019
-ms.locfileid: "69488991"
+ms.lasthandoff: 10/16/2019
+ms.locfileid: "72380755"
 ---
 # <a name="create-uwp-packages"></a>Создание пакетов универсальной платформы Windows
 
@@ -253,7 +253,7 @@ nuget pack ImageEnhancer.nuspec
 ## <a name="related-topics"></a>См. также
 
 - [Справочник по файлу NUSPEC](../reference/nuspec.md)
-- [Пакеты символов](../create-packages/symbol-packages.md)
+- [Пакеты символов](../create-packages/symbol-packages-snupkg.md)
 - [Управление версиями пакета](../concepts/package-versioning.md)
 - [Поддержка нескольких версий платформы .NET Framework](../create-packages/supporting-multiple-target-frameworks.md)
 - [Включение в пакет свойств и целей MSBuild](../create-packages/creating-a-package.md#include-msbuild-props-and-targets-in-a-package)

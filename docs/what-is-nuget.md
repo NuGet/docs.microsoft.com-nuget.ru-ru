@@ -5,12 +5,12 @@ author: karann-msft
 ms.author: karann
 ms.date: 05/24/2019
 ms.topic: overview
-ms.openlocfilehash: 435103b600f14b9bbf606c09f0c870115204d5c7
-ms.sourcegitcommit: 7441f12f06ca380feb87c6192ec69f6108f43ee3
+ms.openlocfilehash: a08ac24ce6b1d64496c9fc1b20604850e9711dd6
+ms.sourcegitcommit: 363ec6843409b4714c91b75b105619a3a3184b43
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/15/2019
-ms.locfileid: "69488494"
+ms.lasthandoff: 10/16/2019
+ms.locfileid: "72380663"
 ---
 # <a name="an-introduction-to-nuget"></a>Введение в NuGet
 
@@ -105,7 +105,7 @@ ms.locfileid: "69488494"
 
 В рамках отдельного проекта NuGet управляет общей схемой зависимостей, что включает в себя разрешение нескольких ссылок на различные версии одного пакета. Довольно часто проект зависит от одного или нескольких пакетов, имеющих такие же зависимости. Некоторые из наиболее полезных пакетов служебных программ на сайте nuget.org используются многими другими пакетами. В общей схеме зависимостей вы легко можете иметь десять различных ссылок на разные версии одного пакета. Чтобы избежать переноса нескольких версий этого пакета в само приложение, NuGet определяет, какую отдельную версию могут использовать все потребители. (Дополнительные сведения см. в разделе [Принципы разрешения зависимостей пакетов в NuGet](concepts/dependency-resolution.md).)
 
-Кроме того, NuGet обслуживает все спецификации, связанные со структурированием пакетов (включая [локализацию](create-packages/creating-localized-packages.md) и [отладочные символы](create-packages/symbol-packages.md)) и [ссылками](consume-packages/package-references-in-project-files.md) на них (включая [диапазоны версий](concepts/package-versioning.md#version-ranges-and-wildcards) и [предварительные версии](create-packages/prerelease-packages.md)). NuGet также имеет различные API для работы со своими службами программно и предоставляет поддержку разработчикам, которые пишут расширения Visual Studio и шаблоны проектов.
+Кроме того, NuGet обслуживает все спецификации, связанные со структурированием пакетов (включая [локализацию](create-packages/creating-localized-packages.md) и [отладочные символы](create-packages/symbol-packages-snupkg.md)) и [ссылками](consume-packages/package-references-in-project-files.md) на них (включая [диапазоны версий](concepts/package-versioning.md#version-ranges-and-wildcards) и [предварительные версии](create-packages/prerelease-packages.md)). NuGet также имеет различные API для работы со своими службами программно и предоставляет поддержку разработчикам, которые пишут расширения Visual Studio и шаблоны проектов.
 
 Если изучить содержание этой документации, можно найти все указанные возможности и заметки о выпуске, отсылающие к самому начальному этапу развития NuGet.
 

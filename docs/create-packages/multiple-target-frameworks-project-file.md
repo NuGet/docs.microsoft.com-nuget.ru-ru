@@ -5,12 +5,12 @@ author: karann-msft
 ms.author: karann
 ms.date: 07/15/2019
 ms.topic: conceptual
-ms.openlocfilehash: 8c1d8a479747f6f7bce388c1555589543c8824a0
-ms.sourcegitcommit: fc1b716afda999148eb06d62beedb350643eb346
+ms.openlocfilehash: 1d23759433efb405fa5f0035049befced2c43d6b
+ms.sourcegitcommit: 363ec6843409b4714c91b75b105619a3a3184b43
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/14/2019
-ms.locfileid: "69020061"
+ms.lasthandoff: 10/16/2019
+ms.locfileid: "72380676"
 ---
 # <a name="support-multiple-net-framework-versions-in-your-project-file"></a>Поддержка выбора нескольких версий платформ .NET в файле проекта
 
@@ -37,7 +37,7 @@ ms.locfileid: "69020061"
 
    Убедитесь, что для XML-элемента единственное число изменено на множественное (добавьте s в теги открытия и закрытия).
 
-3. Если у вас есть код, который работает только на одной целевой платформе (TFM), можно использовать `#if NET45` или `#if NETSTANDARD20` для разделения кода, зависящего от TFM (см. подробнее об [использовании нескольких целевых платформ](/dotnet/core/tutorials/libraries#how-to-multitarget)). Например, используйте приведенный ниже код.
+3. Если у вас есть код, который работает только на одной целевой платформе (TFM), можно использовать `#if NET45` или `#if NETSTANDARD2_0` для разделения кода, зависящего от TFM (см. подробнее об [использовании нескольких целевых платформ](/dotnet/core/tutorials/libraries#how-to-multitarget)). Например, используйте приведенный ниже код.
 
    ```csharp
    public string Platform {
