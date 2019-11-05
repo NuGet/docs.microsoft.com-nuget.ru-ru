@@ -1,10 +1,10 @@
 ---
-ms.openlocfilehash: 1f65939493cf423a76c024607264acee6c7e9050
-ms.sourcegitcommit: ef08f376688f0191a8d3d873b6a4386afd799373
+ms.openlocfilehash: 5197447531288a8b071354dbeb3a3ae02f7cce09
+ms.sourcegitcommit: 39f2ae79fbbc308e06acf67ee8e24cfcdb2c831b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/28/2019
-ms.locfileid: "66271521"
+ms.lasthandoff: 11/05/2019
+ms.locfileid: "73610534"
 ---
 #### <a name="windows"></a>Windows
 
@@ -19,7 +19,7 @@ ms.locfileid: "66271521"
 
 Поведение для этих ОС может несколько различаться.
 
-1. Установите [Mono 4.4.2 или более поздней версии](http://www.mono-project.com/docs/getting-started/install/).
+1. Установите [Mono 4.4.2 или более поздней версии](https://www.mono-project.com/docs/getting-started/install/).
 
 1. В командной строке оболочки введите следующие команды:
 
