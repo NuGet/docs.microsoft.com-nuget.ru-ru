@@ -5,12 +5,12 @@ author: karann-msft
 ms.author: karann
 ms.date: 07/09/2019
 ms.topic: conceptual
-ms.openlocfilehash: 353654d12e137222ab24417f30fd22e9f027c324
-ms.sourcegitcommit: 363ec6843409b4714c91b75b105619a3a3184b43
+ms.openlocfilehash: 12ecfb8374c43a04d57d32575556adebc991d053
+ms.sourcegitcommit: 39f2ae79fbbc308e06acf67ee8e24cfcdb2c831b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/16/2019
-ms.locfileid: "72380709"
+ms.lasthandoff: 11/05/2019
+ms.locfileid: "73610694"
 ---
 # <a name="create-a-package-using-the-nugetexe-cli"></a>Создание пакета с помощью CLI nuget.exe
 
@@ -276,9 +276,9 @@ nuget spec [<package-name>]
 
 > Разобраться в принципах управления версиями также может помочь следующая серия коротких записей блога:
 >
-> - [Часть 1. Решение проблем с DLL](http://blog.davidebbo.com/2011/01/nuget-versioning-part-1-taking-on-dll.html)
-> - [Часть 2. Базовый алгоритм](http://blog.davidebbo.com/2011/01/nuget-versioning-part-2-core-algorithm.html)
-> - [Часть 3. Унификация путем переадресации привязок](http://blog.davidebbo.com/2011/01/nuget-versioning-part-3-unification-via.html)
+> - [Часть 1. Решение проблем с DLL](https://blog.davidebbo.com/2011/01/nuget-versioning-part-1-taking-on-dll.html)
+> - [Часть 2. Базовый алгоритм](https://blog.davidebbo.com/2011/01/nuget-versioning-part-2-core-algorithm.html)
+> - [Часть 3. Унификация путем переадресации привязок](https://blog.davidebbo.com/2011/01/nuget-versioning-part-3-unification-via.html)
 
 ## <a name="add-a-readme-and-other-files"></a>Добавление файла сведений и других файлов
 

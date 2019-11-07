@@ -5,12 +5,12 @@ author: karann-msft
 ms.author: karann
 ms.date: 01/18/2018
 ms.topic: conceptual
-ms.openlocfilehash: dbc3781bd17f815c6b32fc70b275469337148f41
-ms.sourcegitcommit: 7441f12f06ca380feb87c6192ec69f6108f43ee3
+ms.openlocfilehash: 83414a824676844f9e44eab874e5eac788d50583
+ms.sourcegitcommit: 39f2ae79fbbc308e06acf67ee8e24cfcdb2c831b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/15/2019
-ms.locfileid: "69488836"
+ms.lasthandoff: 11/05/2019
+ms.locfileid: "73610940"
 ---
 # <a name="creating-localized-nuget-packages"></a>Создание локализованных пакетов NuGet
 
@@ -71,7 +71,7 @@ ms.locfileid: "69488836"
 </package>
 ```
 
-Одним из примеров пакета, использующего этот подход, является [Microsoft.Data.OData 5.4.0](http://nuget.org/packages/Microsoft.Data.OData/5.4.0).
+Одним из примеров пакета, использующего этот подход, является [Microsoft.Data.OData 5.4.0](https://nuget.org/packages/Microsoft.Data.OData/5.4.0).
 
 ### <a name="advantages-and-disadvantages-localized-resource-assemblies"></a>Преимущества и недостатки (локализованные сборки ресурсов)
 
@@ -119,11 +119,11 @@ ms.locfileid: "69488836"
 
 Таким образом вы можете создать дополнительные вспомогательные сборки для каждого поддерживаемого языка. Например, изучите набор пакетов MVC ASP.NET:
 
-- [Microsoft.AspNet.Mvc](http://nuget.org/packages/Microsoft.AspNet.Mvc) (основной английский язык)
-- [Microsoft.AspNet.Mvc.de](http://nuget.org/packages/Microsoft.AspNet.Mvc.de) (немецкий)
-- [Microsoft.AspNet.Mvc.ja](http://nuget.org/packages/Microsoft.AspNet.Mvc.ja) (японский)
-- [Microsoft.AspNet.Mvc.zh Hans](http://nuget.org/packages/Microsoft.AspNet.Mvc.zh-Hans) (китайский (упрощенное письмо))
-- [Microsoft.AspNet.Mvc.zh Hant](http://nuget.org/packages/Microsoft.AspNet.Mvc.zh-Hant) (китайский (традиционное письмо))
+- [Microsoft.AspNet.Mvc](https://nuget.org/packages/Microsoft.AspNet.Mvc) (основной английский язык)
+- [Microsoft.AspNet.Mvc.de](https://nuget.org/packages/Microsoft.AspNet.Mvc.de) (немецкий)
+- [Microsoft.AspNet.Mvc.ja](https://nuget.org/packages/Microsoft.AspNet.Mvc.ja) (японский)
+- [Microsoft.AspNet.Mvc.zh Hans](https://nuget.org/packages/Microsoft.AspNet.Mvc.zh-Hans) (китайский (упрощенное письмо))
+- [Microsoft.AspNet.Mvc.zh Hant](https://nuget.org/packages/Microsoft.AspNet.Mvc.zh-Hant) (китайский (традиционное письмо))
 
 ### <a name="summary-of-required-conventions"></a>Сводка по необходимым соглашениям
 

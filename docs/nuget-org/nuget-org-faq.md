@@ -5,12 +5,12 @@ author: shishirx34
 ms.author: shishirh
 ms.date: 06/05/2019
 ms.topic: conceptual
-ms.openlocfilehash: 24e35f4b2c047d5f337a1779e63846b11b0c1011
-ms.sourcegitcommit: 363ec6843409b4714c91b75b105619a3a3184b43
+ms.openlocfilehash: e2b6a64b8010f16d0fc33cca437b348d8f784fd7
+ms.sourcegitcommit: 39f2ae79fbbc308e06acf67ee8e24cfcdb2c831b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/16/2019
-ms.locfileid: "72380580"
+ms.lasthandoff: 11/05/2019
+ms.locfileid: "73610507"
 ---
 # <a name="nugetorg-frequently-asked-questions"></a>Вопросы и ответы по NuGet.org
 
@@ -90,7 +90,7 @@ NuGet использует для скачивания пакетов прото
 
 *Получение трассировки Fiddler:*
 
-- Установите последнюю версию [Fiddler](http://www.telerik.com/download/fiddler).
+- Установите последнюю версию [Fiddler](https://www.telerik.com/download/fiddler).
 - Запустите Fiddler и отключите запись трафика в меню **Файл > Запись трафика**.
 - Удалите все сеансы (выделите все элементы в списке и нажмите клавишу **Delete**).
 - Настройте Fiddler для записи трафика HTTPS, установив флажок **Расшифровывать трафик HTTPS** на вкладке **HTTPS** в меню **Сервис > Параметры Fiddler...**
@@ -101,7 +101,7 @@ NuGet использует для скачивания пакетов прото
 
 Примечание. Для маршрутизации трафика NuGet через Fiddler может потребоваться присвоить переменной среды `HTTP_PROXY` значение `http://127.0.0.1:8888`.
 
-Если этот способ не помогает, попробуйте советы, приведенные в этой [статье на веб-сайте StackOverflow](http://stackoverflow.com/questions/21049908/using-fiddler-to-sniff-visual-studio-2013-requests-proxy-firewall).
+Если этот способ не помогает, попробуйте советы, приведенные в этой [статье на веб-сайте StackOverflow](https://stackoverflow.com/questions/21049908/using-fiddler-to-sniff-visual-studio-2013-requests-proxy-firewall).
 
 ## <a name="nugetorg-account-management"></a>Управление учетной записью NuGet.org
 
@@ -228,17 +228,17 @@ NuGet использует для скачивания пакетов прото
 
 Вероятно, ваша учетная запись была ранее зарегистрирована в качестве личной учетной записи Майкрософт и нормально работала в этом качестве, однако теперь она была зарегистрирована в качестве "неуправляемого" клиента в Azure Active Directory (служба идентификации, используемая нами для проверки подлинности учетных записей Майкрософт). 
 
-Это могло произойти, если вы или другой сотрудник из вашей организации (с адресом электронной почты @yourdomain.com) зарегистрировались в одной из служб интеграции AAD или выполнили [самостоятельную регистрацию для Azure Active Directory](https://docs.microsoft.com/en-us/azure/active-directory/users-groups-roles/directory-self-service-signup), что создает такого "неуправляемого" клиента для используемого домена учетной записи Майкрософт (в вашем случае @yourdomain.com). 
+Это могло произойти, если вы или другой сотрудник из вашей организации (с адресом электронной почты @yourdomain.com) зарегистрировались в одной из служб интеграции AAD или выполнили [самостоятельную регистрацию для Azure Active Directory](https://docs.microsoft.com/azure/active-directory/users-groups-roles/directory-self-service-signup), что создает такого "неуправляемого" клиента для используемого домена учетной записи Майкрософт (в вашем случае @yourdomain.com). 
 
 **Что можно сделать для восстановления учетной записи?**
 
 Сейчас у нас (NuGet.org) не существует способа проверки подлинности учетных записей с такими "неуправляемыми" клиентами в Azure Active Directory. Мы стараемся найти оптимальный способ проверки подлинности таких учетных записей.
 
-Если вы хотите войти на сайт NuGet.org с помощью учетной записи Майкрософт (@yourdomain.com), вы (или администратор в вашей организации) должны затребовать владение AAD, выполнив проверку DNS для подтверждения подлинности пользователей с адресом электронной почты "@yourdomain.com". Выполните действия по [перехвату администратором доменов](https://docs.microsoft.com/en-us/azure/active-directory/users-groups-roles/domains-admin-takeover), описанные для Azure Active Directory. После этого должен начать работать обычный вход.
+Если вы хотите войти на сайт NuGet.org с помощью учетной записи Майкрософт (@yourdomain.com), вы (или администратор в вашей организации) должны затребовать владение AAD, выполнив проверку DNS для подтверждения подлинности пользователей с адресом электронной почты "@yourdomain.com". Выполните действия по [перехвату администратором доменов](https://docs.microsoft.com/azure/active-directory/users-groups-roles/domains-admin-takeover), описанные для Azure Active Directory. После этого должен начать работать обычный вход.
 
 **Я не хочу делать все это, как еще можно восстановить учетную запись?**
 
-Вы можете [создать](https://www.microsoft.com/en-us/account) учетную запись Майкрософт (с адресом электронной почты, который **не** связан с @yourdomain.com). Выполните действия, указанные в разделе [о восстановлении учетной записи NuGet.org](#unable-to-use-microsoft-login-how-do-i-recover-my-nugetorg-account).
+Вы можете [создать](https://www.microsoft.com/account) учетную запись Майкрософт (с адресом электронной почты, который **не** связан с @yourdomain.com). Выполните действия, указанные в разделе [о восстановлении учетной записи NuGet.org](#unable-to-use-microsoft-login-how-do-i-recover-my-nugetorg-account).
 
 ### <a name="how-do-i-change-my-nugetorg-account-username"></a>Как изменить мое имя пользователя учетной записи NuGet.org?
 
@@ -250,7 +250,7 @@ NuGet использует для скачивания пакетов прото
 
 ### <a name="how-to-delete-my-nugetorg-account"></a>Удаление учетной записи NuGet.org
 
-При удалении учетной записи мы рекомендуем вам передать права владения на все пакеты, для которых вы являетесь единственным владельцем. Дополнительные сведения см. в разделе об [управлении владельцами пакетов](https://docs.microsoft.com/en-us/nuget/create-packages/publish-a-package#managing-package-owners-on-nugetorg). Это также поможет нам ускорить обработку вашего запроса.
+При удалении учетной записи мы рекомендуем вам передать права владения на все пакеты, для которых вы являетесь единственным владельцем. Дополнительные сведения см. в разделе об [управлении владельцами пакетов](https://docs.microsoft.com/nuget/create-packages/publish-a-package#managing-package-owners-on-nugetorg). Это также поможет нам ускорить обработку вашего запроса.
 
 Если вы хотите преобразовать свою учетную запись NuGet.org в учетную запись организации, выполните [эти инструкции](#how-to-transform-my-nugetorg-account-to-an-organization).
 

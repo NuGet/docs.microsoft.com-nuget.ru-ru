@@ -5,12 +5,12 @@ author: karann-msft
 ms.author: karann
 ms.date: 08/14/2017
 ms.topic: conceptual
-ms.openlocfilehash: 8bd1d473a69d769f3d9204188f3130578af78797
-ms.sourcegitcommit: 7441f12f06ca380feb87c6192ec69f6108f43ee3
+ms.openlocfilehash: d2294ef0acb9053e74543204ae6f68b9fbc6fb0a
+ms.sourcegitcommit: 39f2ae79fbbc308e06acf67ee8e24cfcdb2c831b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/15/2019
-ms.locfileid: "69520464"
+ms.lasthandoff: 11/05/2019
+ms.locfileid: "73611058"
 ---
 # <a name="how-nuget-resolves-package-dependencies"></a>Принципы разрешения зависимостей пакетов в NuGet
 
@@ -24,7 +24,7 @@ ms.locfileid: "69520464"
 
 При установке пакетов в проекты с использованием формата PackageReference, NuGet добавляет ссылки на плоскую схему пакета в соответствующий файл и разрешает конфликты заранее. Этот процесс называется *транзитивным восстановлением*. В этом случае переустановка или восстановление пакетов представляют собой скачивание пакетов, указанных на графе, в результате чего сборки выполняются быстрее и более предсказуемо. Вы также можете воспользоваться преимуществами групповых версий, таких как 2.8. \*, избавившись от ресурсоемких и подверженных ошибкам вызовов `nuget update` на клиентских компьютерах и серверах сборки.
 
-Когда перед сборкой выполняется процесс восстановления NuGet, он сначала устраняет зависимости в памяти, а затем записывает полученную схему в файл с именем `project.assets.json`. Он также записывает разрешенные зависимости в файл блокировки с именем `packages.lock.json`, если [включена функция блокировки файлов](https://docs.microsoft.com/en-us/nuget/consume-packages/package-references-in-project-files#locking-dependencies).
+Когда перед сборкой выполняется процесс восстановления NuGet, он сначала устраняет зависимости в памяти, а затем записывает полученную схему в файл с именем `project.assets.json`. Он также записывает разрешенные зависимости в файл блокировки с именем `packages.lock.json`, если [включена функция блокировки файлов](https://docs.microsoft.com/nuget/consume-packages/package-references-in-project-files#locking-dependencies).
 Файл ресурсов находится в каталоге `MSBuildProjectExtensionsPath`, по умолчанию — это папка "obj". После этого MSBuild считывает этот файл и преобразует его в набор папок, где можно найти потенциальные ссылки, а затем добавляет их в дерево проектов в памяти.
 
 Файл `project.assets.json` является временным, поэтому добавлять его в систему управления исходным кодом не нужно. Он указан по умолчанию в `.gitignore` и `.tfignore`. См. раздел [Пакеты и система управления версиями](../consume-packages/packages-and-source-control.md).

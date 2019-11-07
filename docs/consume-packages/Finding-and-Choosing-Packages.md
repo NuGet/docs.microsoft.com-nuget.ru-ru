@@ -5,16 +5,16 @@ author: karann-msft
 ms.author: karann
 ms.date: 06/04/2018
 ms.topic: conceptual
-ms.openlocfilehash: cbe6fd964e88b054b9e2c5c8ead71d1f9090d63c
-ms.sourcegitcommit: 5aa49478dc466c67db5c3edda7c6ce8dcd8ae033
+ms.openlocfilehash: 9947a490e4373bb0b8b7fb0814828ff2a60615a8
+ms.sourcegitcommit: 39f2ae79fbbc308e06acf67ee8e24cfcdb2c831b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/06/2019
-ms.locfileid: "68817561"
+ms.lasthandoff: 11/05/2019
+ms.locfileid: "73611077"
 ---
 # <a name="finding-and-evaluating-nuget-packages-for-your-project"></a>Поиск и пробное использование пакетов NuGet для проекта
 
-При запуске любого проекта .NET, а также в тех случаях, когда это необходимо для ваших приложений и служб с функциональной точки зрения, вы можете сэкономить много времени и сил, используя существующие пакеты NuGet, которые реализуют необходимый функционал. Такие пакеты могут находиться как в открытой коллекции на веб-сайте [nuget.org](http://www.nuget.org/packages/), так и в закрытых источниках, предоставляемых вашей организацией или другими третьими лицами.
+При запуске любого проекта .NET, а также в тех случаях, когда это необходимо для ваших приложений и служб с функциональной точки зрения, вы можете сэкономить много времени и сил, используя существующие пакеты NuGet, которые реализуют необходимый функционал. Такие пакеты могут находиться как в открытой коллекции на веб-сайте [nuget.org](https://www.nuget.org/packages/), так и в закрытых источниках, предоставляемых вашей организацией или другими третьими лицами.
 
 ## <a name="finding-packages"></a>Поиск пакетов
 

@@ -5,12 +5,12 @@ author: karann-msft
 ms.author: karann
 ms.date: 03/13/2018
 ms.topic: conceptual
-ms.openlocfilehash: 734f0a609f243c7bdb218a53ed664de68c707dd7
-ms.sourcegitcommit: efc18d484fdf0c7a8979b564dcb191c030601bb4
+ms.openlocfilehash: 82b353450ff1da23a17e5b1c6a825ad32782bf75
+ms.sourcegitcommit: 39f2ae79fbbc308e06acf67ee8e24cfcdb2c831b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/18/2019
-ms.locfileid: "68317649"
+ms.lasthandoff: 11/05/2019
+ms.locfileid: "73610590"
 ---
 # <a name="nugetserver"></a>NuGet.Server
 
@@ -53,7 +53,7 @@ NuGet.Server — это предоставляемый организацией
 
 1. Щелкните ссылку **here** (здесь) в выделенной выше области, чтобы увидеть веб-канал пакетов OData.
 
-1. При первом запуске приложения пакет NuGet.Server изменяет структуру папки `Packages` так, чтобы она содержала вложенную папку для каждого пакета. Такая структура соответствует [структуре локального хранилища](http://blog.nuget.org/20151118/nuget-3.3.html#folder-based-repository-commands), представленной в NuGet 3.3, что позволяет повысить производительность. При добавлении дополнительных пакетов следуйте этой структуре.
+1. При первом запуске приложения пакет NuGet.Server изменяет структуру папки `Packages` так, чтобы она содержала вложенную папку для каждого пакета. Такая структура соответствует [структуре локального хранилища](https://blog.nuget.org/20151118/nuget-3.3.html#folder-based-repository-commands), представленной в NuGet 3.3, что позволяет повысить производительность. При добавлении дополнительных пакетов следуйте этой структуре.
 
 1. Протестировав развертывание в локальной среде, можно развернуть приложение на любом внутреннем или внешней сайте.
 

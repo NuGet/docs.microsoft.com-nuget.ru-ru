@@ -5,12 +5,12 @@ author: karann-msft
 ms.author: karann
 ms.date: 06/20/2019
 ms.topic: quickstart
-ms.openlocfilehash: 417388872a74b29a469d6a5c17c079a0d1a35dc3
-ms.sourcegitcommit: a0807671386782021acb7588741390e6f07e94e1
+ms.openlocfilehash: 09c859c0ab6767ea80b6a64c194aa2623ee5c505
+ms.sourcegitcommit: 39f2ae79fbbc308e06acf67ee8e24cfcdb2c831b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/05/2019
-ms.locfileid: "70384463"
+ms.lasthandoff: 11/05/2019
+ms.locfileid: "73610516"
 ---
 # <a name="install-nuget-client-tools"></a>Установка клиентских средств NuGet
 
@@ -46,7 +46,7 @@ ms.locfileid: "70384463"
 
 ### <a name="nugetexe-cli"></a>Интерфейс командной строки nuget.exe
 
-Интерфейс командной строки `nuget.exe` (`nuget.exe`) — это программа командной строки для Windows, которая предоставляет все возможности NuGet. С некоторыми ограничениями ее также можно запустить на Mac OSX и Linux с помощью [Mono](http://www.mono-project.com/docs/getting-started/install/).
+Интерфейс командной строки `nuget.exe` (`nuget.exe`) — это программа командной строки для Windows, которая предоставляет все возможности NuGet. С некоторыми ограничениями ее также можно запустить на Mac OSX и Linux с помощью [Mono](https://www.mono-project.com/docs/getting-started/install/).
 
 Сведения об использовании основных команд с CLI `nuget.exe` см. в статье [Установка и использование пакета с помощью CLI nuget.exe](consume-packages/install-use-packages-nuget-cli.md).
 

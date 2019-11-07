@@ -5,12 +5,12 @@ author: karann-msft
 ms.author: karann
 ms.date: 01/09/2017
 ms.topic: conceptual
-ms.openlocfilehash: 0e69491525fce03e504d9d455bee2718510c83c2
-ms.sourcegitcommit: 1d1406764c6af5fb7801d462e0c4afc9092fa569
+ms.openlocfilehash: a86a58f8afb4b0f1affeddd47d6c5606fb465757
+ms.sourcegitcommit: 39f2ae79fbbc308e06acf67ee8e24cfcdb2c831b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/04/2018
-ms.locfileid: "43549889"
+ms.lasthandoff: 11/05/2019
+ms.locfileid: "73611001"
 ---
 # <a name="setting-up-package-restore-with-team-foundation-build"></a>Настройка восстановления пакетов с помощью сборки Team Foundation
 
@@ -18,7 +18,7 @@ ms.locfileid: "43549889"
 
 Хотя это руководство относится к сценарию использования Visual Studio Team Services, основные принципы также применимы к другим системам управления версиями и сборки.
 
-Применимо к:
+Область применения.
 
 - пользовательским проектам MSBuild, выполняющимся в любой версии Team Foundation Server;
 - Team Foundation Server 2012 или более ранней версии;
@@ -31,7 +31,7 @@ ms.locfileid: "43549889"
 
 Преимущество использования NuGet в том, что вы можете избежать возврата двоичных файлов в систему управления версиями.
 
-Это особенно полезно в том случае, если вы применяете [распределенную систему управления версиями](http://en.wikipedia.org/wiki/Distributed_revision_control), такую как GIT, так как в этом случае разработчикам приходится клонировать весь репозиторий, включая полный журнал, прежде чем приступать к работе на локальных компьютерах. Возврат двоичных файлов может привести к существенному раздуванию репозитория, так как двоичные файлы обычно хранятся без разностного сжатия.
+Это особенно полезно в том случае, если вы применяете [распределенную систему управления версиями](https://en.wikipedia.org/wiki/Distributed_revision_control), такую как GIT, так как в этом случае разработчикам приходится клонировать весь репозиторий, включая полный журнал, прежде чем приступать к работе на локальных компьютерах. Возврат двоичных файлов может привести к существенному раздуванию репозитория, так как двоичные файлы обычно хранятся без разностного сжатия.
 
 В NuGet уже давно поддерживается [восстановление пакетов](../consume-packages/package-restore.md) в процессе сборки. В предыдущих реализациях возникала дилемма курицы и яйца в случае, если пакетам необходимо было расширить процесс сборки, так как в NuGet пакеты восстанавливались во время сборки проекта. Платформа MSBuild не позволяет расширять сборку во время ее выполнения. Кто-то может посчитать это недостатком MSBuild, однако это спорный вопрос. В зависимости от аспекта, который необходимо расширить, к моменту восстановления пакета регистрировать его может быть уже слишком поздно.
 
@@ -50,7 +50,7 @@ nuget restore path\to\solution.sln
 
 ## <a name="repository-structure"></a>Структура репозитория
 
-Демонстрационный проект представляет собой простую программу командной строки, которая использует аргумент командной строки для запроса Bing. Он предназначен для платформы .NET Framework 4 и использует многие [пакеты библиотеки BCL](http://www.nuget.org/profiles/dotnetframework/) ([Microsoft.Net.Http](http://www.nuget.org/packages/Microsoft.Net.Http), [Microsoft.Bcl](http://www.nuget.org/packages/Microsoft.Bcl), [Microsoft.Bcl.Async](http://www.nuget.org/packages/Microsoft.Bcl.Async) и [Microsoft.Bcl.Build](http://www.nuget.org/packages/Microsoft.Bcl.Build)).
+Демонстрационный проект представляет собой простую программу командной строки, которая использует аргумент командной строки для запроса Bing. Он предназначен для платформы .NET Framework 4 и использует многие [пакеты библиотеки BCL](https://www.nuget.org/profiles/dotnetframework/) ([Microsoft.Net.Http](https://www.nuget.org/packages/Microsoft.Net.Http), [Microsoft.Bcl](https://www.nuget.org/packages/Microsoft.Bcl), [Microsoft.Bcl.Async](https://www.nuget.org/packages/Microsoft.Bcl.Async) и [Microsoft.Bcl.Build](https://www.nuget.org/packages/Microsoft.Bcl.Build)).
 
 Репозиторий имеет следующую структуру:
 

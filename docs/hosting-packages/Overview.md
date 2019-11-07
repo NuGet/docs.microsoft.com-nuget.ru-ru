@@ -6,12 +6,12 @@ ms.author: karann
 ms.date: 08/25/2017
 ms.topic: conceptual
 ms.reviewer: anangaur
-ms.openlocfilehash: 10651e2cc26f7df4115e4de5dac8c91c93af7374
-ms.sourcegitcommit: 5a741f025e816b684ffe44a81ef7d3fbd2800039
+ms.openlocfilehash: 3ca023c8d39b9b36388f5f517b50ca5cd2347cc0
+ms.sourcegitcommit: 39f2ae79fbbc308e06acf67ee8e24cfcdb2c831b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/09/2019
-ms.locfileid: "70815289"
+ms.lasthandoff: 11/05/2019
+ms.locfileid: "73610458"
 ---
 # <a name="hosting-your-own-nuget-feeds"></a>Размещение своих веб-каналов NuGet
 
@@ -31,11 +31,11 @@ ms.locfileid: "70815289"
 - [Cloudsmith](https://cloudsmith.io/l/nuget-feed/), полностью управляемое решение для управления пакетами, поставляемое по модели SaaS
 - [Реестр пакетов GitHub](https://help.github.com/articles/configuring-nuget-for-use-with-github-package-registry)
 - [LiGet](https://github.com/ai-traders/liget) — реализация с открытым исходным кодом для сервера NuGet V2, на котором выполняется Kestrel в Docker
-- [MyGet](http://myget.org)
-- [Nexus](http://www.sonatype.org/nexus/) от Sonatype.
-- [Сервер NuGet (открытый исходный код)](http://nuget-server.net) — реализация, аналогичная серверу NuGet от Inedo, с открытым исходным кодом
+- [MyGet](https://myget.org)
+- [Nexus](https://www.sonatype.org/nexus/) от Sonatype.
+- [Сервер NuGet (открытый исходный код)](https://github.com/svenkle/nuget-server) — реализация, аналогичная серверу NuGet от Inedo, с открытым исходным кодом
 - [Сервер NuGet](http://nugetserver.net/) — проект сообщества от Inedo
-- [ProGet](http://inedo.com/proget) от Inedo
+- [ProGet](https://inedo.com/proget) от Inedo
 - [Sleet](https://github.com/emgarten/sleet) —статический генератор веб-канала NuGet V3 с открытым исходным кодом.
 - [TeamCity](https://www.jetbrains.com/teamcity/) от JetBrains.
 
