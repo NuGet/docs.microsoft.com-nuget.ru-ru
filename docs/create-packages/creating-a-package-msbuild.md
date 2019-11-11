@@ -5,16 +5,16 @@ author: karann-msft
 ms.author: karann
 ms.date: 08/05/2019
 ms.topic: conceptual
-ms.openlocfilehash: 9512899a4086d17d2584f16833aba33efb321eae
-ms.sourcegitcommit: 363ec6843409b4714c91b75b105619a3a3184b43
+ms.openlocfilehash: b45c25a92c0134228fb507ab321cb00ce156527f
+ms.sourcegitcommit: 39f2ae79fbbc308e06acf67ee8e24cfcdb2c831b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/16/2019
-ms.locfileid: "72380691"
+ms.lasthandoff: 11/05/2019
+ms.locfileid: "73610558"
 ---
 # <a name="create-a-nuget-package-using-msbuild"></a>Создание пакета NuGet с помощью MSBuild
 
-При создании пакета NuGet из кода вы формируете компонент, которым можно поделиться с любым количеством разработчиков для совместного использования. В этой статье описывается, как создать пакет с помощью MSBuild. MSBuild предустанавливается с каждой рабочей нагрузкой Visual Studio, содержащей NuGet. Кроме того, можно использовать MSBuild через dotnet CLI с помощью команды [dotnet msbuild](https://docs.microsoft.com/en-us/dotnet/core/tools/dotnet-msbuild).
+При создании пакета NuGet из кода вы формируете компонент, которым можно поделиться с любым количеством разработчиков для совместного использования. В этой статье описывается, как создать пакет с помощью MSBuild. MSBuild предустанавливается с каждой рабочей нагрузкой Visual Studio, содержащей NuGet. Кроме того, можно использовать MSBuild через dotnet CLI с помощью команды [dotnet msbuild](https://docs.microsoft.com/dotnet/core/tools/dotnet-msbuild).
 
 Для проектов .NET Core и .NET Standard с [форматом в стиле пакета SDK](../resources/check-project-format.md) и других проектов в таком стиле NuGet использует сведения в файле проекта напрямую для создания пакета.  Для проекта в стиле, отличном от SDK, который использует `<PackageReference>`, NuGet также использует файл проекта для создания пакета.
 

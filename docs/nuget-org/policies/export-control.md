@@ -5,12 +5,12 @@ author: karann-msft
 ms.author: karann
 ms.date: 06/27/2019
 ms.topic: conceptual
-ms.openlocfilehash: 97e7b253bed84fc6e9a97922c19756d138dd0381
-ms.sourcegitcommit: b6810860b77b2d50aab031040b047c20a333aca3
+ms.openlocfilehash: 4ea2d2f23a02088b54982b825a5be3c872e27c37
+ms.sourcegitcommit: 39f2ae79fbbc308e06acf67ee8e24cfcdb2c831b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/28/2019
-ms.locfileid: "67426929"
+ms.lasthandoff: 11/05/2019
+ms.locfileid: "73611310"
 ---
 # <a name="export-control-policy"></a>Политика экспортного контроля
 
@@ -28,4 +28,4 @@ ms.locfileid: "67426929"
 
 Освобождение общедоступного исходного кода от юрисдикции экспортного контроля в рамках описываемого выше процесса уведомления *не применяется* к коммерческому программному обеспечению, которое содержит такие элементы или создано на их основе.  Вы несете исключительную ответственность за обеспечение соответствия законодательству об экспортном контроле, которое может применяться к любому коммерческому программному обеспечению, содержащему исходный или объектный код, размещенный на сайте NuGet.org, или созданному на их основе.
 
-Дополнительные сведения об экспортных и географических ограничениях см. на веб-сайте https://www.microsoft.com/en-us/exporting.
+Дополнительные сведения об экспортных и географических ограничениях см. на веб-сайте [Microsoft Exporting](https://www.microsoft.com/exporting).

@@ -5,12 +5,12 @@ author: karann-msft
 ms.author: karann
 ms.date: 11/29/2018
 ms.topic: conceptual
-ms.openlocfilehash: 7b92d07d19a2e9073ecc38ed37b4ee2491080443
-ms.sourcegitcommit: efc18d484fdf0c7a8979b564dcb191c030601bb4
+ms.openlocfilehash: 89b5fcbd76b85b77489ab36caa215c3a2fedf032
+ms.sourcegitcommit: 39f2ae79fbbc308e06acf67ee8e24cfcdb2c831b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/18/2019
-ms.locfileid: "68317771"
+ms.lasthandoff: 11/05/2019
+ms.locfileid: "73610977"
 ---
 # <a name="manage-package-trust-boundaries"></a>Управление границами доверия пакета
 
@@ -95,7 +95,7 @@ nuget.exe  trusted-signers Add -Name MyCompanyCert -CertificateFingerprint CE408
 
 ### <a name="sync-repository-certificates"></a>Синхронизация сертификатов репозитория
 
-Репозитории пакетов должны объявлять о сертификатах, используемых в [индексе службы](../api/service-index.md). Со временем репозиторий обновит эти сертификаты, например, по истечении срока их действия. При этом клиенты с определенными политиками потребуют обновления конфигурации, чтобы включить новый добавленный сертификат. Вы можете легко обновить доверенных подписывающих лиц, связанных с репозиторием, с помощью [команды синхронизации доверенных подписывающих лиц](../reference/cli-reference/cli-ref-trusted-signers.md#nuget-trusted-signers-sync--name-) `nuget.exe`.
+Репозитории пакетов должны объявлять о сертификатах, используемых в [индексе службы](../api/service-index.md). Со временем репозиторий обновит эти сертификаты, например, по истечении срока их действия. При этом клиенты с определенными политиками потребуют обновления конфигурации, чтобы включить новый добавленный сертификат. Вы можете легко обновить доверенных подписывающих лиц, связанных с репозиторием, с помощью `nuget.exe`[команды trusted-signers sync](../reference/cli-reference/cli-ref-trusted-signers.md#nuget-trusted-signers-sync--name-name
 
 ### <a name="schema-reference"></a>Справочник схем
 
