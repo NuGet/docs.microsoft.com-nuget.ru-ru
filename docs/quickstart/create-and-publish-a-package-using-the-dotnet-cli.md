@@ -5,12 +5,12 @@ author: karann-msft
 ms.author: karann
 ms.date: 05/24/2019
 ms.topic: quickstart
-ms.openlocfilehash: c0e6de2c3b9978538d504f4af6e744ece43b4a4d
-ms.sourcegitcommit: 7441f12f06ca380feb87c6192ec69f6108f43ee3
+ms.openlocfilehash: 8727f67608593e6ae8b96daa81b7423782dfc219
+ms.sourcegitcommit: 60414a17af65237652c1de9926475a74856b91cc
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/15/2019
-ms.locfileid: "69488936"
+ms.lasthandoff: 11/14/2019
+ms.locfileid: "74096927"
 ---
 # <a name="quickstart-create-and-publish-a-package-dotnet-cli"></a>Краткое руководство. Создание и публикация пакета (dotnet CLI)
 
@@ -33,8 +33,6 @@ ms.locfileid: "69488936"
 1. Введите `dotnet new classlib`; команда использует имя текущей папки для проекта.
 
    Будет создан новый проект.
-
-1. Чтобы проверить, что приложение создано правильно, используйте команду `dotnet run`.
 
 ## <a name="add-package-metadata-to-the-project-file"></a>Добавление метаданных пакета в файл проекта
 
