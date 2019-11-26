@@ -6,12 +6,12 @@ ms.author: anangaur
 ms.date: 09/23/2019
 ms.topic: conceptual
 ms.reviewer: karann-msft
-ms.openlocfilehash: 120b463fda856fe9dd407b6eba32d60e0918f763
-ms.sourcegitcommit: 188ade66b7ac807ba1667c77cfb9325bf89a8a4a
+ms.openlocfilehash: 70666ddf9cd7bdc448d29d4235e57bc91e2c003e
+ms.sourcegitcommit: 60414a17af65237652c1de9926475a74856b91cc
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/24/2019
-ms.locfileid: "71248885"
+ms.lasthandoff: 11/14/2019
+ms.locfileid: "74096886"
 ---
 # <a name="deprecating-packages"></a>Объявление пакетов нерекомендуемыми
 
@@ -45,7 +45,7 @@ ms.locfileid: "71248885"
 ### <a name="visual-studio"></a>Visual Studio 
 *Доступно начиная с Visual Studio 2019 версии 16.3*
 
-В Visual Studio предупреждение об использовании нерекомендуемого пакета выводится на вкладке `Installed`. В нем указывается пакет и приводятся сведения об объявлении его нерекомендуемым (включая причину этого объявления и данные об альтернативном пакете, который можно использовать вместо него, если таковой имеется).
+В Visual Studio предупреждение об использовании нерекомендуемого пакета выводится на вкладке `Installed`. В нем указывается пакет и приводятся сведения об объявлении его нерекомендуемым (включая причину этого объявления и альтернативный пакет, который можно использовать вместо него, если таковой имеется).
 
    ![Нерекомендуемые пакеты на вкладке "Установленные" диспетчера пакетов в Visual Studio](media/deprecation-vs.png)
 
