@@ -5,12 +5,12 @@ author: karann-msft
 ms.author: karann
 ms.date: 03/16/2018
 ms.topic: conceptual
-ms.openlocfilehash: 231947148295e0c06dcec5aa0e1f479d654a8803
-ms.sourcegitcommit: 60414a17af65237652c1de9926475a74856b91cc
+ms.openlocfilehash: b6a009832430ee08f51ea1028feb878a39f45222
+ms.sourcegitcommit: fe34b1fc79d6a9b2943a951f70b820037d2dd72d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/14/2019
-ms.locfileid: "74096870"
+ms.lasthandoff: 12/04/2019
+ms.locfileid: "74825142"
 ---
 # <a name="package-references-packagereference-in-project-files"></a>Ссылки на пакеты (PackageReference) в файлах проектов
 
@@ -53,6 +53,7 @@ PackageReference также позволяет использовать усло
 ## <a name="using-packagereference-for-a-project-with-no-packagereferences"></a>Использование PackageReference для проекта без объектов PackageReference
 
 Дополнительно: Eсли в проекте нет установленных пакетов (нет объектов PackageReference в файле, а также файла packages.config), но вы хотите восстанавливать проект в стиле PackageReference, можно задать для свойства RestoreProjectStyle проекта значение PackageReference в файле проекта.
+
 ```xml
 <PropertyGroup>
     <!--- ... -->
@@ -60,6 +61,7 @@ PackageReference также позволяет использовать усло
     <!--- ... -->
 </PropertyGroup>    
 ```
+
 Это может быть удобно при ссылке на проекты в стиле PackageReference (существующие CSPROJ- или SDK-проекты). Это позволит вашему проекту транзитивно ссылаться на пакеты, на которые ссылаются эти проекты.
 
 ## <a name="packagereference-and-sources"></a>PackageReference и источники
@@ -206,16 +208,19 @@ PackageReference также позволяет использовать усло
 В сценариях CI/CD и других сценариях, не требующих изменения зависимостей пакета во время выполнения, это можно сделать, задав для `lockedmode` значение `true`:
 
 Для dotnet.exe выполните следующую команду:
+
 ```
 > dotnet.exe restore --locked-mode
 ```
 
 Для msbuild.exe выполните такую команду:
+
 ```
 > msbuild.exe -t:restore -p:RestoreLockedMode=true
 ```
 
 Это условное свойство MSBuild также можно задать в файле проекта:
+
 ```xml
 <PropertyGroup>
     <!--- ... -->
@@ -232,12 +237,14 @@ PackageReference также позволяет использовать усло
 Но если это проект библиотеки, который не следует отправлять, или проект общего кода, от которого зависят другие проекты, **не нужно** возвращать файл блокировки в исходный код. Сохранение файла блокировки не причинит вреда. Но заблокированные зависимости пакетов, перечисленные в файле блокировки, нельзя использовать для проекта общего кода во время восстановления или сборки проекта, который зависит от этого проекта общего кода.
 
 Пример
+
 ```
 ProjectA
   |------> PackageX 2.0.0
   |------> ProjectB
              |------>PackageX 1.0.0
 ```
+
 Если `ProjectA` зависит от `PackageX` версии `2.0.0` и ссылается на проект `ProjectB`, который зависит от `PackageX` версии `1.0.0`, файл блокировки для `ProjectB` будет содержать зависимость от `PackageX` версии `1.0.0`. Но при создании проекта `ProjectA` его файл блокировки будет содержать зависимость от `PackageX` версии **`2.0.0`** , а **не** `1.0.0`, как указано в файле блокировки для `ProjectB`. Таким образом, файл блокировки проекта общего кода играет незначительную роль для разрешенных пакетов, от которых зависят проекты.
 
 ### <a name="lock-file-extensibility"></a>Расширяемость файла блокировки

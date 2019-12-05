@@ -5,12 +5,12 @@ author: mikejo5000
 ms.author: mikejo
 ms.date: 06/03/2019
 ms.topic: conceptual
-ms.openlocfilehash: d9e9f0026e4c907351b4b0cd0adced28a4670575
-ms.sourcegitcommit: e763d9549cee3b6254ec2d6382baccb44433d42c
+ms.openlocfilehash: 67cca81c48970c7f2e2cf0a64ee5ba57704a31e2
+ms.sourcegitcommit: fe34b1fc79d6a9b2943a951f70b820037d2dd72d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/09/2019
-ms.locfileid: "68860593"
+ms.lasthandoff: 12/04/2019
+ms.locfileid: "74825156"
 ---
 # <a name="install-and-manage-packages-using-the-dotnet-cli"></a>Установка пакетов и управление ими с использованием CLI dotnet
 
@@ -32,13 +32,13 @@ ms.locfileid: "68860593"
 
 2. Выполните следующую команду для установки пакета Nuget:
 
-    ```cli
+    ```dotnetcli
     dotnet add package <PACKAGE_NAME>
     ```
 
     Например, чтобы установить пакет `Newtonsoft.Json`, выполните следующую команду
 
-    ```cli
+    ```dotnetcli
     dotnet add package Newtonsoft.Json
     ```
 
@@ -56,13 +56,13 @@ ms.locfileid: "68860593"
 
 Если версия пакета не указана, NuGet установит его последнюю версию. Также вы можете выполнить команду [dotnet add package](/dotnet/core/tools/dotnet-add-package?tabs=netcore2x), чтобы установить определенную версию пакета Nuget:
 
-```cli
+```dotnetcli
 dotnet add package <PACKAGE_NAME> -v <VERSION>
 ```
 
 Например, чтобы добавить версию 12.0.1 пакета `Newtonsoft.Json`, воспользуйтесь следующей командой:
 
-```cli
+```dotnetcli
 dotnet add package Newtonsoft.Json -v 12.0.1
 ```
 
@@ -70,7 +70,7 @@ dotnet add package Newtonsoft.Json -v 12.0.1
 
 Чтобы просмотреть список ссылок на пакеты для проекта, воспользуйтесь командой [dotnet list package](/dotnet/core/tools/dotnet-list-package?tabs=netcore2x).
 
-```cli
+```dotnetcli
 dotnet list package
 ```
 
@@ -78,13 +78,13 @@ dotnet list package
 
 Чтобы удалить ссылку на пакет из файла проекта, воспользуйтесь командой [dotnet remove package](/dotnet/core/tools/dotnet-remove-package?tabs=netcore2x).
 
-```cli
+```dotnetcli
 dotnet remove package <PACKAGE_NAME>
 ```
 
 Например, чтобы удалить пакет `Newtonsoft.Json`, выполните следующую команду
 
-```cli
+```dotnetcli
 dotnet remove package Newtonsoft.Json
 ```
 
