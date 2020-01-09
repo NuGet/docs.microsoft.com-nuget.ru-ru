@@ -5,12 +5,12 @@ author: karann-msft
 ms.author: karann
 ms.date: 10/02/2017
 ms.topic: reference
-ms.openlocfilehash: 142af9c4f7d25c3b0d986524313851cceb1e4c60
-ms.sourcegitcommit: efc18d484fdf0c7a8979b564dcb191c030601bb4
+ms.openlocfilehash: 2a82b1977265a8f8a15247759bc3de80a5efe228
+ms.sourcegitcommit: 26a8eae00af2d4be581171e7a73009f94534c336
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/18/2019
-ms.locfileid: "68327931"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75385347"
 ---
 # <a name="powershell-reference"></a>Справочник по PowerShell
 
@@ -24,19 +24,19 @@ ms.locfileid: "68327931"
 
 | Общие команды | Описание | Версия NuGet |
 | --- | --- | --- |
-| [Install-Package](ps-reference/ps-ref-install-package.md) | Устанавливает пакет и его зависимости в проект. | Все |
-| [Update-Package](ps-reference/ps-ref-update-package.md) | Обновляет пакет и его зависимости или все пакеты в проекте. | Все |
+| [Install-Package](ps-reference/ps-ref-install-package.md) | Устанавливает пакет и его зависимости в проект. | Все . |
+| [Update-Package](ps-reference/ps-ref-update-package.md) | Обновляет пакет и его зависимости или все пакеты в проекте. | Все . |
 | [Find-Package](ps-reference/ps-ref-find-package.md) | Выполняет поиск в источнике пакета с помощью идентификатора или ключевых слов. | 3.0+ |
-| [Get-Package](ps-reference/ps-ref-get-package.md) | Возвращает список пакетов, установленных в локальном репозитории, или список пакетов, доступных из источника пакета. | Все |
+| [Get-Package](ps-reference/ps-ref-get-package.md) | Возвращает список пакетов, установленных в локальном репозитории, или список пакетов, доступных из источника пакета. | Все . |
 
 | Вторичные команды | Описание | Версия NuGet |
 | --- | --- | --- |
-| [Add-BindingRedirect](ps-reference/ps-ref-add-bindingredirect.md) | Проверяет все сборки в пути вывода для проекта и добавляет перенаправления привязок в или `app.config` `web.config` там, где это необходимо. | Все |
+| [Add-BindingRedirect](ps-reference/ps-ref-add-bindingredirect.md) | Проверяет все сборки в пути вывода для проекта и добавляет перенаправления привязок в `app.config` или `web.config`, если это необходимо. | Все . |
 | [Get-Project](ps-reference/ps-ref-get-project.md) | Отображает сведения об указанном по умолчанию или проекте. | 3.0+ |
 | [Open-PackagePage](ps-reference/ps-ref-open-packagepage.md) | Запускает браузер по умолчанию с проектом, лицензией или URL-адресом сообщения о нарушении для указанного пакета. | Не рекомендуется в 3.0 + |
-| [Register-TabExpansion](ps-reference/ps-ref-register-tabexpansion.md) | Регистрирует расширение вкладки для параметров команды, позволяя создавать настраиваемые расширения для часто используемых значений параметров. | Все |
+| [Register-TabExpansion](ps-reference/ps-ref-register-tabexpansion.md) | Регистрирует расширение вкладки для параметров команды, позволяя создавать настраиваемые расширения для часто используемых значений параметров. | Все . |
 | [Sync-Package](ps-reference/ps-ref-sync-package.md) | Получение версии установленного пакета из указанного проекта и синхронизация версии с остальными проектами в решении. | 3.0+ |
-| [Uninstall-Package](ps-reference/ps-ref-uninstall-package.md) | Удаляет пакет из проекта, при необходимости удаляя его зависимости. | Все |
+| [Uninstall-Package](ps-reference/ps-ref-uninstall-package.md) | Удаляет пакет из проекта, при необходимости удаляя его зависимости. | Все . |
 
 Для получения полной справки по любой из этих команд в консоли просто выполните следующую команду с именем команды.
 
@@ -44,7 +44,7 @@ ms.locfileid: "68327931"
 Get-Help <command> -full
 ```
 
-Все команды консоли диспетчера пакетов поддерживают следующие [Общие параметры PowerShell](http://go.microsoft.com/fwlink/?LinkID=113216):
+Все команды консоли диспетчера пакетов поддерживают следующие [Общие параметры PowerShell](https://go.microsoft.com/fwlink/?LinkID=113216):
 
 - Отладка
 - ErrorAction
@@ -52,8 +52,8 @@ Get-Help <command> -full
 - OutBuffer
 - OutVariable
 - PipelineVariable
-- Verbose
+- Подробные сведения
 - WarningAction
 - WarningVariable
 
-Дополнительные сведения см. в разделе [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216) в документации по PowerShell.
+Дополнительные сведения см. в [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216) документации по PowerShell.
