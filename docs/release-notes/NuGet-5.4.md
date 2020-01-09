@@ -5,12 +5,12 @@ author: karann-msft
 ms.author: karann
 ms.date: 09/06/2019
 ms.topic: conceptual
-ms.openlocfilehash: 69f78ba5483fcc92887624584663e8c496cfc497
-ms.sourcegitcommit: fe34b1fc79d6a9b2943a951f70b820037d2dd72d
+ms.openlocfilehash: c7fb9c1e587b6603abe63581c662571abfd4506b
+ms.sourcegitcommit: 26a8eae00af2d4be581171e7a73009f94534c336
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/04/2019
-ms.locfileid: "74828396"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75384115"
 ---
 # <a name="nuget-54-release-notes"></a>Заметки о выпуске NuGet 5,4
 
@@ -27,6 +27,8 @@ ms.locfileid: "74828396"
 * Более быстрое время загрузки решения — накладные расходы на выполнение кода NuGet во время первой загрузки решения были сокращены с помощью частичного генератора NGen для сокращения затрат на JIT- [#6007](https://github.com/NuGet/Home/issues/6007)
 
 * Новая вспомогательная функция — для получения списка идентификаторов пакетов и версий следует получить вероятные пакеты верхнего уровня. - [#8316](https://github.com/NuGet/Home/issues/8316)
+
+* Новое [`nuget/setup-nuget`](https://github.com/marketplace/actions/setup-nuget-exe-for-use-with-actions) действие для установки и настройки NuGet. exe в [действиях GitHub](https://github.com/features/actions). - [#8818](https://github.com/NuGet/Home/issues/8818)
 
 ### <a name="issues-fixed-in-this-release"></a>Исправленные ошибки в этом выпуске
 

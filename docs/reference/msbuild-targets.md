@@ -5,12 +5,12 @@ author: karann-msft
 ms.author: karann
 ms.date: 03/23/2018
 ms.topic: conceptual
-ms.openlocfilehash: ed3545454a811c311190a191c566d9e9192f3fcc
-ms.sourcegitcommit: fe34b1fc79d6a9b2943a951f70b820037d2dd72d
+ms.openlocfilehash: 2c2b5b21569e2644154670d502146f1e0f9c4c81
+ms.sourcegitcommit: 26a8eae00af2d4be581171e7a73009f94534c336
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/04/2019
-ms.locfileid: "74825066"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75385018"
 ---
 # <a name="nuget-pack-and-restore-as-msbuild-targets"></a>Объекты pack и restore NuGet в качестве целевых объектов MSBuild
 
@@ -46,7 +46,7 @@ ms.locfileid: "74825066"
 
 Обратите внимание, что свойства `Owners` и `Summary` из `.nuspec` не поддерживаются в MSBuild.
 
-| Значение атрибута или NuSpec | Свойство MSBuild | Значение по умолчанию | Примечания |
+| Значение атрибута или NuSpec | Свойство MSBuild | Default | Примечания |
 |--------|--------|--------|--------|
 | Id | PackageId | AssemblyName | $(AssemblyName) из MSBuild |
 | {2&gt;Version&lt;2} | PackageVersion | {2&gt;Version&lt;2} | Это значение совместимо с SemVer, например "1.0.0", "1.0.0-beta" или "1.0.0-beta-00345" |
@@ -56,7 +56,7 @@ ms.locfileid: "74825066"
 | Владельцы | Н/Д | Не существует в NuSpec | |
 | Заголовок | Заголовок | Идентификатор пакета| |
 | Описание | Описание | "Описание пакета" | |
-| Авторские права | Авторские права | пустых | |
+| Copyright | Copyright | пустых | |
 | RequireLicenseAcceptance | PackageRequireLicenseAcceptance | false | |
 | лицензия | PackageLicenseExpression | пустых | Соответствует `<license type="expression">` |
 | лицензия | PackageLicenseFile | пустых | Соответствует `<license type="file">`. Необходимо явно упаковать файл лицензии, на который указывает ссылка. |
@@ -81,7 +81,7 @@ ms.locfileid: "74825066"
 - PackageId
 - Authors
 - Описание
-- Авторские права
+- Copyright
 - PackageRequireLicenseAcceptance
 - DevelopmentDependency
 - PackageLicenseExpression
@@ -120,7 +120,7 @@ ms.locfileid: "74825066"
 
 `PackageIconUrl` будет нерекомендуемым в пользу нового свойства [`PackageIcon`](#packageicon) .
 
-Начиная с NuGet 5,3 & Visual Studio 2019 версии 16,3, `pack` выдаст предупреждение [NU5048](errors-and-warnings/nu5048) , если в метаданных пакета указано только `PackageIconUrl`.
+Начиная с NuGet 5,3 & Visual Studio 2019 версии 16,3, `pack` выдаст предупреждение [NU5048](./errors-and-warnings/nu5048.md) , если в метаданных пакета указано только `PackageIconUrl`.
 
 ### <a name="packageicon"></a>паккажеикон
 
@@ -371,7 +371,7 @@ msbuild -t:pack <path to .csproj file> -p:NuspecFile=<path to nuspec file> -p:Nu
 
 Дополнительные параметры восстановления могут поступать из свойств MSBuild в файле проекта. Значения также можно задать из командной строки с помощью параметра `-p:` (см. примеры ниже).
 
-| свойство; | Описание |
+| Идентификаторы | Описание |
 |--------|--------|
 | RestoreSources | Разделенный точками с запятой список источников пакетов. |
 | RestorePackagesPath | Путь к папке пакетов пользователя. |

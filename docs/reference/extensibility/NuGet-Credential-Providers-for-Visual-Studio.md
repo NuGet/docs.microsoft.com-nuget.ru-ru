@@ -5,12 +5,12 @@ author: karann-msft
 ms.author: karann
 ms.date: 01/09/2017
 ms.topic: conceptual
-ms.openlocfilehash: 4e781a2462871bceeb1c7f02220320daabdab98a
-ms.sourcegitcommit: a0807671386782021acb7588741390e6f07e94e1
+ms.openlocfilehash: 906d07eb22599eb423b00300954ff2601dd33369
+ms.sourcegitcommit: 26a8eae00af2d4be581171e7a73009f94534c336
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/05/2019
-ms.locfileid: "70384431"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75383555"
 ---
 # <a name="authenticating-feeds-in-visual-studio-with-nuget-credential-providers"></a>Проверка подлинности веб-каналов в Visual Studio с помощью поставщиков учетных данных NuGet
 
@@ -22,7 +22,7 @@ ms.locfileid: "70384431"
 Начиная с 4.8 + NuGet в Visual Studio, поддерживаются также новые подключаемые модули многоплатформенной проверки подлинности, но они не являются рекомендуемым подходом для повышения производительности.
 
 > [!Note]
-> Поставщики учетных данных NuGet для Visual Studio должны быть установлены как обычные расширения Visual Studio, и для них потребуется [Visual studio 2017](http://aka.ms/vs/15/release/vs_enterprise.exe) или более поздней версии.
+> Поставщики учетных данных NuGet для Visual Studio должны быть установлены как обычные расширения Visual Studio, и для них потребуется [Visual studio 2017](https://aka.ms/vs/15/release/vs_enterprise.exe) или более поздней версии.
 >
 > Поставщики учетных данных NuGet для Visual Studio работают только в Visual Studio (не в dotnet restore или NuGet. exe). Сведения о поставщиках учетных данных с помощью NuGet. exe см. в разделе [поставщики учетных данных NuGet. exe](nuget-exe-Credential-providers.md).
 > Для поставщиков учетных данных в DotNet и MSBuild см. Дополнительные сведения о [подключаемых](nuget-cross-platform-authentication-plugin.md) модулях NuGet.
@@ -31,7 +31,7 @@ ms.locfileid: "70384431"
 
 Существует поставщик учетных данных, встроенный в расширение NuGet Visual Studio для поддержки Visual Studio Team Services.
 
-Расширение NuGet для Visual Studio использует внутренний `VsCredentialProviderImporter` объект, который также сканирует поставщики учетных данных подключаемых модулей. Эти поставщики учетных данных подключаемых модулей должны быть обнаруживаемыми в качестве экспорта MEF типа `IVsCredentialProvider`.
+Расширение NuGet для Visual Studio использует внутренние `VsCredentialProviderImporter`, которые также проверяют поставщики учетных данных подключаемых модулей. Эти поставщики учетных данных подключаемых модулей должны быть обнаруживаемыми в качестве экспорта MEF типа `IVsCredentialProvider`.
 
 Доступные поставщики учетных данных подключаемых модулей включают:
 
@@ -43,15 +43,15 @@ ms.locfileid: "70384431"
 
 При получении учетных данных служба учетных данных попытается использовать поставщики учетных данных в следующем порядке, останавливаясь, как только будут получены учетные данные:
 
-1. Учетные данные будут получены из файлов конфигурации NuGet (с помощью встроенной `SettingsCredentialProvider`функции).
-1. Если источник пакета находится в Visual Studio Team Services, `VisualStudioAccountProvider` будет использоваться.
+1. Учетные данные будут получены из файлов конфигурации NuGet (с помощью встроенной `SettingsCredentialProvider`).
+1. Если источник пакета находится в Visual Studio Team Services, будет использоваться `VisualStudioAccountProvider`.
 1. Все другие поставщики учетных данных подключаемых модулей Visual Studio будут последовательной попытки.
 1. Постарайтесь использовать все межплатформенные поставщики учетных данных NuGet последовательно.
 1. Если учетные данные еще не получены, пользователь получит запрос на ввод учетных данных, используя стандартное диалоговое окно обычной проверки подлинности.
 
 ### <a name="implementing-ivscredentialprovidergetcredentialsasync"></a>Реализация Ивскредентиалпровидер. Жеткредентиалсасинк
 
-Чтобы создать поставщик учетных данных NuGet для Visual Studio, создайте расширение Visual Studio, которое предоставляет открытый экспорт MEF, реализующий `IVsCredentialProvider` тип, и соответствует описанным ниже принципам.
+Чтобы создать поставщик учетных данных NuGet для Visual Studio, создайте расширение Visual Studio, которое предоставляет открытый экспорт MEF, реализующий тип `IVsCredentialProvider`, и соответствует описанным ниже принципам.
 
 ```cs
 public interface IVsCredentialProvider
@@ -70,10 +70,10 @@ public interface IVsCredentialProvider
 
 Каждый поставщик учетных данных NuGet для Visual Studio должен:
 
-1. Определите, может ли он предоставлять учетные данные для целевого URI перед инициацией получения учетных данных. Если поставщик не может предоставить учетные данные для целевого источника, он должен вернуть `null`.
+1. Определите, может ли он предоставлять учетные данные для целевого URI перед инициацией получения учетных данных. Если поставщик не может предоставить учетные данные для целевого источника, он должен возвращать `null`.
 1. Если поставщик обрабатывает запросы для целевого URI, но не может предоставить учетные данные, должно быть выдано исключение.
 
-Пользовательский поставщик учетных данных NuGet для Visual Studio должен реализовывать `IVsCredentialProvider` интерфейс, доступный в [пакете NuGet. VisualStudio](https://www.nuget.org/packages/NuGet.VisualStudio/).
+Пользовательский поставщик учетных данных NuGet для Visual Studio должен реализовывать интерфейс `IVsCredentialProvider`, доступный в [пакете NuGet. VisualStudio](https://www.nuget.org/packages/NuGet.VisualStudio/).
 
 #### <a name="getcredentialasync"></a>жеткредентиаласинк
 
@@ -86,4 +86,4 @@ public interface IVsCredentialProvider
 | bool Неинтерактивный | Если значение — true, поставщик учетных данных должен отключить все запросы пользователя и использовать вместо них значения по умолчанию. |
 | CancellationToken cancellationToken | Этот токен отмены должен быть проверен, чтобы определить, была ли отменена операция, запрашивающая учетные данные. |
 
-**Возвращаемое значение**: Объект учетных данных, реализующий [ `System.Net.ICredentials` интерфейс](/dotnet/api/system.net.icredentials?view=netstandard-2.0).
+**Возвращаемое значение**: объект учетных данных, реализующий [интерфейс`System.Net.ICredentials`](/dotnet/api/system.net.icredentials?view=netstandard-2.0).

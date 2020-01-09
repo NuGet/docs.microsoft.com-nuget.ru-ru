@@ -5,12 +5,12 @@ author: karann-msft
 ms.author: karann
 ms.date: 12/07/2017
 ms.topic: reference
-ms.openlocfilehash: b1e88d32deb3ff34833ef22a9cbb8cad3f0d4354
-ms.sourcegitcommit: efc18d484fdf0c7a8979b564dcb191c030601bb4
+ms.openlocfilehash: d3d156cf882229260e8cf55f8ece2804aec36dc9
+ms.sourcegitcommit: 26a8eae00af2d4be581171e7a73009f94534c336
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/18/2019
-ms.locfileid: "68327461"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75384988"
 ---
 # <a name="add-bindingredirect-package-manager-console-in-visual-studio"></a>Add-BindingRedirect (консоль диспетчера пакетов в Visual Studio)
 
@@ -36,7 +36,7 @@ Add-BindingRedirect [-ProjectName] <string> [<CommonParameters>]
 
 ## <a name="common-parameters"></a>Общие параметры
 
-`Add-BindingRedirect`поддерживает следующие [Общие параметры PowerShell](http://go.microsoft.com/fwlink/?LinkID=113216): Отладка, действие при ошибке, ErrorVariable, буфер, переменная, PipelineVariable, Verbose, WarningAction и WarningVariable.
+`Add-BindingRedirect` поддерживает следующие [Общие параметры PowerShell](https://go.microsoft.com/fwlink/?LinkID=113216): Отладка, действие при ошибке, ErrorVariable, буфер, переменная, PipelineVariable, Verbose, WarningAction и WarningVariable.
 
 ## <a name="examples"></a>Примеры
 
