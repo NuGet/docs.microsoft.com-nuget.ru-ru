@@ -49,7 +49,7 @@
 ### [Создание собственного пакета](guides/native-packages.md)
 ### [Создание элементов управления пользовательским интерфейсом в виде пакета NuGet](guides/create-UI-controls.md)
 ### [Создание анализатора в виде пакета NuGet](guides/analyzers-conventions.md)
-### [Создание пакета для Xamarin с помощью Visual Studio 2015](guides/create-packages-for-xamarin.md)
+### [Создание пакета для Xamarin с помощью Visual Studio 2017 или 2019](guides/create-packages-for-xamarin.md)
 ### [Создание пакета, содержащего сборки COM-взаимодействия](create-packages/author-packages-with-COM-interop-assemblies.md)
 ## Подписывание пакетов
 ### [Подписывание пакета](create-packages/sign-a-package.md)
@@ -67,7 +67,7 @@
 ## [Процесс установки пакета](concepts/package-installation-process.md)
 ## [Управление версиями пакета](concepts/package-versioning.md)
 ## [Разрешение зависимостей](concepts/dependency-resolution.md)
-# Ссылка
+# Справочник
 ## [.nuspec](reference/nuspec.md)
 ## [Файл Nuget.Config](reference/nuget-config-file.md)
 ## [Целевые платформы](reference/target-frameworks.md)
