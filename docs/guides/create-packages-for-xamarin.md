@@ -1,22 +1,22 @@
 ---
-title: Создание пакетов NuGet для Xamarin (iOS, Android и Windows) с помощью Visual Studio 2015
+title: Создание пакетов NuGet для Xamarin (iOS, Android и Windows) с помощью Visual Studio 2017 или 2019
 description: Комплексное пошаговое руководство по созданию пакетов NuGet для Xamarin, использующих собственные API в iOS, Android и Windows.
 author: karann-msft
 ms.author: karann
-ms.date: 01/09/2017
+ms.date: 11/05/2019
 ms.topic: tutorial
-ms.openlocfilehash: 927991429d8d4ce54aa35be3e450475a38141b11
-ms.sourcegitcommit: 7441f12f06ca380feb87c6192ec69f6108f43ee3
+ms.openlocfilehash: fce3c9a92dfee325f9e914bf3d6444601fb38b6c
+ms.sourcegitcommit: 26a8eae00af2d4be581171e7a73009f94534c336
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/15/2019
-ms.locfileid: "69488909"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75385694"
 ---
-# <a name="create-packages-for-xamarin-with-visual-studio-2015"></a>Создание пакетов для Xamarin с помощью Visual Studio 2015
+# <a name="create-packages-for-xamarin-with-visual-studio-2017-or-2019"></a>Создание пакетов для Xamarin с помощью Visual Studio 2017 или 2019
 
 Пакет Xamarin содержит код, использующий собственные API в iOS, Android и Windows в зависимости от операционной системы во время выполнения. Хотя это несложно сделать, предпочтительнее позволить разработчикам использовать пакет из библиотек .NET Standard или PCL через общую контактную зону API.
 
-В этом пошаговом руководстве с помощью Visual Studio 2015 вы создадите кроссплатформенный пакет NuGet, который можно использовать в проектах для мобильных устройств в Windows, iOS и Android.
+В этом пошаговом руководстве с помощью Visual Studio 2017 или 2019 вы создадите кроссплатформенный пакет NuGet, который можно использовать в проектах для мобильных устройств в Windows, iOS и Android.
 
 1. [Необходимые компоненты](#prerequisites)
 1. [Создание структуры проекта и кода абстракции](#create-the-project-structure-and-abstraction-code)
@@ -27,7 +27,7 @@ ms.locfileid: "69488909"
 
 ## <a name="prerequisites"></a>Предварительные требования
 
-1. Visual Studio 2015 с универсальной платформой Windows (UWP) и Xamarin. Установите бесплатный выпуск Community с сайта [visualstudio.com](https://www.visualstudio.com/). Вы также можете использовать выпуски Professional и Enterprise. Чтобы включить средства UWP и Xamarin, выберите "Выборочная установка" и задайте соответствующие параметры.
+1. Visual Studio 2017 или 2019 с универсальной платформой Windows (UWP) и Xamarin. Установите бесплатный выпуск Community с сайта [visualstudio.com](https://www.visualstudio.com/). Вы также можете использовать выпуски Professional и Enterprise. Чтобы включить средства UWP и Xamarin, выберите "Выборочная установка" и задайте соответствующие параметры.
 1. Интерфейс командной строки NuGet. Скачайте последнюю версию nuget.exe на странице [nuget.org/downloads](https://nuget.org/downloads), сохранив ее в любом месте на ваш выбор. Затем добавьте это расположение в переменную среды PATH, если это еще не сделано.
 
 > [!Note]
@@ -35,23 +35,33 @@ ms.locfileid: "69488909"
 
 ## <a name="create-the-project-structure-and-abstraction-code"></a>Создание структуры проекта и кода абстракции
 
-1. Скачайте и запустите [расширение шаблонов подключаемого модуля для Xamarin](https://marketplace.visualstudio.com/items?itemName=vs-publisher-473885.PluginForXamarinTemplates) для Visual Studio. Эти шаблоны упрощают создание структуры проекта для этого пошагового руководства.
-1. В Visual Studio выберите **Файл > Создать > Проект**, выполните поиск `Plugin`, выберите шаблон **Plugin for Xamarin** (Подключаемый модуль для Xamarin), измените имя на LoggingLibrary и нажмите кнопку "ОК".
+1. Скачайте и запустите [расширение шаблонов кроссплатформенного подключаемого модуля .NET Standard](https://marketplace.visualstudio.com/items?itemName=vs-publisher-473885.PluginForXamarinTemplates) для Visual Studio. Эти шаблоны упрощают создание структуры проекта для этого пошагового руководства.
+1. В Visual Studio 2017 выберите **Файл > Создать > Проект**, выполните поиск по запросу `Plugin`, выберите шаблон **Cross-Platform .NET Standard Library Plugin** (Подключаемый модуль для кроссплатформенной библиотеки .NET Standard), измените имя на LoggingLibrary и нажмите кнопку OK.
 
-    ![Новый проект пустого приложения (переносимое Xamarin.Forms) в Visual Studio](media/CrossPlatform-NewProject.png)
+    ![Новый проект пустого приложения (переносимое Xamarin.Forms) в Visual Studio 2017](media/CrossPlatform-NewProject.png)
 
-Полученное решение содержит два проекта PCL, а также различные проекты для конкретных платформ:
+    В Visual Studio 2019 выберите **Файл > Создать > Проект**, выполните поиск по запросу `Plugin`, выберите шаблон **Cross-Platform .NET Standard Library Plugin** (Подключаемый модуль для кроссплатформенной библиотеки .NET Standard) и нажмите кнопку "Далее".
 
-- PCL с именем `Plugin.LoggingLibrary.Abstractions (Portable)` определяет общий интерфейс (контактную зону API) компонента, в данном случае — интерфейс `ILoggingLibrary`, содержащийся в файле ILoggingLibrary.cs. Именно здесь вы можете определить интерфейс для библиотеки.
-- Другой PCL `Plugin.LoggingLibrary (Portable)` содержит код в CrossLoggingLibrary.cs, который будет искать реализацию абстрактного интерфейса во время выполнения для конкретной платформы. В общем случае изменять этот файл не требуется.
-- Каждый из проектов для конкретных платформ, таких как `Plugin.LoggingLibrary.Android`, содержит собственную реализацию интерфейса в его соответствующем файле LoggingLibraryImplementation.cs. Именно здесь вы можете создать код библиотеки.
+    ![Новый проект пустого приложения (переносимое Xamarin.Forms) в Visual Studio 2019](media/CrossPlatform-NewProject19-Part1.png)
 
-По умолчанию файл ILoggingLibrary.cs проекта Abstractions содержит определение интерфейса, но не методы. В рамках этого пошагового руководства добавьте метод `Log` следующим образом:
+    Измените имя на LoggingLibrary и щелкните "Создать".
+
+    ![Новая конфигурация пустого приложения (переносимое Xamarin.Forms) в Visual Studio 2019](media/CrossPlatform-NewProject19-Part2.png)
+
+Полученное решение содержит два общих проекта, а также различные проекты для конкретных платформ:
+
+- Проект `ILoggingLibrary`, который содержится в файле `ILoggingLibrary.shared.cs`, определяет общий интерфейс (контактную зону API) компонента. Именно здесь вы можете определить интерфейс для библиотеки.
+- Другой общий проект содержит код в `CrossLoggingLibrary.shared.cs`, который будет определять реализацию абстрактного интерфейса во время выполнения для конкретной платформы. В общем случае изменять этот файл не требуется.
+- Каждый из проектов для конкретных платформ, таких как `LoggingLibrary.android.cs`, содержит собственную реализацию интерфейса в его соответствующих файлах `LoggingLibraryImplementation.cs` (VS 2017) или `LoggingLibrary.<PLATFORM>.cs` (VS 2019). Именно здесь вы можете создать код библиотеки.
+
+По умолчанию файл ILoggingLibrary.shared.cs проекта `ILoggingLibrary` содержит определение интерфейса, но не методы. В рамках этого пошагового руководства добавьте метод `Log` следующим образом:
 
 ```cs
 using System;
+using System.Collections.Generic;
+using System.Text;
 
-namespace Plugin.LoggingLibrary.Abstractions
+namespace Plugin.LoggingLibrary
 {
     /// <summary>
     /// Interface for LoggingLibrary
@@ -70,11 +80,12 @@ namespace Plugin.LoggingLibrary.Abstractions
 
 Чтобы реализовать интерфейс `ILoggingLibrary` и его методы для конкретной платформы, сделайте следующее:
 
-1. Откройте файл `LoggingLibraryImplementation.cs` для проекта каждой платформы и добавьте необходимый код. Например (при использовании проекта `Plugin.LoggingLibrary.Android`):
+1. Откройте файл `LoggingLibraryImplementation.cs` (VS 2017) или `LoggingLibrary.<PLATFORM>.cs` (VS 2019) для проекта каждой платформы и добавьте необходимый код. Например (при использовании проекта платформы `Android`):
 
     ```cs
-    using Plugin.LoggingLibrary.Abstractions;
     using System;
+    using System.Collections.Generic;
+    using System.Text;
 
     namespace Plugin.LoggingLibrary
     {
@@ -95,9 +106,10 @@ namespace Plugin.LoggingLibrary.Abstractions
     ```
 
 1. Повторите эту реализацию в проектах для каждой платформы, которую требуется поддерживать.
-1. Щелкните правой кнопкой мыши проект iOS, выберите пункт **Свойства**, откройте вкладку **Сборка** и удалите "\iPhone" из параметров **Выходной путь** и **Файл XML-документации**. Это необходимо лишь для более удобного выполнения последующих действий в данном пошаговом руководстве. Когда все будет готово, сохраните файл.
-1. Щелкните правой кнопкой мыши решение, выберите **Диспетчер конфигураций...** и установите флажки **Сборка** для PCL и каждой поддерживаемой платформы.
 1. Щелкните правой кнопкой мыши решение и выберите **Собрать решение**, чтобы проверить свою работу и создать артефакты, которые вы затем упакуете. Если возникают ошибки об отсутствующих ссылках, щелкните решение правой кнопкой мыши, выберите **Восстановить пакеты NuGet**, чтобы установить зависимости, и повторите сборку.
+
+> [!Note]
+> Если вы используете Visual Studio 2019, перед тем как выбрать параметр **Восстановить пакеты NuGet** и попытаться выполнить перестроение, необходимо изменить версию `MSBuild.Sdk.Extras` на `2.0.54` в `LoggingLibrary.csproj`. Доступ к этому файлу можно получить только щелкнув правой кнопкой мыши проект (под решением) и выбрав `Unload Project`, после чего нужно щелкнуть правой кнопкой мыши выгруженный проект и выбрать `Edit LoggingLibrary.csproj`.
 
 > [!Note]
 > Чтобы выполнить сборку для iOS, необходим сетевой Mac, подключенный к Visual Studio, как описано в разделе [Введение в Xamarin.iOS для Visual Studio](https://developer.xamarin.com/guides/ios/getting_started/installation/windows/introduction_to_xamarin_ios_for_visual_studio/). Если у вас нет доступного Mac, очистите проект iOS в диспетчере конфигураций (шаг 3 выше).
@@ -125,7 +137,7 @@ namespace Plugin.LoggingLibrary.Abstractions
         <requireLicenseAcceptance>false</requireLicenseAcceptance>
         <description>Awesome application logging utility</description>
         <releaseNotes>First release</releaseNotes>
-        <copyright>Copyright 2016</copyright>
+        <copyright>Copyright 2018</copyright>
         <tags>logger logging logs</tags>
         </metadata>
     </package>
@@ -209,7 +221,7 @@ namespace Plugin.LoggingLibrary.Abstractions
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <description>Awesome application logging utility</description>
     <releaseNotes>First release</releaseNotes>
-    <copyright>Copyright 2016</copyright>
+    <copyright>Copyright 2018</copyright>
     <tags>logger logging logs</tags>
         <dependencies>
         <group targetFramework="MonoAndroid">

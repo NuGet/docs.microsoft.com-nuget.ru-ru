@@ -5,12 +5,12 @@ author: karann-msft
 ms.author: karann
 ms.date: 11/11/2016
 ms.topic: conceptual
-ms.openlocfilehash: b104eb39ddeacd9ca1ea45937cf98ad57531112a
-ms.sourcegitcommit: efc18d484fdf0c7a8979b564dcb191c030601bb4
+ms.openlocfilehash: 8f2b33a7290301bd16db3b1979ae496eee602f55
+ms.sourcegitcommit: 26a8eae00af2d4be581171e7a73009f94534c336
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/18/2019
-ms.locfileid: "68317146"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75383662"
 ---
 # <a name="known-issues-with-nuget"></a>Известные проблемы в NuGet
 
@@ -71,11 +71,11 @@ install-package log4net
 
 Если команда завершается сбоем, проверьте, существует ли файл в этом расположении.
 
-Дополнительные сведения об этой ошибке см. в описании соответствующего [рабочего элемента](https://nuget.codeplex.com/workitem/3609 "Рабочий элемент 3609").
+См. сведения об этой ошибке в описании соответствующего [рабочего элемента](https://nuget.codeplex.com/workitem/3609 "Рабочее задание 3609").
 
 ## <a name="build-failure-after-package-update-in-vs-2012"></a>Сбой сборки после обновления пакета в Visual Studio 2012
 
-Проблема: Вы используете Visual Studio 2012 RTM. При обновлении пакетов NuGet появляется следующее сообщение: "Не удалось удалить один или нескольких пакетов". и запрос на перезапуск Visual Studio. После перезапуска Visual Studio возникают странные ошибки сборки.
+Проблема. Вы используете Visual Studio 2012 RTM. При обновлении пакетов NuGet появляется следующее сообщение: "Не удалось удалить один или нескольких пакетов". и запрос на перезапуск Visual Studio. После перезапуска Visual Studio возникают странные ошибки сборки.
 
 Причина в том, что некоторые файлы в старых пакетах блокируются фоновым процессом MSBuild. Даже после перезапуска Visual Studio фоновый процесс MSBuild по-прежнему использует файлы из старых пакетов, что приводит к сбоям сборки.
 
@@ -90,7 +90,7 @@ install-package log4net
 В журналах можно найти упоминание исключения `SignatureMismatchException`.
 
 Чтобы эта ошибка не происходила, можно установить [исправление для Visual Studio 2010 с пакетом обновления 1 (SP1)](http://bit.ly/vsixcertfix).
-Кроме того, можно просто удалить диспетчер NuGet (когда среда Visual Studio запущена с правами администратора), а затем установить его снова из коллекции расширений Visual Studio.  Дополнительные сведения см. в разделе [http://support.microsoft.com/kb/2581019](http://support.microsoft.com/kb/2581019).
+Кроме того, можно просто удалить диспетчер NuGet (когда среда Visual Studio запущена с правами администратора), а затем установить его снова из коллекции расширений Visual Studio. Дополнительные сведения см. в разделе <https://support.microsoft.com/kb/2581019>.
 
 ## <a name="package-manager-console-throws-an-exception-when-the-reflector-visual-studio-add-in-is-also-installed"></a>Консоль диспетчера пакетов выдает исключение, если также установлена надстройка Reflector для Visual Studio
 
@@ -105,7 +105,7 @@ install-package log4net
     Command execution stopped because the preference variable "ErrorActionPreference" or common parameter
     is set to Stop: Unable to find type
 
-или
+or
 
     System.Management.Automation.CmdletInvocationException: Could not load file or assembly 'Scripts\nuget.psm1' or one of its dependencies. <br />The parameter is incorrect. (Exception from HRESULT: 0x80070057 (E_INVALIDARG)) ---&gt; System.IO.FileLoadException: Could not load file or <br />assembly 'Scripts\nuget.psm1' or one of its dependencies. The parameter is incorrect. (Exception from HRESULT: 0x80070057 (E_INVALIDARG)) <br />---&gt; System.ArgumentException: Illegal characters in path.
        at System.IO.Path.CheckInvalidPathChars(String path)
@@ -159,7 +159,7 @@ install-package log4net
 
 ## <a name="the-package-manager-console-crashes-when-i-open-it-in-windows-xp-whats-wrong"></a>При открытии консоли диспетчера пакетов в Windows XP происходит аварийное завершение. В чем проблема?
 
-Для NuGet требуется среда выполнения PowerShell 2.0. В Windows XP она по умолчанию отсутствует. Вы можете скачать среду выполнения PowerShell 2.0 по адресу [http://support.microsoft.com/kb/968929](http://support.microsoft.com/kb/968929). После ее установки перезапустите Visual Studio, и можно будет открыть консоль диспетчера пакетов.
+Для NuGet требуется среда выполнения PowerShell 2.0. В Windows XP она по умолчанию отсутствует. Вы можете скачать среду выполнения PowerShell 2.0 по адресу <https://support.microsoft.com/kb/968929>. После ее установки перезапустите Visual Studio, и можно будет открыть консоль диспетчера пакетов.
 
 ## <a name="visual-studio-2010-sp1-beta-crashes-on-exit-if-the-package-manager-console-is-open"></a>При выходе из бета-версии Visual Studio 2010 с пакетом обновления 1 (SP1) происходит аварийное завершение, если открыта консоль диспетчера пакетов.
 
