@@ -5,20 +5,20 @@ author: karann-msft
 ms.author: karann
 ms.date: 01/18/2018
 ms.topic: reference
-ms.openlocfilehash: 61294f4c9d85336dc8b718fd66b236c692bab00e
-ms.sourcegitcommit: efc18d484fdf0c7a8979b564dcb191c030601bb4
+ms.openlocfilehash: 94228521b3be85277990bca2da69518b7070bbdf
+ms.sourcegitcommit: e9c1dd0679ddd8ba3ee992d817b405f13da0472a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/18/2019
-ms.locfileid: "68327741"
+ms.lasthandoff: 01/29/2020
+ms.locfileid: "76813342"
 ---
 # <a name="list-command-nuget-cli"></a>Команда list (интерфейс командной строки NuGet)
 
-Область **применения:** использование пакетов, публикация &bullet; **поддерживаемых версий:** все
+Область **применения:** использование пакетов, публикация &bullet; **Поддерживаемые версии:** все
 
-Отображает список пакетов из заданного источника. Если источники не указаны, используются все источники, определенные в глобальном файле `%AppData%\NuGet\NuGet.Config` конфигурации (Windows) или. `~/.nuget/NuGet/NuGet.Config` Если `NuGet.Config` не указывает источники `list` , использует канал по умолчанию (NuGet.org).
+Отображает список пакетов из заданного источника. Если источники не указаны, используются все источники, определенные в глобальном файле конфигурации `%AppData%\NuGet\NuGet.Config` (Windows) или `~/.nuget/NuGet/NuGet.Config`. Если `NuGet.Config` не указывает источники, `list` использует канал по умолчанию (nuget.org).
 
-## <a name="usage"></a>Использование
+## <a name="usage"></a>Метрики
 
 ```cli
 nuget list [search terms] [options]
@@ -26,28 +26,42 @@ nuget list [search terms] [options]
 
 где необязательные условия поиска будут фильтровать отображаемый список. Условия поиска применяются к именам пакетов, тегов и описаний пакетов так же, как и при их использовании в nuget.org.
 
-## <a name="options"></a>Параметры
+## <a name="options"></a>Options
 
 | Параметр | Описание |
 | --- | --- |
 | AllVersions | Вывод списка всех версий пакета. По умолчанию отображается только последняя версия пакета. |
-| ConfigFile | Файл конфигурации NuGet, который необходимо применить. Если не указано, `%AppData%\NuGet\NuGet.Config` используется (Windows) `~/.nuget/NuGet/NuGet.Config` или (Mac/Linux).|
+| ConfigFile | Файл конфигурации NuGet, который необходимо применить. Если не указано, используется `%AppData%\NuGet\NuGet.Config` (Windows) или `~/.nuget/NuGet/NuGet.Config` (Mac/Linux).|
 | ForceEnglishOutput | *(3.5 +)* Принудительное выполнение NuGet. exe с использованием инвариантного языка и региональных параметров, основанных на английском языке. |
-| Help | Отображает справочные сведения для команды. |
+| Справка | Отображает справочные сведения для команды. |
 | IncludeDelisted | *(3.2 +)* Отображение пакетов, которые не были перечислены. |
 | NonInteractive | Подавляет запросы на ввод или подтверждение пользователя. |
 | PreRelease | Включает в список предварительные пакеты. |
 | Source | Указывает список источников пакетов для поиска. |
-| Verbosity | Задает объем сведений, отображаемых в выходных данных: *нормальный*, *тихий*, *подробный*. |
+| Уровень детализации | Задает объем сведений, отображаемых в выходных данных: *нормальный*, *тихий*, *подробный*. |
 
 См. также [переменные среды](cli-ref-environment-variables.md)
 
 ## <a name="examples"></a>Примеры
 
-```cli
-nuget list
-
-nuget list chinese korean -Verbosity detailed
-
-nuget list couchbase -AllVersions
+Список всех пакетов из настроенных веб-каналов:
 ```
+nuget list
+```
+Перечисление пакетов, связанных с Azure, с подробным уровнем детализации:
+```
+nuget list Azure -Verbosity detailed
+```
+Вывод списка всех версий пакетов, связанных с Azure, из настроенных веб-каналов:
+```
+nuget list Azure -AllVersions
+```
+Вывод списка всех версий пакетов, связанных с JSON, из указанного источника или веб-канала:
+```
+nuget list JSON -AllVersions -Source "https://nuget.org/api/v2"
+```
+Список пакетов, связанных с JSON, из нескольких источников и веб-каналов:
+```
+nuget list JSON -Source "https://nuget.org/api/v2" -Source "https://other-feed-url-goes-here"
+```
+

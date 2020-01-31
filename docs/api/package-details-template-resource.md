@@ -6,12 +6,12 @@ ms.author: jver
 ms.date: 3/1/2019
 ms.topic: reference
 ms.reviewer: ananguar
-ms.openlocfilehash: 3102cb9a20f354e92a0da8bba6457dc2ad0f0f2d
-ms.sourcegitcommit: 39f2ae79fbbc308e06acf67ee8e24cfcdb2c831b
+ms.openlocfilehash: 1b84c6e88a56216e5747d5bc602219af6695c305
+ms.sourcegitcommit: e9c1dd0679ddd8ba3ee992d817b405f13da0472a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/05/2019
-ms.locfileid: "73610959"
+ms.lasthandoff: 01/29/2020
+ms.locfileid: "76812939"
 ---
 # <a name="package-details-url-template"></a>Шаблон URL-адреса сведений о пакете
 
@@ -45,12 +45,12 @@ URL-адрес должен быть абсолютным URL-адресом, а
 
 ### <a name="url-placeholders"></a>Заполнители URL-адресов
 
-Название        | Type    | Обязательное значение | Примечания
+Name        | Тип    | Обязательное | Примечания
 ----------- | ------- | -------- | -----
-`{id}`      | string  | нет       | Идентификатор пакета для получения сведений
-`{version}` | string  | нет       | Версия пакета для получения сведений
+`{id}`      | string  | no       | Идентификатор пакета для получения сведений
+`{version}` | string  | no       | Версия пакета для получения сведений
 
-Сервер должен принимать значения `{id}` и `{version}` с любыми регистрами. Кроме того, сервер не должен быть чувствительным к [нормализации](https://docs.microsoft.com/nuget/concepts/package-versioning#normalized-version-numbers)версии. Другими словами, сервер должен принять также и ненормализованные версии.
+Сервер должен принимать значения `{id}` и `{version}` с любыми регистрами. Кроме того, сервер не должен быть чувствительным к [нормализации](../concepts/package-versioning.md#normalized-version-numbers)версии. Другими словами, сервер должен принять также и ненормализованные версии.
 
 Например, шаблон сведений о пакете NuGet. org выглядит следующим образом:
 
