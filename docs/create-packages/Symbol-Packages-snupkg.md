@@ -12,12 +12,12 @@ keywords: пакеты символов NuGet, отладка пакета NuGet
 ms.reviewer:
 - anangaur
 - karann
-ms.openlocfilehash: de37cbf1f63da3de07774281eceef99c51abdaa5
-ms.sourcegitcommit: 96aab8a1ad35eca0c029679d0158d9cc93d66009
+ms.openlocfilehash: 0109aea95ec255b3e0abcdff4cf51b4bfeafbb8c
+ms.sourcegitcommit: e9c1dd0679ddd8ba3ee992d817b405f13da0472a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/06/2020
-ms.locfileid: "75676384"
+ms.lasthandoff: 01/29/2020
+ms.locfileid: "76813485"
 ---
 # <a name="creating-symbol-packages-snupkg"></a>Создание пакетов символов (SNUPKG)
 
@@ -46,7 +46,7 @@ ms.locfileid: "75676384"
      dotnet pack MyPackage.csproj -p:IncludeSymbols=true -p:SymbolPackageFormat=snupkg
      ```
 
-  or
+  или диспетчер конфигурации служб
 
   ```cli
   msbuild MyPackage.csproj /t:pack /p:IncludeSymbols=true /p:SymbolPackageFormat=snupkg
@@ -127,10 +127,10 @@ NUPKG-файл не будет отличаться от текущего, а SN
    ```
 
 4) Если автор решит создать пакеты NUPKG и SNUPKG с помощью пользовательского NUSPEC-файла, пакет SNUPKG должен иметь иерархию папок и файлы, указанные в пункте 2).
-5) Поля ```authors``` и ```owners``` будут исключены из NUSPEC-файла пакета SNUPKG.
+5) Следующие поля будут исключены из NUSPEC-файла пакета SNUPKG: ```authors```, ```owners```, ```requireLicenseAcceptance```, ```license type```, ```licenseUrl``` и ```icon```.
 6) Не используйте элемент ```<license>```. SNUPKG-файл рассматривается в рамках той же лицензии, что и соответствующий NUPKG-файл.
 
-## <a name="see-also"></a>См. также
+## <a name="see-also"></a>См. также раздел
 
 Чтобы обеспечить возможность отладки исходного кода сборок .NET, рекомендуется использовать Source Link. Дополнительные сведения см. в [руководстве по Source Link](/dotnet/standard/library-guidance/sourcelink).
 
