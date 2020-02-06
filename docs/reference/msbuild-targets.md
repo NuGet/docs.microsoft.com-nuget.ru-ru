@@ -5,12 +5,12 @@ author: karann-msft
 ms.author: karann
 ms.date: 03/23/2018
 ms.topic: conceptual
-ms.openlocfilehash: 2c2b5b21569e2644154670d502146f1e0f9c4c81
-ms.sourcegitcommit: 26a8eae00af2d4be581171e7a73009f94534c336
+ms.openlocfilehash: 922fc0b25664dede59e33c6cd012dfeedcad0397
+ms.sourcegitcommit: 415c70d7014545c1f65271a2debf8c3c1c5eb688
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75385018"
+ms.lasthandoff: 02/06/2020
+ms.locfileid: "77036933"
 ---
 # <a name="nuget-pack-and-restore-as-msbuild-targets"></a>Объекты pack и restore NuGet в качестве целевых объектов MSBuild
 
@@ -46,32 +46,32 @@ ms.locfileid: "75385018"
 
 Обратите внимание, что свойства `Owners` и `Summary` из `.nuspec` не поддерживаются в MSBuild.
 
-| Значение атрибута или NuSpec | Свойство MSBuild | Default | Примечания |
+| Значение атрибута или NuSpec | Свойство MSBuild | По умолчанию | Примечания |
 |--------|--------|--------|--------|
-| Id | PackageId | AssemblyName | $(AssemblyName) из MSBuild |
-| {2&gt;Version&lt;2} | PackageVersion | {2&gt;Version&lt;2} | Это значение совместимо с SemVer, например "1.0.0", "1.0.0-beta" или "1.0.0-beta-00345" |
-| VersionPrefix | PackageVersionPrefix | пустых | Задав PackageVersion, вы перезапишите PackageVersionPrefix |
-| VersionSuffix | PackageVersionSuffix | пустых | $(VersionSuffix) из MSBuild. Задав PackageVersion, вы перезапишите PackageVersionSuffix |
-| Authors | Authors | Имя текущего пользователя | |
-| Владельцы | Н/Д | Не существует в NuSpec | |
-| Заголовок | Заголовок | Идентификатор пакета| |
-| Описание | Описание | "Описание пакета" | |
-| Copyright | Copyright | пустых | |
+| Идентификатор | PackageId | AssemblyName | $(AssemblyName) из MSBuild |
+| Версия | PackageVersion | Версия | Это значение совместимо с SemVer, например "1.0.0", "1.0.0-beta" или "1.0.0-beta-00345" |
+| VersionPrefix | PackageVersionPrefix | empty | Задав PackageVersion, вы перезапишите PackageVersionPrefix |
+| VersionSuffix | PackageVersionSuffix | empty | $(VersionSuffix) из MSBuild. Задав PackageVersion, вы перезапишите PackageVersionSuffix |
+| Авторы | Авторы | Имя текущего пользователя | |
+| Владельцы | Недоступно | Не существует в NuSpec | |
+| Title | Title | Идентификатор пакета| |
+| Description | Description | "Описание пакета" | |
+| Авторские права | Авторские права | empty | |
 | RequireLicenseAcceptance | PackageRequireLicenseAcceptance | false | |
-| лицензия | PackageLicenseExpression | пустых | Соответствует `<license type="expression">` |
-| лицензия | PackageLicenseFile | пустых | Соответствует `<license type="file">`. Необходимо явно упаковать файл лицензии, на который указывает ссылка. |
-| LicenseUrl | PackageLicenseUrl | пустых | `PackageLicenseUrl` не рекомендуется использовать, используйте свойство Паккажелиценсикспрессион или Паккажелиценсефиле. |
-| ProjectUrl | PackageProjectUrl | пустых | |
-| Значок | паккажеикон | пустых | Необходимо явно упаковать файл изображения значка, на который указывает ссылка.|
-| IconUrl | PackageIconUrl | пустых | Для лучшей работы с предыдущими версиями `PackageIconUrl` следует указать в дополнение к `PackageIcon`. Более длительный срок `PackageIconUrl` будет устаревшим. |
-| Tags | PackageTags | пустых | Теги разделяются точкой с запятой. |
-| ReleaseNotes | PackageReleaseNotes | пустых | |
-| Репозиторий/URL-адрес | RepositoryUrl | пустых | URL-адрес репозитория, используемый для клонирования или извлечения исходного кода. Пример: *https://github.com/NuGet/NuGet.Client.git* |
-| Репозиторий или тип | RepositoryType | пустых | Тип репозитория. Примеры: *Git*, *TFS*. |
-| Репозиторий или ветвь | RepositoryBranch | пустых | Дополнительные сведения о ветви репозитория. Для включения этого свойства также необходимо указать *репоситорюрл* . Пример: *master* (NuGet 4.7.0 +) |
-| Репозиторий/фиксация | RepositoryCommit | пустых | Необязательная фиксация или набор изменений репозитория для указания источника, на основе которого был создан пакет. Для включения этого свойства также необходимо указать *репоситорюрл* . Пример: *0e4d1b598f350b3dc675018d539114d1328189ef* (NuGet 4.7.0 +) |
+| license | PackageLicenseExpression | empty | Соответствует `<license type="expression">` |
+| license | PackageLicenseFile | empty | Соответствует `<license type="file">`. Необходимо явно упаковать файл лицензии, на который указывает ссылка. |
+| LicenseUrl | PackageLicenseUrl | empty | `PackageLicenseUrl` не рекомендуется использовать, используйте свойство Паккажелиценсикспрессион или Паккажелиценсефиле. |
+| ProjectUrl | PackageProjectUrl | empty | |
+| Значок | паккажеикон | empty | Необходимо явно упаковать файл изображения значка, на который указывает ссылка.|
+| IconUrl | PackageIconUrl | empty | Для лучшей работы с предыдущими версиями `PackageIconUrl` следует указать в дополнение к `PackageIcon`. Более длительный срок `PackageIconUrl` будет устаревшим. |
+| Теги | PackageTags | empty | Теги разделяются точкой с запятой. |
+| ReleaseNotes | PackageReleaseNotes | empty | |
+| Репозиторий/URL-адрес | RepositoryUrl | empty | URL-адрес репозитория, используемый для клонирования или извлечения исходного кода. Пример: *https://github.com/NuGet/NuGet.Client.git* |
+| Репозиторий или тип | RepositoryType | empty | Тип репозитория. Примеры: *Git*, *TFS*. |
+| Репозиторий или ветвь | RepositoryBranch | empty | Дополнительные сведения о ветви репозитория. Для включения этого свойства также необходимо указать *репоситорюрл* . Пример: *master* (NuGet 4.7.0 +) |
+| Репозиторий/фиксация | RepositoryCommit | empty | Необязательная фиксация или набор изменений репозитория для указания источника, на основе которого был создан пакет. Для включения этого свойства также необходимо указать *репоситорюрл* . Пример: *0e4d1b598f350b3dc675018d539114d1328189ef* (NuGet 4.7.0 +) |
 | PackageType | `<PackageType>DotNetCliTool, 1.0.0.0;Dependency, 2.0.0.0</PackageType>` | | |
-| Сводка | Не поддерживаются | | |
+| Сводка | Не поддерживается | | |
 
 ### <a name="pack-target-inputs"></a>Входные данные целевого объекта pack
 
@@ -79,9 +79,9 @@ ms.locfileid: "75385018"
 - суппрессдепенденЦиесвхенпаккинг
 - PackageVersion
 - PackageId
-- Authors
-- Описание
-- Copyright
+- Авторы
+- Description
+- Авторские права
 - PackageRequireLicenseAcceptance
 - DevelopmentDependency
 - PackageLicenseExpression
@@ -129,9 +129,9 @@ ms.locfileid: "75385018"
 
 #### <a name="packing-an-icon-image-file"></a>Упаковка файла изображения значка
 
-При упаковке файла изображения значка необходимо использовать свойство `PackageIcon`, чтобы указать путь к пакету относительно корня пакета. Кроме того, необходимо убедиться, что файл включен в пакет. Размер файла изображения ограничен 1 МБ. Поддерживаются следующие форматы файлов: JPEG и PNG. Рекомендуется разрешение изображения 64 x 64.
+При упаковке файла изображения значка необходимо использовать свойство `PackageIcon`, чтобы указать путь к пакету относительно корня пакета. Кроме того, необходимо убедиться, что файл включен в пакет. Размер файла изображения ограничен 1 МБ. Поддерживаются следующие форматы файлов: JPEG и PNG. Рекомендуется разрешение изображения 128x128.
 
-Например:
+Пример:
 
 ```xml
 <PropertyGroup>
@@ -242,7 +242,7 @@ ms.locfileid: "75385018"
 
 Дополнительные [сведения о лицензионных выражениях и лицензиях, принимаемых NuGet.org](nuspec.md#license).
 
-При упаковке файла лицензии необходимо использовать свойство Паккажелиценсефиле, чтобы указать путь к пакету относительно корня пакета. Кроме того, необходимо убедиться, что файл включен в пакет. Например:
+При упаковке файла лицензии необходимо использовать свойство Паккажелиценсефиле, чтобы указать путь к пакету относительно корня пакета. Кроме того, необходимо убедиться, что файл включен в пакет. Пример:
 
 ```xml
 <PropertyGroup>
@@ -313,7 +313,7 @@ msbuild -t:pack <path to .csproj file> -p:NuspecFile=<path to nuspec file> -p:Nu
 - `FinalOutputPath`: абсолютный путь к файлу; Если этот параметр не указан, для вычисления исходного пути используется удостоверение.
 - `TargetPath`(необязательно) укажите, когда файл должен быть вложен в подпапку в `lib\<TargetFramework>`, например вспомогательные сборки, которые находятся в соответствующих папках культуры. По умолчанию используется имя файла.
 
-Пример:
+Пример
 
 ```xml
 <PropertyGroup>
@@ -371,7 +371,7 @@ msbuild -t:pack <path to .csproj file> -p:NuspecFile=<path to nuspec file> -p:Nu
 
 Дополнительные параметры восстановления могут поступать из свойств MSBuild в файле проекта. Значения также можно задать из командной строки с помощью параметра `-p:` (см. примеры ниже).
 
-| Идентификаторы | Описание |
+| Свойство | Description |
 |--------|--------|
 | RestoreSources | Разделенный точками с запятой список источников пакетов. |
 | RestorePackagesPath | Путь к папке пакетов пользователя. |
@@ -413,7 +413,7 @@ msbuild -t:restore -p:RestoreConfigFile=<path>
 
 Операция восстановления создает в папке сборки `obj` следующие файлы:
 
-| File | Описание |
+| Файл | Description |
 |--------|--------|
 | `project.assets.json` | Содержит диаграмму зависимостей всех ссылок на пакеты. |
 | `{projectName}.projectFileExtension.nuget.g.props` | Ссылки на свойства MSBuild, содержащиеся в пакетах. |
