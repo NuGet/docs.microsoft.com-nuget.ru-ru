@@ -5,12 +5,12 @@ author: karann-msft
 ms.author: karann
 ms.date: 07/09/2019
 ms.topic: conceptual
-ms.openlocfilehash: 535d5a16a559cde065ee0277471edfbaf1aea084
-ms.sourcegitcommit: fe34b1fc79d6a9b2943a951f70b820037d2dd72d
+ms.openlocfilehash: c198bb73f0e4f5a59826db905eaf4622fe8543bc
+ms.sourcegitcommit: 1799d4ac23c8aacee7498fdc72c40dd1646d267b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/04/2019
-ms.locfileid: "74825267"
+ms.lasthandoff: 02/20/2020
+ms.locfileid: "77476260"
 ---
 # <a name="create-a-nuget-package-using-the-dotnet-cli"></a>Создание пакета NuGet с помощью CLI dotnet
 
@@ -122,6 +122,7 @@ Copyright (C) Microsoft Corporation. All rights reserved.
 
 - [Управление версиями пакета](../concepts/package-versioning.md)
 - [Поддержка нескольких целевых платформ](../create-packages/multiple-target-frameworks-project-file.md)
+- [Добавление значка пакета](../reference/nuspec.md#icon)
 - [Преобразования исходных файлов и файлов конфигурации](../create-packages/source-and-config-file-transformations.md)
 - [Локализация](../create-packages/creating-localized-packages.md)
 - [Предварительные версии](../create-packages/prerelease-packages.md)
