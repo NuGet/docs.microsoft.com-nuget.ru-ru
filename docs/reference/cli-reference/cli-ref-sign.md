@@ -6,12 +6,12 @@ ms.author: dtivel
 ms.date: 03/06/2018
 ms.topic: reference
 ms.reviewer: rmpablos
-ms.openlocfilehash: 746f7a421bd855b77716388b4af2fecbd5cf5a68
-ms.sourcegitcommit: 96aab8a1ad35eca0c029679d0158d9cc93d66009
+ms.openlocfilehash: e596fd5eb3de8ca4802d9b7b8e7cb623568e3dcb
+ms.sourcegitcommit: c81561e93a7be467c1983d639158d4e3dc25b93a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/06/2020
-ms.locfileid: "75676410"
+ms.lasthandoff: 03/02/2020
+ms.locfileid: "78231127"
 ---
 # <a name="sign-command-nuget-cli"></a>Команда sign (NuGet CLI)
 
@@ -22,7 +22,7 @@ ms.locfileid: "75676410"
 > [!Note]
 > Подписывание пакетов пока не поддерживается в .NET Core, в Mono или на платформах, отличных от Windows.
 
-## <a name="usage"></a>Метрики
+## <a name="usage"></a>Использование
 
 ```cli
 nuget sign <package(s)> [options]
@@ -30,7 +30,7 @@ nuget sign <package(s)> [options]
 
 где `<package(s)>` — один или несколько файлов `.nupkg`.
 
-## <a name="options"></a>Options
+## <a name="options"></a>Параметры
 
 | Параметр | Описание |
 | --- | --- |
@@ -42,7 +42,7 @@ nuget sign <package(s)> [options]
 | CertificateSubjectName | Указывает имя субъекта сертификата, используемого для поиска сертификата в локальном хранилище сертификатов.  При поиске выполняется сравнение строк без учета регистра с использованием заданного значения, где будут найдены все сертификаты с именем субъекта, содержащими эту строку, независимо от других значений субъекта.  Хранилище сертификатов может быть задано параметрами-Цертификатесторенаме и-ОтпечатокСертификата. |
 | ConfigFile | Файл конфигурации NuGet, который необходимо применить. Если не указано, используется `%AppData%\NuGet\NuGet.Config` (Windows) или `~/.nuget/NuGet/NuGet.Config` (Mac/Linux).|
 | ForceEnglishOutput | Принудительное выполнение NuGet. exe с использованием инвариантного языка и региональных параметров, основанных на английском языке. |
-| HashAlgorithm | Хэш-алгоритм, используемый для подписания пакета. По умолчанию используется SHA256. |
+| HashAlgorithm | Хэш-алгоритм, используемый для подписания пакета. По умолчанию используется SHA256. Возможные значения: SHA256, SHA384 и SHA512. |
 | Справка | Отображает справочные сведения для команды. |
 | NonInteractive | Подавляет запросы на ввод или подтверждение пользователя. |
 | OutputDirectory | Указывает каталог, в котором должен быть сохранен подписанный пакет. По умолчанию исходный пакет перезаписывается подписанным пакетом. |

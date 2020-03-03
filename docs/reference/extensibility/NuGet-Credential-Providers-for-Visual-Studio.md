@@ -5,12 +5,12 @@ author: karann-msft
 ms.author: karann
 ms.date: 01/09/2017
 ms.topic: conceptual
-ms.openlocfilehash: 906d07eb22599eb423b00300954ff2601dd33369
-ms.sourcegitcommit: 26a8eae00af2d4be581171e7a73009f94534c336
+ms.openlocfilehash: 13b6f5abe93a17c809564265990f86f6780aa67e
+ms.sourcegitcommit: c81561e93a7be467c1983d639158d4e3dc25b93a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75383555"
+ms.lasthandoff: 03/02/2020
+ms.locfileid: "78230815"
 ---
 # <a name="authenticating-feeds-in-visual-studio-with-nuget-credential-providers"></a>Проверка подлинности веб-каналов в Visual Studio с помощью поставщиков учетных данных NuGet
 
@@ -19,6 +19,8 @@ ms.locfileid: "75383555"
 
 Пример реализации можно найти в [примере вскредентиалпровидер](https://github.com/NuGet/Samples/tree/master/VsCredentialProvider).
 
+В Visual Studio NuGet использует внутренние `VsCredentialProviderImporter`, которые также проверяют поставщики учетных данных подключаемых модулей. Эти поставщики учетных данных подключаемых модулей должны быть обнаруживаемыми в качестве экспорта MEF типа `IVsCredentialProvider`.
+
 Начиная с 4.8 + NuGet в Visual Studio, поддерживаются также новые подключаемые модули многоплатформенной проверки подлинности, но они не являются рекомендуемым подходом для повышения производительности.
 
 > [!Note]
@@ -26,16 +28,6 @@ ms.locfileid: "75383555"
 >
 > Поставщики учетных данных NuGet для Visual Studio работают только в Visual Studio (не в dotnet restore или NuGet. exe). Сведения о поставщиках учетных данных с помощью NuGet. exe см. в разделе [поставщики учетных данных NuGet. exe](nuget-exe-Credential-providers.md).
 > Для поставщиков учетных данных в DotNet и MSBuild см. Дополнительные сведения о [подключаемых](nuget-cross-platform-authentication-plugin.md) модулях NuGet.
-
-## <a name="available-nuget-credential-providers-for-visual-studio"></a>Доступные поставщики учетных данных NuGet для Visual Studio
-
-Существует поставщик учетных данных, встроенный в расширение NuGet Visual Studio для поддержки Visual Studio Team Services.
-
-Расширение NuGet для Visual Studio использует внутренние `VsCredentialProviderImporter`, которые также проверяют поставщики учетных данных подключаемых модулей. Эти поставщики учетных данных подключаемых модулей должны быть обнаруживаемыми в качестве экспорта MEF типа `IVsCredentialProvider`.
-
-Доступные поставщики учетных данных подключаемых модулей включают:
-
-- [Поставщик учетных данных MyGet для Visual Studio](http://docs.myget.org/docs/reference/credential-provider-for-visual-studio)
 
 ## <a name="creating-a-nuget-credential-provider-for-visual-studio"></a>Создание поставщика учетных данных NuGet для Visual Studio
 

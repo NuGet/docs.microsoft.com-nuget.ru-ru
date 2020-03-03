@@ -5,12 +5,12 @@ author: karann-msft
 ms.author: karann
 ms.date: 01/18/2018
 ms.topic: reference
-ms.openlocfilehash: 0e2119953e6d07cd3571f156fa0b2665de49f963
-ms.sourcegitcommit: 26a8eae00af2d4be581171e7a73009f94534c336
+ms.openlocfilehash: e06cfb5b355dfae8104090db7babdecdf9e9fec1
+ms.sourcegitcommit: c81561e93a7be467c1983d639158d4e3dc25b93a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75383973"
+ms.lasthandoff: 03/02/2020
+ms.locfileid: "78231231"
 ---
 # <a name="setapikey-command-nuget-cli"></a>Команда сетапикэй (интерфейс командной строки NuGet)
 
@@ -18,18 +18,19 @@ ms.locfileid: "75383973"
 
 Сохраняет ключ API для указанного URL-адреса сервера в `NuGet.Config`, чтобы его не нужно было указывать для последующих команд.
 
-## <a name="usage"></a>Метрики
+## <a name="usage"></a>Использование
 
 ```cli
 nuget setapikey <key> -Source <url> [options]
 ```
 
-где `<source>` идентифицирует сервер, а `<key>` — ключ или пароль для сохранения. Если `<source>` опущен, предполагается nuget.org.
+где `<source>` идентифицирует сервер, а `<key>` — ключ для сохранения. Если `<source>` опущен, предполагается nuget.org. 
 
 > [!NOTE]
 > Ключ API не используется для проверки подлинности в частном веб-канале. Инструкции по управлению учетными данными для проверки подлинности в источнике см. в разделе [`nuget sources`](../cli-reference/cli-ref-sources.md) .
+> Ключи API можно получить с отдельных серверов NuGet. Чтобы создать Апикэйс для nuget.org и управлять им, см. [раздел Publish-API-Key](../../quickstart/includes/publish-api-key.md) .
 
-## <a name="options"></a>Options
+## <a name="options"></a>Параметры
 
 | Параметр | Описание |
 | --- | --- |
