@@ -24,6 +24,7 @@
 ### [Переустановка и обновление пакетов](consume-packages/reinstalling-and-updating-packages.md)
 ### [Управление глобальными пакетами и папками кэша](consume-packages/managing-the-global-packages-and-cache-folders.md)
 ### [Управление границами доверия пакета](consume-packages/installing-signed-packages.md)
+### [Работа с веб-каналами, прошедшими проверку подлинности](consume-packages/consuming-packages-authenticated-feeds.md)
 ### [Работа с системами управления версиями](consume-packages/packages-and-source-control.md)
 ### [Распространенные конфигурации NuGet](consume-packages/configuring-nuget-behavior.md)
 ## Ссылка на пакеты в проекте
@@ -45,7 +46,8 @@
 ### [Определение типа пакета](create-packages/set-package-type.md)
 ### [Создание локализованного пакета](create-packages/creating-localized-packages.md)
 ## Руководства по содержимому
-### [Создание пакета UWP](guides/create-uwp-packages.md)
+### [Создание пакета UWP (C++)](guides/create-uwp-packages.md)
+### [Создание пакета UWP (C#)](guides/create-uwp-packages-CS.md)
 ### [Создание собственного пакета](guides/native-packages.md)
 ### [Создание элементов управления пользовательским интерфейсом в виде пакета NuGet](guides/create-UI-controls.md)
 ### [Создание анализатора в виде пакета NuGet](guides/analyzers-conventions.md)
