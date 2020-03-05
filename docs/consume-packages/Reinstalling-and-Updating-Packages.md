@@ -5,12 +5,12 @@ author: karann-msft
 ms.author: karann
 ms.date: 12/07/2017
 ms.topic: conceptual
-ms.openlocfilehash: c48980bc3f955a62962ca6e9619ce09f4a94a835
-ms.sourcegitcommit: 7441f12f06ca380feb87c6192ec69f6108f43ee3
+ms.openlocfilehash: 101c6d6b9d93da912f60c40b27559e80327154b8
+ms.sourcegitcommit: c81561e93a7be467c1983d639158d4e3dc25b93a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/15/2019
-ms.locfileid: "69488078"
+ms.lasthandoff: 03/02/2020
+ms.locfileid: "78231192"
 ---
 # <a name="how-to-reinstall-and-update-packages"></a>Переустановка и обновление пакетов
 
@@ -59,7 +59,7 @@ ms.locfileid: "69488078"
 </packages>
 ```
 
-Во всех случаях используйте нотацию, описанную в статье [Управление версиями пакета](../concepts/package-versioning.md#version-ranges-and-wildcards).
+Во всех случаях используйте нотацию, описанную в статье [Управление версиями пакета](../concepts/package-versioning.md#version-ranges).
 
 ## <a name="using-update-package"></a>Использование команды Update-Package
 

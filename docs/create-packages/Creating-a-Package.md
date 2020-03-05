@@ -5,12 +5,12 @@ author: karann-msft
 ms.author: karann
 ms.date: 07/09/2019
 ms.topic: conceptual
-ms.openlocfilehash: 12ecfb8374c43a04d57d32575556adebc991d053
-ms.sourcegitcommit: 39f2ae79fbbc308e06acf67ee8e24cfcdb2c831b
+ms.openlocfilehash: b3e6f0efc9e2e12de186ffd4ce29d496d07d5fc4
+ms.sourcegitcommit: c81561e93a7be467c1983d639158d4e3dc25b93a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/05/2019
-ms.locfileid: "73610694"
+ms.lasthandoff: 03/02/2020
+ms.locfileid: "78230958"
 ---
 # <a name="create-a-package-using-the-nugetexe-cli"></a>Создание пакета с помощью CLI nuget.exe
 
@@ -77,7 +77,7 @@ ms.locfileid: "73610694"
 
 ```xml
 <?xml version="1.0"?>
-<package xmlns="http://schemas.microsoft.com/packaging/2013/05/nuspec.xsd">
+<package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
     <metadata>
         <!-- The identifier that must be unique within the hosting gallery -->
         <id>Contoso.Utility.UsefulStuff</id>
@@ -177,7 +177,7 @@ nuget locals -list global-packages
 
 Ниже представлены соглашения в отношении папок.
 
-| Папка | ОПИСАНИЕ | Действие при установке пакета |
+| Папка | Описание | Действие при установке пакета |
 | --- | --- | --- |
 | (корневая) | Расположение файла readme.txt | При установке пакета в Visual Studio отображается файл readme.txt в корневой папке проекта. |
 | lib/{tfm} | Файлы сборки (`.dll`), документации (`.xml`) и символов (`.pdb`) для данного моникера целевой платформы (TFM) | Сборки добавляются как ссылки для использования во время компиляции или выполнения. Файлы `.xml` и `.pdb` копируются в папки проекта. Сведения о создании вложенных папок для определенных целевых платформ см. в разделе [Поддержка нескольких целевых платформ](supporting-multiple-target-frameworks.md). |
@@ -286,7 +286,7 @@ nuget spec [<package-name>]
 
 ```xml
 <?xml version="1.0"?>
-<package xmlns="http://schemas.microsoft.com/packaging/2013/05/nuspec.xsd">
+<package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
     <metadata>
     <!-- ... -->
     </metadata>
