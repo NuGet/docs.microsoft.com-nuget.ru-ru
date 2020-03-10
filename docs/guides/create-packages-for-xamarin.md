@@ -5,12 +5,12 @@ author: karann-msft
 ms.author: karann
 ms.date: 11/05/2019
 ms.topic: tutorial
-ms.openlocfilehash: fce3c9a92dfee325f9e914bf3d6444601fb38b6c
-ms.sourcegitcommit: 26a8eae00af2d4be581171e7a73009f94534c336
+ms.openlocfilehash: 0cb653bad9e853d908039b3f7a94e1dd7eefdde5
+ms.sourcegitcommit: c81561e93a7be467c1983d639158d4e3dc25b93a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75385694"
+ms.lasthandoff: 03/02/2020
+ms.locfileid: "78230906"
 ---
 # <a name="create-packages-for-xamarin-with-visual-studio-2017-or-2019"></a>Создание пакетов для Xamarin с помощью Visual Studio 2017 или 2019
 
@@ -52,7 +52,7 @@ ms.locfileid: "75385694"
 
 - Проект `ILoggingLibrary`, который содержится в файле `ILoggingLibrary.shared.cs`, определяет общий интерфейс (контактную зону API) компонента. Именно здесь вы можете определить интерфейс для библиотеки.
 - Другой общий проект содержит код в `CrossLoggingLibrary.shared.cs`, который будет определять реализацию абстрактного интерфейса во время выполнения для конкретной платформы. В общем случае изменять этот файл не требуется.
-- Каждый из проектов для конкретных платформ, таких как `LoggingLibrary.android.cs`, содержит собственную реализацию интерфейса в его соответствующих файлах `LoggingLibraryImplementation.cs` (VS 2017) или `LoggingLibrary.<PLATFORM>.cs` (VS 2019). Именно здесь вы можете создать код библиотеки.
+- Каждый из проектов для конкретных платформ, таких как `LoggingLibrary.android.cs`, содержит собственную реализацию интерфейса в его соответствующих файлах `LoggingLibraryImplementation.cs` (VS 2017) или `LoggingLibrary.<PLATFORM>.cs` (VS 2019). Именно здесь вы можете создать код библиотеки.
 
 По умолчанию файл ILoggingLibrary.shared.cs проекта `ILoggingLibrary` содержит определение интерфейса, но не методы. В рамках этого пошагового руководства добавьте метод `Log` следующим образом:
 

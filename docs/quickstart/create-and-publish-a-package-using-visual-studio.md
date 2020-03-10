@@ -5,12 +5,12 @@ author: karann-msft
 ms.author: karann
 ms.date: 08/16/2019
 ms.topic: quickstart
-ms.openlocfilehash: fe551dfa7f2322e6677c9c0b972c79c9df2e7695
-ms.sourcegitcommit: e9c1dd0679ddd8ba3ee992d817b405f13da0472a
+ms.openlocfilehash: 32dcc1d233154463e2950b1ce46554b1cb89956e
+ms.sourcegitcommit: c81561e93a7be467c1983d639158d4e3dc25b93a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "76813563"
+ms.lasthandoff: 03/02/2020
+ms.locfileid: "78231296"
 ---
 # <a name="quickstart-create-and-publish-a-nuget-package-using-visual-studio-net-standard-windows-only"></a>Краткое руководство. Создание и публикация пакета NuGet с помощью Visual Studio (.NET Standard, только для Windows)
 
@@ -132,7 +132,7 @@ namespace AppLogger
 
 Выберите вкладку для своего инструмента CLI: **.NET Core CLI** (для CLI dotnet) или **NuGet** (для CLI nuget.exe).
 
-# <a name="net-core-clitabnetcore-cli"></a>[Интерфейс командной строки .NET Core](#tab/netcore-cli)
+# <a name="net-core-cli"></a>[Интерфейс командной строки .NET Core](#tab/netcore-cli)
 
 Этот шаг — рекомендуемая альтернатива использования `nuget.exe`.
 
@@ -140,7 +140,7 @@ namespace AppLogger
 
 [!INCLUDE [publish-dotnet](includes/publish-dotnet.md)]
 
-# <a name="nugettabnuget"></a>[NuGet](#tab/nuget)
+# <a name="nuget"></a>[NuGet](#tab/nuget)
 
 Эту команду можно использовать вместо `dotnet.exe`.
 
@@ -193,7 +193,13 @@ namespace AppLogger
 > [!Note]
 > Обычное добавление файла readme.txt в корень проекта не приведет к включению его в итоговый пакет.
 
-## <a name="related-topics"></a>Связанные разделы
+## <a name="related-video"></a>Связанные видео
+
+> [!Video https://channel9.msdn.com/Series/NuGet-101/Create-and-Publish-a-NuGet-Package-with-Visual-Studio-4-of-5/player]
+
+Другие видео о NuGet см. на [Channel 9](https://channel9.msdn.com/Series/NuGet-101) и [YouTube](https://www.youtube.com/playlist?list=PLdo4fOcmZ0oVLvfkFk8O9h6v2Dcdh2bh_).
+
+## <a name="related-topics"></a>См. также
 
 - [Создание пакета](../create-packages/creating-a-package-dotnet-cli.md)
 - [Публикация пакета](../nuget-org/publish-a-package.md)

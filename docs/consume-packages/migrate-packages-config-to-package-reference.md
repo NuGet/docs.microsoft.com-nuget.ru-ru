@@ -5,12 +5,12 @@ author: karann-msft
 ms.author: karann
 ms.date: 05/24/2019
 ms.topic: conceptual
-ms.openlocfilehash: 6f659af6b09a12be54a5ef843d34f956119b33f4
-ms.sourcegitcommit: 7441f12f06ca380feb87c6192ec69f6108f43ee3
+ms.openlocfilehash: 8e825410d621ff2946e23e80173292f24f9d21f2
+ms.sourcegitcommit: c81561e93a7be467c1983d639158d4e3dc25b93a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/15/2019
-ms.locfileid: "69520494"
+ms.lasthandoff: 03/02/2020
+ms.locfileid: "78231277"
 ---
 # <a name="migrate-from-packagesconfig-to-packagereference"></a>Преобразование packages.config в PackageReference
 
@@ -30,6 +30,8 @@ Visual Studio 2017 версии 15.7 и более поздних поддер
 * На данный момент не поддерживается миграция для проектов C++ и ASP.NET.
 * Некоторые пакеты могут быть не полностью совместимы с PackageReference. Дополнительные сведения см.в разделе [Проблемы совместимости пакетов](#package-compatibility-issues).
 
+Кроме того, существует ряд различий в работе PackageReferences по сравнению с Packages.config. Например, [версии с ограничением обновления](../consume-packages/reinstalling-and-updating-packages.md#constraining-upgrade-versions) не поддерживаются PackageReference, но добавляют поддержку [гибких версий](../consume-packages/package-references-in-project-files.md#floating-versions).
+
 ### <a name="known-issues"></a>Известные проблемы
 
 1. Параметр `Migrate packages.config to PackageReference...` недоступен в контекстном меню, которое открывается по щелчку правой кнопкой мыши 
@@ -38,7 +40,7 @@ Visual Studio 2017 версии 15.7 и более поздних поддер
  
 При первом открытии проект NuGet не удается инициализировать до выполнения операции NuGet. В результате параметр миграции не отображается в контекстном меню, которое открывается по щелчку правой кнопкой мыши `packages.config` или `References`. 
 
-#### <a name="workaround"></a>Обходной путь 
+#### <a name="workaround"></a>Возможное решение 
 
 Выполните одно из следующих действий NuGet: 
 * Откройте пользовательский интерфейс диспетчера пакетов. Для этого щелкните правой кнопкой мыши `References` и выберите `Manage NuGet Packages...`. 

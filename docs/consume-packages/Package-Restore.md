@@ -5,12 +5,12 @@ author: karann-msft
 ms.author: karann
 ms.date: 08/05/2019
 ms.topic: conceptual
-ms.openlocfilehash: 93a94a5468b48179d27b89825cebf2447657c8f2
-ms.sourcegitcommit: 7c9f157ba02d9be543de34ab06813ab1ec10192a
+ms.openlocfilehash: c1f1957c58839ac763238938b476eb0882c56a59
+ms.sourcegitcommit: c81561e93a7be467c1983d639158d4e3dc25b93a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/23/2019
-ms.locfileid: "69999981"
+ms.lasthandoff: 03/02/2020
+ms.locfileid: "78231216"
 ---
 # <a name="restore-packages-using-package-restore"></a>Восстановление пакетов с помощью функции восстановления пакетов
 
@@ -120,6 +120,17 @@ ms.locfileid: "69999981"
 > [!Important]
 > При изменении параметров `packageRestore` прямо в `nuget.config` нужно перезапустить Visual Studio, чтобы диалоговое окно **Параметры** отображало текущие значения.
 
+### <a name="choose-default-package-management-format"></a>Выбор формата управления пакетами по умолчанию
+
+![Настройка формата управления пакетами по умолчанию с помощью параметров диспетчера пакетов NuGet](media/Restore-02-PackageFormatOptions.png)
+
+У NuGet есть два формата, в которых пакеты могут использоваться в проекте: [`PackageReference`](package-references-in-project-files.md) и [`packages.config`](../reference/packages-config.md). Формат по умолчанию можно выбрать в раскрывающемся списке под заголовком **Управление пакетами**. Также доступен параметр, позволяющий выводить запрос при установке первого пакета в проекте.
+
+> [!Note]
+> Если проект не поддерживает оба формата управления пакетами, используется формат, совместимый с данным проектом, поэтому он может отличаться от установленного по умолчанию в параметрах. Кроме того, NuGet не будет запрашивать выбор при установке первого пакета, даже если соответствующий параметр выбран в окне "Параметры".
+>
+> Если консоль диспетчера пакетов используется для установки первого пакета в проекте, NuGet не будет запрашивать выбор формата, даже если соответствующий параметр выбран в окне "Параметры".
+
 ## <a name="restore-using-the-dotnet-cli"></a>Восстановление с помощью dotnet в CLI
 
 [!INCLUDE [restore-dotnet-cli](includes/restore-dotnet-cli.md)]
@@ -169,13 +180,13 @@ ms.locfileid: "69999981"
 
 Когда NuGet восстанавливает пакеты любым из методов, учитываются все ограничения, указанные в `packages.config` или файле проекта:
 
-- В файле `packages.config`, вы можете указать диапазон версий в свойстве `allowedVersion` зависимости. Дополнительные сведения см. в статье [Ограничение версий при обновлении](../consume-packages/reinstalling-and-updating-packages.md#constraining-upgrade-versions). Например:
+- В файле `packages.config`, вы можете указать диапазон версий в свойстве `allowedVersion` зависимости. Дополнительные сведения см. в статье [Ограничение версий при обновлении](../consume-packages/reinstalling-and-updating-packages.md#constraining-upgrade-versions). Пример:
 
     ```xml
     <package id="Newtonsoft.json" version="6.0.4" allowedVersions="[6,7)" />
     ```
 
-- В файле проекта вы можете указать диапазон для зависимости напрямую, используя PackageReference. Например:
+- В файле проекта вы можете указать диапазон для зависимости напрямую, используя PackageReference. Пример:
 
     ```xml
     <PackageReference Include="Newtonsoft.json" Version="[6, 7)" />

@@ -3,14 +3,14 @@ title: Создание пакета NuGet с помощью MSBuild
 description: Подробное руководство по проектированию и созданию пакета NuGet, включая принятие решений по ключевым аспектам, таким как файлы и управление версиями.
 author: karann-msft
 ms.author: karann
-ms.date: 08/05/2019
+ms.date: 02/20/2020
 ms.topic: conceptual
-ms.openlocfilehash: b45c25a92c0134228fb507ab321cb00ce156527f
-ms.sourcegitcommit: 39f2ae79fbbc308e06acf67ee8e24cfcdb2c831b
+ms.openlocfilehash: 7166d622ef9d3975fc1c931d30caf570a765a6da
+ms.sourcegitcommit: c81561e93a7be467c1983d639158d4e3dc25b93a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/05/2019
-ms.locfileid: "73610558"
+ms.lasthandoff: 03/02/2020
+ms.locfileid: "78231322"
 ---
 # <a name="create-a-nuget-package-using-msbuild"></a>Создание пакета NuGet с помощью MSBuild
 
@@ -34,6 +34,10 @@ ms.locfileid: "73610558"
 - название пакета, которое должно отображаться на сайте размещения (например, nuget.org);
 - `Authors` — сведения об авторе и владельце. Если не задано, по умолчанию используется значение `AssemblyName`.
 - `Company` — название компании. Если не задано, по умолчанию используется значение `AssemblyName`.
+
+Кроме того, при упаковке проектов, использующих PackageReference, в стиле, отличном от пакетов SDK, требуется следующее:
+
+- `PackageOutputPath` — выходная папка для пакета, созданного при вызове пакета.
 
 В Visual Studio эти значения можно задать в свойствах проекта (щелкните правой кнопкой мыши проект в обозревателе решений, выберите **Свойства** и перейдите на вкладку **Пакет**). Эти свойства также можно задать напрямую в файле проекта ( *.csproj*).
 
@@ -69,6 +73,10 @@ ms.locfileid: "73610558"
 > Если пакет будет общедоступным, обратите особое внимание на свойство **PackageTags**, так как теги помогают найти ваш пакет и понять его назначение.
 
 Подробные сведения об объявлении зависимостей и указании номеров версий см. в разделе [Ссылки на пакеты в файлах проекта](../consume-packages/package-references-in-project-files.md) и [Управление версиями пакетов](../concepts/package-versioning.md). Доступ к ресурсам зависимостей в пакете можно также предоставлять напрямую с помощью атрибутов `<IncludeAssets>` и `<ExcludeAssets>`. См. подробнее об [управлении ресурсами зависимостей](../consume-packages/package-references-in-project-files.md#controlling-dependency-assets).
+
+## <a name="add-an-optional-description-field"></a>Добавление необязательного поля описания
+
+[!INCLUDE [add description to package](includes/add-description.md)]
 
 ## <a name="choose-a-unique-package-identifier-and-set-the-version-number"></a>Выбор уникального идентификатора пакета и номера версии
 

@@ -5,12 +5,12 @@ author: karann-msft
 ms.author: karann
 ms.date: 05/24/2019
 ms.topic: overview
-ms.openlocfilehash: a08ac24ce6b1d64496c9fc1b20604850e9711dd6
-ms.sourcegitcommit: 363ec6843409b4714c91b75b105619a3a3184b43
+ms.openlocfilehash: c326cf184ff20fb798a5770f0a4cf9bf42bed3f5
+ms.sourcegitcommit: c81561e93a7be467c1983d639158d4e3dc25b93a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/16/2019
-ms.locfileid: "72380663"
+ms.lasthandoff: 03/02/2020
+ms.locfileid: "78230698"
 ---
 # <a name="an-introduction-to-nuget"></a>Введение в NuGet
 
@@ -43,7 +43,7 @@ ms.locfileid: "72380663"
 
 Кроме поддержки размещения, NuGet также предоставляет широкий набор средств, используемых как создателями, так и потребителями. Сведения о получении конкретных средств см. в разделе [Установка клиентских средств NuGet](install-nuget-client-tools.md).
 
-| Средство | Платформы | Применимые сценарии | ОПИСАНИЕ |
+| Средство | Платформы | Применимые сценарии | Описание |
 | --- | --- | --- | --- |
 | [dotnet CLI](consume-packages/install-use-packages-dotnet-cli.md) | Все | Создание, потребление | Средство CLI для библиотек .NET Core и .NET Standard, а также для проектов в стиле пакета SDK, нацеленных на .NET Framework (см. раздел [Атрибут SDK](/dotnet/core/tools/csproj#additions)). Предоставляет определенные возможности CLI NuGet непосредственно внутри цепочки инструментов .NET Core. Как и CLI `nuget.exe`, CLI dotnet не взаимодействует с проектами Visual Studio. |
 | [Интерфейс командной строки nuget.exe](consume-packages/install-use-packages-nuget-cli.md) | Все | Создание, потребление | Средство CLI для библиотек .NET Framework и проектов со стилем, отличным от пакета SDK, нацеленных на библиотеки .NET Standard. Предоставляет все функциональные возможности NuGet, при этом часть команд относится к создателям пакета, часть — только к потребителям, а остальные — ко всем. Например, создатели пакета используют команду `nuget pack` для создания пакета из различных сборок и связанных файлов, потребители пакета используют `nuget install` для включения пакетов в папку проекта, при этом все используют `nuget config` для задания переменных конфигурации NuGet. Как независящее от платформы средство, интерфейс командной строки NuGet не взаимодействует с проектами Visual Studio. |
@@ -105,9 +105,15 @@ ms.locfileid: "72380663"
 
 В рамках отдельного проекта NuGet управляет общей схемой зависимостей, что включает в себя разрешение нескольких ссылок на различные версии одного пакета. Довольно часто проект зависит от одного или нескольких пакетов, имеющих такие же зависимости. Некоторые из наиболее полезных пакетов служебных программ на сайте nuget.org используются многими другими пакетами. В общей схеме зависимостей вы легко можете иметь десять различных ссылок на разные версии одного пакета. Чтобы избежать переноса нескольких версий этого пакета в само приложение, NuGet определяет, какую отдельную версию могут использовать все потребители. (Дополнительные сведения см. в разделе [Принципы разрешения зависимостей пакетов в NuGet](concepts/dependency-resolution.md).)
 
-Кроме того, NuGet обслуживает все спецификации, связанные со структурированием пакетов (включая [локализацию](create-packages/creating-localized-packages.md) и [отладочные символы](create-packages/symbol-packages-snupkg.md)) и [ссылками](consume-packages/package-references-in-project-files.md) на них (включая [диапазоны версий](concepts/package-versioning.md#version-ranges-and-wildcards) и [предварительные версии](create-packages/prerelease-packages.md)). NuGet также имеет различные API для работы со своими службами программно и предоставляет поддержку разработчикам, которые пишут расширения Visual Studio и шаблоны проектов.
+Кроме того, NuGet обслуживает все спецификации, связанные со структурированием пакетов (включая [локализацию](create-packages/creating-localized-packages.md) и [отладочные символы](create-packages/symbol-packages-snupkg.md)) и [ссылками](consume-packages/package-references-in-project-files.md) на них (включая [диапазоны версий](concepts/package-versioning.md#version-ranges) и [предварительные версии](create-packages/prerelease-packages.md)). NuGet также имеет различные API для работы со своими службами программно и предоставляет поддержку разработчикам, которые пишут расширения Visual Studio и шаблоны проектов.
 
 Если изучить содержание этой документации, можно найти все указанные возможности и заметки о выпуске, отсылающие к самому начальному этапу развития NuGet.
+
+## <a name="related-video"></a>Связанные видео
+
+> [!Video https://channel9.msdn.com/Series/NuGet-101/What-is-NuGet-1-of-5/player]
+
+Другие видео о NuGet см. на [Channel 9](https://channel9.msdn.com/Series/NuGet-101) и [YouTube](https://www.youtube.com/playlist?list=PLdo4fOcmZ0oVLvfkFk8O9h6v2Dcdh2bh_).
 
 ## <a name="comments-contributions-and-issues"></a>Комментарии, вклады и проблемы
 

@@ -5,12 +5,12 @@ author: karann-msft
 ms.author: karann
 ms.date: 03/16/2018
 ms.topic: conceptual
-ms.openlocfilehash: b6a009832430ee08f51ea1028feb878a39f45222
-ms.sourcegitcommit: fe34b1fc79d6a9b2943a951f70b820037d2dd72d
+ms.openlocfilehash: a5833df60c5f7905359f421141347b1237f45d86
+ms.sourcegitcommit: c81561e93a7be467c1983d639158d4e3dc25b93a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/04/2019
-ms.locfileid: "74825142"
+ms.lasthandoff: 03/02/2020
+ms.locfileid: "78230620"
 ---
 # <a name="package-references-packagereference-in-project-files"></a>Ссылки на пакеты (PackageReference) в файлах проектов
 
@@ -48,7 +48,7 @@ PackageReference также позволяет использовать усло
 </ItemGroup>
 ```
 
-В приведенном выше примере значение 3.6.0 означает версию 3.6.0 или любую более позднюю версию, причем предпочтение отдается самой ранней версии, как описано в разделе [Управление версиями пакета](../concepts/package-versioning.md#version-ranges-and-wildcards).
+В приведенном выше примере значение 3.6.0 означает версию 3.6.0 или любую более позднюю версию, причем предпочтение отдается самой ранней версии, как описано в разделе [Управление версиями пакета](../concepts/package-versioning.md#version-ranges).
 
 ## <a name="using-packagereference-for-a-project-with-no-packagereferences"></a>Использование PackageReference для проекта без объектов PackageReference
 
@@ -99,7 +99,7 @@ PackageReference также позволяет использовать усло
 
 Ниже перечислены теги метаданных, управляющие ресурсами зависимостей.
 
-| Тег | ОПИСАНИЕ | Значение по умолчанию |
+| Тег | Описание | Значение по умолчанию |
 | --- | --- | --- |
 | IncludeAssets | Эти ресурсы будут использоваться. | все |
 | ExcludeAssets | Эти ресурсы не будут использоваться. | Нет |
@@ -107,14 +107,14 @@ PackageReference также позволяет использовать усло
 
 Ниже приводятся допустимые значения этих тегов. Несколько значений должны разделяться точкой с запятой. Это не относится к значениям `all` и `none`, которые должны использоваться отдельно.
 
-| Значение | ОПИСАНИЕ |
+| Значение | Описание |
 | --- | ---
 | compile | Содержимое папки `lib`; управляет возможностью компиляции проекта с использованием сборок в этой папке |
 | исполняющая среда | Содержимое папки `lib` и `runtimes`; управляет возможностью копирования этих сборок в выходной каталог сборки |
 | contentFiles | Содержимое папки `contentfiles` |
 | выполнить сборку | `.props` и `.targets` в папке `build` |
 | buildMultitargeting | Файлы `.props` и `.targets` *(4.0)* в папке `buildMultitargeting` для кроссплатформенного определения. |
-| buildTransitive | Файлы `.props` и `.targets` *(5.0+)* в папке `buildTransitive`для ресурсов, которые можно транзитивно передавать в любой соответствующий проект. См. об [этой функции](https://github.com/NuGet/Home/wiki/Allow-package--authors-to-define-build-assets-transitive-behavior). |
+| buildTransitive | Файлы `.props` и `.targets` *(5.0+)* в папке `buildTransitive` для ресурсов, которые можно транзитивно передавать в любой соответствующий проект. См. об [этой функции](https://github.com/NuGet/Home/wiki/Allow-package--authors-to-define-build-assets-transitive-behavior). |
 | analyzers | Анализаторы .NET |
 | в машинном коде | Содержимое папки `native` |
 | Нет | Никакие из перечисленных выше ресурсов не используются. |
@@ -170,10 +170,110 @@ PackageReference также позволяет использовать усло
 </ItemGroup>
 ```
 
+## <a name="generatepathproperty"></a>GeneratePathProperty
+
+Эта функция доступна в NuGet **5.0** или более поздней версии и в Visual Studio 2019 **16.0** или более поздней версии.
+
+Иногда требуется ссылаться на файлы в пакете из целевого объекта MSBuild.
+В проектах на основе `packages.config` пакеты устанавливаются в папку относительно файла проекта. Однако в PackageReference пакеты [используются](../concepts/package-installation-process.md) из папки *global-packages*, которая может отличаться на разных компьютерах.
+
+Чтобы устранить эту проблему, NuGet предоставляет свойство, указывающее на расположение, из которого будет использоваться пакет.
+
+Пример.
+
+```xml
+  <ItemGroup>
+      <PackageReference Include="Some.Package" Version="1.0.0" GeneratePathProperty="true" />
+  </ItemGroup>
+
+  <Target Name="TakeAction" AfterTargets="Build">
+    <Exec Command="$(PkgSome_Package)\something.exe" />
+  </Target>
+````
+
+Кроме того, NuGet автоматически создаст свойства для пакетов, содержащих папку tools.
+
+```xml
+  <ItemGroup>
+      <PackageReference Include="Package.With.Tools" Version="1.0.0" />
+  </ItemGroup>
+
+  <Target Name="TakeAction" AfterTargets="Build">
+    <Exec Command="$(PkgPackage_With_Tools)\tools\tool.exe" />
+  </Target>
+````
+
+Свойства MSBuild и удостоверения пакетов не имеют одинаковых ограничений, поэтому удостоверение пакета необходимо изменить на понятное имя MSBuild с префиксом в виде слова `Pkg`.
+Чтобы проверить точное имя создаваемого свойства, изучите созданный файл [nuget.g.props](../reference/msbuild-targets.md#restore-outputs).
+
+## <a name="nuget-warnings-and-errors"></a>Предупреждения и ошибки NuGet
+
+*Эта функция доступна в NuGet **4.3** или более поздней версии и в Visual Studio 2017 **15.3** или более поздней версии.*
+
+Для многих сценариев упаковки и восстановления все предупреждения и ошибки NuGet кодируются и начинаются с `NU****`. Все предупреждения и ошибки NuGet перечислены в [справочной](../reference/errors-and-warnings.md) документации.
+
+NuGet следит за следующими свойствами предупреждения:
+
+- `TreatWarningsAsErrors` — обработка всех предупреждений как ошибок.
+- `WarningsAsErrors` — обработка указанных предупреждений как ошибок.
+- `NoWarn` — скрытие определенных предупреждений в масштабе проекта или пакета.
+
+Примеры
+
+```xml
+<PropertyGroup>
+    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+</PropertyGroup>
+...
+<PropertyGroup>
+    <WarningsAsErrors>$(WarningsAsErrors);NU1603;NU1605</WarningsAsErrors>
+</PropertyGroup>
+...
+<PropertyGroup>
+    <NoWarn>$(NoWarn);NU5124</NoWarn>
+</PropertyGroup>
+...
+<ItemGroup>
+    <PackageReference Include="Contoso.Package" Version="1.0.0" NoWarn="NU1605" />
+</ItemGroup>
+```
+
+### <a name="suppressing-nuget-warnings"></a>Подавление предупреждений NuGet
+
+Хотя рекомендуется разрешать все предупреждения NuGet во время выполнения операций упаковки и восстановления, в некоторых ситуациях их подавление гарантируется.
+Чтобы подавить предупреждение в масштабе проекта, рекомендуется сделать следующее:
+
+```xml
+<PropertyGroup>
+    <PackageVersion>5.0.0</PackageVersion>
+    <NoWarn>$(NoWarn);NU5104</NoWarn>
+</PropertyGroup>
+<ItemGroup>
+    <PackageReference Include="Contoso.Package" Version="1.0.0-beta.1"/>
+</ItemGroup>
+```
+
+Иногда предупреждения применяются только к определенному пакету в графе. Мы можем выборочно подавить такое предупреждение, добавив `NoWarn` к элементу PackageReference. 
+
+```xml
+<PropertyGroup>
+    <PackageVersion>5.0.0</PackageVersion>
+</PropertyGroup>
+<ItemGroup>
+    <PackageReference Include="Contoso.Package" Version="1.0.0-beta.1" NoWarn="NU1603" />
+</ItemGroup>
+```
+
+#### <a name="suppressing-nuget-package-warnings-in-visual-studio"></a>Подавление предупреждений пакета NuGet в Visual Studio
+
+В Visual Studio можно также [подавить предупреждения](/visualstudio/ide/how-to-suppress-compiler-warnings#suppress-warnings-for-nuget-packages
+) в интегрированной среде разработки.
+
 ## <a name="locking-dependencies"></a>Блокировка зависимостей
+
 *Эта функция доступна в NuGet **4.9** или более поздней версии и в Visual Studio 2017 **15.9** или более поздней версии.*
 
-Входные данные для восстановления в NuGet — это набор ссылок на пакеты из файла проекта (зависимости верхнего уровня или прямые зависимости). Выходные данные — это полный набор всех зависимостей пакета, включая транзитивные зависимости. NuGet всегда пытается создать одну и ту же полную систему зависимостей пакета, если входной список PackageReference не был изменен. Но в некоторых случаях это нельзя осуществить. Например:
+Входные данные для восстановления в NuGet — это набор ссылок на пакеты из файла проекта (зависимости верхнего уровня или прямые зависимости). Выходные данные — это полный набор всех зависимостей пакета, включая транзитивные зависимости. NuGet всегда пытается создать одну и ту же полную систему зависимостей пакета, если входной список PackageReference не был изменен. Но в некоторых случаях это нельзя осуществить. Пример:
 
 * При использовании гибких версий, таких как `<PackageReference Include="My.Sample.Lib" Version="4.*"/>`. При каждом восстановлении пакетов предполагается перейти к последней версии. Но иногда пользователям требуется, чтобы граф был закреплен за определенной последней версией, а переход к более поздней версии, если она доступна, происходил при явном указании.
 * Опубликована более новая версия пакета PackageReference, которая соответствует требованиям к версии. Например, 
@@ -185,6 +285,7 @@ PackageReference также позволяет использовать усло
 * Указанная версия пакета будет удалена из репозитория. Хотя на сайте nuget.org нельзя удалять пакеты, не все репозитории пакетов имеют такие ограничения. В результате этого в NuGet выполняется поиск наиболее соответствующей версии, если не удается разрешить удаленную версию.
 
 ### <a name="enabling-lock-file"></a>Включение функции файла блокировки
+
 Чтобы сохранить всю систему зависимостей пакета, можно воспользоваться функцией файла блокировки. Для этого задайте свойство MSBuild `RestorePackagesWithLockFile` для проекта:
 
 ```xml
@@ -251,9 +352,9 @@ ProjectA
 
 Вы можете управлять различным поведением восстановления с использованием файла блокировки, как описано ниже.
 
-| Параметр | Вариант, аналогичный использованию MSBuild | ОПИСАНИЕ|
-|:---  |:--- |:--- |
-| `--use-lock-file` | RestorePackagesWithLockFile | Разрешение использовать файл блокировки. | 
-| `--locked-mode` | RestoreLockedMode | Включение режима блокировки для восстановления. Это полезно в сценариях CI/CD, когда нужно реализовать воспроизводимые сборки.|   
-| `--force-evaluate` | RestoreForceEvaluate | Этот параметр удобно использовать с пакетами с гибкими версиями, определенными в проекте. По умолчанию в NuGet версия пакета не обновляется автоматически после каждого восстановления, если вы не запустили восстановление с этим параметром. |
-| `--lock-file-path` | NuGetLockFilePath | Определение размещения пользовательского файла блокировки для проекта. По умолчанию в NuGet файл `packages.lock.json` хранится в корневом каталоге. Если в одном каталоге хранится несколько проектов, NuGet поддерживает использование файла блокировки `packages.<project_name>.lock.json` для определенного проекта. |
+| Вариант NuGet.exe | Вариант dotnet | Вариант, аналогичный использованию MSBuild | Описание |
+|:--- |:--- |:--- |:--- |
+| `-UseLockFile` |`--use-lock-file` | RestorePackagesWithLockFile | Разрешение использовать файл блокировки. |
+| `-LockedMode` | `--locked-mode` | RestoreLockedMode | Включение режима блокировки для восстановления. Это полезно в сценариях CI/CD, когда нужно реализовать воспроизводимые сборки.|   
+| `-ForceEvaluate` | `--force-evaluate` | RestoreForceEvaluate | Этот параметр удобно использовать с пакетами с гибкими версиями, определенными в проекте. По умолчанию в NuGet версия пакета не обновляется автоматически после каждого восстановления, если вы не запустили восстановление с этим параметром. |
+| `-LockFilePath` | `--lock-file-path` | NuGetLockFilePath | Определение размещения пользовательского файла блокировки для проекта. По умолчанию в NuGet файл `packages.lock.json` хранится в корневом каталоге. Если в одном каталоге хранится несколько проектов, NuGet поддерживает использование файла блокировки `packages.<project_name>.lock.json` для определенного проекта. |

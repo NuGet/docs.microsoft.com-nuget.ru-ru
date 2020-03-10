@@ -6,12 +6,12 @@ ms.author: karann
 ms.date: 05/18/2018
 ms.topic: conceptual
 ms.reviewer: anangaur
-ms.openlocfilehash: 937d051ff6dc49e3204f7d0cb22c4f29b99a2a7d
-ms.sourcegitcommit: 39f2ae79fbbc308e06acf67ee8e24cfcdb2c831b
+ms.openlocfilehash: 02c6c8f3018bfd063c2d16a10381f88b54cac840
+ms.sourcegitcommit: c81561e93a7be467c1983d639158d4e3dc25b93a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/05/2019
-ms.locfileid: "73610603"
+ms.lasthandoff: 03/02/2020
+ms.locfileid: "78231348"
 ---
 # <a name="publishing-packages"></a>Публикация пакетов
 
@@ -65,6 +65,10 @@ ms.locfileid: "73610603"
     ```
 
     Эта команда сохраняет ключ API в конфигурации NuGet, благодаря чему это действие не нужно выполнять снова на том же компьютере.
+
+    > [!NOTE]
+    > Ключ API не используется для проверки подлинности в частном веб-канале. Сведения об управлении учетными данными для проверки подлинности в источнике см. в описании [команды `nuget sources`](../reference/cli-reference/cli-ref-sources.md).
+    > Ключи API можно получить с отдельных серверов NuGet. Чтобы создать ключи APIKey и управлять ими для nuget.org, см. описание [publish-api-key](../quickstart/includes/publish-api-key.md).
 
 1. Выполните принудительную отправку в коллекцию NuGet с помощью следующей команды:
 

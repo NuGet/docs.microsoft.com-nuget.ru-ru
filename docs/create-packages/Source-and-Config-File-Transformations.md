@@ -6,16 +6,14 @@ ms.author: karann
 ms.date: 04/24/2017
 ms.topic: conceptual
 ms.reviewer: anangaur
-ms.openlocfilehash: 830714269ac422a4784c15b000e374195f02332f
-ms.sourcegitcommit: ffbdf147f84f8bd60495d3288dff9a5275491c17
+ms.openlocfilehash: 2fefd9cff4d151111023521c31d58878743775bf
+ms.sourcegitcommit: c81561e93a7be467c1983d639158d4e3dc25b93a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/13/2018
-ms.locfileid: "51580289"
+ms.lasthandoff: 03/02/2020
+ms.locfileid: "78231179"
 ---
 # <a name="transforming-source-code-and-configuration-files"></a>Преобразования исходного кода и файлов конфигурации
-
-Для проектов, использующих `packages.config`, NuGet поддерживает возможность выполнять преобразования исходного кода и файлов конфигурации при установке или удалении пакета. При установке пакета в проект с использованием [PackageReference](../consume-packages/package-references-in-project-files.md) применяются только преобразования исходного кода.
 
 **Преобразование исходного кода** применяет одностороннюю замену токена к файлам в папке `content` или `contentFiles` пакета при установке пакета (`content` для клиентов, использующих `packages.config` и `contentFiles` для `PackageReference`) в тех случаях, когда токены ссылаются на [свойства проекта](/dotnet/api/vslangproj.projectproperties?view=visualstudiosdk-2017&viewFallbackFrom=netframework-4.7) Visual Studio. Это позволяет вставить файл в пространство имен проекта или настроить код, который обычно обращается к `global.asax` в проекте ASP.NET.
 
@@ -113,6 +111,9 @@ ms.locfileid: "51580289"
 Чтобы просмотреть последствия установки и удаления пакета, создайте в Visual Studio новый проект ASP.NET (шаблон в разделе **Visual C# > Интернет** диалогового окна "Новый проект") и выберите приложение ASP.NET. Откройте файл `web.config`, чтобы просмотреть его первоначальное состояние. Щелкните проект правой кнопкой мыши, выберите пункт **Управление пакетами NuGet**, перейдите к пакету ELMAH на веб-сайте nuget.org и установите его последнюю версию. Обратите внимание на все изменения в файле `web.config`. Удалите пакет. Вы увидите, что было восстановлено исходное состояние файла `web.config`.
 
 ### <a name="xdt-transforms"></a>Преобразования XDT
+
+> [!Note]
+> Как упоминалось в [разделе о проблемах совместимости пакетов в документации по переходу с `packages.config` на `PackageReference`](../consume-packages/migrate-packages-config-to-package-reference.md#package-compatibility-issues), описанные ниже преобразования XDT поддерживаются только `packages.config`. Если добавить в пакет указанные ниже файлы, то у потребителей, использующих ваш пакет с `PackageReference`, преобразования применены не будут (см. [этот пример](https://github.com/NuGet/Samples/tree/master/XDTransformExample), чтобы обеспечить работу преобразований XDT с`PackageReference`).
 
 Вы можете изменять файлы конфигурации с помощью [синтаксиса XDT](https://msdn.microsoft.com/library/dd465326.aspx). Кроме того, NuGet может заменять токены [свойствами проекта](/dotnet/api/vslangproj.projectproperties?view=visualstudiosdk-2017&viewFallbackFrom=netframework-4.7), включая имена свойств с разделителями `$` (без учета регистра символов).
 
