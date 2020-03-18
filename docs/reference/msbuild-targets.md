@@ -6,11 +6,11 @@ ms.author: karann
 ms.date: 03/23/2018
 ms.topic: conceptual
 ms.openlocfilehash: 922fc0b25664dede59e33c6cd012dfeedcad0397
-ms.sourcegitcommit: 415c70d7014545c1f65271a2debf8c3c1c5eb688
+ms.sourcegitcommit: ddb52131e84dd54db199ce8331f6da18aa3feea1
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/06/2020
-ms.locfileid: "77036933"
+ms.lasthandoff: 03/16/2020
+ms.locfileid: "79428345"
 ---
 # <a name="nuget-pack-and-restore-as-msbuild-targets"></a>Объекты pack и restore NuGet в качестве целевых объектов MSBuild
 
@@ -48,14 +48,14 @@ ms.locfileid: "77036933"
 
 | Значение атрибута или NuSpec | Свойство MSBuild | По умолчанию | Примечания |
 |--------|--------|--------|--------|
-| Идентификатор | PackageId | AssemblyName | $(AssemblyName) из MSBuild |
+| Id | PackageId | AssemblyName | $(AssemblyName) из MSBuild |
 | Версия | PackageVersion | Версия | Это значение совместимо с SemVer, например "1.0.0", "1.0.0-beta" или "1.0.0-beta-00345" |
 | VersionPrefix | PackageVersionPrefix | empty | Задав PackageVersion, вы перезапишите PackageVersionPrefix |
 | VersionSuffix | PackageVersionSuffix | empty | $(VersionSuffix) из MSBuild. Задав PackageVersion, вы перезапишите PackageVersionSuffix |
 | Авторы | Авторы | Имя текущего пользователя | |
-| Владельцы | Недоступно | Не существует в NuSpec | |
-| Title | Title | Идентификатор пакета| |
-| Description | Description | "Описание пакета" | |
+| Владельцы | Н/Д | Не существует в NuSpec | |
+| Заголовок | Заголовок | Идентификатор пакета| |
+| Описание | Описание | "Описание пакета" | |
 | Авторские права | Авторские права | empty | |
 | RequireLicenseAcceptance | PackageRequireLicenseAcceptance | false | |
 | license | PackageLicenseExpression | empty | Соответствует `<license type="expression">` |
@@ -80,7 +80,7 @@ ms.locfileid: "77036933"
 - PackageVersion
 - PackageId
 - Авторы
-- Description
+- Описание
 - Авторские права
 - PackageRequireLicenseAcceptance
 - DevelopmentDependency
@@ -131,7 +131,7 @@ ms.locfileid: "77036933"
 
 При упаковке файла изображения значка необходимо использовать свойство `PackageIcon`, чтобы указать путь к пакету относительно корня пакета. Кроме того, необходимо убедиться, что файл включен в пакет. Размер файла изображения ограничен 1 МБ. Поддерживаются следующие форматы файлов: JPEG и PNG. Рекомендуется разрешение изображения 128x128.
 
-Пример:
+Например:
 
 ```xml
 <PropertyGroup>
@@ -242,7 +242,7 @@ ms.locfileid: "77036933"
 
 Дополнительные [сведения о лицензионных выражениях и лицензиях, принимаемых NuGet.org](nuspec.md#license).
 
-При упаковке файла лицензии необходимо использовать свойство Паккажелиценсефиле, чтобы указать путь к пакету относительно корня пакета. Кроме того, необходимо убедиться, что файл включен в пакет. Пример:
+При упаковке файла лицензии необходимо использовать свойство Паккажелиценсефиле, чтобы указать путь к пакету относительно корня пакета. Кроме того, необходимо убедиться, что файл включен в пакет. Например:
 
 ```xml
 <PropertyGroup>
@@ -313,7 +313,7 @@ msbuild -t:pack <path to .csproj file> -p:NuspecFile=<path to nuspec file> -p:Nu
 - `FinalOutputPath`: абсолютный путь к файлу; Если этот параметр не указан, для вычисления исходного пути используется удостоверение.
 - `TargetPath`(необязательно) укажите, когда файл должен быть вложен в подпапку в `lib\<TargetFramework>`, например вспомогательные сборки, которые находятся в соответствующих папках культуры. По умолчанию используется имя файла.
 
-Пример
+Пример.
 
 ```xml
 <PropertyGroup>
@@ -371,7 +371,7 @@ msbuild -t:pack <path to .csproj file> -p:NuspecFile=<path to nuspec file> -p:Nu
 
 Дополнительные параметры восстановления могут поступать из свойств MSBuild в файле проекта. Значения также можно задать из командной строки с помощью параметра `-p:` (см. примеры ниже).
 
-| Свойство | Description |
+| Свойство | Описание |
 |--------|--------|
 | RestoreSources | Разделенный точками с запятой список источников пакетов. |
 | RestorePackagesPath | Путь к папке пакетов пользователя. |
@@ -395,7 +395,7 @@ msbuild -t:pack <path to .csproj file> -p:NuspecFile=<path to nuspec file> -p:Nu
 
 #### <a name="examples"></a>Примеры
 
-Командная строка:
+Из командной строки:
 
 ```cli
 msbuild -t:restore -p:RestoreConfigFile=<path>
@@ -413,7 +413,7 @@ msbuild -t:restore -p:RestoreConfigFile=<path>
 
 Операция восстановления создает в папке сборки `obj` следующие файлы:
 
-| Файл | Description |
+| Файл | Описание |
 |--------|--------|
 | `project.assets.json` | Содержит диаграмму зависимостей всех ссылок на пакеты. |
 | `{projectName}.projectFileExtension.nuget.g.props` | Ссылки на свойства MSBuild, содержащиеся в пакетах. |
