@@ -6,11 +6,11 @@ ms.author: karann
 ms.date: 06/04/2018
 ms.topic: conceptual
 ms.openlocfilehash: 9f427005251bc2bf7a8a79285e39b4bd49062dbf
-ms.sourcegitcommit: e9c1dd0679ddd8ba3ee992d817b405f13da0472a
+ms.sourcegitcommit: ddb52131e84dd54db199ce8331f6da18aa3feea1
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "76813355"
+ms.lasthandoff: 03/16/2020
+ms.locfileid: "79428495"
 ---
 # <a name="finding-and-evaluating-nuget-packages-for-your-project"></a>Поиск и пробное использование пакетов NuGet для проекта
 
@@ -128,7 +128,7 @@ NuGet поддерживает собственные пакеты C++, кото
 
 Поиск пакетов NuGet на веб-сайте nuget.org, из интерфейса командной строки NuGet и в расширении "Диспетчер пакетов NuGet" в среде Visual Studio осуществляется одинаково. В общем случае поиск осуществляется по ключевым словам и по описанию пакета.
 
-- **Фильтрация**: условие поиска можно применить к конкретному свойству, используя синтаксис `<property>:<term>`, где `<property>` (без учета регистра) может принимать значения `id`, `packageid`, `version`, `title`, `tags`, `author`, `description`, `summary` и `owner`. Можно одновременно искать несколько свойств. При поиске по свойству `id` сопоставляются подстроки, а по свойствам `packageid` и `owner` используется точное совпадение без учета регистра. Примеры:
+- **Фильтрация**: условие поиска можно применить к конкретному свойству, используя синтаксис `<property>:<term>`, где `<property>` (без учета регистра) может принимать значения `id`, `packageid`, `version`, `title`, `tags`, `author`, `description`, `summary` и `owner`. Можно одновременно искать несколько свойств. При поиске по свойству `id` сопоставляются подстроки, а по свойствам `packageid` и `owner` используется точное совпадение без учета регистра. Примеры
 
 ```
 PackageId:jquery             # Match the package ID in an exact, case-insensitive manner
