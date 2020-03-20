@@ -6,11 +6,11 @@ ms.author: karann
 ms.date: 03/22/2018
 ms.topic: conceptual
 ms.openlocfilehash: ddd1d163e18ed4ce1e7cbf41ed152acc40c1c423
-ms.sourcegitcommit: 7441f12f06ca380feb87c6192ec69f6108f43ee3
+ms.sourcegitcommit: ddb52131e84dd54db199ce8331f6da18aa3feea1
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/15/2019
-ms.locfileid: "69488782"
+ms.lasthandoff: 03/16/2020
+ms.locfileid: "79428519"
 ---
 # <a name="package-consumption-workflow"></a>Рабочий процесс использования пакета
 
@@ -45,7 +45,7 @@ NuGet также проверяет совместимость целевых п
 
 Пакеты NuGet можно скачать и установить с использованием любого из представленных в следующей таблице методов.
 
-| Средство | ОПИСАНИЕ |
+| Средство | Описание |
 | --- | --- |
 | [Интерфейс командной строки dotnet.exe](install-use-packages-dotnet-cli.md) | (Все платформы.) Средство CLI для библиотек .NET Core и .NET Standard, а также для проектов в стиле пакета SDK, нацеленных на .NET Framework (см. раздел [Атрибут SDK](/dotnet/core/tools/csproj#additions)). Извлекает пакет, определяемый атрибутом \<package_name\>, и добавляет ссылку в файл проекта. Кроме того, извлекает и устанавливает зависимости. |
 | Visual Studio | (Компьютеры с Windows и Mac.) Пользовательский интерфейс, через который можно просматривать, выбирать и устанавливать в проект пакеты и их зависимости из указанного источника пакетов. Добавляет ссылки на установленные пакеты в файл проекта.<ul><li>[Установка пакетов и управление ими с использованием Visual Studio](install-use-packages-visual-studio.md)</li><li>[Включение пакета NuGet в проект](/visualstudio/mac/nuget-walkthrough)</li></ul> |

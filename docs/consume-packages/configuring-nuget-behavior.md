@@ -6,11 +6,11 @@ ms.author: karann
 ms.date: 10/25/2017
 ms.topic: conceptual
 ms.openlocfilehash: 89127203df0aa1eb24f36b8ec64c5bb4a4d59319
-ms.sourcegitcommit: 1eda83ab537c86cc27316e7bc67f95a358766e63
+ms.sourcegitcommit: ddb52131e84dd54db199ce8331f6da18aa3feea1
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/18/2019
-ms.locfileid: "71094073"
+ms.lasthandoff: 03/16/2020
+ms.locfileid: "79428543"
 ---
 # <a name="common-nuget-configurations"></a>Распространенные конфигурации NuGet
 
@@ -18,7 +18,7 @@ ms.locfileid: "71094073"
 
 ## <a name="config-file-locations-and-uses"></a>Расположение и использование файла конфигурации
 
-| Область | Расположение файла NuGet.Config | ОПИСАНИЕ |
+| Область | Расположение файла NuGet.Config | Описание |
 | --- | --- | --- |
 | Решение | Текущая папка (т. е. папка решения) или любая другая папка вплоть до уровня корня диска.| Параметры папки решения применяются ко всем проектам во вложенных папках. Обратите внимание, что если файл конфигурации помещен в папку проекта, он никоим образом не влияет на проект. |
 | Пользовательская | Windows: `%appdata%\NuGet\NuGet.Config`<br/>Mac/Linux: `~/.config/NuGet/NuGet.Config` или `~/.nuget/NuGet/NuGet.Config` (зависит от дистрибутива ОС) | Параметры применяются ко всем операциям, но переопределяются любыми параметрами, задаваемыми на уровне проекта. |
