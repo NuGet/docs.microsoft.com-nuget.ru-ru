@@ -1,14 +1,14 @@
 ---
-ms.openlocfilehash: fadb6091f9f1e4f380c3896f790fd61ce80e9683
-ms.sourcegitcommit: c81561e93a7be467c1983d639158d4e3dc25b93a
+ms.openlocfilehash: b615bcb78ad2eaf8524bfbf17864d4652e546ff1
+ms.sourcegitcommit: 1a63a84da2719c8141823ac89a20bf507fd22b00
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/02/2020
-ms.locfileid: "78230591"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "80151244"
 ---
-<span data-ttu-id="ebbfa-101">Необязательное описание пакета, отображаемое на странице NuGet.org пакета, получается из `<description></description`, используемого в файле `.csproj`, или через `$description` в [файле NUSPEC](../../reference/nuspec.md).</span><span class="sxs-lookup"><span data-stu-id="ebbfa-101">The package's optional description, displayed on the package's NuGet.org page, is either pulled in from the `<description></description` used in the `.csproj` file or pulled in via the `$description` in the [.nuspec file](../../reference/nuspec.md).</span></span>
+<span data-ttu-id="5414b-101">Необязательное описание пакета, отображаемое на странице NuGet.org пакета, получается из `<description></description>`, используемого в файле `.csproj`, или через `$description` в [файле NUSPEC](../../reference/nuspec.md).</span><span class="sxs-lookup"><span data-stu-id="5414b-101">The package's optional description, displayed on the package's NuGet.org page, is either pulled in from the `<description></description>` used in the `.csproj` file or pulled in via the `$description` in the [.nuspec file](../../reference/nuspec.md).</span></span>
 
-<span data-ttu-id="ebbfa-102">Пример поля _Description_ показан в следующем XML-коде файла `.csproj` для пакета .NET:</span><span class="sxs-lookup"><span data-stu-id="ebbfa-102">An example of a _description_ field is shown in the following XML text of the `.csproj` file for a .NET package:</span></span>
+<span data-ttu-id="5414b-102">Пример поля _Description_ показан в следующем XML-коде файла `.csproj` для пакета .NET:</span><span class="sxs-lookup"><span data-stu-id="5414b-102">An example of a _description_ field is shown in the following XML text of the `.csproj` file for a .NET package:</span></span>
 
 ```xml
 <Project Sdk="Microsoft.NET.Sdk">
