@@ -5,16 +5,16 @@ author: karann-msft
 ms.author: karann
 ms.date: 07/24/2018
 ms.topic: quickstart
-ms.openlocfilehash: 96e138561390984d9def495ba5e091c43023cc92
-ms.sourcegitcommit: c81561e93a7be467c1983d639158d4e3dc25b93a
+ms.openlocfilehash: 10bc34653d294cf70b5c91ce79a79cf6532fba1b
+ms.sourcegitcommit: 1a63a84da2719c8141823ac89a20bf507fd22b00
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/02/2020
-ms.locfileid: "78231335"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "80147491"
 ---
 # <a name="quickstart-install-and-use-a-package-in-visual-studio-windows-only"></a>Краткое руководство. Установка и использование пакета в Visual Studio (только в Windows)
 
-Пакеты NuGet содержат многократно используемый код, предлагаемый другими разработчиками для ваших проектов. Дополнительные сведения см. в разделе [Что такое NuGet?](../What-is-NuGet.md). Пакеты устанавливаются в проекте Visual Studio с помощью диспетчера пакетов NuGet или консоли диспетчера пакетов. В этой статье описано, как использовать популярный пакет [Newtonsoft.Json](https://www.nuget.org/packages/Newtonsoft.Json/) и проект Windows Presentation Foundation (WPF). Тот же процесс применяется к любому другому проекту .NET или .NET Core.
+Пакеты NuGet содержат многократно используемый код, предлагаемый другими разработчиками для ваших проектов. Дополнительные сведения см. в разделе [Что такое NuGet?](../What-is-NuGet.md). Пакеты устанавливаются в проекте Visual Studio с помощью диспетчера пакетов NuGet, [консоли диспетчера пакетов](../consume-packages/install-use-packages-powershell) или [интерфейса командной строки .NET](install-and-use-a-package-using-the-dotnet-cli.md). В этой статье описано, как использовать популярный пакет [Newtonsoft.Json](https://www.nuget.org/packages/Newtonsoft.Json/) и проект Windows Presentation Foundation (WPF). Тот же процесс применяется к любому другому проекту .NET или .NET Core.
 
 После установки ссылаться на пакет в коде можно с помощью `using <namespace>`, где \<namespace\> соответствует используемому пакету. После указания ссылки можно обращаться к пакету посредством его интерфейса API.
 
