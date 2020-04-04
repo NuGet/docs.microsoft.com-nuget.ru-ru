@@ -20,9 +20,9 @@ ms.locfileid: "79428465"
 
 | Средство&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | Описание | Скачать&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; |
 |:------------- |:-------------|:-----|
-| [dotnet.exe](#dotnetexe-cli) | Средство CLI для библиотек .NET Core и .NET Standard, а также для любых [проектов в стиле пакета SDK](resources/check-project-format.md), нацеленных на .NET Framework. Входит в состав пакета SDK для .NET Core и обеспечивает основные функции NuGet на всех платформах. (Начиная с версии Visual Studio 2017 средство CLI dotnet автоматически устанавливается вместе с любыми рабочими нагрузками, связанными с .NET Core.)| [Пакет SDK для .NET Core](https://www.microsoft.com/net/download/) |
-| [nuget.exe](#nugetexe-cli) | Средство CLI для библиотек .NET Framework, а также для любых [проектов не на основе пакетов SDK](resources/check-project-format.md), нацеленных на библиотеки .NET Standard. Обеспечивает все функциональные возможности NuGet в Windows и большинство функций, выполняемых в рамках проекта Mono на компьютере Mac и Linux. | [nuget.exe](https://dist.nuget.org/win-x86-commandline/latest/nuget.exe) |
-| [Visual Studio](#visual-studio) | В Windows **диспетчер пакетов NuGet** включен в Visual Studio 2012 и более поздние версии. Visual Studio предоставляет [пользовательский интерфейс](consume-packages/install-use-packages-visual-studio.md) и [консоль](consume-packages/install-use-packages-powershell.md) диспетчера пакетов, через которые можно выполнять большинство операций NuGet. | [Visual Studio](https://www.visualstudio.com/downloads/) |
+| [dotnet.exe](#dotnetexe-cli) | Средство CLI для библиотек .NET Core и .NET Standard, а также для любых [проектов в стиле SDK](resources/check-project-format.md), нацеленных на .NET Framework. Входит в состав пакета SDK для .NET Core и обеспечивает основные функции NuGet на всех платформах. (Начиная с версии Visual Studio 2017 средство CLI dotnet автоматически устанавливается вместе с любыми рабочими нагрузками, связанными с .NET Core.)| [Пакет SDK для .NET Core](https://www.microsoft.com/net/download/) |
+| [nuget.exe](#nugetexe-cli) | Средство CLI для библиотек .NET Framework, а также для любых [проектов не в стиле SDK](resources/check-project-format.md), нацеленных на библиотеки .NET Standard. Обеспечивает все функциональные возможности NuGet в Windows и большинство функций на компьютере Mac и Linux, когда выполняется под Mono. | [nuget.exe](https://dist.nuget.org/win-x86-commandline/latest/nuget.exe) |
+| [Visual Studio](#visual-studio) | В Windows **Диспетчер пакетов NuGet** включен в Visual Studio 2012 и более поздние версии. Visual Studio предоставляет [пользовательский интерфейс](consume-packages/install-use-packages-visual-studio.md) и [консоль](consume-packages/install-use-packages-powershell.md) диспетчера пакетов, через которые можно выполнять большинство операций NuGet. | [Visual Studio](https://www.visualstudio.com/downloads/) |
 | [Visual Studio для Mac](/visualstudio/mac/nuget-walkthrough) | В Mac некоторые возможности NuGet встроены напрямую. Консоль диспетчера пакетов сейчас недоступна. Для других возможностей используются средства CLI `dotnet.exe` или `nuget.exe`.  | [Visual Studio для Mac](https://visualstudio.microsoft.com/vs/mac/) |
 | [Visual Studio Code](https://code.visualstudio.com/docs) | В Windows, Mac или Linux, NuGet для получения возможностей NuGet можно использовать расширения Marketplace или средства CLI `dotnet.exe` или `nuget.exe`. | [Visual Studio Code](https://code.visualstudio.com/Download/)|
 
@@ -40,20 +40,20 @@ ms.locfileid: "79428465"
 Для Visual Studio 2010 и более ранних версий установите расширение "Диспетчер пакетов NuGet для Visual Studio". Обратите внимание, что если расширение не отображается на первой странице результатов поиска, можно изменить значение в раскрывающемся списке "Sort By" (Сортировка по) на "Most Downloads" (Больше всего скачиваний) или сортировку по алфавиту.
 
 ## <a name="cli-tools"></a>Средства CLI
-Для поддержки функций NuGet в интегрированной среде разработки можно использовать интерфейс командной строки `dotnet` или `nuget.exe`. Средство CLI `dotnet` устанавливается вместе с некоторыми рабочими нагрузками Visual Studio, например .NET Core. Средство CLI `nuget.exe` нужно установить отдельно, как описано выше.
+Для поддержки функций NuGet в интегрированной среде разработки можно использовать интерфейс командной строки `dotnet.exe` или `nuget.exe`. Средство CLI `dotnet.exe` устанавливается вместе с некоторыми рабочими нагрузками Visual Studio, например .NET Core. Средство CLI `nuget.exe` нужно установить отдельно, как описано выше.
 
 Два средства CLI для NuGet — `dotnet.exe` и `nuget.exe`. См. сравнительную таблицу [доступности функций](#feature-availability).
 
-* Для нацеливания на .NET Core или .NET Standard используйте CLI для .NET. CLI `dotnet` является обязательным для проекта на основе пакета SDK, использующего [атрибут SDK](/dotnet/core/tools/csproj#additions).
-* Для нацеливания на .NET Framework (только проекты не на основе пакетов SDK) используйте CLI `nuget.exe`. Если проект переносится из `packages.config` в PackageReference, используйте CLI dotnet.
+* Для нацеливания на .NET Core или .NET Standard используйте CLI для .NET. CLI `dotnet.exe` является обязательным для проекта на основе пакета SDK, использующего [атрибут SDK](/dotnet/core/tools/csproj#additions).
+* Для нацеливания на .NET Framework (только проекты не на основе пакетов SDK) используйте CLI `nuget.exe`. Если проект переносится из `packages.config` в PackageReference, используйте CLI dotnet.exe.
 
 ### <a name="dotnetexe-cli"></a>Интерфейс командной строки dotnet.exe
 
-Интерфейс командной строки .NET Core 2.0, `dotnet.exe`, работает на всех платформах (Windows, Mac и Linux) и предоставляет такие возможности NuGet, как установка, восстановление и публикация пакетов. `dotnet` обеспечивает прямую интеграцию с файлами проекта .NET Core (например, `.csproj`), что полезно в большинстве сценариев. `dotnet` также создается непосредственно для каждой платформы и не требует установки Mono.
+Интерфейс командной строки .NET Core 2.0, `dotnet.exe`, работает на всех платформах (Windows, Mac и Linux) и предоставляет такие возможности NuGet, как установка, восстановление и публикация пакетов. `dotnet.exe` обеспечивает прямую интеграцию с файлами проекта .NET Core (например, `.csproj`), что полезно в большинстве сценариев. `dotnet.exe` также создается непосредственно для каждой платформы и не требует установки Mono.
 
 Установка:
 
-- на компьютерах разработчиков установите [пакет SDK для .NET Core](https://aka.ms/dotnetcoregs); Начиная с версии Visual Studio 2017, средство CLI dotnet автоматически устанавливается вместе с любыми рабочими нагрузками, связанными с .NET Core.
+- на компьютерах разработчиков установите [пакет SDK для .NET Core](https://aka.ms/dotnetcoregs); Начиная с версии Visual Studio 2017, средство CLI dotnet. автоматически устанавливается вместе с любыми рабочими нагрузками, связанными с .NET Core.
 - для серверов сборки следуйте инструкциям в статье [Использование пакета SDK и средств .NET Core при непрерывной интеграции (CI)](/dotnet/core/tools/using-ci-with-cli).
 
 Сведения об использовании основных команд с CLI dotnet см. в статье [Установка и использование пакета с помощью CLI dotnet](consume-packages/install-use-packages-dotnet-cli.md).
@@ -100,7 +100,7 @@ ms.locfileid: "79428465"
 (4) Работает с файлами `.nuspec`, но не с файлами проекта.
 
 ## <a name="upcoming-features"></a>Будущие возможности
-Если вы хотите заранее оценить предстоящие возможности NuGet, установите предварительную версию [Visual Studio Preview](https://www.visualstudio.com/vs/preview/), которая работает параллельно со стабильными выпусками Visual Studio. Чтобы сообщить о проблемах или обменяться идеями о предварительных версиях, откройте обращение в [репозитории NuGet GitHub](https://github.com/Nuget/Home/issues).
+Если вы хотите заранее оценить предстоящие возможности NuGet, установите [предварительную версию Visual Studio](https://www.visualstudio.com/vs/preview/), которая работает параллельно со стабильными выпусками Visual Studio. Чтобы сообщить о проблемах или обменяться идеями о предварительных версиях, откройте обращение в [репозитории NuGet GitHub](https://github.com/Nuget/Home/issues).
 
 ### <a name="related-topics"></a>См. также
 
@@ -112,4 +112,4 @@ ms.locfileid: "79428465"
 - [Создание пакета](create-packages/creating-a-package.md)
 - [Публикация пакета](nuget-org/publish-a-package.md)
 
-Разработчики, работающие в Windows, также могут рассмотреть [обозреватель пакетов NuGet](https://github.com/NuGetPackageExplorer/NuGetPackageExplorer), автономное средство с открытым исходным кодом, позволяющее визуально изучать, создавать и изменять пакеты NuGet. Это очень удобно, например, для внесения экспериментальных изменений в структуру пакета без необходимости его перестроения.
+Разработчики, работающие в Windows, также могут рассмотреть [Обозреватель пакетов NuGet](https://github.com/NuGetPackageExplorer/NuGetPackageExplorer), автономное средство с открытым исходным кодом, позволяющее визуально изучать, создавать и изменять пакеты NuGet. Это очень удобно, например, для внесения экспериментальных изменений в структуру пакета без необходимости его перестроения.
