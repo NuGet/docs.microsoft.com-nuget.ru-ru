@@ -6,10 +6,10 @@ ms.author: karann
 ms.date: 01/09/2017
 ms.topic: conceptual
 ms.openlocfilehash: a86a58f8afb4b0f1affeddd47d6c5606fb465757
-ms.sourcegitcommit: 39f2ae79fbbc308e06acf67ee8e24cfcdb2c831b
+ms.sourcegitcommit: 2b50c450cca521681a384aa466ab666679a40213
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/05/2019
+ms.lasthandoff: 04/07/2020
 ms.locfileid: "73611001"
 ---
 # <a name="setting-up-package-restore-with-team-foundation-build"></a>Настройка восстановления пакетов с помощью сборки Team Foundation
@@ -18,7 +18,7 @@ ms.locfileid: "73611001"
 
 Хотя это руководство относится к сценарию использования Visual Studio Team Services, основные принципы также применимы к другим системам управления версиями и сборки.
 
-Область применения.
+Область применения:
 
 - пользовательским проектам MSBuild, выполняющимся в любой версии Team Foundation Server;
 - Team Foundation Server 2012 или более ранней версии;
@@ -84,7 +84,7 @@ nuget restore path\to\solution.sln
 ### <a name="ignore-files"></a>Пропуск файлов
 
 > [!Note]
-> В клиенте NuGet в настоящее время есть [известная ошибка](https://nuget.codeplex.com/workitem/4072), из-за которой клиент все же добавляет папку `packages` в систему управления версиями. Обходным решением является отключение интеграции с системой управления версиями. Для этого в папке `.nuget`, которая находится в том же каталоге, что и решение, должен быть файл `Nuget.Config `. Если этой папки еще нет, создайте ее. В файл [`Nuget.Config`](../consume-packages/configuring-nuget-behavior.md) добавьте следующее содержимое:
+> В клиенте NuGet в настоящее время есть [известная ошибка](https://nuget.codeplex.com/workitem/4072), из-за которой клиент все же добавляет папку `packages` в систему управления версиями. Обходным решением является отключение интеграции с системой управления версиями. Для этого в папке `Nuget.Config `, которая находится в том же каталоге, что и решение, должен быть файл `.nuget`. Если этой папки еще нет, создайте ее. В файл [`Nuget.Config`](../consume-packages/configuring-nuget-behavior.md) добавьте следующее содержимое:
 
 ```xml
 <configuration>
@@ -108,7 +108,7 @@ nuget restore path\to\solution.sln
     project.lock.json
     project.assets.json
 
-Возможности файла `.gitignore` [весьма широки](https://www.kernel.org/pub/software/scm/git/docs/gitignore.html). Например, если вы не хотите возвращать все содержимое папки `packages`, но хотите вернуть файлы `.targets`, можно вместо этого использовать следующее правило:
+Возможности файла `.gitignore`[весьма широки](https://www.kernel.org/pub/software/scm/git/docs/gitignore.html). Например, если вы не хотите возвращать все содержимое папки `packages`, но хотите вернуть файлы `.targets`, можно вместо этого использовать следующее правило:
 
     packages
     !packages/**/*.targets

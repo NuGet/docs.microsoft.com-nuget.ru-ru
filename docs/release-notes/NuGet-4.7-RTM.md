@@ -6,27 +6,27 @@ ms.author: karann
 ms.date: 5/14/2018
 ms.topic: conceptual
 ms.openlocfilehash: 2290025d42dcd5704b6b019c17346201fe6a990d
-ms.sourcegitcommit: e9c1dd0679ddd8ba3ee992d817b405f13da0472a
+ms.sourcegitcommit: 2b50c450cca521681a384aa466ab666679a40213
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/29/2020
+ms.lasthandoff: 04/07/2020
 ms.locfileid: "76813797"
 ---
 # <a name="nuget-47-release-notes"></a>Заметки о выпуске NuGet 4.7
 
 [Visual Studio 2017 15.7 RTW](https://www.visualstudio.com/news/releasenotes/vs2017-relnotes) включает в себя [NuGet 4.7.0](https://dist.nuget.org/win-x86-commandline/v4.7.0/nuget.exe).
 
-## <a name="summary-whats-new-in-470"></a>Сводка. Новые возможности версии 4.7.0
+## <a name="summary-whats-new-in-470"></a>Сводка: Новые возможности версии 4.7.0
 
 * Усовершенствовано подписывание пакетов: теперь поддерживаются [пакеты с подписями репозитория](https://github.com/NuGet/Home/wiki/Repository-Signatures)
 
 * В Visual Studio версии 15.7 мы реализовали возможность [переноса существующих проектов, которые используют формат packages.config вместо PackageReference](../consume-packages/migrate-packages-config-to-package-reference.md).
 
-## <a name="summary-whats-new-in-472"></a>Сводка. Новые возможности версии 4.7.2
+## <a name="summary-whats-new-in-472"></a>Сводка: Новые возможности версии 4.7.2
 
 * Исправление безопасности: разрешения на файлы, созданные внутри ~/.nuget, слишком открыты [#7673](https://github.com/NuGet/Home/issues/7673) [CVE-2019-0757](https://portal.msrc.microsoft.com/en-us/security-guidance/advisory/CVE-2019-0757)
 
-## <a name="summary-whats-new-in-473"></a>Сводка. Новые возможности версии 4.7.3
+## <a name="summary-whats-new-in-473"></a>Сводка: Новые возможности версии 4.7.3
 
 * Исправление безопасности: файлы внутри NUPKG могут иметь относительный путь выше каталога NUPKG [#7906](https://github.com/NuGet/Home/issues/7906)
 
@@ -34,11 +34,11 @@ ms.locfileid: "76813797"
 
 ### <a name="the-migrate-packagesconfig-to-packagereference-option-is-not-available-in-the-right-click-context-menu"></a>Параметр `Migrate packages.config to PackageReference...` недоступен в контекстном меню, которое открывается по щелчку правой кнопкой мыши
 
-#### <a name="issue"></a>Проблема
+#### <a name="issue"></a>Проблемы
 
 При первом открытии проект NuGet не удается инициализировать до выполнения операции NuGet. В результате параметр миграции не отображается в контекстном меню, которое открывается по щелчку правой кнопкой мыши `packages.config` или `References`.
 
-#### <a name="workaround"></a>Обходной путь
+#### <a name="workaround"></a>Возможное решение
 
 Выполните одно из следующих действий NuGet:
 * Откройте пользовательский интерфейс диспетчера пакетов. Для этого щелкните правой кнопкой мыши `References` и выберите `Manage NuGet Packages...`.

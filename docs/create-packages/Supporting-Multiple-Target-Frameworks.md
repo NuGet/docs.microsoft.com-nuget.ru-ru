@@ -6,10 +6,10 @@ ms.author: karann
 ms.date: 07/15/2019
 ms.topic: conceptual
 ms.openlocfilehash: 34f7c6132ba6050e20114642932ccf29a5ec088d
-ms.sourcegitcommit: ddb52131e84dd54db199ce8331f6da18aa3feea1
+ms.sourcegitcommit: 2b50c450cca521681a384aa466ab666679a40213
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/16/2020
+ms.lasthandoff: 04/07/2020
 ms.locfileid: "79428627"
 ---
 # <a name="support-multiple-net-versions"></a>Поддержка нескольких версий .NET
@@ -69,7 +69,7 @@ ms.locfileid: "79428627"
 
 Обратите внимание, что NuGet всегда извлекает ресурсы, используемые во время компиляции или выполнения, из одной папки. Если в папке `/ref` есть совместимые ресурсы, то из папки `/lib` не будут добавляться сборки, используемые во время компиляции. Соответственно, если в папке `/runtimes` есть совместимые ресурсы, то ресурсы из папки `/lib` будут игнорироваться.
 
-Пример указания ссылок на эти файлы в манифесте `.nuspec` см. в разделе [Создание пакетов универсальной платформы Windows](../guides/create-uwp-packages.md).
+Пример указания ссылок на эти файлы в манифесте [ см. в разделе ](../guides/create-uwp-packages.md)Создание пакетов универсальной платформы Windows`.nuspec`.
 
 Также ознакомьтесь с записью блога об [упаковке компонента приложения для Магазина Windows с помощью NuGet](https://blogs.msdn.microsoft.com/mim/2013/09/02/packaging-a-windows-store-apps-component-with-nuget-part-2).
 
@@ -116,10 +116,10 @@ NuGet также поддерживает нацеливание на опред
 
 Поддерживаются следующие профили:
 
-- `client`. профиль клиента;
-- `full`. полный профиль;
-- `wp`. Windows Phone
-- `cf`. Compact Framework.
+- `client`: клиентский профиль;
+- `full`: полный профиль;
+- `wp`: Windows Phone;
+- `cf`: Compact Framework.
 
 ## <a name="declaring-dependencies-advanced"></a>Объявление зависимостей (расширенные сценарии)
 
@@ -152,7 +152,7 @@ NuGet также поддерживает нацеливание на опред
 При упаковке библиотек, предназначенных для переносимой библиотеки классов, может быть нелегко определить цель NuGet, которую следует использовать в именах папок и файле `.nuspec`, особенно если нацеливание производится лишь на подмножество переносимой библиотеки классов. Следующие внешние ресурсы могут помочь в решении этой задачи:
 
 - [Framework profiles in .NET](https://blog.stephencleary.com/2012/05/framework-profiles-in-net.html) (Профили платформы в .NET) (stephencleary.com);
-- [Portable Class Library profiles](https://embed.plnkr.co/03ck2dCtnJogBKHJ9EjY/preview) (Профили переносимой библиотеки классов) (plnkr.co): таблица, в которой перечисляются профили переносимой библиотеки классов и эквивалентные цели NuGet;
+- [Профили переносимой библиотеки классов](https://embed.plnkr.co/03ck2dCtnJogBKHJ9EjY/preview) (plnkr.co): таблица, в которой перечисляются профили переносимой библиотеки классов и эквивалентные цели NuGet
 - [Программа для работы с профилями переносимой библиотеки классов](https://github.com/StephenCleary/PortableLibraryProfiles) (github.com): программа командной строки, позволяющая определить профили переносимой библиотеки классов, доступные в системе
 
 ## <a name="content-files-and-powershell-scripts"></a>Файлы содержимого и скрипты PowerShell
