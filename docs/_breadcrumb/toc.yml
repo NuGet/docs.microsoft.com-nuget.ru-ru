@@ -15,19 +15,19 @@
         - name: Создание пакетов
           tocHref: /nuget/create-packages/
           topicHref: /nuget/create-packages/overview-and-workflow
-        - name: Направляющие
+        - name: Руководства
           tocHref: /nuget/guides/
           topicHref: /nuget/guides/create-net-standard-packages-vs2017
         - name: Основные понятия
           tocHref: /nuget/concepts/
           topicHref: /nuget/concepts/package-installation-process
-        - name: Справочники
+        - name: Справочник
           tocHref: /nuget/reference/
           topicHref: /nuget/reference/nuspec
         - name: API
           tocHref: /nuget/api/
           topicHref: /nuget/api/overview
-        - name: Расширение среды
+        - name: Расширяемость
           tocHref: /nuget/reference/extensibility
           topicHref: /nuget/reference/extensibility/nuget-cross-platform-plugins
         - name: Расширяемость Visual Studio
@@ -39,7 +39,7 @@
         - name: Политики
           tocHref: /nuget/policies/
           topicHref: /nuget/policies/governance
-        - name: заметки о выпуске;
+        - name: Заметки о выпуске
           tocHref: /nuget/release-notes/
           topicHref: /nuget/release-notes/known-issues
         - name: Ресурсы
