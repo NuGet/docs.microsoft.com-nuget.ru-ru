@@ -7,11 +7,11 @@ ms.date: 08/14/2017
 ms.topic: conceptual
 ms.reviewer: anangaur
 ms.openlocfilehash: 3be24a86cc92c4e6d07fcae1dc625a150f28d7b4
-ms.sourcegitcommit: 74bf831e013470da8b0c1f43193df10bfb1f4fe6
+ms.sourcegitcommit: 2b50c450cca521681a384aa466ab666679a40213
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/26/2019
-ms.locfileid: "58432573"
+ms.lasthandoff: 04/07/2020
+ms.locfileid: "64498698"
 ---
 # <a name="nuget-44-release-notes"></a>Заметки о выпуске NuGet 4.4
 
@@ -21,7 +21,7 @@ ms.locfileid: "58432573"
 
 ## <a name="summary-whats-new-in-442"></a>Сводка: Новые возможности версии 4.4.2
 
-* Исправление безопасности: разрешения на файлы, созданные внутри ~/.nuget, слишком открыты [#7673](https://github.com/NuGet/Home/issues/7673)[CVE-2019-0757](https://portal.msrc.microsoft.com/en-us/security-guidance/advisory/CVE-2019-0757)
+* Исправление безопасности: разрешения на файлы, созданные внутри ~/.nuget, слишком открыты [#7673](https://github.com/NuGet/Home/issues/7673) [CVE-2019-0757](https://portal.msrc.microsoft.com/en-us/security-guidance/advisory/CVE-2019-0757)
 
 ## <a name="summary-whats-new-in-443"></a>Сводка: Новые возможности версии 4.4.3
 
@@ -39,7 +39,7 @@ ms.locfileid: "58432573"
 
 Периодически клавиша ВВОД не работает в консоли диспетчера пакетов. В этом случае проверьте ход исправления и укажите дополнительные сведения для воспроизведения ошибки. [NuGet#4204](https://github.com/NuGet/Home/issues/4204) [NuGet#4570](https://github.com/NuGet/Home/issues/4570)
 
-#### <a name="workaround"></a>Обходной путь
+#### <a name="workaround"></a>Возможное решение
 
 Перезапустите Visual Studio и откройте консоль управления пакетами перед тем, как открыть решение. Кроме того, попробуйте удалить файл `project.lock.json` и выполнить восстановление еще раз.
 
@@ -49,7 +49,7 @@ ms.locfileid: "58432573"
 
 Диспетчер пакетов NuGet не отображается и не позволяет добавить или обновить DotNetCLITools. [NuGet#4256](https://github.com/NuGet/Home/issues/4256)
 
-#### <a name="workaround"></a>Обходной путь
+#### <a name="workaround"></a>Возможное решение
 
 DotNetCLIToolReferences нужно изменить вручную в файле проекта.
 
@@ -59,7 +59,7 @@ DotNetCLIToolReferences нужно изменить вручную в файле
 
 Если изменить требуемую версию .NET Framework в Visual Studio, вы можете получить неполные данные функции IntelliSense. Это происходит, если использовать PackageReferences в качестве формата диспетчера пакетов. [NuGet#4216](https://github.com/NuGet/Home/issues/4216)
 
-#### <a name="workaround"></a>Обходной путь
+#### <a name="workaround"></a>Возможное решение
 
 Выполните восстановление вручную.
 
@@ -69,7 +69,7 @@ DotNetCLIToolReferences нужно изменить вручную в файле
 
 Иногда при использовании пакета, содержащего сборку с недопустимой подписью, или при использовании пакета, версия которого задается с помощью параметра DateTime, возникает бесконечный цикл автоматического восстановления пакета (dotnet/project-system#1457).
 
-#### <a name="workaround"></a>Обходной путь
+#### <a name="workaround"></a>Возможное решение
 
 Сейчас для этой проблемы не существует обходного решения.
 
