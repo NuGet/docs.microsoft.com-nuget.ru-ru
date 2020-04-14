@@ -6,11 +6,11 @@ ms.author: karann
 ms.date: 01/18/2018
 ms.topic: conceptual
 ms.openlocfilehash: 31243076f36f6ff274c4377c1773ea59dda8c834
-ms.sourcegitcommit: 1d1406764c6af5fb7801d462e0c4afc9092fa569
+ms.sourcegitcommit: 2b50c450cca521681a384aa466ab666679a40213
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/04/2018
-ms.locfileid: "43548148"
+ms.lasthandoff: 04/07/2020
+ms.locfileid: "64495506"
 ---
 # <a name="an-overview-of-the-nuget-ecosystem"></a>Общие сведения об экосистеме NuGet
 
@@ -37,7 +37,7 @@ NuGet предоставляет бесплатную систему управ�
 - [AppVeyor CI](https://www.appveyor.com/)
 - [Artifactory](https://www.jfrog.com/artifactory/)
 - [BoxStarter](http://boxstarter.org/)
-- [Chocolatey](https://chocolatey.org/)
+- [Chocolatey](https://chocolatey.org/);
 - [CoApp](http://coapp.org/)
 - [JetBrains ReSharper](https://resharper-plugins.jetbrains.com/)
 - [JetBrains TeamCity](https://www.jetbrains.com/teamcity/)

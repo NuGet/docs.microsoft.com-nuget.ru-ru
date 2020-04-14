@@ -6,10 +6,10 @@ ms.author: karann
 ms.date: 11/11/2016
 ms.topic: conceptual
 ms.openlocfilehash: 8f2b33a7290301bd16db3b1979ae496eee602f55
-ms.sourcegitcommit: 26a8eae00af2d4be581171e7a73009f94534c336
+ms.sourcegitcommit: 2b50c450cca521681a384aa466ab666679a40213
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/25/2019
+ms.lasthandoff: 04/07/2020
 ms.locfileid: "75383662"
 ---
 # <a name="known-issues-with-nuget"></a>Известные проблемы в NuGet
@@ -21,7 +21,7 @@ ms.locfileid: "75383662"
 
 ## <a name="authentication-issues-with-nuget-feeds-in-vsts-with-nugetexe-v343"></a>Проблемы с проверкой подлинности веб-каналов NuGet в Visual Studio Team Services с версией nuget.exe 3.4.3
 
-**Проблема:**
+**Проблема.**
 
 При использовании следующей команды для сохранения учетных данных личный маркер доступа зашифровывается дважды:
 
@@ -33,7 +33,7 @@ $PAT = "Личный маркер доступа" $Feed = "URL-адрес" .\nug
 
 ## <a name="error-installing-packages-with-nuget-34-341"></a>Ошибка при установке пакетов с помощью NuGet версии 3.4 или 3.4.1
 
-**Проблема:**
+**Проблема.**
 
 При использовании надстройки NuGet в NuGet 3.4 и 3.4.1 отсутствуют доступные источники и невозможно добавить новые источники в окне настройки. Ниже представлен пример окна.
 
@@ -43,7 +43,7 @@ $PAT = "Личный маркер доступа" $Feed = "URL-адрес" .\nug
 
 ## <a name="error-installing-packages-with-nuget-27"></a>Ошибка при установке пакетов с помощью NuGet 2.7
 
-**Проблема:**
+**Проблема.**
 
 В NuGet 2.7 или более поздней версии при попытке установить пакет, который содержит ссылки на сборки, может появиться сообщение об ошибке **Входная строка имела неверный формат**, как показано ниже.
 
@@ -75,7 +75,7 @@ install-package log4net
 
 ## <a name="build-failure-after-package-update-in-vs-2012"></a>Сбой сборки после обновления пакета в Visual Studio 2012
 
-Проблема. Вы используете Visual Studio 2012 RTM. При обновлении пакетов NuGet появляется следующее сообщение: "Не удалось удалить один или нескольких пакетов". и запрос на перезапуск Visual Studio. После перезапуска Visual Studio возникают странные ошибки сборки.
+Проблема: вы используете Visual Studio 2012 RTM. При обновлении пакетов NuGet появляется сообщение "Не удалось полностью удалить один или несколько пакетов" и запрос на перезапуск Visual Studio. После перезапуска Visual Studio возникают странные ошибки сборки.
 
 Причина в том, что некоторые файлы в старых пакетах блокируются фоновым процессом MSBuild. Даже после перезапуска Visual Studio фоновый процесс MSBuild по-прежнему использует файлы из старых пакетов, что приводит к сбоям сборки.
 
@@ -90,7 +90,7 @@ install-package log4net
 В журналах можно найти упоминание исключения `SignatureMismatchException`.
 
 Чтобы эта ошибка не происходила, можно установить [исправление для Visual Studio 2010 с пакетом обновления 1 (SP1)](http://bit.ly/vsixcertfix).
-Кроме того, можно просто удалить диспетчер NuGet (когда среда Visual Studio запущена с правами администратора), а затем установить его снова из коллекции расширений Visual Studio. Дополнительные сведения см. в разделе <https://support.microsoft.com/kb/2581019>.
+Кроме того, можно просто удалить диспетчер NuGet (когда среда Visual Studio запущена с правами администратора), а затем установить его снова из коллекции расширений Visual Studio. Подробнее см. в разделе <https://support.microsoft.com/kb/2581019>.
 
 ## <a name="package-manager-console-throws-an-exception-when-the-reflector-visual-studio-add-in-is-also-installed"></a>Консоль диспетчера пакетов выдает исключение, если также установлена надстройка Reflector для Visual Studio
 
@@ -105,7 +105,7 @@ install-package log4net
     Command execution stopped because the preference variable "ErrorActionPreference" or common parameter
     is set to Stop: Unable to find type
 
-or
+или диспетчер конфигурации служб
 
     System.Management.Automation.CmdletInvocationException: Could not load file or assembly 'Scripts\nuget.psm1' or one of its dependencies. <br />The parameter is incorrect. (Exception from HRESULT: 0x80070057 (E_INVALIDARG)) ---&gt; System.IO.FileLoadException: Could not load file or <br />assembly 'Scripts\nuget.psm1' or one of its dependencies. The parameter is incorrect. (Exception from HRESULT: 0x80070057 (E_INVALIDARG)) <br />---&gt; System.ArgumentException: Illegal characters in path.
        at System.IO.Path.CheckInvalidPathChars(String path)
@@ -134,7 +134,7 @@ or
 
 Мы обратились к автору этой надстройки с просьбой выработать решение.
 
-<p class="info">Обновление: мы протестировали последнюю версию надстройки Reflector (6.5) и убедились в том, что она больше не вызывает это исключение в консоли.</p>
+<p class="info">Обновление: мы протестировали последнюю версию надстройки Reflector (6.5) и убедились в том, что она больше не вызывает этого исключения в консоли.</p>
 
 ## <a name="opening-package-manager-console-fails-with-objectsecurity-exception"></a>Сбой при открытии консоли диспетчера пакетов с исключением ObjectSecurity
 
@@ -171,7 +171,7 @@ or
 
 ## <a name="attempting-to-install-or-uninstall-results-in-the-error-cannot-create-a-file-when-that-file-already-exists"></a>Попытка установки или удаления приводит к ошибке Cannot create a file when that file already exists (Невозможно удалить файл, если этот файл уже существует).
 
-По какой-то причине расширения Visual Studio могут оказаться в необычном состоянии, если вы удалили расширение VSIX, но некоторые файлы остались. Для устранения этой проблемы сделайте следующее.
+По какой-то причине расширения Visual Studio могут оказаться в необычном состоянии, если вы удалили расширение VSIX, но некоторые файлы остались. Для обхода этой проблемы:
 
 1. Выйти из Visual Studio
 1. Откройте следующую папку (на вашем компьютере она может быть на другом диске):
@@ -201,7 +201,7 @@ or
 
 ## <a name="write-error-command-doesnt-work-inside-installps1uninstallps1initps1"></a>Команда Write-Error не работает в скриптах install.ps1, uninstall.ps1 и init.ps1
 
-Это известная проблема. Вместо вызова команды Write-Error попробуйте вызвать throw.
+Это известная проблема Вместо вызова команды Write-Error попробуйте вызвать throw.
 
     throw "My error message"
 
@@ -221,8 +221,8 @@ or
 
 ## <a name="changing-the-capitalization-of-nuget-package-ids-breaks-package-restore"></a>Изменение регистра символов в идентификаторах пакетов NuGet приводит к неполадкам при восстановлении пакетов
 
-Служба поддержки NuGet может изменить регистр символов в идентификаторах пакетов NuGet, но при восстановлении пакетов это может вызвать сложности у пользователей, в папке *global-packages* которых уже есть пакеты с идентификаторами, имеющими другой регистр символов. Подробное описание можно найти в [этом комментарии на сайте GitHub](https://github.com/Particular/NServiceBus/issues/1271#issuecomment-20865932). Мы рекомендуем запрашивать смену регистра, только если у вас есть возможность сообщить существующим пользователям пакета о неполадках, которые могут возникнуть при восстановлении пакетов во время сборки.
+Служба поддержки NuGet может изменить регистр символов в идентификаторах пакетов NuGet, но при восстановлении пакетов это может вызвать сложности у пользователей, в папке [global-packages](https://github.com/Particular/NServiceBus/issues/1271#issuecomment-20865932) которых уже есть пакеты с идентификаторами, имеющими другой регистр символов. Подробное описание можно найти в *этом комментарии на сайте GitHub*. Мы рекомендуем запрашивать смену регистра, только если у вас есть возможность сообщить существующим пользователям пакета о неполадках, которые могут возникнуть при восстановлении пакетов во время сборки.
 
-## <a name="reporting-issues"></a>Сообщение о проблемах
+## <a name="reporting-issues"></a>Создание отчетов о проблемах
 
 Чтобы сообщить о проблемах с NuGet, посетите [https://github.com/nuget/home/issues](https://github.com/nuget/home/issues).

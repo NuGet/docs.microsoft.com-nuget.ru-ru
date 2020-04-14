@@ -1,3 +1,11 @@
+---
+ms.openlocfilehash: 9c3cb22c8c220a7297eb88db6ff0941e4c11c914
+ms.sourcegitcommit: 2b50c450cca521681a384aa466ab666679a40213
+ms.translationtype: HT
+ms.contentlocale: ru-RU
+ms.lasthandoff: 04/07/2020
+ms.locfileid: "64495977"
+---
 В своем профиле на сайте nuget.org выберите **Manage Packages** (Управление пакетами), чтобы просмотреть опубликованный вами пакет. Вы также получите подтверждение по электронной почте. Обратите внимание, что пакет индексируется и будет появляться в результатах поиска для других пользователей спустя определенное время. В этот период на странице вашего пакета отображается следующее сообщение:
 
 ![This package has not been indexed yet. It will appear in search results and will be available for install/restore after indexing is complete (Этот пакет еще не проиндексирован. Он появится в результатах поиска и будет доступен для установки и восстановления после завершения индексирования).](../media/QS_Create-03-NotIndexed.png)

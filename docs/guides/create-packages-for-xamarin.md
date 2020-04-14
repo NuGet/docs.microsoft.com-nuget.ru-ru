@@ -6,10 +6,10 @@ ms.author: karann
 ms.date: 11/05/2019
 ms.topic: tutorial
 ms.openlocfilehash: 0cb653bad9e853d908039b3f7a94e1dd7eefdde5
-ms.sourcegitcommit: c81561e93a7be467c1983d639158d4e3dc25b93a
+ms.sourcegitcommit: 2b50c450cca521681a384aa466ab666679a40213
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/02/2020
+ms.lasthandoff: 04/07/2020
 ms.locfileid: "78230906"
 ---
 # <a name="create-packages-for-xamarin-with-visual-studio-2017-or-2019"></a>Создание пакетов для Xamarin с помощью Visual Studio 2017 или 2019
@@ -18,14 +18,14 @@ ms.locfileid: "78230906"
 
 В этом пошаговом руководстве с помощью Visual Studio 2017 или 2019 вы создадите кроссплатформенный пакет NuGet, который можно использовать в проектах для мобильных устройств в Windows, iOS и Android.
 
-1. [Необходимые компоненты](#prerequisites)
+1. [Предварительные требования](#prerequisites)
 1. [Создание структуры проекта и кода абстракции](#create-the-project-structure-and-abstraction-code)
 1. [Написание кода для конкретных платформ](#write-your-platform-specific-code)
 1. [Создание и изменение файла NUSPEC](#create-and-update-the-nuspec-file)
 1. [Упаковка компонента](#package-the-component)
 1. [Связанные статьи](#related-topics)
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>предварительные требования
 
 1. Visual Studio 2017 или 2019 с универсальной платформой Windows (UWP) и Xamarin. Установите бесплатный выпуск Community с сайта [visualstudio.com](https://www.visualstudio.com/). Вы также можете использовать выпуски Professional и Enterprise. Чтобы включить средства UWP и Xamarin, выберите "Выборочная установка" и задайте соответствующие параметры.
 1. Интерфейс командной строки NuGet. Скачайте последнюю версию nuget.exe на странице [nuget.org/downloads](https://nuget.org/downloads), сохранив ее в любом месте на ваш выбор. Затем добавьте это расположение в переменную среды PATH, если это еще не сделано.
@@ -265,16 +265,16 @@ namespace Plugin.LoggingLibrary
 nuget pack LoggingLibrary.nuspec
 ```
 
-Будет создан файл `LoggingLibrary.YOUR_NAME.1.0.0.nupkg`. Если открыть файл в таком средстве, как [обозреватель пакетов NuGet](https://github.com/NuGetPackageExplorer/NuGetPackageExplorer), и развернуть все узлы, отобразится следующее содержимое:
+Это действие создаст файл `LoggingLibrary.YOUR_NAME.1.0.0.nupkg`. Если открыть файл в таком средстве, как [обозреватель пакетов NuGet](https://github.com/NuGetPackageExplorer/NuGetPackageExplorer), и развернуть все узлы, отобразится следующее содержимое:
 
 ![Пакет LoggingLibrary в обозревателе пакетов NuGet](media/Cross-Platform-PackageExplorer.png)
 
 > [!Tip]
-> Файл `.nupkg` — это просто ZIP-файл с другим расширением. Поэтому чтобы просмотреть содержимое пакета, можно просто изменить расширение `.nupkg` на `.zip`, но не забудьте восстановить расширение перед отправкой пакета на сайт nuget.org.
+> Файл `.nupkg` — это просто ZIP-файл с другим расширением. Поэтому чтобы просмотреть содержимое пакета, можно просто изменить расширение `.nupkg` на `.zip`, но не забудьте восстановить расширение перед отправкой пакета на сайт nuget.org.
 
 Чтобы предоставить доступ к пакету другим разработчикам, следуйте инструкциям в разделе [Публикация пакета](../nuget-org/publish-a-package.md).
 
-## <a name="related-topics"></a>См. также
+## <a name="related-topics"></a>Связанные разделы
 
 - [Справочник по файлу NUSPEC](../reference/nuspec.md)
 - [Пакеты символов](../create-packages/symbol-packages.md)

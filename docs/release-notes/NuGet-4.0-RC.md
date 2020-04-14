@@ -7,11 +7,11 @@ ms.date: 02/03/2017
 ms.topic: conceptual
 ms.reviewer: ananguar
 ms.openlocfilehash: 2d0bb6356c0a20843bdc884b68f5f61838b82e73
-ms.sourcegitcommit: 1d1406764c6af5fb7801d462e0c4afc9092fa569
+ms.sourcegitcommit: 2b50c450cca521681a384aa466ab666679a40213
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/04/2018
-ms.locfileid: "43549250"
+ms.lasthandoff: 04/07/2020
+ms.locfileid: "64496640"
 ---
 # <a name="nuget-40-rc-release-notes"></a>Заметки о выпуске версии-кандидата NuGet 4.0
 
@@ -91,7 +91,7 @@ ms.locfileid: "43549250"
 
 - Если в Visual Studio не удается загрузить поставщик учетных данных, не следует прерывать работу NuGet — [#2422](https://github.com/NuGet/Home/issues/2422)
 
-## <a name="features"></a>Функции
+## <a name="features"></a>Компоненты
 
 - Настройка непрерывной интеграции для выполнения на 86-разрядных компьютерах — [#3868](https://github.com/NuGet/Home/issues/3868)
 

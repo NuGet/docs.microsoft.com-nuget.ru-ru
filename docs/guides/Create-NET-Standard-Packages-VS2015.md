@@ -6,21 +6,21 @@ ms.author: karann
 ms.date: 02/02/2018
 ms.topic: tutorial
 ms.openlocfilehash: b16bf422e2627be3b8516a875d749639734064a9
-ms.sourcegitcommit: 363ec6843409b4714c91b75b105619a3a3184b43
+ms.sourcegitcommit: 2b50c450cca521681a384aa466ab666679a40213
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/16/2019
+ms.lasthandoff: 04/07/2020
 ms.locfileid: "72380724"
 ---
 # <a name="create-net-standard-and-net-framework-packages-with-visual-studio-2015"></a>Создание пакетов .NET Standard или .NET Framework с помощью Visual Studio 2015
 
-**Примечание.** Рекомендуем разрабатывать библиотеки .NET Standard с помощью Visual Studio 2017. Вы можете использовать и Visual Studio 2015, но средства .NET Core доступны только в предварительной пробной версии. Сведения о работе с NuGet 4.x или более поздних версий и Visual Studio 2017 см. в статье [Создание и публикация пакета с помощью Visual Studio (.NET Standard)](../quickstart/create-and-publish-a-package-using-visual-studio.md).
+**Примечание.** Рекомендуем разрабатывать библиотеки .NET Standard с помощью Visual Studio 2017. Вы можете использовать и Visual Studio 2015, но средства .NET Core доступны только в предварительной пробной версии. Сведения о работе с NuGet 4.x или более поздних версий и Visual Studio 2017 см. в статье [Создание и публикация пакета с помощью Visual Studio (.NET Standard)](../quickstart/create-and-publish-a-package-using-visual-studio.md).
 
 [Библиотека .NET Standard](/dotnet/articles/standard/library) представляет собой формальную спецификацию интерфейсов API .NET, которые должны быть доступны во всех средах выполнения .NET, что позволяет повысить степень унификации экосистемы .NET. Библиотека .NET Standard определяет унифицированный набор API-интерфейсов библиотеки базовых классов (BCL) для реализации всеми платформами .NET независимо от рабочей нагрузки. Это позволяет разработчикам создавать код, который можно использовать во всех средах выполнения .NET, а также позволяет свести к минимуму число директив условной компиляции, предназначенных для конкретных платформ, в общем коде либо полностью исключить их.
 
 В этом руководстве приведены пошаговые инструкции по созданию пакета NuGet для библиотеки .NET Standard 1.4 или .NET Framework 4.6. Библиотека .NET Standard 1.4 работает на платформах .NET Framework 4.6.1, .NET Core, Mono/Xamarin и универсальной платформе Windows 10. Дополнительные сведения см. в разделе [Поддержка реализации .NET](/dotnet/standard/net-standard#net-implementation-support) (документация .NET). При необходимости вы можете выбрать другую версию библиотеки .NET Standard.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>предварительные требования
 
 1. Visual Studio 2015 с обновлением 3
 1. [Пакет SDK для .NET Core](https://www.microsoft.com/net/download/) (только .NET Standard)
@@ -163,7 +163,7 @@ nuget pack AppLogger.nuspec
 
 Обратите внимание, что команда `pack` требует наличия Mono 4.4.2 в Mac OS X и не работает в системах Linux. На компьютерах Mac также необходимо преобразовать пути в формате Windows, указанные в файле `.nuspec`, в формат Unix.
 
-## <a name="related-topics"></a>См. также
+## <a name="related-topics"></a>Связанные разделы
 
 - [Справочник по файлу NUSPEC](../reference/nuspec.md)
 - [Поддержка нескольких версий платформы .NET Framework](../create-packages/supporting-multiple-target-frameworks.md)

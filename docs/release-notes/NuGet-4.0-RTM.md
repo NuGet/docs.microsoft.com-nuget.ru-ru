@@ -6,11 +6,11 @@ ms.author: anangaur
 ms.date: 03/03/2017
 ms.topic: conceptual
 ms.openlocfilehash: c27d0aa2e5c9af9cb15d2f487b93e93aca666214
-ms.sourcegitcommit: 1d1406764c6af5fb7801d462e0c4afc9092fa569
+ms.sourcegitcommit: 2b50c450cca521681a384aa466ab666679a40213
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/04/2018
-ms.locfileid: "43547765"
+ms.lasthandoff: 04/07/2020
+ms.locfileid: "64496610"
 ---
 # <a name="nuget-40-rtm-release-notes"></a>Заметки о выпуске версии NuGet 4.0 RTM
 
@@ -20,91 +20,91 @@ ms.locfileid: "43547765"
 
 ### <a name="nuget-restore-may-fail-when-you-have-multiple-projects-referencing-another-project-in-a-solution"></a>Сбой восстановления NuGet может завершиться ошибкой, если в решении есть несколько проектов, ссылающихся на другой проект
 
-#### <a name="issue"></a>Проблеми
+#### <a name="issue"></a>Проблемы
 
 Восстановление NuGet может не работать, если в решении есть проекты, которые ссылаются на один и тот же проект с разным регистром или с другими относительными путями. [NuGet#4574](https://github.com/NuGet/Home/issues/4574)
 
-#### <a name="workaround"></a>Обходной путь
+#### <a name="workaround"></a>Возможное решение
 
 Исправьте регистр и относительные пути, чтобы они совпадали во всех ссылках на проект.
 
 ### <a name="while-using-package-manager-console-enter-key-may-not-work"></a>При использовании консоли диспетчера пакетов клавиша ВВОД может не работать
 
-#### <a name="issue"></a>Проблеми
+#### <a name="issue"></a>Проблемы
 
 Периодически клавиша ВВОД не работает в консоли диспетчера пакетов. В этом случае проверьте ход исправления и укажите дополнительные сведения для воспроизведения ошибки. [NuGet#4204](https://github.com/NuGet/Home/issues/4204) [NuGet#4570](https://github.com/NuGet/Home/issues/4570)
 
-#### <a name="workaround"></a>Обходной путь
+#### <a name="workaround"></a>Возможное решение
 
 Перезапустите Visual Studio и откройте консоль управления пакетами перед тем, как открыть решение. Кроме того, попробуйте удалить файл `project.lock.json` и выполнить восстановление еще раз.
 
 ### <a name="in-net-core-projects-you-may-end-up-in-infinite-restore-loop-when-you-use-a-package-containing-an-assembly-with-an-invalid-signature"></a>При использовании пакета, содержащего сборку с недопустимой подписью, в проектах .NET Core может возникнуть бесконечный цикл восстановления
 
-#### <a name="issue"></a>Проблеми
+#### <a name="issue"></a>Проблемы
 
 Иногда при использовании пакета, содержащего сборку с недопустимой подписью, или если для версии пакета задан тикер DateTime, возникает бесконечный цикл автоматического восстановления пакета. [NuGet#4542](https://github.com/NuGet/Home/issues/4542)
 
-#### <a name="workaround"></a>Обходной путь
+#### <a name="workaround"></a>Возможное решение
 
 Сейчас для этой проблемы не существует обходного решения.
 
 ### <a name="you-are-unable-to-view-add-or-update-dotnetclitools-using-nuget-package-manager"></a>Вы не можете просмотреть, добавить или обновить DotNetCLITools с помощью диспетчера пакетов NuGet.
 
-#### <a name="issue"></a>Проблеми
+#### <a name="issue"></a>Проблемы
 
 Диспетчер пакетов NuGet не отображается и не позволяет добавить или обновить DotNetCLITools. [NuGet#4256](https://github.com/NuGet/Home/issues/4256)
 
-#### <a name="workaround"></a>Обходной путь
+#### <a name="workaround"></a>Возможное решение
 
 DotNetCLIToolReferences нужно изменить вручную в файле проекта.
 
 ### <a name="nuget-restore-will-fail-when-you-set-packageid-property-for-projects"></a>При установке свойства PackageId для проектов произойдет сбой восстановления NuGet
 
-#### <a name="issue"></a>Проблеми
+#### <a name="issue"></a>Проблемы
 
 Для проектов .NET Core восстановление NuGet в Visual Studio не связано со свойством PackageId проектов. [NuGet#4586](https://github.com/NuGet/Home/issues/4586)
 
-#### <a name="workaround"></a>Обходной путь
+#### <a name="workaround"></a>Возможное решение
 
 Выполните восстановление с использованием командной строки.
 
 ### <a name="when-your-project-does-not-have-obj-folder-package-restore-may-fail"></a>Если в проекте нет папки obj, произойдет сбой восстановления пакета
 
-#### <a name="issue"></a>Проблеми
+#### <a name="issue"></a>Проблемы
 
 Visual Studio не удается восстановить PackageReferences, если папка obj удалена. [NuGet#4528](https://github.com/NuGet/Home/issues/4528)
 
-#### <a name="workaround"></a>Обходной путь
+#### <a name="workaround"></a>Возможное решение
 
 Создайте папку obj вручную, и восстановление должно заработать.
 
 ### <a name="manually-updating-packages-using-update-package-in-console-may-fail"></a>Обновление пакетов вручную с использованием Update-Package в консоли может завершиться ошибкой
 
-#### <a name="issue"></a>Проблеми
+#### <a name="issue"></a>Проблемы
 
 Использование Update-Package вручную в консоли работает только один раз для только что преобразованных проектов PackageReferences. [NuGet#4431](https://github.com/NuGet/Home/issues/4431)
 
-#### <a name="workaround"></a>Обходной путь
+#### <a name="workaround"></a>Возможное решение
 
 Сейчас для этой проблемы не существует обходного решения.
 
 ### <a name="retargeting-target-framework-version-may-lead-to-incomplete-intellisense"></a>Изменение требуемой версии .NET Framework может привести к частичному отсутствию данных функции IntelliSense
 
-#### <a name="issue"></a>Проблеми
+#### <a name="issue"></a>Проблемы
 
 Если изменить требуемую версию .NET Framework в Visual Studio, вы можете получить неполные данные функции IntelliSense. Это происходит, если использовать PackageReferences в качестве формата диспетчера пакетов. [NuGet#4216](https://github.com/NuGet/Home/issues/4216)
 
-#### <a name="workaround"></a>Обходной путь
+#### <a name="workaround"></a>Возможное решение
 
 Выполните восстановление вручную.
 
 ### <a name="msbuild-trestore-fails-when-a-project-targeting-net461-references-another-project-targeting-netstandard"></a>Операция MSBuild /t:restore завершается ошибкой, если проект, предназначенный для .NET 4.6.1, ссылается на другой проект, предназначенный для .NET Standard
 
-#### <a name="issue"></a>Проблеми
+#### <a name="issue"></a>Проблемы
 
 Операция MSBuild /t:restore завершается ошибкой, если проект на основе PackageReferenece, предназначенный для .NET 4.6.1, ссылается на другой проект на основе PackageReferenece, предназначенный для .NET Standard.  [NuGet#4532](https://github.com/NuGet/Home/issues/4532)
 
-#### <a name="workaround"></a>Обходной путь
+#### <a name="workaround"></a>Возможное решение
 
 Сейчас для этой проблемы не существует обходного решения.
 
@@ -182,7 +182,7 @@ Visual Studio не удается восстановить PackageReferences, е
 
 - Исключение NullReferenceException при добавлении nuget с packageref в проект C++ — [4378](https://github.com/NuGet/Home/issues/4378)
 
-- Специальные возможности: экранный диктор не воспроизводит название флажка, позволяющего выбрать проекты, в которые требуется установить пакет — [4366](https://github.com/NuGet/Home/issues/4366)
+- Специальные возможности: экранный диктор не воспроизводит название флажка, позволяющего выбрать проекты, в которые требуется установить пакет, — [#4366](https://github.com/NuGet/Home/issues/4366)
 
 - NuGet VS17 периодически не может подключиться к веб-каналам VSO/VSTS — ошибка VS 365798 — [4365](https://github.com/NuGet/Home/issues/4365)
 
@@ -258,17 +258,17 @@ Visual Studio не удается восстановить PackageReferences, е
 
 - nuget.exe msbuildpath завершается сбоем при наличии конечного знака косой черты — [4180](https://github.com/NuGet/Home/issues/4180)
 
-- vsfeedback: операция восстановления NuGet выдает несколько предупреждений о ссылке на проект для проекта LinqToTwitter — [4156](https://github.com/NuGet/Home/issues/4156)
+- vsfeedback: операция восстановления NuGet выдает несколько предупреждений о ссылке на проект для проекта LinqToTwitter — [#4156](https://github.com/NuGet/Home/issues/4156)
 
 - При упаковке из `.csproj` не включается атрибут minClientVersion — [4135](https://github.com/NuGet/Home/issues/4135)
 
 - NuGet.Build.Tasks.Pack.dll поставляется с отложенной подписью в VS2017 (d15rel 26014.00) — [4122](https://github.com/NuGet/Home/issues/4122)
 
-- VSFeedback: восстановление завершается сбоем для проекта VS 2015, созданного с помощью CMake 3.7.1 — [4114](https://github.com/NuGet/Home/issues/4114)
+- vsfeedback: восстановление завершается сбоем для проекта VS 2015, созданного с помощью CMake 3.7.1, — [#4114](https://github.com/NuGet/Home/issues/4114)
 
-- VSFeedback: ошибки восстановления могут скрывать более полные сообщения об ошибках, которые могут выдаваться при построении — [4113](https://github.com/NuGet/Home/issues/4113)
+- vsfeedback: ошибки восстановления могут скрывать более полные сообщения об ошибках, которые могут выдаваться при построении, — [#4113](https://github.com/NuGet/Home/issues/4113)
 
-- [VSFeedback] Ошибка при восстановлении пакетов NuGet для проекта веб-сайта: значение не может быть null. - [4092](https://github.com/NuGet/Home/issues/4092)
+- [vsfeedback] Ошибка при восстановлении пакетов NuGet для проекта веб-сайта: значение не может быть NULL. - [4092](https://github.com/NuGet/Home/issues/4092)
 
 - Операция переноса вызывает исключение ссылки на объект в NuGet.PackageManagement.VisualStudio.SolutionRestoreWorker — [4067](https://github.com/NuGet/Home/issues/4067)
 

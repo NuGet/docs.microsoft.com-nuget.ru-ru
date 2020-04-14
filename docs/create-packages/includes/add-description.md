@@ -1,9 +1,9 @@
 ---
 ms.openlocfilehash: b615bcb78ad2eaf8524bfbf17864d4652e546ff1
-ms.sourcegitcommit: 1a63a84da2719c8141823ac89a20bf507fd22b00
+ms.sourcegitcommit: 2b50c450cca521681a384aa466ab666679a40213
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/24/2020
+ms.lasthandoff: 04/07/2020
 ms.locfileid: "80151244"
 ---
 Необязательное описание пакета, отображаемое на странице NuGet.org пакета, получается из `<description></description>`, используемого в файле `.csproj`, или через `$description` в [файле NUSPEC](../../reference/nuspec.md).

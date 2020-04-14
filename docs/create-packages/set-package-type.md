@@ -6,10 +6,10 @@ ms.author: karann
 ms.date: 07/09/2019
 ms.topic: conceptual
 ms.openlocfilehash: 1d869f616ce0291cf1c0a17b7ff20fc61e6a3bd5
-ms.sourcegitcommit: c81561e93a7be467c1983d639158d4e3dc25b93a
+ms.sourcegitcommit: 2b50c450cca521681a384aa466ab666679a40213
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/02/2020
+ms.lasthandoff: 04/07/2020
 ms.locfileid: "78230828"
 ---
 # <a name="set-a-nuget-package-type"></a>Установка типа пакета NuGet
@@ -26,7 +26,7 @@ ms.locfileid: "78230828"
 
 Типы пакетов задаются в файле `.nuspec`. В целях обратной совместимости лучше *не* задавать тип `Dependency` явным образом, позволив диспетчеру NuGet определить его автоматически, что происходит, если тип не указан.
 
-- `.nuspec`. укажите тип пакета в узле `packageTypes\packageType` элемента `<metadata>`.
+- `.nuspec`: укажите тип пакета в узле `packageTypes\packageType` элемента `<metadata>`:
 
     ```xml
     <?xml version="1.0" encoding="utf-8"?>
