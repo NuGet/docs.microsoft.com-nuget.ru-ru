@@ -6,17 +6,17 @@ ms.author: karann
 ms.date: 05/24/2019
 ms.topic: quickstart
 ms.openlocfilehash: 8c09d6d5662ed6ff0deffa5d45b823ad0992f399
-ms.sourcegitcommit: c81561e93a7be467c1983d639158d4e3dc25b93a
+ms.sourcegitcommit: 2b50c450cca521681a384aa466ab666679a40213
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/02/2020
+ms.lasthandoff: 04/07/2020
 ms.locfileid: "78231309"
 ---
 # <a name="quickstart-create-and-publish-a-package-dotnet-cli"></a>Краткое руководство. Создание и публикация пакета (dotnet CLI)
 
 Создание пакета NuGet из библиотеки классов .NET и его публикация на сайте nuget.org выполняются очень просто с помощью интерфейса командной строки (CLI) `dotnet`.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>предварительные требования
 
 1. Установите [пакет SDK для .NET Core](https://www.microsoft.com/net/download/), содержащий CLI `dotnet`. Начиная с версии Visual Studio 2017, средство CLI dotnet автоматически устанавливается вместе с любыми рабочими нагрузками, связанными с .NET Core.
 
@@ -111,7 +111,7 @@ Copyright (C) Microsoft Corporation. All rights reserved.
 
 Другие видео о NuGet см. на [Channel 9](https://channel9.msdn.com/Series/NuGet-101) и [YouTube](https://www.youtube.com/playlist?list=PLdo4fOcmZ0oVLvfkFk8O9h6v2Dcdh2bh_).
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Поздравляем! Вы создали пакет NuGet.
 

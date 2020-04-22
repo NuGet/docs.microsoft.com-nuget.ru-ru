@@ -6,10 +6,10 @@ ms.author: karann
 ms.date: 01/18/2018
 ms.topic: conceptual
 ms.openlocfilehash: a2f1fed578f1635296892ab925219f0f27883c02
-ms.sourcegitcommit: b6810860b77b2d50aab031040b047c20a333aca3
+ms.sourcegitcommit: 2b50c450cca521681a384aa466ab666679a40213
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/28/2019
+ms.lasthandoff: 04/07/2020
 ms.locfileid: "67426939"
 ---
 # <a name="resolving-disputes-over-nuget-package-names"></a>Разрешение споров в отношении имен пакетов NuGet
@@ -24,6 +24,6 @@ ms.locfileid: "67426939"
 
 ## <a name="process"></a>Процесс
 
-1. Свяжитесь с владельцами пакета, в отношении которого возник спор, с помощью ссылки **Contact Owners** (Связаться с владельцами) на странице со сведениями о пакете. Опишите проблему прямо, но вежливо.
+1. Свяжитесь с владельцами спорного пакета с помощью ссылки **Связаться с владельцами** на странице сведений о пакете. Объясните, в чем состоит проблема, прямо, но вежливо.
 2. Отправьте копию сообщения на адрес [support@nuget.org](mailto:support@nuget.org), чтобы поставить команду NuGet и .NET Foundation в известность о вашем споре.
 3. Если через 30 дней спор не будет разрешен, отправьте повторное уведомление на адрес [support@nuget.org](mailto:support@nuget.org). Служба поддержки nuget.org рассмотрит проблему и постарается урегулировать спор совместно с обеими сторонами.

@@ -6,10 +6,10 @@ ms.author: mikejo
 ms.date: 06/03/2019
 ms.topic: conceptual
 ms.openlocfilehash: 7039dd27f2dddebc3c84e5ad35d5efec59547792
-ms.sourcegitcommit: ddb52131e84dd54db199ce8331f6da18aa3feea1
+ms.sourcegitcommit: 2b50c450cca521681a384aa466ab666679a40213
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/16/2020
+ms.lasthandoff: 04/07/2020
 ms.locfileid: "79428417"
 ---
 # <a name="manage-packages-using-the-nugetexe-cli"></a>Управление пакетами с использованием CLI nuget.exe
@@ -23,7 +23,7 @@ ms.locfileid: "79428417"
 
 В этой статье описываются общие принципы использования некоторых распространенных команд CLI `nuget.exe`. Для большинства из этих команд средство CLI ищет файл проекта в текущем каталоге, кроме случаев, когда файл проекта задан в самой команде. Полный список доступных команд и аргументов см. в статье [Справочник по интерфейсу командной строки nuget.exe](../reference/nuget-exe-cli-reference.md).
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>предварительные требования
 
 - Установите интерфейс командной строки `nuget.exe`, скачав его на сайте [nuget.org](https://dist.nuget.org/win-x86-commandline/latest/nuget.exe), и сохраните этот файл `.exe` в подходящую папку. Добавьте эту папку в переменную среды PATH.
 

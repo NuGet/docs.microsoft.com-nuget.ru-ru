@@ -6,11 +6,11 @@ ms.author: anangaur
 ms.date: 3/7/2018
 ms.topic: conceptual
 ms.openlocfilehash: eacd29d4c9340a0f015fcdf6c5b9dd41bf781419
-ms.sourcegitcommit: 74bf831e013470da8b0c1f43193df10bfb1f4fe6
+ms.sourcegitcommit: 2b50c450cca521681a384aa466ab666679a40213
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/26/2019
-ms.locfileid: "58432560"
+ms.lasthandoff: 04/07/2020
+ms.locfileid: "64498687"
 ---
 # <a name="nuget-46-release-notes"></a>Заметки о выпуске NuGet 4.6
 
@@ -24,7 +24,7 @@ ms.locfileid: "58432560"
 
 ## <a name="summary-whats-new-in-463"></a>Сводка: Новые возможности версии 4.6.3
 
-* Исправление безопасности: разрешения на файлы, созданные внутри ~/.nuget, слишком открыты [#7673](https://github.com/NuGet/Home/issues/7673)[CVE-2019-0757](https://portal.msrc.microsoft.com/en-us/security-guidance/advisory/CVE-2019-0757)
+* Исправление безопасности: разрешения на файлы, созданные внутри ~/.nuget, слишком открыты [#7673](https://github.com/NuGet/Home/issues/7673) [CVE-2019-0757](https://portal.msrc.microsoft.com/en-us/security-guidance/advisory/CVE-2019-0757)
 
 ## <a name="summary-whats-new-in-464"></a>Сводка: Новые возможности версии 4.6.4
 

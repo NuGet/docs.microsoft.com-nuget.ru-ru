@@ -6,10 +6,10 @@ ms.author: karann
 ms.date: 03/19/2018
 ms.topic: conceptual
 ms.openlocfilehash: e2672aa0bf57242526364639f0df74f9d1adb934
-ms.sourcegitcommit: ddb52131e84dd54db199ce8331f6da18aa3feea1
+ms.sourcegitcommit: 2b50c450cca521681a384aa466ab666679a40213
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/16/2020
+ms.lasthandoff: 04/07/2020
 ms.locfileid: "79428591"
 ---
 # <a name="managing-the-global-packages-cache-and-temp-folders"></a>Управление папкой установки глобальных пакетов, кэшем и временными папками

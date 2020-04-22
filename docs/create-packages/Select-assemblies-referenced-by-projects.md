@@ -6,10 +6,10 @@ ms.author: zivkan
 ms.date: 05/24/2019
 ms.topic: conceptual
 ms.openlocfilehash: b32075c3f2c06c15c07d36602bdabdaee8b9405a
-ms.sourcegitcommit: b6810860b77b2d50aab031040b047c20a333aca3
+ms.sourcegitcommit: 2b50c450cca521681a384aa466ab666679a40213
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/28/2019
+ms.lasthandoff: 04/07/2020
 ms.locfileid: "67427479"
 ---
 # <a name="select-assemblies-referenced-by-projects"></a>Выбор сборок, на которые ссылаются проекты
@@ -31,7 +31,7 @@ ms.locfileid: "67427479"
 
 ## <a name="packagesconfig-support"></a>Поддержка `packages.config`
 
-Проекты, использующие `packages.config` для управления пакетами NuGet, как правило добавляют ссылки на все сборки в каталоге `lib\<tfm>\`. Каталог `ref\` был добавлен для поддержки `PackageReference` и не учитывается при использовании `packages.config`. Чтобы явно указать сборки, на которые ссылки для проектов задаются с использованием `packages.config`, пакет должен использовать элемент [`<references>` в файле nuspec ](../reference/nuspec.md#explicit-assembly-references). Например:
+Проекты, использующие `packages.config` для управления пакетами NuGet, как правило добавляют ссылки на все сборки в каталоге `lib\<tfm>\`. Каталог `ref\` был добавлен для поддержки `PackageReference` и не учитывается при использовании `packages.config`. Чтобы явно указать сборки, на которые ссылки для проектов задаются с использованием `packages.config`, пакет должен использовать элемент [`<references>` в файле nuspec ](../reference/nuspec.md#explicit-assembly-references). Пример:
 
 ```xml
 <references>

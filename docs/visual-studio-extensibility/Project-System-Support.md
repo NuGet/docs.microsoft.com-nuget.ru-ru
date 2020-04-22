@@ -6,11 +6,11 @@ ms.author: karann
 ms.date: 01/09/2017
 ms.topic: reference
 ms.openlocfilehash: 00a64d95c943e9e5cb3a279358a6495125a1bd87
-ms.sourcegitcommit: 1d1406764c6af5fb7801d462e0c4afc9092fa569
+ms.sourcegitcommit: 2b50c450cca521681a384aa466ab666679a40213
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/04/2018
-ms.locfileid: "43551374"
+ms.lasthandoff: 04/07/2020
+ms.locfileid: "64495922"
 ---
 # <a name="nuget-support-for-the-visual-studio-project-system"></a>Поддержка NuGet в системе проектов Visual Studio
 
@@ -25,7 +25,7 @@ ms.locfileid: "43551374"
 
 Клиент NuGet определяет, какие пакеты совместимы с типом проекта, на основе [возможностей проекта](https://github.com/Microsoft/VSProjectSystem/blob/master/doc/overview/about_project_capabilities.md), которые представлены в таблице ниже.
 
-| Возможность | Описание: |
+| Функция | Description |
 | --- | --- |
 | AssemblyReferences | Указывает, что проект поддерживает ссылки на сборки (отличные от WinRTReferences). |
 | DeclaredSourceItems | Указывает, что проект является стандартным проектом MSBuild (не DNX), в том плане, что исходные элементы объявляются в самом проекте. |
@@ -103,7 +103,7 @@ class VsProjectCapabilitiesPresenceChecker : IVsBooleanSymbolPresenceChecker
 
 Эта возможность объявляется в проекте путем поддержки свойства `VSHPROPID_ProjectCapabilitiesChecker` посредством `IVsHierarchy::GetProperty`. Должен возвращаться экземпляр интерфейса `Microsoft.VisualStudio.Shell.Interop.IVsBooleanSymbolPresenceChecker`, который определен в сборке `Microsoft.VisualStudio.Shell.Interop.14.0.DesignTime.dll`. Чтобы сослаться на эту сборку, установите [соответствующий пакет NuGet](https://www.nuget.org/packages/Microsoft.VisualStudio.Shell.Interop.14.0.DesignTime).
 
-Например, можно добавить следующий оператор `case` в оператор `switch` метода `IVsHierarchy::GetProperty`:
+Например, можно добавить следующий оператор `case` в оператор `IVsHierarchy::GetProperty` метода `switch`:
 
 ```cs
 case __VSHPROPID8.VSHPROPID_ProjectCapabilitiesChecker:

@@ -6,10 +6,10 @@ ms.author: rrelyea
 ms.date: 02/28/2020
 ms.topic: tutorial
 ms.openlocfilehash: 61f46f2623769927f881877cfe3f96132211b442
-ms.sourcegitcommit: c81561e93a7be467c1983d639158d4e3dc25b93a
+ms.sourcegitcommit: 2b50c450cca521681a384aa466ab666679a40213
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/02/2020
+ms.lasthandoff: 04/07/2020
 ms.locfileid: "78231755"
 ---
 # <a name="create-uwp-packages-c"></a>Создание пакетов универсальной платформы Windows (C#)
@@ -18,7 +18,7 @@ ms.locfileid: "78231755"
 
 В этом пошаговом руководстве вы создадите пакет NuGet с компонентом UWP на C# (включая элемент управления XAML), который можно использовать как в управляемых, так и в собственных проектах.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>предварительные требования
 
 1. Visual Studio 2019. Установите бесплатный выпуск Community 2019 с сайта [visualstudio.com](https://www.visualstudio.com/). Вы также можете использовать выпуски Professional и Enterprise.
 
@@ -212,7 +212,7 @@ nuget pack ImageEnhancer.nuspec
 
 Чтобы предоставить доступ к пакету другим разработчикам, следуйте инструкциям в разделе [Публикация пакета](../nuget-org/publish-a-package.md).
 
-## <a name="related-topics"></a>См. также
+## <a name="related-topics"></a>Связанные разделы
 
 - [Справочник по файлу NUSPEC](../reference/nuspec.md)
 - [Пакеты символов](../create-packages/symbol-packages-snupkg.md)

@@ -6,10 +6,10 @@ ms.author: mikejo
 ms.date: 07/09/2019
 ms.topic: conceptual
 ms.openlocfilehash: b151547e40e567b38acc2b0b9ee84c50d85000c9
-ms.sourcegitcommit: 7441f12f06ca380feb87c6192ec69f6108f43ee3
+ms.sourcegitcommit: 2b50c450cca521681a384aa466ab666679a40213
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/15/2019
+ms.lasthandoff: 04/07/2020
 ms.locfileid: "69488483"
 ---
 # <a name="identify-the-project-format"></a>Определение формата проекта
@@ -62,7 +62,7 @@ NuGet работает со всеми проектами .NET. Но форма�
 
    Затем щелкните правой кнопкой мыши выгруженный проект и выберите команду **изменения имя_проекта. csproj.**
 
-## <a name="see-also"></a>См. также
+## <a name="see-also"></a>См. также раздел
 
 - [Создание пакетов .NET Standard с помощью CLI dotnet](../quickstart/create-and-publish-a-package-using-the-dotnet-cli.md)
 - [Создание пакетов .NET Standard с помощью Visual Studio](../quickstart/create-and-publish-a-package-using-visual-studio.md)
