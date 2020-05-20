@@ -16,7 +16,7 @@ ms.locfileid: "79428579"
 ---
 # <a name="install-and-manage-packages-with-the-package-manager-console-in-visual-studio-powershell"></a>Установка пакетов и управление ими с помощью консоли диспетчера пакетов в Visual Studio (PowerShell)
 
-Консоль диспетчера пакетов NuGet позволяет использовать [команды PowerShell NuGet](../reference/powershell-reference.md) для поиска, установки, удаления и обновления пакетов NuGet. Это удобно, когда пользовательский интерфейс диспетчера пакетов не позволяет выполнять операции. См. подробнее об `nuget.exe`использовании CLI [ в консоли](#use-the-nugetexe-cli-in-the-console).
+Консоль диспетчера пакетов NuGet позволяет использовать [команды PowerShell NuGet](../reference/powershell-reference.md) для поиска, установки, удаления и обновления пакетов NuGet. Это удобно, когда пользовательский интерфейс диспетчера пакетов не позволяет выполнять операции. См. подробнее об [использовании CLI `nuget.exe` в консоли](#use-the-nugetexe-cli-in-the-console).
 
 Консоль встроена в Visual Studio для Windows. Она не включена в Visual Studio для Mac и Visual Studio Code.
 

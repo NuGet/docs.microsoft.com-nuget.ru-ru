@@ -24,7 +24,7 @@ ms.locfileid: "73610715"
 
 Можно указать такие версии одним из следующих способов:
 
-- **Если в проекте используется [`PackageReference`](../consume-packages/package-references-in-project-files.md)** . Включите суффикс семантической версии в элементе `.csproj`[`PackageVersion` файла ](/dotnet/core/tools/csproj.md#packageversion):
+- **Если в проекте используется [`PackageReference`](../consume-packages/package-references-in-project-files.md)**. Включите суффикс семантической версии в элементе [`PackageVersion`](/dotnet/core/tools/csproj.md#packageversion) файла `.csproj`:
 
     ```xml
     <PropertyGroup>
@@ -32,7 +32,7 @@ ms.locfileid: "73610715"
     </PropertyGroup>
     ```
 
-- **Если в проекте используется [файл`packages.config`](../reference/packages-config.md)** . Включите суффикс семантической версии в элементе [`.nuspec`](../reference/nuspec.md) файла [`version`](../reference/nuspec.md#version):
+- **Если в проекте используется [файл`packages.config`](../reference/packages-config.md)**. Включите суффикс семантической версии в элементе [`version`](../reference/nuspec.md#version) файла [`.nuspec`](../reference/nuspec.md):
 
     ```xml
     <version>1.0.1-alpha</version>

@@ -103,7 +103,7 @@ class VsProjectCapabilitiesPresenceChecker : IVsBooleanSymbolPresenceChecker
 
 Эта возможность объявляется в проекте путем поддержки свойства `VSHPROPID_ProjectCapabilitiesChecker` посредством `IVsHierarchy::GetProperty`. Должен возвращаться экземпляр интерфейса `Microsoft.VisualStudio.Shell.Interop.IVsBooleanSymbolPresenceChecker`, который определен в сборке `Microsoft.VisualStudio.Shell.Interop.14.0.DesignTime.dll`. Чтобы сослаться на эту сборку, установите [соответствующий пакет NuGet](https://www.nuget.org/packages/Microsoft.VisualStudio.Shell.Interop.14.0.DesignTime).
 
-Например, можно добавить следующий оператор `case` в оператор `IVsHierarchy::GetProperty` метода `switch`:
+Например, можно добавить следующий оператор `case` в оператор `switch` метода `IVsHierarchy::GetProperty`:
 
 ```cs
 case __VSHPROPID8.VSHPROPID_ProjectCapabilitiesChecker:
