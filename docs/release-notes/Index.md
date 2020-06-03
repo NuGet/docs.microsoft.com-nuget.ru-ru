@@ -1,26 +1,28 @@
 ---
 title: Заметки о выпуске
 description: Указатель заметок о выпуске NuGet и известных проблем для всех версий.
-author: karann-msft
-ms.author: karann
+author: anangaur
+ms.author: anangaur
 ms.date: 08/14/2017
 ms.topic: conceptual
-ms.openlocfilehash: 5407ad89c6a3b0ca81b3eac0d47f5947379e0a3f
-ms.sourcegitcommit: 2b50c450cca521681a384aa466ab666679a40213
+ms.openlocfilehash: 526a84b0bf8108ff4313e62405045b974158c553
+ms.sourcegitcommit: 9aee71e66735f0357a721068c3800587f59295c0
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/07/2020
-ms.locfileid: "80581284"
+ms.lasthandoff: 06/03/2020
+ms.locfileid: "84315180"
 ---
 # <a name="release-notes"></a>Заметки о выпуске
 
 [Известные проблемы](../release-notes/known-issues.md)
 
+[NuGet 5.6](../release-notes/NuGet-5.6.md)
+
 [NuGet 5.5](../release-notes/NuGet-5.5.md)
 
 [NuGet 5.4](../release-notes/NuGet-5.4.md)
 
-[NuGet 5.3](../release-notes/NuGet-5.3.md)
+[NuGet 5.3](../release-notes/NuGet-5.3.md)
 
 [NuGet 5.2](../release-notes/NuGet-5.2-RTM.md)
 
