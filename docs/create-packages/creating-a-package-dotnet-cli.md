@@ -5,12 +5,12 @@ author: karann-msft
 ms.author: karann
 ms.date: 02/20/2020
 ms.topic: conceptual
-ms.openlocfilehash: 712e4c7159aa9719052330d8e45f63e18e390325
-ms.sourcegitcommit: 2b50c450cca521681a384aa466ab666679a40213
+ms.openlocfilehash: 2fcba9dd6bbc7ff4e9b5b8b57250c399f59a1c5e
+ms.sourcegitcommit: e02482e15c0cef63153086ed50d14f5b2a38f598
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/07/2020
-ms.locfileid: "78230592"
+ms.lasthandoff: 07/31/2020
+ms.locfileid: "87473848"
 ---
 # <a name="create-a-nuget-package-using-the-dotnet-cli"></a>Создание пакета NuGet с помощью CLI dotnet
 
@@ -111,7 +111,7 @@ Copyright (C) Microsoft Corporation. All rights reserved.
 
 ### <a name="test-package-installation"></a>Тестирование установки пакета
 
-Перед публикацией пакета, как правило, необходимо протестировать процесс его установки в проекте. Это позволяет убедиться в том, что все необходимые файлы помещаются в нужные места.
+Перед публикацией пакета, как правило, необходимо протестировать процесс его установки в проекте. Это позволяет убедиться в том, что все необходимые файлы размещены в надлежащих расположениях в проекте.
 
 Установку можно протестировать вручную в Visual Studio или в командной строке, выполнив стандартную [процедуру установки пакета](../consume-packages/overview-and-workflow.md#ways-to-install-a-nuget-package).
 
