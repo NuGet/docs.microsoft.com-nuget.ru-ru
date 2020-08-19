@@ -1,44 +1,68 @@
 ---
 title: Команда списка CLI NuGet
-description: Справочник по команде NuGet. exe List
+description: Справочник по команде nuget.exe List
 author: karann-msft
 ms.author: karann
 ms.date: 01/18/2018
 ms.topic: reference
-ms.openlocfilehash: 94228521b3be85277990bca2da69518b7070bbdf
-ms.sourcegitcommit: e9c1dd0679ddd8ba3ee992d817b405f13da0472a
+ms.openlocfilehash: 91886dbbdcdb24648289d6f6efbe1f87e4099fff
+ms.sourcegitcommit: cbc87fe51330cdd3eacaad3e8656eb4258882fc7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "76813342"
+ms.lasthandoff: 08/19/2020
+ms.locfileid: "88623075"
 ---
 # <a name="list-command-nuget-cli"></a>Команда list (интерфейс командной строки NuGet)
 
-Область **применения:** использование пакетов, публикация &bullet; **Поддерживаемые версии:** все
+Область **применения:** использование пакетов, публикация &bullet; **поддерживаемых версий:** все
 
-Отображает список пакетов из заданного источника. Если источники не указаны, используются все источники, определенные в глобальном файле конфигурации `%AppData%\NuGet\NuGet.Config` (Windows) или `~/.nuget/NuGet/NuGet.Config`. Если `NuGet.Config` не указывает источники, `list` использует канал по умолчанию (nuget.org).
+Отображает список пакетов из заданного источника. Если источники не указаны, используются все источники, определенные в глобальном файле конфигурации `%AppData%\NuGet\NuGet.Config` (Windows) или `~/.nuget/NuGet/NuGet.Config` . Если `NuGet.Config` не указывает источники, `list` использует канал по умолчанию (NuGet.org).
 
-## <a name="usage"></a>Метрики
+## <a name="usage"></a>Использование
 
 ```cli
 nuget list [search terms] [options]
 ```
 
-где необязательные условия поиска будут фильтровать отображаемый список. Условия поиска применяются к именам пакетов, тегов и описаний пакетов так же, как и при их использовании в nuget.org.
+где необязательные условия поиска будут фильтровать отображаемый список. [Условия поиска](/nuget/consume-packages/finding-and-choosing-packages#search-syntax) применяются к именам пакетов, тегов и описаний пакетов так же, как и при их использовании в NuGet.org. 
 
-## <a name="options"></a>Options
+## <a name="options"></a>Параметры
 
-| Параметр | Описание |
-| --- | --- |
-| AllVersions | Вывод списка всех версий пакета. По умолчанию отображается только последняя версия пакета. |
-| ConfigFile | Файл конфигурации NuGet, который необходимо применить. Если не указано, используется `%AppData%\NuGet\NuGet.Config` (Windows) или `~/.nuget/NuGet/NuGet.Config` (Mac/Linux).|
-| ForceEnglishOutput | *(3.5 +)* Принудительное выполнение NuGet. exe с использованием инвариантного языка и региональных параметров, основанных на английском языке. |
-| Справка | Отображает справочные сведения для команды. |
-| IncludeDelisted | *(3.2 +)* Отображение пакетов, которые не были перечислены. |
-| NonInteractive | Подавляет запросы на ввод или подтверждение пользователя. |
-| PreRelease | Включает в список предварительные пакеты. |
-| Source | Указывает список источников пакетов для поиска. |
-| Уровень детализации | Задает объем сведений, отображаемых в выходных данных: *нормальный*, *тихий*, *подробный*. |
+- **`-AllVersions`**
+
+  Вывод списка всех версий пакета. По умолчанию отображается только последняя версия пакета.
+
+- **`-ConfigFile`**
+
+  Файл конфигурации NuGet, который необходимо применить. Если не указано, `%AppData%\NuGet\NuGet.Config` используется (Windows) или `~/.nuget/NuGet/NuGet.Config` или `~/.config/NuGet/NuGet.Config` (Mac/Linux).
+
+- **`-ForceEnglishOutput`**
+
+  *(3.5 +)* Принудительное выполнение nuget.exe с использованием инвариантного языка и региональных параметров, основанных на английском языке.
+
+- **`-?|-help`**
+
+  Отображает справочные сведения для команды.
+
+- **`-IncludeDelisted`**
+
+  *(3.2 +)* Отображение пакетов, которые не были перечислены.
+
+- **`-NonInteractive`**
+
+  Подавляет запросы на ввод или подтверждение пользователя.
+
+- **`-PreRelease`**
+
+  Включает в список предварительные пакеты.
+
+- **`-Source`**
+
+  Указывает список источников пакетов для поиска.
+
+- **`-Verbosity [normal|quiet|detailed]`**
+
+  Задает объем сведений, отображаемых в выходных данных: `normal` (по умолчанию), `quiet` или `detailed` .
 
 См. также [переменные среды](cli-ref-environment-variables.md)
 
@@ -64,4 +88,3 @@ nuget list JSON -AllVersions -Source "https://nuget.org/api/v2"
 ```
 nuget list JSON -Source "https://nuget.org/api/v2" -Source "https://other-feed-url-goes-here"
 ```
-

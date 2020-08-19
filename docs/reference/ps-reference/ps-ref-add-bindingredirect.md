@@ -5,18 +5,21 @@ author: karann-msft
 ms.author: karann
 ms.date: 12/07/2017
 ms.topic: reference
-ms.openlocfilehash: d3d156cf882229260e8cf55f8ece2804aec36dc9
-ms.sourcegitcommit: 26a8eae00af2d4be581171e7a73009f94534c336
+ms.openlocfilehash: f5ba4bd8140fa8cac7da8bf1351ad5448671b768
+ms.sourcegitcommit: cbc87fe51330cdd3eacaad3e8656eb4258882fc7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75384988"
+ms.lasthandoff: 08/19/2020
+ms.locfileid: "88623127"
 ---
 # <a name="add-bindingredirect-package-manager-console-in-visual-studio"></a>Add-BindingRedirect (консоль диспетчера пакетов в Visual Studio)
 
 *Доступно только в [консоли диспетчера пакетов](../../consume-packages/install-use-packages-powershell.md) в Visual Studio в Windows.*
 
 Проверяет все сборки в пути вывода для проекта и добавляет перенаправления привязок в файл приложения или веб-конфигурации, где это необходимо. Эта команда выполняется автоматически при установке пакета.
+
+> [!NOTE]
+> Это относится только к сценариям с использованием файла packages.config. Дополнительные сведения см. в разделе [ссылка на файл NuGet packages.config](~/reference/packages-config.md).
 
 Дополнительные сведения о перенаправлениях привязок и их использовании см. в статье [Перенаправление версий сборки](/dotnet/framework/configure-apps/redirect-assembly-versions) в документации по .NET.
 
@@ -30,7 +33,7 @@ Add-BindingRedirect [-ProjectName] <string> [<CommonParameters>]
 
 | Параметр | Описание |
 | --- | --- |
-| ИмяПроекта | Необходимости Проект, к которому добавляются перенаправления привязок. Параметр-ProjectName является необязательным. |
+| ProjectName | Необходимости Проект, к которому добавляются перенаправления привязок. Параметр-ProjectName является необязательным. |
 
 Ни один из этих параметров не принимает входные данные конвейера или подстановочные знаки.
 
