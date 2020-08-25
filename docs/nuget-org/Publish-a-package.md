@@ -6,12 +6,12 @@ ms.author: karann
 ms.date: 05/18/2018
 ms.topic: conceptual
 ms.reviewer: anangaur
-ms.openlocfilehash: 02c6c8f3018bfd063c2d16a10381f88b54cac840
-ms.sourcegitcommit: 2b50c450cca521681a384aa466ab666679a40213
+ms.openlocfilehash: dc20e43bfb43a4b6e47297fb3446319860034d46
+ms.sourcegitcommit: cbc87fe51330cdd3eacaad3e8656eb4258882fc7
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/07/2020
-ms.locfileid: "79428639"
+ms.lasthandoff: 08/19/2020
+ms.locfileid: "88623034"
 ---
 # <a name="publishing-packages"></a>Публикация пакетов
 
@@ -46,7 +46,8 @@ ms.locfileid: "79428639"
 
 ### <a name="command-line"></a>Командная строка
 
-Для принудительной отправки пакетов на веб-сайт nuget.org необходимо использовать [nuget.exe версии 4.1.0 или более поздней](https://www.nuget.org/downloads), где реализуются требуемые [протоколы NuGet](../api/nuget-protocols.md). Вам также потребуется ключ API, который создается на сайте nuget.org.
+Для отправки пакетов в nuget.org требуется получить ключ API, созданный в nuget.org. Необходимо использовать dotnet.exe (.NET Core) или nuget.exe v4.1.0 или более поздней версии, которые реализуют необходимые протоколы NuGet.
+Дополнительные сведения см. в статьях [.NET Core](https://docs.microsoft.com/dotnet/core/install/), [nuget.exe](https://www.nuget.org/downloads) и [Протоколы NuGet](../api/nuget-protocols.md).
 
 #### <a name="create-api-keys"></a>Создание ключей API
 
@@ -68,7 +69,7 @@ ms.locfileid: "79428639"
 
     > [!NOTE]
     > Ключ API не используется для проверки подлинности в частном веб-канале. Сведения об управлении учетными данными для проверки подлинности в источнике см. в описании [команды `nuget sources`](../reference/cli-reference/cli-ref-sources.md).
-    > Ключи API можно получить с отдельных серверов NuGet. Чтобы создать ключи APIKey и управлять ими для nuget.org, см. описание [publish-api-key](../quickstart/includes/publish-api-key.md).
+    > Ключи API можно получить с отдельных серверов NuGet. Сведения о создании ключей API и об управлении ими см. в разделе [Создание ключей API](#create-api-keys).
 
 1. Выполните принудительную отправку в коллекцию NuGet с помощью следующей команды:
 

@@ -5,12 +5,12 @@ author: karann-msft
 ms.author: karann
 ms.date: 05/23/2018
 ms.topic: tutorial
-ms.openlocfilehash: da8c5a05311c790bf6b873bc0f1a077d3ef1db87
-ms.sourcegitcommit: 2b50c450cca521681a384aa466ab666679a40213
+ms.openlocfilehash: e1ebf5042597693ee55d986a4f93e797c27ad30a
+ms.sourcegitcommit: cbc87fe51330cdd3eacaad3e8656eb4258882fc7
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/07/2020
-ms.locfileid: "73610617"
+ms.lasthandoff: 08/19/2020
+ms.locfileid: "88622711"
 ---
 # <a name="creating-ui-controls-as-nuget-packages"></a>Создание элементов управления пользовательским интерфейсом в виде пакетов NuGet
 
@@ -46,7 +46,7 @@ ms.locfileid: "73610617"
 ```xml
 <FileList>
   <File Reference = "your_package_file">
-    <ToolboxItems VSCategory="vs_category" BlendCategory="blend_category">
+    <ToolboxItems UIFramework="WPF" VSCategory="vs_category" BlendCategory="blend_category">
       <Item Type="type_full_name_1" />
 
       <!-- Any number of additional Items -->
@@ -61,8 +61,9 @@ ms.locfileid: "73610617"
 
 - *your_package_file* — имя файла элемента управления, например `ManagedPackage.winmd` (ManagedPackage — это произвольное имя, которое взято для примера и не имеет особого значения).
 - *vs_category*: метка группы, в которой должен отображаться элемент управления на панели элементов в конструкторе Visual Studio. Элемент `VSCategory` необходим для отображения элемента управления на панели элементов.
-- *blend_category*: метка группы, в которой должен отображаться элемент управления в области ресурсов конструктора Blend. Элемент `BlendCategory` необходим для отображения элемента управления в области ресурсов.
-- *type_full_name_n*: полное имя каждого элемента управления, включая пространство имен, например `ManagedPackage.MyCustomControl`. Обратите внимание на то, что нотация с точкой используется как для управляемых, так и для собственных типов.
+*ui_framework*. Имя платформы, например WPF. Обратите внимание, что атрибут `UIFramework` требуется для узлов ToolboxItems в Visual Studio 16.7 Preview 3 и более поздних версиях, чтобы элемент управления отображался в панели элементов.
+- *blend_category* — метка группы, в которой должен отображаться элемент управления в области ресурсов конструктора Blend. Элемент `BlendCategory` необходим для отображения элемента управления в области ресурсов.
+- *type_full_name_n* — полное имя каждого элемента управления, включая пространство имен, например `ManagedPackage.MyCustomControl`. Обратите внимание на то, что нотация с точкой используется как для управляемых, так и для собственных типов.
 
 Если один пакет содержит несколько сборок элементов управления, можно включить несколько элементов `<File>` в элемент `<FileList>`. Вы также можете добавить несколько узлов `<ToolboxItems>` в один элемент `<File>`, чтобы упорядочить элементы управления по отдельным категориям.
 
@@ -71,7 +72,7 @@ ms.locfileid: "73610617"
 ```xml
 <FileList>
   <File Reference = "ManagedPackage.winmd">
-    <ToolboxItems VSCategory="Managed Package" BlendCategory="Managed Package">
+    <ToolboxItems UIFramework="WPF" VSCategory="Managed Package" BlendCategory="Managed Package">
       <Item Type="ManagedPackage.MyCustomControl" />
     </ToolboxItems>
   </File>
@@ -120,7 +121,7 @@ NuGet автоматически проверит TPMinV для использу
 
 ## <a name="add-design-time-support"></a>Добавление поддержки на этапе разработки
 
-Чтобы указать, где должны отображаться свойства элемента управления в инспекторе свойств, добавьте пользовательские графические элементы и другие элементы, а затем поместите файл `design.dll` в папку `lib\uap10.0.14393\Design` для соответствующей целевой платформы. Кроме того, чтобы работала команда **[Изменить шаблон > Изменить копию](/windows/uwp/controls-and-patterns/xaml-styles#modify-the-default-system-styles)** , нужно включить файл `Generic.xaml` и все объединяемые словари ресурсов в папку `<your_assembly_name>\Themes` (опять с использованием фактического имени сборки). (Этот файл не влияет на поведение элемента управления во время выполнения.) В результате структура папок будет выглядеть следующим образом.
+Чтобы указать, где должны отображаться свойства элемента управления в инспекторе свойств, добавьте пользовательские графические элементы и другие элементы, а затем поместите файл `design.dll` в папку `lib\uap10.0.14393\Design` для соответствующей целевой платформы. Кроме того, чтобы работала команда **[Изменить шаблон > Изменить копию](/windows/uwp/controls-and-patterns/xaml-styles#modify-the-default-system-styles)**, нужно включить файл `Generic.xaml` и все объединяемые словари ресурсов в папку `<your_assembly_name>\Themes` (опять с использованием фактического имени сборки). (Этот файл не влияет на поведение элемента управления во время выполнения.) В результате структура папок будет выглядеть следующим образом.
 
     \lib
       \uap10.0.14393

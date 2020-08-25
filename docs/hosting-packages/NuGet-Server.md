@@ -5,12 +5,12 @@ author: karann-msft
 ms.author: karann
 ms.date: 03/13/2018
 ms.topic: conceptual
-ms.openlocfilehash: 098375b2bba13675ba5d80a27e0226dc2ee39e77
-ms.sourcegitcommit: 2b50c450cca521681a384aa466ab666679a40213
+ms.openlocfilehash: 7a806e6b586c63c701642c9e43865cb077d7999c
+ms.sourcegitcommit: cbc87fe51330cdd3eacaad3e8656eb4258882fc7
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/07/2020
-ms.locfileid: "79059572"
+ms.lasthandoff: 08/19/2020
+ms.locfileid: "88623049"
 ---
 # <a name="nugetserver"></a>NuGet.Server
 
@@ -26,7 +26,7 @@ NuGet.Server — это предоставляемый организацией
 
 ## <a name="create-and-deploy-an-aspnet-web-application-with-nugetserver"></a>Создание и развертывание веб-приложения ASP.NET с пакетом NuGet.Server
 
-1. В Visual Studio последовательно выберите **Файл > Создать > Проект**, а затем найдите и выберите шаблон "Веб-приложение ASP.NET (.NET Framework)" для C#.
+1. В Visual Studio последовательно выберите **"Файл" > "Создать" > "Проект"** , а затем найдите и выберите шаблон "Веб-приложение ASP.NET (.NET Framework)" для **C#** .
 
     ![Выбор шаблона веб-проекта .NET Framework](media/Hosting_00-NuGet.Server-ProjectType.png)
 
