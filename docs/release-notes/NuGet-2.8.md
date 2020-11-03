@@ -6,43 +6,43 @@ ms.author: karann
 ms.date: 11/11/2016
 ms.topic: conceptual
 ms.openlocfilehash: 98b8b7334738306e6d40ba7c455409a87c4bb822
-ms.sourcegitcommit: ddb52131e84dd54db199ce8331f6da18aa3feea1
+ms.sourcegitcommit: b138bc1d49fbf13b63d975c581a53be4283b7ebf
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/16/2020
-ms.locfileid: "79428357"
+ms.lasthandoff: 11/03/2020
+ms.locfileid: "93237039"
 ---
 # <a name="nuget-28-release-notes"></a>Заметки о выпуске NuGet 2,8
 
-[Заметки о выпуске NuGet 2.7.2](../release-notes/nuget-2.7.2.md) | [заметки о выпуске NuGet 2.8.1](../release-notes/nuget-2.8.1.md)
+[Заметки о](../release-notes/nuget-2.7.2.md)  |  выпуске 2.7.2 NuGet [Заметки о выпуске 2.8.1 NuGet](../release-notes/nuget-2.8.1.md)
 
 Версия NuGet 2,8 была выпущена 29 января 2014 г.
 
 ## <a name="acknowledgements"></a>Благодарности
 
-1. [Ллевеллин Притчард](https://www.codeplex.com/site/users/view/leppie) ([@leppie](https://twitter.com/leppie))
+1. [Ллевеллин Притчард](https://www.codeplex.com/site/users/view/leppie) ( [@leppie](https://twitter.com/leppie) )
     - [#3466](https://nuget.codeplex.com/workitem/3466) — при упаковке пакетов проверяет идентификатор пакетов зависимостей.
-2. [Мартен-Balliauw)](https://www.codeplex.com/site/users/view/maartenba) ([@maartenballiauw](https://twitter.com/maartenballiauw))
+2. [Мартен-Balliauw)](https://www.codeplex.com/site/users/view/maartenba) ( [@maartenballiauw](https://twitter.com/maartenballiauw) )
     - [#2379](https://nuget.codeplex.com/workitem/2379) — удалите суффикс $Metadata при учетных данных веб-канала персистенинг.
-3. [Филип de вос](https://www.codeplex.com/site/users/view/FilipDeVos) ([@foxtricks](https://twitter.com/foxtricks))
-    - [#3538](http://nuget.codeplex.com/workitem/3538) — поддержка указания файла проекта для команды NuGet. exe Update.
+3. [Филип de вос](https://www.codeplex.com/site/users/view/FilipDeVos) ( [@foxtricks](https://twitter.com/foxtricks) )
+    - [#3538](http://nuget.codeplex.com/workitem/3538) — поддержка указания файла проекта для команды nuget.exe Update.
 4. [Gonzalez](https://www.codeplex.com/site/users/view/jjgonzalez)
     - токены замены [#3536](http://nuget.codeplex.com/workitem/3536) не передаются с помощью-инклудереференцедпрожектс.
-5. [Дэвид пуле](https://www.codeplex.com/site/users/view/Sarkie) ([@Sarkie_Dave](https://twitter.com/Sarkie_Dave))
+5. [Дэвид пуле](https://www.codeplex.com/site/users/view/Sarkie) ( [@Sarkie_Dave](https://twitter.com/Sarkie_Dave) )
     - [#3677](http://nuget.codeplex.com/workitem/3677) -Fix NuGet. push OutOfMemoryException при помещении большого пакета.
 6. [Ваутер Аувенс](https://www.codeplex.com/site/users/view/Despotes)
-    - [#3666](http://nuget.codeplex.com/workitem/3666) — исправьте неверный целевой путь, если проект ссылаетсяC++ на другой интерфейс командной строки или проект.
-7. [Адам Ральф](http://www.codeplex.com/site/users/view/adamralph) ([@adamralph](https://twitter.com/adamralph))
+    - [#3666](http://nuget.codeplex.com/workitem/3666) — исправьте неверный целевой путь, если проект ссылается на другой проект CLI или C++.
+7. [Адам Ральф](http://www.codeplex.com/site/users/view/adamralph) ( [@adamralph](https://twitter.com/adamralph) )
     - [#3639](https://nuget.codeplex.com/workitem/3639) — разрешить установку пакетов в качестве зависимостей разработки по умолчанию
-8. [Дэвид Фаулер](https://www.codeplex.com/site/users/view/dfowler) ([@davidfowl](https://twitter.com/davidfowl))
+8. [Дэвид Фаулер](https://www.codeplex.com/site/users/view/dfowler) ( [@davidfowl](https://twitter.com/davidfowl) )
     - [#3717](https://nuget.codeplex.com/workitem/3717) — удалить неявные обновления до последней версии исправления
 9. [Грегори Ванденбраукк](https://www.codeplex.com/site/users/view/vdbg)
-    - Некоторые исправления ошибок и улучшения для NuGet. Server, команда NuGet. exe Mirror и другие.
+    - Некоторые исправления ошибок и улучшения для NuGet. Server, команда nuget.exe Mirror и другие.
     - Эта работа была выполнена в течение нескольких месяцев, а Грегори работает с нами в соответствии со временем, чтобы интегрироваться в главную базу для 2,8.
 
 ## <a name="patch-resolution-for-dependencies"></a>Разрешение исправлений для зависимостей
 
-При разрешении зависимостей пакетов NuGet реализовала стратегию выбора наименьшей основной и дополнительной версии пакета, удовлетворяющей зависимостям пакета. Однако, в отличие от основной и дополнительной версий, версия исправления всегда была решена до самой высокой версии. Хотя поведение было хорошо намерено, было создано отсутствие детерминированности при установке пакетов с зависимостями. Рассмотрим следующий пример:
+При разрешении зависимостей пакетов NuGet реализовала стратегию выбора наименьшей основной и дополнительной версии пакета, удовлетворяющей зависимостям пакета. Однако, в отличие от основной и дополнительной версий, версия исправления всегда была решена до самой высокой версии. Хотя поведение было хорошо намерено, было создано отсутствие детерминированности при установке пакетов с зависимостями. Рассмотрим следующий пример.
 
     PackageA@1.0.0 -[ >=1.0.0 ]-> PackageB@1.0.0
 
@@ -52,7 +52,7 @@ ms.locfileid: "79428357"
 
     Developer2 installs PackageA@1.0.0: installed PackageA@1.0.0 and PackageB@1.0.1
 
-В этом примере, несмотря на то, что Developer1 и Developer2 установлен PackageA@1.0.0, каждый из них завершился с другой версией Паккажеб. NuGet 2,8 изменяет это поведение по умолчанию таким образом, что поведение разрешения зависимостей для версий исправлений согласуется с поведением для основных и вспомогательных версий. В приведенном выше примере PackageB@1.0.0 будет установлен в результате установки PackageA@1.0.0, независимо от более новой версии исправления.
+В этом примере, несмотря на то, что Developer1 и Developer2 установлены PackageA@1.0.0 , каждая из них завершилась с другой версией паккажеб. NuGet 2,8 изменяет это поведение по умолчанию таким образом, что поведение разрешения зависимостей для версий исправлений согласуется с поведением для основных и вспомогательных версий. В приведенном выше примере будет PackageB@1.0.0 установлен в результате установки PackageA@1.0.0 , независимо от более новой версии исправления.
 
 ## <a name="-dependencyversion-switch"></a>Параметр-Депенденциверсион
 
@@ -62,7 +62,7 @@ ms.locfileid: "79428357"
 
 ## <a name="dependencyversion-attribute"></a>Атрибут Депенденциверсион
 
-В дополнение к коммутатору-Депенденциверсион, описанному выше, NuGet также допускал возможность установки нового атрибута в файле NuGet. config, определяющего значение по умолчанию, если параметр-Депенденциверсион не указан при вызове Install-Package. Это значение будет также соблюдаться в диалоговом окне диспетчера пакетов NuGet для всех операций установки пакета. Чтобы задать это значение, добавьте приведенный ниже атрибут в файл NuGet. config:
+В дополнение к коммутатору-Депенденциверсион, описанному выше, NuGet также допускал возможность установки нового атрибута в файле Nuget.Config, определяющего значение по умолчанию, если параметр-Депенденциверсион не указан при вызове Install-Package. Это значение будет также соблюдаться в диалоговом окне диспетчера пакетов NuGet для всех операций установки пакета. Чтобы задать это значение, добавьте приведенный ниже атрибут в файл Nuget.Config:
 
     <config>
         <add key="dependencyversion" value="Highest" />
@@ -89,13 +89,13 @@ ms.locfileid: "79428357"
 
 ## <a name="development-dependencies"></a>Зависимости разработки
 
-В качестве пакетов NuGet могут доставляться различные типы возможностей, включая средства, которые используются для оптимизации процесса разработки. Эти компоненты, хотя они могут быть Instrumental при разработке нового пакета, не должны рассматриваться как зависимость нового пакета при последующей публикации. NuGet 2,8 позволяет пакету идентифицировать себя в файле `.nuspec` как developmentDependency. При установке эти метаданные также будут добавлены в файл `packages.config` проекта, в который был установлен пакет. Когда этот `packages.config`ный файл впоследствии анализируется на зависимости NuGet во время `nuget.exe pack`, он будет исключать эти зависимости, помеченные как зависимости разработки.
+В качестве пакетов NuGet могут доставляться различные типы возможностей, включая средства, которые используются для оптимизации процесса разработки. Эти компоненты, хотя они могут быть Instrumental при разработке нового пакета, не должны рассматриваться как зависимость нового пакета при последующей публикации. NuGet 2,8 позволяет пакету идентифицировать себя в `.nuspec` файле как developmentDependency. При установке эти метаданные также будут добавлены в `packages.config` файл проекта, в который был установлен пакет. Когда этот `packages.config` файл будет проанализирован в дальнейшем для зависимостей NuGet `nuget.exe pack` , он исключит эти зависимости, помеченные как зависимости разработки.
 
-## <a name="individual-packagesconfig-files-for-different-platforms"></a>Отдельные файлы Packages. config для различных платформ
+## <a name="individual-packagesconfig-files-for-different-platforms"></a>Отдельные файлы packages.config для разных платформ
 
-При разработке приложений для нескольких целевых платформ часто используются разные файлы проекта для каждой из соответствующих сред сборки. Также часто используются разные пакеты NuGet в разных файлах проекта, так как пакеты имеют разные уровни поддержки для разных платформ. NuGet 2,8 обеспечивает улучшенную поддержку этого сценария, создавая различные файлы `packages.config` для различных файлов проекта для конкретной платформы.
+При разработке приложений для нескольких целевых платформ часто используются разные файлы проекта для каждой из соответствующих сред сборки. Также часто используются разные пакеты NuGet в разных файлах проекта, так как пакеты имеют разные уровни поддержки для разных платформ. NuGet 2,8 обеспечивает улучшенную поддержку этого сценария путем создания различных `packages.config` файлов для различных файлов проектов, зависящих от платформы.
 
-![Несколько файлов Package. config](./media/NuGet-2.8/multiple-packageconfigs.png)
+![Несколько файлов package.config](./media/NuGet-2.8/multiple-packageconfigs.png)
 
 ## <a name="fallback-to-local-cache"></a>Откат к локальному кэшу
 

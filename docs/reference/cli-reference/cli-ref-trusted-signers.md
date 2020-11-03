@@ -6,12 +6,12 @@ ms.author: patbel
 ms.date: 11/12/2018
 ms.topic: reference
 ms.reviewer: rmpablos
-ms.openlocfilehash: 2753f92601b3d8b43593762cc07cd8384646feea
-ms.sourcegitcommit: cbc87fe51330cdd3eacaad3e8656eb4258882fc7
+ms.openlocfilehash: 9e25f439617a76d30880bea3c10a5d063e681a41
+ms.sourcegitcommit: b138bc1d49fbf13b63d975c581a53be4283b7ebf
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/19/2020
-ms.locfileid: "88622672"
+ms.lasthandoff: 11/03/2020
+ms.locfileid: "93238157"
 ---
 # <a name="trusted-signers-command-nuget-cli"></a>Команда Trusted-Signs (интерфейс командной строки NuGet)
 
@@ -46,6 +46,7 @@ Registered trusted signers:
  2.   microsoft [author]
       Certificate fingerprint(s):
         SHA256 - 3F9001EA83C560D712C24CF213C3D312CB3BFF51EE89435D3430BD06B5D0EECE
+        SHA256 - AA12DA22A49BCE7D5C1AE64CC1F3D892F150DA76140F210ABD2CBFFCA2C18A27
 
  3.   myUntrustedAuthorSignature [author]
       Certificate fingerprint(s):
@@ -89,7 +90,7 @@ nuget trusted-signers add <package(s)> -Name <name> [options]
 nuget trusted-signers add -Name <name> [options]
 ```
 
-_Примечание_. при выборе этого варианта будут добавлены только доверенные репозитории. 
+_Примечание_ . при выборе этого варианта будут добавлены только доверенные репозитории. 
 
 - **`-AllowUntrustedRoot`**
 
@@ -109,7 +110,7 @@ _Примечание_. при выборе этого варианта буду
 nuget trusted-signers add -Name <name> [options]
 ```
 
-_Примечание_. Если доверенный подписывающий с данным именем уже существует, элемент сертификата будет добавлен в этот подписывающий. В противном случае доверенный автор будет создан с помощью элемента сертификата из указанных сведений о сертификате.
+_Примечание_ . Если доверенный подписывающий с данным именем уже существует, элемент сертификата будет добавлен в этот подписывающий. В противном случае доверенный автор будет создан с помощью элемента сертификата из указанных сведений о сертификате.
 
 
 - **`-AllowUntrustedRoot`**
@@ -132,7 +133,7 @@ _Примечание_. Если доверенный подписывающий
 
 Запрашивает последний список сертификатов, используемых в доверенном репозитории, чтобы обновить существующий список сертификатов в доверенном подписавшем.
 
-_Примечание_. Этот жест удалит текущий список сертификатов и заменит их актуальным списком из репозитория.
+_Примечание_ . Этот жест удалит текущий список сертификатов и заменит их актуальным списком из репозитория.
 
 ## <a name="options"></a>Параметры
 

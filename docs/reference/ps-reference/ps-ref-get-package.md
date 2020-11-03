@@ -1,20 +1,20 @@
 ---
-title: Справочник по PowerShell Get-Package для NuGet
-description: Справочник по команде PowerShell Get-Package в консоли диспетчера пакетов NuGet в Visual Studio.
+title: Справочник по Get-Package PowerShell для NuGet
+description: Справочник по Get-Package команде PowerShell в консоли диспетчера пакетов NuGet в Visual Studio.
 author: karann-msft
 ms.author: karann
 ms.date: 12/07/2017
 ms.topic: reference
-ms.openlocfilehash: 1c39fea2131b8f4b8a91314347a19366d5a582c2
-ms.sourcegitcommit: 26a8eae00af2d4be581171e7a73009f94534c336
+ms.openlocfilehash: 1576e3f20eba1ecdd099b1e7c23aef6b1a1a0a4f
+ms.sourcegitcommit: b138bc1d49fbf13b63d975c581a53be4283b7ebf
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75385197"
+ms.lasthandoff: 11/03/2020
+ms.locfileid: "93237235"
 ---
 # <a name="get-package-package-manager-console-in-visual-studio"></a>Get-Package (консоль диспетчера пакетов в Visual Studio)
 
-*В этом разделе описывается команда в [консоли диспетчера пакетов](../../consume-packages/install-use-packages-powershell.md) в Visual Studio в Windows. Сведения об универсальной команде PowerShell Get-Package см. в справочнике по модульу [PowerShell PackageManagement](/powershell/module/packagemanagement/?view=powershell-6).*
+*В этом разделе описывается команда в [консоли диспетчера пакетов](../../consume-packages/install-use-packages-powershell.md) в Visual Studio в Windows. Общие команды PowerShell Get-Package см. в [справочнике по PackageManagement для PowerShell](/powershell/module/packagemanagement/?view=powershell-6).*
 
 Получение списка пакетов, установленных в локальном репозитории, список пакетов, доступных из источника пакета при использовании с параметром-ListAvailable, или список доступных обновлений при использовании с параметром-Update.
 
@@ -32,13 +32,13 @@ Get-Package -Source <string> [-ListAvailable] [-Updates] [-ProjectName <string>]
 
 | Параметр | Описание |
 | --- | --- |
-| Source | URL-адрес или путь к папке для пакета. Пути к локальным папкам могут быть абсолютными или относительно текущей папки. Если этот параметр опущен, `Get-Package` выполняет поиск выбранного в данный момент источника пакета. При использовании с параметром-ListAvailable по умолчанию принимает значение nuget.org. |
+| Источник | URL-адрес или путь к папке для пакета. Пути к локальным папкам могут быть абсолютными или относительно текущей папки. Если этот параметр опущен, `Get-Package` Поиск выполняется в текущем выбранном источнике пакета. При использовании с параметром-ListAvailable по умолчанию принимает значение nuget.org. |
 | ListAvailable | Выводит список пакетов, доступных из источника пакета, по умолчанию — nuget.org. Показывает значение по умолчанию для пакетов 50, если не указаны значения-PageSize и/или-First. |
 | Обновления | Перечисляет пакеты с обновлением, доступным в источнике пакета. |
-| ИмяПроекта | Проект, из которого получаются установленные пакеты. Если этот параметр опущен, то возвращает установленные проекты для всего решения. |
-| Фильтр | Строка фильтра, используемая для уменьшения списка пакетов путем его применения к ИДЕНТИФИКАТОРу, описанию и тегам пакета. |
+| ProjectName | Проект, из которого получаются установленные пакеты. Если этот параметр опущен, то возвращает установленные проекты для всего решения. |
+| Filter | Строка фильтра, используемая для уменьшения списка пакетов путем его применения к ИДЕНТИФИКАТОРу, описанию и тегам пакета. |
 | First | Число пакетов, возвращаемых с начала списка. Если не указано, по умолчанию используется значение 50. |
-| Skip | Опускает первые &lt;int&gt; пакеты из отображаемого списка.  |
+| Пропустить | Опускает первые &lt; целочисленные &gt; пакеты из отображаемого списка.  |
 | AllVersions | Отображает все доступные версии каждого пакета, а не только последнюю версию. |
 | инклудепререлеасе | Включает в результаты предварительные пакеты. |
 | PageSize | *(3.0 +)* Если используется с параметром-ListAvailable (обязательно), число пакетов, которые необходимо вывести в список, прежде чем будет предложено продолжить. |
@@ -47,7 +47,7 @@ Get-Package -Source <string> [-ListAvailable] [-Updates] [-ProjectName <string>]
 
 ## <a name="common-parameters"></a>Общие параметры
 
-`Get-Package` поддерживает следующие [Общие параметры PowerShell](https://go.microsoft.com/fwlink/?LinkID=113216): Отладка, действие при ошибке, ErrorVariable, буфер, переменная, PipelineVariable, Verbose, WarningAction и WarningVariable.
+`Get-Package` поддерживает следующие [Общие параметры PowerShell](/powershell/module/microsoft.powershell.core/about/about_commonparameters): Отладка, действие при ошибке, ErrorVariable, буфер, переменная, PipelineVariable, Verbose, WarningAction и WarningVariable.
 
 ## <a name="examples"></a>Примеры
 

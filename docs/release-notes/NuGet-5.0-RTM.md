@@ -5,12 +5,12 @@ author: karann-msft
 ms.author: karann
 ms.date: 04/02/2019
 ms.topic: conceptual
-ms.openlocfilehash: 52c71c6fe1a1854d5aed229abf2ce7ddc2685ae9
-ms.sourcegitcommit: 39f2ae79fbbc308e06acf67ee8e24cfcdb2c831b
+ms.openlocfilehash: e4a6be7fb26e3cc4bd297eaf02999f6ac1389b77
+ms.sourcegitcommit: b138bc1d49fbf13b63d975c581a53be4283b7ebf
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/05/2019
-ms.locfileid: "73611339"
+ms.lasthandoff: 11/03/2020
+ms.locfileid: "93236806"
 ---
 # <a name="nuget-50-release-notes"></a>Заметки о выпуске NuGet 5,0
 
@@ -18,7 +18,7 @@ ms.locfileid: "73611339"
 
 | Версия NuGet | Доступно в версии Visual Studio| Доступно в пакетах SDK для .NET|
 |:---|:---|:---|
-| [**5.0.0**](https://nuget.org/downloads) | [Visual Studio 2019 версии 16,0](https://visualstudio.microsoft.com/downloads/) | [2.1.602](https://dotnet.microsoft.com/download/dotnet-core/2.1)<sup>1</sup>, [2.2.202](https://dotnet.microsoft.com/download/dotnet-core/2.2)<sup>2</sup> |
+| [**5.0.0**](https://nuget.org/downloads) | [Visual Studio 2019 версии 16.0](https://visualstudio.microsoft.com/downloads/) | [2.1.602](https://dotnet.microsoft.com/download/dotnet-core/2.1)<sup>1</sup>, [2.2.202](https://dotnet.microsoft.com/download/dotnet-core/2.2)<sup>2</sup> |
 | [**5.0.2**](https://nuget.org/downloads) | [Visual Studio 2019 версии 16.0.4](https://visualstudio.microsoft.com/downloads/) | [2.1.60 x](https://dotnet.microsoft.com/download/dotnet-core/2.1)<sup>1</sup>, [2.2.20 x](https://dotnet.microsoft.com/download/dotnet-core/2.2)<sup>2</sup> |
 
 <sup>1</sup> Устанавливается вместе с Visual Studio 2019 с рабочей нагрузкой .NET Core 
@@ -27,25 +27,25 @@ ms.locfileid: "73611339"
 
 ## <a name="summary-whats-new-in-50"></a>Сводка: новые возможности в 5,0
 
-* Поддержка восстановления [отфильтрованных решений](https://docs.microsoft.com/visualstudio/ide/filtered-solutions?view=vs-2019) в Visual Studio 2019 — [#5820](https://github.com/NuGet/Home/issues/5820)
+* Поддержка восстановления [отфильтрованных решений](/visualstudio/ide/filtered-solutions?view=vs-2019) в Visual Studio 2019 — [#5820](https://github.com/NuGet/Home/issues/5820)
 * `BuildTransitive` папка позволяет пакетам транзитно публиковать целевые объекты и свойства в ведущем проекте — [#6091](https://github.com/NuGet/Home/issues/6091)
 * Улучшенная поддержка сценариев PackageReference в интерфейсах API IVs NuGet — [#7005](https://github.com/NuGet/Home/issues/7005), [#7493](https://github.com/NuGet/Home/issues/7493)
-* `nuget.exe pack project.json` устарела — [#7928](https://github.com/NuGet/Home/issues/7928)
-* Подключаемый модуль поставщика учетных данных поколения 1 был заменен [Gen 2](https://aka.ms/nuget-cross-platform-authentication-plugin) и скоро станет устаревшим — [#7819](https://github.com/NuGet/Home/issues/7819)
+* `nuget.exe pack project.json` является устаревшим — [#7928](https://github.com/NuGet/Home/issues/7928)
+* Подключаемый модуль поставщика учетных данных поколения 1 был заменен [Gen 2](../reference/extensibility/nuget-cross-platform-authentication-plugin.md) и скоро станет устаревшим — [#7819](https://github.com/NuGet/Home/issues/7819)
 
 ## <a name="issues-fixed-in-this-release"></a>Исправленные ошибки в этом выпуске
 
 **Ошибки**
 
-* При выполнении восстановления NoOp Избегайте использования *. дгспек. JSON Write в каталоге obj — [#7854](https://github.com/NuGet/Home/issues/7854)
+* При выполнении восстановления NoOp Избегайте использования * .dgspec.jsпри записи в каталоге obj — [#7854](https://github.com/NuGet/Home/issues/7854)
 
 * Разрешения для файлов, созданных в ~/.нужет, слишком открыты [#7673](https://github.com/NuGet/Home/issues/7673)
 
-* `dotnet list package --outdated` не работает с источниками, требующими проверки подлинности [#7605](https://github.com/NuGet/Home/issues/7605)
+* `dotnet list package --outdated` не работает с источниками, для которых требуется проверка подлинности [#7605](https://github.com/NuGet/Home/issues/7605)
 
-* NuGet. VisualStudio. Ивспаккажеинсталлер — вызов в проекте без ссылок на пакеты всегда использует Packages. config, даже если значение по умолчанию — PackageReference- [#7005](https://github.com/NuGet/Home/issues/7005)
+* NuGet. VisualStudio. Ивспаккажеинсталлер — вызов в проекте без ссылок на пакеты всегда использует packages.config, даже если значение по умолчанию — PackageReference- [#7005](https://github.com/NuGet/Home/issues/7005)
 
-* PMC: не удается выполнить переустановку пакета обновления ("не удается найти пакет") в списке пакетов. - [#7268](https://github.com/NuGet/Home/issues/7268)
+* PMC: сбой повторной установки Update-Package ("не удается найти пакет") в списке пакетов. - [#7268](https://github.com/NuGet/Home/issues/7268)
 
 * Добавьте уведомление третьих сторон в наш репозиторий и VSIX- [#7409](https://github.com/NuGet/Home/issues/7409)
 
@@ -61,11 +61,11 @@ ms.locfileid: "73611339"
 
 * Добавление обратной передачи NuGet. Packaging. Core с TypeForwardedTo attr- [#7768](https://github.com/NuGet/Home/issues/7768)
 
-* plugins_cache требует более короткий путь, чтобы хорошо работать [#7770](https://github.com/NuGet/Home/issues/7770)
+* plugins_cache требуется более короткий путь, чтобы правильно работать [#7770](https://github.com/NuGet/Home/issues/7770)
 
 * Предпочитать путь для обнаружения MSBuild, если пользователь не запросил конкретную версию MSBuild- [#7786](https://github.com/NuGet/Home/issues/7786)
 
-* `nuget.exe /?` должны перечислять правильные версии MSBuild — [#7794](https://github.com/NuGet/Home/issues/7794)
+* `nuget.exe /?` следует перечислить правильные версии MSBuild — [#7794](https://github.com/NuGet/Home/issues/7794)
 
 * NuGet. targets (498, 5): ошибка: не удалось найти часть пути "/ТМП/нужетскратч-on Mono- [#7793](https://github.com/NuGet/Home/issues/7793)
 
@@ -81,13 +81,13 @@ ms.locfileid: "73611339"
 
 * Пользовательский интерфейс NuGet в VS "область элементов" имеет нечитаемые вкладки из-за проблем с цветом. [#7735](https://github.com/NuGet/Home/issues/7735)
 
-* Разъяснение NuGet. Core & NuGet. Clients License. txt — [#7629](https://github.com/NuGet/Home/issues/7629)
+* NuGet. Core & NuGet. Clients License.txt уточнение [#7629](https://github.com/NuGet/Home/issues/7629)
 
 * Инструкция RESTORE не обязательно перечисляет глобальный каталог пакетов при попытке определить тип [#7596](https://github.com/NuGet/Home/issues/7596)
 
 * Ошибки при применении блокировки файлов должны отображаться в Список ошибок окне [#7429](https://github.com/NuGet/Home/issues/7429)
 
-* Устранение проблем NuGet. Configuration — [#7326](https://github.com/NuGet/Home/issues/7326)
+* Устранение NuGet.Configпроблем фигурации — [#7326](https://github.com/NuGet/Home/issues/7326)
 
 * Адаптация к MSBuild обновление расположения установки — [#7325](https://github.com/NuGet/Home/issues/7325)
 
@@ -95,9 +95,9 @@ ms.locfileid: "73611339"
 
 * Добавить точку расширения пакета для включения отладочных символов — [#7234](https://github.com/NuGet/Home/issues/7234)
 
-* `dotnet pack` должны сохранять диапазон версий зависимостей в созданном nupkg (даже если используется плавающая версия) — [#7232](https://github.com/NuGet/Home/issues/7232)
+* `dotnet pack` должен сохранять диапазон версий зависимостей в созданном nupkg (даже если используется плавающая версия) — [#7232](https://github.com/NuGet/Home/issues/7232)
 
-* `dotnet restore` сбой в источнике, прошедшем проверку подлинности, когда в конфигурации уровня пользователя также есть исходный [#7209](https://github.com/NuGet/Home/issues/7209)
+* `dotnet restore`сбой в источнике, прошедшем проверку подлинности, когда у конфигурации уровня пользователя также есть [#7209](https://github.com/NuGet/Home/issues/7209) источника
 
 * Пакет не должен ограничивать набор Буилдактионс для файлов содержимого — [#7155](https://github.com/NuGet/Home/issues/7155)
 
@@ -115,19 +115,19 @@ ms.locfileid: "73611339"
 
 * Неправильное восстановление NuGet Нупс, когда 2 проекта совместно используют каталог obj- [#6114](https://github.com/NuGet/Home/issues/6114)
 
-* Не удается использовать PAT с `dotnet restore` в Linux с пакетами из веб-канала с проверкой подлинности — [#5651](https://github.com/NuGet/Home/issues/5651)
+* Не удается использовать PAT с `dotnet restore` пакетами из веб-канала с проверкой подлинности в Linux. [#5651](https://github.com/NuGet/Home/issues/5651)
 
 * Сбой dotnet restore из-за отключенного веб-канала на уровне компьютера — [#5410](https://github.com/NuGet/Home/issues/5410)
 
-**DCR**
+**Запросы на изменение структуры**
 
-* Предупреждение о последующем удалении "пакет DotNet Project. JSON" — [#7928](https://github.com/NuGet/Home/issues/7928)
- 
+* Предупреждение о следующем удалении "пакета DotNet project.json"- [#7928](https://github.com/NuGet/Home/issues/7928)
+ 
 * Добавление предупреждения об устаревании для подключаемого модуля учетных данных Gen1. [#7819](https://github.com/NuGet/Home/issues/7819)
- 
+ 
 * Подписывание: включено репозиторий, чтобы требовать проверку клиента каждого пакета в качестве подписывания репозитория с помощью Репоситорисигнатурес/5.0.0 Resource- [#7759](https://github.com/NuGet/Home/issues/7759)
 
-* ограничение количества HTTP-запросов на источник с помощью NuGet. config — [#4538](https://github.com/NuGet/Home/issues/4538)
+* ограничение числа запросов HTTP на источник с помощью NuGet.Config- [#4538](https://github.com/NuGet/Home/issues/4538)
 
 * NuGet должен ориентироваться на Net472 (чтобы упростить очистку сборки VSIX 16,0). [#7143](https://github.com/NuGet/Home/issues/7143)
 
@@ -149,26 +149,26 @@ ms.locfileid: "73611339"
 
 * Обход времени ожидания восстановления в системах с 1 процессором [#6742](https://github.com/NuGet/Home/issues/6742)
 
-* NuGet предпочитает проверку подлинности NTLM, даже если в NuGet. config есть учетные данные, чтобы фильтровать типы проверки подлинности для учетных данных [#5286](https://github.com/NuGet/Home/issues/5286)
+* NuGet предпочитает проверку подлинности NTLM, даже если в NuGet.config добавить параметр конфигурации для фильтрации типов проверки подлинности для учетных данных [#5286](https://github.com/NuGet/Home/issues/5286)
 
-* Включение Ембединтероптипес для PackageReference (соответствующие функции Packages. config) — [#2365](https://github.com/NuGet/Home/issues/2365)
+* Включение Ембединтероптипес для PackageReference (функция сопоставления Packages.Config) — [#2365](https://github.com/NuGet/Home/issues/2365)
 
 **[Список всех проблем, исправленных в этом выпуске — 5,0 RTM](https://github.com/NuGet/Home/milestone/84?closed=1)**
 
 ## <a name="summary-whats-new-in-502"></a>Сводка. новые возможности в 5.0.2
 
-* Безопасность (при запуске с помощью DotNet. exe или Mono. exe). папка obj должна быть создана с правильными разрешениями [#7908](https://github.com/NuGet/Home/issues/7908)
+* Безопасность (при запуске с помощью dotnet.exe или mono.exe) — папка obj должна быть создана с правильными разрешениями [#7908](https://github.com/NuGet/Home/issues/7908)
 
-* Сбой восстановления NuGet. exe в Mono/MacOS с пользовательскими NuGet. config и `PackageSignatureValidity: False` [#8011](https://github.com/NuGet/Home/issues/8011)
+* Сбой восстановления nuget.exe в Mono/MacOS с настраиваемыми nuget.config и `PackageSignatureValidity: False` [#8011](https://github.com/NuGet/Home/issues/8011)
 
 
 ## <a name="known-issues"></a>Известные проблемы
 
-### <a name="packages-in-fallbackfolders-installed-by-net-core-sdk-are-custom-installed-and-fail-signature-validation---7414httpsgithubcomnugethomeissues7414"></a>Пакеты в FallbackFolders, устанавливаемые пакетом SDK для .NET Core, являются пользовательской установкой и не проходят проверку подписи. - [#7414](https://github.com/NuGet/Home/issues/7414)
-#### <a name="issue"></a>Проблемы
+### <a name="packages-in-fallbackfolders-installed-by-net-core-sdk-are-custom-installed-and-fail-signature-validation---7414"></a>Пакеты в FallbackFolders, устанавливаемые пакетом SDK для .NET Core, являются пользовательской установкой и не проходят проверку подписи. - [#7414](https://github.com/NuGet/Home/issues/7414)
+#### <a name="issue"></a>Проблема
 При использовании dotnet.exe 2.x для восстановления проекта с несколькими целевыми объектами (netcoreapp 1.x и netcoreapp 2.x) резервная папка обрабатывается как веб-канал файла. Это значит, что при восстановлении NuGet пытается установить пакет из резервной папки в папку глобальных пакетов и выполнить обычную проверки подписи, что приводит к ошибке.<br>
 #### <a name="workaround"></a>Обходной путь
-Отключите использование резервной папки, задав для параметра `RestoreAdditionalProjectSources` значение Nothing:
+Отключите использование резервной папки, задав для параметра значение `RestoreAdditionalProjectSources` Nothing:
 
 `<RestoreAdditionalProjectSources></RestoreAdditionalProjectSources>`
 

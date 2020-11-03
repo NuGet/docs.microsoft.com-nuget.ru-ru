@@ -5,12 +5,12 @@ author: karann-msft
 ms.author: karann
 ms.date: 12/07/2017
 ms.topic: reference
-ms.openlocfilehash: 84f939188ac190f6d539f8ee2b422049a274f178
-ms.sourcegitcommit: cbc87fe51330cdd3eacaad3e8656eb4258882fc7
+ms.openlocfilehash: 106c4027f03d8e8c1d19545b3ca9b6cd5263830e
+ms.sourcegitcommit: b138bc1d49fbf13b63d975c581a53be4283b7ebf
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/19/2020
-ms.locfileid: "88622581"
+ms.lasthandoff: 11/03/2020
+ms.locfileid: "93236793"
 ---
 # <a name="update-command-nuget-cli"></a>команда Update (интерфейс командной строки NuGet)
 
@@ -37,6 +37,10 @@ nuget update <configPath> [options]
 - **`-ConfigFile`**
 
   Файл конфигурации NuGet, который необходимо применить. Если не указано, `%AppData%\NuGet\NuGet.Config` используется (Windows) или `~/.nuget/NuGet/NuGet.Config` или `~/.config/NuGet/NuGet.Config` (Mac/Linux).
+  
+- **`-DependencyVersion [Lowest, HighestPatch, HighestMinor, Highest, Ignore]`**
+
+  Указывает версию пакетов зависимостей для использования, которая может быть одной из следующих:<br/><ul><li>*Самый низкий* (по умолчанию): самая низкая версия</li><li>*Хигхестпатч* : версия с наименьшим основным, наименьшим незначительным, самым высоким исправлением</li><li>*Хигхестминор* : версия с наименьшим основным, наибольшим незначительным, самым высоким исправлением</li><li>*Наибольшее* : самая высокая версия</li><li>*Ignore* : пакеты зависимостей не будут использоваться</li></ul>
 
 - **`-FileConflictAction [PromptUser, Overwrite, Ignore]`**
 

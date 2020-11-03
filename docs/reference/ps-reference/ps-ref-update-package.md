@@ -1,16 +1,16 @@
 ---
-title: Справочник по PowerShell для обновления пакета NuGet
-description: Справочник по командам PowerShell Update-Package в консоли диспетчера пакетов NuGet в Visual Studio.
+title: Справочник по Update-Package PowerShell для NuGet
+description: Справочник по Update-Package команде PowerShell в консоли диспетчера пакетов NuGet в Visual Studio.
 author: karann-msft
 ms.author: karann
 ms.date: 12/07/2017
 ms.topic: reference
-ms.openlocfilehash: e1bff9d4b7391d8be87afa4b8f2fbd51ae922140
-ms.sourcegitcommit: 26a8eae00af2d4be581171e7a73009f94534c336
+ms.openlocfilehash: af918d11e8f976be962d52084c5eda4d53e382c6
+ms.sourcegitcommit: b138bc1d49fbf13b63d975c581a53be4283b7ebf
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75384860"
+ms.lasthandoff: 11/03/2020
+ms.locfileid: "93238040"
 ---
 # <a name="update-package-package-manager-console-in-visual-studio"></a>Update-Package (консоль диспетчера пакетов в Visual Studio)
 
@@ -36,25 +36,25 @@ Update-Package Microsoft.AspNet.MVC -Version 5.0.0.
 
 |  Параметр | Описание |
 | --- | --- |
-| Id | Идентификатор обновляемого пакета. Если этот параметр опущен, обновляет все пакеты. Сам переключатель-ID является необязательным. |
+| Идентификатор | Идентификатор обновляемого пакета. Если этот параметр опущен, обновляет все пакеты. Сам переключатель-ID является необязательным. |
 | игноредепенденЦиес | Пропускает обновление зависимостей пакета. |
-| ИмяПроекта | Имя проекта, содержащего пакеты для обновления, по умолчанию — для всех проектов. |
-| {2&gt;Version&lt;2} | Версия, используемая для обновления, по умолчанию — последняя версия. В NuGet 3.0 + значение версии должно быть одним из *самых низких, наибольших, хигхестминор*или *хигхестпатч* (эквивалентно-безопасности). |
+| ProjectName | Имя проекта, содержащего пакеты для обновления, по умолчанию — для всех проектов. |
+| Version | Версия, используемая для обновления, по умолчанию — последняя версия. В NuGet 3.0 + значение версии должно быть одним из *самых низких, наибольших, хигхестминор* или *хигхестпатч* (эквивалентно-безопасности). |
 | Safe | Ограничивает обновления только версиями с той же основной и дополнительной версией, что и текущий установленный пакет. |
-| Source | URL-адрес или путь к папке для источника пакета для поиска. Пути к локальным папкам могут быть абсолютными или относительно текущей папки. Если этот параметр опущен, `Update-Package` выполняет поиск выбранного в данный момент источника пакета. |
+| Источник | URL-адрес или путь к папке для источника пакета для поиска. Пути к локальным папкам могут быть абсолютными или относительно текущей папки. Если этот параметр опущен, `Update-Package` Поиск выполняется в текущем выбранном источнике пакета. |
 | инклудепререлеасе | Включает предварительные пакеты для обновлений. |
 | Переустановка | Ресинталлс пакеты, используя установленные в настоящее время версии. Дополнительные сведения см. в разделе [Ограничение версий для обновления](../../consume-packages/reinstalling-and-updating-packages.md). |
-| филеконфликтактион | Действие, предпринимаемое при запросе перезаписи или пропуска существующих файлов, на которые ссылается проект. Возможные значения: *overwrite, ignore, None, овервритеалл*и *IgnoreAll* (3.0 +). |
-| депенденциверсион | Используемая версия пакетов зависимостей, которая может быть одной из следующих:<br/><ul><li>*Самый низкий* (по умолчанию): самая низкая версия</li><li>*Хигхестпатч*: версия с наименьшим основным, наименьшим незначительным, самым высоким исправлением</li><li>*Хигхестминор*: версия с наименьшим основным, наибольшим незначительным, самым высоким исправлением</li><li>*Высший* (по умолчанию для Update-Package без параметров): самая высокая версия</li></ul>Значение по умолчанию можно задать с помощью параметра [`dependencyVersion`](../nuget-config-file.md#config-section) в файле `Nuget.Config`. |
+| филеконфликтактион | Действие, предпринимаемое при запросе перезаписи или пропуска существующих файлов, на которые ссылается проект. Возможные значения: *overwrite, ignore, None, овервритеалл* и *IgnoreAll* (3.0 +). |
+| депенденциверсион | Используемая версия пакетов зависимостей, которая может быть одной из следующих:<br/><ul><li>*Самый низкий* (по умолчанию): самая низкая версия</li><li>*Хигхестпатч* : версия с наименьшим основным, наименьшим незначительным, самым высоким исправлением</li><li>*Хигхестминор* : версия с наименьшим основным, наибольшим незначительным, самым высоким исправлением</li><li>*Высший* (по умолчанию для Update-Package без параметров): самая высокая версия</li></ul>Значение по умолчанию можно задать с помощью [`dependencyVersion`](../nuget-config-file.md#config-section) параметра в `Nuget.Config` файле. |
 | тохигхестпатч | эквивалентно-Сейф. |
 | тохигхестминор | Ограничивает обновления только версиями с той же основной версией, что и текущий установленный пакет. |
-| Whatif | Показывает, что произойдет при выполнении команды без фактического выполнения обновления. |
+| WhatIf | Показывает, что произойдет при выполнении команды без фактического выполнения обновления. |
 
 Ни один из этих параметров не принимает входные данные конвейера или подстановочные знаки.
 
 ### <a name="common-parameters"></a>Общие параметры
 
-`Update-Package` поддерживает следующие [Общие параметры PowerShell](https://go.microsoft.com/fwlink/?LinkID=113216): Отладка, действие при ошибке, ErrorVariable, буфер, переменная, PipelineVariable, Verbose, WarningAction и WarningVariable.
+`Update-Package` поддерживает следующие [Общие параметры PowerShell](/powershell/module/microsoft.powershell.core/about/about_commonparameters): Отладка, действие при ошибке, ErrorVariable, буфер, переменная, PipelineVariable, Verbose, WarningAction и WarningVariable.
 
 ### <a name="examples"></a>Примеры
 
@@ -81,11 +81,11 @@ Update-Package Elmah -ProjectName MvcApplication1 -Safe
 # (subject to version constraints). If this command rolls a dependency back to an earlier version,
 # use Update-Package <dependency_name> to reinstall that one dependency without affecting the
 # dependent package.
-Update-Package ELmah –reinstall 
+Update-Package Elmah –reinstall 
 
 # Reinstall the Elmah package in just MyProject
 Update-Package Elmah -ProjectName MyProject -reinstall
 
 # Reinstall the same version of the original package without touching dependencies.
-Update-Package ELmah –reinstall -ignoreDependencies
+Update-Package Elmah –reinstall -ignoreDependencies
 ```
