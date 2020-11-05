@@ -6,12 +6,12 @@ ms.author: karann
 ms.date: 04/24/2017
 ms.topic: conceptual
 ms.reviewer: anangaur
-ms.openlocfilehash: 2fefd9cff4d151111023521c31d58878743775bf
-ms.sourcegitcommit: 2b50c450cca521681a384aa466ab666679a40213
+ms.openlocfilehash: 8e3eade14c70782563ba82894f072f9b3a611923
+ms.sourcegitcommit: b138bc1d49fbf13b63d975c581a53be4283b7ebf
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/07/2020
-ms.locfileid: "78231179"
+ms.lasthandoff: 11/03/2020
+ms.locfileid: "93237988"
 ---
 # <a name="transforming-source-code-and-configuration-files"></a>Преобразования исходного кода и файлов конфигурации
 
@@ -52,7 +52,7 @@ ms.locfileid: "78231179"
 Как описывается в следующих разделах, преобразования файла конфигурации могут быть выполнены двумя способами:
 
 - Включите файлы `app.config.transform` и `web.config.transform` в папку `content` пакета. Расширение `.transform` указывает NuGet на то, что эти файлы содержат XML-код, который следует добавить в файлы конфигурации при установке пакета. При удалении пакета такой XML-код также удаляется.
-- Включите файлы `app.config.install.xdt` и `web.config.install.xdt` в папку `content` пакета, используя [синтаксис XDT](https://msdn.microsoft.com/library/dd465326.aspx) для описания необходимых изменений. В этом случае также можно включить файл `.uninstall.xdt`, который необходим для отмены изменений при удалении пакета из проекта.
+- Включите файлы `app.config.install.xdt` и `web.config.install.xdt` в папку `content` пакета, используя [синтаксис XDT](/previous-versions/aspnet/dd465326(v=vs.110)) для описания необходимых изменений. В этом случае также можно включить файл `.uninstall.xdt`, который необходим для отмены изменений при удалении пакета из проекта.
 
 > [!Note]
 > Преобразования не применяются к файлам `.config`, на которые задаются ссылки в Visual Studio.
@@ -108,14 +108,14 @@ ms.locfileid: "78231179"
 
 Чтобы изучить соответствующий файл `web.config.transform`, скачайте пакет ELMAH по приведенной выше ссылке, измените расширение пакета с `.nupkg` на `.zip`, после чего откройте файл `content\web.config.transform`, содержащийся в этом ZIP-файле.
 
-Чтобы просмотреть последствия установки и удаления пакета, создайте в Visual Studio новый проект ASP.NET (шаблон в разделе **Visual C# > Интернет** диалогового окна "Новый проект") и выберите приложение ASP.NET. Откройте файл `web.config`, чтобы просмотреть его первоначальное состояние. Щелкните проект правой кнопкой мыши, выберите пункт **Управление пакетами NuGet**, перейдите к пакету ELMAH на веб-сайте nuget.org и установите его последнюю версию. Обратите внимание на все изменения в файле `web.config`. Удалите пакет. Вы увидите, что было восстановлено исходное состояние файла `web.config`.
+Чтобы просмотреть последствия установки и удаления пакета, создайте в Visual Studio новый проект ASP.NET (шаблон в разделе **Visual C# > Интернет** диалогового окна "Новый проект") и выберите приложение ASP.NET. Откройте файл `web.config`, чтобы просмотреть его первоначальное состояние. Щелкните проект правой кнопкой мыши, выберите пункт **Управление пакетами NuGet** , перейдите к пакету ELMAH на веб-сайте nuget.org и установите его последнюю версию. Обратите внимание на все изменения в файле `web.config`. Удалите пакет. Вы увидите, что было восстановлено исходное состояние файла `web.config`.
 
 ### <a name="xdt-transforms"></a>Преобразования XDT
 
 > [!Note]
 > Как упоминалось в [разделе о проблемах совместимости пакетов в документации по переходу с `packages.config` на `PackageReference`](../consume-packages/migrate-packages-config-to-package-reference.md#package-compatibility-issues), описанные ниже преобразования XDT поддерживаются только `packages.config`. Если добавить в пакет указанные ниже файлы, то у потребителей, использующих ваш пакет с `PackageReference`, преобразования применены не будут (см. [этот пример](https://github.com/NuGet/Samples/tree/master/XDTransformExample), чтобы обеспечить работу преобразований XDT с`PackageReference`).
 
-Вы можете изменять файлы конфигурации с помощью [синтаксиса XDT](https://msdn.microsoft.com/library/dd465326.aspx). Кроме того, NuGet может заменять токены [свойствами проекта](/dotnet/api/vslangproj.projectproperties?view=visualstudiosdk-2017&viewFallbackFrom=netframework-4.7), включая имена свойств с разделителями `$` (без учета регистра символов).
+Вы можете изменять файлы конфигурации с помощью [синтаксиса XDT](/previous-versions/aspnet/dd465326(v=vs.110)). Кроме того, NuGet может заменять токены [свойствами проекта](/dotnet/api/vslangproj.projectproperties?view=visualstudiosdk-2017&viewFallbackFrom=netframework-4.7), включая имена свойств с разделителями `$` (без учета регистра символов).
 
 Например, следующий файл `app.config.install.xdt` вставит элемент `appSettings` в файл `app.config`, содержащий значения `FullPath`, `FileName` и `ActiveConfigurationSettings` из проекта:
 

@@ -5,12 +5,12 @@ author: karann-msft
 ms.author: karann
 ms.date: 07/15/2019
 ms.topic: conceptual
-ms.openlocfilehash: 34f7c6132ba6050e20114642932ccf29a5ec088d
-ms.sourcegitcommit: 2b50c450cca521681a384aa466ab666679a40213
+ms.openlocfilehash: 7c0da38ab4059b89c9693ecbece2bc8ed1a775ec
+ms.sourcegitcommit: b138bc1d49fbf13b63d975c581a53be4283b7ebf
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/07/2020
-ms.locfileid: "79428627"
+ms.lasthandoff: 11/03/2020
+ms.locfileid: "93237949"
 ---
 # <a name="support-multiple-net-versions"></a>Поддержка нескольких версий .NET
 
@@ -71,7 +71,7 @@ ms.locfileid: "79428627"
 
 Пример указания ссылок на эти файлы в манифесте `.nuspec` см. в разделе [Создание пакетов универсальной платформы Windows](../guides/create-uwp-packages.md).
 
-Также ознакомьтесь с записью блога об [упаковке компонента приложения для Магазина Windows с помощью NuGet](https://blogs.msdn.microsoft.com/mim/2013/09/02/packaging-a-windows-store-apps-component-with-nuget-part-2).
+Также ознакомьтесь с записью блога об [упаковке компонента приложения для Магазина Windows с помощью NuGet](/archive/blogs/mim/packaging-a-windows-store-apps-component-with-nuget-part-2).
 
 ## <a name="matching-assembly-versions-and-the-target-framework-in-a-project"></a>Сопоставление версий сборки и целевых платформ в проекте
 

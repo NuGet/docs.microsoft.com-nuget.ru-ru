@@ -6,12 +6,12 @@ ms.author: karann
 ms.date: 05/18/2018
 ms.topic: conceptual
 ms.reviewer: anangaur
-ms.openlocfilehash: dc20e43bfb43a4b6e47297fb3446319860034d46
-ms.sourcegitcommit: cbc87fe51330cdd3eacaad3e8656eb4258882fc7
+ms.openlocfilehash: fe5625247dca51c10d82fffe82022c40a4716069
+ms.sourcegitcommit: b138bc1d49fbf13b63d975c581a53be4283b7ebf
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/19/2020
-ms.locfileid: "88623034"
+ms.lasthandoff: 11/03/2020
+ms.locfileid: "93237936"
 ---
 # <a name="publishing-packages"></a>Публикация пакетов
 
@@ -24,7 +24,7 @@ ms.locfileid: "88623034"
 
 ## <a name="publish-to-nugetorg"></a>Публикация на веб-сайте nuget.org
 
-Сначала необходимо войти на сайт nuget.org под учетной записью Майкрософт, с помощью которой на нем необходимо зарегистрироваться. Вы также можете войти с помощью учетной записи nuget.org, созданной в предыдущих версиях портала.
+Сначала необходимо войти на сайт nuget.org под учетной записью Майкрософт, с помощью которой на нем необходимо зарегистрироваться.
 
 ![Местоположение входа в NuGet](media/publish_NuGetSignIn.png)
 
@@ -47,7 +47,7 @@ ms.locfileid: "88623034"
 ### <a name="command-line"></a>Командная строка
 
 Для отправки пакетов в nuget.org требуется получить ключ API, созданный в nuget.org. Необходимо использовать dotnet.exe (.NET Core) или nuget.exe v4.1.0 или более поздней версии, которые реализуют необходимые протоколы NuGet.
-Дополнительные сведения см. в статьях [.NET Core](https://docs.microsoft.com/dotnet/core/install/), [nuget.exe](https://www.nuget.org/downloads) и [Протоколы NuGet](../api/nuget-protocols.md).
+Дополнительные сведения см. в статьях [.NET Core](/dotnet/core/install/), [nuget.exe](https://www.nuget.org/downloads) и [Протоколы NuGet](../api/nuget-protocols.md).
 
 #### <a name="create-api-keys"></a>Создание ключей API
 

@@ -6,11 +6,11 @@ ms.author: mikejo
 ms.date: 06/05/2019
 ms.topic: conceptual
 ms.openlocfilehash: 7951b3db0cdcaee0a1eb955a5bf6fedce24c79c9
-ms.sourcegitcommit: 2b50c450cca521681a384aa466ab666679a40213
+ms.sourcegitcommit: b138bc1d49fbf13b63d975c581a53be4283b7ebf
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/07/2020
-ms.locfileid: "79428633"
+ms.lasthandoff: 11/03/2020
+ms.locfileid: "93237618"
 ---
 # <a name="individual-accounts-on-nugetorg"></a>Индивидуальные учетные записи на NuGet.org
 
@@ -32,7 +32,7 @@ ms.locfileid: "79428633"
 
 1. Введите данные своей учетной записи Майкрософт или Azure Active Directory.
 
-1. Щелкните **Да**, чтобы принять разрешения, которые требуется предоставить приложению *NuGet.org*.
+1. Щелкните **Да** , чтобы принять разрешения, которые требуется предоставить приложению *NuGet.org*.
 
    ![Предоставление разрешений приложению NuGet.org](media/nuget-org-permissions.png)
 

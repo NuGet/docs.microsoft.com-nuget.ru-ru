@@ -6,11 +6,11 @@ ms.author: mikejo
 ms.date: 06/03/2019
 ms.topic: conceptual
 ms.openlocfilehash: 7039dd27f2dddebc3c84e5ad35d5efec59547792
-ms.sourcegitcommit: 2b50c450cca521681a384aa466ab666679a40213
+ms.sourcegitcommit: b138bc1d49fbf13b63d975c581a53be4283b7ebf
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/07/2020
-ms.locfileid: "79428417"
+ms.lasthandoff: 11/03/2020
+ms.locfileid: "93237391"
 ---
 # <a name="manage-packages-using-the-nugetexe-cli"></a>Управление пакетами с использованием CLI nuget.exe
 
@@ -42,7 +42,7 @@ ms.locfileid: "79428417"
     nuget install <packageID> -OutputDirectory packages
     ```
 
-    Например, чтобы установить пакет `Newtonsoft.json` в папку *packages*, выполните следующую команду:
+    Например, чтобы установить пакет `Newtonsoft.json` в папку *packages* , выполните следующую команду:
 
     ```cli
     nuget install Newtonsoft.Json -OutputDirectory packages
