@@ -6,11 +6,11 @@ ms.author: karann
 ms.date: 03/16/2018
 ms.topic: conceptual
 ms.openlocfilehash: a5833df60c5f7905359f421141347b1237f45d86
-ms.sourcegitcommit: 2b50c450cca521681a384aa466ab666679a40213
+ms.sourcegitcommit: b138bc1d49fbf13b63d975c581a53be4283b7ebf
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/07/2020
-ms.locfileid: "79428507"
+ms.lasthandoff: 11/03/2020
+ms.locfileid: "93237644"
 ---
 # <a name="package-references-packagereference-in-project-files"></a>Ссылки на пакеты (PackageReference) в файлах проектов
 
@@ -175,7 +175,7 @@ PackageReference также позволяет использовать усло
 Эта функция доступна в NuGet **5.0** или более поздней версии и в Visual Studio 2019 **16.0** или более поздней версии.
 
 Иногда требуется ссылаться на файлы в пакете из целевого объекта MSBuild.
-В проектах на основе `packages.config` пакеты устанавливаются в папку относительно файла проекта. Однако в PackageReference пакеты [используются](../concepts/package-installation-process.md) из папки *global-packages*, которая может отличаться на разных компьютерах.
+В проектах на основе `packages.config` пакеты устанавливаются в папку относительно файла проекта. Однако в PackageReference пакеты [используются](../concepts/package-installation-process.md) из папки *global-packages* , которая может отличаться на разных компьютерах.
 
 Чтобы устранить эту проблему, NuGet предоставляет свойство, указывающее на расположение, из которого будет использоваться пакет.
 
