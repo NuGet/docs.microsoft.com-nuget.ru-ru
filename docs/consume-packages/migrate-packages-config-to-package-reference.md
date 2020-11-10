@@ -1,16 +1,16 @@
 ---
-title: Преобразование package.config в формат PackageReference
-description: Сведения об изменении формата управления проекта с package.config на формат PackageReference, поддерживаемый NuGet 4.0+, VS2017 и .NET Core 2.0.
+title: Переход с формата packages.config на формат PackageReference
+description: Сведения об изменении формата управления проекта с packages.config на формат PackageReference, поддерживаемый NuGet 4.0+, VS2017 и .NET Core 2.0.
 author: karann-msft
 ms.author: karann
 ms.date: 05/24/2019
 ms.topic: conceptual
-ms.openlocfilehash: 8e825410d621ff2946e23e80173292f24f9d21f2
-ms.sourcegitcommit: 2b50c450cca521681a384aa466ab666679a40213
+ms.openlocfilehash: 23bd936707173f49a651a8ba432fa8773fa53881
+ms.sourcegitcommit: b138bc1d49fbf13b63d975c581a53be4283b7ebf
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/07/2020
-ms.locfileid: "79428525"
+ms.lasthandoff: 11/03/2020
+ms.locfileid: "93237839"
 ---
 # <a name="migrate-from-packagesconfig-to-packagereference"></a>Преобразование packages.config в PackageReference
 
@@ -68,7 +68,7 @@ Visual Studio 2017 версии 15.7 и более поздних поддер
 
 1. Просмотрите все [проблемы совместимости пакетов](#package-compatibility-issues).
 
-1. Нажмите кнопку **ОК**, чтобы начать миграцию.
+1. Нажмите кнопку **ОК** , чтобы начать миграцию.
 
 1. По завершении миграции Visual Studio предоставляет отчет, содержащий путь к резервной копии, список установленных пакетов (зависимостей верхнего уровня), список пакетов, отмеченных как переходные зависимости, и список проблем совместимости, обнаруженных в начале миграции. Отчет будет сохранен в папку резервных копий.
 
