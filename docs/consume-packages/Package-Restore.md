@@ -5,12 +5,12 @@ author: karann-msft
 ms.author: karann
 ms.date: 08/05/2019
 ms.topic: conceptual
-ms.openlocfilehash: 0edfa1f61e6b18ef38689ed2272b2c5992a46ae6
-ms.sourcegitcommit: b138bc1d49fbf13b63d975c581a53be4283b7ebf
+ms.openlocfilehash: 05fa68ad3a0b353117a14e2b3e1cdf13dc806127
+ms.sourcegitcommit: 0cc6ac680c3202d0b036c0bed7910f6709215682
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/03/2020
-ms.locfileid: "93237852"
+ms.lasthandoff: 11/12/2020
+ms.locfileid: "94550392"
 ---
 # <a name="restore-packages-using-package-restore"></a>Восстановление пакетов с помощью функции восстановления пакетов
 
@@ -169,7 +169,7 @@ ms.locfileid: "93237852"
    Убедитесь, что выходные данные MSBuild показывают, что сборка выполнена успешно.
    
 > [!Note]
-> В MSBuild существует параметр `-restore`, который позволяет выполнить команду `Restore`, загрузить проект снова, а затем выполнить сборку. См. раздел [Восстановление и сборка с помощью одной команды MSBuild](/nuget/reference/msbuild-targets#restoring-and-building-with-one-msbuild-command).
+> В MSBuild существует параметр `-restore`, который позволяет выполнить команду `Restore`, загрузить проект снова, а затем выполнить сборку. См. раздел [Восстановление и сборка с помощью одной команды MSBuild](../reference/msbuild-targets.md#restoring-and-building-with-one-msbuild-command).
 
 ```cmd
 # Will restore the project, then build, since build is the default target.

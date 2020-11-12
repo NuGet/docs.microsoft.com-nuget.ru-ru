@@ -6,12 +6,12 @@ ms.author: rmpablos
 ms.date: 03/06/2018
 ms.topic: conceptual
 ms.reviewer: anangaur
-ms.openlocfilehash: 81f8695d7b3cec73f3e18f90ddf38dfe6c3ecf4d
-ms.sourcegitcommit: b138bc1d49fbf13b63d975c581a53be4283b7ebf
+ms.openlocfilehash: 64b28c29ae3b533bde7c8f41dd38a4ab0a5afef7
+ms.sourcegitcommit: 0cc6ac680c3202d0b036c0bed7910f6709215682
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/03/2020
-ms.locfileid: "93237592"
+ms.lasthandoff: 11/12/2020
+ms.locfileid: "94550379"
 ---
 # <a name="signing-nuget-packages"></a>Подписывание пакетов NuGet
 
@@ -54,7 +54,7 @@ nuget sign MyPackage.nupkg -CertificatePath <PathToTheCertificate> -Timestamper 
 Чтобы опубликовать подписанный пакет, сначала нужно зарегистрировать сертификат на сайте NuGet.org. Вам потребуется сертификат, так как файл `.cer` находится в двоичном формате DER.
 
 1. [Войдите](https://www.nuget.org/users/account/LogOn?returnUrl=%2F) на сайт NuGet.org.
-1. Перейдите в `Account settings` (или `Manage Organization` **>** `Edit Organziation`, если вы хотите зарегистрировать сертификат в учетной записи организации).
+1. Перейдите в `Account settings` (или `Manage Organization` **>** `Edit Organization`, если вы хотите зарегистрировать сертификат в учетной записи организации).
 1. Разверните раздел `Certificates` и выберите `Register new`.
 1. Найдите и выберите файл сертификата, экспортированного ранее.
   ![Зарегистрированные сертификаты](../reference/media/registered-certs.png)
