@@ -5,12 +5,12 @@ author: dominofire
 ms.author: feaguila
 ms.date: 11/9/2020
 ms.topic: conceptual
-ms.openlocfilehash: 86e173b9d760578454df8f5f817533f64e193996
-ms.sourcegitcommit: 0cc6ac680c3202d0b036c0bed7910f6709215682
+ms.openlocfilehash: 09fb98eec79ee4ed08d85a1c557a420d6b265f11
+ms.sourcegitcommit: f4b74b500e3db9e468f11142df48d87880382267
 ms.translationtype: MT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 11/12/2020
-ms.locfileid: "94550746"
+ms.locfileid: "94572835"
 ---
 # <a name="nuget-58-release-notes"></a>Заметки о выпуске NuGet 5,8
 
@@ -28,6 +28,8 @@ ms.locfileid: "94550746"
 
 ## <a name="summary-whats-new-in-58"></a>Сводка: новые возможности в 5,8
 🎉 **это первый выпуск, обеспечивающий полную разработку и восстановление для пакетов NuGet, предназначенных для .net 5,0** 🎉
+
+* Ускорение извлечения nupkg с помощью mmap/CreateFileMapping- [#9807](https://github.com/NuGet/Home/issues/9807)
 
 * Отображение сведений об уязвимости пакета в области сведений пакета пользовательского интерфейса диспетчера пакетов — [#9850](https://github.com/NuGet/Home/issues/9850)
 
