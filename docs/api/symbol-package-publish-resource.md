@@ -1,9 +1,7 @@
 ---
 title: Отправка пакетов символов, API NuGet | Документация Майкрософт
 author: cristinamanum
-ms.author:
-- cmanu
-- kraigb
+ms.author: cmanu
 manager: skofman
 ms.date: 10/30/2018
 ms.topic: reference
@@ -12,33 +10,33 @@ ms.technology: ''
 description: Служба публикации позволяет клиентам публиковать новые пакеты символов.
 keywords: Пакет символов push-уведомлений API NuGet
 ms.reviewer: karann
-ms.openlocfilehash: 27e557bf15ce31152243a409eddc4112eeb6c38b
-ms.sourcegitcommit: ac9a00ccaf90e539a381e92b650074910b21eb0d
+ms.openlocfilehash: bd4a10cc976c9d0775a63cfe61c35327c196065c
+ms.sourcegitcommit: e39e5a5ddf68bf41e816617e7f0339308523bbb3
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/03/2019
-ms.locfileid: "70235103"
+ms.lasthandoff: 12/05/2020
+ms.locfileid: "96738881"
 ---
 # <a name="push-symbol-packages"></a>Отправка пакетов символов
 
 Пакеты символов ([снупкг](../create-packages/Symbol-Packages-snupkg.md)) можно отправить с помощью API-интерфейса NuGet v3.
-Эти операции основаны `SymbolPackagePublish` на ресурсе, найденном в [индексе службы](service-index.md).
+Эти операции основаны на `SymbolPackagePublish` ресурсе, найденном в [индексе службы](service-index.md).
 
 ## <a name="versioning"></a>Управление версиями
 
 Используется следующее `@type` значение:
 
-Значение@type                 | Примечания
+Значение @type                 | Примечания
 --------------------        | -----
 Симболпаккажепублиш/4.9.0  | Первоначальный выпуск
 
 ## <a name="base-url"></a>Базовый URL-адрес
 
-Базовый URL-адрес для следующих API-интерфейсов — это `@id` значение свойства `SymbolPackagePublish/4.9.0` ресурса в [индексе службы](service-index.md)источника пакета. В приведенной ниже документации используется URL-адрес NuGet. org. Рассмотрите `https://www.nuget.org/api/v2/symbolpackage` в качестве заполнителя `@id` для значения, найденного в индексе службы.
+Базовый URL-адрес для следующих API-интерфейсов — это значение `@id` свойства `SymbolPackagePublish/4.9.0` ресурса в [индексе службы](service-index.md)источника пакета. В приведенной ниже документации используется URL-адрес NuGet. org. Рассмотрите в `https://www.nuget.org/api/v2/symbolpackage` качестве заполнителя для `@id` значения, найденного в индексе службы.
 
 ## <a name="http-methods"></a>Методы HTTP
 
-Этот ресурс поддерживает метод http.`PUT` 
+`PUT`Этот ресурс поддерживает метод HTTP. 
 
 ## <a name="push-a-symbol-package"></a>Отправка пакета символов
 
@@ -53,17 +51,17 @@ nuget.org поддерживает принудительную отправку
 
 ### <a name="request-parameters"></a>Параметры запроса
 
-name           | In     | Тип   | Обязательно | Примечания
+Имя           | В     | Тип   | Обязательно | Примечания
 -------------- | ------ | ------ | -------- | -----
-X-NuGet-ApiKey | Header | string | да      | Например: `X-NuGet-ApiKey: {USER_API_KEY}`
+X-NuGet-ApiKey | Заголовок | строка | да      | например `X-NuGet-ApiKey: {USER_API_KEY}`
 
 Ключ API — это непрозрачная строка, полученная пользователем из источника пакета и настроенная в клиенте. Конкретный формат строки не задан, но длина ключа API не должна превышать приемлемый размер для значений заголовка HTTP.
 
-### <a name="request-body"></a>Текст запроса
+### <a name="request-body"></a>Тело запроса
 
 Текст запроса для отправки символа аналогичен тексту запроса на принудительную отправку пакета (см. раздел [Отправка и удаление пакета](package-publish-resource.md)). 
 
-### <a name="response"></a>Отклик
+### <a name="response"></a>Ответ
 
 Код состояния | Значение
 ----------- | -------

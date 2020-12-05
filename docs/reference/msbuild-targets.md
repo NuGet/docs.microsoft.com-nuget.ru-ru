@@ -5,12 +5,12 @@ author: karann-msft
 ms.author: karann
 ms.date: 03/23/2018
 ms.topic: conceptual
-ms.openlocfilehash: 16fd7b9103ef5ac335f0b2e5493dd2983b182f50
-ms.sourcegitcommit: cbc87fe51330cdd3eacaad3e8656eb4258882fc7
+ms.openlocfilehash: 4a04c6dd7993fc47bcf7a6fe46236ed700a0d105
+ms.sourcegitcommit: e39e5a5ddf68bf41e816617e7f0339308523bbb3
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/19/2020
-ms.locfileid: "88623179"
+ms.lasthandoff: 12/05/2020
+ms.locfileid: "96738933"
 ---
 # <a name="nuget-pack-and-restore-as-msbuild-targets"></a>Объекты pack и restore NuGet в качестве целевых объектов MSBuild
 
@@ -48,13 +48,13 @@ ms.locfileid: "88623179"
 
 | Значение атрибута или NuSpec | Свойство MSBuild | По умолчанию | Примечания |
 |--------|--------|--------|--------|
-| Идентификатор | PackageId | AssemblyName | $(AssemblyName) из MSBuild |
+| Id | PackageId | AssemblyName | $(AssemblyName) из MSBuild |
 | Версия | PackageVersion | Версия | Это значение совместимо с SemVer, например "1.0.0", "1.0.0-beta" или "1.0.0-beta-00345" |
 | VersionPrefix | PackageVersionPrefix | пустых | Задав PackageVersion, вы перезапишите PackageVersionPrefix |
 | VersionSuffix | PackageVersionSuffix | пустых | $(VersionSuffix) из MSBuild. Задав PackageVersion, вы перезапишите PackageVersionSuffix |
-| Authors | Authors | Имя текущего пользователя | |
-| Владельцы | Недоступно | Не существует в NuSpec | |
-| Title | Title | Идентификатор пакета| |
+| Авторы | Авторы | Имя текущего пользователя | |
+| Владельцы | Н/Д | Не существует в NuSpec | |
+| Заголовок | Заголовок | Идентификатор пакета| |
 | Description | Описание | "Описание пакета" | |
 | Copyright | Copyright | пустых | |
 | RequireLicenseAcceptance | PackageRequireLicenseAcceptance | false | |
@@ -64,7 +64,7 @@ ms.locfileid: "88623179"
 | ProjectUrl | PackageProjectUrl | пустых | |
 | Значок | PackageIcon | пустых | Необходимо явно упаковать файл изображения значка, на который указывает ссылка.|
 | IconUrl | PackageIconUrl | пустых | Для лучшей работы с предыдущими версиями `PackageIconUrl` следует указать в дополнение к `PackageIcon` . Более длительное выражение `PackageIconUrl` будет считаться устаревшим. |
-| тегов; | PackageTags | пустых | Теги разделяются точкой с запятой. |
+| Теги | PackageTags | пустых | Теги разделяются точкой с запятой. |
 | ReleaseNotes | PackageReleaseNotes | пустых | |
 | Репозиторий/URL-адрес | RepositoryUrl | пустых | URL-адрес репозитория, используемый для клонирования или извлечения исходного кода. Например *https://github.com/NuGet/NuGet.Client.git* |
 | Репозиторий или тип | RepositoryType | пустых | Тип репозитория. Примеры: *Git*, *TFS*. |
@@ -79,7 +79,7 @@ ms.locfileid: "88623179"
 - суппрессдепенденЦиесвхенпаккинг
 - PackageVersion
 - PackageId
-- Authors
+- Авторы
 - Описание
 - Copyright
 - PackageRequireLicenseAcceptance
@@ -365,13 +365,14 @@ msbuild -t:pack <path to .csproj file> -p:NuspecFile=<path to nuspec file> -p:Nu
 1. Скачивание пакетов
 1. Запись файла ресурсов, целевых объектов и свойств.
 
-`restore`Целевой объект работает **только** для проектов, использующих формат PackageReference. Он **не** работает для проектов, использующих этот `packages.config` Формат; вместо этого используйте [Восстановление NuGet](../reference/cli-reference/cli-ref-restore.md) .
+`restore`Целевой объект работает для проектов, использующих формат PackageReference.
+`MSBuild 16.5+` также имеет [поддержку согласия](#restoring-packagereference-and-packages.config-with-msbuild) для `packages.config` формата.
 
 ### <a name="restore-properties"></a>Свойства восстановления
 
 Дополнительные параметры восстановления могут поступать из свойств MSBuild в файле проекта. Значения также можно задать из командной строки с помощью параметра `-p:` (см. примеры ниже).
 
-| Свойство | Описание |
+| Свойство. | Описание |
 |--------|--------|
 | RestoreSources | Разделенный точками с запятой список источников пакетов. |
 | RestorePackagesPath | Путь к папке пакетов пользователя. |
@@ -391,7 +392,8 @@ msbuild -t:pack <path to .csproj file> -p:NuspecFile=<path to nuspec file> -p:Nu
 | RestorePackagesWithLockFile | Разрешение использовать файл блокировки. |
 | RestoreLockedMode | Запустите восстановление в заблокированном режиме. Это означает, что восстановление не будет переоценивать зависимости. |
 | NuGetLockFilePath | Пользовательское расположение файла блокировки. Расположение по умолчанию находится рядом с проектом и имеет имя `packages.lock.json` . |
-| RestoreForceEvaluate | Принудительное восстановление для повторного расчета зависимостей и обновление файла блокировки без предупреждения. | 
+| RestoreForceEvaluate | Принудительное восстановление для повторного расчета зависимостей и обновление файла блокировки без предупреждения. |
+| ресторепаккажесконфиг | Переключатель opt, который восстанавливает проекты с packages.config. Поддерживается `MSBuild -t:restore` только с. |
 
 #### <a name="examples"></a>Примеры
 
@@ -435,6 +437,17 @@ msbuild -t:build -restore
 ```
 
 Одна и та же логика применяется к другим целевым объектам, аналогичным `build` .
+
+### <a name="restoring-packagereference-and-packagesconfig-with-msbuild"></a>Восстановление PackageReference и packages.config с помощью MSBuild
+
+С помощью MSBuild 16.5 + packages.config также поддерживаются для `msbuild -t:restore` .
+
+```cli
+msbuild -t:restore -p:RestorePackagesConfig=true
+```
+
+> [!NOTE]
+> `packages.config` Restore доступен только в `MSBuild 16.5+` , а не в `dotnet.exe`
 
 ### <a name="packagetargetfallback"></a>PackageTargetFallback
 
