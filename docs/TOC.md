@@ -1,4 +1,3 @@
-# [Краткий обзор](index.yml)
 # [Что такое NuGet?](what-is-nuget.md)
 # Начало работы
 ## [Установка клиентских средств NuGet](install-nuget-client-tools.md)
