@@ -1,16 +1,16 @@
 ---
 title: Восстановление пакета NuGet
 description: Описание того, как NuGet восстанавливает пакеты, от которых зависит проект, включая отключение восстановления и ограничения версий.
-author: karann-msft
-ms.author: karann
+author: JonDouglas
+ms.author: jodou
 ms.date: 08/05/2019
 ms.topic: conceptual
-ms.openlocfilehash: be68d3bd1c7dfcc5661276c0b62d46722af61a00
-ms.sourcegitcommit: e39e5a5ddf68bf41e816617e7f0339308523bbb3
+ms.openlocfilehash: bac4d88c29539f9fbe7b33b44ce11d350920d365
+ms.sourcegitcommit: 650c08f8bc3d48dfd206a111e5e2aaca3001f569
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/05/2020
-ms.locfileid: "96738959"
+ms.lasthandoff: 12/15/2020
+ms.locfileid: "97523535"
 ---
 # <a name="restore-packages-using-package-restore"></a>Восстановление пакетов с помощью функции восстановления пакетов
 
@@ -147,7 +147,7 @@ ms.locfileid: "96738959"
 
 ## <a name="restore-using-msbuild"></a>Восстановление с помощью MSBuild
 
-С помощью команды [msbuild -t:restore](../reference/msbuild-targets.md#restore-target) вы можете восстановить пакеты, включенные в файл проекта (см. раздел о [PackageReference](../../consume-packages/package-references-in-project-files.md)), и проекты `packages.config` (начиная с версии MSBuild 16.5).
+С помощью команды [msbuild -t:restore](../reference/msbuild-targets.md#restore-target) вы можете восстановить пакеты, включенные в файл проекта (см. раздел о [PackageReference](package-references-in-project-files.md)), и проекты `packages.config` (начиная с версии MSBuild 16.5).
 
  Эта команда доступна только в NuGet версии 4.x и более поздних и MSBuild версии 15.1 и более поздних, включенных в Visual Studio 2017 и более поздних версий.
 В MSBuild 16.5 и более поздних версий эта команда может также восстанавливать проекты на основе `packages.config` при запуске с параметром `-p:RestorePackagesConfig=true`.
