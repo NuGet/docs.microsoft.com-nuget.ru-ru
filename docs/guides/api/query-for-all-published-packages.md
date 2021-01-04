@@ -6,12 +6,12 @@ ms.author: jver
 ms.date: 11/02/2017
 ms.topic: tutorial
 ms.reviewer: kraigb
-ms.openlocfilehash: 0bd21c427b5b89ae9e5f1500d75e1bf63a96e828
-ms.sourcegitcommit: 2b50c450cca521681a384aa466ab666679a40213
+ms.openlocfilehash: 749d9466976d51c7cb65332c8b149e3a30862e63
+ms.sourcegitcommit: 650c08f8bc3d48dfd206a111e5e2aaca3001f569
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/07/2020
-ms.locfileid: "64498225"
+ms.lasthandoff: 12/15/2020
+ms.locfileid: "97523405"
 ---
 # <a name="query-for-all-packages-published-to-nugetorg"></a>Запрос всех пакетов, опубликованных на сайте nuget.org
 
@@ -110,13 +110,13 @@ git clone https://github.com/NuGet/Samples.git
 
 ### <a name="catalog-sdk"></a>Пакет SDK каталога
 
-Для работы с каталогом проще всего использовать предварительную версию пакета SDK для каталога .NET: [NuGet.Protocol.Catalog](https://dotnet.myget.org/feed/nuget-build/package/nuget/NuGet.Protocol.Catalog). Этот пакет доступен в веб-канале `nuget-build` MyGet, для которого используется URL-адрес источника пакетов NuGet `https://dotnet.myget.org/F/nuget-build/api/v3/index.json`.
+Самый простой способ работы с каталогом — использовать предварительный выпуск пакета SDK `NuGet.Protocol.Catalog` для каталога .NET. Пакет доступен в Azure Artifacts по следующему URL-адресу источника пакетов NuGet: `https://pkgs.dev.azure.com/dnceng/public/_packaging/nuget-build/nuget/v3/index.json`.
 
 Вы можете установить этот пакет в проект, совместимый с `netstandard1.3` или более поздней версии (например, .NET Framework 4.6).
 
 Пример использования этого пакета можно найти на сайте GitHub в [проекте NuGet.Protocol.Catalog.Sample](https://github.com/NuGet/Samples/tree/master/CatalogReaderExample/NuGet.Protocol.Catalog.Sample).
 
-#### <a name="sample-output"></a>Пример полученных результатов
+#### <a name="sample-output"></a>Пример выходных данных
 
 ```output
 2017-11-10T22:16:44.8689025+00:00: Found package details leaf for xSkrape.APIWrapper.REST 1.0.2.
@@ -156,7 +156,7 @@ warn: NuGet.Protocol.Catalog.CatalogProcessor[0]
 
 Основная логика кода видна в [файле Program.cs](https://github.com/NuGet/Samples/blob/master/CatalogReaderExample/CatalogReaderExample/Program.cs).
 
-#### <a name="sample-output"></a>Пример полученных результатов
+#### <a name="sample-output"></a>Пример выходных данных
 
 ```output
 No cursor found. Defaulting to 11/2/2017 9:41:28 PM.
