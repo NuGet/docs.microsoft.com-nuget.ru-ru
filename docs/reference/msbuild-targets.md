@@ -1,16 +1,16 @@
 ---
 title: Объекты pack и restore NuGet в качестве целевых объектов MSBuild
 description: Объекты pack и restore NuGet могут выступать непосредственно в качестве целевых объектов MSBuild в NuGet 4.0+.
-author: karann-msft
-ms.author: karann
+author: nkolev92
+ms.author: nikolev
 ms.date: 03/23/2018
 ms.topic: conceptual
-ms.openlocfilehash: 4a04c6dd7993fc47bcf7a6fe46236ed700a0d105
-ms.sourcegitcommit: e39e5a5ddf68bf41e816617e7f0339308523bbb3
+ms.openlocfilehash: 66df4e0e4739300608fd5f9e44eea5bcd00079c8
+ms.sourcegitcommit: 53b06e27bcfef03500a69548ba2db069b55837f1
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/05/2020
-ms.locfileid: "96738933"
+ms.lasthandoff: 12/19/2020
+ms.locfileid: "97699883"
 ---
 # <a name="nuget-pack-and-restore-as-msbuild-targets"></a>Объекты pack и restore NuGet в качестве целевых объектов MSBuild
 
@@ -53,8 +53,8 @@ ms.locfileid: "96738933"
 | VersionPrefix | PackageVersionPrefix | пустых | Задав PackageVersion, вы перезапишите PackageVersionPrefix |
 | VersionSuffix | PackageVersionSuffix | пустых | $(VersionSuffix) из MSBuild. Задав PackageVersion, вы перезапишите PackageVersionSuffix |
 | Авторы | Авторы | Имя текущего пользователя | |
-| Владельцы | Н/Д | Не существует в NuSpec | |
-| Заголовок | Заголовок | Идентификатор пакета| |
+| Владельцы | Недоступно | Не существует в NuSpec | |
+| Title | Title | Идентификатор пакета| |
 | Description | Описание | "Описание пакета" | |
 | Copyright | Copyright | пустых | |
 | RequireLicenseAcceptance | PackageRequireLicenseAcceptance | false | |
@@ -256,6 +256,23 @@ ms.locfileid: "96738933"
 
 [Пример файла лицензии](https://github.com/NuGet/Samples/tree/master/PackageLicenseFileExample).
 
+### <a name="packing-a-file-without-an-extension"></a>Упаковка файла без расширения
+
+В некоторых сценариях, например при упаковке файла лицензии, может потребоваться включить файл без расширения.
+По историческим причинам NuGet & MSBuild обрабатывает пути без расширения в качестве каталогов.
+
+```xml
+  <PropertyGroup>
+    <TargetFrameworks>netstandard2.0</TargetFrameworks>
+    <PackageLicenseFile>LICENSE</PackageLicenseFile>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Include="LICENSE" Pack="true" PackagePath=""/>
+  </ItemGroup>  
+```
+
+[Файл без примера расширения](https://github.com/NuGet/Samples/blob/master/PackageLicenseFileExtensionlessExample/).
 ### <a name="istool"></a>IsTool
 
 При использовании `MSBuild -t:pack -p:IsTool=true` все выходные файлы, как указано в сценарии [Выходные сборки](#output-assemblies), копируются в папку `tools` вместо папки `lib`. Обратите внимание, что это свойство отличается от `DotNetCliTool`, которое указывается путем задания `PackageType` в файле `.csproj`.
@@ -366,13 +383,16 @@ msbuild -t:pack <path to .csproj file> -p:NuspecFile=<path to nuspec file> -p:Nu
 1. Запись файла ресурсов, целевых объектов и свойств.
 
 `restore`Целевой объект работает для проектов, использующих формат PackageReference.
-`MSBuild 16.5+` также имеет [поддержку согласия](#restoring-packagereference-and-packages.config-with-msbuild) для `packages.config` формата.
+`MSBuild 16.5+` также имеет [поддержку согласия](#restoring-packagereference-and-packagesconfig-with-msbuild) для `packages.config` формата.
+
+> [!NOTE]
+> `restore`Целевой объект [не должен выполняться](#restoring-and-building-with-one-msbuild-command) в сочетании с целевым объектом `build` .
 
 ### <a name="restore-properties"></a>Свойства восстановления
 
 Дополнительные параметры восстановления могут поступать из свойств MSBuild в файле проекта. Значения также можно задать из командной строки с помощью параметра `-p:` (см. примеры ниже).
 
-| Свойство. | Описание |
+| Свойство | Описание |
 |--------|--------|
 | RestoreSources | Разделенный точками с запятой список источников пакетов. |
 | RestorePackagesPath | Путь к папке пакетов пользователя. |
