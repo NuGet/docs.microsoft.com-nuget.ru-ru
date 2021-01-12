@@ -5,12 +5,12 @@ author: karann-msft
 ms.author: karann
 ms.date: 05/25/2018
 ms.topic: conceptual
-ms.openlocfilehash: b162990eae2160961f560b6c6ee73e47cb4121d6
-ms.sourcegitcommit: f29fa9b93fd59e679fab50d7413bbf67da3ea5b3
+ms.openlocfilehash: 9f680a714717d1bde0472f2e1266cacfd8bd4d5f
+ms.sourcegitcommit: 53b06e27bcfef03500a69548ba2db069b55837f1
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/17/2020
-ms.locfileid: "86451155"
+ms.lasthandoff: 12/19/2020
+ms.locfileid: "97699717"
 ---
 # <a name="troubleshooting-package-restore-errors"></a>Устранение ошибок при восстановлении пакетов
 
@@ -46,7 +46,7 @@ Use NuGet Package Restore to download them. The missing file is {name}.
 
 Эта ошибка возникает при попытке выполнить сборку проекта, содержащего ссылки на один или несколько пакетов NuGet, которые сейчас не установлены на компьютере или в проекте.
 
-- Если используется формат управления [PackageReference](package-references-in-project-files.md), эта ошибка означает, что пакет не установлен в папке *global-packages*, как описано в руководстве по [управлению папкой кэша и глобальных пакетов](managing-the-global-packages-and-cache-folders.md).
+- При использовании формата управления [PackageReference](package-references-in-project-files.md) эта ошибка может быть следствием миграции packages.config в PackageReference, и это необходимо [вручную удалить](../resources/NuGet-FAQ.md#working-with-packages) из файла проекта.
 - Если используется файл [packages.config](../reference/packages-config.md) эта ошибка означает, что пакет не установлен в папке`packages` в корне решения.
 
 Обычно такая ситуация возникает при получении исходного кода проекта из системы управления версиями или другого скачанного файла. Пакеты обычно исключаются из системы управления версиями или скачиваемых файлов, так как их можно восстановить из веб-каналов пакета, например nuget.org (см. раздел [Пакеты и система управления версиями](Packages-and-Source-Control.md)). Их включение приведет к раздуванию репозитория или созданию слишком больших ZIP-файлов.

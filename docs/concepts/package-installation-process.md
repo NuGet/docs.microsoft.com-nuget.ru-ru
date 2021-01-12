@@ -5,12 +5,12 @@ author: karann-msft
 ms.author: karann
 ms.date: 06/20/2019
 ms.topic: conceptual
-ms.openlocfilehash: 1ae030c308b14b8884fb608c1683c8c46000b0bd
-ms.sourcegitcommit: 2b50c450cca521681a384aa466ab666679a40213
+ms.openlocfilehash: 634c421499b06f6b62d88a95f8703614dec5ace8
+ms.sourcegitcommit: 53b06e27bcfef03500a69548ba2db069b55837f1
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/07/2020
-ms.locfileid: "77036907"
+ms.lasthandoff: 12/19/2020
+ms.locfileid: "97699753"
 ---
 # <a name="what-happens-when-a-nuget-package-is-installed"></a>Процесс установки пакета NuGet
 
@@ -26,6 +26,9 @@ ms.locfileid: "77036907"
    - Проверяет, установлен ли пакет (по точному идентификатору и номеру версии) в папке *global-packages*, как описано в статье [Управление папкой установки глобальных пакетов, кэшем и временными папками](../consume-packages/managing-the-global-packages-and-cache-folders.md).
 
    - Если пакета нет в папке *global-packages*, выполняется попытка извлечь пакет из источников, перечисленных в [файлах конфигурации](../consume-packages/Configuring-NuGet-Behavior.md). Если источники сетевые, выполняется попытка извлечь пакет из кэша HTTP, когда не указан параметр `-NoCache` с помощью команды `nuget.exe` или параметр `--no-cache` с помощью команды `dotnet restore`. (Visual Studio и `dotnet add package` всегда используют кэш.) При использовании пакета из кэша в выходных данных отображается параметр CACHE. Срок действия кэша составляет 30 минут.
+
+   - Если пакет был указан с использованием [групповой версии](../consume-packages/Package-References-in-Project-Files.md#floating-versions) или без минимальной версии, NuGet *должен будет* связаться со всеми источниками, чтобы найти наилучшее соответствие.
+   Пример: `1.*`, `(, 2.0.0]`.
 
    - Если пакета нет в кэше HTTP, выполняется попытка скачать его из источников, перечисленных в файлах конфигурации. После скачивания пакета в выходных данных отображается параметр GET и ОК. NuGet ведет журнал трафика HTTP с обычным уровнем детализации.
 

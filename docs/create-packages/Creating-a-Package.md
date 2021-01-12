@@ -1,16 +1,16 @@
 ---
 title: Создание пакета NuGet с помощью CLI nuget.exe
-description: Подробное руководство по проектированию и созданию пакета NuGet, включая принятие решений по ключевым аспектам, таким как файлы и управление версиями.
+description: Подробное руководство по проектированию и созданию пакета NuGet, включая файлы и управление версиями.
 author: karann-msft
-ms.author: karann
+ms.author: feaguila
 ms.date: 07/09/2019
 ms.topic: conceptual
-ms.openlocfilehash: b3e6f0efc9e2e12de186ffd4ce29d496d07d5fc4
-ms.sourcegitcommit: 2b50c450cca521681a384aa466ab666679a40213
+ms.openlocfilehash: ec06a8f721b7b67ddc5d72323305b9b22f292de6
+ms.sourcegitcommit: 53b06e27bcfef03500a69548ba2db069b55837f1
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/07/2020
-ms.locfileid: "79428573"
+ms.lasthandoff: 12/19/2020
+ms.locfileid: "97699799"
 ---
 # <a name="create-a-package-using-the-nugetexe-cli"></a>Создание пакета с помощью CLI nuget.exe
 
@@ -68,8 +68,8 @@ ms.locfileid: "79428573"
 - краткое описание для [пользовательского интерфейса диспетчера пакетов в Visual Studio](../consume-packages/install-use-packages-visual-studio.md);
 - код языка;
 - URL проекта
-- лицензия в виде выражения или файла (`licenseUrl` скоро станет нерекомендуемым, используйте [nuspec-элемент метаданных `license`](../reference/nuspec.md#license));
-- URL-адрес значка;
+- лицензия в виде выражения или файла (`licenseUrl` больше не рекомендуется, используйте вместо него [nuspec-элемент метаданных `license`](../reference/nuspec.md#license));
+- файл значка (`iconUrl` больше не рекомендуется, используйте вместо него [nuspec-элемент метаданных `icon`](../reference/nuspec.md#icon));
 - список зависимостей и ссылок;
 - теги, упрощающие поиск в коллекции.
 
@@ -79,11 +79,11 @@ ms.locfileid: "79428573"
 <?xml version="1.0"?>
 <package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
     <metadata>
-        <!-- The identifier that must be unique within the hosting gallery -->
+        <!-- Identifier that must be unique within the hosting gallery -->
         <id>Contoso.Utility.UsefulStuff</id>
 
-        <!-- The package version number that is used when resolving dependencies -->
-        <version>1.8.3-beta</version>
+        <!-- Package version number that is used when resolving dependencies -->
+        <version>1.8.3</version>
 
         <!-- Authors contain text that appears directly on the gallery -->
         <authors>Dejana Tesic, Rajeev Dey</authors>
@@ -101,8 +101,8 @@ ms.locfileid: "79428573"
         <license type="expression">Apache-2.0</license>
         
 
-        <!-- The icon is used in Visual Studio's package manager UI -->
-        <iconUrl>http://github.com/contoso/UsefulStuff/nuget_icon.png</iconUrl>
+        <!-- Icon is used in Visual Studio's package manager UI -->
+        <icon>icon.png</icon>
 
         <!-- 
             If true, this value prompts the user to accept the license when
@@ -134,6 +134,7 @@ ms.locfileid: "79428573"
     <!-- A readme.txt to display when the package is installed -->
     <files>
         <file src="readme.txt" target="" />
+        <file src="icon.png" target="" />
     </files>
 </package>
 ```
@@ -255,7 +256,7 @@ NuGet отслеживает установленные пакеты уровн�
 nuget spec [<package-name>]
 ```
 
-Если не указать параметр \<package-name\>, получившийся файл будет иметь имя `Package.nuspec`. Если указать имя, например `Contoso.Utility.UsefulStuff`, файл будет иметь имя `Contoso.Utility.UsefulStuff.nuspec`.
+Если вы не указали \<package-name\>, будет создан файл `Package.nuspec`. Если указать имя, например `Contoso.Utility.UsefulStuff`, файл будет иметь имя `Contoso.Utility.UsefulStuff.nuspec`.
 
 Полученный файл `.nuspec` содержит заполнители для значений, например `projectUrl`. Прежде чем использовать этот файл для создания итогового файла `.nupkg`, его необходимо отредактировать.
 
@@ -316,6 +317,7 @@ nuget spec [<package-name>]
 
 Файлы в корневой папке `\build` считаются пригодными для всех целевых платформ. Чтобы предоставить файлы для определенных платформ, сначала поместите их в соответствующие вложенные папки, например следующие:
 
+```
     \build
         \netstandard1.4
             \Contoso.Utility.UsefulStuff.props
@@ -323,6 +325,7 @@ nuget spec [<package-name>]
         \net462
             \Contoso.Utility.UsefulStuff.props
             \Contoso.Utility.UsefulStuff.targets
+```
 
 Затем в файле `.nuspec` укажите ссылки на эти файлы в узле `<files>`:
 

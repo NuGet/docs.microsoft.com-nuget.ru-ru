@@ -5,12 +5,12 @@ author: karann-msft
 ms.author: karann
 ms.date: 03/16/2018
 ms.topic: conceptual
-ms.openlocfilehash: a5833df60c5f7905359f421141347b1237f45d86
-ms.sourcegitcommit: b138bc1d49fbf13b63d975c581a53be4283b7ebf
+ms.openlocfilehash: 1127e7aee27d57abd5f14dd3bea82dfff3ba6d93
+ms.sourcegitcommit: 53b06e27bcfef03500a69548ba2db069b55837f1
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/03/2020
-ms.locfileid: "93237644"
+ms.lasthandoff: 12/19/2020
+ms.locfileid: "97699789"
 ---
 # <a name="package-references-packagereference-in-project-files"></a>Ссылки на пакеты (PackageReference) в файлах проектов
 
@@ -99,7 +99,7 @@ PackageReference также позволяет использовать усло
 
 Ниже перечислены теги метаданных, управляющие ресурсами зависимостей.
 
-| Тег | Description | Значение по умолчанию |
+| Тег | Описание | Значение по умолчанию |
 | --- | --- | --- |
 | IncludeAssets | Эти ресурсы будут использоваться. | all |
 | ExcludeAssets | Эти ресурсы не будут использоваться. | none |
@@ -175,7 +175,7 @@ PackageReference также позволяет использовать усло
 Эта функция доступна в NuGet **5.0** или более поздней версии и в Visual Studio 2019 **16.0** или более поздней версии.
 
 Иногда требуется ссылаться на файлы в пакете из целевого объекта MSBuild.
-В проектах на основе `packages.config` пакеты устанавливаются в папку относительно файла проекта. Однако в PackageReference пакеты [используются](../concepts/package-installation-process.md) из папки *global-packages* , которая может отличаться на разных компьютерах.
+В проектах на основе `packages.config` пакеты устанавливаются в папку относительно файла проекта. Однако в PackageReference пакеты [используются](../concepts/package-installation-process.md) из папки *global-packages*, которая может отличаться на разных компьютерах.
 
 Чтобы устранить эту проблему, NuGet предоставляет свойство, указывающее на расположение, из которого будет использоваться пакет.
 
@@ -201,10 +201,42 @@ PackageReference также позволяет использовать усло
   <Target Name="TakeAction" AfterTargets="Build">
     <Exec Command="$(PkgPackage_With_Tools)\tools\tool.exe" />
   </Target>
-````
+```
 
 Свойства MSBuild и удостоверения пакетов не имеют одинаковых ограничений, поэтому удостоверение пакета необходимо изменить на понятное имя MSBuild с префиксом в виде слова `Pkg`.
 Чтобы проверить точное имя создаваемого свойства, изучите созданный файл [nuget.g.props](../reference/msbuild-targets.md#restore-outputs).
+
+## <a name="packagereference-aliases"></a>Псевдонимы PackageReference
+
+В некоторых редких случаях разные пакеты могут содержать классы в одном и том же пространстве имен. Начиная с NuGet версии 5.7 и обновления 7 для Visual Studio 2019 PackageReference поддерживает [`Aliases`](/dotnet/api/microsoft.codeanalysis.projectreference.aliases), аналогично ProjectReference.
+По умолчанию никакие псевдонимы не предоставляются. Если псевдоним указан, ссылки на *все* сборки из аннотированного пакета должны указываться с псевдонимом.
+
+Пример использования см. в разделе [NuGet\Примеры](https://github.com/NuGet/Samples/tree/master/PackageReferenceAliasesExample)
+
+В файле проекта псевдонимы указываются следующим образом:
+
+```xml
+  <ItemGroup>
+    <PackageReference Include="NuGet.Versioning" Version="5.8.0" Aliases="ExampleAlias" />
+  </ItemGroup>
+```
+
+В коде это используется следующим образом:
+
+```cs
+extern alias ExampleAlias;
+
+namespace PackageReferenceAliasesExample
+{
+...
+        {
+            var version = ExampleAlias.NuGet.Versioning.NuGetVersion.Parse("5.0.0");
+            Console.WriteLine($"Version : {version}");
+        }
+...
+}
+
+```
 
 ## <a name="nuget-warnings-and-errors"></a>Предупреждения и ошибки NuGet
 
