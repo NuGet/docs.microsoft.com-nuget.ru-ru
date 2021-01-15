@@ -5,12 +5,12 @@ author: karann-msft
 ms.author: karann
 ms.date: 01/09/2018
 ms.topic: conceptual
-ms.openlocfilehash: 39a4de4071eec70c88a2add158f2a3a734f7d7b7
-ms.sourcegitcommit: cbc87fe51330cdd3eacaad3e8656eb4258882fc7
+ms.openlocfilehash: 0eca8478b4d6509dbc1407560d2c86069c7575dd
+ms.sourcegitcommit: 323a107c345c7cb4e344a6e6d8de42c63c5188b7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/19/2020
-ms.locfileid: "88622932"
+ms.lasthandoff: 01/15/2021
+ms.locfileid: "98235741"
 ---
 # <a name="nuget-client-sdk"></a>Пакет SDK для клиента NuGet
 
@@ -20,23 +20,18 @@ ms.locfileid: "88622932"
 * [`NuGet.Packaging`](https://www.nuget.org/packages/NuGet.Packaging) — Используется для взаимодействия с пакетами NuGet. `NuGet.Protocol` зависит от этого пакета
 
 Исходный код для этих пакетов можно найти в репозитории GitHub для [NuGet/NuGet. Client](https://github.com/NuGet/NuGet.Client) .
+Исходный код для этих примеров можно найти в проекте [NuGet. Protocol. Samples](https://github.com/NuGet/Samples/tree/master/NuGetProtocolSamples) на сайте GitHub.
 
 > [!Note]
 > Документацию по протоколу сервера NuGet см. в [API сервера NuGet](~/api/overview.md).
 
-## <a name="getting-started"></a>Начало работы
+## <a name="nugetprotocol"></a>NuGet. Protocol
 
-### <a name="install-the-packages"></a>Установка пакетов
+Установите `NuGet.Protocol` пакет для взаимодействия с веб-каналами пакетов NuGet на основе HTTP и папок.
 
 ```ps1
-dotnet add package NuGet.Protocol  # interact with HTTP and folder-based NuGet package feeds, includes NuGet.Packaging
-
-dotnet add package NuGet.Packaging # interact with .nupkg and .nuspec files from a stream
+dotnet add package NuGet.Protocol
 ```
-
-## <a name="examples"></a>Примеры
-
-Эти примеры можно найти в проекте [NuGet. Protocol. Samples](https://github.com/NuGet/Samples/tree/master/NuGetProtocolSamples) на сайте GitHub.
 
 ### <a name="list-package-versions"></a>Список версий пакета
 
@@ -61,6 +56,36 @@ dotnet add package NuGet.Packaging # interact with .nupkg and .nuspec files from
 Поиск пакетов "JSON" с помощью [API поиска NuGet v3](../api/search-query-service-resource.md):
 
 [!code-csharp[SearchPackages](~/../nuget-samples/NuGetProtocolSamples/Program.cs?name=SearchPackages)]
+
+### <a name="push-a-package"></a>Отправка пакета
+
+Отправка пакета с помощью [API-интерфейса NuGet v3 Push and Delete](../api/package-publish-resource.md):
+
+[!code-csharp[PushPackage](~/../nuget-samples/NuGetProtocolSamples/Program.cs?name=PushPackage)]
+
+### <a name="delete-a-package"></a>Удаление пакета
+
+Удаление пакета с помощью [API-интерфейса NuGet v3 Push and Delete](../api/package-publish-resource.md):
+
+> [!Note]
+> Серверы NuGet могут интерпретировать запрос на удаление пакета как «жесткое удаление», «обратимое удаление» или «удалить список».
+> Например, nuget.org интерпретирует запрос на удаление пакета как "unlist". Дополнительные сведения об этом практическом занятии см. в разделе [Удаление политик пакетов](../nuget-org/policies/deleting-packages.md) .
+
+[!code-csharp[DeletePackage](~/../nuget-samples/NuGetProtocolSamples/Program.cs?name=DeletePackage)]
+
+### <a name="work-with-authenticated-feeds"></a>Работа с веб-каналами с проверкой подлинности
+
+Используется [`NuGet.Protocol`](https://www.nuget.org/packages/NuGet.Protocol) для работы с веб-каналами с проверкой подлинности.
+
+[!code-csharp[AuthenticatedFeed](~/../nuget-samples/NuGetProtocolSamples/Program.cs?name=AuthenticatedFeed)]
+
+## <a name="nugetpackaging"></a>NuGet. Упаковка
+
+Установите `NuGet.Packaging` пакет для взаимодействия с `.nupkg` файлами и `.nuspec` из потока:
+
+```ps1
+dotnet add package NuGet.Packaging
+```
 
 ### <a name="create-a-package"></a>Создание пакета
 

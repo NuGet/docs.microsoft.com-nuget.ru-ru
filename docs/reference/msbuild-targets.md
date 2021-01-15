@@ -5,12 +5,12 @@ author: nkolev92
 ms.author: nikolev
 ms.date: 03/23/2018
 ms.topic: conceptual
-ms.openlocfilehash: 66df4e0e4739300608fd5f9e44eea5bcd00079c8
-ms.sourcegitcommit: 53b06e27bcfef03500a69548ba2db069b55837f1
+ms.openlocfilehash: 7de3f0f1133a89848e9268d489751293fb3cbf25
+ms.sourcegitcommit: 323a107c345c7cb4e344a6e6d8de42c63c5188b7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/19/2020
-ms.locfileid: "97699883"
+ms.lasthandoff: 01/15/2021
+ms.locfileid: "98235702"
 ---
 # <a name="nuget-pack-and-restore-as-msbuild-targets"></a>Объекты pack и restore NuGet в качестве целевых объектов MSBuild
 
@@ -49,12 +49,12 @@ ms.locfileid: "97699883"
 | Значение атрибута или NuSpec | Свойство MSBuild | По умолчанию | Примечания |
 |--------|--------|--------|--------|
 | Id | PackageId | AssemblyName | $(AssemblyName) из MSBuild |
-| Версия | PackageVersion | Версия | Это значение совместимо с SemVer, например "1.0.0", "1.0.0-beta" или "1.0.0-beta-00345" |
+| Version | PackageVersion | Version | Это значение совместимо с SemVer, например "1.0.0", "1.0.0-beta" или "1.0.0-beta-00345" |
 | VersionPrefix | PackageVersionPrefix | пустых | Задав PackageVersion, вы перезапишите PackageVersionPrefix |
 | VersionSuffix | PackageVersionSuffix | пустых | $(VersionSuffix) из MSBuild. Задав PackageVersion, вы перезапишите PackageVersionSuffix |
 | Авторы | Авторы | Имя текущего пользователя | |
 | Владельцы | Недоступно | Не существует в NuSpec | |
-| Title | Title | Идентификатор пакета| |
+| Заголовок | Заголовок | Идентификатор пакета| |
 | Description | Описание | "Описание пакета" | |
 | Copyright | Copyright | пустых | |
 | RequireLicenseAcceptance | PackageRequireLicenseAcceptance | false | |
@@ -131,7 +131,7 @@ ms.locfileid: "97699883"
 
 При упаковке файла изображения значка необходимо использовать `PackageIcon` свойство, чтобы указать путь к пакету относительно корня пакета. Кроме того, необходимо убедиться, что файл включен в пакет. Размер файла изображения ограничен 1 МБ. Поддерживаются следующие форматы файлов: JPEG и PNG. Рекомендуется разрешение изображения 128x128.
 
-Пример:
+Например:
 
 ```xml
 <PropertyGroup>
@@ -242,7 +242,7 @@ ms.locfileid: "97699883"
 
 Дополнительные [сведения о лицензионных выражениях и лицензиях, принимаемых NuGet.org](nuspec.md#license).
 
-При упаковке файла лицензии необходимо использовать свойство Паккажелиценсефиле, чтобы указать путь к пакету относительно корня пакета. Кроме того, необходимо убедиться, что файл включен в пакет. Пример:
+При упаковке файла лицензии необходимо использовать свойство Паккажелиценсефиле, чтобы указать путь к пакету относительно корня пакета. Кроме того, необходимо убедиться, что файл включен в пакет. Например:
 
 ```xml
 <PropertyGroup>
@@ -413,7 +413,8 @@ msbuild -t:pack <path to .csproj file> -p:NuspecFile=<path to nuspec file> -p:Nu
 | RestoreLockedMode | Запустите восстановление в заблокированном режиме. Это означает, что восстановление не будет переоценивать зависимости. |
 | NuGetLockFilePath | Пользовательское расположение файла блокировки. Расположение по умолчанию находится рядом с проектом и имеет имя `packages.lock.json` . |
 | RestoreForceEvaluate | Принудительное восстановление для повторного расчета зависимостей и обновление файла блокировки без предупреждения. |
-| ресторепаккажесконфиг | Переключатель opt, который восстанавливает проекты с packages.config. Поддерживается `MSBuild -t:restore` только с. |
+| ресторепаккажесконфиг | Параметр согласия, который восстанавливает проекты с packages.config. Поддерживается `MSBuild -t:restore` только с. |
+| рестореусестатикграфевалуатион | Переключение на использование статического графа MSBuild вместо стандартного вычисления. Статическая Оценка графа — это экспериментальная функция, которая значительно ускоряется для больших репозиториев и решений. |
 
 #### <a name="examples"></a>Примеры
 
@@ -469,25 +470,40 @@ msbuild -t:restore -p:RestorePackagesConfig=true
 > [!NOTE]
 > `packages.config` Restore доступен только в `MSBuild 16.5+` , а не в `dotnet.exe`
 
-### <a name="packagetargetfallback"></a>PackageTargetFallback
+### <a name="restoring-with-msbuild-static-graph-evaluation"></a>Восстановление со статической оценкой графа MSBuild
 
-Элемент `PackageTargetFallback` позволяет указать набор совместимых целевых объектов, которые следует использовать при восстановлении пакетов. Он разрешает пакетам, использующим dotnet [TxM](../reference/target-frameworks.md), взаимодействовать с совместимыми пакетами, которые не объявляют dotnet TxM. Таким образом, если в проекте используется dotnet TxM, все пакеты, от которых вы зависите, должны также содержать dotnet TxM. В противном случае нужно добавить `<PackageTargetFallback>` в проект, чтобы обеспечить совместимость с платформами, отличными от dotnet.
+> [!NOTE]
+> С помощью MSBuild 16.6 + NuGet добавил экспериментальную функцию для использования статической оценки графа из командной строки, значительно повышающей время восстановления для больших репозиториев.
 
-Например, если в проекте используется `netstandard1.6` TxM, а зависимый пакет содержит только `lib/net45/a.dll` и `lib/portable-net45+win81/a.dll`, то сборка проекта завершится со сбоем. Если вы хотите использовать вторую библиотеку DLL, можете добавить `PackageTargetFallback` следующим образом, чтобы обозначить совместимость библиотеки DLL `portable-net45+win81`:
-
-```xml
-<PackageTargetFallback Condition="'$(TargetFramework)'=='netstandard1.6'">
-    portable-net45+win81
-</PackageTargetFallback>
+```cli
+msbuild -t:restore -p:RestoreUseStaticGraphEvaluation=true
 ```
 
-Чтобы объявить откат для всех целевых объектов в проекте, оставьте атрибут `Condition`. Кроме того, можно расширить существующий `PackageTargetFallback`, включив `$(PackageTargetFallback)`, как показано ниже:
+Кроме того, его можно включить, задав свойство в каталоге. Build. props.
 
 ```xml
-<PackageTargetFallback>
-    $(PackageTargetFallback);portable-net45+win81
-</PackageTargetFallback >
+<Project>
+  <PropertyGroup>
+    <RestoreUseStaticGraphEvaluation>true</RestoreUseStaticGraphEvaluation>
+  </PropertyGroup>
+</Project>
 ```
+
+> [!NOTE]
+> Начиная с Visual Studio 2019. x и NuGet 5. x, эта функция считается экспериментальной и явной. Дополнительные сведения о том, когда эта функция будет включена по умолчанию, см. в [под9803е NuGet/Home #](https://github.com/NuGet/Home/issues/9803) .
+
+При восстановлении статического графа изменяется часть MSBuild, вычисление и чтение проекта, но не алгоритм восстановления. Алгоритм восстановления одинаков во всех инструментах NuGet (NuGet.exe, MSBuild.exe, dotnet.exe и Visual Studio).
+
+В очень редких случаях восстановление статических графов может отличаться от текущего при восстановлении, а некоторые объявленные PackageReferences или ссылками могут отсутствовать.
+
+Для упрощения проверки при переходе к статическому восстановлению графа можно выполнить следующие действия.
+
+```cli
+msbuild.exe -t:restore -p:RestoreUseStaticGraphEvaluation
+msbuild.exe -t:restore
+```
+
+NuGet *не* должен сообщать об изменениях. Если вы видите несоответствие, напишите вопрос в [NuGet/Home](https://github.com/nuget/home/issues/new).
 
 ### <a name="replacing-one-library-from-a-restore-graph"></a>Замена одной библиотеки из графа восстановления
 
