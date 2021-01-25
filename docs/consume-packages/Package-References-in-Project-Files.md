@@ -1,16 +1,16 @@
 ---
 title: Формат NuGet PackageReference (ссылки на пакеты в файлах проектов)
 description: Подробные сведения о формате NuGet PackageReference в файлах проектов, который поддерживается в NuGet 4.0 и более поздних версиях, в VS2017 и в .NET Core 2.0
-author: karann-msft
-ms.author: karann
+author: nkolev92
+ms.author: nikolev
 ms.date: 03/16/2018
 ms.topic: conceptual
-ms.openlocfilehash: 1127e7aee27d57abd5f14dd3bea82dfff3ba6d93
-ms.sourcegitcommit: 53b06e27bcfef03500a69548ba2db069b55837f1
+ms.openlocfilehash: dcaed83ca54e3234702e963ffc2ebbde4cd75b28
+ms.sourcegitcommit: 323a107c345c7cb4e344a6e6d8de42c63c5188b7
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/19/2020
-ms.locfileid: "97699789"
+ms.lasthandoff: 01/15/2021
+ms.locfileid: "98235767"
 ---
 # <a name="package-references-packagereference-in-project-files"></a>Ссылки на пакеты (PackageReference) в файлах проектов
 
@@ -390,3 +390,34 @@ ProjectA
 | `-LockedMode` | `--locked-mode` | RestoreLockedMode | Включение режима блокировки для восстановления. Это полезно в сценариях CI/CD, когда нужно реализовать воспроизводимые сборки.|   
 | `-ForceEvaluate` | `--force-evaluate` | RestoreForceEvaluate | Этот параметр удобно использовать с пакетами с гибкими версиями, определенными в проекте. По умолчанию в NuGet версия пакета не обновляется автоматически после каждого восстановления, если вы не запустили восстановление с этим параметром. |
 | `-LockFilePath` | `--lock-file-path` | NuGetLockFilePath | Определение размещения пользовательского файла блокировки для проекта. По умолчанию в NuGet файл `packages.lock.json` хранится в корневом каталоге. Если в одном каталоге хранится несколько проектов, NuGet поддерживает использование файла блокировки `packages.<project_name>.lock.json` для определенного проекта. |
+
+## <a name="assettargetfallback"></a>AssetTargetFallback
+
+Свойство `AssetTargetFallback` позволяет указать дополнительные совместимые версии платформы для проектов, на которые ссылается ваш проект, и пакеты NuGet, используемые в проекте.
+
+Если вы указали зависимость пакета с помощью `PackageReference`, но в этом пакете нет ресурсов, совместимых с целевой платформой вашего проекта, тогда пригодится свойство `AssetTargetFallback`. Совместимость пакета, на который указывает ссылка, повторно проверяется с помощью каждой целевой платформы, указанной в свойстве `AssetTargetFallback`.
+При обращении к `project` или `package` через `AssetTargetFallback` вызывается предупреждение [NU1701](../reference/errors-and-warnings/NU1701.md).
+
+Примеры того, как `AssetTargetFallback` влияет на совместимость, приводятся в следующей таблице.
+
+| Платформа проекта | AssetTargetFallback | Платформы пакета | Результат |
+|-------------------|---------------------|--------------------|--------|
+| .NET Framework 4.7.2 | | .NET Standard 2.0 | .NET Standard 2.0 |
+| .NET Core App 3.1 | | .NET Standard 2.0, .NET Framework 4.7.2 | .NET Standard 2.0 |
+| .NET Core App 3.1 | | .NET Framework 4.7.2 | Несовместимо, сбой для [`NU1202`](../reference/errors-and-warnings/NU1202.md) |
+| .NET Core App 3.1 | net472;net471 | .NET Framework 4.7.2 | .NET Framework 4.7.2 с [`NU1701`](../reference/errors-and-warnings/NU1701.md) |
+
+Чтобы указать несколько платформ, можно использовать разделитель `;`. Чтобы добавить резервную платформу, можно выполнить следующие действия:
+
+```xml
+<AssetTargetFallback Condition=" '$(TargetFramework)'=='netcoreapp3.1' ">
+    $(AssetTargetFallback);net472;net471
+</AssetTargetFallback>
+```
+
+Оставьте `$(AssetTargetFallback)`, если требуется перезаписать вместо добавления к существующим значениям `AssetTargetFallback`.
+
+> [!NOTE]
+> Если вы используете [проект на основе пакета SDK для .NET](/dotnet/core/sdk), соответствующие значения `$(AssetTargetFallback)` уже настроены и задавать их вручную не требуется.
+>
+> Ранее для устранения этой проблемы использовалась функция `$(PackageTargetFallback)`, которая на данный момент не работает и *не должна* использоваться. Чтобы перейти с `$(PackageTargetFallback)` на `$(AssetTargetFallback)`, просто измените имя свойства.

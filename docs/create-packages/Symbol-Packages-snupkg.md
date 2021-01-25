@@ -12,12 +12,12 @@ keywords: пакеты символов NuGet, отладка пакета NuGet
 ms.reviewer:
 - anangaur
 - karann
-ms.openlocfilehash: c42032f1869f4be0af44ffa8fbd5ad522f73c459
-ms.sourcegitcommit: 2b50c450cca521681a384aa466ab666679a40213
+ms.openlocfilehash: fbcc035a6b800617f995d3bcebd7e1764aa467b0
+ms.sourcegitcommit: 323a107c345c7cb4e344a6e6d8de42c63c5188b7
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/07/2020
-ms.locfileid: "80380422"
+ms.lasthandoff: 01/15/2021
+ms.locfileid: "98235728"
 ---
 # <a name="creating-symbol-packages-snupkg"></a>Создание пакетов символов (SNUPKG)
 
@@ -63,7 +63,7 @@ nuget pack MyPackage.csproj -Symbols -SymbolPackageFormat snupkg
 Свойство [`SymbolPackageFormat`](/dotnet/core/tools/csproj#symbolpackageformat) может иметь одно из двух значений: `symbols.nupkg` (по умолчанию) или `snupkg`. Если значение этого свойства не указано, будет создан устаревший пакет символов.
 
 > [!Note]
-> Устаревший формат `.symbols.nupkg` все еще поддерживается, но только в целях совместимости (см. раздел [Устаревшие пакеты символов](Symbol-Packages.md)). Сервер символов NuGet.org принимает только новый формат пакетов символов: `.snupkg`.
+> Устаревший формат `.symbols.nupkg` все еще поддерживается, но только в целях совместимости как собственные пакеты (см. раздел [Устаревшие пакеты символов](Symbol-Packages.md)). Сервер символов NuGet.org принимает только новый формат пакетов символов: `.snupkg`.
 
 ## <a name="publishing-a-symbol-package"></a>Публикация пакета символов
 
@@ -104,6 +104,9 @@ NuGet.org налагает на пакеты символов следующие
 
 Пакеты символов, опубликованные в NuGet.org, не пройдут проверку, если указанные ограничения не соблюдаются. 
 
+> [!NOTE]
+> Собственные проекты, например проекты C++, создают PDB-файлы Windows вместо переносимых PDB-файлов. Сервер символов NuGet.org не поддерживает такие файлы. Вместо них следует использовать [устаревшие пакеты символов](Symbol-Packages.md).
+
 ### <a name="symbol-package-validation-and-indexing"></a>Проверка и индексирование пакета символов
 
 Пакеты символов, опубликованные в [NuGet.org](https://www.nuget.org/), проходят несколько проверок, включая проверку на наличие вредоносных программ. Если пакет не проходит проверку, на странице сведений о нем отображается сообщение об ошибке. Кроме того, владельцы пакета получат сообщение электронной почты с инструкциями по устранению выявленных проблем.
@@ -130,7 +133,7 @@ NuGet.org налагает на пакеты символов следующие
 5) Следующие поля будут исключены из NUSPEC-файла пакета SNUPKG: ```authors```, ```owners```, ```requireLicenseAcceptance```, ```license type```, ```licenseUrl``` и ```icon```.
 6) Не используйте элемент ```<license>```. SNUPKG-файл рассматривается в рамках той же лицензии, что и соответствующий NUPKG-файл.
 
-## <a name="see-also"></a>См. также раздел
+## <a name="see-also"></a>См. также статью
 
 Чтобы обеспечить возможность отладки исходного кода сборок .NET, рекомендуется использовать Source Link. Дополнительные сведения см. в [руководстве по Source Link](/dotnet/standard/library-guidance/sourcelink).
 
