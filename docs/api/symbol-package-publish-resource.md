@@ -10,12 +10,12 @@ ms.technology: ''
 description: Служба публикации позволяет клиентам публиковать новые пакеты символов.
 keywords: Пакет символов push-уведомлений API NuGet
 ms.reviewer: karann
-ms.openlocfilehash: bd4a10cc976c9d0775a63cfe61c35327c196065c
-ms.sourcegitcommit: e39e5a5ddf68bf41e816617e7f0339308523bbb3
+ms.openlocfilehash: 91bb4c9ca77fd7f1ff35831e02eb4f9d65d641c5
+ms.sourcegitcommit: ee6c3f203648a5561c809db54ebeb1d0f0598b68
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/05/2020
-ms.locfileid: "96738881"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98773899"
 ---
 # <a name="push-symbol-packages"></a>Отправка пакетов символов
 
@@ -42,7 +42,9 @@ ms.locfileid: "96738881"
 
 nuget.org поддерживает принудительную отправку нового формата пакетов символов ([снупкг](../create-packages/Symbol-Packages-snupkg.md)) с помощью следующего API. 
 
-    PUT https://www.nuget.org/api/v2/symbolpackage
+```
+PUT https://www.nuget.org/api/v2/symbolpackage
+```
 
 Пакеты символов с одинаковым ИДЕНТИФИКАТОРом и версией можно отправлять несколько раз. Пакет символов будет отклонен в следующих случаях.
 - Пакет с тем же ИДЕНТИФИКАТОРом и версией не существует.
@@ -53,7 +55,7 @@ nuget.org поддерживает принудительную отправку
 
 Имя           | В     | Тип   | Обязательно | Примечания
 -------------- | ------ | ------ | -------- | -----
-X-NuGet-ApiKey | Заголовок | строка | да      | например `X-NuGet-ApiKey: {USER_API_KEY}`
+X-NuGet-ApiKey | Header | строка | yes      | Например: `X-NuGet-ApiKey: {USER_API_KEY}`
 
 Ключ API — это непрозрачная строка, полученная пользователем из источника пакета и настроенная в клиенте. Конкретный формат строки не задан, но длина ключа API не должна превышать приемлемый размер для значений заголовка HTTP.
 

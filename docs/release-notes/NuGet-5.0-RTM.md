@@ -1,16 +1,16 @@
 ---
 title: Заметки о выпуске NuGet 5,0 RTM
 description: Заметки о выпуске NuGet 5,0, включая известные проблемы, исправления ошибок, новые функции и DCR.
-author: karann-msft
-ms.author: karann
+author: JonDouglas
+ms.author: jodou
 ms.date: 04/02/2019
 ms.topic: conceptual
-ms.openlocfilehash: e4a6be7fb26e3cc4bd297eaf02999f6ac1389b77
-ms.sourcegitcommit: b138bc1d49fbf13b63d975c581a53be4283b7ebf
+ms.openlocfilehash: 637db1ae128ce020c33e54e56148c848a5f905a5
+ms.sourcegitcommit: ee6c3f203648a5561c809db54ebeb1d0f0598b68
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/03/2020
-ms.locfileid: "93236806"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98776228"
 ---
 # <a name="nuget-50-release-notes"></a>Заметки о выпуске NuGet 5,0
 
@@ -85,7 +85,7 @@ ms.locfileid: "93236806"
 
 * Инструкция RESTORE не обязательно перечисляет глобальный каталог пакетов при попытке определить тип [#7596](https://github.com/NuGet/Home/issues/7596)
 
-* Ошибки при применении блокировки файлов должны отображаться в Список ошибок окне [#7429](https://github.com/NuGet/Home/issues/7429)
+* Ошибки при применении блокировки файлов должны отображаться в список ошибок окне [#7429](https://github.com/NuGet/Home/issues/7429)
 
 * Устранение NuGet.Configпроблем фигурации — [#7326](https://github.com/NuGet/Home/issues/7326)
 

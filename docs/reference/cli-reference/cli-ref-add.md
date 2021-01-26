@@ -1,20 +1,20 @@
 ---
 title: Команда интерфейса командной строки NuGet
 description: Справочник по команде nuget.exe Add
-author: karann-msft
-ms.author: karann
+author: JonDouglas
+ms.author: jodou
 ms.date: 01/18/2018
 ms.topic: reference
-ms.openlocfilehash: 89d268946243e8eae07e482db48e809a15260c38
-ms.sourcegitcommit: cbc87fe51330cdd3eacaad3e8656eb4258882fc7
+ms.openlocfilehash: 096d2f7a61a3c861ce2084368500ab8e8b21f212
+ms.sourcegitcommit: ee6c3f203648a5561c809db54ebeb1d0f0598b68
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/19/2020
-ms.locfileid: "88622906"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98776093"
 ---
 # <a name="add-command-nuget-cli"></a>Команда "Добавить" (интерфейс командной строки NuGet)
 
-Область **применения**: &bullet; **Поддерживаемые версии**публикации пакетов: 3.3 +
+Область **применения**: &bullet; **Поддерживаемые версии** публикации пакетов: 3.3 +
 
 Добавляет указанный пакет в источник пакета, отличный от HTTP (путь к папке или UNC-пути) в иерархическом макете, где папки создаются для идентификатора пакета и номера версии. Пример:
 
@@ -39,7 +39,7 @@ nuget add <packagePath> -Source <sourcePath> [options]
 
 где `<packagePath>` — это путь к добавляемому пакету, и `<sourcePath>` указывает источник пакета на основе папки, в который будет добавлен пакет. Источники HTTP не поддерживаются.
 
-## <a name="options"></a>Параметры
+## <a name="options"></a>Варианты
 
 - **`-ConfigFile`**
 

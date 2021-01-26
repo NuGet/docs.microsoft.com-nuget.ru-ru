@@ -1,16 +1,16 @@
 ---
 title: Заметки о выпуске NuGet 5,4
 description: Заметки о выпуске NuGet 5,4, включая новые функции, исправления ошибок и DCR.
-author: karann-msft
-ms.author: karann
+author: JonDouglas
+ms.author: jodou
 ms.date: 09/06/2019
 ms.topic: conceptual
-ms.openlocfilehash: c7fb9c1e587b6603abe63581c662571abfd4506b
-ms.sourcegitcommit: 26a8eae00af2d4be581171e7a73009f94534c336
+ms.openlocfilehash: dd4c10672db3a65b68f18636105ee55ab09da7ef
+ms.sourcegitcommit: ee6c3f203648a5561c809db54ebeb1d0f0598b68
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75384115"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98776187"
 ---
 # <a name="nuget-54-release-notes"></a>Заметки о выпуске NuGet 5,4
 
@@ -28,7 +28,7 @@ ms.locfileid: "75384115"
 
 * Новая вспомогательная функция — для получения списка идентификаторов пакетов и версий следует получить вероятные пакеты верхнего уровня. - [#8316](https://github.com/NuGet/Home/issues/8316)
 
-* Новое [`nuget/setup-nuget`](https://github.com/marketplace/actions/setup-nuget-exe-for-use-with-actions) действие для установки и настройки NuGet. exe в [действиях GitHub](https://github.com/features/actions). - [#8818](https://github.com/NuGet/Home/issues/8818)
+* Новое [`nuget/setup-nuget`](https://github.com/marketplace/actions/setup-nuget-exe-for-use-with-actions) действие для установки и настройки NuGet.exe на [действия GitHub](https://github.com/features/actions). - [#8818](https://github.com/NuGet/Home/issues/8818)
 
 ### <a name="issues-fixed-in-this-release"></a>Исправленные ошибки в этом выпуске
 
@@ -42,13 +42,13 @@ ms.locfileid: "75384115"
 
 * Файл блокировки создан неправильно. Упорядочивание платформы не должно влиять на восстановление с помощью локкедмоде- [#8645](https://github.com/NuGet/Home/issues/8645)
 
-* Сбой проверки Локкфиле для проектов с набором <RuntimeIdentifiers> в пакете SDK 3.0.100- [#8639](https://github.com/NuGet/Home/issues/8639)
+* Сбой проверки Локкфиле для проектов, которые <RuntimeIdentifiers> заданы в пакете SDK 3.0.100- [#8639](https://github.com/NuGet/Home/issues/8639)
 
 * Теперь при проверке подписи будут правильно отклоняться подписи с метками времени, которые имеют 2 значения в одном OID- [#8629](https://github.com/NuGet/Home/issues/8629)
 
 * Обновление списка лицензий — [#8544](https://github.com/NuGet/Home/issues/8544)
 
-**DCR**
+**Запросы на изменение структуры**
 
 * Адаптация файлов диагностики в Ифидбаккдиагностикфилепровидер — [#8535](https://github.com/NuGet/Home/issues/8535)
 

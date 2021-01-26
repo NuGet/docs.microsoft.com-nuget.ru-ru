@@ -1,26 +1,26 @@
 ---
 title: Заметки о выпуске NuGet 3,3
 description: Заметки о выпуске NuGet 3,3, включая известные проблемы, исправления ошибок, добавленные функции и DCR.
-author: karann-msft
-ms.author: karann
+author: JonDouglas
+ms.author: jodou
 ms.date: 11/11/2016
 ms.topic: conceptual
-ms.openlocfilehash: aa8290c80cc500b59d1779bf76662c07382fd277
-ms.sourcegitcommit: e9c1dd0679ddd8ba3ee992d817b405f13da0472a
+ms.openlocfilehash: cd3f8c9c4586c608d41e7b8bfc413acfc6aff497
+ms.sourcegitcommit: ee6c3f203648a5561c809db54ebeb1d0f0598b68
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "76813784"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98776507"
 ---
 # <a name="nuget-33-release-notes"></a>Заметки о выпуске NuGet 3,3
 
-[Заметки о выпуске NuGet 3.2.1](../release-notes/nuget-3.2.1.md) | [NuGet 3,4 — заметки о ВЫпуске RC](../release-notes/nuget-3.4-RC.md)
+[Заметки о](../release-notes/nuget-3.2.1.md)  |  выпуске NuGet 3.2.1 [NuGet 3,4 — заметки о выпуске RC](../release-notes/nuget-3.4-RC.md)
 
 Версия NuGet 3,3 была выпущена 30 ноября 2015 с существенным числом обновлений пользовательского интерфейса и функций командной строки, а также набором полезных исправлений для клиентов NuGet.
 
-## <a name="new-features"></a>Новые функции
+## <a name="new-features"></a>Новые возможности
 
-* Были введены поставщики учетных данных, позволяющие клиентам командной строки NuGet легко работать с аутентифицированным каналом. [Инструкции по установке поставщика учетных данных Visual Studio Team Services](../reference/extensibility/nuget-exe-credential-providers.md) и настройке клиентов NuGet для их использования доступны в документации по NuGet.
+* Были введены поставщики учетных данных, позволяющие клиентам командной строки NuGet легко работать с аутентифицированным каналом. [Инструкции по установке поставщика учетных данных Visual Studio Team Services ](../reference/extensibility/nuget-exe-credential-providers.md) и настройке клиентов NuGet для их использования доступны в документации по NuGet.
 
 ## <a name="new-user-interface-features"></a>Новые функции пользовательского интерфейса
 
@@ -37,11 +37,11 @@ ms.locfileid: "76813784"
 
 ## <a name="new-command-line-features"></a>Новые возможности командной строки
 
-В этой версии мы предоставили команды `add` и `init` для инициализации репозиториев на основе папок, как описано в [справочнике по NuGet. exe](../reference/nuget-exe-cli-reference.md). Репозитории, созданные и поддерживаемые этой структурой папок, [обеспечивают значительные преимущества для повышения производительности](http://blog.nuget.org/20150922/Accelerate-Package-Source.html) , как описано в нашем блоге.
+В этой версии мы предоставили `add` `init` команды и для инициализации репозиториев на основе папок, как описано в [ справочнике поnuget.exe](../reference/nuget-exe-cli-reference.md). Репозитории, созданные и поддерживаемые этой структурой папок, [обеспечивают значительные преимущества для повышения производительности](http://blog.nuget.org/20150922/Accelerate-Package-Source.html) , как описано в нашем блоге.
 
 ## <a name="contentfiles"></a>ContentFiles
 
-Теперь содержимое поддерживается в `project.json` управляемых проектах с помощью новой папки `contentFiles` и `.nuspec` `contentFiles` элемента.  Это содержимое может быть более непосредственно задано автором пакета для взаимодействия с системами проектов.  Дополнительные сведения о настройке contentFiles в документе `.nuspec` можно найти в [справочнике по nuspec](../reference/nuspec.md).
+Теперь содержимое поддерживается в `project.json` управляемых проектах с помощью новой `contentFiles` папки и `.nuspec` `contentFiles` нотации элементов.  Это содержимое может быть более непосредственно задано автором пакета для взаимодействия с системами проектов.  Дополнительные сведения о настройке contentFiles в `.nuspec` документе можно найти в [справочнике по nuspec](../reference/nuspec.md).
 
 ## <a name="nuget-locals-cache-management"></a>Управление кэшем локальных переменных NuGet
 
@@ -55,7 +55,7 @@ ms.locfileid: "76813784"
 
 Полный список проблем, которые были устранены в выпуске 3,3, можно найти на сайте GitHub в рамках [вехи 3,3](https://github.com/NuGet/Home/issues?q=is%3Aissue+milestone%3A3.3.0+is%3Aclosed).
 
-Список проблем, исправленных в выпуске командной строки 3,3, записывается в [веху командной строки 3,3](https://github.com/NuGet/Home/issues?q=is%3Aissue+is%3Aclosed+milestone%3A3.3.0-commandline).
+Список проблем, исправленных в выпуске командной строки 3,3, записывается в [контрольной точке 3,3 Command-Line](https://github.com/NuGet/Home/issues?q=is%3Aissue+is%3Aclosed+milestone%3A3.3.0-commandline).
 
 ## <a name="known-issues"></a>Известные проблемы
 

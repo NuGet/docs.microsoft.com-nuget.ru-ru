@@ -6,12 +6,12 @@ ms.author: jver
 ms.date: 10/26/2017
 ms.topic: reference
 ms.reviewer: kraigb
-ms.openlocfilehash: f574849bf99cd4da4eefd55c3dd5a0648042f0c1
-ms.sourcegitcommit: 7e9c0630335ef9ec1e200e2ee9065f702e52a8ec
+ms.openlocfilehash: 2893e13ff7b070844a2bdd5722da3aa1f123538d
+ms.sourcegitcommit: ee6c3f203648a5561c809db54ebeb1d0f0598b68
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/24/2020
-ms.locfileid: "85292297"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98773962"
 ---
 # <a name="autocomplete"></a>Автозавершение
 
@@ -21,11 +21,11 @@ ms.locfileid: "85292297"
 
 Используются следующие `@type` значения:
 
-Значение@type                          | Примечания
+Значение @type                          | Примечания
 ------------------------------------ | -----
 сеарчаутокомплетесервице            | Первоначальный выпуск
-Сеарчаутокомплетесервице/3.0.0 — бета-версия | Псевдоним`SearchAutocompleteService`
-Сеарчаутокомплетесервице/3.0.0-RC   | Псевдоним`SearchAutocompleteService`
+Сеарчаутокомплетесервице/3.0.0 — бета-версия | Псевдоним `SearchAutocompleteService`
+Сеарчаутокомплетесервице/3.0.0-RC   | Псевдоним `SearchAutocompleteService`
 Сеарчаутокомплетесервице/3.5.0      | Включает поддержку `packageType` параметра запроса
 
 ### <a name="searchautocompleteservice350"></a>Сеарчаутокомплетесервице/3.5.0
@@ -45,7 +45,9 @@ ms.locfileid: "85292297"
 
 Пакет, содержащий только непоставленные версии, не будет отображаться в результатах.
 
-    GET {@id}?q={QUERY}&skip={SKIP}&take={TAKE}&prerelease={PRERELEASE}&semVerLevel={SEMVERLEVEL}&packageType={PACKAGETYPE}
+```
+GET {@id}?q={QUERY}&skip={SKIP}&take={TAKE}&prerelease={PRERELEASE}&semVerLevel={SEMVERLEVEL}&packageType={PACKAGETYPE}
+```
 
 ### <a name="request-parameters"></a>Параметры запроса
 
@@ -54,7 +56,7 @@ ms.locfileid: "85292297"
 q           | URL-адрес    | строка  | нет       | Строка для сравнения с идентификаторами пакета
 skip        | URL-адрес    | Целое число | нет       | Число пропускаемых результатов для разбивки на страницы
 take        | URL-адрес    | Целое число | нет       | Число возвращаемых результатов для разбивки на страницы
-prerelease  | URL-адрес    | Логическое | нет       | `true`или `false` определить, следует ли включать [пакеты предварительной версии](../create-packages/prerelease-packages.md)
+prerelease  | URL-адрес    | Логическое | нет       | `true` или `false` определить, следует ли включать [пакеты предварительной версии](../create-packages/prerelease-packages.md)
 семверлевел | URL-адрес    | строка  | нет       | Строка версии SemVer 1.0.0 
 packageType | URL-адрес    | строка  | нет       | Тип пакета, используемый для фильтрации пакетов (добавляется в `SearchAutocompleteService/3.5.0` )
 
@@ -82,12 +84,14 @@ packageType | URL-адрес    | строка  | нет       | Тип паке
 
 Имя      | Тип             | Обязательно | Примечания
 --------- | ---------------- | -------- | -----
-тоталхитс | Целое число          | да      | Общее число совпадений, неотношении `skip` и`take`
-.      | Массив строк | да      | Идентификаторы пакетов, совпадающие по запросу
+тоталхитс | Целое число          | yes      | Общее число совпадений, неотношении `skip` и `take`
+.      | Массив строк | yes      | Идентификаторы пакетов, совпадающие по запросу
 
 ### <a name="sample-request"></a>Пример запроса
 
-    GET https://api-v2v3search-0.nuget.org/autocomplete?q=storage&prerelease=true
+```
+GET https://api-v2v3search-0.nuget.org/autocomplete?q=storage&prerelease=true
+```
 
 ### <a name="sample-response"></a>Пример ответа
 
@@ -99,14 +103,16 @@ packageType | URL-адрес    | строка  | нет       | Тип паке
 
 Версия пакета, которая не указана в списке, не будет отображаться в результатах.
 
-    GET {@id}?id={ID}&prerelease={PRERELEASE}&semVerLevel={SEMVERLEVEL}
+```
+GET {@id}?id={ID}&prerelease={PRERELEASE}&semVerLevel={SEMVERLEVEL}
+```
 
 ### <a name="request-parameters"></a>Параметры запроса
 
 Имя        | В     | Тип    | Обязательно | Примечания
 ----------- | ------ | ------- | -------- | -----
-идентификатор          | URL-адрес    | строка  | да      | Идентификатор пакета для выборки версий для
-prerelease  | URL-адрес    | Логическое | нет       | `true`или `false` определить, следует ли включать [пакеты предварительной версии](../create-packages/prerelease-packages.md)
+идентификатор          | URL-адрес    | строка  | yes      | Идентификатор пакета для выборки версий для
+prerelease  | URL-адрес    | Логическое | нет       | `true` или `false` определить, следует ли включать [пакеты предварительной версии](../create-packages/prerelease-packages.md)
 семверлевел | URL-адрес    | строка  | нет       | Строка версии 2.0.0 SemVer 
 
 Если `prerelease` не указан, пакеты предварительной версии исключаются.
@@ -121,13 +127,15 @@ prerelease  | URL-адрес    | Логическое | нет       | `true`и
 
 Имя      | Тип             | Обязательно | Примечания
 --------- | ---------------- | -------- | -----
-.      | Массив строк | да      | Версии пакета, соответствующие запросу
+.      | Массив строк | yes      | Версии пакета, соответствующие запросу
 
 Версии пакета в `data` массиве могут содержать метаданные сборки SemVer 2.0.0 (например, `1.0.0+metadata` ), если в `semVerLevel=2.0.0` строке запроса содержится.
 
 ### <a name="sample-request"></a>Пример запроса
 
-    GET https://api-v2v3search-0.nuget.org/autocomplete?id=nuget.protocol&prerelease=true
+```
+GET https://api-v2v3search-0.nuget.org/autocomplete?id=nuget.protocol&prerelease=true
+```
 
 ### <a name="sample-response"></a>Пример ответа
 
