@@ -1,16 +1,16 @@
 ---
 title: Команда восстановления интерфейса командной строки NuGet
 description: Справочник по команде nuget.exe Restore
-author: karann-msft
-ms.author: karann
+author: JonDouglas
+ms.author: jodou
 ms.date: 01/18/2018
 ms.topic: reference
-ms.openlocfilehash: 108317aba2107948180ab0149c0c5ba5150cf9b8
-ms.sourcegitcommit: cbc87fe51330cdd3eacaad3e8656eb4258882fc7
+ms.openlocfilehash: 49fabbd0ef0c1c0c16f13bdf741296575fa72359
+ms.sourcegitcommit: ee6c3f203648a5561c809db54ebeb1d0f0598b68
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/19/2020
-ms.locfileid: "88622834"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98780036"
 ---
 # <a name="restore-command-nuget-cli"></a>команда Restore (интерфейс командной строки NuGet)
 
@@ -28,7 +28,7 @@ nuget restore <projectPath> [options]
 
 где `<projectPath>` указывает расположение решения или `packages.config` файла. Подробные сведения о поведении см. в разделе [Примечания](#remarks) ниже.
 
-## <a name="options"></a>Параметры
+## <a name="options"></a>Варианты
 
 - **`-ConfigFile`**
 
@@ -128,7 +128,7 @@ nuget restore <projectPath> [options]
 
 См. также [переменные среды](cli-ref-environment-variables.md)
 
-## <a name="remarks"></a>Комментарии
+## <a name="remarks"></a>Remarks
 
 Команда Restore выполняет следующие действия.
 

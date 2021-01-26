@@ -1,16 +1,16 @@
 ---
 title: Команда поиска интерфейса командной строки NuGet
 description: Справочник по команде поиска nuget.exe
-author: advay26
-ms.author: t-adtand
+author: JonDouglas
+ms.author: jodou
 ms.date: 08/17/2020
 ms.topic: reference
-ms.openlocfilehash: 8d63efefb8f14c03fbe3986d8d7eebcc3eb5bcac
-ms.sourcegitcommit: 6cda91f135e58cf57a2471b0c7c4a2f748f40024
+ms.openlocfilehash: 6f4adcdf3981e5ec0e5e88337a8c3bcdd9158ca3
+ms.sourcegitcommit: ee6c3f203648a5561c809db54ebeb1d0f0598b68
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89359686"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98779155"
 ---
 # <a name="search-command-nuget-cli"></a>Команда Search (интерфейс командной строки NuGet)
 
@@ -28,7 +28,7 @@ nuget search [search terms] [options]
 
 ## <a name="options"></a>Параметры
 
-| Имя | Описание | Использование |
+| name | Описание | Использование |
 | ---  |     ---     |  :-:  |
 | Предварительной | Пакеты предварительной версии не включаются по умолчанию, но могут быть включены с помощью этого аргумента | — Предварительный выпуск |
 | Источник | Конкретные источники пакетов для поиска вместо запроса источников по умолчанию в __nuget.config__ | -Источник `<Source URL>`|

@@ -1,26 +1,26 @@
 ---
-title: Заметки о выпуске NuGet 3.4.4
-description: Заметки о выпуске для NuGet 3.4.4, включая известные проблемы, исправления ошибок, добавленные функции и запросы на изменение структуры.
-author: karann-msft
-ms.author: karann
+title: Заметки о выпуске 3.4.4 NuGet
+description: Заметки о выпуске NuGet 3.4.4, включая известные проблемы, исправления ошибок, добавленные функции и DCR.
+author: JonDouglas
+ms.author: jodou
 ms.date: 11/11/2016
 ms.topic: conceptual
-ms.openlocfilehash: 44a9f21c61f0552fdc21aab24f48eee993654b01
-ms.sourcegitcommit: 1d1406764c6af5fb7801d462e0c4afc9092fa569
+ms.openlocfilehash: 4e5e635432147afba4809562035bc8c762d31af4
+ms.sourcegitcommit: ee6c3f203648a5561c809db54ebeb1d0f0598b68
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/04/2018
-ms.locfileid: "43547477"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98780232"
 ---
-# <a name="nuget-344-release-notes"></a>Заметки о выпуске NuGet 3.4.4
+# <a name="nuget-344-release-notes"></a>Заметки о выпуске 3.4.4 NuGet
 
-[Заметки о выпуске NuGet 3.4.3](../release-notes/nuget-3.4.3.md) | [заметки о выпуске бета-версии 3.5 NuGet](../release-notes/nuget-3.5-Beta.md)
+[Заметки о](../release-notes/nuget-3.4.3.md)  |  выпуске 3.4.3 NuGet [NuGet 3,5 — заметки о выпуске бета-версии](../release-notes/nuget-3.5-Beta.md)
 
-Основная цель этой версии — это улучшение с качеством 3.4.3 версию nuget.exe с несколько исправлений в расширение Visual Studio.
+Основное внимание в этом выпуске было улучшение качества 3.4.3 версии nuget.exe с помощью нескольких исправлений для расширения Visual Studio.
 
-Можно загрузить VSIX и nuget.exe [здесь](https://dist.nuget.org/index.html).
+Вы можете скачать VSIX и nuget.exe [здесь](https://dist.nuget.org/index.html).
 
-## <a name="344-rtmhttpsgithubcomnugetnugetclienttree344-rtm-2016-05-19"></a>[3.4.4-RTM](https://github.com/NuGet/NuGet.Client/tree/3.4.4-rtm) (2016-05-19)
+## <a name="344-rtm-2016-05-19"></a>[3.4.4-RTM](https://github.com/NuGet/NuGet.Client/tree/3.4.4-rtm) (2016-05-19)
 
 [Полный журнал изменений](https://github.com/NuGet/NuGet.Client/compare/3.5.0-beta-final...3.4.4-rtm)
 
@@ -28,13 +28,13 @@ ms.locfileid: "43547477"
 
 ### <a name="changes"></a>Изменения
 
-- Улучшения в пакете: Усовершенствования упаковка символов, упаковки с `project.json` и дополнительные [ \#606](https://github.com/NuGet/NuGet.Client/pull/606)
-- Отображение исключений при сбое, поиск проектов в команде обновления [\#605](https://github.com/NuGet/NuGet.Client/pull/605)
-- Чтение входных данных в тип пакета `.nuspec` и `project.json` при упаковке [ \#603](https://github.com/NuGet/NuGet.Client/pull/603)
-- Сделайте NuGet.Shared не отдельного проекта. [\#602](https://github.com/NuGet/NuGet.Client/pull/602)
-- Используйте время ожидания Push-уведомлений как время ожидания ответа HTTP [ \#599](https://github.com/NuGet/NuGet.Client/pull/599)
-- Файлы пакета с будущих периодов не будет использовать для них времени [ \#597](https://github.com/NuGet/NuGet.Client/pull/597)
-- Обновление `NuGet.Core.dll` версии 2.12.0, чтобы устранить проблему XML [ \#594](https://github.com/NuGet/NuGet.Client/pull/594)
-- Поддерживает./NuGet.CommandLine.XPlat - v \<детализации\> \<режим\> [ \#593](https://github.com/NuGet/NuGet.Client/pull/593)
-- Ошибка отображения при восстановлении без `project.json` или `packages.config` [ \#590](https://github.com/NuGet/NuGet.Client/pull/590)
-- Исправление версии зависимостей, если необходимые версии отличаются [ \#559](https://github.com/NuGet/NuGet.Client/pull/559)
+- Улучшения в пакетах: улучшения упаковки символов, упаковка с `project.json` и более [ \# 606](https://github.com/NuGet/NuGet.Client/pull/606)
+- Отображать исключение при сбое поиска проектов в команде Update [ \# 605] (https://github.com/NuGet/NuGet.Client/pull/605
+- Считывание типа пакета из входных данных `.nuspec` и `project.json` при упаковке [ \# 603](https://github.com/NuGet/NuGet.Client/pull/603)
+- Сделайте NuGet. Shared не проектом. [\#602](https://github.com/NuGet/NuGet.Client/pull/602)
+- Использовать время ожидания отправки для HTTP-ответа [ \# 599](https://github.com/NuGet/NuGet.Client/pull/599)
+- Файлы пакета со временем не будут использоваться в будущем [ \# 597](https://github.com/NuGet/NuGet.Client/pull/597)
+- Обновление `NuGet.Core.dll` версии до 2.12.0 для исправления ошибки XML [ \# 594](https://github.com/NuGet/NuGet.Client/pull/594)
+- Поддержка./нужет.коммандлине.ксплат-v \<verbosity\> \<mode\> [ \# 593](https://github.com/NuGet/NuGet.Client/pull/593)
+- Отображать ошибку при восстановлении без `project.json` или `packages.config` [ \# 590](https://github.com/NuGet/NuGet.Client/pull/590)
+- Исправление версий зависимостей, если требуемые версии отличаются [ \# 559](https://github.com/NuGet/NuGet.Client/pull/559)

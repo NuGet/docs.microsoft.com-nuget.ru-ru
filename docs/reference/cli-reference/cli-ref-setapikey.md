@@ -1,16 +1,16 @@
 ---
 title: Команда сетапикэй интерфейса командной строки NuGet
 description: Справочник по команде nuget.exe сетапикэй
-author: karann-msft
-ms.author: karann
+author: JonDouglas
+ms.author: jodou
 ms.date: 01/18/2018
 ms.topic: reference
-ms.openlocfilehash: b84d4257c580f6e734c26ebfc589be27bea10c82
-ms.sourcegitcommit: cbc87fe51330cdd3eacaad3e8656eb4258882fc7
+ms.openlocfilehash: 3e0c2f84e336e0a642b1b5e815e74a1fb0878467
+ms.sourcegitcommit: ee6c3f203648a5561c809db54ebeb1d0f0598b68
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/19/2020
-ms.locfileid: "88622815"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98780015"
 ---
 # <a name="setapikey-command-nuget-cli"></a>Команда сетапикэй (интерфейс командной строки NuGet)
 
@@ -27,10 +27,10 @@ nuget setapikey <key> -Source <url> [options]
 где `<source>` идентифицирует сервер и `<key>` является ключом для сохранения. Если `<source>` аргумент не указан, предполагается NuGet.org. 
 
 > [!NOTE]
-> Ключ API не используется для проверки подлинности в частном веб-канале. Инструкции по управлению учетными данными для проверки подлинности в источнике см [ `nuget sources` . в разделе](../cli-reference/cli-ref-sources.md) .
+> Ключ API не используется для проверки подлинности в частном веб-канале. Сведения об управлении учетными данными для проверки подлинности в источнике см. в описании [команды `nuget sources`](../cli-reference/cli-ref-sources.md).
 > Ключи API можно получить с отдельных серверов NuGet. Чтобы создать Апикэйс для nuget.org и управлять им, обратитесь к [разделу Получение API-ключа](../../nuget-org/scoped-api-keys.md#acquire-an-api-key) .
 
-## <a name="options"></a>Параметры
+## <a name="options"></a>Варианты
 
 - **`-ConfigFile`**
 

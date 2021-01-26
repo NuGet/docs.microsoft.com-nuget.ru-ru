@@ -1,16 +1,16 @@
 ---
 title: Команда пакета CLI для NuGet
 description: Справочник по команде nuget.exe Pack
-author: karann-msft
-ms.author: karann
+author: JonDouglas
+ms.author: jodou
 ms.date: 01/18/2018
 ms.topic: reference
-ms.openlocfilehash: 0483a75c7ee1fd851f935f44d96a417e2e86bf20
-ms.sourcegitcommit: cbc87fe51330cdd3eacaad3e8656eb4258882fc7
+ms.openlocfilehash: e2906d53119cb8c922df7d177cd686836ac50a5a
+ms.sourcegitcommit: ee6c3f203648a5561c809db54ebeb1d0f0598b68
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/19/2020
-ms.locfileid: "88622958"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98780050"
 ---
 # <a name="pack-command-nuget-cli"></a>Команда Pack (интерфейс командной строки NuGet)
 
@@ -30,7 +30,7 @@ nuget pack <nuspecPath | projectPath> [options] [-Properties ...]
 
 где `<nuspecPath>` и `<projectPath>` укажите `.nuspec` файл проекта или соответственно.
 
-## <a name="options"></a>Параметры
+## <a name="options"></a>Варианты
 - **`-BasePath`**
 
    Задает базовый путь к файлам, определенным в файле [nuspec](../nuspec.md) .

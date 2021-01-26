@@ -1,16 +1,16 @@
 ---
 title: Команда NuGet CLI Sources Command
 description: Справочник по команде nuget.exe sources
-author: karann-msft
-ms.author: karann
+author: JonDouglas
+ms.author: jodou
 ms.date: 01/18/2018
 ms.topic: reference
-ms.openlocfilehash: 73c9cea8200a1ab1937d25a9a611ae7f2a943dba
-ms.sourcegitcommit: cbc87fe51330cdd3eacaad3e8656eb4258882fc7
+ms.openlocfilehash: 0e9cbdd089c5c0f66d25e7588ece504feae63f2f
+ms.sourcegitcommit: ee6c3f203648a5561c809db54ebeb1d0f0598b68
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/19/2020
-ms.locfileid: "88622594"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98780003"
 ---
 # <a name="sources-command-nuget-cli"></a>Команда "источники" (интерфейс командной строки NuGet)
 
@@ -28,7 +28,7 @@ nuget sources <operation> -Name <name> -Source <source>
 
 Если `<operation>` один из *списков, добавить, удалить, включить, отключить* или *Обновить*, `<name>` — это имя источника, а `<source>` — URL-адрес источника. В каждый момент времени можно обрабатывать только один источник.
 
-## <a name="options"></a>Параметры
+## <a name="options"></a>Варианты
 
 - **`-ConfigFile`**
 

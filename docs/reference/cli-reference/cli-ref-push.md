@@ -1,16 +1,16 @@
 ---
 title: Команда отправки интерфейса командной строки NuGet
 description: Справочник по команде nuget.exe Push
-author: karann-msft
-ms.author: karann
+author: JonDouglas
+ms.author: jodou
 ms.date: 01/18/2018
 ms.topic: reference
-ms.openlocfilehash: d53a2e7f41219e68e59b195d1d5a9d1f62ad7c63
-ms.sourcegitcommit: cbc87fe51330cdd3eacaad3e8656eb4258882fc7
+ms.openlocfilehash: 54a09361173ae10040433b05fcfae7304e39452e
+ms.sourcegitcommit: ee6c3f203648a5561c809db54ebeb1d0f0598b68
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/19/2020
-ms.locfileid: "88622850"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98779186"
 ---
 # <a name="push-command-nuget-cli"></a>команда push (интерфейс командной строки NuGet)
 
@@ -31,7 +31,7 @@ nuget push <packagePath> [options]
 
 где `<packagePath>` идентифицирует пакет для отправки на сервер.
 
-## <a name="options"></a>Параметры
+## <a name="options"></a>Варианты
 
 - **`-ApiKey`**
 
@@ -67,7 +67,7 @@ nuget push <packagePath> [options]
 
 - **`-src|-Source`**
 
-  Определяет URL-адрес сервера. NuGet определяет источник в формате UNC или локальную папку и просто копирует файл вместо отправки с помощью HTTP.  Кроме того, начиная с NuGet 3.4.2 этот параметр является обязательным, если только в `NuGet.Config` файле не указано значение *дефаултпушсаурце* (см. раздел [Настройка поведения NuGet](../../consume-packages/configuring-nuget-behavior.md)).
+  Определяет URL-адрес сервера. NuGet определяет источник в формате UNC или локальную папку и просто копирует файл вместо отправки через HTTP.  Кроме того, начиная с NuGet 3.4.2 этот параметр является обязательным, если только в `NuGet.Config` файле не указано значение *дефаултпушсаурце* (см. раздел [Настройка поведения NuGet](../../consume-packages/configuring-nuget-behavior.md)).
 
 - **`-SkipDuplicate`**
 

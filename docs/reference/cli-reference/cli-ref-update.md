@@ -1,16 +1,16 @@
 ---
 title: Команда обновления интерфейса командной строки NuGet
 description: Справочник по команде nuget.exe Update
-author: karann-msft
-ms.author: karann
+author: JonDouglas
+ms.author: jodou
 ms.date: 12/07/2017
 ms.topic: reference
-ms.openlocfilehash: 106c4027f03d8e8c1d19545b3ca9b6cd5263830e
-ms.sourcegitcommit: b138bc1d49fbf13b63d975c581a53be4283b7ebf
+ms.openlocfilehash: cfa7fdcc6af46fd5f4030ba424754291f697bc43
+ms.sourcegitcommit: ee6c3f203648a5561c809db54ebeb1d0f0598b68
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/03/2020
-ms.locfileid: "93236793"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98779131"
 ---
 # <a name="update-command-nuget-cli"></a>команда Update (интерфейс командной строки NuGet)
 
@@ -32,7 +32,7 @@ nuget update <configPath> [options]
 
 где `<configPath>` определяет либо `packages.config` файл решения, либо список зависимостей проекта.
 
-## <a name="options"></a>Параметры
+## <a name="options"></a>Варианты
 
 - **`-ConfigFile`**
 
@@ -40,7 +40,7 @@ nuget update <configPath> [options]
   
 - **`-DependencyVersion [Lowest, HighestPatch, HighestMinor, Highest, Ignore]`**
 
-  Указывает версию пакетов зависимостей для использования, которая может быть одной из следующих:<br/><ul><li>*Самый низкий* (по умолчанию): самая низкая версия</li><li>*Хигхестпатч* : версия с наименьшим основным, наименьшим незначительным, самым высоким исправлением</li><li>*Хигхестминор* : версия с наименьшим основным, наибольшим незначительным, самым высоким исправлением</li><li>*Наибольшее* : самая высокая версия</li><li>*Ignore* : пакеты зависимостей не будут использоваться</li></ul>
+  Указывает версию пакетов зависимостей для использования, которая может быть одной из следующих:<br/><ul><li>*Самый низкий* (по умолчанию): самая низкая версия</li><li>*Хигхестпатч*: версия с наименьшим основным, наименьшим незначительным, самым высоким исправлением</li><li>*Хигхестминор*: версия с наименьшим основным, наибольшим незначительным, самым высоким исправлением</li><li>*Наибольшее*: самая высокая версия</li><li>*Ignore*: пакеты зависимостей не будут использоваться</li></ul>
 
 - **`-FileConflictAction [PromptUser, Overwrite, Ignore]`**
 

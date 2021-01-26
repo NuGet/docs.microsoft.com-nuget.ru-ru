@@ -1,16 +1,16 @@
 ---
 title: Заметки о выпуске NuGet 5,3
 description: Заметки о выпуске NuGet 5,3, включая новые функции, исправления ошибок и DCR.
-author: karann-msft
-ms.author: karann
+author: JonDouglas
+ms.author: jodou
 ms.date: 09/06/2019
 ms.topic: conceptual
-ms.openlocfilehash: ca71c5b9ef546f3ea92e55763d5059466ac3a930
-ms.sourcegitcommit: e9c1dd0679ddd8ba3ee992d817b405f13da0472a
+ms.openlocfilehash: 009a219139a767ee6453305be68ccce478b0ec75
+ms.sourcegitcommit: ee6c3f203648a5561c809db54ebeb1d0f0598b68
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "76813758"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98780126"
 ---
 # <a name="nuget-53-release-notes"></a>Заметки о выпуске NuGet 5,3
 
@@ -18,7 +18,7 @@ ms.locfileid: "76813758"
 
 | Версия NuGet | Доступно в версии Visual Studio| Доступно в пакетах SDK для .NET|
 |:---|:---|:---|
-| [**5.3.0**](https://nuget.org/downloads) | [Visual Studio 2019 версии 16,3](https://visualstudio.microsoft.com/downloads/) | [3.0.100](https://dotnet.microsoft.com/download/dotnet-core/3.0)<sup>1</sup> |
+| [**5.3.0**](https://nuget.org/downloads) | [Visual Studio 2019 версии 16.3](https://visualstudio.microsoft.com/downloads/) | [3.0.100](https://dotnet.microsoft.com/download/dotnet-core/3.0)<sup>1</sup> |
 | [**5.3.1**](https://nuget.org/downloads) | [Visual Studio 2019 версии 16.3.6](https://visualstudio.microsoft.com/downloads/) | [Будущая версия: 3.0.101](https://dotnet.microsoft.com/download/dotnet-core/3.0) |
 
 <sup>1</sup> Устанавливается вместе с Visual Studio 2019 с рабочей нагрузкой .NET Core
@@ -27,9 +27,9 @@ ms.locfileid: "76813758"
 
 * [Значок пакета можно встроить в пакет](../reference/msbuild-targets.md#packing-an-icon-image-file), вместо того чтобы использовать внешний URL-адрес. - [#352](https://github.com/NuGet/Home/issues/352)
 
-* Улучшенная безопасность с помощью отслеживания и применения SHA для Packages. config — [#7281](https://github.com/NuGet/Home/issues/7281)
+* Улучшенная безопасность с помощью отслеживания и применения SHA для Packages.Config [#7281](https://github.com/NuGet/Home/issues/7281)
 
-* Включение устаревания устаревших или устаревших пакетов NuGet [#2867](https://github.com/NuGet/Home/issues/2867) | записи [блога](https://devblogs.microsoft.com/nuget/deprecating-packages-on-nuget-org/) | [документы](../nuget-org/deprecate-packages.md)
+* Включение устаревания устаревших или устаревших пакетов NuGet [#2867](https://github.com/NuGet/Home/issues/2867)  |  [](https://devblogs.microsoft.com/nuget/deprecating-packages-on-nuget-org/)  |  [документы](../nuget-org/deprecate-packages.md) записи блога
 
 ### <a name="issues-fixed-in-this-release"></a>Исправленные ошибки в этом выпуске
 
@@ -37,7 +37,7 @@ ms.locfileid: "76813758"
 
 * Пакеты NuGet, созданные с помощью пакета SDK 3.0.100-preview9, не могут использоваться пользователями пакета SDK 2,2... в зависимости от часового пояса [#8603](https://github.com/NuGet/Home/issues/8603)
 
-* Кавычки "символы в пути приводят к ошибке" недопустимых символов в пути "в `nuget restore` [#8168](https://github.com/NuGet/Home/issues/8168)
+* Кавычки "символы в пути приводят к сбою" недопустимых символов в пути "в `nuget restore` [#8168](https://github.com/NuGet/Home/issues/8168)
 
 * VS: сборки полностью являются NGen-ED, а не частично NGen-ED- [#8513](https://github.com/NuGet/Home/issues/8513)
 
@@ -47,7 +47,7 @@ ms.locfileid: "76813758"
 
 * Улучшения NU1403 — проверка всех пакетов, включение ожидаемых/фактических значений SHA — [#8424](https://github.com/NuGet/Home/issues/8424)
 
-* Множественное перечисление в `NuGetPackageManager.PreviewUpdatePackagesAsync` - [#8401](https://github.com/NuGet/Home/issues/8401)
+* Множественное перечисление в `NuGetPackageManager.PreviewUpdatePackagesAsync`  -  [#8401](https://github.com/NuGet/Home/issues/8401)
 
 * Отмена изменений "Public-> internal" в Плугинпроцесс- [#8390](https://github.com/NuGet/Home/issues/8390)
 
@@ -71,7 +71,7 @@ ms.locfileid: "76813758"
 
 * Сделайте чтение параметров в VS Lazy- [#8156](https://github.com/NuGet/Home/issues/8156)
 
-* Регрессия в `Nuget sources add` приводит к тому, что символ ":", шестнадцатеричное значение 0x3A, не может включаться в имя "Errors- [#7948](https://github.com/NuGet/Home/issues/7948)
+* Регрессия в `Nuget sources add` приводит к тому, что символ ":", шестнадцатеричное значение 0x3A, не может быть добавлен в имя "Errors- [#7948](https://github.com/NuGet/Home/issues/7948)
 
 * Поставщики учетных данных подключаемого модуля NuGet — скрытие окна процесса — [#7511](https://github.com/NuGet/Home/issues/7511)
 
@@ -87,11 +87,11 @@ ms.locfileid: "76813758"
 
 * Включение восстановления в proj-файлах — [#8212](https://github.com/NuGet/Home/issues/8212)
 
-* Познакомьтесь с `NUGET_NETFX_PLUGIN_PATHS` и `NUGET_NETCORE_PLUGIN_PATHS` для поддержки конфигурации обоих элементов [#8151](https://github.com/NuGet/Home/issues/8151)
+* Представляем `NUGET_NETFX_PLUGIN_PATHS` и `NUGET_NETCORE_PLUGIN_PATHS` для поддержки конфигурации обоих элементов одновременно — [#8151](https://github.com/NuGet/Home/issues/8151)
 
 * Включение нескольких версий для Паккажедовнлоад с помощью атрибута версии — [#8074](https://github.com/NuGet/Home/issues/8074)
 
-* Добавление параметров-Солутиондиректори и-Паккажедиректори в NuGet. exe Pack — [#7163](https://github.com/NuGet/Home/issues/7163)
+* Параметры Add-Солутиондиректори и-Паккажедиректори для пакета nuget.exe- [#7163](https://github.com/NuGet/Home/issues/7163)
 
 **[Список всех проблем, исправленных в этом выпуске — 5,3](https://github.com/nuget/home/issues?q=is%3Aissue+is%3Aclosed+milestone%3A%225.3")**
 

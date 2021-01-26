@@ -1,16 +1,16 @@
 ---
 title: Команда NuGet CLI Locals
 description: Справочник по команде nuget.exe Locals
-author: karann-msft
-ms.author: karann
+author: JonDouglas
+ms.author: jodou
 ms.date: 03/19/2018
 ms.topic: reference
-ms.openlocfilehash: cdc2b760021ffc4a9e02edacb45beac01cc99bf1
-ms.sourcegitcommit: cbc87fe51330cdd3eacaad3e8656eb4258882fc7
+ms.openlocfilehash: 25feb29c7b96c47681cedd8208b8595952d3ca49
+ms.sourcegitcommit: ee6c3f203648a5561c809db54ebeb1d0f0598b68
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/19/2020
-ms.locfileid: "88623062"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98779204"
 ---
 # <a name="locals-command-nuget-cli"></a>Команда Locals (интерфейс командной строки NuGet)
 
@@ -26,7 +26,7 @@ nuget locals <folder> [options]
 
 где `<folder>` — один из `all` , `http-cache` , `packages-cache` *(3,5 и более ранних версий)*, `global-packages` , `temp` *(3.4 +)* и `plugins-cache` *(4.8 +)*.
 
-## <a name="options"></a>Параметры
+## <a name="options"></a>Варианты
 
 - **`-Clear`**
 

@@ -1,16 +1,16 @@
 ---
 title: Команда справки интерфейса командной строки NuGet
 description: Справочник по команде nuget.exe Help
-author: karann-msft
-ms.author: karann
+author: JonDouglas
+ms.author: jodou
 ms.date: 01/18/2018
 ms.topic: reference
-ms.openlocfilehash: 12776b7c16aeef223a0b682ee2468edec8ea3295
-ms.sourcegitcommit: cbc87fe51330cdd3eacaad3e8656eb4258882fc7
+ms.openlocfilehash: 5d91638c4a6f167ea8a04e5dfa2905cb55084ddd
+ms.sourcegitcommit: ee6c3f203648a5561c809db54ebeb1d0f0598b68
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/19/2020
-ms.locfileid: "88623114"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98779352"
 ---
 # <a name="help-or--command-nuget-cli"></a>help или ? команда (интерфейс командной строки NuGet)
 
@@ -30,7 +30,7 @@ WHERE [команда] определяет конкретную команду,
 > [!Warning]
 > С помощью некоторых команд можно учитывать, чтобы сначала указать *справку* , как в `nuget help install` , так как в NuGet.org есть пакет с именем "Help". Если вы выдаете команду `nuget install help` , вы не получите справку по команде install, но вместо этого установите пакет с именем Help.
 
-## <a name="options"></a>Параметры
+## <a name="options"></a>Варианты
 
 - **`-All`**
 

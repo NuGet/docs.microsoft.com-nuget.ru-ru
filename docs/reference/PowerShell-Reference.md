@@ -1,16 +1,16 @@
 ---
 title: Справочник по PowerShell для NuGet
 description: Полный справочник по командам PowerShell, доступным в консоли диспетчера пакетов NuGet в Visual Studio.
-author: karann-msft
-ms.author: karann
+author: JonDouglas
+ms.author: jodou
 ms.date: 10/02/2017
 ms.topic: reference
-ms.openlocfilehash: 4f8b42847cbc155393fe6d2afbe2e0857b619da3
-ms.sourcegitcommit: b138bc1d49fbf13b63d975c581a53be4283b7ebf
+ms.openlocfilehash: 98bea8a225f4864953f898ef57b26e9093f7c2e9
+ms.sourcegitcommit: ee6c3f203648a5561c809db54ebeb1d0f0598b68
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/03/2020
-ms.locfileid: "93236884"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98779365"
 ---
 # <a name="powershell-reference"></a>Справочник по PowerShell
 
@@ -20,7 +20,7 @@ ms.locfileid: "93236884"
 > Все команды PowerShell относятся только к потреблению пакетов. Команды PowerShell не связаны с созданием и публикацией пакетов, за исключением того, что пакет также может быть потребителем других пакетов.
 
 > [!Important]
-> Приведенные здесь команды относятся только к консоли диспетчера пакетов в Visual Studio и отличаются от [команд модуля Управление пакетами](/powershell/module/packagemanagement/?view=powershell-6) , доступных в общей среде PowerShell. В частности, в каждой среде есть команды, недоступные в другой, а команды с тем же именем могут отличаться в отдельных аргументах. При использовании консоли Управление пакетами в Visual Studio применяются команды и аргументы, описанные в этой статье.
+> Перечисленные здесь команды относятся только к консоли диспетчера пакетов в Visual Studio и отличаются от [команд модуля "Управление пакетами"](/powershell/module/packagemanagement/?view=powershell-6), доступных в общей среде PowerShell. В частности, в каждой среде есть команды, недоступные в другой среде, а в командах с тем же именем могут отличаться некоторые аргументы. При использовании консоли "Управление пакетами" в Visual Studio применяются команды и аргументы, описанные в этой статье.
 
 | Общие команды | Описание | Версия NuGet |
 | --- | --- | --- |

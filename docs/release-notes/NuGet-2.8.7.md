@@ -1,20 +1,20 @@
 ---
-title: Заметки о выпуске NuGet 2.8.7
-description: Заметки о выпуске для NuGet 2.8.7, включая известные проблемы, исправления ошибок, добавленные функции и запросы на изменение структуры.
-author: karann-msft
-ms.author: karann
+title: Заметки о выпуске 2.8.7 NuGet
+description: Заметки о выпуске NuGet 2.8.7, включая известные проблемы, исправления ошибок, добавленные функции и DCR.
+author: JonDouglas
+ms.author: jodou
 ms.date: 11/11/2016
 ms.topic: conceptual
-ms.openlocfilehash: 0b3a9520bb2e1b898e51644169d55d3c2fb8220d
-ms.sourcegitcommit: 1d1406764c6af5fb7801d462e0c4afc9092fa569
+ms.openlocfilehash: 6f7098346c92ca67048938faf70d512e36c434a9
+ms.sourcegitcommit: ee6c3f203648a5561c809db54ebeb1d0f0598b68
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/04/2018
-ms.locfileid: "43549992"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98780349"
 ---
-# <a name="nuget-287-release-notes"></a>Заметки о выпуске NuGet 2.8.7
+# <a name="nuget-287-release-notes"></a>Заметки о выпуске 2.8.7 NuGet
 
-[Заметки о выпуске NuGet 2.8.6](../release-notes/nuget-2.8.6.md) | [NuGet 2.9 RC заметки.](../release-notes/nuget-2.9-RC.md)
+[Заметки о](../release-notes/nuget-2.8.6.md)  |  выпуске 2.8.6 NuGet [NuGet 2,9 — заметки о выпуске RC](../release-notes/nuget-2.9-RC.md)
 
-NuGet 2.8.7 была выпущена 27 июля 2015 г. как исправление, обновление до 2.8.6 VSIX с исправлением, относящиеся к ошибку, которая негативно влияет на реализации политики Powershell.
+Пакет NuGet 2.8.7 был выпущен 27 июля 2015 в качестве обновления для 2.8.6 VSIX с исправлением, относящимся к ошибке, которая влияет на реализацию политики PowerShell.
 [https://github.com/NuGet/Home/issues/974](https://github.com/NuGet/Home/issues/974)
