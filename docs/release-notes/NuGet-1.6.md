@@ -1,20 +1,20 @@
 ---
 title: Заметки о выпуске NuGet 1,6
 description: Заметки о выпуске NuGet 1,6, включая известные проблемы, исправления ошибок, добавленные функции и DCR.
-author: karann-msft
-ms.author: karann
+author: JonDouglas
+ms.author: jodou
 ms.date: 11/11/2016
 ms.topic: conceptual
-ms.openlocfilehash: 2878d3809b2be4fb71f4e7b1a1e08e405ead44b9
-ms.sourcegitcommit: 26a8eae00af2d4be581171e7a73009f94534c336
+ms.openlocfilehash: 08b1cb3736e645d6efcc33f920f521c9c0fc7507
+ms.sourcegitcommit: ee6c3f203648a5561c809db54ebeb1d0f0598b68
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75384141"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98777013"
 ---
  # <a name="nuget-16-release-notes"></a>Заметки о выпуске NuGet 1,6
 
-[Заметки о выпуске nuget 1,5](../release-notes/nuget-1.5.md) | [заметок о выпуске NuGet 1,7](../release-notes/nuget-1.7.md)
+[Заметки о](../release-notes/nuget-1.5.md)  |  выпуске NuGet 1,5 [Заметки о выпуске NuGet 1,7](../release-notes/nuget-1.7.md)
 
 Версия NuGet 1,6 была выпущена 13 декабря 2011 г.
 
@@ -25,7 +25,7 @@ ms.locfileid: "75384141"
 
 Примечание. Если Visual Studio не позволит удалить расширение (кнопка удаления отключена), скорее всего, потребуется перезапустить Visual Studio с помощью команды "Запуск от имени администратора".
 
-## <a name="features"></a>Функции
+## <a name="features"></a>Компоненты
 
 ### <a name="support-for-semantic-versioning-and-prerelease-packages"></a>Поддержка семантического управления версиями и предварительных пакетов
 В NuGet 1,6 введена поддержка семантического управления версиями (SemVer). Дополнительные сведения об использовании SemVer см. в [документации по системе управления версиями](../create-packages/prerelease-packages.md).

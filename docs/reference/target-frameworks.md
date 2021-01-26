@@ -1,17 +1,17 @@
 ---
 title: Справочник по целевым платформам для NuGet
 description: Ссылки на целевую платформу NuGet позволяют определить и изолировать зависимые от платформы компоненты пакета.
-author: karann-msft
-ms.author: karann
+author: JonDouglas
+ms.author: jodou
 ms.date: 12/11/2017
 ms.topic: reference
 ms.reviewer: anangaur
-ms.openlocfilehash: 995f15ae2ad823d9c814cb7e78facddee713cc8f
-ms.sourcegitcommit: c81561e93a7be467c1983d639158d4e3dc25b93a
+ms.openlocfilehash: 7671b50b84bf1447fe94e02896786d1f309425dd
+ms.sourcegitcommit: ee6c3f203648a5561c809db54ebeb1d0f0598b68
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/02/2020
-ms.locfileid: "78230516"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98777320"
 ---
 # <a name="target-frameworks"></a>Требуемые версии .NET Framework
 
@@ -35,7 +35,7 @@ NuGet использует ссылки на целевую платформу �
 
 | Имя | Сокращение | TFM/TxM |
 | ------------- | ------------ | --------- |
-|.NET Framework | net | net11 |
+|.NET Framework | net; | net11 |
 | | | net20 |
 | | | net35 |
 | | | net40 |
@@ -116,7 +116,7 @@ Tizen | tizen | tizen3 |
 
 Некоторые платформы являются родственными и совместимыми друг с другом, хотя и не полностью идентичными:
 
-| Framework | Можно использовать |
+| Инфраструктура | Можно использовать |
 | -- | --- |
 | Универсальная платформа Windows (uap) | win81 |
 | | wpa81 |

@@ -1,16 +1,16 @@
 ---
 title: Справочник по Find-Package PowerShell для NuGet
 description: Справочник по Find-Package команде PowerShell в консоли диспетчера пакетов NuGet в Visual Studio.
-author: karann-msft
-ms.author: karann
+author: JonDouglas
+ms.author: jodou
 ms.date: 6/1/2017
 ms.topic: reference
-ms.openlocfilehash: 267dd3eb501cae6e419386a5ca5e0c1ab659f807
-ms.sourcegitcommit: b138bc1d49fbf13b63d975c581a53be4283b7ebf
+ms.openlocfilehash: 83d0d62bbda07d07ea1e3b58e531447e2001b680
+ms.sourcegitcommit: ee6c3f203648a5561c809db54ebeb1d0f0598b68
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/03/2020
-ms.locfileid: "93238092"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98777507"
 ---
 # <a name="find-package-package-manager-console-in-visual-studio"></a>Find-Package (консоль диспетчера пакетов в Visual Studio)
 

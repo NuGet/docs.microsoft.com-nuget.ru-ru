@@ -1,21 +1,21 @@
 ---
-title: Заметки о выпуске NuGet 2.8.3
-description: Заметки о выпуске для NuGet 2.8.3, включая известные проблемы, исправления ошибок, добавленные функции и запросы на изменение структуры.
-author: karann-msft
-ms.author: karann
+title: Заметки о выпуске 2.8.3 NuGet
+description: Заметки о выпуске NuGet 2.8.3, включая известные проблемы, исправления ошибок, добавленные функции и DCR.
+author: JonDouglas
+ms.author: jodou
 ms.date: 11/11/2016
 ms.topic: conceptual
-ms.openlocfilehash: e773d6dc55c1593a4f0918d67c9c188a38e0e5ec
-ms.sourcegitcommit: 1d1406764c6af5fb7801d462e0c4afc9092fa569
+ms.openlocfilehash: fe7e8f7c45bc4d67ae4015234cf3775372b71bb1
+ms.sourcegitcommit: ee6c3f203648a5561c809db54ebeb1d0f0598b68
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/04/2018
-ms.locfileid: "43548460"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98776742"
 ---
-# <a name="nuget-283-release-notes"></a>Заметки о выпуске NuGet 2.8.3
+# <a name="nuget-283-release-notes"></a>Заметки о выпуске 2.8.3 NuGet
 
-[Заметки о выпуске NuGet 2.8.2](../release-notes/nuget-2.8.2.md) | [заметки о выпуске NuGet 2.8.5](../release-notes/nuget-2.8.5.md)
+[Заметки о](../release-notes/nuget-2.8.2.md)  |  выпуске 2.8.2 NuGet [Заметки о выпуске 2.8.5 NuGet](../release-notes/nuget-2.8.5.md)
 
-NuGet 2.8.3 был выпущен 17 октября 2014 г. Он представляет собой незначительное обновление для наших 2.8.1 VSIX с некоторыми целевых исправлений.
+2.8.3 NuGet выпущен 17 октября 2014 г. Это незначительное обновление нашего 2.8.1 VSIX с некоторыми целевыми исправлениями.
 
-В этом выпуске добавлена поддержка для диалогового окна Диспетчер пакетов NuGet [ASP.NET vNext](http://www.asp.net/vnext), [DevExtreme](http://js.devexpress.com/) и [BizTalk (.btproj)](/biztalk/core/developing-biztalk-server-applications) типы проектов. Она также включает надежности исправлены ошибки, связанные со сценариями, если включить восстановление пакета и сохранения параметров диспетчера пакетов.
+В этом выпуске добавлено диалоговое окно поддержка диспетчера пакетов NuGet для типов проектов [ASP.NET vNext](http://www.asp.net/vnext), [DevExtreme](http://js.devexpress.com/) и [BizTalk (бтпрож)](/biztalk/core/developing-biztalk-server-applications) . Она также включает исправления ошибок надежности, связанные с сценариями включения восстановления пакетов и сохранения параметров диспетчера пакетов.

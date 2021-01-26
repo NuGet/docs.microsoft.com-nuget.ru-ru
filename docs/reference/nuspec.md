@@ -1,23 +1,23 @@
 ---
 title: Ссылка на файл. nuspec для NuGet
 description: Файл с расширением .nuspec содержит метаданные пакета, которые используются при построении пакета и предоставляют дополнительную информацию для его потребителей.
-author: karann-msft
-ms.author: karann
+author: JonDouglas
+ms.author: jodou
 ms.date: 05/24/2019
 ms.topic: reference
 ms.reviewer: anangaur
-ms.openlocfilehash: 6e5107ac05046ea46cc819ebe2a504ba6b030634
-ms.sourcegitcommit: e39e5a5ddf68bf41e816617e7f0339308523bbb3
+ms.openlocfilehash: 6a68b07c42e6abf4ad57d0129fa76d7dd620145f
+ms.sourcegitcommit: ee6c3f203648a5561c809db54ebeb1d0f0598b68
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/05/2020
-ms.locfileid: "96738946"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98777679"
 ---
 # <a name="nuspec-reference"></a>Справочник по файлу NUSPEC
 
 Файл `.nuspec` представляет собой манифест в формате XML и содержит метаданные пакета. Этот манифест используется при построении пакета и содержит дополнительные сведения для его потребителей. Манифест всегда включается в пакет.
 
-В этом разделе.
+В этом разделе:
 
 - [Общая форма и схема](#general-form-and-schema)
 - [Замена маркеров](#replacement-tokens) (при использовании с проектом Visual Studio)
@@ -149,6 +149,7 @@ URL-адрес для лицензии пакета, часто показанн
 Для эквивалента MSBuild ознакомьтесь с [упаковкой лицензионного выражения или файла лицензии](msbuild-targets.md#packing-a-license-expression-or-a-license-file).
 
 Точный синтаксис выражений лицензии NuGet описывается ниже в [ABNF](https://tools.ietf.org/html/rfc5234).
+
 ```cli
 license-id            = <short form license identifier from https://spdx.org/spdx-specification-21-web-version#h.luq9dgcle9mo>
 
@@ -171,7 +172,7 @@ license-expression =  1*1(simple-expression / compound-expression / UNLICENSED)
 > Иконурл является устаревшим. Вместо этого используйте значок.
 
 URL-адрес для изображения 128x128 с фоном прозрачности для использования в качестве значка для пакета в пользовательском интерфейсе. Убедитесь, что этот элемент содержит *прямой URL-адрес изображения*, а не URL-адрес веб-страницы, на которой содержится изображение. Например, чтобы использовать изображение из GitHub, используйте URL-адрес необработанного файла, например <em> https://github.com/ \<username\> / \<repository\> /рав/ \<branch\> / \<logo.png\> </em>. 
-   
+
 При отправке пакета в nuget.org `iconUrl` поле ограничено 4000 символами.
 
 #### <a name="icon"></a>icon
@@ -265,15 +266,20 @@ URL-адрес для изображения 128x128 с фоном прозра�
 
 #### <a name="packagetypes"></a>packageTypes
 *(Версия 3.5 и более поздние)* Пустая коллекция или без нескольких элементов `<packageType>`, определяющих тип пакета, если он отличается от обычного пакета зависимостей. Каждый элемент packageType имеет атрибуты *name* и *version*. См. раздел [Указание типа пакета](../create-packages/set-package-type.md).
+
 #### <a name="dependencies"></a>зависимости
 Коллекция из нуля или более элементов `<dependency>`, задающих зависимости для пакета. Каждый элемент dependency имеет атрибуты *id*, *version*, *include* (версия 3.x и более поздние) и *exclude* (версия 3.x и более поздние). См. раздел [Зависимости](#dependencies-element) далее.
+
 #### <a name="frameworkassemblies"></a>frameworkAssemblies
 *(Версия 1.2 и более поздние)* Коллекция из одного или более элементов `<frameworkAssembly>`, идентифицирующих ссылки на сборки .NET Framework, необходимые для этого пакета, что гарантирует добавление ссылок в проекты, использующие пакет. Каждый элемент frameworkAssembly имеет атрибуты *assemblyName* и *targetFramework*. См. раздел [Указание ссылок на сборки платформы в глобальном кэше сборок ](#specifying-framework-assembly-references-gac) ниже.
+
 #### <a name="references"></a>Ссылки
 *(Версия 1.5 и более поздние)* Коллекция из нуля или более элементов `<reference>`, задающие имена сборок в папке `lib` пакета, которые добавляются в качестве ссылок проекта. Каждый элемент reference имеет атрибут *file*. Коллекция `<references>` также может содержать элемент `<group>` с атрибутом *targetFramework*, который, в свою очередь, содержит элементы `<reference>`. Если этот элемент опущен, включаются все ссылки в папке `lib`. См. раздел [Указание явных ссылок на сборки](#specifying-explicit-assembly-references) ниже.
+
 #### <a name="contentfiles"></a>contentFiles
 *(Версия 3.3 и более поздние)* Коллекция элементов `<files>`, которые идентифицируют файлы содержимого, включаемые в потребляющий проект. Эти файлы задаются с набором атрибутов, который описывает их использование в системе проекта. См. раздел [Указание включаемых в пакет файлов](#specifying-files-to-include-in-the-package) ниже.
-#### <a name="files"></a>files 
+
+#### <a name="files"></a>файлы 
 `<package>`Узел может содержать узел в `<files>` качестве одноуровневого элемента для `<metadata>` и `<contentFiles>` дочерний элемент в `<metadata>` , чтобы указать, какие файлы сборки и содержимого следует включить в пакет. Дополнительные сведения см. далее в разделах [Включение файлов сборки](#including-assembly-files) и [Включение файлов содержимого](#including-content-files) этой статьи.
 
 ### <a name="metadata-attributes"></a>атрибуты метаданных
@@ -363,13 +369,13 @@ nuget pack MyProject.csproj
 
 | Тег включения или исключения | Затрагиваемые папки пакета |
 | --- | --- |
-| contentFiles | Содержимое |
-| исполняющая среда | Runtime, Resources и FrameworkAssemblies |
+| contentFiles | Content |
+| среда выполнения | Runtime, Resources и FrameworkAssemblies |
 | compile | lib |
 | build; | build (свойства и цели MSBuild) |
 | в машинном коде | в машинном коде |
 | нет | Нет |
-| все | Все папки |
+| all | Все папки |
 
 Например, следующие строки указывают зависимости от `PackageA` версии 1.1.0 или более поздней и `PackageB` версии 1.x.
 
@@ -522,72 +528,82 @@ nuget pack MyProject.csproj
 | --- | --- |
 | **src** | Расположение файла или файлов, которые требуется включить, с учетом исключений, задаваемых атрибутом `exclude`. Если не указан абсолютный путь, этот путь задается относительно файла `.nuspec`. Допускается использовать подстановочный знак `*`. Наличие сдвоенного подстановочного знака `**` подразумевает выполнение рекурсивного поиска в папке. |
 | **target** | Относительный путь к папке в пакете, куда помещаются файлы исходного кода. Должен начинаться с `lib`, `content`, `build` или `tools`. См. раздел [Создание файла NUSPEC на основе рабочего каталога, соответствующего соглашениям](../create-packages/creating-a-package.md#from-a-convention-based-working-directory). |
-| **запрет** | Разделенный точками с запятой список файлов или шаблонов файлов, которые исключаются из расположения `src`. Допускается использовать подстановочный знак `*`. Наличие сдвоенного подстановочного знака `**` подразумевает выполнение рекурсивного поиска в папке. |
+| **исключение** | Разделенный точками с запятой список файлов или шаблонов файлов, которые исключаются из расположения `src`. Допускается использовать подстановочный знак `*`. Наличие сдвоенного подстановочного знака `**` подразумевает выполнение рекурсивного поиска в папке. |
 
 ### <a name="examples"></a>Примеры
 
 **Одна сборка**
 
-    Source file:
-        library.dll
+```
+Source file:
+    library.dll
 
-    .nuspec entry:
-        <file src="library.dll" target="lib" />
+.nuspec entry:
+    <file src="library.dll" target="lib" />
 
-    Packaged result:
-        lib\library.dll
+Packaged result:
+    lib\library.dll
+```
 
 **Одна сборка, относящаяся к целевой платформе**
 
-    Source file:
-        library.dll
+```
+Source file:
+    library.dll
 
-    .nuspec entry:
-        <file src="assemblies\net40\library.dll" target="lib\net40" />
+.nuspec entry:
+    <file src="assemblies\net40\library.dll" target="lib\net40" />
 
-    Packaged result:
-        lib\net40\library.dll
+Packaged result:
+    lib\net40\library.dll
+```
 
 **Набор DLL-файлов с использованием подстановочного знака**
 
-    Source files:
-        bin\release\libraryA.dll
-        bin\release\libraryB.dll
+```
+Source files:
+    bin\release\libraryA.dll
+    bin\release\libraryB.dll
 
-    .nuspec entry:
-        <file src="bin\release\*.dll" target="lib" />
+.nuspec entry:
+    <file src="bin\release\*.dll" target="lib" />
 
-    Packaged result:
-        lib\libraryA.dll
-        lib\libraryB.dll
+Packaged result:
+    lib\libraryA.dll
+    lib\libraryB.dll
+```
 
 **DLL-файлы для разных платформ**
 
-    Source files:
-        lib\net40\library.dll
-        lib\net20\library.dll
+```
+Source files:
+    lib\net40\library.dll
+    lib\net20\library.dll
 
-    .nuspec entry (using ** recursive search):
-        <file src="lib\**" target="lib" />
+.nuspec entry (using ** recursive search):
+    <file src="lib\**" target="lib" />
 
-    Packaged result:
-        lib\net40\library.dll
-        lib\net20\library.dll
+Packaged result:
+    lib\net40\library.dll
+    lib\net20\library.dll
+```
 
 **Исключение файлов**
 
-    Source files:
-        \tools\fileA.bak
-        \tools\fileB.bak
-        \tools\fileA.log
-        \tools\build\fileB.log
+```
+Source files:
+    \tools\fileA.bak
+    \tools\fileB.bak
+    \tools\fileA.log
+    \tools\build\fileB.log
 
-    .nuspec entries:
-        <file src="tools\*.*" target="tools" exclude="tools\*.bak" />
-        <file src="tools\**\*.*" target="tools" exclude="**\*.log" />
+.nuspec entries:
+    <file src="tools\*.*" target="tools" exclude="tools\*.bak" />
+    <file src="tools\**\*.*" target="tools" exclude="**\*.log" />
 
-    Package result:
-        (no files)
+Package result:
+    (no files)
+```
 
 ## <a name="including-content-files"></a>Включение файлов содержимого
 
@@ -608,108 +624,124 @@ nuget pack MyProject.csproj
 
 **Базовые файлы содержимого**
 
-    Source files:
-        css\mobile\style1.css
-        css\mobile\style2.css
+```
+Source files:
+    css\mobile\style1.css
+    css\mobile\style2.css
 
-    .nuspec entry:
-        <file src="css\mobile\*.css" target="content\css\mobile" />
+.nuspec entry:
+    <file src="css\mobile\*.css" target="content\css\mobile" />
 
-    Packaged result:
-        content\css\mobile\style1.css
-        content\css\mobile\style2.css
+Packaged result:
+    content\css\mobile\style1.css
+    content\css\mobile\style2.css
+```
 
 **Файлы содержимого со структурой каталогов**
 
-    Source files:
-        css\mobile\style.css
-        css\mobile\wp7\style.css
-        css\browser\style.css
+```
+Source files:
+    css\mobile\style.css
+    css\mobile\wp7\style.css
+    css\browser\style.css
 
-    .nuspec entry:
-        <file src="css\**\*.css" target="content\css" />
+.nuspec entry:
+    <file src="css\**\*.css" target="content\css" />
 
-    Packaged result:
-        content\css\mobile\style.css
-        content\css\mobile\wp7\style.css
-        content\css\browser\style.css
+Packaged result:
+    content\css\mobile\style.css
+    content\css\mobile\wp7\style.css
+    content\css\browser\style.css
+```
 
 **Файлы содержимого, относящиеся к целевой платформе**
 
-    Source file:
-        css\cool\style.css
+```
+Source file:
+    css\cool\style.css
 
-    .nuspec entry
-        <file src="css\cool\style.css" target="Content" />
+.nuspec entry
+    <file src="css\cool\style.css" target="Content" />
 
-    Packaged result:
-        content\style.css
+Packaged result:
+    content\style.css
+```
 
 **Файлы содержимого, копируемые в папку с точкой в имени**
 
 В этом случае NuGet определяет, что расширение в атрибуте `target` не соответствует расширению в `src` и обрабатывает такую часть имени в атрибуте `target` как папку:
 
-    Source file:
-        images\picture.png
+```
+Source file:
+    images\picture.png
 
-    .nuspec entry:
-        <file src="images\picture.png" target="Content\images\package.icons" />
+.nuspec entry:
+    <file src="images\picture.png" target="Content\images\package.icons" />
 
-    Packaged result:
-        content\images\package.icons\picture.png
+Packaged result:
+    content\images\package.icons\picture.png
+```
 
 **Файлы содержимого без расширений**
 
 Чтобы включить файлы без расширения, используйте подстановочные знаки `*` или `**`:
 
-    Source file:
-        flags\installed
+```
+Source file:
+    flags\installed
 
-    .nuspec entry:
-        <file src="flags\**" target="flags" />
+.nuspec entry:
+    <file src="flags\**" target="flags" />
 
-    Packaged result:
-        flags\installed
+Packaged result:
+    flags\installed
+```
 
 **Файлы содержимого с глубоким путем и глубоким целевым объектом**
 
 В этом случае из-за совпадения расширений файлов для исходного и целевого объектов NuGet предполагает, что целевой объект задает имя файла, а не папки:
 
-    Source file:
-        css\cool\style.css
+```
+Source file:
+    css\cool\style.css
 
-    .nuspec entry:
-        <file src="css\cool\style.css" target="Content\css\cool" />
-        or:
-        <file src="css\cool\style.css" target="Content\css\cool\style.css" />
+.nuspec entry:
+    <file src="css\cool\style.css" target="Content\css\cool" />
+    or:
+    <file src="css\cool\style.css" target="Content\css\cool\style.css" />
 
-    Packaged result:
-        content\css\cool\style.css
+Packaged result:
+    content\css\cool\style.css
+```
 
 **Переименование файла содержимого в пакете**
 
-    Source file:
-        ie\css\style.css
+```
+Source file:
+    ie\css\style.css
 
-    .nuspec entry:
-        <file src="ie\css\style.css" target="Content\css\ie.css" />
+.nuspec entry:
+    <file src="ie\css\style.css" target="Content\css\ie.css" />
 
-    Packaged result:
-        content\css\ie.css
+Packaged result:
+    content\css\ie.css
+```
 
 **Исключение файлов**
 
-    Source file:
-        docs\*.txt (multiple files)
+```
+Source file:
+    docs\*.txt (multiple files)
 
-    .nuspec entry:
-        <file src="docs\*.txt" target="content\docs" exclude="docs\admin.txt" />
-        or
-        <file src="*.txt" target="content\docs" exclude="admin.txt;log.txt" />
+.nuspec entry:
+    <file src="docs\*.txt" target="content\docs" exclude="docs\admin.txt" />
+    or
+    <file src="*.txt" target="content\docs" exclude="admin.txt;log.txt" />
 
-    Packaged result:
-        All .txt files from docs except admin.txt (first example)
-        All .txt files from docs except admin.txt and log.txt (second example)
+Packaged result:
+    All .txt files from docs except admin.txt (first example)
+    All .txt files from docs except admin.txt and log.txt (second example)
+```
 
 <a name="using-contentfiles-element-for-content-files"></a>
 
@@ -726,7 +758,7 @@ nuget pack MyProject.csproj
 | attribute | Описание |
 | --- | --- |
 | **относится** | Расположение файла или файлов, которые требуется включить, с учетом исключений, задаваемых атрибутом `exclude` (обязательно). Путь задается относительно `contentFiles` папки, если не указан абсолютный путь. Допускается использовать подстановочный знак `*`. Наличие сдвоенного подстановочного знака `**` подразумевает выполнение рекурсивного поиска в папке. |
-| **запрет** | Разделенный точками с запятой список файлов или шаблонов файлов, которые исключаются из расположения `src`. Допускается использовать подстановочный знак `*`. Наличие сдвоенного подстановочного знака `**` подразумевает выполнение рекурсивного поиска в папке. |
+| **исключение** | Разделенный точками с запятой список файлов или шаблонов файлов, которые исключаются из расположения `src`. Допускается использовать подстановочный знак `*`. Наличие сдвоенного подстановочного знака `**` подразумевает выполнение рекурсивного поиска в папке. |
 | **buildAction** | Действие сборки, присваиваемое элементу содержимого для MSBuild, например,, `Content` , `None` `Embedded Resource` `Compile` и т. д. Значение по умолчанию — `Compile` . |
 | **copyToOutput** | Логическое значение, указывающее, следует ли копировать элементы содержимого в выходную папку сборки (или публикации). Значение по умолчанию – false. |
 | **flatten** | Логическое значение, указывающее на необходимость копировать элементы содержимого в одну папку в выходных данных построения (true) или сохранить структуру папок пакета (false). Этот параметр применяется, только если для параметра copyToOutput установлено значение true. Значение по умолчанию – false. |
@@ -737,7 +769,9 @@ nuget pack MyProject.csproj
 
 Структурирование содержимого в проекте пакета осуществляется по следующему шаблону:
 
-    /contentFiles/{codeLanguage}/{TxM}/{any?}
+```
+/contentFiles/{codeLanguage}/{TxM}/{any?}
+```
 
 - Элемент `codeLanguages` может иметь значение `cs`, `vb`, `fs`, `any` или любой другой эквивалент заданного `$(ProjectLanguage)` в нижнем регистре
 - Элемент `TxM` представляет любой допустимый моникер целевой платформы, поддерживаемой NuGet (см. раздел [Целевые платформы](../reference/target-frameworks.md)).
@@ -745,19 +779,23 @@ nuget pack MyProject.csproj
 
 Пример:
 
-    Language- and framework-agnostic:
-        /contentFiles/any/any/config.xml
+```
+Language- and framework-agnostic:
+    /contentFiles/any/any/config.xml
 
-    net45 content for all languages
-        /contentFiles/any/net45/config.xml
+net45 content for all languages
+    /contentFiles/any/net45/config.xml
 
-    C#-specific content for net45 and up
-        /contentFiles/cs/net45/sample.cs
+C#-specific content for net45 and up
+    /contentFiles/cs/net45/sample.cs
+```
 
 Для пустых папок можно использовать `.`, чтобы отказаться от предоставления содержимого для определенных комбинаций языка и моникера целевой платформы, например:
 
-    /contentFiles/vb/any/code.vb
-    /contentFiles/cs/any/.
+```
+/contentFiles/vb/any/code.vb
+/contentFiles/cs/any/.
+```
 
 #### <a name="example-contentfiles-section"></a>Пример раздела contentFiles
 

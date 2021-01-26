@@ -1,30 +1,30 @@
 ---
-title: Заметки о выпуске NuGet 2.12 RC выпуска
-description: Заметки о выпуске для NuGet 2.12 RC, включая известные проблемы, исправления ошибок, добавленные функции и запросы на изменение структуры.
-author: karann-msft
-ms.author: karann
+title: NuGet 2,12 — заметки о выпуске RC
+description: Заметки о выпуске для версии-КАНДИДАТа NuGet 2,12, включая известные проблемы, исправления ошибок, добавленные функции и DCR.
+author: JonDouglas
+ms.author: jodou
 ms.date: 11/11/2016
 ms.topic: conceptual
-ms.openlocfilehash: 5321d5cfbb1565daa0dab54904287475cc721c4f
-ms.sourcegitcommit: 1d1406764c6af5fb7801d462e0c4afc9092fa569
+ms.openlocfilehash: 049a38e9ddd1f33b6d0c87aed5ccb64c0e0d9740
+ms.sourcegitcommit: ee6c3f203648a5561c809db54ebeb1d0f0598b68
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/04/2018
-ms.locfileid: "43549763"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98776947"
 ---
-# <a name="nuget-212-rc-release-notes"></a>Заметки о выпуске NuGet 2.12 RC выпуска
+# <a name="nuget-212-rc-release-notes"></a>NuGet 2,12 — заметки о выпуске RC
 
-2.12 версии-Кандидата NuGet была выпущена 22 июня 2016 г. как обновление для 2.12.0-rc VSIX для Visual Studio 2013.
+NuGet 2,12-RC был выпущен 22 июня 2016 в качестве обновления для Visual Studio 2013 в VSIX-RC.
 
 ### <a name="updates-in-this-release"></a>Обновления в этом выпуске
 
-* Поддержка полной NetStandard и NetCoreApp для VS2013.
-* Добавление включения или исключения для `.nuspec` записей зависимостей.
-* Добавлена поддержка «no_proxy» задать исключения прокси-сервера.
-* Ошибок, связанных с TFS.
+* Полная поддержка NetStandard и NetCoreApp для VS2013.
+* Добавление включения или исключения в `.nuspec` записи зависимостей.
+* Добавьте поддержку "no_proxy", чтобы указать исключения прокси-сервера.
+* Исправления, связанные с TFS.
 
-Список исправлений в этом выпуске можно найти на сайте GitHub в [2.12 вехи](https://github.com/NuGet/Home/issues?q=milestone%3A2.12+is%3Aclosed)
+Список исправлений в этом выпуске можно найти на сайте GitHub на этапе [2,12](https://github.com/NuGet/Home/issues?q=milestone%3A2.12+is%3Aclosed) .
 
-Чтобы скачайте расширение для:
+Скачайте расширение для:
 
 * [Visual Studio 2013](https://dist.nuget.org/visualstudio-2013-vsix/v2.12.0-rc/NuGet.Tools.vsix)

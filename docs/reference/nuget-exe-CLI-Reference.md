@@ -1,16 +1,16 @@
 ---
-title: Справочник по интерфейсу командной строки (CLI) NuGet
+title: Справочник по интерфейсу Command-Line NuGet (CLI)
 description: Указатель справочника по командной строке для nuget.exe CLI
-author: karann-msft
-ms.author: karann
+author: JonDouglas
+ms.author: jodou
 ms.date: 01/23/2018
 ms.topic: reference
-ms.openlocfilehash: e9343f1fdddcf839322849925372587e685aef4a
-ms.sourcegitcommit: cbc87fe51330cdd3eacaad3e8656eb4258882fc7
+ms.openlocfilehash: a9a5fc4d3b1e0f19fa3ea249ca7759c8ebc2d12e
+ms.sourcegitcommit: ee6c3f203648a5561c809db54ebeb1d0f0598b68
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/19/2020
-ms.locfileid: "88623153"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98777710"
 ---
 # <a name="nuget-cli-reference"></a>Справочник по интерфейсу командной строки NuGet
 
@@ -45,9 +45,9 @@ ms.locfileid: "88623153"
 | --- | --- | --- | --- |
 | [pack](cli-reference/cli-ref-pack.md) | Создание | 2.7+ | Создает пакет NuGet из `.nuspec` файла проекта или. При выполнении на Mono создание пакета из файла проекта не поддерживается. |
 | [push](cli-reference/cli-ref-push.md) | Публикация | Все | Публикует пакет в источнике пакета. |
-| [config](cli-reference/cli-ref-config.md) | All | All | Возвращает или задает значения конфигурации NuGet. |
-| [help or ?](cli-reference/cli-ref-help.md) | All | All | Отображает справочные сведения или справку для команды. |
-| [locals](cli-reference/cli-ref-locals.md) | Потребление | 3.3 + | Перечисляет расположения папок *Global-Packages*, *HTTP-Cache*и *TEMP* и очищает содержимое этих папок. |
+| [config](cli-reference/cli-ref-config.md) | Все | Все | Возвращает или задает значения конфигурации NuGet. |
+| [help or ?](cli-reference/cli-ref-help.md) | Все | Все | Отображает справочные сведения или справку для команды. |
+| [locals](cli-reference/cli-ref-locals.md) | Потребление | 3.3 + | Перечисляет расположения папок *Global-Packages*, *HTTP-Cache* и *TEMP* и очищает содержимое этих папок. |
 | [restore](cli-reference/cli-ref-restore.md) | Потребление | 2.7+ | Восстанавливает все пакеты, на которые ссылается используемый формат управления пакетами. При выполнении на Mono восстановление пакетов с использованием формата PackageReference не поддерживается. |
 | [setapikey](cli-reference/cli-ref-setapikey.md) | Публикация, использование | Все | Сохраняет ключ API для данного источника пакета, если для этого источника пакета требуется ключ для доступа. |
 | [spec](cli-reference/cli-ref-spec.md) | Создание | Все | Создает `.nuspec` файл, используя токены при создании файла из проекта Visual Studio. |

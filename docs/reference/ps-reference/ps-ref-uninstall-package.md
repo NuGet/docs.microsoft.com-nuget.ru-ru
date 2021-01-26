@@ -1,16 +1,16 @@
 ---
 title: Справочник по Uninstall-Package PowerShell для NuGet
 description: Справочник по Uninstall-Package команде PowerShell в консоли диспетчера пакетов NuGet в Visual Studio.
-author: karann-msft
-ms.author: karann
+author: JonDouglas
+ms.author: jodou
 ms.date: 06/01/2017
 ms.topic: reference
-ms.openlocfilehash: d164176355e32e5bbe0a017fc2b291cbc9ef326a
-ms.sourcegitcommit: b138bc1d49fbf13b63d975c581a53be4283b7ebf
+ms.openlocfilehash: 961a9d68e5cba09030401fc871a93bf1145b23a3
+ms.sourcegitcommit: ee6c3f203648a5561c809db54ebeb1d0f0598b68
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/03/2020
-ms.locfileid: "93237131"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98777387"
 ---
 # <a name="uninstall-package-package-manager-console-in-visual-studio"></a>Uninstall-Package (консоль диспетчера пакетов в Visual Studio)
 
@@ -31,8 +31,8 @@ Uninstall-Package [-Id] <string> [-RemoveDependencies] [-ProjectName <string>] [
 
 | Параметр | Описание |
 | --- | --- |
-| Идентификатор | Необходимости Идентификатор пакета для удаления. Сам переключатель-ID является необязательным. |
-| Version | Версия пакета для удаления, используемая по умолчанию для текущей установленной версии. |
+| Id | Необходимости Идентификатор пакета для удаления. Сам переключатель-ID является необязательным. |
+| Версия | Версия пакета для удаления, используемая по умолчанию для текущей установленной версии. |
 | ремоведепенденЦиес | Удалите пакет и его неиспользуемые зависимости. То есть, если какая-либо зависимость имеет другой зависимый от нее пакет, он пропускается. |
 | ProjectName | Проект, из которого удаляется пакет, по умолчанию используется проект по умолчанию. |
 | Force | Принудительно удаляет пакет, даже если от него зависят другие пакеты. |

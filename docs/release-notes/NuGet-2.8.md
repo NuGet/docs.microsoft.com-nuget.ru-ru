@@ -1,16 +1,16 @@
 ---
 title: Заметки о выпуске NuGet 2,8
 description: Заметки о выпуске NuGet 2,8, включая известные проблемы, исправления ошибок, добавленные функции и DCR.
-author: karann-msft
-ms.author: karann
+author: JonDouglas
+ms.author: jodou
 ms.date: 11/11/2016
 ms.topic: conceptual
-ms.openlocfilehash: 98b8b7334738306e6d40ba7c455409a87c4bb822
-ms.sourcegitcommit: b138bc1d49fbf13b63d975c581a53be4283b7ebf
+ms.openlocfilehash: cb77cf0f049b5b3cfe1039d83ab58e33457674bf
+ms.sourcegitcommit: ee6c3f203648a5561c809db54ebeb1d0f0598b68
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/03/2020
-ms.locfileid: "93237039"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98776711"
 ---
 # <a name="nuget-28-release-notes"></a>Заметки о выпуске NuGet 2,8
 
@@ -44,13 +44,15 @@ ms.locfileid: "93237039"
 
 При разрешении зависимостей пакетов NuGet реализовала стратегию выбора наименьшей основной и дополнительной версии пакета, удовлетворяющей зависимостям пакета. Однако, в отличие от основной и дополнительной версий, версия исправления всегда была решена до самой высокой версии. Хотя поведение было хорошо намерено, было создано отсутствие детерминированности при установке пакетов с зависимостями. Рассмотрим следующий пример.
 
-    PackageA@1.0.0 -[ >=1.0.0 ]-> PackageB@1.0.0
+```
+PackageA@1.0.0 -[ >=1.0.0 ]-> PackageB@1.0.0
 
-    Developer1 installs PackageA@1.0.0: installed PackageA@1.0.0 and PackageB@1.0.0
+Developer1 installs PackageA@1.0.0: installed PackageA@1.0.0 and PackageB@1.0.0
 
-    PackageB@1.0.1 is published
+PackageB@1.0.1 is published
 
-    Developer2 installs PackageA@1.0.0: installed PackageA@1.0.0 and PackageB@1.0.1
+Developer2 installs PackageA@1.0.0: installed PackageA@1.0.0 and PackageB@1.0.1
+```
 
 В этом примере, несмотря на то, что Developer1 и Developer2 установлены PackageA@1.0.0 , каждая из них завершилась с другой версией паккажеб. NuGet 2,8 изменяет это поведение по умолчанию таким образом, что поведение разрешения зависимостей для версий исправлений согласуется с поведением для основных и вспомогательных версий. В приведенном выше примере будет PackageB@1.0.0 установлен в результате установки PackageA@1.0.0 , независимо от более новой версии исправления.
 
@@ -64,24 +66,28 @@ ms.locfileid: "93237039"
 
 В дополнение к коммутатору-Депенденциверсион, описанному выше, NuGet также допускал возможность установки нового атрибута в файле Nuget.Config, определяющего значение по умолчанию, если параметр-Депенденциверсион не указан при вызове Install-Package. Это значение будет также соблюдаться в диалоговом окне диспетчера пакетов NuGet для всех операций установки пакета. Чтобы задать это значение, добавьте приведенный ниже атрибут в файл Nuget.Config:
 
-    <config>
-        <add key="dependencyversion" value="Highest" />
-    </config>
+```xml
+<config>
+    <add key="dependencyversion" value="Highest" />
+</config>
+```
 
 ## <a name="preview-nuget-operations-with--whatif"></a>Предварительный просмотр операций NuGet с помощью-WhatIf
 
 Некоторые пакеты NuGet могут иметь детализированные графы зависимостей, поэтому они могут быть полезны во время операции установки, удаления или обновления, чтобы сначала увидеть, что произойдет. NuGet 2,8 добавляет стандартный параметр PowerShell-WhatIf в команды install-Package, uninstall-package и Update-Package, чтобы обеспечить визуализацию всего замыкания пакетов, к которым будет применена команда. Например, при выполнении `install-package Microsoft.AspNet.WebApi -whatif` в пустом веб-приложении ASP.NET выдается следующее.
 
-    PM> install-package Microsoft.AspNet.WebApi -whatif
-    Attempting to resolve dependency 'Microsoft.AspNet.WebApi.WebHost (≥ 5.0.0)'.
-    Attempting to resolve dependency 'Microsoft.AspNet.WebApi.Core (≥ 5.0.0)'.
-    Attempting to resolve dependency 'Microsoft.AspNet.WebApi.Client (≥ 5.0.0)'.
-    Attempting to resolve dependency 'Newtonsoft.Json (≥ 4.5.11)'.
-    Install Newtonsoft.Json 4.5.11
-    Install Microsoft.AspNet.WebApi.Client 5.0.0
-    Install Microsoft.AspNet.WebApi.Core 5.0.0
-    Install Microsoft.AspNet.WebApi.WebHost 5.0.0
-    Install Microsoft.AspNet.WebApi 5.0.0
+```
+PM> install-package Microsoft.AspNet.WebApi -whatif
+Attempting to resolve dependency 'Microsoft.AspNet.WebApi.WebHost (≥ 5.0.0)'.
+Attempting to resolve dependency 'Microsoft.AspNet.WebApi.Core (≥ 5.0.0)'.
+Attempting to resolve dependency 'Microsoft.AspNet.WebApi.Client (≥ 5.0.0)'.
+Attempting to resolve dependency 'Newtonsoft.Json (≥ 4.5.11)'.
+Install Newtonsoft.Json 4.5.11
+Install Microsoft.AspNet.WebApi.Client 5.0.0
+Install Microsoft.AspNet.WebApi.Core 5.0.0
+Install Microsoft.AspNet.WebApi.WebHost 5.0.0
+Install Microsoft.AspNet.WebApi 5.0.0
+```
 
 ## <a name="downgrade-package"></a>Переход на более раннюю версию пакета
 
@@ -101,12 +107,14 @@ ms.locfileid: "93237039"
 
 Хотя пакеты NuGet обычно используются из удаленной галереи, такой как [коллекция NuGet](http://www.nuget.org/) , с помощью сетевого подключения, существует множество сценариев, в которых клиент не подключен. Без подключения к сети клиент NuGet не смог успешно установить пакеты, даже если эти пакеты уже были на компьютере клиента в локальном кэше NuGet. NuGet 2,8 добавляет автоматический возврат кэша в консоль диспетчера пакетов. Например, при отключении сетевого адаптера и установке jQuery в консоли отображается следующее:
 
-    PM> Install-Package jquery
-    The source at nuget.org [https://www.nuget.org/api/v2/] is unreachable. Falling back to NuGet Local Cache at C:\Users\me\AppData\Local\NuGet\Cache
-    Installing 'jQuery 2.0.3'.
-    Successfully installed 'jQuery 2.0.3'.
-    Adding 'jQuery 2.0.3' to WebApplication18.
-    Successfully added 'jQuery 2.0.3' to WebApplication18.
+```
+PM> Install-Package jquery
+The source at nuget.org [https://www.nuget.org/api/v2/] is unreachable. Falling back to NuGet Local Cache at C:\Users\me\AppData\Local\NuGet\Cache
+Installing 'jQuery 2.0.3'.
+Successfully installed 'jQuery 2.0.3'.
+Adding 'jQuery 2.0.3' to WebApplication18.
+Successfully added 'jQuery 2.0.3' to WebApplication18.
+```
 
 Функция резервного кэша не требует никаких конкретных аргументов команды. Кроме того, резерв кэша в настоящее время работает только в консоли диспетчера пакетов. в настоящее время поведение не работает в диалоговом окне диспетчера пакетов.
 

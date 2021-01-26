@@ -5,12 +5,12 @@ author: nkolev92
 ms.author: nikolev
 ms.date: 03/23/2018
 ms.topic: conceptual
-ms.openlocfilehash: 7de3f0f1133a89848e9268d489751293fb3cbf25
-ms.sourcegitcommit: 323a107c345c7cb4e344a6e6d8de42c63c5188b7
+ms.openlocfilehash: 0c32978baf6146f10c262ba7af94f61fee22272d
+ms.sourcegitcommit: ee6c3f203648a5561c809db54ebeb1d0f0598b68
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/15/2021
-ms.locfileid: "98235702"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98777720"
 ---
 # <a name="nuget-pack-and-restore-as-msbuild-targets"></a>Объекты pack и restore NuGet в качестве целевых объектов MSBuild
 
@@ -40,75 +40,79 @@ ms.locfileid: "98235702"
 
 ## <a name="pack-target"></a>Целевой объект pack
 
-Для .NET Standard проектов, использующих формат PackageReference, команда `msbuild -t:pack` рисует входные данные из файла проекта для использования при создании пакета NuGet.
+Для проектов .NET, использующих `PackageReference` Формат, с помощью команды `msbuild -t:pack` рисует входные данные из файла проекта для использования при создании пакета NuGet.
 
-В следующей таблице описываются свойства MSBuild, которые можно добавить в файл проекта в первом узле `<PropertyGroup>`. Эти изменения легко внести в Visual Studio 2017 и более поздней версии, щелкнув проект правой кнопкой мыши и выбрав пункт **Изменить {project_name}**. Для удобства таблица упорядочивается по эквивалентному свойству в [ `.nuspec` файле](../reference/nuspec.md).
+В следующей таблице описаны свойства MSBuild, которые можно добавить в файл проекта в пределах первого `<PropertyGroup>` узла. Эти изменения легко внести в Visual Studio 2017 и более поздней версии, щелкнув проект правой кнопкой мыши и выбрав пункт **Изменить {project_name}**. Для удобства таблица упорядочивается по эквивалентному свойству в [ `.nuspec` файле](../reference/nuspec.md).
 
 Обратите внимание, что свойства `Owners` и `Summary` из `.nuspec` не поддерживаются в MSBuild.
 
 | Значение атрибута или NuSpec | Свойство MSBuild | По умолчанию | Примечания |
 |--------|--------|--------|--------|
 | Id | PackageId | AssemblyName | $(AssemblyName) из MSBuild |
-| Version | PackageVersion | Version | Это значение совместимо с SemVer, например "1.0.0", "1.0.0-beta" или "1.0.0-beta-00345" |
+| Версия | PackageVersion | Версия | Это значение совместимо с SemVer, например "1.0.0", "1.0.0-beta" или "1.0.0-beta-00345" |
 | VersionPrefix | PackageVersionPrefix | пустых | Задав PackageVersion, вы перезапишите PackageVersionPrefix |
 | VersionSuffix | PackageVersionSuffix | пустых | $(VersionSuffix) из MSBuild. Задав PackageVersion, вы перезапишите PackageVersionSuffix |
-| Авторы | Авторы | Имя текущего пользователя | |
+| Авторы | Авторы | Имя текущего пользователя | Разделенный точками с запятой список авторов пакетов, совпадающих с именами профилей на сайте nuget.org. Они отображаются в коллекции NuGet на сайте nuget.org и используются для перекрестных ссылок на пакеты тех же авторов. |
 | Владельцы | Недоступно | Не существует в NuSpec | |
-| Заголовок | Заголовок | Идентификатор пакета| |
-| Description | Описание | "Описание пакета" | |
-| Copyright | Copyright | пустых | |
-| RequireLicenseAcceptance | PackageRequireLicenseAcceptance | false | |
-| license | PackageLicenseExpression | пустых | Соответствует `<license type="expression">` |
-| license | PackageLicenseFile | пустых | Соответствует `<license type="file">`. Необходимо явно упаковать файл лицензии, на который указывает ссылка. |
-| LicenseUrl | PackageLicenseUrl | пустых | `PackageLicenseUrl` является устаревшим, используйте свойство Паккажелиценсикспрессион или Паккажелиценсефиле. |
+| Заголовок | Заголовок | Идентификатор пакета| Понятный заголовок пакета, обычно используемый при отображении пользовательского интерфейса, как на сайте nuget.org и в диспетчере пакетов Visual Studio. |
+| Description | Описание | "Описание пакета" | Подробное описание сборки. Если `PackageDescription` не указывать, это свойство также будет использоваться в качестве описания пакета. |
+| Copyright | Copyright | пустых | Сведения об авторских правах для пакета. |
+| RequireLicenseAcceptance | PackageRequireLicenseAcceptance | false | Логическое значение, указывающее, должен ли клиент просить потребителя принять условия лицензии перед установкой пакета. |
+| license | PackageLicenseExpression | пустых | Соответствует `<license type="expression">`. См. раздел [Упаковка лицензионного выражения или файла лицензии](#packing-a-license-expression-or-a-license-file). |
+| license | PackageLicenseFile | пустых | Путь к файлу лицензии в пакете, если вы используете пользовательскую лицензию или лицензию, которой не назначен идентификатор СПДКС. Необходимо явно упаковать файл лицензии, на который указывает ссылка. Соответствует `<license type="file">`. См. раздел [Упаковка лицензионного выражения или файла лицензии](#packing-a-license-expression-or-a-license-file). |
+| LicenseUrl | PackageLicenseUrl | пустых | Параметр `PackageLicenseUrl` использовать не рекомендуется. Вместо него следует использовать элементы `PackageLicenseExpression` или `PackageLicenseFile`. |
 | ProjectUrl | PackageProjectUrl | пустых | |
-| Значок | PackageIcon | пустых | Необходимо явно упаковать файл изображения значка, на который указывает ссылка.|
-| IconUrl | PackageIconUrl | пустых | Для лучшей работы с предыдущими версиями `PackageIconUrl` следует указать в дополнение к `PackageIcon` . Более длительное выражение `PackageIconUrl` будет считаться устаревшим. |
-| Теги | PackageTags | пустых | Теги разделяются точкой с запятой. |
-| ReleaseNotes | PackageReleaseNotes | пустых | |
-| Репозиторий/URL-адрес | RepositoryUrl | пустых | URL-адрес репозитория, используемый для клонирования или извлечения исходного кода. Например *https://github.com/NuGet/NuGet.Client.git* |
-| Репозиторий или тип | RepositoryType | пустых | Тип репозитория. Примеры: *Git*, *TFS*. |
-| Репозиторий или ветвь | RepositoryBranch | пустых | Дополнительные сведения о ветви репозитория. Для включения этого свойства также необходимо указать *репоситорюрл* . Пример: *master* (NuGet 4.7.0 +) |
-| Репозиторий/фиксация | RepositoryCommit | пустых | Необязательная фиксация или набор изменений репозитория для указания источника, на основе которого был создан пакет. Для включения этого свойства также необходимо указать *репоситорюрл* . Пример: *0e4d1b598f350b3dc675018d539114d1328189ef* (NuGet 4.7.0 +) |
+| Значок | PackageIcon | пустых | Путь к образу в пакете, используемому в качестве значка пакета. Необходимо явно упаковать файл изображения значка, на который указывает ссылка. Дополнительные сведения см. в разделе Упаковка изображения и [ `icon` метаданных](/nuget/reference/nuspec#icon) [значка](#packing-an-icon-image-file) . |
+| IconUrl | PackageIconUrl | пустых | `PackageIconUrl` является нерекомендуемым в пользу `PackageIcon` . Однако для лучшей работы с предыдущими версиями необходимо указать `PackageIconUrl` в дополнение к `PackageIcon` . |
+| Теги | PackageTags | пустых | Разделенный точками с запятой список тегов, обозначающий пакет. |
+| ReleaseNotes | PackageReleaseNotes | пустых | Заметки о выпуске для пакета. |
+| Репозиторий/URL-адрес | RepositoryUrl | пустых | URL-адрес репозитория, используемый для клонирования или извлечения исходного кода. Пример: *https://github.com/NuGet/NuGet.Client.git* . |
+| Репозиторий или тип | RepositoryType | пустых | Тип репозитория. Примеры: `git` (по умолчанию), `tfs` . |
+| Репозиторий или ветвь | RepositoryBranch | пустых | Дополнительные сведения о ветви репозитория. Необходимо также указать `RepositoryUrl`, чтобы включить это свойство. Пример: *master* (NuGet 4.7.0 +). |
+| Репозиторий/фиксация | RepositoryCommit | пустых | Необязательная фиксация или набор изменений репозитория для указания источника, на основе которого был создан пакет. Необходимо также указать `RepositoryUrl`, чтобы включить это свойство. Пример: *0e4d1b598f350b3dc675018d539114d1328189ef* (NuGet 4.7.0 +). |
 | PackageType | `<PackageType>DotNetCliTool, 1.0.0.0;Dependency, 2.0.0.0</PackageType>` | | |
 | Сводка | Не поддерживается | | |
 
 ### <a name="pack-target-inputs"></a>Входные данные целевого объекта pack
 
-- IsPackable
-- суппрессдепенденЦиесвхенпаккинг
-- PackageVersion
-- PackageId
-- Авторы
-- Описание
-- Copyright
-- PackageRequireLicenseAcceptance
-- DevelopmentDependency
-- PackageLicenseExpression
-- PackageLicenseFile
-- PackageLicenseUrl
-- PackageProjectUrl
-- PackageIconUrl
-- PackageReleaseNotes
-- PackageTags
-- PackageOutputPath
-- IncludeSymbols
-- IncludeSource
-- PackageTypes
-- IsTool
-- RepositoryUrl
-- RepositoryType
-- RepositoryBranch
-- RepositoryCommit
-- NoPackageAnalysis
-- MinClientVersion
-- IncludeBuildOutput
-- IncludeContentInPack
-- BuildOutputTargetFolder
-- ContentTargetFolders
-- NuspecFile
-- NuspecBasePath
-- NuspecProperties
+| Свойство | Описание |
+| - | - |
+| IsPackable | Логическое значение, которое указывает, можно ли упаковать проект. Значение по умолчанию — `true`. |
+| суппрессдепенденЦиесвхенпаккинг | Установите значение `true` , чтобы подавить зависимости пакета от созданного пакета NuGet. |
+| PackageVersion | Указывает версию, которую будет иметь итоговый пакет. Принимает все формы строки версии NuGet. По умолчанию используется значение `$(Version)`, то есть значение свойства `Version` в проекте. |
+| PackageId | Указывает имя для итогового пакета. Если значение не указано, операция `pack` по умолчанию использует в качестве имени пакета `AssemblyName` или имя каталога. |
+| PackageDescription | Подробное описание пакета для отображения пользовательского интерфейса. |
+| Authors | Разделенный точками с запятой список авторов пакетов, совпадающих с именами профилей на сайте nuget.org. Они отображаются в коллекции NuGet на сайте nuget.org и используются для перекрестных ссылок на пакеты тех же авторов. |
+| Описание | Подробное описание сборки. Если `PackageDescription` не указывать, это свойство также будет использоваться в качестве описания пакета. |
+| Copyright | Сведения об авторских правах для пакета. |
+| PackageRequireLicenseAcceptance | Логическое значение, указывающее, должен ли клиент просить потребителя принять условия лицензии перед установкой пакета. Значение по умолчанию — `false`. |
+| DevelopmentDependency | Логическое значение, указывающее на то, помечен ли пакет как зависимость только для разработки, что позволяет запретить его включение в качестве зависимости в другие пакеты. В `PackageReference` (NuGet 4.8 +) этот флаг также означает, что ресурсы времени компиляции исключаются из компиляции. Дополнительные сведения см. в статье [DevelopmentDependency support for PackageReference](https://github.com/NuGet/Home/wiki/DevelopmentDependency-support-for-PackageReference) (Поддержка DevelopmentDependency для PackageReference). |
+| PackageLicenseExpression | Идентификатор или выражение [лицензии спдкс](https://spdx.org/licenses/) , например `Apache-2.0` . Дополнительные сведения см. в разделе Упаковка а. Лицензионное [выражение или файл лицензии](#packing-a-license-expression-or-a-license-file). |
+| PackageLicenseFile | Путь к файлу лицензии в пакете, если вы используете пользовательскую лицензию или лицензию, которой не назначен идентификатор СПДКС. |
+| PackageLicenseUrl | Параметр `PackageLicenseUrl` использовать не рекомендуется. Вместо него следует использовать элементы `PackageLicenseExpression` или `PackageLicenseFile`. |
+| PackageProjectUrl | |
+| PackageIcon | Указывает путь к значку пакета относительно корня пакета. Дополнительные сведения см. в разделе [Упаковка файла изображения значка](#packing-an-icon-image-file). |
+| PackageReleaseNotes| Заметки о выпуске для пакета. |
+| PackageTags | Разделенный точками с запятой список тегов, обозначающий пакет. |
+| PackageOutputPath | Определяет выходной путь для размещения упакованного пакета. Значение по умолчанию — `$(OutputPath)`. |
+| IncludeSymbols | Это логическое значение указывает, должен ли пакет создавать дополнительный пакет символов при упаковке проекта. Форматом пакета символов управляет свойство `SymbolPackageFormat`. Дополнительные сведения см. в разделе [инклудесимболс](#includesymbols). |
+| IncludeSource | Это логическое значение указывает, должен ли процесс упаковки создавать исходный пакет. Исходный пакет содержит библиотеку исходного кода, а также файлы PDB. Исходные файлы помещаются в каталог `src/ProjectName` итогового файла пакета. Дополнительные сведения см. в разделе [инклудесаурце](#includesource). |
+| PackageTypes
+| IsTool | Указывает, копируются ли все выходные файлы в папку *tools* вместо папки *lib*. Дополнительные сведения см. в разделе [Tool](#istool). |
+| RepositoryUrl | URL-адрес репозитория, используемый для клонирования или извлечения исходного кода. Пример: *https://github.com/NuGet/NuGet.Client.git* . |
+| RepositoryType | Тип репозитория. Примеры: `git` (по умолчанию), `tfs` . |
+| RepositoryBranch | Дополнительные сведения о ветви репозитория. Необходимо также указать `RepositoryUrl`, чтобы включить это свойство. Пример: *master* (NuGet 4.7.0 +). |
+| RepositoryCommit | Необязательная фиксация или набор изменений репозитория для указания источника, на основе которого был создан пакет. Необходимо также указать `RepositoryUrl`, чтобы включить это свойство. Пример: *0e4d1b598f350b3dc675018d539114d1328189ef* (NuGet 4.7.0 +). |
+| SymbolPackageFormat | Задает формат пакета символов. Если "Symbols. nupkg", пакет устаревших символов создается с расширением *. Symbols. nupkg* , содержащим PDB, DLL и другие выходные файлы. Если "снупкг", создается пакет символов снупкг, содержащий переносимые PDB-файлы. Значение по умолчанию — Symbols. nupkg. |
+| NoPackageAnalysis | Указывает, что `pack` не следует выполнять анализ пакетов после сборки пакета. |
+| MinClientVersion | Указывает минимальную версию клиента NuGet, который может установить этот пакет с использованием nuget.exe и диспетчера пакетов Visual Studio. |
+| IncludeBuildOutput | Это логическое значение указывает, следует ли упаковывать выходные сборки в файл *NUPKG*. |
+| IncludeContentInPack | Это логическое значение указывает, будут ли все элементы, имеющие тип, `Content` включаться в итоговый пакет автоматически. Значение по умолчанию — `true`. |
+| BuildOutputTargetFolder | Указывает папку для размещения выходных сборок. Выходные сборки (и другие выходные файлы) копируются в соответствующие папки платформы. Дополнительные сведения см. в разделе [выходные сборки](#output-assemblies). |
+| ContentTargetFolders | Указывает расположение по умолчанию, по которому должны указываться все файлы содержимого, если `PackagePath` для них не задано значение. Значение по умолчанию — "content;contentFiles". Дополнительные сведения см. в статье [Включение содержимого в пакет](#including-content-in-a-package). |
+| NuspecFile | Относительный или абсолютный путь к файлу *NUSPEC*, используемому для упаковки. Если он указан, он используется **исключительно** для сведений о упаковке, а любые сведения в проектах не используются. Дополнительные сведения см. [в разделе Упаковка с помощью. nuspec](#packing-using-a-nuspec). |
+| NuspecBasePath | Базовый путь для файла *NUSPEC*. Дополнительные сведения см. [в разделе Упаковка с помощью. nuspec](#packing-using-a-nuspec). |
+| NuspecProperties | Список разделенных точками с запятой пар "ключ-значение". Дополнительные сведения см. [в разделе Упаковка с помощью. nuspec](#packing-using-a-nuspec). |
 
 ## <a name="pack-scenarios"></a>Сценарии использования pack
 
@@ -118,20 +122,18 @@ ms.locfileid: "98235702"
 
 ### <a name="packageiconurl"></a>PackageIconUrl
 
-`PackageIconUrl` будет считаться устаревшим в пользу нового [`PackageIcon`](#packageicon) Свойства.
-
-Начиная с NuGet 5,3 & Visual Studio 2019 версии 16,3, `pack` вызовет предупреждение [NU5048](./errors-and-warnings/nu5048.md) , если только метаданные пакета указывают только `PackageIconUrl` .
+`PackageIconUrl` является нерекомендуемым в пользу [`PackageIcon`](#packageicon) Свойства. Начиная с NuGet 5,3 и Visual Studio 2019 версии 16,3, `pack` создает предупреждение [NU5048](./errors-and-warnings/nu5048.md) , если только метаданные пакета указывают только `PackageIconUrl` .
 
 ### <a name="packageicon"></a>PackageIcon
 
 > [!Tip]
-> `PackageIcon` `PackageIconUrl` Для обеспечения обратной совместимости с клиентами и источниками, которые еще не поддерживаются, необходимо указать и, и `PackageIcon` . Visual Studio будет поддерживать `PackageIcon` пакеты, поступающие из источника на основе папок в будущем выпуске.
+> Чтобы обеспечить обратную совместимость с клиентами и источниками, которые еще не поддерживаются `PackageIcon` , укажите `PackageIcon` и `PackageIconUrl` . Visual Studio поддерживает `PackageIcon` пакеты, поступающие из источника, основанного на папках.
 
 #### <a name="packing-an-icon-image-file"></a>Упаковка файла изображения значка
 
-При упаковке файла изображения значка необходимо использовать `PackageIcon` свойство, чтобы указать путь к пакету относительно корня пакета. Кроме того, необходимо убедиться, что файл включен в пакет. Размер файла изображения ограничен 1 МБ. Поддерживаются следующие форматы файлов: JPEG и PNG. Рекомендуется разрешение изображения 128x128.
+При упаковке файла изображения значка используйте `PackageIcon` свойство, чтобы указать путь к файлу значка относительно корня пакета. Кроме того, убедитесь, что файл включен в пакет. Размер файла изображения ограничен 1 МБ. Поддерживаются следующие форматы файлов: JPEG и PNG. Рекомендуется разрешение изображения 128x128.
 
-Например:
+Пример:
 
 ```xml
 <PropertyGroup>
@@ -231,8 +233,7 @@ ms.locfileid: "98235702"
 
 ### <a name="packing-a-license-expression-or-a-license-file"></a>Упаковка выражения лицензии или файла лицензии
 
-При использовании выражения лицензии следует использовать свойство Паккажелиценсикспрессион. 
-[Пример выражения лицензии](https://github.com/NuGet/Samples/tree/master/PackageLicenseExpressionExample).
+При использовании выражения лицензии используйте `PackageLicenseExpression` свойство. Пример см. в разделе [пример выражения лицензии](https://github.com/NuGet/Samples/tree/master/PackageLicenseExpressionExample).
 
 ```xml
 <PropertyGroup>
@@ -240,9 +241,9 @@ ms.locfileid: "98235702"
 </PropertyGroup>
 ```
 
-Дополнительные [сведения о лицензионных выражениях и лицензиях, принимаемых NuGet.org](nuspec.md#license).
+Дополнительные сведения о лицензионных выражениях и лицензиях, принимаемых NuGet.org, см. в разделе [метаданные лицензии](nuspec.md#license).
 
-При упаковке файла лицензии необходимо использовать свойство Паккажелиценсефиле, чтобы указать путь к пакету относительно корня пакета. Кроме того, необходимо убедиться, что файл включен в пакет. Например:
+При упаковке файла лицензии используйте свойство, `PackageLicenseFile` чтобы указать путь к пакету относительно корня пакета. Кроме того, убедитесь, что файл включен в пакет. Пример:
 
 ```xml
 <PropertyGroup>
@@ -254,7 +255,10 @@ ms.locfileid: "98235702"
 </ItemGroup>
 ```
 
-[Пример файла лицензии](https://github.com/NuGet/Samples/tree/master/PackageLicenseFileExample).
+Пример см. в разделе [Пример файла лицензии](https://github.com/NuGet/Samples/tree/master/PackageLicenseFileExample).
+
+> [!NOTE]
+> `PackageLicenseExpression`Одновременно можно указать только один из, `PackageLicenseFile` и `PackageLicenseUrl` .
 
 ### <a name="packing-a-file-without-an-extension"></a>Упаковка файла без расширения
 

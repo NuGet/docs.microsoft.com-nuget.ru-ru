@@ -1,16 +1,16 @@
 ---
 title: Справочник по Register-TabExpansion PowerShell для NuGet
 description: Справочник по Register-TabExpansion команде PowerShell в консоли диспетчера пакетов NuGet в Visual Studio.
-author: karann-msft
-ms.author: karann
+author: JonDouglas
+ms.author: jodou
 ms.date: 12/07/2017
 ms.topic: reference
-ms.openlocfilehash: 9d5bae2878cb6bf0848bca9a5ed9af0fee61bb85
-ms.sourcegitcommit: b138bc1d49fbf13b63d975c581a53be4283b7ebf
+ms.openlocfilehash: 6ad0da0e84fc2e31499c06bde013d2a256987d9a
+ms.sourcegitcommit: ee6c3f203648a5561c809db54ebeb1d0f0598b68
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/03/2020
-ms.locfileid: "93237157"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98777452"
 ---
 # <a name="register-tabexpansion-package-manager-console-in-visual-studio"></a>Register-TabExpansion (консоль диспетчера пакетов в Visual Studio)
 
@@ -28,7 +28,7 @@ Register-TabExpansion [-Name] <String> [-Definition] <Object> [<CommonParameters
 
 | Параметр | Описание |
 | --- | --- |
-| name | Необходимости Команда для регистрации расширений. Сам переключатель-имя является необязательным. |
+| Имя | Необходимости Команда для регистрации расширений. Сам переключатель-имя является необязательным. |
 | Определение | Необходимости Объект, описывающий аргумент в синтаксисе, `@{'<parameter>' = {'<value1>', '<value2>', ...}}` где `<parameter>` — имя изменяемого параметра, каждый из которых `<value>` предоставляет определенное расширение. Принимаются одинарные и двойные кавычки. |
 
 Ни один из этих параметров не принимает входные данные конвейера или подстановочные знаки.

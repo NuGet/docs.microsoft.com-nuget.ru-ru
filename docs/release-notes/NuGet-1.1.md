@@ -1,16 +1,16 @@
 ---
 title: Заметки о выпуске NuGet 1,0 и 1,1
 description: Заметки о выпуске NuGet 1,1, включая известные проблемы, исправления ошибок, добавленные функции и DCR.
-author: karann-msft
-ms.author: karann
+author: JonDouglas
+ms.author: jodou
 ms.date: 11/11/2016
 ms.topic: conceptual
-ms.openlocfilehash: 4f90888eae4d039c99d6f6879a06107ec5a31a82
-ms.sourcegitcommit: 26a8eae00af2d4be581171e7a73009f94534c336
+ms.openlocfilehash: cdd4bad54b08d956dbfdaf54220971492fd3ab02
+ms.sourcegitcommit: ee6c3f203648a5561c809db54ebeb1d0f0598b68
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75384701"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98777207"
 ---
 # <a name="nuget-10-and-11-release-notes"></a>Заметки о выпуске NuGet 1,0 и 1,1
 
@@ -31,11 +31,11 @@ NuGet включает следующие компоненты:
 
 Для расширения "инструменты NuGet" Visual Studio (*NuGet. Tools. VSIX*) требуется:
 
-* Visual Studio 2010 или Visual Web Developer 2010 Express.
+* Visual Studio 2010 или Visual Web Developer 2010 Express.
 
 Программа командной строки NuGet требует:
 
-* .NET Framework версии 4
+* Платформа .NET Framework версии 4
 
 ## <a name="installation"></a>Установка
 
@@ -43,7 +43,7 @@ NuGet включает следующие компоненты:
 
 * Сначала удалите старую сборку. Для этого необходимо запустить VS от имени администратора.
 * Удалите все существующие веб-каналы.
-* Добавьте новый веб-канал, указывающий на <https://go.microsoft.com/fwlink/?LinkId=206669>.
+* Добавьте новый веб-канал, указывающий на <https://go.microsoft.com/fwlink/?LinkId=206669> .
 
 ## <a name="nuget-11"></a>NuGet 1.1
 
@@ -110,14 +110,14 @@ NuGet включает следующие компоненты:
 * [Поддержка переадресации привязок для сборок со строгими именами](http://nuget.codeplex.com/workitem/238)
 * [Добавить ссылку на пакет... Пользовательский интерфейс для включения раскрывающегося списка для источника пакета](http://nuget.codeplex.com/workitem/226)
 * [Нупакк должен поддерживать преобразование конфигурации независимо от имени файла конфигурации](http://nuget.codeplex.com/workitem/224)
-* [Позволяет переопределить BasePath в Нупакк. exe](http://nuget.codeplex.com/workitem/222)
+* [Позволяет переопределить BasePath в NuPack.exe](http://nuget.codeplex.com/workitem/222)
 * [Резервное поведение источника пакета](http://nuget.codeplex.com/workitem/204)
 * [Сбой на графическом интерфейсе](http://nuget.codeplex.com/workitem/201)
 * [Добавление параметров сортировки в диалоговое окно добавления пакета](http://nuget.codeplex.com/workitem/179)
 * [сочетание клавиш для очистки консоли диспетчера пакетов](http://nuget.codeplex.com/workitem/174)
 * [Поверконсоле приводит к сбою консоли Нупакк](http://nuget.codeplex.com/workitem/166)
 * [Диалоговое окно "консоль и Добавление пакета" должно устанавливать агент пользователя в запросах](http://nuget.codeplex.com/workitem/141)
-* [Задайте номер версии VSIX и Нупакк. exe в сборке.](http://nuget.codeplex.com/workitem/134)
+* [Задайте номер версии VSIX и NuPack.exe в сборке.](http://nuget.codeplex.com/workitem/134)
 * [Скрыть общие параметры PowerShell от-?](http://nuget.codeplex.com/workitem/118)
 * [Справка по дополнительным сведениям для команд консоли](http://nuget.codeplex.com/workitem/110)
 * [Диалоговое окно добавления пакета должно позволять выбрать текущий источник пакета](http://nuget.codeplex.com/workitem/88)
@@ -129,17 +129,17 @@ NuGet включает следующие компоненты:
 
 Ниже приведены наиболее существенные изменения, внесенные в CTP-версию 2.
 
-* Переключение канала пакета из ATOM в конечную точку службы OData. при обновлении до версии CTP2 пакета NuGet обязательно добавьте следующий URL-адрес в качестве источника пакетов: `https://feed.nuget.org/ctp2/odata/v1/`.
-* Переименована команда добавления пакета в *Install-Package*.
-* Обновлен формат `.nuspec`. Формат `.nuspec` теперь включает поле *иконурл* для указания значка размером 32x32 PNG, который будет отображаться в диалоговом окне Добавление пакета. Поэтому не забудьте установить это значение для различения пакета. Формат `.nuspec` также содержит новое поле *прожектурл* , которое можно использовать для указания на веб-страницу с дополнительными сведениями о пакете.
+* Переключение канала пакета из ATOM в конечную точку службы OData. при обновлении до версии CTP2 пакета NuGet обязательно добавьте следующий URL-адрес в качестве источника пакетов: `https://feed.nuget.org/ctp2/odata/v1/` .
+* Переименована команда Add-Package в *Install-Package*.
+* Обновлен `.nuspec` Формат. `.nuspec`Теперь формат содержит поле *иконурл* для задания значка размером 32x32 PNG, который будет отображаться в диалоговом окне Добавление пакета. Поэтому не забудьте установить это значение для различения пакета. Этот `.nuspec` формат также содержит новое поле *прожектурл* , которое можно использовать для указания на веб-страницу, в которой содержатся дополнительные сведения о пакете.
 
-Эта сборка не будет работать со старыми `.nupkg`ными файлами. Если вы получаете исключения со ссылкой NULL, вы используете старый файл `.nupkg` и вам нужно перестроить его с помощью обновленного [средства командной строки NuGet](http://nuget.codeplex.com/releases/52017/download/165468).
+Эта сборка не будет работать со старыми `.nupkg` файлами. Если вы получаете исключения со ссылкой NULL, вы используете старый `.nupkg` файл, и вам нужно перестроить его с помощью обновленного [средства командной строки NuGet](http://nuget.codeplex.com/releases/52017/download/165468).
 
 Ниже приведен список компонентов и ошибок, исправленных для NuGet CTP 2 (не включающих ошибки для незначительных очисток кода и т. д.).
 
 * [Ошибка при распаковке сборок пакета при указании TargetFramework для сборки.](http://nuget.codeplex.com/workitem/10)
 * [Сделать окно консоли Нупакк более обнаруживаемым](http://nuget.codeplex.com/workitem/14)
-* [ILMerge выпуска нупакк. exe](http://nuget.codeplex.com/workitem/19)
+* [ILMerge выпуск nupack.exe](http://nuget.codeplex.com/workitem/19)
 * [Улучшенная обработка ошибок и исключений](http://nuget.codeplex.com/workitem/24)
 * [[Нупакк. Core]: PackageManager должен корректно обработать ошибки, связанные с веб-каналом](http://nuget.codeplex.com/workitem/28)
 * [Нужен новый значок для консоли](http://nuget.codeplex.com/workitem/29)
@@ -147,7 +147,7 @@ NuGet включает следующие компоненты:
 * [Кэш Нупакк скачанных файлов. нупакк в памяти](http://nuget.codeplex.com/workitem/40)
 * [Консоль Нупакк: изменение ярлыка по умолчанию для отображения консоли](http://nuget.codeplex.com/workitem/48)
 * [Прожектсистем должен поддерживать значения по умолчанию для общих свойств](http://nuget.codeplex.com/workitem/49)
-* [Запуск нупакк. exe в папке, в которой только один файл nuspec, должен использовать этот nuspec](http://nuget.codeplex.com/workitem/52)
+* [Запуск nupack.exe в папке с одним файлом nuspec должен использовать этот nuspec](http://nuget.codeplex.com/workitem/52)
 * [Меню "проект" отображается даже в том случае, если проект или решение не загружены](http://nuget.codeplex.com/workitem/54)
 * [Сбой Build. cmd на чистом клоне базы кода](http://nuget.codeplex.com/workitem/56)
 * [Доступные обновления](http://nuget.codeplex.com/workitem/57)
@@ -156,17 +156,17 @@ NuGet включает следующие компоненты:
 * [Невозможно обнаружить, какие из установленных пакетов имеют обновления.](http://nuget.codeplex.com/workitem/82)
 * [Невозможно обновить установленный пакет в диалоговом окне.](http://nuget.codeplex.com/workitem/83)
 * [Невозможно удалить установленный пакет в диалоговом окне](http://nuget.codeplex.com/workitem/84)
-* [&ldquo;добавить ссылку на пакет&hellip;&rdquo; появится в контекстном меню установленных ссылок.](http://nuget.codeplex.com/workitem/85)
+* [&ldquo;&hellip; &rdquo; В контекстном меню установленных ссылок появится ссылка Добавить пакет.](http://nuget.codeplex.com/workitem/85)
 * [После обновления пакета из консоли отображается как старая версия, так и новая версия как установленная.](http://nuget.codeplex.com/workitem/86)
 * [Действие в консоли при использовании диалогового окна исчезает после использования](http://nuget.codeplex.com/workitem/87)
-* [Очистка синтаксического анализа командной строки в нупакк. exe](http://nuget.codeplex.com/workitem/89)
+* [Очистка синтаксического анализа командной строки в nupack.exe](http://nuget.codeplex.com/workitem/89)
 * [Добавление понятного имени в источники пакетов](http://nuget.codeplex.com/workitem/98)
 * [Обновление. nuspec для поддержки, включая значки пакетов](http://nuget.codeplex.com/workitem/103)
 * [Пользовательский интерфейс веб-канала не допускает копирование URL](http://nuget.codeplex.com/workitem/105)
 * [Улучшенная обработка ошибок при удалении пакетов.](http://nuget.codeplex.com/workitem/107)
 * [Ввод в окне консоли зависит от фокуса курсора](http://nuget.codeplex.com/workitem/112)
 * [Сообщения об ошибках выглядят как ужасные](http://nuget.codeplex.com/workitem/116)
-* [Неправильное функционирование Remove-Package для пакета, который не установлен](http://nuget.codeplex.com/workitem/117)
+* [Неправильное производительность Remove-Package пакета, который не установлен.](http://nuget.codeplex.com/workitem/117)
 * [Удаление пакета завершается ошибкой, если нет источников пакетов](http://nuget.codeplex.com/workitem/119)
 * [Remove-Package завершается сбоем, если источник пакета недоступен](http://nuget.codeplex.com/workitem/120)
 * [Добавьте заголовок в метаданные пакета и веб-канал.](http://nuget.codeplex.com/workitem/125)
@@ -175,37 +175,37 @@ NuGet включает следующие компоненты:
 * [Обновление Нупакк. Server, чтобы требовать от агента пользователя Нупакк загрузить пакет](http://nuget.codeplex.com/workitem/142)
 * [В диалоговом окне принятия условий лицензии должны быть перечислены лицензии для всех зависимостей, требующих принятия.](http://nuget.codeplex.com/workitem/145)
 * [Регистрировать ошибку при порождении пакета в веб-канале](http://nuget.codeplex.com/workitem/150)
-* [Нупакк. exe не должен допускать пустой элемент&gt; &lt;licenseurl](http://nuget.codeplex.com/workitem/152)
-* [Переименуйте List-Package в Get-Package, добавьте-Package в Install-Package и Remove-Package, чтобы удалить пакет.](http://nuget.codeplex.com/workitem/155)
+* [NuPack.exe не должен разрешать пустой &lt; &gt; элемент licenseurl](http://nuget.codeplex.com/workitem/152)
+* [Переименование List-Package в Get-Package, Add-Package в Install-Package и Remove-Package для удаления пакета](http://nuget.codeplex.com/workitem/155)
 * [Использование пункта меню "добавить ссылку на пакет" из навигатора по решению аварийно завершает работу Visual Studio](http://nuget.codeplex.com/workitem/158)
 * [В метке "доступные источники пакетов" отсутствует двоеточие](http://nuget.codeplex.com/workitem/160)
 * [Сделать. nuspec XML-элемента с учетом регистра всегда в стиле прописных букв](http://nuget.codeplex.com/workitem/161)
 * [Манифест VSIX Нупакк должен включить бит "admin"](http://nuget.codeplex.com/workitem/162)
 * [При запуске List-Package без каналов выдается ошибка ref null.](http://nuget.codeplex.com/workitem/164)
-* [NuGet. exe: укажите конечный путь](http://nuget.codeplex.com/workitem/171)
+* [nuget.exe: укажите конечный путь](http://nuget.codeplex.com/workitem/171)
 * [Ошибки PowerShell при открытии консоли Управление пакетами в WinXP](http://nuget.codeplex.com/workitem/175)
 * [VS Crashs при попытке загрузить список пакетов](http://nuget.codeplex.com/workitem/176)
 * [разрешить мета-пакеты (нет файлов, только зависимости)](http://nuget.codeplex.com/workitem/180)
 * [Преобразование скрипта PowerShell в модуль PowerShell 2,0](http://nuget.codeplex.com/workitem/181)
 * [Пасресолвер должен удалить часть пути, предшествующую символу-шаблону, если указан целевой объект](http://nuget.codeplex.com/workitem/183)
-* [Нет зависимостей](http://nuget.codeplex.com/workitem/186)
+* [Не содержит зависимостей](http://nuget.codeplex.com/workitem/186)
 * [Ошибка при установке ELMAH](http://nuget.codeplex.com/workitem/192)
-* [Преобразования конфигурации не работают правильно с &lt;configSections&gt;](http://nuget.codeplex.com/workitem/194)
+* [Преобразования конфигурации неправильно работают с &lt; configSections&gt;](http://nuget.codeplex.com/workitem/194)
 * [Не удается получить переменную "$global:p Рожекткаче", так как она не была задана](http://nuget.codeplex.com/workitem/203)
 * [Добавление задачи MSBuild для создания пакетов Нупакк](http://nuget.codeplex.com/workitem/205)
 * [List-Package требуется поддержка поиска и фильтрации](http://nuget.codeplex.com/workitem/206)
 * [Всегда отображать ссылку на лицензию, если автор пакета предоставляет URL-адрес лицензии](http://nuget.codeplex.com/workitem/208)
 * [Случайное исключение "доступ запрещен" с помощью Remove-Package](http://nuget.codeplex.com/workitem/213)
-* [Сбой модульных тестов: Инвалидпаккажеисексклудедфромфидитемс &amp; Креатингфидконвертспаккажестоатоментриес](http://nuget.codeplex.com/workitem/214)
+* [Сбой модульных тестов: Инвалидпаккажеисексклудедфромфидитемс &amp; креатингфидконвертспаккажестоатоментриес](http://nuget.codeplex.com/workitem/214)
 * [Разрешить использовать резервный набор файлов и список по умолчанию, если не удается найти версию указанной Framework](http://nuget.codeplex.com/workitem/223)
 * [Добавить ссылку на пакет... Пользовательский интерфейс не может удалить пакет](http://nuget.codeplex.com/workitem/225)
 * [Добавить ссылку на пакет crashs Studio при выгрузке одного или нескольких проектов](http://nuget.codeplex.com/workitem/228)
-* [Преобразование конфигурации не работает в файле Web. Debug. config](http://nuget.codeplex.com/workitem/229)
-* [init. ps1 не срабатывает для пользовательского пакета](http://nuget.codeplex.com/workitem/237)
+* [Преобразование конфигурации не работает в web.debug.config файле](http://nuget.codeplex.com/workitem/229)
+* [init.ps1 не срабатывает для пользовательского пакета](http://nuget.codeplex.com/workitem/237)
 * [При добавлении путей к фидлист кнопке по умолчанию присваивается значение ОК, поэтому при нажатии клавиши ввод автоматически закрывается](http://nuget.codeplex.com/workitem/240)
 * [Попытка удалить зависимость будет завершаться сбоем VS при попытке 2 раз в строке](http://nuget.codeplex.com/workitem/241)
 * [Отображение URL-адреса проекта в диалоговом окне добавления пакета](http://nuget.codeplex.com/workitem/253)
-* [По умолчанию диалоговое окно добавления пакета для установленных пакетов](http://nuget.codeplex.com/workitem/254)
+* [Диалоговое окно Add-Package по умолчанию для установленных пакетов](http://nuget.codeplex.com/workitem/254)
 * [Изменить элемент меню диалогового окна "добавить пакет".](http://nuget.codeplex.com/workitem/261)
 * [Переименование пространств имен и сборок](http://nuget.codeplex.com/workitem/274)
 * [Переименование проекта Нупакк в NuGet](http://nuget.codeplex.com/workitem/282)
@@ -214,7 +214,7 @@ NuGet включает следующие компоненты:
 * [Измените текст в диалоговом окне принятия условий лицензии над списком пакетов.](http://nuget.codeplex.com/workitem/292)
 * [OData не работает с URL-адресом fwlink](http://nuget.codeplex.com/workitem/304)
 * [Пользовательский интерфейс диспетчера пакетов: чрезмерно агрессивное кэширование количества пакетов, используемого для разбиения на страницы](http://nuget.codeplex.com/workitem/317)
-* [Ошибка консоли диспетчера пакетов Нупакк/NuGet-&gt;](http://nuget.codeplex.com/workitem/335)
+* [Нупакк/NuGet- &gt; ошибка консоли диспетчера пакетов](http://nuget.codeplex.com/workitem/335)
 * [Диалоговое окно "Добавление пакета" показывает принятие условий лицензии для уже установленного пакета](http://nuget.codeplex.com/workitem/336)
 
 ## <a name="ctp-1"></a>CTP 1
@@ -223,8 +223,8 @@ NuGet включает следующие компоненты:
 
 * [Расширение пакета должно быть переименовано в. нупакк](http://nuget.codeplex.com/workitem/1)
 * [Переместить файл пакета в папку](http://nuget.codeplex.com/workitem/2)
-* [Слияние установки &amp; Добавление команд PS](http://nuget.codeplex.com/workitem/3)
-* [Создание псевдонимов для командлетов глаголов и существительных](http://nuget.codeplex.com/workitem/4)
+* [Слияние установки &amp; Add PS Commands](http://nuget.codeplex.com/workitem/3)
+* [Создание псевдонимов для командлетов Verb-Noun](http://nuget.codeplex.com/workitem/4)
 * [Нупакк переключается при переключении решения в VS](http://nuget.codeplex.com/workitem/6)
 * [По умолчанию следует скрыть папку решения "Packages"](http://nuget.codeplex.com/workitem/11)
 * [Добавлена поддержка замены токенов в элементах содержимого.](http://nuget.codeplex.com/workitem/12)
@@ -233,10 +233,10 @@ NuGet включает следующие компоненты:
 * [При удалении проекта по умолчанию из решения по умолчанию будет отображаться удаленный проект](http://nuget.codeplex.com/workitem/30)
 * [Новый пакет завершается с ошибкой "не удается добавить часть для указанного URI, так как он уже находится в пакете".](http://nuget.codeplex.com/workitem/32)
 * [Удаление строк "Нупакк" из графического пользовательского интерфейса Visual Studio](http://nuget.codeplex.com/workitem/35)
-* [Добавление заголовка Apache в файл COPYRIGHT. txt](http://nuget.codeplex.com/workitem/36)
-* [Удаление команды Update-PackageSource](http://nuget.codeplex.com/workitem/37)
+* [Добавление заголовка Apache в файл COPYRIGHT.txt](http://nuget.codeplex.com/workitem/36)
+* [Команда удаления Update-PackageSource](http://nuget.codeplex.com/workitem/37)
 * [Диспетчер пакетов непригоден для использования при загрузке профиля вызывает исключение](http://nuget.codeplex.com/workitem/39)
-* [init. ps1, install. ps1 и Uninstall. ps1 должны получить дополнительное состояние](http://nuget.codeplex.com/workitem/41)
+* [init.ps1, install.ps1 и uninstall.ps1 должны получить дополнительное состояние](http://nuget.codeplex.com/workitem/41)
 * [Объединение пакетов консоли и графического пользовательского интерфейса в один пакет](http://nuget.codeplex.com/workitem/42)
 * [Логика преобразования XML не работает, если применяется к XML, который не находится в корне](http://nuget.codeplex.com/workitem/43)
 * [Диалоговое окно "Управление параметрами источников пакетов" не обновляет консоль Нупакк](http://nuget.codeplex.com/workitem/44)
@@ -262,8 +262,8 @@ NuGet включает следующие компоненты:
 * [Почему-Version для Remove-Package](http://nuget.codeplex.com/workitem/113)
 * [Удаление вкладки "последние" в пользовательском интерфейсе диалогового окна](http://nuget.codeplex.com/workitem/115)
 * [VS Crash, если щелкнуть папку решения правой кнопкой мыши после открытия пользовательского интерфейса диалогового окна по крайней мере одного.](http://nuget.codeplex.com/workitem/126)
-* [Измените параметр-local пакета List-Package на устанавливаемый.](http://nuget.codeplex.com/workitem/129)
-* [Переименование Packages. XML в Нупакк. config](http://nuget.codeplex.com/workitem/132)
+* [Измените параметр-local List-Package на-installed.](http://nuget.codeplex.com/workitem/129)
+* [Переименование packages.xml в NuPack.config](http://nuget.codeplex.com/workitem/132)
 * [Консоль принудительно устанавливает курсор на конец строки](http://nuget.codeplex.com/workitem/135)
 * [Функция Remove-Package IntelliSense не работает](http://nuget.codeplex.com/workitem/136)
 * [Добавление флага RequireLicenseAcceptance в nuspec и веб-канал](http://nuget.codeplex.com/workitem/137)
