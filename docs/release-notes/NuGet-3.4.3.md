@@ -1,35 +1,35 @@
 ---
-title: Заметки о выпуске NuGet 3.4.3
-description: Заметки о выпуске для NuGet 3.4.3, включая известные проблемы, исправления ошибок, добавленные функции и запросы на изменение структуры.
-author: karann-msft
-ms.author: karann
+title: Заметки о выпуске 3.4.3 NuGet
+description: Заметки о выпуске NuGet 3.4.3, включая известные проблемы, исправления ошибок, добавленные функции и DCR.
+author: JonDouglas
+ms.author: jodou
 ms.date: 11/11/2016
 ms.topic: conceptual
-ms.openlocfilehash: 6ee4ecc06eb5119e24108d1cd6d2050254c45817
-ms.sourcegitcommit: 1d1406764c6af5fb7801d462e0c4afc9092fa569
+ms.openlocfilehash: f0d9740aaf0a82b9e4023b5e4990c8f4adbea63c
+ms.sourcegitcommit: ee6c3f203648a5561c809db54ebeb1d0f0598b68
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/04/2018
-ms.locfileid: "43549169"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98776475"
 ---
-# <a name="nuget-343-release-notes"></a><span data-ttu-id="fa566-103">Заметки о выпуске NuGet 3.4.3</span><span class="sxs-lookup"><span data-stu-id="fa566-103">NuGet 3.4.3 Release Notes</span></span>
+# <a name="nuget-343-release-notes"></a><span data-ttu-id="97f3b-103">Заметки о выпуске 3.4.3 NuGet</span><span class="sxs-lookup"><span data-stu-id="97f3b-103">NuGet 3.4.3 Release Notes</span></span>
 
-<span data-ttu-id="fa566-104">[Заметки о выпуске NuGet 3.4.2](../release-notes/nuget-3.4.2.md) | [заметки о выпуске NuGet 3.4.4](../release-notes/nuget-3.4.4.md)</span><span class="sxs-lookup"><span data-stu-id="fa566-104">[NuGet 3.4.2 Release Notes](../release-notes/nuget-3.4.2.md) | [NuGet 3.4.4 Release Notes](../release-notes/nuget-3.4.4.md)</span></span>
+<span data-ttu-id="97f3b-104">[Заметки о](../release-notes/nuget-3.4.2.md)  |  выпуске 3.4.2 NuGet [Заметки о выпуске 3.4.4 NuGet](../release-notes/nuget-3.4.4.md)</span><span class="sxs-lookup"><span data-stu-id="97f3b-104">[NuGet 3.4.2 Release Notes](../release-notes/nuget-3.4.2.md) | [NuGet 3.4.4 Release Notes](../release-notes/nuget-3.4.4.md)</span></span>
 
-<span data-ttu-id="fa566-105">NuGet 3.4.3 был выпущен 22 апреля 2016 г. решить некоторые проблемы, которые были определены в версии 3.4 и последующих выпусках.</span><span class="sxs-lookup"><span data-stu-id="fa566-105">NuGet 3.4.3 was released on April 22, 2016 to address several issues that were identified in the 3.4 and subsequent releases.</span></span>
+<span data-ttu-id="97f3b-105">3.4.3 NuGet выпущен 22 апреля 2016 для устранения нескольких проблем, обнаруженных в 3,4 и последующих выпусках.</span><span class="sxs-lookup"><span data-stu-id="97f3b-105">NuGet 3.4.3 was released on April 22, 2016 to address several issues that were identified in the 3.4 and subsequent releases.</span></span>
 
-<span data-ttu-id="fa566-106">Можно загрузить VSIX и nuget.exe [здесь](https://dist.nuget.org/index.html).</span><span class="sxs-lookup"><span data-stu-id="fa566-106">You can download both the VSIX and nuget.exe [here](https://dist.nuget.org/index.html).</span></span>
+<span data-ttu-id="97f3b-106">Вы можете скачать VSIX и nuget.exe [здесь](https://dist.nuget.org/index.html).</span><span class="sxs-lookup"><span data-stu-id="97f3b-106">You can download both the VSIX and nuget.exe [here](https://dist.nuget.org/index.html).</span></span>
 
-## <a name="updates-and-improvements"></a><span data-ttu-id="fa566-107">Обновления и улучшения</span><span class="sxs-lookup"><span data-stu-id="fa566-107">Updates and Improvements</span></span>
+## <a name="updates-and-improvements"></a><span data-ttu-id="97f3b-107">Обновления и улучшения</span><span class="sxs-lookup"><span data-stu-id="97f3b-107">Updates and Improvements</span></span>
 
-* <span data-ttu-id="fa566-108">Повышенная надежность Visual Studio.</span><span class="sxs-lookup"><span data-stu-id="fa566-108">Improved Visual Studio reliability.</span></span> <span data-ttu-id="fa566-109">Мы исправили некоторые проблемы в NuGet, причиной сбоев в Visual Studio.</span><span class="sxs-lookup"><span data-stu-id="fa566-109">We have fixed some issues in NuGet that caused crashes in Visual Studio.</span></span>
+* <span data-ttu-id="97f3b-108">Улучшена надежность Visual Studio.</span><span class="sxs-lookup"><span data-stu-id="97f3b-108">Improved Visual Studio reliability.</span></span> <span data-ttu-id="97f3b-109">Мы устранили некоторые проблемы в NuGet, которые привели к сбоям в работе Visual Studio.</span><span class="sxs-lookup"><span data-stu-id="97f3b-109">We have fixed some issues in NuGet that caused crashes in Visual Studio.</span></span>
 
-## <a name="fixes"></a><span data-ttu-id="fa566-110">Исправления</span><span class="sxs-lookup"><span data-stu-id="fa566-110">Fixes</span></span>
+## <a name="fixes"></a><span data-ttu-id="97f3b-110">Исправления</span><span class="sxs-lookup"><span data-stu-id="97f3b-110">Fixes</span></span>
 
-* <span data-ttu-id="fa566-111">Исправлены некоторые проблемы авторизации с помощью частного nuget защищен паролем, веб-каналы.</span><span class="sxs-lookup"><span data-stu-id="fa566-111">Fixed some authorization issues with password protected private nuget feeds.</span></span>
-* <span data-ttu-id="fa566-112">Исправлена проблема вокруг не сможет восстановить переносимой библиотеки Классов от `project.json` с указан средами выполнения.</span><span class="sxs-lookup"><span data-stu-id="fa566-112">Fixed an issue around being unable to restore PCL's from `project.json` with runtimes specified.</span></span>
-* <span data-ttu-id="fa566-113">Некоторые клиенты были запущены в временные сбои при установке пакетов.</span><span class="sxs-lookup"><span data-stu-id="fa566-113">Some customers were running into intermittent failures when installing packages.</span></span> <span data-ttu-id="fa566-114">Теперь эта проблема была исправлена в этом выпуске.</span><span class="sxs-lookup"><span data-stu-id="fa566-114">This has now been fixed in this release.</span></span>
-* <span data-ttu-id="fa566-115">Исправлена проблема, которая вызвала ошибки восстановления в C + +/ CLI проектов с помощью `project.json`.</span><span class="sxs-lookup"><span data-stu-id="fa566-115">Fixed an issue that caused restore failures in C++/CLI projects with `project.json`.</span></span>
-* <span data-ttu-id="fa566-116">Некоторые пакеты (например ModernHttpClient) где не распакован правильно при использовании nuget в mono.</span><span class="sxs-lookup"><span data-stu-id="fa566-116">Some packages (E.g ModernHttpClient) where not being unzipped correctly when you use nuget in mono.</span></span> <span data-ttu-id="fa566-117">Теперь эта проблема была исправлена в этом выпуске.</span><span class="sxs-lookup"><span data-stu-id="fa566-117">This has now been fixed in this release.</span></span>
+* <span data-ttu-id="97f3b-111">Устранены некоторые проблемы с авторизацией защищенных паролем частных веб-каналов NuGet.</span><span class="sxs-lookup"><span data-stu-id="97f3b-111">Fixed some authorization issues with password protected private nuget feeds.</span></span>
+* <span data-ttu-id="97f3b-112">Исправлена проблема с тем, что не удалось восстановить PCL из `project.json` с указанными средами выполнения.</span><span class="sxs-lookup"><span data-stu-id="97f3b-112">Fixed an issue around being unable to restore PCL's from `project.json` with runtimes specified.</span></span>
+* <span data-ttu-id="97f3b-113">Некоторые клиенты выполняли временные сбои при установке пакетов.</span><span class="sxs-lookup"><span data-stu-id="97f3b-113">Some customers were running into intermittent failures when installing packages.</span></span> <span data-ttu-id="97f3b-114">Этот выпуск исправлен в этом выпуске.</span><span class="sxs-lookup"><span data-stu-id="97f3b-114">This has now been fixed in this release.</span></span>
+* <span data-ttu-id="97f3b-115">Исправлена проблема, которая привела к сбоям восстановления в проектах C++/CLI с `project.json` .</span><span class="sxs-lookup"><span data-stu-id="97f3b-115">Fixed an issue that caused restore failures in C++/CLI projects with `project.json`.</span></span>
+* <span data-ttu-id="97f3b-116">Некоторые пакеты (например, Модернхттпклиент), где не выполняется неправильное распаковка при использовании NuGet в Mono.</span><span class="sxs-lookup"><span data-stu-id="97f3b-116">Some packages (E.g ModernHttpClient) where not being unzipped correctly when you use nuget in mono.</span></span> <span data-ttu-id="97f3b-117">Этот выпуск исправлен в этом выпуске.</span><span class="sxs-lookup"><span data-stu-id="97f3b-117">This has now been fixed in this release.</span></span>
 
-<span data-ttu-id="fa566-118">Полный список исправлений и усовершенствований этого выпуска, ознакомьтесь со списком проблем [здесь](https://github.com/NuGet/Home/issues?q=is%3Aissue+milestone%3A3.4.3+is%3Aclosed).</span><span class="sxs-lookup"><span data-stu-id="fa566-118">For the complete list of fixes and improvements in this release, check out the list of issues [here](https://github.com/NuGet/Home/issues?q=is%3Aissue+milestone%3A3.4.3+is%3Aclosed).</span></span>
+<span data-ttu-id="97f3b-118">Полный список исправлений и улучшений в этом выпуске см. [здесь](https://github.com/NuGet/Home/issues?q=is%3Aissue+milestone%3A3.4.3+is%3Aclosed).</span><span class="sxs-lookup"><span data-stu-id="97f3b-118">For the complete list of fixes and improvements in this release, check out the list of issues [here](https://github.com/NuGet/Home/issues?q=is%3Aissue+milestone%3A3.4.3+is%3Aclosed).</span></span>
