@@ -1,16 +1,16 @@
 ---
 title: Заметки о выпуске версии NuGet 4.7 RTM
 description: Заметки о выпуске для NuGet 4.7.0, включая известные проблемы, исправления ошибок, добавленные функции и запросы на изменение структуры.
-author: karann-msft
-ms.author: karann
+author: JonDouglas
+ms.author: jodou
 ms.date: 5/14/2018
 ms.topic: conceptual
-ms.openlocfilehash: 2290025d42dcd5704b6b019c17346201fe6a990d
-ms.sourcegitcommit: 2b50c450cca521681a384aa466ab666679a40213
+ms.openlocfilehash: 143781cf0a95c6a156d4afcd83ad277f3e227711
+ms.sourcegitcommit: ee6c3f203648a5561c809db54ebeb1d0f0598b68
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/07/2020
-ms.locfileid: "76813797"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98780166"
 ---
 # <a name="nuget-47-release-notes"></a>Заметки о выпуске NuGet 4.7
 

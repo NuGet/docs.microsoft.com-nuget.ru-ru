@@ -1,16 +1,16 @@
 ---
-title: Заметки о выпуске версии-кандидата NuGet 4.0
+title: Заметки о выпуске версии NuGet 4.0 RTM
 description: Заметки о выпуске для NuGet 4.0 RTM, включая известные проблемы, исправления ошибок, добавленные функции и запросы на изменение структуры.
 author: anangaur
 ms.author: anangaur
 ms.date: 03/03/2017
 ms.topic: conceptual
-ms.openlocfilehash: c27d0aa2e5c9af9cb15d2f487b93e93aca666214
-ms.sourcegitcommit: 2b50c450cca521681a384aa466ab666679a40213
+ms.openlocfilehash: c3ec5c20e5175edd315de20ca98c7a106c51809e
+ms.sourcegitcommit: ee6c3f203648a5561c809db54ebeb1d0f0598b68
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/07/2020
-ms.locfileid: "64496610"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98776273"
 ---
 # <a name="nuget-40-rtm-release-notes"></a>Заметки о выпуске версии NuGet 4.0 RTM
 

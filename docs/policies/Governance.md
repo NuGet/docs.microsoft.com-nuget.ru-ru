@@ -1,16 +1,16 @@
 ---
 title: Система управления проектами NuGet
 description: Модель управления для NuGet, включая роли и обязанности вносителей, участников и пользователей.
-author: karann-msft
-ms.author: karann
+author: JonDouglas
+ms.author: jodou
 ms.date: 01/18/2018
 ms.topic: conceptual
-ms.openlocfilehash: 2aaaf41b3fc4ef3621333e5099780b5d7ef393bc
-ms.sourcegitcommit: 2b50c450cca521681a384aa466ab666679a40213
+ms.openlocfilehash: 2edaac0218dc936ea6bfe1814c0aab963028ea87
+ms.sourcegitcommit: ee6c3f203648a5561c809db54ebeb1d0f0598b68
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/07/2020
-ms.locfileid: "64500397"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98775591"
 ---
 # <a name="nuget-governance"></a>Система управления NuGet
 

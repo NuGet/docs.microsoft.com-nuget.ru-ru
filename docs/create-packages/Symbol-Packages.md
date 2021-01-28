@@ -1,17 +1,17 @@
 ---
 title: Создание пакетов символов прежних версий (.symbols.nupkg)
 description: В этой статье описывается создание пакетов NuGet, которые содержат только символы, для поддержки отладки других пакетов NuGet в Visual Studio.
-author: karann-msft
-ms.author: karann
+author: JonDouglas
+ms.author: jodou
 ms.date: 09/12/2017
 ms.topic: conceptual
 ms.reviewer: anangaur
-ms.openlocfilehash: 374e9ccfc01cd06508e76529765db3f849342222
-ms.sourcegitcommit: 2b50c450cca521681a384aa466ab666679a40213
+ms.openlocfilehash: d9a96986bf80aa15423d7dcee6ea3fe59255252b
+ms.sourcegitcommit: ee6c3f203648a5561c809db54ebeb1d0f0598b68
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/07/2020
-ms.locfileid: "77476273"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98774544"
 ---
 # <a name="creating-legacy-symbol-packages-symbolsnupkg"></a>Создание пакетов символов прежних версий (.symbols.nupkg)
 
@@ -46,42 +46,48 @@ nuget pack MyProject.csproj -Symbols
 
 Например, пакет символов устаревших версий для .NET 4.0 и Silverlight 4 должен иметь следующую структуру:
 
-    \lib
-        \net40
-            \MyAssembly.dll
-            \MyAssembly.pdb
-        \sl40
-            \MyAssembly.dll
-            \MyAssembly.pdb
+```
+\lib
+    \net40
+        \MyAssembly.dll
+        \MyAssembly.pdb
+    \sl40
+        \MyAssembly.dll
+        \MyAssembly.pdb
+```
 
 Файлы исходного кода размещаются в отдельной папке `src`, которая должна соответствовать относительной структуре репозитория исходного кода. Это связано с тем, что PDB-файлы содержат абсолютные пути к файлам исходного кода, используемым для компиляции соответствующей библиотеки DLL, и должны быть доступны в процессе публикации. Базовый путь (общий префикс пути) может быть опущен. Например, рассмотрим библиотеку, построенную на основе следующих файлов:
 
-    C:\Projects
-        \MyProject
-            \Common
-                \MyClass.cs
-            \Full
-                \Properties
-                    \AssemblyInfo.cs
-                \MyAssembly.csproj (producing \lib\net40\MyAssembly.dll)
-            \Silverlight
-                \Properties
-                    \AssemblyInfo.cs
-                \MySilverlightExtensions.cs
-                \MyAssembly.csproj (producing \lib\sl4\MyAssembly.dll)
-
-Кроме папки `lib`, пакет символов прежних версий должен содержать следующую структуру:
-
-    \src
+```
+C:\Projects
+    \MyProject
         \Common
             \MyClass.cs
         \Full
             \Properties
                 \AssemblyInfo.cs
+            \MyAssembly.csproj (producing \lib\net40\MyAssembly.dll)
         \Silverlight
             \Properties
                 \AssemblyInfo.cs
             \MySilverlightExtensions.cs
+            \MyAssembly.csproj (producing \lib\sl4\MyAssembly.dll)
+```
+
+Кроме папки `lib`, пакет символов прежних версий должен содержать следующую структуру:
+
+```
+\src
+    \Common
+        \MyClass.cs
+    \Full
+        \Properties
+            \AssemblyInfo.cs
+    \Silverlight
+        \Properties
+            \AssemblyInfo.cs
+        \MySilverlightExtensions.cs
+```
 
 ## <a name="referring-to-files-in-the-nuspec"></a>Ссылки на файлы в nuspec
 

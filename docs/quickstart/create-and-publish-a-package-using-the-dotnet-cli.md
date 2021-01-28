@@ -1,16 +1,16 @@
 ---
 title: Создание и публикация пакета NuGet с помощью CLI dotnet
 description: Пошаговое руководство по созданию и публикации пакета NuGet с помощью .NET Core CLI — dotnet.
-author: karann-msft
-ms.author: karann
+author: JonDouglas
+ms.author: jodou
 ms.date: 05/24/2019
 ms.topic: quickstart
-ms.openlocfilehash: a67c8cd92304c6c4abcffbb79ddbe964664d08fb
-ms.sourcegitcommit: b138bc1d49fbf13b63d975c581a53be4283b7ebf
+ms.openlocfilehash: cb63257c874fc4752f3b3d59db4be5996d5ab81d
+ms.sourcegitcommit: ee6c3f203648a5561c809db54ebeb1d0f0598b68
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/03/2020
-ms.locfileid: "93237488"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98775757"
 ---
 # <a name="quickstart-create-and-publish-a-package-dotnet-cli"></a>Краткое руководство. Создание и публикация пакета (dotnet CLI)
 
@@ -53,7 +53,7 @@ ms.locfileid: "93237488"
 1. Укажите любые дополнительные свойства, описанные в разделе [Свойства метаданных NuGet](/dotnet/core/tools/csproj#nuget-metadata-properties).
 
     > [!Note]
-    > Если пакет будет общедоступным, обратите особое внимание на свойство **PackageTags** , так как теги помогают найти ваш пакет и понять его назначение.
+    > Если пакет будет общедоступным, обратите особое внимание на свойство **PackageTags**, так как теги помогают найти ваш пакет и понять его назначение.
 
 ## <a name="run-the-pack-command"></a>Выполнение команды pack
 
@@ -124,7 +124,7 @@ Copyright (C) Microsoft Corporation. All rights reserved.
 - [Пакеты предварительного выпуска](../create-packages/Prerelease-Packages.md)
 - [Поддержка нескольких целевых платформ](../create-packages/multiple-target-frameworks-project-file.md)
 - [Управление версиями пакета](../concepts/package-versioning.md)
-- [Добавление выражения лицензии или файла лицензии](../reference/msbuild-targets#packing-a-license-expression-or-a-license-file)
+- [Добавление выражения лицензии или файла лицензии](../reference/msbuild-targets.md#packing-a-license-expression-or-a-license-file)
 - [Создание локализованных пакетов](../create-packages/creating-localized-packages.md)
 - [Создание пакетов символов](../create-packages/symbol-packages-snupkg.md)
 - [Подписывание пакетов](../create-packages/Sign-a-package.md)

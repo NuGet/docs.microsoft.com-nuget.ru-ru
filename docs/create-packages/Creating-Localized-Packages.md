@@ -1,16 +1,16 @@
 ---
 title: Создание локализованного пакета NuGet
 description: Сведения о двух способах создать локализованные пакеты NuGet, включив все сборки в один пакет или опубликовав отдельные сборки.
-author: karann-msft
-ms.author: karann
+author: JonDouglas
+ms.author: jodou
 ms.date: 01/18/2018
 ms.topic: conceptual
-ms.openlocfilehash: 83414a824676844f9e44eab874e5eac788d50583
-ms.sourcegitcommit: 2b50c450cca521681a384aa466ab666679a40213
+ms.openlocfilehash: cb3f8a9df66f259b130996822f102c27636d5d2c
+ms.sourcegitcommit: ee6c3f203648a5561c809db54ebeb1d0f0598b68
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/07/2020
-ms.locfileid: "73610940"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98774753"
 ---
 # <a name="creating-localized-nuget-packages"></a>Создание локализованных пакетов NuGet
 
@@ -27,34 +27,36 @@ ms.locfileid: "73610940"
 
 Например, следующая структура папок поддерживает немецкий (de), итальянский (it), японский (ja), русский (ru), китайский (упрощенное письмо) (zh-Hans) и китайский (традиционное письмо) (zh-Hant):
 
-    lib
-    └───net40
-        │   Contoso.Utilities.dll
-        │   Contoso.Utilities.xml
-        │
-        ├───de
-        │       Contoso.Utilities.resources.dll
-        │       Contoso.Utilities.xml
-        │
-        ├───it
-        │       Contoso.Utilities.resources.dll
-        │       Contoso.Utilities.xml
-        │
-        ├───ja
-        │       Contoso.Utilities.resources.dll
-        │       Contoso.Utilities.xml
-        │
-        ├───ru
-        │       Contoso.Utilities.resources.dll
-        │       Contoso.Utilities.xml
-        │
-        ├───zh-Hans
-        │       Contoso.Utilities.resources.dll
-        │       Contoso.Utilities.xml
-        │
-        └───zh-Hant
-                Contoso.Utilities.resources.dll
-                Contoso.Utilities.xml
+```
+lib
+└───net40
+    │   Contoso.Utilities.dll
+    │   Contoso.Utilities.xml
+    │
+    ├───de
+    │       Contoso.Utilities.resources.dll
+    │       Contoso.Utilities.xml
+    │
+    ├───it
+    │       Contoso.Utilities.resources.dll
+    │       Contoso.Utilities.xml
+    │
+    ├───ja
+    │       Contoso.Utilities.resources.dll
+    │       Contoso.Utilities.xml
+    │
+    ├───ru
+    │       Contoso.Utilities.resources.dll
+    │       Contoso.Utilities.xml
+    │
+    ├───zh-Hans
+    │       Contoso.Utilities.resources.dll
+    │       Contoso.Utilities.xml
+    │
+    └───zh-Hant
+            Contoso.Utilities.resources.dll
+            Contoso.Utilities.xml
+```
 
 Видно, что все языки указаны под папкой целевой платформы `net40`. Если вы [обеспечиваете поддержку нескольких платформ](../create-packages/supporting-multiple-target-frameworks.md), то в `lib` у вас есть папка для каждого из вариантов.
 
@@ -92,10 +94,12 @@ ms.locfileid: "73610940"
 
 Для этого ваш основной пакет использует соглашение об именовании `{identifier}.{version}.nupkg` и содержит сборку для языка по умолчанию (например, en-US). Например, `ContosoUtilities.1.0.0.nupkg` будет содержать следующую структуру:
 
-    lib
-    └───net40
-            ContosoUtilities.dll
-            ContosoUtilities.xml
+```
+lib
+└───net40
+        ContosoUtilities.dll
+        ContosoUtilities.xml
+```
 
 Вспомогательная сборка затем использует соглашение об именовании `{identifier}.{language}.{version}.nupkg`, например `ContosoUtilities.de.1.0.0.nupkg`. Идентификатор **должен** точно совпадать с идентификатором основного пакета.
 
@@ -105,11 +109,13 @@ ms.locfileid: "73610940"
 
 Структура вспомогательного пакета должна содержать сборку ресурсов и XML-файл IntelliSense во вложенной папке, соответствующей значению `{language}` в имени файла пакета:
 
-    lib
-    └───net40
-        └───de
-                ContosoUtilities.resources.dll
-                ContosoUtilities.xml
+```
+lib
+└───net40
+    └───de
+            ContosoUtilities.resources.dll
+            ContosoUtilities.xml
+```
 
 **Примечание**. Если не требуются конкретные язык и региональные параметры, такие как `ja-JP`, всегда используйте идентификатор языка более высокого уровня, такой как `ja`.
 

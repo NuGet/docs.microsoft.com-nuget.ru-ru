@@ -1,16 +1,16 @@
 ---
 title: Установка клиентских средств NuGet
 description: Рекомендации по установке клиентских средств, интерфейса командной строки (CLI) dotnet и nuget, а также диспетчера пакетов для Visual Studio.
-author: karann-msft
-ms.author: karann
+author: JonDouglas
+ms.author: jodou
 ms.date: 06/20/2019
 ms.topic: quickstart
-ms.openlocfilehash: 2769f0ef0373b26eedb4bac6242fee0e814310c5
-ms.sourcegitcommit: 2b50c450cca521681a384aa466ab666679a40213
+ms.openlocfilehash: 0e3938fc1ac748285ba26541a7d4e907c9a64156
+ms.sourcegitcommit: ee6c3f203648a5561c809db54ebeb1d0f0598b68
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/07/2020
-ms.locfileid: "79428465"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98775899"
 ---
 # <a name="install-nuget-client-tools"></a>Установка клиентских средств NuGet
 
@@ -40,16 +40,16 @@ ms.locfileid: "79428465"
 Для Visual Studio 2010 и более ранних версий установите расширение "Диспетчер пакетов NuGet для Visual Studio". Обратите внимание, что если расширение не отображается на первой странице результатов поиска, можно изменить значение в раскрывающемся списке "Sort By" (Сортировка по) на "Most Downloads" (Больше всего скачиваний) или сортировку по алфавиту.
 
 ## <a name="cli-tools"></a>Средства CLI
-Для поддержки функций NuGet в интегрированной среде разработки можно использовать интерфейс командной строки `dotnet.exe` или `nuget.exe`. Средство CLI `dotnet.exe` устанавливается вместе с некоторыми рабочими нагрузками Visual Studio, например .NET Core. Средство CLI `nuget.exe` нужно установить отдельно, как описано выше.
+Для поддержки функций NuGet в интегрированной среде разработки можно использовать интерфейс командной строки `dotnet` или `nuget.exe`. Средство CLI `dotnet` устанавливается вместе с некоторыми рабочими нагрузками Visual Studio, например .NET Core. Средство CLI `nuget.exe` нужно установить отдельно, как описано выше.
 
 Два средства CLI для NuGet — `dotnet.exe` и `nuget.exe`. См. сравнительную таблицу [доступности функций](#feature-availability).
 
-* Для нацеливания на .NET Core или .NET Standard используйте CLI для .NET. CLI `dotnet.exe` является обязательным для проекта на основе пакета SDK, использующего [атрибут SDK](/dotnet/core/tools/csproj#additions).
-* Для нацеливания на .NET Framework (только проекты не на основе пакетов SDK) используйте CLI `nuget.exe`. Если проект переносится из `packages.config` в PackageReference, используйте CLI dotnet.exe.
+* Для нацеливания на .NET Core или .NET Standard используйте CLI для .NET. CLI `dotnet` является обязательным для проекта на основе пакета SDK, использующего [атрибут SDK](/dotnet/core/tools/csproj#additions).
+* Для нацеливания на .NET Framework (только проекты не на основе пакетов SDK) используйте CLI `nuget.exe`. Если проект переносится из `packages.config` в PackageReference, используйте CLI dotnet.
 
 ### <a name="dotnetexe-cli"></a>Интерфейс командной строки dotnet.exe
 
-Интерфейс командной строки .NET Core 2.0, `dotnet.exe`, работает на всех платформах (Windows, Mac и Linux) и предоставляет такие возможности NuGet, как установка, восстановление и публикация пакетов. `dotnet.exe` обеспечивает прямую интеграцию с файлами проекта .NET Core (например, `.csproj`), что полезно в большинстве сценариев. `dotnet.exe` также создается непосредственно для каждой платформы и не требует установки Mono.
+Интерфейс командной строки .NET Core 2.0, `dotnet.exe`, работает на всех платформах (Windows, Mac и Linux) и предоставляет такие возможности NuGet, как установка, восстановление и публикация пакетов. `dotnet` обеспечивает прямую интеграцию с файлами проекта .NET Core (например, `.csproj`), что полезно в большинстве сценариев. `dotnet` также создается непосредственно для каждой платформы и не требует установки Mono.
 
 Установка:
 

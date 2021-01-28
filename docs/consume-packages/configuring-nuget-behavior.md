@@ -1,16 +1,16 @@
 ---
 title: Распространенные конфигурации NuGet
 description: Файлы NuGet.Config определяют поведение NuGet как на глобальном уровне, так и на уровне отдельных проектов. Для их изменения используется команда nuget config.
-author: karann-msft
-ms.author: karann
+author: JonDouglas
+ms.author: jodou
 ms.date: 10/25/2017
 ms.topic: conceptual
-ms.openlocfilehash: e81c380eab3f1a8635e50e62811c7ae463ec3653
-ms.sourcegitcommit: 53b06e27bcfef03500a69548ba2db069b55837f1
+ms.openlocfilehash: 35339626b0a20ccfceafa89fef94fb3187013fd7
+ms.sourcegitcommit: ee6c3f203648a5561c809db54ebeb1d0f0598b68
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/19/2020
-ms.locfileid: "97699776"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98774859"
 ---
 # <a name="common-nuget-configurations"></a>Распространенные конфигурации NuGet
 
@@ -120,14 +120,16 @@ nuget config -set repositoryPath= -configfile /home/my.Config
 
 Допустим, у вас есть следующая структура папок на двух отдельных дисках:
 
-    disk_drive_1
-        User
-    disk_drive_2
-       Project1
-         Source
-       Project2
-         Source
-       tmp
+```
+disk_drive_1
+    User
+disk_drive_2
+    Project1
+        Source
+    Project2
+        Source
+    tmp
+```
 
 В показанных ниже расположениях присутствует четыре файла `NuGet.Config` со следующим содержимым. (В этот пример не включен файл уровня компьютера, поведение которого аналогично файлу уровня пользователя.)
 

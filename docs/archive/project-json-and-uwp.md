@@ -1,16 +1,16 @@
 ---
 title: Файл project.json NuGet и проекты UWP
 description: Сведения об использовании файла project.json для отслеживания зависимостей NuGet в проектах универсальной платформы Windows (UWP).
-author: karann-msft
-ms.author: karann
+author: JonDouglas
+ms.author: jodou
 ms.date: 07/17/2017
 ms.topic: conceptual
-ms.openlocfilehash: ac3c137dd0ba50571737093eef11c8ab0ef932b2
-ms.sourcegitcommit: 2b50c450cca521681a384aa466ab666679a40213
+ms.openlocfilehash: 30e2272aafb5d2ea8d932e3cb0209d97c30b3209
+ms.sourcegitcommit: ee6c3f203648a5561c809db54ebeb1d0f0598b68
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/07/2020
-ms.locfileid: "64494380"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98773800"
 ---
 # <a name="projectjson-and-uwp"></a>project.json и UWP
 
@@ -73,11 +73,13 @@ MSBuild ищет эти файлы и автоматически импорти�
 
 Пример структуры lib:
 
-    lib
-    ├───net40
-    │       MyLibrary.dll
-    └───wp81
-            MyLibrary.dll
+```
+lib
+├───net40
+│       MyLibrary.dll
+└───wp81
+        MyLibrary.dll
+```
 
 Папка `lib` содержит сборки, используемые во время выполнения. Для большинства пакетов для каждого из целевых TxM требуется только папка в `lib`.
 
@@ -91,23 +93,25 @@ MSBuild ищет эти файлы и автоматически импорти�
 
 Структура папки `ref` аналогична `lib`, например:
 
-    └───MyImageProcessingLib
-         ├───lib
-         │   ├───net40
-         │   │       MyImageProcessingLibrary.dll
-         │   │
-         │   ├───net451
-         │   │       MyImageProcessingLibrary.dll
-         │   │
-         │   └───win81
-         │           MyImageProcessingLibrary.dll
-         │
-         └───ref
-             ├───net40
-             │       MyImageProcessingLibrary.dll
-             │
-             └───portable-net451-win81
-                     MyImageProcessingLibrary.dll
+```
+└───MyImageProcessingLib
+        ├───lib
+        │   ├───net40
+        │   │       MyImageProcessingLibrary.dll
+        │   │
+        │   ├───net451
+        │   │       MyImageProcessingLibrary.dll
+        │   │
+        │   └───win81
+        │           MyImageProcessingLibrary.dll
+        │
+        └───ref
+            ├───net40
+            │       MyImageProcessingLibrary.dll
+            │
+            └───portable-net451-win81
+                    MyImageProcessingLibrary.dll
+```
 
 Здесь все сборки в каталогах `ref` были бы одинаковыми.
 
@@ -119,27 +123,29 @@ MSBuild ищет эти файлы и автоматически импорти�
 
 В следующем примере показан пакет, имеющий реализацию только из управляемого кода для нескольких платформ, но использующий собственные вспомогательные приложения в Windows 8, где он может вызывать собственные API для Windows 8.
 
-    └───MyLibrary
-         ├───lib
-         │   └───net40
-         │           MyLibrary.dll
-         │
-         └───runtimes
-             ├───win8-x64
-             │   ├───lib
-             │   │   └───net40
-             │   │           MyLibrary.dll
-             │   │
-             │   └───native
-             │           MyNativeLibrary.dll
-             │
-             └───win8-x86
-                 ├───lib
-                 │   └───net40
-                 │           MyLibrary.dll
-                 │
-                 └───native
-                         MyNativeLibrary.dll
+```
+└───MyLibrary
+        ├───lib
+        │   └───net40
+        │           MyLibrary.dll
+        │
+        └───runtimes
+            ├───win8-x64
+            │   ├───lib
+            │   │   └───net40
+            │   │           MyLibrary.dll
+            │   │
+            │   └───native
+            │           MyNativeLibrary.dll
+            │
+            └───win8-x86
+                ├───lib
+                │   └───net40
+                │           MyLibrary.dll
+                │
+                └───native
+                        MyNativeLibrary.dll
+```
 
 Для указанного выше пакета выполняется следующее:
 
@@ -155,23 +161,25 @@ MSBuild ищет эти файлы и автоматически импорти�
 
 Другой способ использования среды выполнения заключается в поставке пакета, который представляет собой оболочку, состоящую исключительно из управляемого кода, вместо сборки в машинном коде. В этом сценарии вы создаете следующий пакет:
 
-    └───MyLibrary
-         └───runtimes
-             ├───win8-x64
-             │   ├───lib
-             │   │   └───net451
-             │   │           MyLibrary.dll
-             │   │
-             │   └───native
-             │           MyImplementation.dll
-             │
-             └───win8-x86
-                 ├───lib
-                 │   └───net451
-                 │           MyLibrary.dll
-                 │
-                 └───native
-                         MyImplementation.dll
+```
+└───MyLibrary
+        └───runtimes
+            ├───win8-x64
+            │   ├───lib
+            │   │   └───net451
+            │   │           MyLibrary.dll
+            │   │
+            │   └───native
+            │           MyImplementation.dll
+            │
+            └───win8-x86
+                ├───lib
+                │   └───net451
+                │           MyLibrary.dll
+                │
+                └───native
+                        MyImplementation.dll
+```
 
 Здесь папка верхнего уровня `lib` отсутствует, так как нет реализации этого пакета, которая не зависит от соответствующей машинной сборки. Если бы управляемая сборка `MyLibrary.dll` была одинаковой в обоих случаях, можно было бы поместить ее в папку `lib` верхнего уровня, но из-за отсутствия машинной сборки не возникает ошибка при установке пакета на платформе, отличной от win-x86 и win-x64, а также использовалась бы папка "lib" верхнего уровня, однако машинная сборка не копировалась бы.
 

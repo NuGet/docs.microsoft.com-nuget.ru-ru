@@ -1,16 +1,16 @@
 ---
 title: Пошаговое руководство по восстановлению пакетов NuGet с помощью сборки Team Foundation
 description: Пошаговое руководство по восстановлению пакетов NuGet с помощью сборки Team Foundation (Team Foundation Server и Visual Studio Team Services).
-author: karann-msft
-ms.author: karann
+author: JonDouglas
+ms.author: jodou
 ms.date: 01/09/2017
 ms.topic: conceptual
-ms.openlocfilehash: a86a58f8afb4b0f1affeddd47d6c5606fb465757
-ms.sourcegitcommit: 2b50c450cca521681a384aa466ab666679a40213
+ms.openlocfilehash: 8b993106d439dc137fbe040b51fda373539de81a
+ms.sourcegitcommit: ee6c3f203648a5561c809db54ebeb1d0f0598b68
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/07/2020
-ms.locfileid: "73611001"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98774988"
 ---
 # <a name="setting-up-package-restore-with-team-foundation-build"></a>Настройка восстановления пакетов с помощью сборки Team Foundation
 
@@ -54,26 +54,28 @@ nuget restore path\to\solution.sln
 
 Репозиторий имеет следующую структуру:
 
-    <Project>
-        │   .gitignore
-        │   .tfignore
-        │   build.proj
-        │
-        ├───src
-        │   │   BingSearcher.sln
-        │   │
-        │   └───BingSearcher
-        │       │   App.config
-        │       │   BingSearcher.csproj
-        │       │   packages.config
-        │       │   Program.cs
-        │       │
-        │       └───Properties
-        │               AssemblyInfo.cs
-        │
-        └───tools
-            └───NuGet
-                    nuget.exe
+```
+<Project>
+    │   .gitignore
+    │   .tfignore
+    │   build.proj
+    │
+    ├───src
+    │   │   BingSearcher.sln
+    │   │
+    │   └───BingSearcher
+    │       │   App.config
+    │       │   BingSearcher.csproj
+    │       │   packages.config
+    │       │   Program.cs
+    │       │
+    │       └───Properties
+    │               AssemblyInfo.cs
+    │
+    └───tools
+        └───NuGet
+                nuget.exe
+```
 
 Как вы видите, мы не вернули папку `packages` и файлы `.targets`.
 
@@ -98,33 +100,39 @@ nuget restore path\to\solution.sln
 
 Файл `.gitignore` выглядит следующим образом:
 
-    syntax: glob
-    *.user
-    *.suo
-    bin
-    obj
-    packages
-    *.nupkg
-    project.lock.json
-    project.assets.json
+```
+syntax: glob
+*.user
+*.suo
+bin
+obj
+packages
+*.nupkg
+project.lock.json
+project.assets.json
+```
 
 Возможности файла `.gitignore`[весьма широки](https://www.kernel.org/pub/software/scm/git/docs/gitignore.html). Например, если вы не хотите возвращать все содержимое папки `packages`, но хотите вернуть файлы `.targets`, можно вместо этого использовать следующее правило:
 
-    packages
-    !packages/**/*.targets
+```
+packages
+!packages/**/*.targets
+```
 
 При этом исключаются все папки `packages`, но включаются все содержащиеся в них файлы `.targets`. Кстати, шаблон файлов `.gitignore`, специально предназначенный для потребностей разработчиков Visual Studio, можно найти [здесь](https://github.com/github/gitignore/blob/master/VisualStudio.gitignore).
 
 Система управления версиями Team Foundation поддерживает очень похожий механизм посредством файлов [TFIGNORE](/vsts/tfvc/add-files-server#customize-which-files-are-ignored-by-version-control). Синтаксис практически такой же:
 
-    *.user
-    *.suo
-    bin
-    obj
-    packages
-    *.nupkg
-    project.lock.json
-    project.assets.json
+```
+*.user
+*.suo
+bin
+obj
+packages
+*.nupkg
+project.lock.json
+project.assets.json
+```
 
 ## <a name="buildproj"></a>build.proj
 

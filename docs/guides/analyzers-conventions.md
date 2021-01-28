@@ -5,12 +5,12 @@ author: JonDouglas
 ms.author: jodou
 ms.date: 01/09/2017
 ms.topic: conceptual
-ms.openlocfilehash: f1e9bb96fc7acc73ec37cebcdc8015081fafb307
-ms.sourcegitcommit: 650c08f8bc3d48dfd206a111e5e2aaca3001f569
+ms.openlocfilehash: 63880b6b9bbfe6aac9cc6419d6a972062eea3495
+ms.sourcegitcommit: ee6c3f203648a5561c809db54ebeb1d0f0598b68
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/15/2020
-ms.locfileid: "97523417"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98774133"
 ---
 # <a name="analyzer-nuget-formats"></a>Форматы анализаторов NuGet
 
@@ -43,7 +43,9 @@ ms.locfileid: "97523417"
 
 Работа с папкой `analyzers` осуществляется так же, как и с папкой, использовавшейся для [целевых платформ](../create-packages/supporting-multiple-target-frameworks.md), за исключением того, что описатели в пути описывают зависимости узла разработки, а не времени сборки. Общий формат имеет следующий вид:
 
-    $/analyzers/{framework_name}{version}/{supported_architecture}/{supported_language}/{analyzer_name}.dll
+```
+$/analyzers/{framework_name}{version}/{supported_architecture}/{supported_language}/{analyzer_name}.dll
+```
 
 - **framework_name** и **version**: *необязательная* контактная зона API платформы .NET Framework, которая нужна для выполнения содержащихся библиотек DLL. Сейчас единственным допустимым значением является `dotnet`, так как запуск анализаторов возможен только на узле Roslyn. Если целевой объект не указан, предполагается, что библиотеки DLL применяются ко *всем* целевым объектам.
 - **supported_language**: язык, для которого применяется библиотека DLL, один из `cs` (C#), `vb` (Visual Basic) и `fs` (F#). Это значение указывает, что анализатор следует загружать только для проекта, использующего данный язык. Если язык не указан, предполагается, что библиотека DLL применяется ко *всем* языкам, поддерживающим анализаторы.

@@ -1,16 +1,16 @@
 ---
 title: Влияние project.json на авторов пакетов NuGet
 description: Сведения о том, как реализация project.json в NuGet 3.x влияет на авторов пакетов, например неподдерживаемые функции, содержимое и формат пакетов.
-author: karann-msft
-ms.author: karann
+author: JonDouglas
+ms.author: jodou
 ms.date: 01/18/2018
 ms.topic: conceptual
-ms.openlocfilehash: 34b08f06f04efdcf7bf73efc2cbdb5a5494ae2d9
-ms.sourcegitcommit: 2b50c450cca521681a384aa466ab666679a40213
+ms.openlocfilehash: 82b7ce7962ecccc9559ae25a8fe35a3820238049
+ms.sourcegitcommit: ee6c3f203648a5561c809db54ebeb1d0f0598b68
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/07/2020
-ms.locfileid: "69488198"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98775389"
 ---
 # <a name="impact-of-projectjson-when-creating-packages"></a>Влияние project.json при создании пакетов
 
