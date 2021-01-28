@@ -1,16 +1,16 @@
 ---
 title: Настройка локальных веб-каналов NuGet
 description: Сведения о создании локального веб-канала для пакетов NuGet с помощью папок в локальной сети
-author: karann-msft
-ms.author: karann
+author: JonDouglas
+ms.author: jodou
 ms.date: 12/06/2017
 ms.topic: conceptual
-ms.openlocfilehash: 42a5c30c058a9efb35338c1b484235b6ad111bd0
-ms.sourcegitcommit: 2b50c450cca521681a384aa466ab666679a40213
+ms.openlocfilehash: 1eb194c9ddaee05281749c7a0420cbaf77044fe3
+ms.sourcegitcommit: ee6c3f203648a5561c809db54ebeb1d0f0598b68
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/07/2020
-ms.locfileid: "68317590"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98774037"
 ---
 # <a name="local-feeds"></a>Локальные веб-каналы
 
@@ -25,11 +25,13 @@ ms.locfileid: "68317590"
 
 Дерево иерархических папок с версиями имеет следующую общую структуру:
 
-    \\myserver\packages
-      └─<packageID>
-        └─<version>
-          ├─<packageID>.<version>.nupkg
-          └─<other files>
+```
+\\myserver\packages
+  └─<packageID>
+    └─<version>
+      ├─<packageID>.<version>.nupkg
+      └─<other files>
+```
 
 NuGet автоматически создает эту структуру, когда вы используете команду [`nuget add`](../reference/cli-reference/cli-ref-add.md) для копирования пакета в веб-канал:
 
