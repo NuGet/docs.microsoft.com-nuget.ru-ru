@@ -1,16 +1,16 @@
 ---
 title: Многоплатформенное нацеливание пакетов NuGet в файле проекта
-description: Описание различных способов нацеливания на несколько версий .NET Framework из одного пакета NuGet.
-author: karann-msft
-ms.author: karann
+description: Описание различных способов нацеливания на несколько версий .NET Framework из одного пакета NuGet в файле проекта.
+author: JonDouglas
+ms.author: jodou
 ms.date: 07/15/2019
 ms.topic: conceptual
-ms.openlocfilehash: 1d23759433efb405fa5f0035049befced2c43d6b
-ms.sourcegitcommit: 2b50c450cca521681a384aa466ab666679a40213
+ms.openlocfilehash: a05d053340bb2fe795991dfa5a2b95d8625dfd44
+ms.sourcegitcommit: ee6c3f203648a5561c809db54ebeb1d0f0598b68
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/07/2020
-ms.locfileid: "72380676"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98774375"
 ---
 # <a name="support-multiple-net-framework-versions-in-your-project-file"></a>Поддержка выбора нескольких версий платформ .NET в файле проекта
 

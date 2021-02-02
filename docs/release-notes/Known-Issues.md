@@ -1,16 +1,16 @@
 ---
 title: Известные проблемы
 description: Известные проблемы в NuGet, в том числе проблемы с проверкой подлинности, установкой пакетов и средствами.
-author: karann-msft
-ms.author: karann
+author: JonDouglas
+ms.author: jodou
 ms.date: 11/11/2016
 ms.topic: conceptual
-ms.openlocfilehash: 8f2b33a7290301bd16db3b1979ae496eee602f55
-ms.sourcegitcommit: 2b50c450cca521681a384aa466ab666679a40213
+ms.openlocfilehash: e6030670875192470fa47de84066281e45ac3eff
+ms.sourcegitcommit: ee6c3f203648a5561c809db54ebeb1d0f0598b68
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/07/2020
-ms.locfileid: "75383662"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98777307"
 ---
 # <a name="known-issues-with-nuget"></a>Известные проблемы в NuGet
 
@@ -67,7 +67,9 @@ install-package log4net
 
 Выполните следующую команду из **командной строки с повышенными привилегиями**, чтобы повторно зарегистрировать библиотеку типов для `VSLangProj.dll`:
 
-    regsvr32 "C:\Program Files (x86)\Common Files\microsoft shared\MSEnv\VsLangproj.olb"
+```
+regsvr32 "C:\Program Files (x86)\Common Files\microsoft shared\MSEnv\VsLangproj.olb"
+```
 
 Если команда завершается сбоем, проверьте, существует ли файл в этом расположении.
 
@@ -96,41 +98,45 @@ install-package log4net
 
 При работе с консолью диспетчера пакетов может появиться следующее сообщение об исключении, если установлена надстройка Reflector для Visual Studio:
 
-    The following error occurred while loading the extended type data file:
-    Microsoft.PowerShell.Core, C:\Windows\SysWOW64\WindowsPowerShell\v1.0\types.ps1xml(2950) :
-    Error in type "System.Security.AccessControl.ObjectSecurity":
-    Exception: Cannot convert the "Microsoft.PowerShell.Commands.SecurityDescriptorCommandsBase"
-    value of type "System.String" to type "System.Type".
-    System.Management.Automation.ActionPreferenceStopException:
-    Command execution stopped because the preference variable "ErrorActionPreference" or common parameter
-    is set to Stop: Unable to find type
+```
+The following error occurred while loading the extended type data file:
+Microsoft.PowerShell.Core, C:\Windows\SysWOW64\WindowsPowerShell\v1.0\types.ps1xml(2950) :
+Error in type "System.Security.AccessControl.ObjectSecurity":
+Exception: Cannot convert the "Microsoft.PowerShell.Commands.SecurityDescriptorCommandsBase"
+value of type "System.String" to type "System.Type".
+System.Management.Automation.ActionPreferenceStopException:
+Command execution stopped because the preference variable "ErrorActionPreference" or common parameter
+is set to Stop: Unable to find type
+```
 
-или диспетчер конфигурации служб
+или
 
-    System.Management.Automation.CmdletInvocationException: Could not load file or assembly 'Scripts\nuget.psm1' or one of its dependencies. <br />The parameter is incorrect. (Exception from HRESULT: 0x80070057 (E_INVALIDARG)) ---&gt; System.IO.FileLoadException: Could not load file or <br />assembly 'Scripts\nuget.psm1' or one of its dependencies. The parameter is incorrect. (Exception from HRESULT: 0x80070057 (E_INVALIDARG)) <br />---&gt; System.ArgumentException: Illegal characters in path.
-       at System.IO.Path.CheckInvalidPathChars(String path)
-       at System.IO.Path.Combine(String path1, String path2)
-       at Microsoft.VisualStudio.Platform.VsAppDomainManager.<AssemblyPaths>d__1.MoveNext()
-       at Microsoft.VisualStudio.Platform.VsAppDomainManager.InnerResolveHandler(String name)
-       at Microsoft.VisualStudio.Platform.VsAppDomainManager.ResolveHandler(Object sender, ResolveEventArgs args)
-       at System.AppDomain.OnAssemblyResolveEvent(RuntimeAssembly assembly, String assemblyFullName)
-       --- End of inner exception stack trace ---
-       at Microsoft.PowerShell.Commands.ModuleCmdletBase.LoadBinaryModule(Boolean trySnapInName, String moduleName, String fileName, <br />Assembly assemblyToLoad, String moduleBase, SessionState ss, String prefix, Boolean loadTypes, Boolean loadFormats, Boolean&amp; found)
-       at Microsoft.PowerShell.Commands.ModuleCmdletBase.LoadModuleNamedInManifest(String moduleName, String moduleBase, <br />Boolean searchModulePath, <br />String prefix, SessionState ss, Boolean loadTypesFiles, Boolean loadFormatFiles, Boolean&amp; found)
-       at Microsoft.PowerShell.Commands.ModuleCmdletBase.LoadModuleManifest(ExternalScriptInfo scriptInfo, ManifestProcessingFlags <br />manifestProcessingFlags, Version version)
-       at Microsoft.PowerShell.Commands.ModuleCmdletBase.LoadModule(String fileName, String moduleBase, String prefix, SessionState ss, <br />Boolean&amp; found)
-       at Microsoft.PowerShell.Commands.ImportModuleCommand.ProcessRecord()
-       at System.Management.Automation.Cmdlet.DoProcessRecord()
-       at System.Management.Automation.CommandProcessor.ProcessRecord()
-       --- End of inner exception stack trace ---
-       at System.Management.Automation.Runspaces.PipelineBase.Invoke(IEnumerable input)
-       at System.Management.Automation.Runspaces.Pipeline.Invoke()
-       at NuGetConsole.Host.PowerShell.Implementation.PowerShellHost.Invoke(String command, Object input, Boolean outputResults)
-       at NuGetConsole.Host.PowerShell.Implementation.PowerShellHostExtensions.ImportModule(PowerShellHost host, String modulePath)
-       at NuGetConsole.Host.PowerShell.Implementation.PowerShellHost.LoadStartupScripts()
-       at NuGetConsole.Host.PowerShell.Implementation.PowerShellHost.Initialize()
-       at NuGetConsole.Implementation.Console.ConsoleDispatcher.Start()
-       at NuGetConsole.Implementation.PowerConsoleToolWindow.MoveFocus(FrameworkElement consolePane)
+```
+System.Management.Automation.CmdletInvocationException: Could not load file or assembly 'Scripts\nuget.psm1' or one of its dependencies. <br />The parameter is incorrect. (Exception from HRESULT: 0x80070057 (E_INVALIDARG)) ---&gt; System.IO.FileLoadException: Could not load file or <br />assembly 'Scripts\nuget.psm1' or one of its dependencies. The parameter is incorrect. (Exception from HRESULT: 0x80070057 (E_INVALIDARG)) <br />---&gt; System.ArgumentException: Illegal characters in path.
+    at System.IO.Path.CheckInvalidPathChars(String path)
+    at System.IO.Path.Combine(String path1, String path2)
+    at Microsoft.VisualStudio.Platform.VsAppDomainManager.<AssemblyPaths>d__1.MoveNext()
+    at Microsoft.VisualStudio.Platform.VsAppDomainManager.InnerResolveHandler(String name)
+    at Microsoft.VisualStudio.Platform.VsAppDomainManager.ResolveHandler(Object sender, ResolveEventArgs args)
+    at System.AppDomain.OnAssemblyResolveEvent(RuntimeAssembly assembly, String assemblyFullName)
+    --- End of inner exception stack trace ---
+    at Microsoft.PowerShell.Commands.ModuleCmdletBase.LoadBinaryModule(Boolean trySnapInName, String moduleName, String fileName, <br />Assembly assemblyToLoad, String moduleBase, SessionState ss, String prefix, Boolean loadTypes, Boolean loadFormats, Boolean&amp; found)
+    at Microsoft.PowerShell.Commands.ModuleCmdletBase.LoadModuleNamedInManifest(String moduleName, String moduleBase, <br />Boolean searchModulePath, <br />String prefix, SessionState ss, Boolean loadTypesFiles, Boolean loadFormatFiles, Boolean&amp; found)
+    at Microsoft.PowerShell.Commands.ModuleCmdletBase.LoadModuleManifest(ExternalScriptInfo scriptInfo, ManifestProcessingFlags <br />manifestProcessingFlags, Version version)
+    at Microsoft.PowerShell.Commands.ModuleCmdletBase.LoadModule(String fileName, String moduleBase, String prefix, SessionState ss, <br />Boolean&amp; found)
+    at Microsoft.PowerShell.Commands.ImportModuleCommand.ProcessRecord()
+    at System.Management.Automation.Cmdlet.DoProcessRecord()
+    at System.Management.Automation.CommandProcessor.ProcessRecord()
+    --- End of inner exception stack trace ---
+    at System.Management.Automation.Runspaces.PipelineBase.Invoke(IEnumerable input)
+    at System.Management.Automation.Runspaces.Pipeline.Invoke()
+    at NuGetConsole.Host.PowerShell.Implementation.PowerShellHost.Invoke(String command, Object input, Boolean outputResults)
+    at NuGetConsole.Host.PowerShell.Implementation.PowerShellHostExtensions.ImportModule(PowerShellHost host, String modulePath)
+    at NuGetConsole.Host.PowerShell.Implementation.PowerShellHost.LoadStartupScripts()
+    at NuGetConsole.Host.PowerShell.Implementation.PowerShellHost.Initialize()
+    at NuGetConsole.Implementation.Console.ConsoleDispatcher.Start()
+    at NuGetConsole.Implementation.PowerConsoleToolWindow.MoveFocus(FrameworkElement consolePane)
+```
 
 Мы обратились к автору этой надстройки с просьбой выработать решение.
 
@@ -140,12 +146,14 @@ install-package log4net
 
 При попытке открыть консоль диспетчера пакетов могут возникать следующие ошибки:
 
-    The following error occurred while loading the extended type data file: Microsoft.PowerShell.Core, C:\Windows\SysWOW64\WindowsPowerShell\v1.0\types.ps1xml(2977) : Error in type "System.Security.AccessControl.ObjectSecurity": Exception: The getter method should be public, non void, static, and have one parameter of type PSObject.
-    The following error occurred while loading the extended type data file: Microsoft.PowerShell.Core, C:\Windows\SysWOW64\WindowsPowerShell\v1.0\types.ps1xml(2984) : Error in type "System.Security.AccessControl.ObjectSecurity": Exception: The getter method should be public, non void, static, and have one parameter of type PSObject.
-    The following error occurred while loading the extended type data file: Microsoft.PowerShell.Core, C:\Windows\SysWOW64\WindowsPowerShell\v1.0\types.ps1xml(2991) : Error in type "System.Security.AccessControl.ObjectSecurity": Exception: The getter method should be public, non void, static, and have one parameter of type PSObject.
-    The following error occurred while loading the extended type data file: Microsoft.PowerShell.Core, C:\Windows\SysWOW64\WindowsPowerShell\v1.0\types.ps1xml(2998) : Error in type "System.Security.AccessControl.ObjectSecurity": Exception: The getter method should be public, non void, static, and have one parameter of type PSObject.
-    The following error occurred while loading the extended type data file: Microsoft.PowerShell.Core, C:\Windows\SysWOW64\WindowsPowerShell\v1.0\types.ps1xml(3005) : Error in type "System.Security.AccessControl.ObjectSecurity": Exception: The getter method should be public, non void, static, and have one parameter of type PSObject.
-    The term 'Get-ExecutionPolicy' is not recognized as the name of a cmdlet, function, script file, or operable program. Check the spelling of the name, or if a path was included, verify that the path is correct and try again.
+```
+The following error occurred while loading the extended type data file: Microsoft.PowerShell.Core, C:\Windows\SysWOW64\WindowsPowerShell\v1.0\types.ps1xml(2977) : Error in type "System.Security.AccessControl.ObjectSecurity": Exception: The getter method should be public, non void, static, and have one parameter of type PSObject.
+The following error occurred while loading the extended type data file: Microsoft.PowerShell.Core, C:\Windows\SysWOW64\WindowsPowerShell\v1.0\types.ps1xml(2984) : Error in type "System.Security.AccessControl.ObjectSecurity": Exception: The getter method should be public, non void, static, and have one parameter of type PSObject.
+The following error occurred while loading the extended type data file: Microsoft.PowerShell.Core, C:\Windows\SysWOW64\WindowsPowerShell\v1.0\types.ps1xml(2991) : Error in type "System.Security.AccessControl.ObjectSecurity": Exception: The getter method should be public, non void, static, and have one parameter of type PSObject.
+The following error occurred while loading the extended type data file: Microsoft.PowerShell.Core, C:\Windows\SysWOW64\WindowsPowerShell\v1.0\types.ps1xml(2998) : Error in type "System.Security.AccessControl.ObjectSecurity": Exception: The getter method should be public, non void, static, and have one parameter of type PSObject.
+The following error occurred while loading the extended type data file: Microsoft.PowerShell.Core, C:\Windows\SysWOW64\WindowsPowerShell\v1.0\types.ps1xml(3005) : Error in type "System.Security.AccessControl.ObjectSecurity": Exception: The getter method should be public, non void, static, and have one parameter of type PSObject.
+The term 'Get-ExecutionPolicy' is not recognized as the name of a cmdlet, function, script file, or operable program. Check the spelling of the name, or if a path was included, verify that the path is correct and try again.
+```
 
 В этом случае воспользуйтесь решением, [предложенным в системе StackOverflow](http://stackoverflow.com/questions/12638289/embedding-powershell-v2-0-in-net-app-on-windows-8-rtm).
 
@@ -171,12 +179,12 @@ install-package log4net
 
 ## <a name="attempting-to-install-or-uninstall-results-in-the-error-cannot-create-a-file-when-that-file-already-exists"></a>Попытка установки или удаления приводит к ошибке Cannot create a file when that file already exists (Невозможно удалить файл, если этот файл уже существует).
 
-По какой-то причине расширения Visual Studio могут оказаться в необычном состоянии, если вы удалили расширение VSIX, но некоторые файлы остались. Для обхода этой проблемы:
+По какой-то причине расширения Visual Studio могут оказаться в необычном состоянии, если вы удалили расширение VSIX, но некоторые файлы остались. Чтобы обойти эту ошибку, сделайте следующее:
 
 1. Выйти из Visual Studio
 1. Откройте следующую папку (на вашем компьютере она может быть на другом диске):
 
-    C:\Program Files (x86)\Microsoft Visual Studio 10.0\Common7\IDE\Extensions\Microsoft Corporation\NuGet Package Manager\<версия>\
+    C:\Program Files (x86)\Microsoft Visual Studio 10.0\Common7\IDE\Extensions\Microsoft Corporation\NuGet Package Manager\<version>\
 
 1. Удалите все файлы с расширением *DELETEME*.
 1. Откройте Visual Studio еще раз.
@@ -187,11 +195,13 @@ install-package log4net
 
 Если вы установили FluentNHibernate с консолью диспетчера пакетов и компилируете проект с включенной функцией "Анализ кода", может возникнуть следующая ошибка:
 
-    Error 3 CA0058 : The referenced assembly
-    'NHibernate, Version=3.0.0.2001, Culture=neutral, PublicKeyToken=aa95f207798dfdb4'
-    could not be found. This assembly is required for analysis and was referenced by:
-    C:\temp\Scratch\src\MyProject.UnitTests\bin\Debug\MyProject.UnitTests.dll.
-    MyProject.UnitTests
+```
+Error 3 CA0058 : The referenced assembly
+'NHibernate, Version=3.0.0.2001, Culture=neutral, PublicKeyToken=aa95f207798dfdb4'
+could not be found. This assembly is required for analysis and was referenced by:
+C:\temp\Scratch\src\MyProject.UnitTests\bin\Debug\MyProject.UnitTests.dll.
+MyProject.UnitTests
+```
 
 По умолчанию для FluentNHibernate требуется версия NHibernate 3.0.0.2001. Однако по умолчанию NuGet устанавливает в проекте библиотеку NHibernate 3.0.0.4000 и добавляет соответствующую переадресацию привязок, чтобы она работала. Если анализ кода отключен, проект будет компилироваться нормально. В отличие от компилятора, средство анализа кода не отслеживает переадресацию привязок и поэтому не использует версию 3.0.0.4000 вместо 3.0.0.2001. Чтобы решить эту проблему, можно установить версию NHibernate 3.0.0.2001 или настроить средство анализа кода так, чтобы его поведение совпадало с поведением компилятора. Для этого выполните указанные ниже действия.
 
@@ -201,9 +211,11 @@ install-package log4net
 
 ## <a name="write-error-command-doesnt-work-inside-installps1uninstallps1initps1"></a>Команда Write-Error не работает в скриптах install.ps1, uninstall.ps1 и init.ps1
 
-Это известная проблема Вместо вызова команды Write-Error попробуйте вызвать throw.
+Это известная проблема. Вместо вызова команды Write-Error попробуйте вызвать throw.
 
-    throw "My error message"
+```
+throw "My error message"
+```
 
 ## <a name="installing-nuget-with-restricted-access-on-windows-2003-can-crash-visual-studio"></a>Установка NuGet с ограниченными правами доступа в Windows 2003 может привести к аварийному завершению работы Visual Studio
 
@@ -217,7 +229,9 @@ install-package log4net
 
 Средства Windows Phone не поддерживают диспетчер расширений Visual Studio Extension Manager. Чтобы удалить NuGet, выполните следующую команду.
 
-     vsixinstaller.exe /uninstall:NuPackToolsVsix.Microsoft.67e54e40-0ae3-42c5-a949-fddf5739e7a5
+```
+vsixinstaller.exe /uninstall:NuPackToolsVsix.Microsoft.67e54e40-0ae3-42c5-a949-fddf5739e7a5
+```
 
 ## <a name="changing-the-capitalization-of-nuget-package-ids-breaks-package-restore"></a>Изменение регистра символов в идентификаторах пакетов NuGet приводит к неполадкам при восстановлении пакетов
 

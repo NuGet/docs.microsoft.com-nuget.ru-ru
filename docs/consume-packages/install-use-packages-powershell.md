@@ -1,18 +1,18 @@
 ---
 title: Установка пакетов NuGet и управление ими с помощью консоли в Visual Studio
 description: Инструкции по использованию консоли диспетчера пакетов NuGet в Visual Studio для работы с пакетами.
-author: karann-msft
-ms.author: karann
+author: JonDouglas
+ms.author: jodou
 ms.date: 07/08/2019
 ms.topic: conceptual
 f1_keywords:
 - vs.nuget.packagemanager.console
-ms.openlocfilehash: 31fa51bc017eaaf9306d5f267e5d4b0d7a15ec9c
-ms.sourcegitcommit: 53b06e27bcfef03500a69548ba2db069b55837f1
+ms.openlocfilehash: 119bf32426e5cbc179c3713e60688c691e133c5d
+ms.sourcegitcommit: ee6c3f203648a5561c809db54ebeb1d0f0598b68
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/19/2020
-ms.locfileid: "97699842"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98774892"
 ---
 # <a name="install-and-manage-packages-with-the-package-manager-console-in-visual-studio-powershell"></a>Установка пакетов и управление ими с помощью консоли диспетчера пакетов в Visual Studio (PowerShell)
 
@@ -162,7 +162,7 @@ Find-Package jquery -AllVersions -ExactMatch
 
 Профиль PowerShell позволяет сделать часто используемые команды доступными при использовании PowerShell. NuGet поддерживает профиль NuGet, который обычно находится в следующем расположении:
 
-    %UserProfile%\Documents\WindowsPowerShell\NuGet_profile.ps1
+*%UserProfile%\Documents\WindowsPowerShell\NuGet_profile.ps1*
 
 Чтобы найти профиль, в консоли введите `$profile`.
 

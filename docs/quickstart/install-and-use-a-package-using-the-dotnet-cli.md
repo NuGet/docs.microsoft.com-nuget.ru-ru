@@ -1,16 +1,16 @@
 ---
 title: Установка и использование пакета NuGet с помощью CLI dotnet
 description: Пошаговое руководство по установке и использованию пакета NuGet в проекте .NET Core.
-author: karann-msft
-ms.author: karann
+author: JonDouglas
+ms.author: jodou
 ms.date: 01/23/2018
 ms.topic: quickstart
-ms.openlocfilehash: 006fff8360ac62393e4b88c1a253514591d22f4c
-ms.sourcegitcommit: 2b50c450cca521681a384aa466ab666679a40213
+ms.openlocfilehash: adbf8f457d8520e3087e539b91ef932877aec3a0
+ms.sourcegitcommit: ee6c3f203648a5561c809db54ebeb1d0f0598b68
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/07/2020
-ms.locfileid: "78231282"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98775454"
 ---
 # <a name="quickstart-install-and-use-a-package-using-the-dotnet-cli"></a>Краткое руководство. Установка и использование пакета с помощью dotnet CLI
 

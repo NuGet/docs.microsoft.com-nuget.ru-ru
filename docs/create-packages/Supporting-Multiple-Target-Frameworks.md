@@ -1,16 +1,16 @@
 ---
 title: Многоплатформенное нацеливание пакетов NuGet
 description: Описание различных способов нацеливания на несколько версий .NET Framework из одного пакета NuGet.
-author: karann-msft
-ms.author: karann
+author: JonDouglas
+ms.author: jodou
 ms.date: 07/15/2019
 ms.topic: conceptual
-ms.openlocfilehash: 7c0da38ab4059b89c9693ecbece2bc8ed1a775ec
-ms.sourcegitcommit: b138bc1d49fbf13b63d975c581a53be4283b7ebf
+ms.openlocfilehash: e919b11670589900d9e588db33fd68b8df592ac2
+ms.sourcegitcommit: ee6c3f203648a5561c809db54ebeb1d0f0598b68
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/03/2020
-ms.locfileid: "93237949"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98774565"
 ---
 # <a name="support-multiple-net-versions"></a>Поддержка нескольких версий .NET
 
@@ -24,7 +24,9 @@ ms.locfileid: "93237949"
 
 При создании пакета, который содержит только одну версию библиотеки или предназначается для нескольких платформ, вы всегда создаете в папке `lib` вложенные папки с именами платформ (с учетом регистра) согласно следующим соглашениям:
 
-    lib\{framework name}[{version}]
+```
+lib\{framework name}[{version}]
+```
 
 Полный список поддерживаемых имен см. в [справочнике по целевым платформам](../reference/target-frameworks.md#supported-frameworks).
 
@@ -32,15 +34,17 @@ ms.locfileid: "93237949"
 
 Например, следующая структура папок поддерживает четыре версии сборки для конкретных платформ:
 
-    \lib
-        \net46
-            \MyAssembly.dll
-        \net461
-            \MyAssembly.dll
-        \uap
-            \MyAssembly.dll
-        \netcore
-            \MyAssembly.dll
+```
+\lib
+    \net46
+        \MyAssembly.dll
+    \net461
+        \MyAssembly.dll
+    \uap
+        \MyAssembly.dll
+    \netcore
+        \MyAssembly.dll
+```
 
 Чтобы легко включить все эти файлы при сборке пакета, используйте рекурсивный подстановочный знак `**` в разделе `<files>` файла `.nuspec`:
 
@@ -54,16 +58,18 @@ ms.locfileid: "93237949"
 
 Если имеются сборки для конкретных архитектур, то есть отдельные сборки для архитектур ARM, x86 и x64, их необходимо поместить в папку с именем `runtimes` во вложенные папки `{platform}-{architecture}\lib\{framework}` или `{platform}-{architecture}\native`. Например, следующая структура папок содержит как библиотеки DLL в машинном коде, так и управляемые библиотеки DLL для Windows 10 и платформы `uap10.0`:
 
-    \runtimes
-        \win10-arm
-            \native
-            \lib\uap10.0
-        \win10-x86
-            \native
-            \lib\uap10.0
-        \win10-x64
-            \native
-            \lib\uap10.0
+```
+\runtimes
+    \win10-arm
+        \native
+        \lib\uap10.0
+    \win10-x86
+        \native
+        \lib\uap10.0
+    \win10-x64
+        \native
+        \lib\uap10.0
+```
 
 Эти сборки будут доступны только во время выполнения. Поэтому если вы хотите предоставить соответствующую сборку, используемую во время компиляции, добавьте сборку `AnyCPU` в папку `/ref/{tfm}`. 
 
@@ -81,11 +87,13 @@ ms.locfileid: "93237949"
 
 Например, рассмотрим следующую структуру папок в пакете:
 
-    \lib
-        \net45
-            \MyAssembly.dll
-        \net461
-            \MyAssembly.dll
+```
+\lib
+    \net45
+        \MyAssembly.dll
+    \net461
+        \MyAssembly.dll
+```
 
 При установке этого пакета в проекте, предназначенном для .NET Framework 4.6, NuGet устанавливает сборку из папки `net45`, так как это самая старшая доступная версия не выше 4.6.
 
@@ -97,12 +105,14 @@ ms.locfileid: "93237949"
 
 NuGet копирует сборки только из одной папки библиотеки в проекте. Предположим, есть пакет со следующей структурой папок:
 
-    \lib
-        \net40
-            \MyAssembly.dll (v1.0)
-            \MyAssembly.Core.dll (v1.0)
-        \net45
-            \MyAssembly.dll (v2.0)
+```
+\lib
+    \net40
+        \MyAssembly.dll (v1.0)
+        \MyAssembly.Core.dll (v1.0)
+    \net45
+        \MyAssembly.dll (v2.0)
+```
 
 Когда этот пакет устанавливается в проекте, предназначенном для .NET Framework 4.5, устанавливается только сборка `MyAssembly.dll` (версия 2.0). Сборка `MyAssembly.Core.dll` (версия 1.0) не устанавливается, так как ее нет в папке `net45`. Такое поведение NuGet обусловлено тем, что сборка `MyAssembly.Core.dll` могла быть объединена с версией 2.0 сборки `MyAssembly.dll`.
 
@@ -112,7 +122,7 @@ NuGet копирует сборки только из одной папки би
 
 NuGet также поддерживает нацеливание на определенный профиль платформы путем добавления дефиса и имени платформы в конце имени папки.
 
-    lib\{framework name}-{profile}
+lib\{framework name}-{profile}
 
 Поддерживаются следующие профили:
 
@@ -129,7 +139,7 @@ NuGet также поддерживает нацеливание на опред
 
 Каждый элемент group имеет атрибут `targetFramework` и содержит ноль или более элементов `<dependency>`. Эти зависимости устанавливаются вместе, если целевая платформа совместима с профилем платформы проекта. Точное описание идентификаторов платформы см. в разделе [Целевые платформы](../reference/target-frameworks.md).
 
-Мы рекомендуем использовать одну группу для моникера целевой платформы (TFM) для файлов в папках *lib/* и *ref/* .
+Мы рекомендуем использовать одну группу для моникера целевой платформы (TFM) для файлов в папках *lib/* и *ref/*.
 
 В следующем примере приводятся различные варианты элемента `<group>`:
 
@@ -162,22 +172,24 @@ NuGet также поддерживает нацеливание на опред
 
 При использовании `packages.config` файлы содержимого и скрипты PowerShell можно группировать по целевой платформе в папках `content` и `tools`, используя те же соглашения в отношении папок. Пример:
 
-    \content
-        \net46
-            \MyContent.txt
-        \net461
-            \MyContent461.txt
-        \uap
-            \MyUWPContent.html
-        \netcore
-    \tools
-        init.ps1
-        \net46
-            install.ps1
-            uninstall.ps1
-        \uap
-            install.ps1
-            uninstall.ps1
+```
+\content
+    \net46
+        \MyContent.txt
+    \net461
+        \MyContent461.txt
+    \uap
+        \MyUWPContent.html
+    \netcore
+\tools
+    init.ps1
+    \net46
+        install.ps1
+        uninstall.ps1
+    \uap
+        install.ps1
+        uninstall.ps1
+```
 
 Если папка платформы пуста, NuGet не добавляет ссылки на сборки или файлы содержимого и не выполняет скрипты PowerShell для этой платформы.
 

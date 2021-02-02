@@ -1,7 +1,7 @@
 ---
 title: Публикация пакетов символов NuGet с помощью нового формата, SNUPKG| Документация Майкрософт
-author: cristinamanu
-ms.author: cristinamanu
+author: JonDouglas
+ms.author: jodou
 manager: skofman
 ms.date: 10/30/2018
 ms.topic: reference
@@ -12,16 +12,18 @@ keywords: пакеты символов NuGet, отладка пакета NuGet
 ms.reviewer:
 - anangaur
 - karann
-ms.openlocfilehash: fbcc035a6b800617f995d3bcebd7e1764aa467b0
-ms.sourcegitcommit: 323a107c345c7cb4e344a6e6d8de42c63c5188b7
+ms.openlocfilehash: 001637348fdd435e4ffd3a5a55e8128d1eab453c
+ms.sourcegitcommit: ee6c3f203648a5561c809db54ebeb1d0f0598b68
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/15/2021
-ms.locfileid: "98235728"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98774577"
 ---
 # <a name="creating-symbol-packages-snupkg"></a>Создание пакетов символов (SNUPKG)
 
 Хороший опыт отладки полагается на наличие отладочных символов, так как они предоставляют важную информацию, такую как связь между скомпилированным и исходным кодом, имена локальных переменных, трассировки стека и многое другое. Пакеты символов (SNUPKG) можно использовать для распространения этих символов и улучшения возможностей отладки пакетов NuGet.
+
+> Обратите внимание, что использование пакетов символов не является единственным способом сделать отладочные символы доступными для объектов-получателей вашей библиотеки. Вы также [можете внедрить (`embed`)](https://docs.microsoft.com/dotnet/core/deploying/single-file#include-pdb-files-inside-the-bundle) их в файл `dll` или `exe`, используя следующее свойство проекта: `<DebugType>embedded</DebugType>`
 
 ## <a name="prerequisites"></a>предварительные требования
 

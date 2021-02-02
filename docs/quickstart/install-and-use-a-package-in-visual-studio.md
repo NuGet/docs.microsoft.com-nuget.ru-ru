@@ -1,20 +1,20 @@
 ---
 title: Установка и использование пакета NuGet в Visual Studio
 description: Пошаговое руководство по установке и использованию пакета NuGet в проекте Visual Studio.
-author: karann-msft
-ms.author: karann
+author: JonDouglas
+ms.author: jodou
 ms.date: 07/24/2018
 ms.topic: quickstart
-ms.openlocfilehash: 10bc34653d294cf70b5c91ce79a79cf6532fba1b
-ms.sourcegitcommit: 2b50c450cca521681a384aa466ab666679a40213
+ms.openlocfilehash: 55f6a64d90ce8ca628d1ac5c68f8133872a214e0
+ms.sourcegitcommit: ee6c3f203648a5561c809db54ebeb1d0f0598b68
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/07/2020
-ms.locfileid: "80147491"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98775533"
 ---
 # <a name="quickstart-install-and-use-a-package-in-visual-studio-windows-only"></a>Краткое руководство. Установка и использование пакета в Visual Studio (только в Windows)
 
-Пакеты NuGet содержат многократно используемый код, предлагаемый другими разработчиками для ваших проектов. Дополнительные сведения см. в разделе [Что такое NuGet?](../What-is-NuGet.md). Пакеты устанавливаются в проекте Visual Studio с помощью диспетчера пакетов NuGet, [консоли диспетчера пакетов](../consume-packages/install-use-packages-powershell) или [интерфейса командной строки .NET](install-and-use-a-package-using-the-dotnet-cli.md). В этой статье описано, как использовать популярный пакет [Newtonsoft.Json](https://www.nuget.org/packages/Newtonsoft.Json/) и проект Windows Presentation Foundation (WPF). Тот же процесс применяется к любому другому проекту .NET или .NET Core.
+Пакеты NuGet содержат многократно используемый код, предлагаемый другими разработчиками для ваших проектов. Дополнительные сведения см. в разделе [Что такое NuGet?](../What-is-NuGet.md). Пакеты устанавливаются в проекте Visual Studio с помощью диспетчера пакетов NuGet, [консоли диспетчера пакетов](../consume-packages/install-use-packages-powershell.md) или [интерфейса командной строки .NET](install-and-use-a-package-using-the-dotnet-cli.md). В этой статье описано, как использовать популярный пакет [Newtonsoft.Json](https://www.nuget.org/packages/Newtonsoft.Json/) и проект Windows Presentation Foundation (WPF). Тот же процесс применяется к любому другому проекту .NET или .NET Core.
 
 После установки ссылаться на пакет в коде можно с помощью `using <namespace>`, где \<namespace\> соответствует используемому пакету. После указания ссылки можно обращаться к пакету посредством его интерфейса API.
 
@@ -67,7 +67,7 @@ Visual Studio создаст проект и откроет его в обозр
 
 1. После открытия консоли убедитесь, что в раскрывающемся списке **Проект по умолчанию** показан проект, в который требуется установить пакет. Если в решении всего лишь один проект, он автоматически выбран.
 
-    ![Поиск пакета Newtonsoft.Json](media/QS_Use-08-Console1.png)
+    ![Выбор проекта для пакета](media/QS_Use-08-Console1.png)
 
 1. Введите команду `Install-Package Newtonsoft.Json` (см. сведения о ней в [этой статье](../reference/ps-reference/ps-ref-install-package.md)). В окне консоли отображаются выходные данные команды. Ошибки обычно означают, что пакет не совместим с целевой платформой проекта.
 
