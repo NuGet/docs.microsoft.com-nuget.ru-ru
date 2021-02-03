@@ -35,9 +35,10 @@
 ## [Создание пакета (dotnet CLI)](create-packages/creating-a-package-dotnet-cli.md)
 ## [Создание пакета (nuget.exe CLI)](create-packages/creating-a-package.md)
 ## [Создание пакета (MSBuild)](create-packages/creating-a-package-msbuild.md)
-## [Поддержка указания нескольких целевых платформ в файле проекта](create-packages/multiple-target-frameworks-project-file.md)
+## [Рекомендации по созданию пакетов](create-packages/Package-authoring-best-practices.md)
 ## [Сборка предварительной версии пакета](create-packages/prerelease-packages.md)
 ## [Создание пакета символов](create-packages/symbol-packages-snupkg.md)
+## [Поддержка указания нескольких целевых платформ в файле проекта](create-packages/multiple-target-frameworks-project-file.md)
 ## Расширенные задачи
 ### [Поддержка нескольких целевых платформ](create-packages/supporting-multiple-target-frameworks.md)
 ### [Изменение исходного кода и файлов конфигурации](create-packages/source-and-config-file-transformations.md)
