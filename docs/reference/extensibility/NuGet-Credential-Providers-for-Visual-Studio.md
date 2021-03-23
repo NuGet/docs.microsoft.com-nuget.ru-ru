@@ -5,19 +5,19 @@ author: JonDouglas
 ms.author: jodou
 ms.date: 01/09/2017
 ms.topic: conceptual
-ms.openlocfilehash: f324f1e27e0d718571525152fcf16b55b900dbaa
-ms.sourcegitcommit: ee6c3f203648a5561c809db54ebeb1d0f0598b68
+ms.openlocfilehash: ab3bde0d320375f854a8f0a98fb90acfecf54aa3
+ms.sourcegitcommit: bb9560dcc7055bde84b4940c5eb0db402bf46a48
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/26/2021
-ms.locfileid: "98777756"
+ms.lasthandoff: 03/23/2021
+ms.locfileid: "104859100"
 ---
 # <a name="authenticating-feeds-in-visual-studio-with-nuget-credential-providers"></a>Проверка подлинности веб-каналов в Visual Studio с помощью поставщиков учетных данных NuGet
 
 Расширение NuGet Visual Studio 3.6 + поддерживает поставщиков учетных данных, которые позволяют NuGet работать с веб-каналами с проверкой подлинности.
 После установки поставщика учетных данных NuGet для Visual Studio расширение NuGet для Visual Studio будет автоматически получать и обновлять учетные данные для веб-каналов, прошедших проверку подлинности, по мере необходимости.
 
-Пример реализации можно найти в [примере вскредентиалпровидер](https://github.com/NuGet/Samples/tree/master/VsCredentialProvider).
+Пример реализации можно найти в [примере вскредентиалпровидер](https://github.com/NuGet/Samples/tree/main/VsCredentialProvider).
 
 В среде Visual Studio NuGet использует внутренний объект, `VsCredentialProviderImporter` который также сканирует поставщики учетных данных подключаемых модулей. Эти поставщики учетных данных подключаемых модулей должны быть обнаруживаемыми в качестве экспорта MEF типа `IVsCredentialProvider` .
 
@@ -58,7 +58,7 @@ public interface IVsCredentialProvider
 }
 ```
 
-Пример реализации можно найти в [примере вскредентиалпровидер](https://github.com/NuGet/Samples/tree/master/VsCredentialProvider).
+Пример реализации можно найти в [примере вскредентиалпровидер](https://github.com/NuGet/Samples/tree/main/VsCredentialProvider).
 
 Каждый поставщик учетных данных NuGet для Visual Studio должен:
 
@@ -78,4 +78,4 @@ public interface IVsCredentialProvider
 | bool Неинтерактивный | Если значение — true, поставщик учетных данных должен отключить все запросы пользователя и использовать вместо них значения по умолчанию. |
 | CancellationToken cancellationToken | Этот токен отмены должен быть проверен, чтобы определить, была ли отменена операция, запрашивающая учетные данные. |
 
-**Возвращаемое значение**: объект учетных данных, реализующий [ `System.Net.ICredentials` интерфейс](/dotnet/api/system.net.icredentials?view=netstandard-2.0).
+**Возвращаемое значение**: объект учетных данных, реализующий [ `System.Net.ICredentials` интерфейс](/dotnet/api/system.net.icredentials).
