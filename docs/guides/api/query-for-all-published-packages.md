@@ -6,12 +6,12 @@ ms.author: jver
 ms.date: 11/02/2017
 ms.topic: tutorial
 ms.reviewer: kraigb
-ms.openlocfilehash: 7e611b568538e0acfcbad2e5d986a0f9382ac8fd
-ms.sourcegitcommit: ee6c3f203648a5561c809db54ebeb1d0f0598b68
+ms.openlocfilehash: 8f21aad93eb952035683314c10cd964f265ec4fd
+ms.sourcegitcommit: bb9560dcc7055bde84b4940c5eb0db402bf46a48
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/26/2021
-ms.locfileid: "98774120"
+ms.lasthandoff: 03/23/2021
+ms.locfileid: "104859347"
 ---
 # <a name="query-for-all-packages-published-to-nugetorg"></a>Запрос всех пакетов, опубликованных на сайте nuget.org
 
@@ -110,7 +110,7 @@ GET https://api.nuget.org/v3/catalog0/data/2015.02.01.11.18.40/windowsazure.stor
 
 Так как каталог представляет собой набор документов JSON, доступных по протоколу HTTP, с ним можно взаимодействовать с помощью любого языка программирования, имеющего HTTP-клиент и десериализатор JSON.
 
-Примеры на C# доступны в [репозитории NuGet/Samples](https://github.com/NuGet/Samples/tree/master/CatalogReaderExample).
+Примеры на C# доступны в [репозитории NuGet/Samples](https://github.com/NuGet/Samples/tree/main/CatalogReaderExample).
 
 ```cli
 git clone https://github.com/NuGet/Samples.git
@@ -122,7 +122,7 @@ git clone https://github.com/NuGet/Samples.git
 
 Вы можете установить этот пакет в проект, совместимый с `netstandard1.3` или более поздней версии (например, .NET Framework 4.6).
 
-Пример использования этого пакета можно найти на сайте GitHub в [проекте NuGet.Protocol.Catalog.Sample](https://github.com/NuGet/Samples/tree/master/CatalogReaderExample/NuGet.Protocol.Catalog.Sample).
+Пример использования этого пакета можно найти на сайте GitHub в [проекте NuGet.Protocol.Catalog.Sample](https://github.com/NuGet/Samples/tree/main/CatalogReaderExample/NuGet.Protocol.Catalog.Sample).
 
 #### <a name="sample-output"></a>Пример выходных данных
 
@@ -160,9 +160,9 @@ warn: NuGet.Protocol.Catalog.CatalogProcessor[0]
 
 ### <a name="minimal-sample"></a>Минималистичный пример
 
-Пример с меньшим числом зависимостей, более подробно демонстрирующий взаимодействие с каталогом, см. в [проекте примера CatalogReaderExample](https://github.com/NuGet/Samples/tree/master/CatalogReaderExample/CatalogReaderExample). Этот проект ориентирован на `netcoreapp2.0` и зависит от [NuGet.Protocol 4.4.0](https://www.nuget.org/packages/NuGet.Protocol/4.4.0) (для разрешения индекса службы) и [Newtonsoft.Json 9.0.1](https://www.nuget.org/packages/Newtonsoft.Json/9.0.1) (для десериализации JSON).
+Пример с меньшим числом зависимостей, более подробно демонстрирующий взаимодействие с каталогом, см. в [проекте примера CatalogReaderExample](https://github.com/NuGet/Samples/tree/main/CatalogReaderExample/CatalogReaderExample). Этот проект ориентирован на `netcoreapp2.0` и зависит от [NuGet.Protocol 4.4.0](https://www.nuget.org/packages/NuGet.Protocol/4.4.0) (для разрешения индекса службы) и [Newtonsoft.Json 9.0.1](https://www.nuget.org/packages/Newtonsoft.Json/9.0.1) (для десериализации JSON).
 
-Основная логика кода видна в [файле Program.cs](https://github.com/NuGet/Samples/blob/master/CatalogReaderExample/CatalogReaderExample/Program.cs).
+Основная логика кода видна в [файле Program.cs](https://github.com/NuGet/Samples/blob/main/CatalogReaderExample/CatalogReaderExample/Program.cs).
 
 #### <a name="sample-output"></a>Пример выходных данных
 

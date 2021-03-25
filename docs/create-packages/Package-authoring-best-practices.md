@@ -5,12 +5,12 @@ author: chgill-MSFT
 ms.author: chgill
 ms.date: 09/17/2020
 ms.topic: conceptual
-ms.openlocfilehash: 35eb000bddaa58726857cd3c1fd2362917f83196
-ms.sourcegitcommit: c19d398cecee3cad2d79a8b22650fc1988d41a3f
+ms.openlocfilehash: 7475cf655876f2c127e79a16ccf67c0c723d164f
+ms.sourcegitcommit: bb9560dcc7055bde84b4940c5eb0db402bf46a48
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/02/2021
-ms.locfileid: "99420771"
+ms.lasthandoff: 03/23/2021
+ms.locfileid: "104859074"
 ---
 # <a name="package-authoring-best-practices"></a>Рекомендации по созданию пакетов
 
@@ -59,7 +59,7 @@ ms.locfileid: "99420771"
 Ниже приведено сопоставление таблиц и описание доступных элементов метаданных пакета.
 
 | Имя свойства Visual Studio                   | [Имя файла проекта или свойства MSBuild](https://docs.microsoft.com/dotnet/core/tools/csproj#packagereleasenotes)                          | [Имя свойства nuspec](https://docs.microsoft.com/nuget/reference/nuspec#general-form-and-schema) | Описание                                                                                                       |
-|-----------------------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------|---------------------------------------------------------------------------------------------------|-------------------------------------------------------------------------------------------------------------------|
+|-----------------------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------|---------------------------------------------------------------------------------------------------|-----------------------------------------------------------------------------------------------------------------|
 | [`Package id`](#package-id)                   | [`PackageId`](https://docs.microsoft.com/dotnet/core/tools/csproj#packageid)                                                            | [`id`](https://docs.microsoft.com/nuget/reference/nuspec#id)                                      | Имя или идентификатор пакета.                    |
 | [`Package version`](#package-version)         | [`PackageVersion`](https://docs.microsoft.com/dotnet/core/tools/csproj#packageversion)                                                  | [`version`](https://docs.microsoft.com/nuget/reference/nuspec#version)                            | Версия пакета NuGet.                                           |
 | [`Authors`](#authors)                         | [`Authors`](https://docs.microsoft.com/dotnet/core/tools/csproj#authors)                                                                | [`authors`](https://docs.microsoft.com/nuget/reference/nuspec#authors)                            | Разделенный запятыми список авторов пакетов, часто с указанием имен отдельных пользователей или названия организации.                             |
@@ -70,9 +70,9 @@ ms.locfileid: "99420771"
 | [`Project URL`](#project-url)                 | `PackageProjectUrl`                                                                                                                     | [`projectUrl`](https://docs.microsoft.com/nuget/reference/nuspec#projecturl)                      | URL-адрес домашней страницы проекта.                                                                                   |
 | [`Icon File`](#icon)                          | [`PackageIcon`](https://docs.microsoft.com/nuget/reference/msbuild-targets#packing-an-icon-image-file)                                  | [`icon`](https://docs.microsoft.com/nuget/reference/nuspec#icon)                                  | Путь к файлу изображения значка пакета.                                                                      |
 | [`Repository URL`](#repository-type-and-url)  | [`RepositoryUrl`](https://docs.microsoft.com/dotnet/core/tools/csproj#repositoryurl)                                                    | [`repository url`](https://docs.microsoft.com/nuget/reference/nuspec#repository)               | URL-адрес репозитория, из которого был создан пакет.                                                           |
-| [`Repository type`](#repository-type-and-url) | [`RespositoryType`](https://docs.microsoft.com/dotnet/core/tools/csproj#repositorytype)                                                 | [`repository type`](https://docs.microsoft.com/nuget/reference/nuspec#repository)              | Тип репозитория, на который указывает URL-адрес репозитория (например, git).                                                   |
+| [`Repository type`](#repository-type-and-url) | [`RepositoryType`](https://docs.microsoft.com/dotnet/core/tools/csproj#repositorytype)                                                 | [`repository type`](https://docs.microsoft.com/nuget/reference/nuspec#repository)              | Тип репозитория, на который указывает URL-адрес репозитория (например, git).                                                   |
 | [`Tags`](#tags)                               | [`PackageTags`](https://docs.microsoft.com/dotnet/core/tools/csproj#packagetags)                                                        | [`tags`](https://docs.microsoft.com/nuget/reference/nuspec#tags)                                  | Разделенный пробелами список тегов и ключевых слов для описания пакета. Теги используются при поиске пакетов. |
-| [`Release notes`](#release-notes)             | [`PackageReleaseNotes`](https://docs.microsoft.com/dotnet/core/tools/csproj#packagereleasenotes)                                          | [`releaseNotes`](https://docs.microsoft.com/nuget/reference/nuspec#releasenotes)                  | Разделенный пробелами список тегов и ключевых слов для описания пакета.                                                 |  |
+| [`Release notes`](#release-notes)             | [`PackageReleaseNotes`](https://docs.microsoft.com/dotnet/core/tools/csproj#packagereleasenotes)                                          | [`releaseNotes`](https://docs.microsoft.com/nuget/reference/nuspec#releasenotes)                  | Разделенный пробелами список тегов и ключевых слов для описания пакета.                                                 |
 
 ### <a name="package-id"></a>Идентификатор пакета
 

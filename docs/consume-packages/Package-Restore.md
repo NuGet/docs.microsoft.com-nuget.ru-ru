@@ -5,12 +5,12 @@ author: JonDouglas
 ms.author: jodou
 ms.date: 08/05/2019
 ms.topic: conceptual
-ms.openlocfilehash: bac4d88c29539f9fbe7b33b44ce11d350920d365
-ms.sourcegitcommit: 650c08f8bc3d48dfd206a111e5e2aaca3001f569
+ms.openlocfilehash: e5dfd9f8dd0439751ddd3863cad03f3b463e1487
+ms.sourcegitcommit: bb9560dcc7055bde84b4940c5eb0db402bf46a48
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/15/2020
-ms.locfileid: "97523535"
+ms.lasthandoff: 03/23/2021
+ms.locfileid: "104859243"
 ---
 # <a name="restore-packages-using-package-restore"></a>Восстановление пакетов с помощью функции восстановления пакетов
 
@@ -244,4 +244,4 @@ msbuild -restore
 
 ## <a name="troubleshooting"></a>Устранение неполадок
 
-Дополнительные сведения см. в статье [Устранение ошибок при восстановлении пакетов](package-restore-troubleshooting.md).
+Дополнительные сведения см. в статье [Устранение ошибок при восстановлении пакетов](Package-restore-troubleshooting.md).

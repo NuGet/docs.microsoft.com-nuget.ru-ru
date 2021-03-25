@@ -5,16 +5,16 @@ author: JonDouglas
 ms.author: jodou
 ms.date: 05/23/2018
 ms.topic: tutorial
-ms.openlocfilehash: 317937b4d9d773d74384b8ebfcd2146062236ac1
-ms.sourcegitcommit: ee6c3f203648a5561c809db54ebeb1d0f0598b68
+ms.openlocfilehash: 7660203ec44db75b7764767b519c9ff10dd1122e
+ms.sourcegitcommit: bb9560dcc7055bde84b4940c5eb0db402bf46a48
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/26/2021
-ms.locfileid: "98774330"
+ms.lasthandoff: 03/23/2021
+ms.locfileid: "104859087"
 ---
 # <a name="creating-ui-controls-as-nuget-packages"></a>Создание элементов управления пользовательским интерфейсом в виде пакетов NuGet
 
-Начиная с версии Visual Studio 2017, вы можете использовать возможности добавления элементов управления UWP и WPF в пакеты NuGet. В руководстве описано, как использовать эти возможности в контексте элементов управления UWP с использованием [примера ExtensionSDKasNuGetPackage](https://github.com/NuGet/Samples/tree/master/ExtensionSDKasNuGetPackage). Это же применимо к элементам управления WPF, если не указано иное.
+Начиная с версии Visual Studio 2017, вы можете использовать возможности добавления элементов управления UWP и WPF в пакеты NuGet. В руководстве описано, как использовать эти возможности в контексте элементов управления UWP с использованием [примера ExtensionSDKasNuGetPackage](https://github.com/NuGet/Samples/tree/main/ExtensionSDKasNuGetPackage). Это же применимо к элементам управления WPF, если не указано иное.
 
 ## <a name="prerequisites"></a>Предварительные требования
 
@@ -90,7 +90,7 @@ ms.locfileid: "98774330"
 
 ## <a name="add-custom-icons-to-your-controls"></a>Добавление пользовательских значков для элементов управления
 
-Чтобы на панели элементов или в области ресурсов отображался пользовательский значок, добавьте изображение в свой проект или соответствующий проект `design.dll` с именем Namespace.ControlName.extension и выберите действие сборки "Внедренный ресурс". Также нужно убедиться, что в соответствующем файле `AssemblyInfo.cs` указан атрибут ProvideMetadata — `[assembly: ProvideMetadata(typeof(RegisterMetadata))]`. См. этот [пример](https://github.com/NuGet/Samples/blob/master/ExtensionSDKasNuGetPackage/NativePackage.Design/Properties/AssemblyInfo.cs#L20).
+Чтобы на панели элементов или в области ресурсов отображался пользовательский значок, добавьте изображение в свой проект или соответствующий проект `design.dll` с именем Namespace.ControlName.extension и выберите действие сборки "Внедренный ресурс". Также нужно убедиться, что в соответствующем файле `AssemblyInfo.cs` указан атрибут ProvideMetadata — `[assembly: ProvideMetadata(typeof(RegisterMetadata))]`. См. этот [пример](https://github.com/NuGet/Samples/blob/main/ExtensionSDKasNuGetPackage/NativePackage.Design/Properties/AssemblyInfo.cs#L20).
 
 Поддерживаемые форматы: `.png`, `.jpg`, `.jpeg`, `.gif` и `.bmp`. Рекомендуемый формат — BMP24 размером 16 на 16 пикселей.
 
@@ -158,7 +158,7 @@ NuGet автоматически проверит TPMinV для использу
 
 В пакет можно внедрить строковые ресурсы (`.resw`), которые могут использоваться элементом управления или проектом UWP. Выберите для свойства **Действие сборки** файла `.resw` значение **PRIResource**.
 
-Пример можно найти в файле [MyCustomControl.cs](https://github.com/NuGet/Samples/blob/master/ExtensionSDKasNuGetPackage/ManagedPackage/MyCustomControl.cs) в образце пакета ExtensionSDKasNuGetPackage.
+Пример можно найти в файле [MyCustomControl.cs](https://github.com/NuGet/Samples/blob/main/ExtensionSDKasNuGetPackage/ManagedPackage/MyCustomControl.cs) в образце пакета ExtensionSDKasNuGetPackage.
 
 > [!Note]
 > Это применимо только к элементам управления UWP.
@@ -166,4 +166,4 @@ NuGet автоматически проверит TPMinV для использу
 ## <a name="see-also"></a>См. также
 
 - [Создание пакетов универсальной платформы Windows](create-uwp-packages.md)
-- [Образец ExtensionSDKasNuGetPackage](https://github.com/NuGet/Samples/tree/master/ExtensionSDKasNuGetPackage)
+- [Образец ExtensionSDKasNuGetPackage](https://github.com/NuGet/Samples/tree/main/ExtensionSDKasNuGetPackage)

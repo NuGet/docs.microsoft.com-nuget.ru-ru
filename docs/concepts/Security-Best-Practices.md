@@ -5,12 +5,12 @@ author: JonDouglas
 ms.author: jodou
 ms.date: 02/08/2021
 ms.topic: conceptual
-ms.openlocfilehash: 125579832db2ac32217d24f6fc6fc1b555f54350
-ms.sourcegitcommit: aeb9072f2fcaca73dc9de05b7fd643f1aa7c5821
+ms.openlocfilehash: e0f235d99e41e23a4551fbf7577f6c42e3381f5b
+ms.sourcegitcommit: bb9560dcc7055bde84b4940c5eb0db402bf46a48
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/18/2021
-ms.locfileid: "101101401"
+ms.lasthandoff: 03/23/2021
+ms.locfileid: "104859230"
 ---
 # <a name="best-practices-for-a-secure-software-supply-chain"></a>Рекомендации по обеспечению безопасности для цепочки поставок программного обеспечения
 
@@ -75,7 +75,7 @@ ms.locfileid: "101101401"
 -   [`packages.config`](../reference/packages-config.md) — расположен в корневом каталоге проекта.
 -   [`<PackageReference>`](../consume-packages/package-references-in-project-files.md) — расположен в файле проекта. 
 
-В зависимости от того, какой метод используется для управления зависимостями NuGet, зависимости также можно просмотреть с помощью Visual Studio: непосредственно в [Обозревателе решений](/visualstudio/ide/solutions-and-projects-in-visual-studio?view=vs-2019#solution-explorer) или в [диспетчере пакетов NuGet](../consume-packages/install-use-packages-visual-studio.md).
+В зависимости от того, какой метод используется для управления зависимостями NuGet, зависимости также можно просмотреть с помощью Visual Studio: непосредственно в [Обозревателе решений](/visualstudio/ide/solutions-and-projects-in-visual-studio#solution-explorer) или в [диспетчере пакетов NuGet](../consume-packages/install-use-packages-visual-studio.md).
 
 Для сред CLI можно выполнить команду [`dotnet list package`](/dotnet/core/tools/dotnet-list-package) для получения списка зависимостей проекта или решения. 
 
@@ -140,7 +140,7 @@ ms.locfileid: "101101401"
 
 В файлах блокировки хранится хэш содержимого пакета. Если хэш содержимого пакета, который необходимо установить, совпадает с хэшем в файле блокировки, это подтверждает воспроизводимость пакета.
 
-Сведения о включении блокировки файлов см. в [следующей документации](../consume-packages/package-references-in-project-files#locking-dependencies).
+Сведения о включении блокировки файлов см. в [следующей документации](../consume-packages/package-references-in-project-files.md#locking-dependencies).
 
 ## <a name="monitor-your-supply-chain"></a>Отслеживание цепочки поставок
 

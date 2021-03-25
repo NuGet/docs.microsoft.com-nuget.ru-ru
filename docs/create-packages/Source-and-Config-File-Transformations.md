@@ -6,16 +6,16 @@ ms.author: jodou
 ms.date: 04/24/2017
 ms.topic: conceptual
 ms.reviewer: anangaur
-ms.openlocfilehash: 5bd0e409f527fb668008204fb16ad002f4784c46
-ms.sourcegitcommit: ee6c3f203648a5561c809db54ebeb1d0f0598b68
+ms.openlocfilehash: 76c589b5ad034127675fb2bbf79ea97992883ebe
+ms.sourcegitcommit: bb9560dcc7055bde84b4940c5eb0db402bf46a48
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/26/2021
-ms.locfileid: "98774590"
+ms.lasthandoff: 03/23/2021
+ms.locfileid: "104859113"
 ---
 # <a name="transforming-source-code-and-configuration-files"></a>Преобразования исходного кода и файлов конфигурации
 
-**Преобразование исходного кода** применяет одностороннюю замену токена к файлам в папке `content` или `contentFiles` пакета при установке пакета (`content` для клиентов, использующих `packages.config` и `contentFiles` для `PackageReference`) в тех случаях, когда токены ссылаются на [свойства проекта](/dotnet/api/vslangproj.projectproperties?view=visualstudiosdk-2017&viewFallbackFrom=netframework-4.7) Visual Studio. Это позволяет вставить файл в пространство имен проекта или настроить код, который обычно обращается к `global.asax` в проекте ASP.NET.
+**Преобразование исходного кода** применяет одностороннюю замену токена к файлам в папке `content` или `contentFiles` пакета при установке пакета (`content` для клиентов, использующих `packages.config` и `contentFiles` для `PackageReference`) в тех случаях, когда токены ссылаются на [свойства проекта](/dotnet/api/vslangproj.projectproperties) Visual Studio. Это позволяет вставить файл в пространство имен проекта или настроить код, который обычно обращается к `global.asax` в проекте ASP.NET.
 
 **Преобразование файла конфигурации** позволяет изменять файлы, уже существующие в целевом проекте, такие как `web.config` и `app.config`. Например, для пакета может потребоваться добавить элемент в раздел `modules` файла конфигурации. Это преобразование осуществляется путем включения в пакет особых файлов, которые описывают разделы, добавляемые в файлы конфигурации. При удалении пакета внесенные изменения отменяются, благодаря чему это преобразование является двусторонним.
 
@@ -45,7 +45,7 @@ ms.locfileid: "98774590"
 
     При установке NuGet заменяет `$rootnamespace$` на `Fabrikam`, используя свойства целевого проекта, корневым пространством имен которого является `Fabrikam`.
 
-Маркер `$rootnamespace$` является одним из самых часто используемых свойств проекта. Остальные маркеры перечислены в статье [ProjectProperties Interface](/dotnet/api/vslangproj.projectproperties?view=visualstudiosdk-2017&viewFallbackFrom=netframework-4.7) (Интерфейс ProjectProperties). Естественно, необходимо учитывать, что некоторые свойства могут зависеть от типа проекта.
+Маркер `$rootnamespace$` является одним из самых часто используемых свойств проекта. Остальные маркеры перечислены в статье [ProjectProperties Interface](/dotnet/api/vslangproj.projectproperties) (Интерфейс ProjectProperties). Естественно, необходимо учитывать, что некоторые свойства могут зависеть от типа проекта.
 
 ## <a name="specifying-config-file-transformations"></a>Определение преобразований файла конфигурации
 
@@ -113,9 +113,9 @@ ms.locfileid: "98774590"
 ### <a name="xdt-transforms"></a>Преобразования XDT
 
 > [!Note]
-> Как упоминалось в [разделе о проблемах совместимости пакетов в документации по переходу с `packages.config` на `PackageReference`](../consume-packages/migrate-packages-config-to-package-reference.md#package-compatibility-issues), описанные ниже преобразования XDT поддерживаются только `packages.config`. Если добавить в пакет указанные ниже файлы, то у потребителей, использующих ваш пакет с `PackageReference`, преобразования применены не будут (см. [этот пример](https://github.com/NuGet/Samples/tree/master/XDTransformExample), чтобы обеспечить работу преобразований XDT с`PackageReference`).
+> Как упоминалось в [разделе о проблемах совместимости пакетов в документации по переходу с `packages.config` на `PackageReference`](../consume-packages/migrate-packages-config-to-package-reference.md#package-compatibility-issues), описанные ниже преобразования XDT поддерживаются только `packages.config`. Если добавить в пакет указанные ниже файлы, то у потребителей, использующих ваш пакет с `PackageReference`, преобразования применены не будут (см. [этот пример](https://github.com/NuGet/Samples/tree/main/XDTransformExample), чтобы обеспечить работу преобразований XDT с`PackageReference`).
 
-Вы можете изменять файлы конфигурации с помощью [синтаксиса XDT](/previous-versions/aspnet/dd465326(v=vs.110)). Кроме того, NuGet может заменять токены [свойствами проекта](/dotnet/api/vslangproj.projectproperties?view=visualstudiosdk-2017&viewFallbackFrom=netframework-4.7), включая имена свойств с разделителями `$` (без учета регистра символов).
+Вы можете изменять файлы конфигурации с помощью [синтаксиса XDT](/previous-versions/aspnet/dd465326(v=vs.110)). Кроме того, NuGet может заменять токены [свойствами проекта](/dotnet/api/vslangproj.projectproperties), включая имена свойств с разделителями `$` (без учета регистра символов).
 
 Например, следующий файл `app.config.install.xdt` вставит элемент `appSettings` в файл `app.config`, содержащий значения `FullPath`, `FileName` и `ActiveConfigurationSettings` из проекта:
 
