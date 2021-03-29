@@ -48,7 +48,7 @@
         "live": "live",
         "master": "master"
       }
-    },    ,
+    },
     {
       "path_to_root": "nuget-samples",
       "url": "https://github.com/NuGet/Samples",
