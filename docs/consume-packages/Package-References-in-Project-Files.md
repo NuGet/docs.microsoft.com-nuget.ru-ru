@@ -5,14 +5,14 @@ author: nkolev92
 ms.author: nikolev
 ms.date: 03/16/2018
 ms.topic: conceptual
-ms.openlocfilehash: dcaed83ca54e3234702e963ffc2ebbde4cd75b28
-ms.sourcegitcommit: 323a107c345c7cb4e344a6e6d8de42c63c5188b7
+ms.openlocfilehash: df7c793d115622f04a148cbbc3ebf396a3e4ab69
+ms.sourcegitcommit: bb9560dcc7055bde84b4940c5eb0db402bf46a48
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/15/2021
-ms.locfileid: "98235767"
+ms.lasthandoff: 03/23/2021
+ms.locfileid: "104859191"
 ---
-# <a name="package-references-packagereference-in-project-files"></a>Ссылки на пакеты (PackageReference) в файлах проектов
+# <a name="package-references-packagereference-in-project-files"></a>Ссылки на пакеты (`PackageReference`) в файлах проекта
 
 Ссылки на пакеты в узле `PackageReference` позволяют напрямую управлять зависимостями NuGet в файлах проекта (вместо использования отдельного файла `packages.config`). Использование PackageReference не влияет на другие аспекты NuGet. Например, параметры в файлах `NuGet.config` (включая источники пакетов) по-прежнему применяются, как описано в разделе [Распространенные конфигурации NuGet](configuring-nuget-behavior.md).
 
@@ -211,7 +211,7 @@ PackageReference также позволяет использовать усло
 В некоторых редких случаях разные пакеты могут содержать классы в одном и том же пространстве имен. Начиная с NuGet версии 5.7 и обновления 7 для Visual Studio 2019 PackageReference поддерживает [`Aliases`](/dotnet/api/microsoft.codeanalysis.projectreference.aliases), аналогично ProjectReference.
 По умолчанию никакие псевдонимы не предоставляются. Если псевдоним указан, ссылки на *все* сборки из аннотированного пакета должны указываться с псевдонимом.
 
-Пример использования см. в разделе [NuGet\Примеры](https://github.com/NuGet/Samples/tree/master/PackageReferenceAliasesExample)
+Пример использования см. в разделе [NuGet\Примеры](https://github.com/NuGet/Samples/tree/main/PackageReferenceAliasesExample)
 
 В файле проекта псевдонимы указываются следующим образом:
 
