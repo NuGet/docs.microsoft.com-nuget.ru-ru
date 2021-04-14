@@ -5,12 +5,12 @@ author: JonDouglas
 ms.author: jodou
 ms.date: 01/09/2018
 ms.topic: conceptual
-ms.openlocfilehash: f9e08d37b30dfea83fd9b61f168c1e20f530ff9f
-ms.sourcegitcommit: bb9560dcc7055bde84b4940c5eb0db402bf46a48
+ms.openlocfilehash: 6417c971dc13cf9ed05dcec4e4156af94c0ea058
+ms.sourcegitcommit: c8bf16420f235fc3e42c08cd0d56359e91d490e5
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/23/2021
-ms.locfileid: "104859412"
+ms.lasthandoff: 04/14/2021
+ms.locfileid: "107387391"
 ---
 # <a name="nuget-client-sdk"></a>Пакет SDK для клиента NuGet
 
@@ -32,6 +32,9 @@ ms.locfileid: "104859412"
 ```ps1
 dotnet add package NuGet.Protocol
 ```
+
+> [!Tip]
+> `Repository.Factory` определен в `NuGet.Protocol.Core.Types` пространстве имен, а `GetCoreV3` метод является методом расширения, определенным в `NuGet.Protocol` пространстве имен. Поэтому необходимо добавить `using` операторы для обоих пространств имен.
 
 ### <a name="list-package-versions"></a>Список версий пакета
 
