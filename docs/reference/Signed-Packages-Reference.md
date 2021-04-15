@@ -6,12 +6,12 @@ ms.author: rmpablos
 ms.date: 05/18/2018
 ms.topic: reference
 ms.reviewer: ananguar
-ms.openlocfilehash: ac9efadc1d29bec86ca9b7821d5587e0171613aa
-ms.sourcegitcommit: 323a107c345c7cb4e344a6e6d8de42c63c5188b7
+ms.openlocfilehash: 85fdf7a41cc033d92bbd0326648142aec27a9970
+ms.sourcegitcommit: 1462f9f42ae36b3c990762ad4f02e38ab799ad09
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/15/2021
-ms.locfileid: "98235715"
+ms.lasthandoff: 04/15/2021
+ms.locfileid: "107508804"
 ---
 # <a name="signed-packages"></a>Подписанные пакеты
 
@@ -23,7 +23,7 @@ ms.locfileid: "98235715"
 - **Подпись автора**. Подпись автора гарантирует, что пакет не был изменен с момента подписания автором пакета, независимо от того, какой из репозиториев или какой метод транспорта доставляет пакет. Кроме того, подписанные издателем пакеты предоставляют дополнительный механизм проверки подлинности для конвейера публикации nuget.org, так как сертификат подписи должен быть зарегистрирован заранее. Дополнительные сведения см. в разделе [Регистрация сертификатов](#signature-requirements-on-nugetorg).
 - **Подпись репозитория**. Подписи репозитория обеспечивают гарантию целостности для **всех** пакетов в репозитории независимо от того, подписаны ли они автором или нет, даже если эти пакеты получаются из расположения, отличного от местоположения исходного репозитория, в котором они были подписаны.   
 
-Дополнительные сведения о создании подписанного пакета автора см. в разделе [Подписывание пакетов](../create-packages/Sign-a-package.md) и [команда подписывания NuGet](../reference/cli-reference/cli-ref-sign.md). Подписи пакетов можно проверить с помощью команд [DotNet NuGet Verify](/dotnet/core/tools/dotnet-nuget-verify.md) или [NuGet Verify](../reference/cli-reference/cli-ref-verify.md) .
+Дополнительные сведения о создании подписанного пакета автора см. в разделе [Подписывание пакетов](../create-packages/Sign-a-package.md) и [команда подписывания NuGet](../reference/cli-reference/cli-ref-sign.md). Подписи пакетов можно проверить с помощью команд [DotNet NuGet Verify](/dotnet/core/tools/dotnet-nuget-verify) или [NuGet Verify](../reference/cli-reference/cli-ref-verify.md) .
 
 > [!Important]
 > Пакеты подписывания автора в настоящее время поддерживаются только nuget.exe в Windows. Однако все пакеты, загруженные в nuget.org, автоматически подписываются в репозиторий.
@@ -57,6 +57,6 @@ nuget.org имеет дополнительные требования для п
 ## <a name="related-articles"></a>Похожие статьи
 
 - [Подписывание пакетов NuGet](../create-packages/Sign-a-Package.md)
-- [Проверка подписанных пакетов с помощью DotNet CLI](/dotnet/core/tools/dotnet-nuget-verify.md)
+- [Проверка подписанных пакетов с помощью DotNet CLI](/dotnet/core/tools/dotnet-nuget-verify)
 - [Проверка подписанных пакетов с помощью nuget.exe](../reference/cli-reference/cli-ref-verify.md)
 - [Управление границами доверия пакета](../consume-packages/installing-signed-packages.md)

@@ -5,12 +5,12 @@ author: chgill-msft
 ms.author: chgill
 ms.date: 8/14/2020
 ms.topic: conceptual
-ms.openlocfilehash: 6c821091983ab0b5d59b759e1ee9930cf449fd9d
-ms.sourcegitcommit: 6cda91f135e58cf57a2471b0c7c4a2f748f40024
+ms.openlocfilehash: 58ab481f0c6a6cb5549c269788170b8c3ff6002f
+ms.sourcegitcommit: 1462f9f42ae36b3c990762ad4f02e38ab799ad09
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89364156"
+ms.lasthandoff: 04/15/2021
+ms.locfileid: "107508791"
 ---
 # <a name="nuget-57-release-notes"></a>Заметки о выпуске NuGet 5,7
 
@@ -19,6 +19,7 @@ ms.locfileid: "89364156"
 | Версия NuGet | Доступно в версии Visual Studio | Доступно в пакетах SDK для .NET |
 |:---|:---|:---|
 | [**5.7.0**](https://nuget.org/downloads) | [Visual Studio 2019 версии 16.7](https://visualstudio.microsoft.com/downloads/) | [3.1.401](https://dotnet.microsoft.com/download/dotnet-core/3.1)<sup>1</sup> |
+| [**кодом**](https://nuget.org/downloads) | [Visual Studio 2019 версии 16.7](https://visualstudio.microsoft.com/downloads/) | [3.1.408](https://dotnet.microsoft.com/download/dotnet-core/3.1)<sup>1</sup> |
 
 <sup>1</sup> установлен с Visual Studio 2019 с рабочей нагрузкой .NET Core
 
@@ -107,3 +108,15 @@ ms.locfileid: "89364156"
 |[Суннер (Суннжек)](https://github.com/SuNNjek)|[3088](https://github.com/NuGet/NuGet.Client/pull/3088)|nuget.exe спецификация создает тег авторского права с жестко запрограммированным текстом, а не `$copyright$`  -  [#8696](https://github.com/NuGet/Home/issues/8696)|
 |[Оливиер Спинелли (Оливиер-Спинелли)](https://github.com/olivier-spinelli)|[3335](https://github.com/NuGet/NuGet.Client/pull/3335)|При восстановлении с помощью команды DotNet CLI при запуске подключаемых модулей учетных данных Попробуйте использовать CLI DotNet в системном пути, если `DOTNET_HOST_PATH`  переменная среды не определена. - [#7438](https://github.com/NuGet/Home/issues/7438)|
 |[гойзанг](https://github.com/goyzhang)|[3370](https://github.com/NuGet/NuGet.Client/pull/3370)|Добавлен `latest` параметр для `-MSBuildVersion`  -  [#8808](https://github.com/NuGet/Home/issues/8808)|
+
+## <a name="summary-whats-new-in-571"></a>Сводка: новые возможности в 5.7.1
+
+* Расширение файла. nupkg. Metadata для включения источника установки — [#10354](https://github.com/NuGet/Home/issues/10354)
+
+* Контенсаш пакета журнала во время восстановления (во время извлечения) — [#10384](https://github.com/NuGet/Home/issues/10384)
+
+* При восстановлении с нормальным уровнем подробности записывается источник, из которого восстанавливается пакет, [#10461](https://github.com/NuGet/Home/issues/10461)
+
+**[Список всех проблем, исправленных в этом выпуске — 5.7.1](https://app.zenhub.com/workspaces/nuget-client-team-55aec9a240305cf007585881/reports/release?release=6075f5724f84579cc29a79ee)**
+
+**[Список фиксаций в этом выпуске — 5.7.1](https://github.com/NuGet/NuGet.Client/compare/80512866a2c127e52ce3e86fd803fff77e9b9b52...5.7.1.4)**
