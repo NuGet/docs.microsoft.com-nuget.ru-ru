@@ -70,6 +70,7 @@
 ## [Управление версиями пакета](concepts/package-versioning.md)
 ## [Разрешение зависимостей](concepts/dependency-resolution.md)
 ## [Рекомендации по обеспечению безопасности для цепочки поставок программного обеспечения](concepts/Security-Best-Practices.md)
+## [Устранение неполадок с установленными пакетами](concepts/troubleshooting-installed-packages.md)
 # Справочник
 ## [.nuspec](reference/nuspec.md)
 ## [Файл Nuget.Config](reference/nuget-config-file.md)
