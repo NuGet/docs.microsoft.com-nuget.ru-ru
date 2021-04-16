@@ -12,18 +12,18 @@ keywords: пакеты символов NuGet, отладка пакета NuGet
 ms.reviewer:
 - anangaur
 - karann
-ms.openlocfilehash: 001637348fdd435e4ffd3a5a55e8128d1eab453c
-ms.sourcegitcommit: ee6c3f203648a5561c809db54ebeb1d0f0598b68
+ms.openlocfilehash: a62996a28348bf95e4581af180597d72cd5aa298
+ms.sourcegitcommit: c8bf16420f235fc3e42c08cd0d56359e91d490e5
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/26/2021
-ms.locfileid: "98774577"
+ms.lasthandoff: 04/14/2021
+ms.locfileid: "107387339"
 ---
 # <a name="creating-symbol-packages-snupkg"></a>Создание пакетов символов (SNUPKG)
 
 Хороший опыт отладки полагается на наличие отладочных символов, так как они предоставляют важную информацию, такую как связь между скомпилированным и исходным кодом, имена локальных переменных, трассировки стека и многое другое. Пакеты символов (SNUPKG) можно использовать для распространения этих символов и улучшения возможностей отладки пакетов NuGet.
 
-> Обратите внимание, что использование пакетов символов не является единственным способом сделать отладочные символы доступными для объектов-получателей вашей библиотеки. Вы также [можете внедрить (`embed`)](https://docs.microsoft.com/dotnet/core/deploying/single-file#include-pdb-files-inside-the-bundle) их в файл `dll` или `exe`, используя следующее свойство проекта: `<DebugType>embedded</DebugType>`
+> Обратите внимание, что использование пакетов символов не является единственным способом сделать отладочные символы доступными для объектов-получателей вашей библиотеки. Вы также [можете внедрить (`embed`)](/dotnet/core/deploying/single-file#include-pdb-files-inside-the-bundle) их в файл `dll` или `exe`, используя следующее свойство проекта: `<DebugType>embedded</DebugType>`
 
 ## <a name="prerequisites"></a>предварительные требования
 
