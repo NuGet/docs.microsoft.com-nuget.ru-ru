@@ -5,12 +5,12 @@ author: JonDouglas
 ms.author: jodou
 ms.date: 04/02/2019
 ms.topic: conceptual
-ms.openlocfilehash: 637db1ae128ce020c33e54e56148c848a5f905a5
-ms.sourcegitcommit: ee6c3f203648a5561c809db54ebeb1d0f0598b68
+ms.openlocfilehash: 19173d2be7cd66b65651655385466b40f5e08352
+ms.sourcegitcommit: 40c039ace0330dd9e68922882017f9878f4283d1
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/26/2021
-ms.locfileid: "98776228"
+ms.lasthandoff: 04/22/2021
+ms.locfileid: "107901750"
 ---
 # <a name="nuget-50-release-notes"></a>Заметки о выпуске NuGet 5,0
 
@@ -27,7 +27,7 @@ ms.locfileid: "98776228"
 
 ## <a name="summary-whats-new-in-50"></a>Сводка: новые возможности в 5,0
 
-* Поддержка восстановления [отфильтрованных решений](/visualstudio/ide/filtered-solutions?view=vs-2019) в Visual Studio 2019 — [#5820](https://github.com/NuGet/Home/issues/5820)
+* Поддержка восстановления [отфильтрованных решений](/visualstudio/ide/filtered-solutions) в Visual Studio 2019 — [#5820](https://github.com/NuGet/Home/issues/5820)
 * `BuildTransitive` папка позволяет пакетам транзитно публиковать целевые объекты и свойства в ведущем проекте — [#6091](https://github.com/NuGet/Home/issues/6091)
 * Улучшенная поддержка сценариев PackageReference в интерфейсах API IVs NuGet — [#7005](https://github.com/NuGet/Home/issues/7005), [#7493](https://github.com/NuGet/Home/issues/7493)
 * `nuget.exe pack project.json` является устаревшим — [#7928](https://github.com/NuGet/Home/issues/7928)

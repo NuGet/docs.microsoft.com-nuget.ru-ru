@@ -5,16 +5,16 @@ author: JonDouglas
 ms.author: jodou
 ms.date: 06/01/2017
 ms.topic: reference
-ms.openlocfilehash: 961a9d68e5cba09030401fc871a93bf1145b23a3
-ms.sourcegitcommit: ee6c3f203648a5561c809db54ebeb1d0f0598b68
+ms.openlocfilehash: 371e95c341efbce1c4a15facefc15cd51b266141
+ms.sourcegitcommit: 40c039ace0330dd9e68922882017f9878f4283d1
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/26/2021
-ms.locfileid: "98777387"
+ms.lasthandoff: 04/22/2021
+ms.locfileid: "107901789"
 ---
 # <a name="uninstall-package-package-manager-console-in-visual-studio"></a>Uninstall-Package (консоль диспетчера пакетов в Visual Studio)
 
-*В этом разделе описывается команда в [консоли диспетчера пакетов](../../consume-packages/install-use-packages-powershell.md) в Visual Studio в Windows. Общие команды PowerShell Uninstall-Package см. в [справочнике по PackageManagement для PowerShell](/powershell/module/packagemanagement/?view=powershell-6).*
+*В этом разделе описывается команда в [консоли диспетчера пакетов](../../consume-packages/install-use-packages-powershell.md) в Visual Studio в Windows. Общие команды PowerShell Uninstall-Package см. в [справочнике по PackageManagement для PowerShell](/powershell/module/packagemanagement).*
 
 Удаляет пакет из проекта, при необходимости удаляя его зависимости. Если от этого пакета зависят другие пакеты, команда не будет выполнена, если только для нее не был указан параметр –Force.
 
@@ -31,7 +31,7 @@ Uninstall-Package [-Id] <string> [-RemoveDependencies] [-ProjectName <string>] [
 
 | Параметр | Описание |
 | --- | --- |
-| Id | Необходимости Идентификатор пакета для удаления. Сам переключатель-ID является необязательным. |
+| Идентификатор | Необходимости Идентификатор пакета для удаления. Сам переключатель-ID является необязательным. |
 | Версия | Версия пакета для удаления, используемая по умолчанию для текущей установленной версии. |
 | ремоведепенденЦиес | Удалите пакет и его неиспользуемые зависимости. То есть, если какая-либо зависимость имеет другой зависимый от нее пакет, он пропускается. |
 | ProjectName | Проект, из которого удаляется пакет, по умолчанию используется проект по умолчанию. |

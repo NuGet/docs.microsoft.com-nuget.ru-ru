@@ -5,16 +5,16 @@ author: JonDouglas
 ms.author: jodou
 ms.date: 06/01/2017
 ms.topic: reference
-ms.openlocfilehash: 110b41e830636d60741b14292c17840aa5a63dfd
-ms.sourcegitcommit: ee6c3f203648a5561c809db54ebeb1d0f0598b68
+ms.openlocfilehash: ad551b8701cfc2061f7721fb050ed9b5a4fede32
+ms.sourcegitcommit: 40c039ace0330dd9e68922882017f9878f4283d1
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/26/2021
-ms.locfileid: "98777449"
+ms.lasthandoff: 04/22/2021
+ms.locfileid: "107901698"
 ---
 # <a name="install-package-package-manager-console-in-visual-studio"></a>Install-Package (консоль диспетчера пакетов в Visual Studio)
 
-*В этом разделе описывается команда в [консоли диспетчера пакетов](../../consume-packages/install-use-packages-powershell.md) в Visual Studio в Windows. Общие команды PowerShell Install-Package см. в [справочнике по PackageManagement для PowerShell](/powershell/module/packagemanagement/?view=powershell-6).*
+*В этом разделе описывается команда в [консоли диспетчера пакетов](../../consume-packages/install-use-packages-powershell.md) в Visual Studio в Windows. Общие команды PowerShell Install-Package см. в [справочнике по PackageManagement для PowerShell](/powershell/module/packagemanagement).*
 
 Устанавливает пакет и его зависимости в проект.
 
@@ -36,7 +36,7 @@ Install-Package Microsoft.AspNet.MVC -Version 5.0.0.
 
 | Параметр | Описание |
 | --- | --- |
-| Id | Необходимости Идентификатор устанавливаемого пакета. (*3.0 +*) Идентификатор может быть путем или URL-адресом `packages.config` файла или `.nupkg` файла. Сам переключатель-ID является необязательным. |
+| Идентификатор | Необходимости Идентификатор устанавливаемого пакета. (*3.0 +*) Идентификатор может быть путем или URL-адресом `packages.config` файла или `.nupkg` файла. Сам переключатель-ID является необязательным. |
 | игноредепенденЦиес | Установить только этот пакет, но не его зависимости. |
 | ProjectName | Проект, в который устанавливается пакет, по умолчанию используемый в качестве проекта по умолчанию. |
 | Источник | URL-адрес или путь к папке для источника пакета для поиска. Пути к локальным папкам могут быть абсолютными или относительно текущей папки. Если этот параметр опущен, `Install-Package` Поиск выполняется в текущем выбранном источнике пакета. |
