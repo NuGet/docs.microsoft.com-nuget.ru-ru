@@ -5,8 +5,9 @@
 ## [Ключи API](scoped-api-keys.md)
 # Управление пакетами на NuGet.org
 ## [Публикация пакета](publish-a-package.md)
-## [Резервирование префикса ИД пакета](id-prefix-reservation.md)
+## [Резервирование префикса идентификатора пакета](id-prefix-reservation.md)
 ## [Объявление пакетов нерекомендуемыми](deprecate-packages.md)
+## [Файл сведений для пакета](package-readme-on-nuget-org.md)
 # Политики
 ## [Запросы данных](policies/Data-requests.md)
 ## [Разрешение спорных вопросов](policies/dispute-resolution.md)
