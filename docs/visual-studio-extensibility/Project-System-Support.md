@@ -5,12 +5,12 @@ author: JonDouglas
 ms.author: jodou
 ms.date: 01/09/2017
 ms.topic: reference
-ms.openlocfilehash: 7af330f88b47352666933598719d9c8f8cb66a78
-ms.sourcegitcommit: ee6c3f203648a5561c809db54ebeb1d0f0598b68
+ms.openlocfilehash: 9f1ddfd20835cc3a0f9af40a8b4e712c218b31bc
+ms.sourcegitcommit: 40c039ace0330dd9e68922882017f9878f4283d1
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/26/2021
-ms.locfileid: "98779405"
+ms.lasthandoff: 04/22/2021
+ms.locfileid: "107901412"
 ---
 # <a name="nuget-support-for-the-visual-studio-project-system"></a>Поддержка NuGet в системе проектов Visual Studio
 
@@ -25,7 +25,7 @@ ms.locfileid: "98779405"
 
 Клиент NuGet определяет, какие пакеты совместимы с типом проекта, на основе [возможностей проекта](https://github.com/Microsoft/VSProjectSystem/blob/master/doc/overview/about_project_capabilities.md), которые представлены в таблице ниже.
 
-| Функция | Description |
+| Функция | Описание |
 | --- | --- |
 | AssemblyReferences | Указывает, что проект поддерживает ссылки на сборки (отличные от WinRTReferences). |
 | DeclaredSourceItems | Указывает, что проект является стандартным проектом MSBuild (не DNX), в том плане, что исходные элементы объявляются в самом проекте. |
@@ -113,6 +113,6 @@ case __VSHPROPID8.VSHPROPID_ProjectCapabilitiesChecker:
 
 ## <a name="dte-support"></a>Поддержка DTE
 
-NuGet позволяет системе проектов добавлять ссылки, элементы содержимого и импорты MSBuild, вызывая [среду средств разработки](/dotnet/api/envdte.dte?view=visualstudiosdk-2017), которая представляет собой интерфейс автоматизации Visual Studio верхнего уровня. Среда средств разработки — это набор COM-интерфейсов. Они могут быть уже реализованы.
+NuGet позволяет системе проектов добавлять ссылки, элементы содержимого и импорты MSBuild, вызывая [среду средств разработки](/dotnet/api/envdte.dte), которая представляет собой интерфейс автоматизации Visual Studio верхнего уровня. Среда средств разработки — это набор COM-интерфейсов. Они могут быть уже реализованы.
 
 Если тип проекта основан на CPS, среда средств разработки реализуется автоматически.

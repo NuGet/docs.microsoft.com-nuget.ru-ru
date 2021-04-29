@@ -5,12 +5,12 @@ author: JonDouglas
 ms.author: jodou
 ms.date: 03/16/2018
 ms.topic: conceptual
-ms.openlocfilehash: 9bae65573ca49c68d07250228c1923890e0f14ac
-ms.sourcegitcommit: ee6c3f203648a5561c809db54ebeb1d0f0598b68
+ms.openlocfilehash: fa3ec6992002224c9fb56a53aee9096e6d2c6fbb
+ms.sourcegitcommit: 40c039ace0330dd9e68922882017f9878f4283d1
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/26/2021
-ms.locfileid: "98775016"
+ms.lasthandoff: 04/22/2021
+ms.locfileid: "107901672"
 ---
 # <a name="omitting-nuget-packages-in-source-control-systems"></a>Пропуск пакетов NuGet в системах управления исходным кодом
 
@@ -80,7 +80,7 @@ project.assets.json
 
 1. Если вы используете TFS 2010 или более ранней версии, замаскируйте папку `packages` в сопоставлениях рабочей области.
 
-1. В TFS 2012 или более поздней версии либо в Visual Studio Team Services создайте файл `.tfignore`, как описано в статье о [добавлении файлов на сервер](/vsts/tfvc/add-files-server?view=vsts#tfignore). Включите в этот файл приведенное ниже содержимое, чтобы явно игнорировать изменения в папке `\packages` на уровне репозитория и нескольких других промежуточных файлах. (Вы можете создать файл в проводнике Windows, используя имя `.tfignore.` с конечной точкой, но сначала вам может потребоваться отключить параметр "Hide known file extensions" (Скрыть известные расширения файлов).)
+1. В TFS 2012 или более поздней версии либо в Visual Studio Team Services создайте файл `.tfignore`, как описано в статье о [добавлении файлов на сервер](/vsts/tfvc/add-files-server?view=vsts#tfignore&preserve-view=true). Включите в этот файл приведенное ниже содержимое, чтобы явно игнорировать изменения в папке `\packages` на уровне репозитория и нескольких других промежуточных файлах. (Вы можете создать файл в проводнике Windows, используя имя `.tfignore.` с конечной точкой, но сначала вам может потребоваться отключить параметр "Hide known file extensions" (Скрыть известные расширения файлов).)
 
    ```cli
    # Ignore NuGet Packages

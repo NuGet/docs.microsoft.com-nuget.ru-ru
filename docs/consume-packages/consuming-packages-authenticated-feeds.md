@@ -5,12 +5,12 @@ author: nkolev92
 ms.author: nikolev
 ms.date: 02/28/2020
 ms.topic: conceptual
-ms.openlocfilehash: bb624ec6987dd5c6ee38d5bb7e01200487dd4bed
-ms.sourcegitcommit: 2b50c450cca521681a384aa466ab666679a40213
+ms.openlocfilehash: e76fefaf4d3c86aa15cf279090c0adb8ed779aab
+ms.sourcegitcommit: 40c039ace0330dd9e68922882017f9878f4283d1
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/07/2020
-ms.locfileid: "78231743"
+ms.lasthandoff: 04/22/2021
+ms.locfileid: "107901516"
 ---
 # <a name="consuming-packages-from-authenticated-feeds"></a>Использование пакетов из веб-каналов, прошедших проверку подлинности
 
@@ -61,7 +61,7 @@ ms.locfileid: "78231743"
 
 #### <a name="available-credential-providers-for-nugetexe"></a>Доступные поставщики учетных данных для nuget.exe
 
-* [Поставщики учетных данных версии 2 Azure DevOps](/azure/devops/artifacts/nuget/nuget-exe?view=azure-devops#add-a-feed-to-nuget-482-or-later) или [Поставщик учетных данных Azure Artifacts](https://github.com/microsoft/artifacts-credprovider)
+* [Поставщики учетных данных версии 2 Azure DevOps](/azure/devops/artifacts/nuget/nuget-exe#add-a-feed-to-nuget-482-or-later) или [Поставщик учетных данных Azure Artifacts](https://github.com/microsoft/artifacts-credprovider)
 
 В Visual Studio 2017 версии 15.9 и более поздней поставщик учетных данных Azure DevOps входит в состав Visual Studio.
 Если `nuget.exe` использует MSBuild из этого конкретного набора инструментов Visual Studio, подключаемый модуль будет обнаружен автоматически.

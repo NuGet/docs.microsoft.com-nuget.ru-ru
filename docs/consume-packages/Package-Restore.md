@@ -5,12 +5,12 @@ author: JonDouglas
 ms.author: jodou
 ms.date: 08/05/2019
 ms.topic: conceptual
-ms.openlocfilehash: e5dfd9f8dd0439751ddd3863cad03f3b463e1487
-ms.sourcegitcommit: bb9560dcc7055bde84b4940c5eb0db402bf46a48
+ms.openlocfilehash: 6cdc826c85f233c7108a53ad244aa8c47df0be67
+ms.sourcegitcommit: 40c039ace0330dd9e68922882017f9878f4283d1
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/23/2021
-ms.locfileid: "104859243"
+ms.lasthandoff: 04/22/2021
+ms.locfileid: "107901841"
 ---
 # <a name="restore-packages-using-package-restore"></a>Восстановление пакетов с помощью функции восстановления пакетов
 
@@ -181,7 +181,7 @@ msbuild -restore
 
 ## <a name="restore-using-azure-pipelines"></a>Восстановление с помощью Azure Pipelines
 
-При создании определения сборки в Azure Pipelines включите в него задачу восстановления [NuGet](/azure/devops/pipelines/tasks/package/nuget#restore-nuget-packages) или [.NET Core](/azure/devops/pipelines/tasks/build/dotnet-core-cli?view=azure-devops), а затем добавьте задачу сборки. В некоторые шаблоны сборки задача восстановления включена по умолчанию.
+При создании определения сборки в Azure Pipelines включите в него задачу восстановления [NuGet](/azure/devops/pipelines/tasks/package/nuget#restore-nuget-packages) или [.NET Core](/azure/devops/pipelines/tasks/build/dotnet-core-cli), а затем добавьте задачу сборки. В некоторые шаблоны сборки задача восстановления включена по умолчанию.
 
 ## <a name="restore-using-azure-devops-server"></a>Восстановление с помощью Azure DevOps Server
 
