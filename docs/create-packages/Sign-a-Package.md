@@ -6,12 +6,12 @@ ms.author: rmpablos
 ms.date: 03/06/2018
 ms.topic: conceptual
 ms.reviewer: anangaur
-ms.openlocfilehash: 64b28c29ae3b533bde7c8f41dd38a4ab0a5afef7
-ms.sourcegitcommit: 0cc6ac680c3202d0b036c0bed7910f6709215682
+ms.openlocfilehash: c0622520a325000d5fcb8fb884cb509ee4b641f4
+ms.sourcegitcommit: 40c039ace0330dd9e68922882017f9878f4283d1
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/12/2020
-ms.locfileid: "94550379"
+ms.lasthandoff: 04/22/2021
+ms.locfileid: "107901906"
 ---
 # <a name="signing-nuget-packages"></a>Подписывание пакетов NuGet
 
@@ -19,9 +19,9 @@ ms.locfileid: "94550379"
 
 ## <a name="get-a-code-signing-certificate"></a>Получение сертификата для подписи кода
 
-Допустимые сертификаты можно получить в общедоступном центре сертификации, таком как [Symantec](https://trustcenter.websecurity.symantec.com/process/trust/productOptions?productType=SoftwareValidationClass3), [DigiCert](https://www.digicert.com/code-signing/), [Go Daddy](https://www.godaddy.com/web-security/code-signing-certificate), [Global Sign](https://www.globalsign.com/en/code-signing-certificate/), [Comodo](https://www.comodo.com/e-commerce/code-signing/code-signing-certificate.php), [Certum](https://www.certum.eu/certum/cert,offer_en_open_source_cs.xml) и т. д. Полный список центров сертификации, доверенных для Windows: [http://aka.ms/trustcertpartners](/security/trusted-root/participants-list).
+Допустимые сертификаты можно получить в общедоступном центре сертификации, таком как [DigiCert](https://www.digicert.com/code-signing/), [Global Sign](https://www.globalsign.com/en/code-signing-certificate/), [Comodo](https://www.comodo.com/e-commerce/code-signing/code-signing-certificate.php), [Certum](https://www.certum.eu/certum/cert,offer_en_open_source_cs.xml) и т. д. Полный список доверенных центров сертификации для Windows доступен в по адресу [http://aka.ms/trustcertpartners](/security/trusted-root/participants-list).
 
-Для тестирования можно использовать самовыданные сертификаты. Однако NuGet.org не принимает пакеты, подписанные с помощью самовыданных сертификатов. Дополнительные сведения о [создании тестового сертификата](#create-a-test-certificate)
+Для тестирования можно использовать самовыданные сертификаты. Однако NuGet.org не принимает пакеты, подписанные с помощью самостоятельно выданных сертификатов. Дополнительные сведения см. в разделе [Создание тестового сертификата](#create-a-test-certificate).
 
 ## <a name="export-the-certificate-file"></a>Экспорт файла сертификата
 
@@ -51,7 +51,7 @@ nuget sign MyPackage.nupkg -CertificatePath <PathToTheCertificate> -Timestamper 
 
 ## <a name="register-the-certificate-on-nugetorg"></a>Регистрация сертификата на сайте NuGet.org
 
-Чтобы опубликовать подписанный пакет, сначала нужно зарегистрировать сертификат на сайте NuGet.org. Вам потребуется сертификат, так как файл `.cer` находится в двоичном формате DER.
+Чтобы опубликовать подписанный пакет, сначала нужно зарегистрировать сертификат на сайте NuGet.org. Вам потребуется сертификат в виде файла `.cer` в двоичном формате DER.
 
 1. [Войдите](https://www.nuget.org/users/account/LogOn?returnUrl=%2F) на сайт NuGet.org.
 1. Перейдите в `Account settings` (или `Manage Organization` **>** `Edit Organization`, если вы хотите зарегистрировать сертификат в учетной записи организации).

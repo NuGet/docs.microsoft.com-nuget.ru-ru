@@ -1,31 +1,31 @@
 ---
 title: Заметки о выпуске версии NuGet 4.4 RTM
-description: Заметки о выпуске для NuGet 4.3 RTM, включая известные проблемы, исправления ошибок, добавленные функции и запросы на изменение структуры.
+description: Заметки о выпуске для NuGet 4.4 RTM, включая известные проблемы, исправления ошибок, добавленные функции и запросы на изменение структуры.
 author: JonDouglas
 ms.author: jodou
 ms.date: 08/14/2017
 ms.topic: conceptual
 ms.reviewer: anangaur
-ms.openlocfilehash: 970a920a401b8a74c04d84cbad9933c54e3cd19e
-ms.sourcegitcommit: ee6c3f203648a5561c809db54ebeb1d0f0598b68
+ms.openlocfilehash: 980afffcd4202e019ffa87de5dccf947300a9c13
+ms.sourcegitcommit: 40c039ace0330dd9e68922882017f9878f4283d1
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/26/2021
-ms.locfileid: "98776284"
+ms.lasthandoff: 04/22/2021
+ms.locfileid: "107901711"
 ---
 # <a name="nuget-44-release-notes"></a>Заметки о выпуске NuGet 4.4
 
 [Visual Studio 2017 15.4 RTW](https://www.visualstudio.com/news/releasenotes/vs2017-relnotes) включает в себя NuGet 4.4 RTM.
 
-## <a name="summary-whats-new-in-440"></a>Сводка: Новые возможности версии 4.4.0
+## <a name="summary-whats-new-in-440"></a>Сводка. Новые возможности версии 4.4.0
 
-## <a name="summary-whats-new-in-442"></a>Сводка: Новые возможности версии 4.4.2
+## <a name="summary-whats-new-in-442"></a>Сводка. Новые возможности версии 4.4.2
 
-* Исправление безопасности: разрешения на файлы, созданные внутри ~/.nuget, слишком открыты [#7673](https://github.com/NuGet/Home/issues/7673) [CVE-2019-0757](https://portal.msrc.microsoft.com/en-us/security-guidance/advisory/CVE-2019-0757)
+* Исправление безопасности: разрешения на файлы, созданные внутри ~/.nuget, слишком открыты [№ 7673](https://github.com/NuGet/Home/issues/7673) [CVE-2019-0757](https://portal.msrc.microsoft.com/en-us/security-guidance/advisory/CVE-2019-0757)
 
-## <a name="summary-whats-new-in-443"></a>Сводка: Новые возможности версии 4.4.3
+## <a name="summary-whats-new-in-443"></a>Сводка. Новые возможности версии 4.4.3
 
-* Исправление безопасности: файлы внутри NUPKG могут иметь относительный путь выше каталога NUPKG [#7906](https://github.com/NuGet/Home/issues/7906)
+* Исправление безопасности: файлы внутри NUPKG могут иметь относительный путь выше каталога NUPKG [№ 7906](https://github.com/NuGet/Home/issues/7906)
 
 ## <a name="known-issues"></a>Известные проблемы
 
@@ -35,41 +35,41 @@ ms.locfileid: "98776284"
 
 ### <a name="while-using-package-manager-console-enter-key-may-not-work"></a>При использовании консоли диспетчера пакетов клавиша ВВОД может не работать
 
-#### <a name="issue"></a>Проблемы
+#### <a name="issue"></a>Проблема
 
 Периодически клавиша ВВОД не работает в консоли диспетчера пакетов. В этом случае проверьте ход исправления и укажите дополнительные сведения для воспроизведения ошибки. [NuGet#4204](https://github.com/NuGet/Home/issues/4204) [NuGet#4570](https://github.com/NuGet/Home/issues/4570)
 
-#### <a name="workaround"></a>Возможное решение
+#### <a name="workaround"></a>Обходной путь
 
 Перезапустите Visual Studio и откройте консоль управления пакетами перед тем, как открыть решение. Кроме того, попробуйте удалить файл `project.lock.json` и выполнить восстановление еще раз.
 
 ### <a name="you-are-unable-to-view-add-or-update-dotnetclitools-using-nuget-package-manager"></a>Вы не можете просмотреть, добавить или обновить DotNetCLITools с помощью диспетчера пакетов NuGet.
 
-#### <a name="issue"></a>Проблемы
+#### <a name="issue"></a>Проблема
 
 Диспетчер пакетов NuGet не отображается и не позволяет добавить или обновить DotNetCLITools. [NuGet#4256](https://github.com/NuGet/Home/issues/4256)
 
-#### <a name="workaround"></a>Возможное решение
+#### <a name="workaround"></a>Обходной путь
 
 DotNetCLIToolReferences нужно изменить вручную в файле проекта.
 
 ### <a name="retargeting-target-framework-version-may-lead-to-incomplete-intellisense"></a>Изменение требуемой версии .NET Framework может привести к частичному отсутствию данных функции IntelliSense
 
-#### <a name="issue"></a>Проблемы
+#### <a name="issue"></a>Проблема
 
 Если изменить требуемую версию .NET Framework в Visual Studio, вы можете получить неполные данные функции IntelliSense. Это происходит, если использовать PackageReferences в качестве формата диспетчера пакетов. [NuGet#4216](https://github.com/NuGet/Home/issues/4216)
 
-#### <a name="workaround"></a>Возможное решение
+#### <a name="workaround"></a>Обходной путь
 
 Выполните восстановление вручную.
 
 ### <a name="a-package-in-a-net-core-project-that-contains-an-assembly-with-an-invalid-signature-can-trigger-an-infinite-restore-loop"></a>Пакет в проекте .NET Core, который содержит сборку с недопустимой подписью, может инициировать бесконечный цикл восстановления.
 
-#### <a name="issue"></a>Проблемы
+#### <a name="issue"></a>Проблема
 
 Иногда при использовании пакета, содержащего сборку с недопустимой подписью, или при использовании пакета, версия которого задается с помощью параметра DateTime, возникает бесконечный цикл автоматического восстановления пакета (dotnet/project-system#1457).
 
-#### <a name="workaround"></a>Возможное решение
+#### <a name="workaround"></a>Обходной путь
 
 Сейчас для этой проблемы не существует обходного решения.
 
@@ -77,13 +77,13 @@ DotNetCLIToolReferences нужно изменить вручную в файле
 
 Проблемы, исправленные в NuGet 4.3 RTM, описаны в разделе [Заметки о выпуске NuGet 4.3 RTM](../release-notes/nuget-4.3-RTM.md)
 
-### <a name="features"></a>Функции
+### <a name="features"></a>Компоненты
 
 - Поддержка упрощенной загрузки решения в сценариях PMC и пользовательского интерфейса PM NuGet — [#5180](https://github.com/NuGet/Home/issues/5180)
 
 - Целевой объект pack MSBuild должен иметь общедоступный обработчик для запуска целевых объектов пользователя перед собой — [#5143](https://github.com/NuGet/Home/issues/5143)
 
-- Функция: добавление параметра dependencyVersion в установку NuGet — [#1806](https://github.com/NuGet/Home/issues/1806)
+- Функция: добавление параметра dependencyVersion в установку NuGet — [#1806](https://github.com/NuGet/Home/issues/1806)
 
 - uap10.0.TODO.0 должен соответствовать .NET Standard 2.0 для NuGet — [#5684](https://github.com/NuGet/Home/issues/5684)
 
@@ -175,9 +175,9 @@ DotNetCLIToolReferences нужно изменить вручную в файле
 
 - [Предупреждения и ошибки] NoWarn не переходит транзитивно по одноранговым ссылкам — [#5501](https://github.com/NuGet/Home/issues/5501)
 
-- Загрузка упрощенного решения: общее ядро для пользовательского интерфейса PM, PMC и IV — [#5057](https://github.com/NuGet/Home/issues/5057)
+- Упрощенная загрузка решения: общее ядро для пользовательского интерфейса PM, PMC и векторов инициализации — [#5057](https://github.com/NuGet/Home/issues/5057)
 
-- Загрузка упрощенного решения: поддержка — PMC — [#5053](https://github.com/NuGet/Home/issues/5053)
+- Упрощенная загрузка решения: поддержка PMC — [#5053](https://github.com/NuGet/Home/issues/5053)
 
 - Добавление поддержки для предварительного восстановления целевого объекта MSBuild, который активирует Visual Studio — [#4781](https://github.com/NuGet/Home/issues/4781)
 

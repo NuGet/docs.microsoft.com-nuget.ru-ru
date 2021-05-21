@@ -5,12 +5,12 @@ author: mikejo5000
 ms.author: mikejo
 ms.date: 06/05/2019
 ms.topic: conceptual
-ms.openlocfilehash: 7951b3db0cdcaee0a1eb955a5bf6fedce24c79c9
-ms.sourcegitcommit: b138bc1d49fbf13b63d975c581a53be4283b7ebf
+ms.openlocfilehash: 5224a4f5be519e1d72285562c1611d047582f7de
+ms.sourcegitcommit: 40c039ace0330dd9e68922882017f9878f4283d1
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/03/2020
-ms.locfileid: "93237618"
+ms.lasthandoff: 04/22/2021
+ms.locfileid: "107901568"
 ---
 # <a name="individual-accounts-on-nugetorg"></a>Индивидуальные учетные записи на NuGet.org
 
@@ -32,7 +32,7 @@ ms.locfileid: "93237618"
 
 1. Введите данные своей учетной записи Майкрософт или Azure Active Directory.
 
-1. Щелкните **Да** , чтобы принять разрешения, которые требуется предоставить приложению *NuGet.org*.
+1. Щелкните **Да**, чтобы принять разрешения, которые требуется предоставить приложению *NuGet.org*.
 
    ![Предоставление разрешений приложению NuGet.org](media/nuget-org-permissions.png)
 
@@ -62,11 +62,11 @@ ms.locfileid: "93237618"
 
    Проверьте номер телефона или адрес электронной почты, которые уже связаны с вашей учетной записью Майкрософт. Может потребоваться ввести новые номер телефона или адрес электронной почты для своей учетной записи. В таком случае введите необходимые сведения и щелкните **Далее**.
 
-   ![Включение 2FA](media/nuget-org-sign-in-2fa.png)
+   ![Включение двухфакторной проверки подлинности и ввод номера телефона](media/nuget-org-sign-in-2fa.png)
 
 4. Проверьте свое устройство или учетную запись электронной почты и введите только что отправленный код.
 
-   ![Включение 2FA](media/nuget-org-enter-code-2fa.png)
+   ![Включение двухфакторной проверки подлинности и ввод кода](media/nuget-org-enter-code-2fa.png)
 
 5. Выполните дополнительные инструкции, чтобы выполнить двухфакторную проверку подлинности.
 
