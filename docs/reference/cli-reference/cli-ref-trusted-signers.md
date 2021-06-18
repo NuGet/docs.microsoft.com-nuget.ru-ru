@@ -6,12 +6,12 @@ ms.author: patbel
 ms.date: 11/12/2018
 ms.topic: reference
 ms.reviewer: rmpablos
-ms.openlocfilehash: 9dd3fe3786c824c4a0a1cb252aa50cfc4458a483
-ms.sourcegitcommit: bb9560dcc7055bde84b4940c5eb0db402bf46a48
+ms.openlocfilehash: a5f3564af8b96dfa673d2252aea2e77a79c184a4
+ms.sourcegitcommit: f3d98c23408a4a1c01ea92fc45493fa7bd97c3ee
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/23/2021
-ms.locfileid: "104859425"
+ms.lasthandoff: 06/17/2021
+ms.locfileid: "112323594"
 ---
 # <a name="trusted-signers-command-nuget-cli"></a>Команда Trusted-Signs (интерфейс командной строки NuGet)
 
@@ -62,14 +62,14 @@ Registered trusted signers:
 ## <a name="options-for-add-based-on-a-package"></a>Параметры для добавления на основе пакета
 
 ```cli
-nuget trusted-signers add <package(s)> -Name <name> [options]
+nuget trusted-signers add <package> -Name <name> [options]
 ```
 
-где `<package(s)>` — один или несколько `.nupkg` файлов.
+где `<package>` — один подписанный `.nupkg` файл.
 
 - **`-Author`**
 
-  Указывает, что подпись автора пакетов должна быть доверенной.
+  Указывает, что подпись автора подписанного пакета должна быть доверенной.
 
 - **`-AllowUntrustedRoot`**
 
@@ -81,7 +81,7 @@ nuget trusted-signers add <package(s)> -Name <name> [options]
 
 - **`-Repository`**
 
-  Указывает, что подпись репозитория или подпись другой стороны пакетов должны быть доверенными.
+  Указывает, что подпись репозитория или подпись другой стороны подписанного пакета должны быть доверенными.
 
 Одновременное предоставление обоих `-Author` и `-Repository` одновременно не поддерживается.
 

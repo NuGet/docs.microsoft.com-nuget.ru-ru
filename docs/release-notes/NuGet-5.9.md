@@ -5,12 +5,12 @@ author: erdembayar
 ms.author: eryondon
 ms.date: 3/11/2021
 ms.topic: conceptual
-ms.openlocfilehash: 50fd277a4f1f39b4a68a89cd07af4e21f0d3d831
-ms.sourcegitcommit: 1462f9f42ae36b3c990762ad4f02e38ab799ad09
+ms.openlocfilehash: 1152af99cf1421918a42d0d1faa33f1452f54a8f
+ms.sourcegitcommit: f3d98c23408a4a1c01ea92fc45493fa7bd97c3ee
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/15/2021
-ms.locfileid: "107508817"
+ms.lasthandoff: 06/17/2021
+ms.locfileid: "112323886"
 ---
 # <a name="nuget-59-release-notes"></a>Заметки о выпуске NuGet 5,9
 
@@ -18,8 +18,8 @@ ms.locfileid: "107508817"
 
 | Версия NuGet | Доступно в версии Visual Studio | Доступно в пакетах SDK для .NET |
 |:---|:---|:---|
-| [**5.9.0**](https://nuget.org/downloads) | [Visual Studio 2019 версии 16,9](https://visualstudio.microsoft.com/downloads/) | [5.0.200](https://dotnet.microsoft.com/download/dotnet-core/5.0)<sup>1</sup> |
-| [**5.9.1**](https://nuget.org/downloads) | [Visual Studio 2019 версии 16,9](https://visualstudio.microsoft.com/downloads/) | [5.0.202](https://dotnet.microsoft.com/download/dotnet-core/5.0)<sup>1</sup> |
+| [**5.9.0**](https://nuget.org/downloads) | [Visual Studio 2019 версии 16.9](https://visualstudio.microsoft.com/downloads/) | [5.0.200](https://dotnet.microsoft.com/download/dotnet-core/5.0)<sup>1</sup> |
+| [**5.9.1**](https://nuget.org/downloads) | [Visual Studio 2019 версии 16.9](https://visualstudio.microsoft.com/downloads/) | [5.0.202](https://dotnet.microsoft.com/download/dotnet-core/5.0)<sup>1</sup> |
 
 <sup>1</sup> установлен с Visual Studio 2019 с рабочей нагрузкой .NET Core
   
@@ -220,6 +220,16 @@ ms.locfileid: "107508817"
 **[Список всех проблем, исправленных в этом выпуске — 5.9.1](https://app.zenhub.com/workspaces/nuget-client-team-55aec9a240305cf007585881/reports/release?release=6075f42efd068017639b4036)**
 
 **[Список фиксаций в этом выпуске — 5.9.1](https://github.com/NuGet/NuGet.Client/compare/5.9.0.7134...5.9.1.8)**
+
+## <a name="known-issues"></a>Известные проблемы
+
+### <a name="nuget-59-pack-raises-null-reference-exception---10685"></a>пакет NuGet 5,9 вызывает `Null Reference` исключение. - [#10685](https://github.com/NuGet/Home/issues/10685)
+
+#### <a name="issue"></a>Проблема
+Когда Тринг `pack` использует `.nuspec` файл, `NuGet 5.9` версия вызывает `null reference` исключение, если [явные ссылки на сборки](../reference/nuspec.md#explicit-assembly-references) заданы без добавления `reference groups` для проектов, предназначенных для `multiple frameworks` .
+
+#### <a name="workaround"></a>Обходной путь
+Используйте `nuget.exe` [5.8.1](https://dist.nuget.org/win-x86-commandline/v5.8.1/nuget.exe)  или последнюю версию, отличную от `5.9.1` .
 
 ## <a name="feedback-welcome"></a>Добро пожаловать на отзыв
 

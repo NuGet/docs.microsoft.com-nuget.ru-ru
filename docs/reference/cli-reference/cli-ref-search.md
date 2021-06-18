@@ -5,18 +5,18 @@ author: JonDouglas
 ms.author: jodou
 ms.date: 08/17/2020
 ms.topic: reference
-ms.openlocfilehash: 6f4adcdf3981e5ec0e5e88337a8c3bcdd9158ca3
-ms.sourcegitcommit: ee6c3f203648a5561c809db54ebeb1d0f0598b68
+ms.openlocfilehash: 0b0d0445f21ae49bc4785a6de822f9b56ec5c453
+ms.sourcegitcommit: f3d98c23408a4a1c01ea92fc45493fa7bd97c3ee
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/26/2021
-ms.locfileid: "98779155"
+ms.lasthandoff: 06/17/2021
+ms.locfileid: "112323665"
 ---
 # <a name="search-command-nuget-cli"></a>Команда Search (интерфейс командной строки NuGet)
 
 Область **применения:** &bullet; **Поддерживаемые версии** для использования пакетов: 5.8 +
 
-Выполняет поиск в заданном источнике с помощью предоставленной строки запроса. Если источники не указаны, используются все источники, определенные в% AppData% \NuGet\NuGet.config.
+Выполняет поиск в заданном источнике с помощью предоставленной строки запроса. Если источники не указаны, используются все источники, определенные в% AppData% \NuGet\NuGet.Config.
 
 ## <a name="usage"></a>Использование
 

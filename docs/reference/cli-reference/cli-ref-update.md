@@ -5,12 +5,12 @@ author: JonDouglas
 ms.author: jodou
 ms.date: 12/07/2017
 ms.topic: reference
-ms.openlocfilehash: cfa7fdcc6af46fd5f4030ba424754291f697bc43
-ms.sourcegitcommit: ee6c3f203648a5561c809db54ebeb1d0f0598b68
+ms.openlocfilehash: 5f244e4cf15ca7afa0e6318a8c20d464ff75bd8e
+ms.sourcegitcommit: f3d98c23408a4a1c01ea92fc45493fa7bd97c3ee
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/26/2021
-ms.locfileid: "98779131"
+ms.lasthandoff: 06/17/2021
+ms.locfileid: "112323652"
 ---
 # <a name="update-command-nuget-cli"></a>команда Update (интерфейс командной строки NuGet)
 
@@ -32,7 +32,7 @@ nuget update <configPath> [options]
 
 где `<configPath>` определяет либо `packages.config` файл решения, либо список зависимостей проекта.
 
-## <a name="options"></a>Варианты
+## <a name="options"></a>Параметры
 
 - **`-ConfigFile`**
 
@@ -86,7 +86,7 @@ nuget update <configPath> [options]
 
 - **`-Self`**
 
-  Обновляет nuget.exe до последней версии; все остальные аргументы игнорируются.
+  Обновления `nuget.exe` до последней версии. `-Source` можно использовать, но все остальные аргументы игнорируются. Если источник не указан, проверяет наличие `nuget.org` обновлений независимо от `NuGet.Config` параметров.
 
 - **`-Source`**
 
