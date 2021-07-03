@@ -1,148 +1,142 @@
 ### YamlMime:Hub
 title: Документация по NuGet
-summary: NuGet — это диспетчер пакетов для .NET. Он позволяет разработчикам создавать и использовать полезные библиотеки .NET, а также предоставлять к ним общий доступ. С помощью клиентских средств NuGet можно создавать и использовать эти библиотеки как пакеты.
+summary: "NuGet\_— это диспетчер пакетов для .NET. Он позволяет разработчикам создавать и использовать полезные библиотеки .NET, а также предоставлять к ним общий доступ. С помощью клиентских средств NuGet можно создавать и использовать эти библиотеки как пакеты."
 brand: nuget
 metadata:
-  title: Документация по NuGet | Документация Майкрософт
+  title: "Документация по NuGet\_| Документация Майкрософт"
   titleSuffix: ''
-  description: NuGet — это диспетчер пакетов для платформ разработки Майкрософт, включая .NET. Клиентские средства NuGet обеспечивают создание и использование пакетов.
+  description: "NuGet\_— это диспетчер пакетов для платформ разработки Майкрософт, включая .NET. Клиентские средства NuGet обеспечивают создание и использование пакетов."
   ms.topic: hub-page
   author: JonDouglas
   ms.author: jodou
   ms.date: 01/13/2020
-  ms.openlocfilehash: 2a7d847f59f646b5a460f6233b721dcaf26e3fb5
-  ms.sourcegitcommit: ee6c3f203648a5561c809db54ebeb1d0f0598b68
-  ms.translationtype: HT
-  ms.contentlocale: ru-RU
-  ms.lasthandoff: 01/26/2021
-  ms.locfileid: "98775888"
 highlightedContent:
   items:
-  - title: Что такое NuGet?
-    itemType: overview
-    url: ./what-is-nuget.md
-  - title: Установка клиентских средств NuGet
-    itemType: download
-    url: ./install-nuget-client-tools.md
-  - title: Знакомство с NuGet
-    itemType: video
-    url: https://aka.ms/Nuget101
-  - title: NuGet.org
-    itemType: overview
-    url: ./nuget-org/overview-nuget-org.md
-conceptualContent:
-  title: Использование, создание и публикация пакетов
-  items:
-  - title: Начало работы
-    links:
-    - text: Установка клиентских средств NuGet
+    - title: Что такое NuGet?
+      itemType: overview
+      url: ./what-is-nuget.md
+    - title: Установка клиентских средств NuGet
       itemType: download
       url: ./install-nuget-client-tools.md
-    - text: Установка и использование пакета — CLI dotnet
-      itemType: quickstart
-      url: ./quickstart/install-and-use-a-package-using-the-dotnet-cli.md
-    - text: Установка и использование пакета — Visual Studio
-      itemType: quickstart
-      url: ./quickstart/install-and-use-a-package-in-visual-studio.md
-    - text: Создание пакета — CLI dotnet
-      itemType: quickstart
-      url: ./quickstart/create-and-publish-a-package-using-the-dotnet-cli.md
-    - text: Создание пакета — Visual Studio
-      itemType: quickstart
-      url: ./quickstart/create-and-publish-a-package-using-visual-studio.md
-    - text: Создание пакета .NET Framework — Visual Studio
-      itemType: quickstart
-      url: ./quickstart/create-and-publish-a-package-using-visual-studio-net-framework.md
-  - title: Использование пакетов
-    links:
-    - text: Рабочий процесс (обзор)
+    - title: Знакомство с NuGet
+      itemType: video
+      url: 'https://aka.ms/Nuget101'
+    - title: NuGet.org
       itemType: overview
-      url: ./consume-packages/overview-and-workflow.md
-    - text: Поиск и выбор пакетов
-      itemType: get-started
-      url: ./consume-packages/finding-and-choosing-packages.md
-    - text: Использование Visual Studio
-      itemType: how-to-guide
-      url: ./consume-packages/install-use-packages-visual-studio.md
-    - text: Использование CLI dotnet
-      itemType: how-to-guide
-      url: ./consume-packages/install-use-packages-dotnet-cli.md
-    - text: Использование CLI nuget.exe
-      itemType: how-to-guide
-      url: ./consume-packages/install-use-packages-nuget-cli.md
-    - text: Использование консоли диспетчера пакетов
-      itemType: how-to-guide
-      url: ./consume-packages/install-use-packages-powershell.md
-  - title: Создание пакетов
-    links:
-    - text: Рабочий процесс (обзор)
-      itemType: overview
-      url: ./create-packages/overview-and-workflow.md
-    - text: Использование Visual Studio
-      itemType: how-to-guide
-      url: ./quickstart/create-and-publish-a-package-using-visual-studio.md
-    - text: Использование CLI dotnet
-      itemType: how-to-guide
-      url: ./create-packages/creating-a-package-dotnet-cli.md
-    - text: Использование CLI nuget.exe
-      itemType: how-to-guide
-      url: ./create-packages/creating-a-package.md
-    - text: Использование MSBuild
-      itemType: how-to-guide
-      url: ./create-packages/creating-a-package-msbuild.md
-    - text: Поддержка нескольких целевых платформ
-      itemType: reference
-      url: ./create-packages/multiple-target-frameworks-project-file.md
-  - title: Публикация пакетов
-    links:
-    - text: Публикация на NuGet.org
-      itemType: overview
-      url: ./nuget-org/publish-a-package.md
-    - text: Публикация в закрытый веб-канал
-      itemType: overview
-      url: ./hosting-packages/overview.md
+      url: ./nuget-org/overview-nuget-org.md
+conceptualContent:
+  title: 'Использование, создание и публикация пакетов'
+  items:
+    - title: Начало работы
+      links:
+        - text: Установка клиентских средств NuGet
+          itemType: download
+          url: ./install-nuget-client-tools.md
+        - text: "Установка и использование пакета\_— CLI dotnet"
+          itemType: quickstart
+          url: ./quickstart/install-and-use-a-package-using-the-dotnet-cli.md
+        - text: "Установка и использование пакета\_— Visual Studio"
+          itemType: quickstart
+          url: ./quickstart/install-and-use-a-package-in-visual-studio.md
+        - text: "Создание пакета\_— CLI dotnet"
+          itemType: quickstart
+          url: ./quickstart/create-and-publish-a-package-using-the-dotnet-cli.md
+        - text: "Создание пакета\_— Visual Studio"
+          itemType: quickstart
+          url: ./quickstart/create-and-publish-a-package-using-visual-studio.md
+        - text: "Создание пакета .NET Framework\_— Visual Studio"
+          itemType: quickstart
+          url: ./quickstart/create-and-publish-a-package-using-visual-studio-net-framework.md
+    - title: Использование пакетов
+      links:
+        - text: Рабочий процесс (обзор)
+          itemType: overview
+          url: ./consume-packages/overview-and-workflow.md
+        - text: Поиск и выбор пакетов
+          itemType: get-started
+          url: ./consume-packages/finding-and-choosing-packages.md
+        - text: Использование Visual Studio
+          itemType: how-to-guide
+          url: ./consume-packages/install-use-packages-visual-studio.md
+        - text: Использование CLI dotnet
+          itemType: how-to-guide
+          url: ./consume-packages/install-use-packages-dotnet-cli.md
+        - text: Использование CLI nuget.exe
+          itemType: how-to-guide
+          url: ./consume-packages/install-use-packages-nuget-cli.md
+        - text: Использование консоли диспетчера пакетов
+          itemType: how-to-guide
+          url: ./consume-packages/install-use-packages-powershell.md
+    - title: Создание пакетов
+      links:
+        - text: Рабочий процесс (обзор)
+          itemType: overview
+          url: ./create-packages/overview-and-workflow.md
+        - text: Использование Visual Studio
+          itemType: how-to-guide
+          url: ./quickstart/create-and-publish-a-package-using-visual-studio.md
+        - text: Использование CLI dotnet
+          itemType: how-to-guide
+          url: ./create-packages/creating-a-package-dotnet-cli.md
+        - text: Использование CLI nuget.exe
+          itemType: how-to-guide
+          url: ./create-packages/creating-a-package.md
+        - text: Использование MSBuild
+          itemType: how-to-guide
+          url: ./create-packages/creating-a-package-msbuild.md
+        - text: Поддержка нескольких целевых платформ
+          itemType: reference
+          url: ./create-packages/multiple-target-frameworks-project-file.md
+    - title: Публикация пакетов
+      links:
+        - text: Публикация на NuGet.org
+          itemType: overview
+          url: ./nuget-org/publish-a-package.md
+        - text: Публикация в закрытый веб-канал
+          itemType: overview
+          url: ./hosting-packages/overview.md
 additionalContent:
   sections:
-  - title: Ссылки и ресурсы
-    items:
-    - title: NuGet.org
-      links:
-      - text: Обзор
-        url: ./nuget-org/overview-nuget-org.md
-      - text: Индивидуальные учетные записи
-        url: ./nuget-org/individual-accounts.md
-      - text: Организации
-        url: ./nuget-org/organizations-on-nuget-org.md
-      - text: Ключи API
-        url: ./nuget-org/scoped-api-keys.md
-      - text: Публикация пакета
-        url: ./nuget-org/publish-a-package.md
-    - title: Справочник
-      links:
-      - text: CLI dotnet
-        url: ./reference/dotnet-commands.md
-      - text: Интерфейс командной строки nuget.exe
-        url: ./reference/nuget-exe-cli-reference.md
-      - text: Ссылки на пакеты
-        url: ./consume-packages/package-references-in-project-files.md
-      - text: Объекты pack и restore в качестве целевых объектов MSBuild
-        url: ./reference/msbuild-targets.md
-      - text: .nuspec
-        url: ./reference/nuspec.md
-      - text: nuget.config
-        url: ./reference/nuget-config-file.md
-      - text: API NuGet
-        url: ./api/overview.md
-    - title: Ресурсы
-      links:
-      - text: Политики — NuGet
-        url: ./policies/governance.md
-      - text: Политики — NuGet.org
-        url: ./nuget-org/policies/data-requests.md
-      - text: Заметки о выпуске
-        url: ./release-notes/known-issues.md
-      - text: 'Вопросы и ответы: NuGet'
-        url: ./resources/nuget-faq.md
-      - text: 'Вопросы и ответы: NuGet.org'
-        url: ./nuget-org/nuget-org-faq.md
-  footer: '[Блоги](https://devblogs.microsoft.com/nuget/) - [Twitter](https://twitter.com/nuget) - [Stack Overflow](https://stackoverflow.com/questions/tagged/nuget)'
+    - title: Ссылки и ресурсы
+      items:
+        - title: NuGet.org
+          links:
+            - text: Обзор
+              url: ./nuget-org/overview-nuget-org.md
+            - text: Индивидуальные учетные записи
+              url: ./nuget-org/individual-accounts.md
+            - text: Организации
+              url: ./nuget-org/organizations-on-nuget-org.md
+            - text: Ключи API
+              url: ./nuget-org/scoped-api-keys.md
+            - text: Публикация пакета
+              url: ./nuget-org/publish-a-package.md
+        - title: Справочник
+          links:
+            - text: CLI dotnet
+              url: ./reference/dotnet-commands.md
+            - text: Интерфейс командной строки nuget.exe
+              url: ./reference/nuget-exe-cli-reference.md
+            - text: Ссылки на пакеты
+              url: ./consume-packages/package-references-in-project-files.md
+            - text: Объекты pack и restore в качестве целевых объектов MSBuild
+              url: ./reference/msbuild-targets.md
+            - text: .nuspec
+              url: ./reference/nuspec.md
+            - text: nuget.config
+              url: ./reference/nuget-config-file.md
+            - text: API NuGet
+              url: ./api/overview.md
+        - title: Ресурсы
+          links:
+            - text: "Политики\_— NuGet"
+              url: ./policies/governance.md
+            - text: "Политики\_— NuGet.org"
+              url: ./nuget-org/policies/data-requests.md
+            - text: Заметки о выпуске
+              url: ./release-notes/known-issues.md
+            - text: 'Вопросы и ответы: NuGet'
+              url: ./resources/nuget-faq.yml
+            - text: 'Вопросы и ответы: NuGet.org'
+              url: ./nuget-org/nuget-org-faq.yml
+  footer: '[Blogs](https://devblogs.microsoft.com/nuget/) - [Twitter](https://twitter.com/nuget) - [Stack Overflow](https://stackoverflow.com/questions/tagged/nuget)'

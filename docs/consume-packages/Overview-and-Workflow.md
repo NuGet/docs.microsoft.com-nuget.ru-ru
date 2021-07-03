@@ -5,12 +5,12 @@ author: JonDouglas
 ms.author: jodou
 ms.date: 03/22/2018
 ms.topic: conceptual
-ms.openlocfilehash: 92968236262f891106ab2d4cd3ba399f1644400b
-ms.sourcegitcommit: bb9560dcc7055bde84b4940c5eb0db402bf46a48
+ms.openlocfilehash: d1d6df3bcc36d8a78fcee97099b301c9ffc440d9
+ms.sourcegitcommit: f3d98c23408a4a1c01ea92fc45493fa7bd97c3ee
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/23/2021
-ms.locfileid: "104859217"
+ms.lasthandoff: 06/17/2021
+ms.locfileid: "112323639"
 ---
 # <a name="package-consumption-workflow"></a>Рабочий процесс использования пакета
 
@@ -39,7 +39,7 @@ NuGet также проверяет совместимость целевых п
 
 В некоторых случаях требуется переустановить пакеты, которые уже включены в состав проекта, что также может потребовать переустановку зависимостей. Это легко сделать с помощью команды `nuget reinstall` или консоли диспетчера пакетов NuGet. Дополнительные сведения см. в разделе [Повторная установка и обновление пакетов](../consume-packages/reinstalling-and-updating-packages.md).
 
-Наконец, поведение NuGet определяется файлами `Nuget.Config`. Для централизованного управления определенными настройками на разных уровнях можно использовать несколько файлов, как описывается в разделе [Настройка поведения NuGet](../consume-packages/configuring-nuget-behavior.md).
+Наконец, поведение NuGet определяется файлами `NuGet.Config`. Для централизованного управления определенными настройками на разных уровнях можно использовать несколько файлов, как описывается в разделе [Настройка поведения NuGet](../consume-packages/configuring-nuget-behavior.md).
 
 ## <a name="ways-to-install-a-nuget-package"></a>Способы установки пакетов NuGet
 

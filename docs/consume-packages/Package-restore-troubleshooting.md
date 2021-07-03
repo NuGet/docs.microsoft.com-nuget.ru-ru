@@ -5,12 +5,12 @@ author: JonDouglas
 ms.author: jodou
 ms.date: 05/25/2018
 ms.topic: conceptual
-ms.openlocfilehash: f1c7c4ce2872e18b1ed35ccbf3355a6192ab4a9c
-ms.sourcegitcommit: ee6c3f203648a5561c809db54ebeb1d0f0598b68
+ms.openlocfilehash: 0bd14104695a15d2e4c65a13b271143809c4ba8a
+ms.sourcegitcommit: f3d98c23408a4a1c01ea92fc45493fa7bd97c3ee
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/26/2021
-ms.locfileid: "98775023"
+ms.lasthandoff: 06/17/2021
+ms.locfileid: "112323626"
 ---
 # <a name="troubleshooting-package-restore-errors"></a>Устранение ошибок при восстановлении пакетов
 
@@ -31,7 +31,7 @@ ms.locfileid: "98775023"
 
 ![Включите восстановление пакетов NuGet в меню "Сервис", "Параметры".](../consume-packages/media/restore-01-autorestoreoptions.png)
 
-Эти параметры также можно изменить в файле `NuGet.config`; см раздел о [согласии](#consent). Для достаточно ранних проектов, использующих встроенную в MSBuild функцию восстановление пакетов, возможно, потребуется [перейти](package-restore.md#migrate-to-automatic-package-restore-visual-studio) на автоматическое восстановление пакетов.
+Эти параметры также можно изменить в файле `NuGet.Config`; см раздел о [согласии](#consent). Для достаточно ранних проектов, использующих встроенную в MSBuild функцию восстановление пакетов, возможно, потребуется [перейти](package-restore.md#migrate-to-automatic-package-restore-visual-studio) на автоматическое восстановление пакетов.
 
 <a name="missing"></a>
 
@@ -46,7 +46,7 @@ Use NuGet Package Restore to download them. The missing file is {name}.
 
 Эта ошибка возникает при попытке выполнить сборку проекта, содержащего ссылки на один или несколько пакетов NuGet, которые сейчас не установлены на компьютере или в проекте.
 
-- При использовании формата управления [PackageReference](package-references-in-project-files.md) эта ошибка может быть следствием миграции packages.config в PackageReference, и это необходимо [вручную удалить](../resources/NuGet-FAQ.md#working-with-packages) из файла проекта.
+- При использовании формата управления [PackageReference](package-references-in-project-files.md) эта ошибка может быть следствием миграции packages.config в PackageReference, и это необходимо [вручную удалить](/nuget/resources/nuget-faq#working-with-packages) из файла проекта.
 - Если используется файл [packages.config](../reference/packages-config.md) эта ошибка означает, что пакет не установлен в папке`packages` в корне решения.
 
 Обычно такая ситуация возникает при получении исходного кода проекта из системы управления версиями или другого скачанного файла. Пакеты обычно исключаются из системы управления версиями или скачиваемых файлов, так как их можно восстановить из веб-каналов пакета, например nuget.org (см. раздел [Пакеты и система управления версиями](Packages-and-Source-Control.md)). Их включение приведет к раздуванию репозитория или созданию слишком больших ZIP-файлов.

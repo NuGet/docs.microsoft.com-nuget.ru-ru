@@ -1,0 +1,178 @@
+### YamlMime:FAQ
+metadata:
+  title: Вопросы и ответы по NuGet
+  description: Вопросы и ответы по использованию NuGet в командной строке и в Visual Studio
+  author: shishirx34
+  ms.author: shishirh
+  ms.date: 06/05/2019
+  ms.topic: conceptual
+  ms.openlocfilehash: 7c6ad504b2623f08a4b971fbe72a4e97ddd20bca
+  ms.sourcegitcommit: f3d98c23408a4a1c01ea92fc45493fa7bd97c3ee
+  ms.translationtype: HT
+  ms.contentlocale: ru-RU
+  ms.lasthandoff: 06/17/2021
+  ms.locfileid: "112356526"
+title: Вопросы и ответы по NuGet
+summary: >
+  Часто задаваемые вопросы, относящиеся к NuGet.org, например вопросы об учетных записях NuGet.org, см. в разделе [Вопросы и ответы по NuGet.org](../nuget-org/nuget-org-faq.yml).
+sections:
+- name: Общие сведения
+  questions:
+  - question: >
+      Что необходимо для запуска NuGet?
+    answer: >
+      Все данные по пользовательскому интерфейсу и средствам командной строки доступны в [руководстве по установке](../install-nuget-client-tools.md).
+  - question: >
+      Поддерживает ли NuGet Mono?
+    answer: >
+      Средство командной строки `nuget.exe` выполняет построение и запускается с помощью Mono 3.2 или более поздней версии и поддерживает создание пакетов в Mono.
+
+
+      Несмотря на то, что `nuget.exe` полностью работает в Windows, в Linux и OS X существуют известные проблемы. См. раздел GitHub, посвященный [проблемам с Mono](https://github.com/NuGet/Home/issues?utf8=%E2%9C%93&q=is%3Aissue+is%3Aopen+mono).
+
+
+      [Графический клиент](https://github.com/mrward/monodevelop-nuget-addin) доступен в виде надстройки для MonoDevelop.
+  - question: >
+      Как можно определить, что содержит пакет, и является ли он стабильным и полезным для моего приложения?
+    answer: >
+      Основным источником информации о пакете является его страница сведений на веб-сайте nuget.org (или в другом закрытом веб-канале). На странице каждого пакета на веб-сайте nuget.org приводится описание проекта, история его версий и статистика использования. В разделе **Сведения** на странице пакета также приводится ссылка на веб-сайт проекта, где обычно можно найти много примеров и других документов, с помощью которых можно оценить полезность пакета.
+
+
+      Дополнительные сведения см. в разделе [Поиск и выбор пакетов](../consume-packages/finding-and-choosing-packages.md).
+- name: NuGet в среде Visual Studio
+  questions:
+  - question: >
+      Каким образом обеспечивается поддержка NuGet в различных продуктах Visual Studio?
+    answer: >
+      - Visual Studio для Windows поддерживает [пользовательский интерфейс диспетчера пакетов](../consume-packages/install-use-packages-visual-studio.md) и [консоль диспетчера пакетов](../consume-packages/install-use-packages-powershell.md).
+
+      - Visual Studio для Mac реализует встроенные возможности NuGet, которые описываются в разделе [Включение пакета NuGet в проект](/visualstudio/mac/nuget-walkthrough).
+
+      - Visual Studio Code для всех платформ не поддерживает прямую интеграцию с NuGet. Используйте [интерфейс командной строки NuGet](../reference/nuget-exe-cli-reference.md) или [интерфейс командной строки dotnet](../reference/dotnet-commands.md).
+
+      - Azure DevOps реализует [шаг построения для восстановления пакетов NuGet](/vsts/build-release/tasks/package/nuget). Также вы можете [разместить закрытые веб-каналы NuGet в Azure DevOps](/azure/devops/artifacts/nuget/publish).
+  - question: >
+      Как определить точную версию устанавливаемых средств NuGet?
+    answer: >
+      В Visual Studio выберите **Справка > О Microsoft Visual Studio** и проверьте версию компонента **Диспетчер пакетов NuGet**.
+
+
+      Также можно запустить консоль диспетчера пакетов (**Сервис > Диспетчер пакетов NuGet > Консоль диспетчера пакетов**) и ввести `$host`, чтобы просмотреть сведения о версии NuGet и другую информацию.
+  - question: >
+      Какие языки программирования поддерживает NuGet?
+    answer: >
+      NuGet обычно работает с языками платформы .NET и предназначен для использования библиотек .NET в проекте. Поскольку для проектов некоторых типов также поддерживаются средства автоматизации MSBuild и Visual Studio, в определенной степени также поддерживаются другие проекты и языки.
+
+
+      Последняя версия NuGet поддерживает C#, Visual Basic, F#, WiX и C++.
+  - question: >
+      Какие шаблоны проектов поддерживает NuGet?
+    answer: >
+      NuGet обеспечивает полную поддержку множества шаблонов проектов, включая Windows, Интернет, облако, SharePoint, Wix и другие.
+  - question: >
+      Как обновить пакеты, которые являются частью шаблонов Visual Studio?
+    answer: >
+      Перейдите на вкладку **Обновления** в пользовательском интерфейсе диспетчера проектов и выберите **Обновить все** или воспользуйтесь [командой `Update-Package`](../reference/ps-reference/ps-ref-update-package.md) в консоли диспетчера проектов.
+
+
+      Чтобы обновить сам шаблон, необходимо вручную обновить репозиторий шаблонов. Дополнительные сведения по этой теме см. в [блоге Ксавье Декостера (Xavier Decoster)](http://www.xavierdecoster.com/update-project-template-to-latest-nuget-packages). Обратите внимание, что все это вы делаете на свой страх и риск, поскольку ручное обновление может привести к повреждению шаблона в том случае, если последние версии всех зависимостей несовместимы друг с другом.
+  - question: >
+      Можно ли использовать NuGet вне среды Visual Studio?
+    answer: >
+      Да. NuGet работает непосредственно из командной строки. См. [руководство по установке](../install-nuget-client-tools.md) и [справочник по интерфейсу командной строки](../reference/nuget-exe-cli-reference.md).
+- name: Командная строка NuGet
+  questions:
+  - question: >
+      Как получить последнюю версию средства командной строки NuGet?
+    answer: >
+      См. [руководство по установке](../install-nuget-client-tools.md). Чтобы проверить текущую установленную версию средства, выполните команду `nuget help`.
+  - question: >
+      Для чего нужна лицензия на веб-сайте nuget.exe?
+    answer: >
+      Вы можете распространить nuget.exe в соответствии с условиями лицензии MIT. Вы несете ответственность за обновление и обслуживание всех распространяемых вами копий nuget.exe.
+  - question: >
+      Можно ли расширить возможности средства командной строки NuGet?
+    answer: >
+      Да. Вы можете добавлять в `nuget.exe` собственные команды, как описывается в [статье Роба Рейнолда (Rob Reynold)](http://geekswithblogs.net/robz/archive/2011/07/15/extend-nuget-command-line.aspx).
+- name: Консоль диспетчера пакетов NuGet (Visual Studio для Windows)
+  questions:
+  - question: >
+      Как получить доступ к объекту DTE в консоли диспетчера пакетов?
+    answer: >
+      Объект верхнего уровня в объектной модели автоматизации Visual Studio называется объектом DTE (среда средств разработки). Этот объект предоставляется консолью с помощью переменной `$DTE`. Дополнительные сведения см. в разделе [Общие сведения о модели автоматизации](/visualstudio/extensibility/internals/automation-model-overview) в документации по расширению среды Visual Studio.
+  - question: >
+      При попытке привести переменную $DTE к типу DTE2 возникает ошибка: "Не удается преобразовать значение "EnvDTE.DTEClass" типа "EnvDTE.DTEClass" в тип "EnvDTE80.DTE2"". В чем проблема?
+    answer: >
+      Это известная проблема, связанная с взаимодействием PowerShell с COM-объектом. Попробуйте выполнить следующие действия:
+
+
+      ```ps
+
+      `$dte2 = Get-Interface $dte ([EnvDTE80.DTE2])`
+
+      ```
+
+
+      `Get-Interface` — это вспомогательная функция, добавляемая узлом PowerShell NuGet.
+- name: Создание и публикация пакетов
+  questions:
+  - question: >
+      Как включить мой пакет в веб-канал?
+    answer: >
+      См. раздел [Создание и публикация пакетов](../quickstart/create-and-publish-a-package-using-visual-studio.md).
+  - question: >
+      У меня есть несколько версий библиотеки, предназначенных для различных версий платформы .NET Framework. Как построить единый пакет, поддерживающий такую реализацию?
+    answer: >
+      См. раздел [Поддержка нескольких версий и профилей платформы .NET Framework](../create-packages/supporting-multiple-target-frameworks.md).
+  - question: >
+      Как настроить свой собственный репозиторий или веб-канал?
+    answer: >
+      См. раздел [Общие сведения о размещении пакетов](../hosting-packages/overview.md).
+  - question: >
+      Как выполнить массовую загрузку пакетов в мой веб-канал NuGet?
+    answer: >
+      См. раздел [Массовая публикация пакетов NuGet](http://jeffhandley.com/archive/2012/12/13/Bulk-Publishing-NuGet-Packages.aspx) (jeffhandly.com).
+- name: Работа с пакетами
+  questions:
+  - question: >
+      Можно ли устанавливать пакеты NuGet без подключения к Интернету?
+    answer: >
+      Да. См. статью блога Скотта Ханселмана (Scott Hanselman), посвященную [доступу к NuGet при неработающем веб-сайте nuget.org или во время полета на самолете](http://www.hanselman.com/blog/HowToAccessNuGetWhenNuGetorgIsDownOrYoureOnAPlane.aspx) (hanselman.com).
+  - question: >
+      Можно ли устанавливать пакеты в папку, отличную от заданной по умолчанию?
+    answer: >
+      Задайте параметр [`repositoryPath`](../reference/nuget-config-file.md#config-section) в файле `Nuget.Config`, используя `nuget config -set repositoryPath=<path>`.
+  - question: >
+      Как избежать добавления папки пакетов NuGet в систему управления версиями?
+    answer: >
+      Присвойте свойству [`disableSourceControlIntegration`](../reference/nuget-config-file.md#solution-section) в файле `Nuget.Config` значение `true`. Этот ключ работает на уровне решения и поэтому должен добавляться в файл `$(Solutiondir)\.nuget\Nuget.Config`. Если включить восстановление пакета из Visual Studio, этот файл будет создан автоматически.
+  - question: >
+      Как отключить восстановление пакетов?
+    answer: >
+      См. раздел [Включение и отключение восстановления пакетов](../consume-packages/package-restore.md#enable-and-disable-package-restore-in-visual-studio).
+  - question: >
+      Почему при установке локального пакета с удаленными зависимостями возникает ошибка "Не удается разрешить зависимость"?
+    answer: >
+      При установке локального пакета в проект выберите источник **Все**. При этом вместо использования одного веб-канала будут объединены все веб-каналы. Причиной этой ошибки обычно является то, что пользователи локального репозитория часто стремятся избежать случайной установки удаленного пакета из-за требований корпоративной политики.
+  - question: >
+      У меня есть несколько проектов, расположенных в одной папке. Как использовать отдельные файлы packages.config для каждого проекта?
+    answer: >
+      В большинстве случаев, когда отдельные проекты располагаются в отдельных папках, это не проблема, поскольку NuGet идентифицирует файлы `packages.config` в каждом проекте. Если вы работаете с NuGet версии 3.3 или более поздней и размещаете несколько проектов в одной папке, вы можете вставить имя проекта в имена файлов `packages.config`, используя шаблон `packages.{project-name}.config`. NuGet будет использовать этот файл.
+
+
+      Это также не проблема при использовании PackageReference, поскольку каждый файл проекта содержит собственный список зависимостей.
+  - question: >
+      Я не вижу nuget.org в списке репозиториев. Как вернуть его?
+    answer: >
+      - Добавьте `https://api.nuget.org/v3/index.json` в список источников или
+
+      - Удалите файл `%appdata%\.nuget\NuGet.Config` (Windows) или `~/.nuget/NuGet/NuGet.Config` (Mac/Linux) и дождитесь, пока NuGet снова создаст его.
+  - question: >
+      Почему после миграции в PackageReference моя сборка стала завершаться ошибкой `This project references NuGet package(s) that are missing on this computer.`?
+    answer: >
+      Когда в проектах packages.config устанавливался пакет с целевыми объектами или свойствами `build`, NuGet добавлял целевой объект `EnsureNuGetPackageBuildImports` для проверки, что содержимое msbuild пакетов было импортировано перед сборкой.
+
+      Если `target` был изменен вручную, NuGet, возможно, не удается обнаружить, что при миграции его необходимо удалить.
+
+
+      Если ваш проект — `PackageReference`, и этот целевой объект еще присутствует в файле проекта, его следует удалить.
