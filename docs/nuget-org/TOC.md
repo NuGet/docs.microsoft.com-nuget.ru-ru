@@ -17,4 +17,4 @@
 ## [API NuGet](../api/overview.md)
 ## [licenses.nuget.org](licenses.nuget.org.md)
 # Ресурсы
-## [Часто задаваемые вопросы](nuget-org-faq.md)
+## [Часто задаваемые вопросы](nuget-org-faq.yml)
