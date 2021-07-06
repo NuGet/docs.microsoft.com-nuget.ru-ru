@@ -292,6 +292,7 @@
 ## заметки о выпуске;
 ### [Известные проблемы](release-notes/known-issues.md)
 ### NuGet 5.x
+#### [NuGet 5.10](release-notes/NuGet-5.10.md)
 #### [NuGet 5.9](release-notes/NuGet-5.9.md)
 #### [NuGet 5.8](release-notes/NuGet-5.8.md)
 #### [NuGet 5.7](release-notes/NuGet-5.7.md)
@@ -364,6 +365,6 @@
 #### [NuGet 1.3](release-notes/NuGet-1.3.md)
 #### [NuGet 1.2](release-notes/NuGet-1.2.md)
 #### [NuGet 1.1](release-notes/NuGet-1.1.md)
-## [Вопросы и ответы](resources/nuget-faq.md)
+## [Вопросы и ответы](resources/nuget-faq.yml)
 ## [Формат проекта](resources/check-project-format.md)
 # [NuGet.org](nuget-org/overview-nuget-org.md)
