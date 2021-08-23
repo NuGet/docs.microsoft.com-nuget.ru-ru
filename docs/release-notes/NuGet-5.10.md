@@ -1,18 +1,18 @@
 ---
-title: Заметки о выпуске NuGet 5,10
-description: Заметки о выпуске NuGet 5,10, включая новые функции, исправления ошибок и DCR.
+title: заметки о выпуске NuGet 5,10
+description: заметки о выпуске для NuGet 5,10, включая новые функции, исправления ошибок и dcr.
 author: zkat
 ms.author: kmarchan
 ms.date: 6/11/2021
 ms.topic: conceptual
-ms.openlocfilehash: 666eda5803b540dc18a9310f61c92dc74ff2089e
-ms.sourcegitcommit: f3d98c23408a4a1c01ea92fc45493fa7bd97c3ee
+ms.openlocfilehash: 80a372074604f5c0073f78927b84de00e78acc74
+ms.sourcegitcommit: 5f706c62c97b78bbe3d8c7e95659976535fe486f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/17/2021
-ms.locfileid: "112356503"
+ms.lasthandoff: 08/23/2021
+ms.locfileid: "122726955"
 ---
-# <a name="nuget-510-release-notes"></a>Заметки о выпуске NuGet 5,10
+# <a name="nuget-510-release-notes"></a>заметки о выпуске NuGet 5,10
 
 Средства распространения NuGet:
 
@@ -20,16 +20,16 @@ ms.locfileid: "112356503"
 |:---|:---|:---|
 | [**5.10.0**](https://nuget.org/downloads) | [Visual Studio 2019 версии 16,10](https://visualstudio.microsoft.com/downloads/) | [5.0.300](https://dotnet.microsoft.com/download/dotnet-core/5.0)<sup>1</sup> |
 
-<sup>1</sup> установлен с Visual Studio 2019 с рабочей нагрузкой .NET Core
+<sup>1</sup> установлен с Visual Studio 2019 с рабочей нагрузкой .net Core
   
 > [!NOTE]
-> Для Visual Studio 16,10, MSBuild 16,10 и .NET 5.0.300 + требуется NuGet.exe 5,10 или более поздней версии.
+> для Visual Studio 16,10, MSBuild 16,10 и .net 5.0.300 + требуется NuGet.exe 5,10 или более поздней версии.
 
 ## <a name="summary-whats-new-in-510"></a>Сводка: новые возможности в 5,10
 
 * Подписывание: реализуйте команду DotNet Trusted-Signs- [#8053](https://github.com/NuGet/Home/issues/8053)
 
-* Сделать проверку по умолчанию отключенной в Linux, но включена по умолчанию в Windows — [#10713](https://github.com/NuGet/Home/issues/10713)
+* сделать проверку по умолчанию отключенной в Linux, но по умолчанию включена на Windows [#10713](https://github.com/NuGet/Home/issues/10713)
 
 * Добавление переменной ENV для проверки подписи пакета в .NET 5 + Linux/MAC- [#10742](https://github.com/NuGet/Home/issues/10742)
 
@@ -39,7 +39,7 @@ ms.locfileid: "112356503"
 
 ### <a name="issues-fixed-in-this-release"></a>Исправленные ошибки в этом выпуске
 
-* Подавлять <requireLicenseAcceptance> элемент при упаковке проекта [#5133](https://github.com/NuGet/Home/issues/5133)
+* Подавлять `<requireLicenseAcceptance>` элемент при упаковке проекта [#5133](https://github.com/NuGet/Home/issues/5133)
 
 * [КПВМ] предупреждение о предварительной версии должно отображаться в DotNet CLI- [#10226](https://github.com/NuGet/Home/issues/10226)
 
@@ -49,7 +49,7 @@ ms.locfileid: "112356503"
 
 * Пользовательский интерфейс PM: улучшение производительности установки пакетов на уровне решения — [#10210](https://github.com/NuGet/Home/issues/10210)
 
-* Замена службы Жетсервицеасинк везде в NuGet. Clients — [#3784](https://github.com/NuGet/Home/issues/3784)
+* Замените Жетсервицеасинк везде в NuGet. Клиенты — [#3784](https://github.com/NuGet/Home/issues/3784)
 
 * NuGet.exe проблемы с производительностью пакета с `..` относительным путем [#5016](https://github.com/NuGet/Home/issues/5016)
 
@@ -57,7 +57,7 @@ ms.locfileid: "112356503"
 
 * NuGet не выдает ошибку при упаковке nuspec с повторяющимися файлами. - [#6941](https://github.com/NuGet/Home/issues/6941)
 
-* Пакет NuGet "указанное значение DateTimeOffset не может быть преобразовано в метку времени ZIP-файла" — [#7001](https://github.com/NuGet/Home/issues/7001)
+* NuGet pack "указанное значение DateTimeOffset не может быть преобразовано в метку времени Zip-файла" — [#7001](https://github.com/NuGet/Home/issues/7001)
 
 * Метки времени файла упакованного пакета сдвигаются по часовому поясу — [#7395](https://github.com/NuGet/Home/issues/7395)
 
@@ -109,13 +109,13 @@ ms.locfileid: "112356503"
 
 * В добавлении доверенных подписывающих аргументов есть непоследовательные аргументы — [#10647](https://github.com/NuGet/Home/issues/10647)
 
-* Vs2019 v 16.9.0: переключение вкладок в диспетчере пакетов NuGet с "Updates" на "installed" не приводит к обновлению кадра. - [#10654](https://github.com/NuGet/Home/issues/10654)
+* Vs2019 v 16.9.0: переключение вкладок в NuGet диспетчер пакетов с "обновлениями" на "установленные" не обновляет кадр. - [#10654](https://github.com/NuGet/Home/issues/10654)
 
 * Удалите "v" из номера версии в ПМУИ- [#10677](https://github.com/NuGet/Home/issues/10677)
 
 * Инужетпрожектсервице. Жетинсталледпаккажесасинк вызывает исключение перед получением системы проекта CPS предварительного утверждения- [#10681](https://github.com/NuGet/Home/issues/10681)
 
-* Встроенные значки вызывают отказ в доступе из источника "Microsoft Visual Studio автономные пакеты" на вкладке "Обзор" — [#10687](https://github.com/NuGet/Home/issues/10687)
+* встроенные значки вызывают отказ в доступе из источника "Microsoft Visual Studio автономные пакеты" на вкладке "обзор" — [#10687](https://github.com/NuGet/Home/issues/10687)
 
 * Инужетпрожектсервице. Жетинсталледпаккажесасинк вызывает исключение, если Мсбуилдпрожектекстенсионспас не задано — [#10739](https://github.com/NuGet/Home/issues/10739)
 
@@ -123,11 +123,9 @@ ms.locfileid: "112356503"
 
 * NuGet блокирует поток ThreadPool в асинхронном методе, делая синхронный вызов потока пользовательского интерфейса [#10775](https://github.com/NuGet/Home/issues/10775)
 
-* Сервис — параметры > — строка диспетчера пакетов NuGet > усечена — [#10779](https://github.com/NuGet/Home/issues/10779)
-
 * `PackageLoadContext.GetInstalledAndTransitivePackagesAsync` является неиспользуемым кодом и повредит производительность — [#10790](https://github.com/NuGet/Home/issues/10790)
 
-* Использование внедренного значка в пакетах SDK для NuGet — [#10795](https://github.com/NuGet/Home/issues/10795)
+* использование встроенного значка в пакетах SDK для NuGet — [#10795](https://github.com/NuGet/Home/issues/10795)
 
 * Обновление списка лицензий СПДКС — [#10806](https://github.com/NuGet/Home/issues/10806)
 
@@ -137,13 +135,13 @@ ms.locfileid: "112356503"
   
 ### <a name="community-contributions"></a>Материалы сообщества
 
-Благодарим всех участников, которые помогли сделать эту версию NuGet более Awesome!
+благодарим всех участников, которые помогли сделать эту NuGet выпуска awesome!
 
 |Куда|Вытягивание|Проблемы|
 |----|----|----|
 [-Луи-z](https://github.com/louis-z) | [3991](https://github.com/NuGet/NuGet.Client/pull/3991) | Версионранже не удается проанализировать диапазоны из одной цифры — [#10342](https://github.com/NuGet/Home/issues/10342)
-[омажид](https://github.com/omajid) | [3860](https://github.com/NuGet/NuGet.Client/pull/3860) | NuGet. build.sh клиента работает [#10139](https://github.com/NuGet/Home/issues/10139)
-[Nirmal4G](https://github.com/Nirmal4G) | [3623](https://github.com/NuGet/NuGet.Client/pull/3623) | NuGet. build.sh клиента работает [#10139](https://github.com/NuGet/Home/issues/10139)
+[омажид](https://github.com/omajid) | [3860](https://github.com/NuGet/NuGet.Client/pull/3860) | NuGet. Build.sh клиента работает [#10139](https://github.com/NuGet/Home/issues/10139)
+[Nirmal4G](https://github.com/Nirmal4G) | [3623](https://github.com/NuGet/NuGet.Client/pull/3623) | NuGet. Build.sh клиента работает [#10139](https://github.com/NuGet/Home/issues/10139)
 [блаккгад](https://github.com/BlackGad) | [3953](https://github.com/NuGet/NuGet.Client/pull/3953) | Производительность пакета NuGet снижается с увеличением уровней в исходных путях — [#5706](https://github.com/NuGet/Home/issues/5706)
 [блаккгад](https://github.com/BlackGad) | [3953](https://github.com/NuGet/NuGet.Client/pull/3953) | NuGet.exe проблем с производительностью пакета... относительный путь — [#5016](https://github.com/NuGet/Home/issues/5016)
 [Марцин — кристианк](https://github.com/marcin-krystianc) | [3940](https://github.com/NuGet/NuGet.Client/pull/3940) | КПВМ — проблемы параллелизма в алгоритме прохода графа — [#10598](https://github.com/NuGet/Home/issues/10598)
@@ -151,5 +149,5 @@ ms.locfileid: "112356503"
 
 ## <a name="feedback-welcome"></a>Добро пожаловать на отзыв
 
-Ваши отзывы очень важны для нас.  Если в этом выпуске возникли какие либо проблемы, ознакомьтесь с нашими [проблемами в GitHub](https://github.com/NuGet/Home/issues) и [сообществом разработчиков Visual Studio](https://developercommunity.visualstudio.com/) за существующими проблемами.  При возникновении новых проблем в NuGet сообщите о [проблемах GitHub](https://github.com/NuGet/Home/issues/new).
-Чтобы получить общие сведения о проблемах с NuGet, сообщите нам об этом с помощью параметра [сообщить о проблеме](/visualstudio/ide/how-to-report-a-problem-with-visual-studio) в ИЗБРАННОЙ среде IDE в разделе **Справка > сообщить о проблеме**.
+Ваши отзывы очень важны для нас.  если в этом выпуске возникли какие либо проблемы, ознакомьтесь с нашими [проблемами GitHub](https://github.com/NuGet/Home/issues) и [Visual Studio разработчика Community](https://developercommunity.visualstudio.com/) для существующих проблем.  при возникновении новых проблем в NuGet сообщите об [ошибке GitHub](https://github.com/NuGet/Home/issues/new).
+для получения общих проблем NuGet обратитесь к нам с помощью параметра [сообщить о проблеме](/visualstudio/ide/how-to-report-a-problem-with-visual-studio) в избранной среде IDE в разделе **справка > сообщить о проблеме**.
