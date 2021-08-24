@@ -6,16 +6,16 @@ ms.author: chgill
 ms.date: 02/23/2021
 ms.topic: conceptual
 ms.reviewer: anangaur
-ms.openlocfilehash: a5d68329128c9e9d047fe10e08ce41f1ae0895b4
-ms.sourcegitcommit: 40c039ace0330dd9e68922882017f9878f4283d1
+ms.openlocfilehash: ac0e89c1f5ef9eb19c29646bcc76bcb0b460c5cd
+ms.sourcegitcommit: adb261dd4b2a8cd75447f7b5ea6a9e5a1a54d61d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/22/2021
-ms.locfileid: "107902230"
+ms.lasthandoff: 08/16/2021
+ms.locfileid: "122209947"
 ---
 # <a name="package-readme-on-nugetorg"></a>Файл сведений о пакете на NuGet.org
 
-[Добавьте в пакет NuGet файл сведений](https://docs.microsoft.com/nuget/reference/msbuild-targets#packagereadmefile), чтобы предоставить пользователям более детальные сведения о пакете.
+[Добавьте в пакет NuGet файл сведений](/nuget/reference/msbuild-targets#packagereadmefile), чтобы предоставить пользователям более детальные сведения о пакете.
 
 Скорее всего, это один из первых элементов, которые пользователи увидят при просмотре страницы сведений о пакете на NuGet.org. Он очень важен для создания хорошего впечатления!
 
@@ -36,7 +36,7 @@ ms.locfileid: "107902230"
 
 ## <a name="preview-your-readme"></a>Предварительный просмотр файла сведений
 
-Чтобы просмотреть файл сведений перед его публикацией на NuGet.org, отправьте пакет с помощью [веб-портала отправки пакетов на NuGet.org](https://docs.microsoft.com/nuget/nuget-org/publish-a-package#web-portal-use-the-upload-package-tab-on-nugetorg) и прокрутите вниз до раздела Readme File (Файл сведений) на странице предварительного просмотра метаданных. Должно отобразиться примерно следующее:
+Чтобы просмотреть файл сведений перед его публикацией на NuGet.org, отправьте пакет с помощью [веб-портала отправки пакетов на NuGet.org](/nuget/nuget-org/publish-a-package#web-portal-use-the-upload-package-tab-on-nugetorg) и прокрутите вниз до раздела Readme File (Файл сведений) на странице предварительного просмотра метаданных. Должно отобразиться примерно следующее:
 
 ![Предварительный просмотр файла сведений](media\readme-upload-preview.PNG)
 
@@ -48,6 +48,7 @@ ms.locfileid: "107902230"
 NuGet.org позволяет отображать все изображения, в том числе эмблемы, из следующих доверенных доменов:
 * api.bintray.com
 * api.codacy.com
+* app.codacy.com
 * api.codeclimate.com
 * api.dependabot.com
 * api.travis-ci.com
@@ -59,6 +60,7 @@ NuGet.org позволяет отображать все изображения,
 * bettercodehub.com
 * buildstats.info
 * camo.githubusercontent.com
+* cdn.jsdelivr.net
 * ci.appveyor.com
 * circleci.com
 * codecov.io
@@ -68,6 +70,7 @@ NuGet.org позволяет отображать все изображения,
 * github.com/.../workflows/.../badge.svg
 * gitlab.com
 * img.shields.io
+* i.imgur.com
 * isitmaintained.com
 * opencollective.com
 * raw.github.com
