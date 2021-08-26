@@ -5,12 +5,12 @@ author: JonDouglas
 ms.author: jodou
 ms.date: 02/08/2021
 ms.topic: conceptual
-ms.openlocfilehash: e0f235d99e41e23a4551fbf7577f6c42e3381f5b
-ms.sourcegitcommit: bb9560dcc7055bde84b4940c5eb0db402bf46a48
+ms.openlocfilehash: 4575d4779ed90150cec667489c85875b7fb87a8d
+ms.sourcegitcommit: 5f706c62c97b78bbe3d8c7e95659976535fe486f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/23/2021
-ms.locfileid: "104859230"
+ms.lasthandoff: 08/23/2021
+ms.locfileid: "122726981"
 ---
 # <a name="best-practices-for-a-secure-software-supply-chain"></a>Рекомендации по обеспечению безопасности для цепочки поставок программного обеспечения
 
@@ -124,7 +124,7 @@ ms.locfileid: "104859230"
 
 При использовании нескольких общедоступных и частных веб-каналов исходного кода NuGet пакет можно скачать из любого веб-канала. Чтобы гарантировать, что сборка является предсказуемой и защищенной от известных атак, таких как [Путаница зависимостей](https://medium.com/@alex.birsan/dependency-confusion-4a5d60fec610), необходимо знать, из каких конкретных веб-каналов поступают ваши пакеты. Для защиты можно использовать один веб-канал или частный веб-канал с возможностями восходящего потока.
 
-Дополнительные сведения о защите веб-каналов пакета см. в разделе [Три способа снижения риска при использовании частных веб-каналов пакетов](https://azure.microsoft.com/en-us/resources/3-ways-to-mitigate-risk-using-private-package-feeds/).
+Дополнительные сведения о защите веб-каналов пакета см. в разделе [Три способа снижения риска при использовании частных веб-каналов пакетов](https://azure.microsoft.com/resources/3-ways-to-mitigate-risk-using-private-package-feeds/).
 
 ### <a name="client-trust-policies"></a>Политики доверия клиентов
 
